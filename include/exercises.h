@@ -318,6 +318,45 @@ public slots:
 
 };
 
+class DrawingPuzzles : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit DrawingPuzzles(QObject *parent = 0):FeetWetCodingExercise(parent){}
+
+signals:
+
+public slots:
+    virtual int runExercise();
+
+};
+
+class DrawingPuzzlesSoln : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit DrawingPuzzlesSoln(QObject *parent = 0):FeetWetCodingExercise(parent){}
+
+signals:
+
+public slots:
+    virtual int runExercise();
+
+};
+
+class CirclesIdea1 : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit CirclesIdea1(QObject *parent = 0):FeetWetCodingExercise(parent){}
+
+signals:
+
+public slots:
+    virtual int runExercise();
+
+};
+
 ////////////////////// II Intermediate ///////////////////////////
 class IntroToClasses : public FeetWetCodingExercise
 {
