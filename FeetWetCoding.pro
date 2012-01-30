@@ -37,7 +37,6 @@ SOURCES += \
     exercises/II_Intermediate/II-005.cpp \
     exercises/II_Intermediate/II-001soln.cpp \
     exercises/II_Intermediate/II-001.cpp \
-    source/mainwindow.cpp \
     source/main.cpp \
     source/feetwetcodinglib.cpp \
     source/feetwetcodingexercise.cpp \
@@ -47,18 +46,18 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/DrawingPuzzlesIdea1.cpp \
     exercises/C01-Beginner_Exercises/colortest.cpp \
     exercises/C01-Beginner_Exercises/CirclesIdea1.cpp \
-    exercises/C01-Beginner_Exercises/01-01-0120_Scope1.cpp
+    exercises/C01-Beginner_Exercises/01-01-0120_Scope1.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/300_SeeOutIntroSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/300_SeeOutIntro.cpp
 
 HEADERS += \
     include/setup.h \
-    include/mainwindow.h \
     include/feetwetcodinglib.h \
     include/exercises.h \
     include/constants.h \
     include/myinclude/myheader.h
 
-FORMS += \
-    qtfiles/mainwindow.ui
+FORMS +=
 
 INCLUDEPATH += include
 DEPENDPATH += . src include
@@ -68,3 +67,16 @@ OTHER_FILES +=
 
 RESOURCES += \
     feetwetresources.qrc
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -9,10 +9,18 @@
 #ifndef FEETWETCODINGLIB_H
 #define FEETWETCODINGLIB_H
 
+//#include <setup.h>
 #include <constants.h>
 #include <QColor>
+#include <QGraphicsView>
 #include <QKeyEvent>
-#include <QPaintEvent>
+#include <QTextEdit>
+#include <iostream>
+#include <sstream>
+
+extern QTextEdit *exerciseOut;
+extern QTextEdit *solnOut;
+extern bool Gsoln;
 
 //Convenience drawable items provided by Qt
 //--------------------------------------------
@@ -43,6 +51,7 @@ int random(int biggest);
 int randomRange(int smallest, int biggest);
 //void PuzzleSetup(RefBoxLayout orientation, bool soln);
 
+
 Qt::GlobalColor getQColor( Color color );
 
 class eoView : public QGraphicsView
@@ -54,7 +63,6 @@ public:
     ~eoView(){}
 
     virtual void keyPressEvent(QKeyEvent *event);
-//    virtual void paintEvent(QPaintEvent *event);
 
 protected:
 
@@ -74,6 +82,36 @@ public:
 private:
     RefBoxLayout itsOrientation;
 
+};
+
+//SeeOut is a simulated "cout" that prints to a
+// text widget in addition to std::out
+class SeeOut
+{
+
+public:
+
+    template <typename T>
+    SeeOut& operator<<(const T& x)
+    {
+        mOss.str("");
+        mOss << x;
+        std::cerr << mOss.str();
+
+        if ( !Gsoln && exerciseOut )
+        {
+            exerciseOut->insertPlainText(mOss.str().c_str());
+        }
+        if ( Gsoln && solnOut )
+        {
+            solnOut->insertPlainText(mOss.str().c_str());
+        }
+
+        return *this;
+    }
+
+private:
+    std::ostringstream mOss;
 };
 
 #endif // FEETWETCODINGLIB_H

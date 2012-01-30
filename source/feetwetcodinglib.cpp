@@ -3,15 +3,18 @@
 
 
 #include <setup.h>
+#include <QHBoxLayout>
+#include <QDialog>
+#include <QFontMetrics>
 
-extern QGraphicsScene *scene;
-extern QGraphicsView *view;
-extern FeetWetCodingExercise *exercise;
-extern QPainter *appPainter;
-//extern MainWindow *mainWindow;
-extern QTimer appLoopTimer;
-extern solutionOrientation drawingAreaLayout;
-extern bool Gsoln;
+using namespace std;
+
+QGraphicsView *view(NULL);
+QTextEdit *exerciseOut(NULL);
+QTextEdit *solnOut(NULL);
+
+solutionOrientation drawingAreaLayout(BLANK);
+bool Gsoln = false;
 
 solutionOrientation::solutionOrientation(RefBoxLayout initialOrientation)
 {
@@ -34,61 +37,66 @@ void solutionOrientation::setOrientation(RefBoxLayout orientation)
 
 void setupDrawingUtils()
 {
+    //Seed the random number generator
     QTime time = QTime::currentTime();
     qsrand(time.msec()/4);
 
-///////////// DISREGARD THIS STUFF FOR NOW--IT WAS ME TRYING TO FIGURE OUT QPAINTER ///////////////
-//    if ( 0 )
-//    {
-//        mainWindow = new MainWindow();
-//        mainWindow->setGeometry(WINDOW_X, WINDOW_Y, WINDOW_WIDTH+WINDOW_X, WINDOW_HEIGHT+WINDOW_Y);
+    // Setup the drawing area stuff
+    QGraphicsScene *scene = new QGraphicsScene(-BORDER, -BORDER/2,
+                                               WINDOW_WIDTH+BORDER*2,
+                                               WINDOW_HEIGHT+BORDER);
+    view = new eoView(scene);
+    view->setRenderHint(QPainter::TextAntialiasing);
 
-//        if ( 0 )
-//        {
-//            scene = new QGraphicsScene(MIN_X, MIN_Y, MAX_X, MAX_Y);
-//            view = new eoView(scene);
-//            view->setRenderHint(QPainter::TextAntialiasing);
-//            view->setGeometry(WINDOW_X, WINDOW_Y, WINDOW_WIDTH+WINDOW_X, WINDOW_HEIGHT+WINDOW_Y);
-//            mainWindow->setCentralWidget(view);
-//        }
+    QVBoxLayout vlayout;
+    QHBoxLayout hlayout;
+    exerciseOut = new QTextEdit();
+    solnOut = new QTextEdit();
+    exerciseOut->setReadOnly(true);
+    solnOut->setReadOnly(true);
+    hlayout.addWidget(exerciseOut);
+    hlayout.addWidget(solnOut);
+    vlayout.addWidget(view);
+    vlayout.addLayout(&hlayout);
 
-//        appPainter = new QPainter();
-//        appPainter->begin(mainWindow);
-//        mainWindow->show();
-//    }
-//    else
-////////////////////////////////////////////////////////////////////////////////////////////////
-    {
-        // Set up our Window (Don't worry about this stuff for now! :-)
-        scene = new QGraphicsScene(MIN_X, MIN_Y, MAX_X, MAX_Y);
-        view = new eoView(scene);
+    // Create the run-time window
+    QDialog *theWindow =  new QDialog();
+    theWindow->setLayout(&vlayout);
+    theWindow->setGeometry(WINDOW_X, WINDOW_Y,
+                           WINDOW_WIDTH+2.5*BORDER,
+                           WINDOW_HEIGHT+2*BORDER+OUTTEXT_HEIGHT);
+    theWindow->show();
 
-        view->setRenderHint(QPainter::TextAntialiasing);
-        view->setGeometry(WINDOW_X, WINDOW_Y, WINDOW_WIDTH+WINDOW_X, WINDOW_HEIGHT+WINDOW_Y);
+    SeeOut outboxes;
+    Gsoln = false;
+    exerciseOut->setTextColor(Qt::blue);
+    solnOut->setTextColor(Qt::blue);
+    outboxes << "Exercise output\n\n";
+    Gsoln = true;
+    outboxes << "Solution output\n\n";
+    Gsoln = false;
+    exerciseOut->setTextColor(Qt::black);
+    solnOut->setTextColor(Qt::black);
 
-        view->show();       //Show window
-
-
-    }
 }
 
 void ClearScreen()
 {
-    if ( scene )
-        scene->clear();
+    if ( view && view->scene() )
+        view->scene()->clear();
 }
 
 void DrawLine( int xStart, int yStart, int xEnd, int yEnd, Color color, int thickness )
 {
     if ( drawingAreaLayout.getOrientation() == LEFTRIGHT && Gsoln )
     {
-        xStart += 400;
-        xEnd += 400;
+        xStart += WINDOW_WIDTH/2;
+        xEnd += WINDOW_WIDTH/2;
     }
     if ( drawingAreaLayout.getOrientation() == TOPBOTTOM && Gsoln )
     {
-        yStart += 300;
-        yEnd += 300;
+        yStart += WINDOW_HEIGHT/2;
+        yEnd += WINDOW_HEIGHT/2;
     }
 
     QGraphicsLineItem *newLine = new QGraphicsLineItem(xStart, yStart, xEnd, yEnd);
@@ -98,9 +106,7 @@ void DrawLine( int xStart, int yStart, int xEnd, int yEnd, Color color, int thic
     pen.setColor(getQColor(color));
     pen.setWidth(thickness);
     newLine->setPen(pen);
-    scene->addItem(newLine);
-    scene->update();   //Render stuff
-    view->show();       //Show everything
+    view->scene()->addItem(newLine);
 }
 
 void DrawCircle( int x, int y, int r, Color color, int thickness, bool solid)
@@ -108,11 +114,11 @@ void DrawCircle( int x, int y, int r, Color color, int thickness, bool solid)
 
     if ( drawingAreaLayout.getOrientation() == LEFTRIGHT && Gsoln )
     {
-        x += 400;
+        x += WINDOW_WIDTH/2;
     }
     if ( drawingAreaLayout.getOrientation() == TOPBOTTOM && Gsoln )
     {
-        y += 300;
+        y += WINDOW_HEIGHT/2;
     }
 
     QGraphicsEllipseItem *newCircle = new QGraphicsEllipseItem(x-(r/2), y-(r/2), r, r);
@@ -131,10 +137,7 @@ void DrawCircle( int x, int y, int r, Color color, int thickness, bool solid)
 
     //painter.setRenderHint(QPainter::Antialiasing);
     newCircle->setPen(pen);
-    scene->addItem(newCircle);
-
-    scene->update();   //Render stuff
-    view->show();       //Show everything
+    view->scene()->addItem(newCircle);
 }
 
 void DrawCircleRGB( int x, int y, int r, int red, int green, int blue, int thickness, bool solid )
@@ -142,26 +145,23 @@ void DrawCircleRGB( int x, int y, int r, int red, int green, int blue, int thick
 
     if ( drawingAreaLayout.getOrientation() == LEFTRIGHT && Gsoln )
     {
-        x += 400;
+        x += WINDOW_WIDTH/2;
     }
     if ( drawingAreaLayout.getOrientation() == TOPBOTTOM && Gsoln )
     {
-        y += 300;
+        y += WINDOW_HEIGHT/2;
     }
 
     QGraphicsEllipseItem *newCircle = new QGraphicsEllipseItem(x-(r/2), y-(r/2), r, r);
 
     QColor color;
-//    QRgb splat = 4280457642;
 
     // Create a line and add it to the scene
     QPen pen;
-    //pen.setColor(getQColor(color));
     color.setRed(red);
     color.setGreen(green);
     color.setBlue(blue);
     pen.setColor(color);
-    //pen.setColor(splat);
     pen.setWidth(thickness);
 
     if ( solid )
@@ -172,10 +172,7 @@ void DrawCircleRGB( int x, int y, int r, int red, int green, int blue, int thick
 
     //painter.setRenderHint(QPainter::Antialiasing);
     newCircle->setPen(pen);
-    scene->addItem(newCircle);
-
-    scene->update();   //Render stuff
-    view->show();       //Show everything
+    view->scene()->addItem(newCircle);
 }
 
 void DrawEllipse( int x, int y, int w, int h, Color color, int thickness, bool solid )
@@ -183,11 +180,11 @@ void DrawEllipse( int x, int y, int w, int h, Color color, int thickness, bool s
 
     if ( drawingAreaLayout.getOrientation() == LEFTRIGHT && Gsoln )
     {
-        x += 400;
+        x += WINDOW_WIDTH/2;
     }
     if ( drawingAreaLayout.getOrientation() == TOPBOTTOM && Gsoln )
     {
-        y += 300;
+        y += WINDOW_HEIGHT/2;
     }
 
     QGraphicsEllipseItem *newCircle = new QGraphicsEllipseItem(x-(w/2), y-(h/2), w, h);
@@ -206,21 +203,18 @@ void DrawEllipse( int x, int y, int w, int h, Color color, int thickness, bool s
 
     //painter.setRenderHint(QPainter::Antialiasing);
     newCircle->setPen(pen);
-    scene->addItem(newCircle);
-
-    scene->update();   //Render stuff
-    view->show();       //Show everything
+    view->scene()->addItem(newCircle);
 }
 
 void DrawRectangle( int x, int y, int w, int h, Color color, int thickness, bool solid )
 {
     if ( drawingAreaLayout.getOrientation() == LEFTRIGHT && Gsoln )
     {
-        x += 400;
+        x += WINDOW_WIDTH/2;
     }
     if ( drawingAreaLayout.getOrientation() == TOPBOTTOM && Gsoln )
     {
-        y += 300;
+        y += WINDOW_HEIGHT/2;
     }
 
     QGraphicsRectItem *newRect = new QGraphicsRectItem(x, y, w, h);
@@ -237,10 +231,7 @@ void DrawRectangle( int x, int y, int w, int h, Color color, int thickness, bool
     pen.setColor(getQColor(color));
     pen.setWidth(thickness);
     newRect->setPen(pen);
-    scene->addItem(newRect);
-
-    scene->update();   //Render stuff
-    view->show();       //Show everything
+    view->scene()->addItem(newRect);
 }
 
 
@@ -248,11 +239,11 @@ void DrawText( std::string text, int x, int y,  Color color, int size )
 {
     if ( drawingAreaLayout.getOrientation() == LEFTRIGHT && Gsoln )
     {
-        x += 400;
+        x += WINDOW_WIDTH/2;
     }
     if ( drawingAreaLayout.getOrientation() == TOPBOTTOM && Gsoln )
     {
-        y += 300;
+        y += WINDOW_HEIGHT/2;
     }
 
     QGraphicsTextItem *newText = new QGraphicsTextItem(text.c_str());
@@ -263,21 +254,18 @@ void DrawText( std::string text, int x, int y,  Color color, int size )
     newText->setFont(font);
     newText->setPos(x, y);
     newText->setDefaultTextColor(getQColor(color));
-    scene->addItem(newText);
-
-    scene->update();   //Render stuff
-    view->show();       //Show everything
+    view->scene()->addItem(newText);
 }
 
 void DrawInt( int number, int x, int y, Color color, int fontSize )
 {
     if ( drawingAreaLayout.getOrientation() == LEFTRIGHT && Gsoln )
     {
-        x += 400;
+        x += WINDOW_WIDTH/2;
     }
     if ( drawingAreaLayout.getOrientation() == TOPBOTTOM && Gsoln )
     {
-        y += 300;
+        y += WINDOW_HEIGHT/2;
     }
 
     QString str;
@@ -291,21 +279,18 @@ void DrawInt( int number, int x, int y, Color color, int fontSize )
     newText->setFont(font);
     newText->setPos(x, y);
     newText->setDefaultTextColor(getQColor(color));
-    scene->addItem(newText);
-
-    scene->update();   //Render stuff
-    view->show();       //Show everything
+    view->scene()->addItem(newText);
 }
 
 void DrawFloat( float number, int x, int y, Color color, int fontSize, int decimalPlaces )
 {
     if ( drawingAreaLayout.getOrientation() == LEFTRIGHT && Gsoln )
     {
-        x += 400;
+        x += WINDOW_WIDTH/2;
     }
     if ( drawingAreaLayout.getOrientation() == TOPBOTTOM && Gsoln )
     {
-        y += 300;
+        y += WINDOW_HEIGHT/2;
     }
 
     QString str;
@@ -319,11 +304,7 @@ void DrawFloat( float number, int x, int y, Color color, int fontSize, int decim
     newText->setFont(font);
     newText->setPos(x, y);
     newText->setDefaultTextColor(getQColor(color));
-    scene->addItem(newText);
-
-    scene->update();   //Render stuff
-    view->show();       //Show everything
-
+    view->scene()->addItem(newText);
 }
 
 void DrawImage( int x, int y, QString filename )
@@ -333,35 +314,76 @@ void DrawImage( int x, int y, QString filename )
 
     // Load an image from a file and add it to the scene
     newPixmap->setPos(x, y);
-    scene->addItem(newPixmap);
-
-    scene->update();   //Render stuff
-    view->show();       //Show everything
+    view->scene()->addItem(newPixmap);
 }
 
 void DrawReferenceBox( RefBoxLayout layout )
 {
     DrawRectangle( 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, GRAY, 1);
-    DrawText("0,0", -10, -20, GRAY, 10);
-    DrawText("800,0", WINDOW_WIDTH-30, -20, GRAY, 10);
-    DrawText("0,600", -10, WINDOW_HEIGHT, GRAY, 10);
-    DrawText("800,600", WINDOW_WIDTH-30, WINDOW_HEIGHT, GRAY, 10);
+    std::ostringstream oss;
+    int strWidth(10);
+    int dimsSize(8);
+    int textSize(10);
+
+    oss << 0 << "," << 0;
+    DrawText(oss.str(), -10, -20, GRAY, dimsSize);
+
+    oss.str("");
+    oss << WINDOW_WIDTH << "," << 0;
+    DrawText(oss.str(), WINDOW_WIDTH-30, -20, GRAY, dimsSize);
+
+    oss.str("");
+    oss << 0 << "," << WINDOW_HEIGHT;
+    DrawText(oss.str(), -10, WINDOW_HEIGHT, GRAY, dimsSize);
+
+    oss.str("");
+    oss << WINDOW_WIDTH << "," << WINDOW_HEIGHT;
+    DrawText(oss.str(), WINDOW_WIDTH-30, WINDOW_HEIGHT, GRAY, dimsSize);
 
     switch (layout) {
     case LEFTRIGHT:
         drawingAreaLayout.setOrientation(LEFTRIGHT);
-        DrawLine( 400, 0, 400, 600, GRAY, 1);
-        DrawText("400,0", 375, -20, GRAY, 10);
-        DrawText("400,600", 375, WINDOW_HEIGHT, GRAY, 10);
-        DrawText( "Make this side...", 150, -20, GRAY, 10);
-        DrawText( "...look like this side.", 550, -20, GRAY, 10);
+        DrawLine( WINDOW_WIDTH/2, 0, WINDOW_WIDTH/2, WINDOW_HEIGHT, GRAY, 1);
+
+        oss.str("");
+        oss << WINDOW_WIDTH/2 << "," << 0;
+        DrawText(oss.str(), (WINDOW_WIDTH/2-BORDER/2), -20, GRAY, dimsSize);
+
+        oss.str("");
+        oss << WINDOW_WIDTH/2 << "," << WINDOW_HEIGHT;
+        DrawText(oss.str(), WINDOW_WIDTH/2-BORDER/2, WINDOW_HEIGHT, GRAY, dimsSize);
+
+        oss.str("");
+        oss << "Make this side...";
+        qApp->font().setPointSize(textSize);
+        strWidth=QFontMetrics(QFont(qApp->font())).width(oss.str().c_str());
+        DrawText( oss.str(), WINDOW_WIDTH*.25-strWidth/2, -20, GRAY, 10);
+
+        oss.str("");
+        oss << "...look like this side.";
+        qApp->font().setPointSize(textSize);
+        strWidth=QFontMetrics(QFont(qApp->font())).width(oss.str().c_str());
+        DrawText( oss.str(), WINDOW_WIDTH*.75-strWidth/2, -20, GRAY, textSize);
         break;
+
     case TOPBOTTOM:
         drawingAreaLayout.setOrientation(TOPBOTTOM);
-        DrawLine( 0, 300, 800, 300, GRAY, 1);
-        DrawText("0, 300", -40, 300, GRAY, 10);
-        DrawText("800,300", 805,300, GRAY, 1);
-        DrawText("Make the top look like the bottom.", 300, -20, GRAY, 10);
+        DrawLine( 0, WINDOW_HEIGHT/2, WINDOW_WIDTH, WINDOW_HEIGHT/2, GRAY, 1);
+
+        oss.str("");
+        oss << 0 << "," << WINDOW_HEIGHT/2;
+        DrawText(oss.str(), -40, WINDOW_HEIGHT/2-10, GRAY, dimsSize);
+
+        oss.str("");
+        oss << WINDOW_WIDTH << "," << WINDOW_HEIGHT/2;
+        DrawText(oss.str(), WINDOW_WIDTH, WINDOW_HEIGHT/2-10, GRAY, dimsSize);
+
+        oss.str("");
+        oss << "Make the top look like the bottom.";
+        qApp->font().setPointSize(textSize);
+        strWidth=QFontMetrics(QFont(qApp->font())).width(oss.str().c_str());
+        DrawText(oss.str(), WINDOW_WIDTH/2-strWidth/2, -20, GRAY, textSize);
+
         break;
     case BLANK:
     break;
@@ -460,45 +482,7 @@ void eoView::keyPressEvent( QKeyEvent *k )
         QApplication::exit();
         break;
     default:
-        cerr << "I got a rock\n";
+        //cerr << "I got a rock\n";
         break;
     }
 }
-
-//void eoView::paintEvent(QPaintEvent *event)
-//{
-//    cerr << "eoView::paintEvent()\n";
-//    QPen pen(Qt::black, 2, Qt::SolidLine);
-
-//    QPainter painter(this);
-
-//    painter.setPen(pen);
-//    painter.drawLine(20, 40, 250, 40);
-
-//    pen.setStyle(Qt::DashLine);
-//    painter.setPen(pen);
-//    painter.drawLine(20, 80, 250, 80);
-
-//    pen.setStyle(Qt::DashDotLine);
-//    painter.setPen(pen);
-//    painter.drawLine(20, 120, 250, 120);
-
-//    pen.setStyle(Qt::DotLine);
-//    painter.setPen(pen);
-//    painter.drawLine(20, 160, 250, 160);
-
-//    pen.setStyle(Qt::DashDotDotLine);
-//    painter.setPen(pen);
-//    painter.drawLine(20, 200, 250, 200);
-
-
-//    QVector<qreal> dashes;
-//    qreal space = 4;
-
-//    dashes << 1 << space << 5 << space;
-
-//    pen.setStyle(Qt::CustomDashLine);
-//    pen.setDashPattern(dashes);
-//    painter.setPen(pen);
-//    painter.drawLine(20, 240, 250, 240);
-//}

@@ -11,15 +11,9 @@
 // My eternal gratitude to Niven & Pournelle for enriching my life and giving me a
 // larger world to live in.  -- rdh
 
-#include <include/setup.h>
+#include <setup.h>
 
-QGraphicsScene *scene(NULL);
-QGraphicsView *view(NULL);
 FeetWetCodingExercise *exercise(NULL);
-QPainter *appPainter(NULL);
-QTimer appLoopTimer;
-solutionOrientation drawingAreaLayout(BLANK);
-bool Gsoln = false;
 
 int main(int argc, char *argv[])
 {
@@ -28,7 +22,7 @@ int main(int argc, char *argv[])
 
     /////////////////////////////////////////
     //////  CHOOSE YOUR EXERCISE HERE  //////
-    exercise = new WhileLoop4();
+    exercise = new SeeOutIntro();
     /////////////////////////////////////////
     exercise->runExercise();
 

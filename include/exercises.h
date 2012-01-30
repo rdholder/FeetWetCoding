@@ -13,6 +13,7 @@
 #define exercises_H
 
 #include <QObject>
+#include <feetwetcodinglib.h>
 
 int colortest();
 
@@ -28,6 +29,8 @@ public slots:
     virtual void update();
     virtual int runExercise()=0;
 
+protected:
+    SeeOut seeout;
 };
 
 ////////////////////// I Beginner ///////////////////////////
@@ -102,6 +105,32 @@ class GraphicTools1Soln : public FeetWetCodingExercise
     Q_OBJECT
 public:
     explicit GraphicTools1Soln(QObject *parent = 0):FeetWetCodingExercise(parent){}
+
+signals:
+
+public slots:
+    virtual int runExercise();
+
+};
+
+class SeeOutIntro : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit SeeOutIntro(QObject *parent = 0):FeetWetCodingExercise(parent){}
+
+signals:
+
+public slots:
+    virtual int runExercise();
+
+};
+
+class SeeOutIntroSoln : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit SeeOutIntroSoln(QObject *parent = 0):FeetWetCodingExercise(parent){}
 
 signals:
 
