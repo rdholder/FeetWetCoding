@@ -1,4 +1,4 @@
-// copyright (c) 2011 eotsucodefoundry.com.  All rights reserved.
+// copyright (c) 2011 Robert Holder, Janice Dugger.  All rights reserved.
 // See LICENSE.txt included with this software distribution for conditions of use.
 
 // FeetWetCoding: a framework that tries to make learning C/C++ a little more fun! :-)

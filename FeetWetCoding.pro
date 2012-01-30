@@ -48,7 +48,25 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/CirclesIdea1.cpp \
     exercises/C01-Beginner_Exercises/01-01-0120_Scope1.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/300_SeeOutIntroSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/300_SeeOutIntro.cpp
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/300_SeeOutIntro.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/Intro.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/IntroSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/001_WelcomeSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/001_Welcome.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/100_DrawingTextSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/100_DrawingText.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/010_ChangeText.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/020_ChangeX.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/030_ChangeY.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/040_ChangeXY.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/050_ChangeColor.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/060_ChangeFont.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/060_ChangeFontSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/010_ChangeTextSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/020_ChangeXSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/030_ChangeYSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/040_ChangeXYSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/050_ChangeColorSOLN.cpp
 
 HEADERS += \
     include/setup.h \

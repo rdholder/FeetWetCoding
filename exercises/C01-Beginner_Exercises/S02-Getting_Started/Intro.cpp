@@ -1,4 +1,4 @@
-// copyright (c) 2011 eotsucodefoundry.com.  All rights reserved.
+// copyright (c) 2011 Robert Holder, Janice Dugger.  All rights reserved.
 // See LICENSE.txt included with this software distribution for conditions of use.
 
 // FeetWetCoding/exercises/Chapter01/DrawingAreaIntro.cpp
@@ -13,7 +13,7 @@ extern bool Gsoln;
 
 int Intro::runExercise()  // copy the exercise name & paste it into main.cpp
 {
-    Gsoln = false;                  // is this exercise code or solution code?
+    Gsoln = false;        // is this exercise code or solution code?
 
     DrawLine(0, 30, 60, 30, YELLOW, 5);
     DrawLine(30, 0, 30, 60, BLUE, 5);
