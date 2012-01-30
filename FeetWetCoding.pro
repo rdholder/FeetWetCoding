@@ -11,11 +11,7 @@ TEMPLATE = app
 
 SOURCES += \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/150_GraphicTools1.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/100_DrawingText.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/050_Intro.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/150_GraphicTools1SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/100_DrawingTextSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/050_IntroSOLN.cpp \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/050_IntsAndFloats.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/050_GetsAndPlusGets.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/Solutions/050_GetsAndPlusGetsSOLN.cpp \

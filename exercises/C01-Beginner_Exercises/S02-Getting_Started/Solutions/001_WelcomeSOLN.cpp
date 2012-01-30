@@ -11,7 +11,7 @@ int WelcomeSoln::runExercise()
 {
     Gsoln = true;
 
-    DrawText("Welcome to FeetWetCoding!", 20, 250, RED, 20);
+    DrawText("Welcome to FeetWetCoding!", 20, 150, RED, 20);
 
     return 0;
 }

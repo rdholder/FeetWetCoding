@@ -13,7 +13,7 @@ int Welcome::runExercise()
 
     // USAGE: DrawText("Text.", x, y, color, fontsize);
 
-    DrawText("Welcome to FeetWetCoding!", 20, 250, BLUE, 20);
+    DrawText("Welcome to FeetWetCoding!", 20, 150, BLUE, 20);
 
     // This is FeetWetCoding internal stuff you can ignore for now:
     DrawReferenceBox(LEFTRIGHT);    // draw the graphical reference frame
