@@ -1,4 +1,4 @@
-// copyright (c) 2011 eotsucodefoundry.com.  All rights reserved.
+// copyright (c) 2011 Robert Holder, Janice Dugger.  All rights reserved.
 // See LICENSE.txt included with this software distribution for conditions of use.
 
 // FeetWetCoding/exercises/Chapter01/DrawingText.cpp
@@ -14,6 +14,8 @@ extern bool Gsoln;
 int DrawingTextSoln::runExercise()
 {
     Gsoln = true;
+
+    // USAGE: DrawText("Text.", x, y, color, fontsize);
 
     DrawText("This is at location 5, 10 with font size 10 in black.", 5, 10, BLACK, 10);
     DrawText("This is at location 5, 30 with font size 13 in blue.",  5, 30, BLUE, 13);

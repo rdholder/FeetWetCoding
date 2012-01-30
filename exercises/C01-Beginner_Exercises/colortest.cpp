@@ -1,4 +1,4 @@
-// copyright (c) 2011 eotsucodefoundry.com.  All rights reserved.
+// copyright (c) 2011 Robert Holder, Janice Dugger.  All rights reserved.
 // See LICENSE.txt included with this software distribution for conditions of use.
 
 // FeetWetCoding/exercises/Chapter01/ch01ex10DrawingPuzzles.cpp
