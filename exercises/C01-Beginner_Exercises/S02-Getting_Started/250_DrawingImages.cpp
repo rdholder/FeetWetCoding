@@ -18,13 +18,13 @@ int DrawingImages::runExercise()
     // images down the road, but there is a lot to learn first.  :-)
 
     // USAGE: DrawImage("images:/filename.png", x, y);
-    DrawImage(":images/ken-thompson-l-and-dennis-ritchie-r100x73.png", 10, 10);
+    DrawImage(":images/ken-thompson-l-and-dennis-ritchie-r100x65.png", 10, 10);
     DrawImage(":images/BrianKernighan50x58.png", 130, 10);
     DrawImage(":images/BjarneStroustrup50x55.png", 200, 10);
     DrawImage(":images/Qtlogo59x71.png", 300, 10);
-    DrawImage(":images/DuckFeet100x45.png", 10, 200);
-    DrawImage(":images/spaceship50x70.png", 200, 200);
-    DrawImage(":images/clock100x100.png", 280, 200);
+    DrawImage(":images/DuckFeet100x45.bmp", 10, 200);
+    DrawImage(":images/spaceship50x59.jpg", 200, 200);
+    DrawImage(":images/clock100x100.gif", 280, 200);
 
 
     // This is FeetWetCoding internal stuff you can ignore for now:

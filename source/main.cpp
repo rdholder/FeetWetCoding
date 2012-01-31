@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 
     /////////////////////////////////////////
     //////  CHOOSE YOUR EXERCISE HERE  //////
-    exercise = new DrawingImages();
+    exercise = new Welcome();
     /////////////////////////////////////////
     exercise->runExercise();
 

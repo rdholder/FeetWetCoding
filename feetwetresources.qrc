@@ -1,15 +1,11 @@
 <RCC>
     <qresource prefix="/">
-        <file>images/clock100x100.png</file>
-        <file>images/DuckFeet100x45.png</file>
-        <file>images/extinguisher50x116.png</file>
-        <file>images/spaceship50x70.png</file>
-        <file>images/Qtlogo59x71.png</file>
         <file>images/BjarneStroustrup50x55.png</file>
         <file>images/BrianKernighan50x58.png</file>
-        <file>images/ken-thompson-l-and-dennis-ritchie-r100x73.png</file>
-        <file>images/clock100x100.jpg</file>
-        <file>images/extinguisher50x116.gif</file>
-        <file>images/spaceship50x70.bmp</file>
+        <file>images/clock100x100.gif</file>
+        <file>images/DuckFeet100x45.bmp</file>
+        <file>images/ken-thompson-l-and-dennis-ritchie-r100x65.png</file>
+        <file>images/spaceship50x59.jpg</file>
+        <file>images/Qtlogo59x71.png</file>
     </qresource>
 </RCC>
