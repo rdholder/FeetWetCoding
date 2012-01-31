@@ -9,10 +9,10 @@ extern bool Gsoln;
 
 int ChangeText::runExercise()
 {
-    Gsoln = false;
+    Gsoln = false;  // Don't worry about what Gsoln is yet.  :-)
 
     // USAGE: DrawText("Text.", x, y, color, fontsize);
-    DrawText("Change this text...", 50, 250, BLUE, 15);
+    DrawText("Change this text to...", 50, 150, BLUE, 15);
 
 
     // This is FeetWetCoding internal stuff you can ignore for now:

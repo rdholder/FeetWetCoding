@@ -13,7 +13,7 @@ int ChangeXSoln::runExercise()
 
     // USAGE: DrawText("Text.", x, y, color, fontsize);
 
-    DrawText("change x", 300, 250, BLUE, 15);
+    DrawText("change x", 300, 150, BLUE, 15);
 
     return 0;
 }

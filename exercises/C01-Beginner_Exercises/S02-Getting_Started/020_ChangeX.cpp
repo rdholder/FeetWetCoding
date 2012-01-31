@@ -14,7 +14,7 @@ int ChangeX::runExercise()
     // USAGE: DrawText("Text.", x, y, color, fontsize);
 
     // CHANGE 10 TO 300
-    DrawText("change x", 10, 250, BLUE, 15);
+    DrawText("change x", 10, 150, BLUE, 15);
 
 
     // This is FeetWetCoding internal stuff you can ignore for now:

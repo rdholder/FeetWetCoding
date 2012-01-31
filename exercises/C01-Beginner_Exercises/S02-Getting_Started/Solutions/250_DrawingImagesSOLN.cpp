@@ -1,0 +1,27 @@
+// copyright (c) 2011 Robert Holder, Janice Dugger.
+// See LICENSE.txt included with this software distribution for conditions of use.
+// FeetWetCoding/exercises/C01-BeginnerExercises/S02-GettingStarted/060_ChangeFont.cpp
+
+// Open (double-click) the README.html file to access the documentation.
+
+#include <setup.h>
+extern bool Gsoln;
+
+int DrawingImagesSoln::runExercise()
+{
+    Gsoln = true;
+
+    // USAGE: DrawImage("images:/filename.png", x, y);
+    DrawImage(":images/ken-thompson-l-and-dennis-ritchie-r100x73.png", 10, 10);
+    DrawImage(":images/BrianKernighan50x58.png", 130, 10);
+    DrawImage(":images/BjarneStroustrup50x55.png", 200, 10);
+    DrawImage(":images/Qtlogo59x71.png", 300, 10);
+    DrawImage(":images/DuckFeet100x45.png", 150, 340);
+    DrawImage(":images/clock100x100.png", 150, 150);
+    DrawImage(":images/spaceship50x70.png", 175, 80);
+    DrawImage(":images/spaceship50x70.png", 70, 160);
+    DrawImage(":images/spaceship50x70.png", 280, 160);
+    DrawImage(":images/spaceship50x70.png", 175, 260);
+
+    return 0;
+}

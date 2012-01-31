@@ -356,6 +356,14 @@ span.rvts64
  font-size: 18pt;
  color: #ff0000;
 }
+span.rvts65
+{
+ font-size: 14pt;
+}
+span.rvts66
+{
+ font-size: 16pt;
+}
 /* ========== Para Styles ========== */
 p,ul,ol /* Paragraph Style */
 {
@@ -602,4 +610,8 @@ p,ul,ol /* Paragraph Style */
  border-style: solid;
  border-width: 3px;
  padding: 5px 5px 5px 5px;
+}
+.rvps35
+{
+ text-align: center;
 }

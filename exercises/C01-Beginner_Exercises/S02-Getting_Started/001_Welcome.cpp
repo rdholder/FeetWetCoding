@@ -12,7 +12,6 @@ int Welcome::runExercise()
     Gsoln = false;
 
     // USAGE: DrawText("Text.", x, y, color, fontsize);
-
     DrawText("Welcome to FeetWetCoding!", 20, 150, BLUE, 20);
 
     // This is FeetWetCoding internal stuff you can ignore for now:

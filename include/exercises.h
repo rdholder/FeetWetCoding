@@ -35,32 +35,6 @@ protected:
 
 ////////////////////// I Beginner ///////////////////////////
 
-class Intro : public FeetWetCodingExercise
-{
-    Q_OBJECT
-public:
-    explicit Intro(QObject *parent = 0):FeetWetCodingExercise(parent){}
-
-signals:
-
-public slots:
-    virtual int runExercise();
-
-};
-
-class IntroSoln : public FeetWetCodingExercise
-{
-    Q_OBJECT
-public:
-    explicit IntroSoln(QObject *parent = 0):FeetWetCodingExercise(parent){}
-
-signals:
-
-public slots:
-    virtual int runExercise();
-
-};
-
 class Welcome : public FeetWetCodingExercise
 {
     Q_OBJECT
@@ -243,6 +217,136 @@ public slots:
 
 };
 
+class DrawLines : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit DrawLines(QObject *parent = 0):FeetWetCodingExercise(parent){}
+
+signals:
+
+public slots:
+    virtual int runExercise();
+
+};
+
+class DrawLinesSoln : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit DrawLinesSoln(QObject *parent = 0):FeetWetCodingExercise(parent){}
+
+signals:
+
+public slots:
+    virtual int runExercise();
+
+};
+
+class DrawCircles : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit DrawCircles(QObject *parent = 0):FeetWetCodingExercise(parent){}
+
+signals:
+
+public slots:
+    virtual int runExercise();
+
+};
+
+class DrawCirclesSoln : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit DrawCirclesSoln(QObject *parent = 0):FeetWetCodingExercise(parent){}
+
+signals:
+
+public slots:
+    virtual int runExercise();
+
+};
+
+class DrawRectangles : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit DrawRectangles(QObject *parent = 0):FeetWetCodingExercise(parent){}
+
+signals:
+
+public slots:
+    virtual int runExercise();
+
+};
+
+class DrawRectanglesSoln : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit DrawRectanglesSoln(QObject *parent = 0):FeetWetCodingExercise(parent){}
+
+signals:
+
+public slots:
+    virtual int runExercise();
+
+};
+
+class DrawDots : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit DrawDots(QObject *parent = 0):FeetWetCodingExercise(parent){}
+
+signals:
+
+public slots:
+    virtual int runExercise();
+
+};
+
+class DrawDotsSoln : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit DrawDotsSoln(QObject *parent = 0):FeetWetCodingExercise(parent){}
+
+signals:
+
+public slots:
+    virtual int runExercise();
+
+};
+
+class DrawEllipses : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit DrawEllipses(QObject *parent = 0):FeetWetCodingExercise(parent){}
+
+signals:
+
+public slots:
+    virtual int runExercise();
+
+};
+
+class DrawEllipsesSoln : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit DrawEllipsesSoln(QObject *parent = 0):FeetWetCodingExercise(parent){}
+
+signals:
+
+public slots:
+    virtual int runExercise();
+
+};
+
 class DrawingText : public FeetWetCodingExercise
 {
     Q_OBJECT
@@ -269,11 +373,11 @@ public slots:
 
 };
 
-class GraphicTools1 : public FeetWetCodingExercise
+class DrawingImages : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit GraphicTools1(QObject *parent = 0):FeetWetCodingExercise(parent){}
+    explicit DrawingImages(QObject *parent = 0):FeetWetCodingExercise(parent){}
 
 signals:
 
@@ -282,11 +386,11 @@ public slots:
 
 };
 
-class GraphicTools1Soln : public FeetWetCodingExercise
+class DrawingImagesSoln : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit GraphicTools1Soln(QObject *parent = 0):FeetWetCodingExercise(parent){}
+    explicit DrawingImagesSoln(QObject *parent = 0):FeetWetCodingExercise(parent){}
 
 signals:
 
@@ -295,11 +399,12 @@ public slots:
 
 };
 
-class SeeOutIntro : public FeetWetCodingExercise
+
+class seeoutIntro : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit SeeOutIntro(QObject *parent = 0):FeetWetCodingExercise(parent){}
+    explicit seeoutIntro(QObject *parent = 0):FeetWetCodingExercise(parent){}
 
 signals:
 
@@ -308,11 +413,11 @@ public slots:
 
 };
 
-class SeeOutIntroSoln : public FeetWetCodingExercise
+class seeoutIntroSoln : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit SeeOutIntroSoln(QObject *parent = 0):FeetWetCodingExercise(parent){}
+    explicit seeoutIntroSoln(QObject *parent = 0):FeetWetCodingExercise(parent){}
 
 signals:
 
@@ -320,6 +425,88 @@ public slots:
     virtual int runExercise();
 
 };
+
+class seeoutFormatting : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit seeoutFormatting(QObject *parent = 0):FeetWetCodingExercise(parent){}
+
+signals:
+
+public slots:
+    virtual int runExercise();
+
+};
+
+class seeoutFormattingSoln : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit seeoutFormattingSoln(QObject *parent = 0):FeetWetCodingExercise(parent){}
+
+signals:
+
+public slots:
+    virtual int runExercise();
+
+};
+
+// CHAPTER01/SECTION03-Types_Variables
+
+class DisplayingIntegers : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit DisplayingIntegers(QObject *parent = 0):FeetWetCodingExercise(parent){}
+
+signals:
+
+public slots:
+    virtual int runExercise();
+
+};
+
+class DisplayingIntegersSoln : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit DisplayingIntegersSoln(QObject *parent = 0):FeetWetCodingExercise(parent){}
+
+signals:
+
+public slots:
+    virtual int runExercise();
+
+};
+
+class DeclaringIntegers : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit DeclaringIntegers(QObject *parent = 0):FeetWetCodingExercise(parent){}
+
+signals:
+
+public slots:
+    virtual int runExercise();
+
+};
+
+class DeclaringIntegersSoln : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit DeclaringIntegersSoln(QObject *parent = 0):FeetWetCodingExercise(parent){}
+
+signals:
+
+public slots:
+    virtual int runExercise();
+
+};
+
+// CH01/S04/Expressions_Syntax
 
 class GetsAndPlusGets : public FeetWetCodingExercise
 {
@@ -346,7 +533,6 @@ public slots:
     virtual int runExercise();
 
 };
-
 class WhileLoop1 : public FeetWetCodingExercise
 {
     Q_OBJECT

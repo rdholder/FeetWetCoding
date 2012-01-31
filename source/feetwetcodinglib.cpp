@@ -307,10 +307,19 @@ void DrawFloat( float number, int x, int y, Color color, int fontSize, int decim
     view->scene()->addItem(newText);
 }
 
-void DrawImage( int x, int y, QString filename )
+void DrawImage( QString filename, int x, int y )
 {
     QPixmap pixmap( filename );
     QGraphicsPixmapItem *newPixmap = new QGraphicsPixmapItem(pixmap);
+
+    if ( drawingAreaLayout.getOrientation() == LEFTRIGHT && Gsoln )
+    {
+        x += WINDOW_WIDTH/2;
+    }
+    if ( drawingAreaLayout.getOrientation() == TOPBOTTOM && Gsoln )
+    {
+        y += WINDOW_HEIGHT/2;
+    }
 
     // Load an image from a file and add it to the scene
     newPixmap->setPos(x, y);
@@ -328,17 +337,17 @@ void DrawReferenceBox( RefBoxLayout layout )
     oss << 0 << "," << 0;
     DrawText(oss.str(), -10, -20, GRAY, dimsSize);
 
-    oss.str("");
-    oss << WINDOW_WIDTH << "," << 0;
-    DrawText(oss.str(), WINDOW_WIDTH-30, -20, GRAY, dimsSize);
+//    oss.str("");
+//    oss << WINDOW_WIDTH << "," << 0;
+//    DrawText(oss.str(), WINDOW_WIDTH-30, -20, GRAY, dimsSize);
 
     oss.str("");
     oss << 0 << "," << WINDOW_HEIGHT;
     DrawText(oss.str(), -10, WINDOW_HEIGHT, GRAY, dimsSize);
 
-    oss.str("");
-    oss << WINDOW_WIDTH << "," << WINDOW_HEIGHT;
-    DrawText(oss.str(), WINDOW_WIDTH-30, WINDOW_HEIGHT, GRAY, dimsSize);
+//    oss.str("");
+//    oss << WINDOW_WIDTH << "," << WINDOW_HEIGHT;
+//    DrawText(oss.str(), WINDOW_WIDTH-30, WINDOW_HEIGHT, GRAY, dimsSize);
 
     switch (layout) {
     case LEFTRIGHT:

@@ -13,7 +13,7 @@ int ChangeTextSoln::runExercise()
 
     // USAGE: DrawText("Text.", x, y, color, fontsize);
 
-    DrawText("...to your name! :-)", 50, 250, BLUE, 15);
+    DrawText("...your name! :-)", 100, 150, BLUE, 15);
 
     return 0;
 }

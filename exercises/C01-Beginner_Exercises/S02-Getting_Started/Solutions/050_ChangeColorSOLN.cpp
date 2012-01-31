@@ -13,7 +13,7 @@ int ChangeColorSoln::runExercise()
 
     // USAGE: DrawText("Text.", x, y, color, fontsize);
 
-    DrawText("color is RED", 50, 250, RED, 15);
+    DrawText("color is RED", 50, 150, RED, 15);
 
     return 0;
 }

@@ -12,7 +12,7 @@ int ChangeColor::runExercise()
     Gsoln = false;
 
     // USAGE: DrawText("Text.", x, y, color, fontsize);
-    DrawText("color is BLUE", 50, 250, BLUE, 15);
+    DrawText("color is BLUE", 50, 150, BLUE, 15);
 
 
     // This is FeetWetCoding internal stuff you can ignore for now:
