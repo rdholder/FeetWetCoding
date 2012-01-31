@@ -1,0 +1,141 @@
+﻿<html>
+	
+<head>
+	<title>01-01-002: Text on the Screen</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc">
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript"><!--
+		var sTopicId = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+		if (top.frames.length == 0)
+			top.location.href = "FeetWetCoding.html?" + sTopicId
+		else if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+			top.FrameTOC.SelectTocItem(sTopicId);
+	</script>
+</head>
+
+<body>
+
+	<div id="topic_header">
+			<div id="topic_header_content">
+				<h1>01-01-002: Text on the Screen</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Exercises.html">Exercises</a> &rsaquo;&rsaquo; <a href="Chapter01BeginnerExercises.html">Chapter 01: Beginner Exercises</a> &rsaquo;&rsaquo; <a href="Section02GettingStarted.html">Section 02: Getting Started</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="Section02GettingStarted.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="0101001IntroExercise.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="0101003GraphicToolsIntro.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p class="rvps3"><span class="rvts17">Chapter 01, Exercise 02: &nbsp;Text on the Screen</span></p>
+<p class="rvps3"><span class="rvts17"><br></span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;//</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// FeetWetCoding Exercise 1: &nbsp;How to display text in your program's window!</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;//</span></p>
+<p class="rvps3"><span class="rvts7"><br></span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// In this exercise you will learn how to draw text in the drawing area.</span></p>
+<p class="rvps3"><span class="rvts7"><br></span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// We draw text on the screen with DrawText(). &nbsp;DrawText() is a "function". &nbsp;When you see a word</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// with parentheses after it like that, it means that word is the name of a function. &nbsp;We will talk</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// about functions more later. &nbsp;For now, just think of a function as a tool that does a particular</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// job for you.</span></p>
+<p class="rvps3"><span class="rvts7"><br></span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// We have to tell DrawText() what text we want to draw, where to draw it, what font size to use,</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// and what color we want the text to be. &nbsp;We put this information in between the parentheses</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// of DrawText() like this:</span></p>
+<p class="rvps3"><span class="rvts7"><br></span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// DrawText("Some text", x, y, fontsize, color);</span></p>
+<p class="rvps3"><span class="rvts7"><br></span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// ...we call the information between the () parentheses, "parameters". &nbsp;Parameters are just</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// the information we give to the DrawText function in order to tell it what we want it to do.</span></p>
+<p class="rvps3"><span class="rvts7"><br></span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// The x and y parameters are used to determine where on the screen things are drawn. &nbsp;x and y both</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// start at zero in the upper left corner of our window when the program runs.</span></p>
+<p class="rvps3"><span class="rvts7"><br></span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// X gets BIGGER towards the RIGHT edge of the window.</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// Y gets BIGGER towards the BOTTOM edge of the window.</span></p>
+<p class="rvps3"><span class="rvts7"><br></span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// We have to put the parameters in between the DrawText() parentheses in the same order</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// every time! It's always:</span></p>
+<p class="rvps3"><span class="rvts7"><br></span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// "text", x, y, fontsize, color</span></p>
+<p class="rvps3"><span class="rvts7"><br></span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// ...every time! &nbsp;If you forget one, or type them in the wrong order, your program probably</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// won't work, and it may not even compile! &nbsp;Be sure to read the HandsDirtyCPP/helpinfo</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// documentation for this exercise to learn what the compiler is and what to do if you get</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// compiler errors.</span></p>
+<p class="rvps3"><span class="rvts7"><br></span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;DrawText("This is at location 5, 10 with font size 10 in black.", &nbsp;5, 10, 10, BLACK);</span></p>
+<p class="rvps3"><span class="rvts7"><br></span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;DrawText("This is at location 5, 30 with font size 13 in blue.", 5, 30, 13, BLUE);</span></p>
+<p class="rvps3"><span class="rvts7"><br></span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// Below, the "x coordinates", or the first column of numbers, are "stepping</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// on each other" so that each word is drawn over the next word. &nbsp;Can you pick some</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// better numbers for the first column so that the sentence reads correctly and the words</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// are not on top of each other in a big mess?</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;DrawText("Help!", &nbsp; &nbsp; &nbsp; &nbsp;5, &nbsp;100, 15, GREEN);</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;DrawText("I'm", &nbsp; &nbsp; &nbsp; &nbsp; 50, &nbsp;100, 15, GREEN);</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;DrawText("all", &nbsp; &nbsp; &nbsp; &nbsp; 70, &nbsp;100, 15, GREEN);</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;DrawText("messed", &nbsp; &nbsp; &nbsp;85, 100, 15, GREEN);</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;DrawText("up!", &nbsp; &nbsp; &nbsp; &nbsp; 145, 100, 15, GREEN);</span></p>
+<p class="rvps3"><span class="rvts7"><br></span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// Can you fix this one too? :-) &nbsp;(hint: &nbsp;the numbers in the first column (the x column), starting</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// with 400 are in the wrong order. &nbsp;DrawText for "This" should not have 300 there! :-)</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;DrawText("This", &nbsp; &nbsp; &nbsp; &nbsp;160, 200, 15, RED);</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;DrawText("sentence", &nbsp; &nbsp;210, 200, 15, RED);</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;DrawText("is", &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;300, 200, 15, RED);</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;DrawText("out", &nbsp; &nbsp; &nbsp; &nbsp; 5, &nbsp;200, 15, RED);</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;DrawText("of", &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;50, 200, 15, RED);</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;DrawText("order!", &nbsp; &nbsp; &nbsp;100, 200, 15, RED);</span></p>
+<p class="rvps3"><span class="rvts7"><br></span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// How about this one? :-) &nbsp;(hint: &nbsp;if you figured out the previous problems, this should be easy!)</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;DrawText("Make", &nbsp; &nbsp; &nbsp; &nbsp;5, &nbsp;300, 8, PINK);</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;DrawText("these", &nbsp; &nbsp; &nbsp; 40, &nbsp;300, 10, PINK);</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;DrawText("words", &nbsp; &nbsp; &nbsp; 80, 300, 12, PINK);</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;DrawText("have", &nbsp; &nbsp; &nbsp; &nbsp;130, 300, 14, PINK);</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;DrawText("fontsize", &nbsp; &nbsp;180, 300, 16, PINK);</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;DrawText("10.", &nbsp; &nbsp; &nbsp; &nbsp; 260, 300, 18, PINK);</span></p>
+<p class="rvps3"><span class="rvts7"><br></span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// Here's some vertical text that is not lined up properly. &nbsp;:-)</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// (hint: &nbsp;you still need to change the x column values here, not the y column, which is set up</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// OK to have the words descend properly as the sentence is read downwards.)</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;DrawText("Make", &nbsp; &nbsp; &nbsp; &nbsp;70, 400, &nbsp;15, GRAY);</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;DrawText("these", &nbsp; &nbsp; &nbsp; 80, 425, &nbsp;15, GRAY);</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;DrawText("words", &nbsp; &nbsp; &nbsp; 60, 450, &nbsp;15, GRAY);</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;DrawText("line", &nbsp; &nbsp; &nbsp; &nbsp;75, 475, 15, GRAY);</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;DrawText("up", &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;65, 500, 15, GRAY);</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;DrawText("vertically!", 60, 525, 15, GRAY);</span></p>
+<p class="rvps3"><span class="rvts7"><br></span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;DrawReferenceBox(true, true); &nbsp; &nbsp; // draw the graphical reference frame</span></p>
+<p class="rvps3"><span class="rvts7"><br></span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;return 0;</span></p>
+<p class="rvps3"><span class="rvts7">}</span></p>
+<p class="rvps3"><span class="rvts7"><br></span></p>
+<p class="rvps3"><span class="rvts7"><br></span></p>
+<p class="rvps3"><span class="rvts10">documentation generated by HelpNDoc </span><span class="rvts10">1/30/2012 6:49 PM</span></p>
+<p class="rvps3"><span class="rvts10"><div style="font-family:Arial;font-size:12pt;background-color:#EEEEEE;background-color:teal;color:white;padding:4px;font-weight:bold">
+	FeetWetCoding version 0.0.1 copyright (c) 2011,2012 Robert Holder, Janice Dugger.<br/>
+	support@feetwetcoding.com -- Latest Source: https://github.com/rdholder/FeetWetCoding<br/>
+</div></span></p>
+<p class="rvps4"><span class="rvts21">Created with the Personal Edition of HelpNDoc: </span><a class="rvts22" href="http://www.helpndoc.com">Free PDF documentation generator</a></p>
+</div>
+	
+	</body>
+	
+</html>
+

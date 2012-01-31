@@ -1,6 +1,6 @@
 // HandsDirty/exercises/C01-/S01-EXNAME.cpp
 // Chapter 01 Section 01 Exercise 01: DESC
-// copyright (c) 2011 Robert Holder, Janice Dugger.  All rights reserved.
+// copyright (c) 2011 Robert Holder, Janice Dugger.  
 // See LICENSE.txt included with this software distribution for conditions of use.
 // Refer to the documentation in ~HandsDirty/help for more information about this exercise.
 

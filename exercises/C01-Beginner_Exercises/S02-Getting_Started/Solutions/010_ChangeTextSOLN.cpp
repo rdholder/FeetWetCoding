@@ -1,4 +1,4 @@
-// copyright (c) 2011 Robert Holder, Janice Dugger.  All rights reserved.
+// copyright (c) 2011 Robert Holder, Janice Dugger.  
 // See LICENSE.txt included with this software distribution for conditions of use.
 // FeetWetCoding/exercises/C01-BeginnerExercises/S02-GettingStarted/010_ChangeTextSOLN.cpp
 

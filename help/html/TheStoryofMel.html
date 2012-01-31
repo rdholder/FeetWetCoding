@@ -1,0 +1,318 @@
+﻿<html>
+	
+<head>
+	<title>The Story of Mel</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc">
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript"><!--
+		var sTopicId = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+		if (top.frames.length == 0)
+			top.location.href = "FeetWetCoding.html?" + sTopicId
+		else if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+			top.FrameTOC.SelectTocItem(sTopicId);
+	</script>
+</head>
+
+<body>
+
+	<div id="topic_header">
+			<div id="topic_header_content">
+				<h1>The Story of Mel</h1>
+				
+				</div>
+			<div id="topic_header_nav">
+				<a href="Glossary.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="ProjectDocumentation.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p class="rvps3"><span class="rvts17">The Story of Mel</span></p>
+<p class="rvps3"><span class="rvts17"><br></span></p>
+<p class="rvps3"><span class="rvts17">This was posted to Usenet by its author, Ed Nather (&lt;nather@astro.as.utexas.edu&gt;), on May 21, 1983.</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts36"><br></span></p>
+<p class="rvps3"><span class="rvts36">A recent article devoted to the macho side of programming</span></p>
+<p class="rvps3"><span class="rvts36">made the bald and unvarnished statement:</span></p>
+<p class="rvps3"><span class="rvts36"><br></span></p>
+<p class="rvps3"><span class="rvts36"> &nbsp; &nbsp;Real Programmers write in FORTRAN.</span></p>
+<p class="rvps3"><span class="rvts36"><br></span></p>
+<p class="rvps3"><span class="rvts36">Maybe they do now,</span></p>
+<p class="rvps3"><span class="rvts36">in this decadent era of</span></p>
+<p class="rvps3"><span class="rvts36">Lite beer, hand calculators, and “user-friendly” software</span></p>
+<p class="rvps3"><span class="rvts36">but back in the Good Old Days,</span></p>
+<p class="rvps3"><span class="rvts36">when the term “software” sounded funny</span></p>
+<p class="rvps3"><span class="rvts36">and Real Computers were made out of drums and vacuum tubes,</span></p>
+<p class="rvps3"><span class="rvts36">Real Programmers wrote in machine code.</span></p>
+<p class="rvps3"><span class="rvts36">Not FORTRAN. &nbsp;Not RATFOR. &nbsp;Not, even, assembly language.</span></p>
+<p class="rvps3"><span class="rvts36">Machine Code.</span></p>
+<p class="rvps3"><span class="rvts36">Raw, unadorned, inscrutable hexadecimal numbers.</span></p>
+<p class="rvps3"><span class="rvts36">Directly.</span></p>
+<p class="rvps3"><span class="rvts36"><br></span></p>
+<p class="rvps3"><span class="rvts36">Lest a whole new generation of programmers</span></p>
+<p class="rvps3"><span class="rvts36">grow up in ignorance of this glorious past,</span></p>
+<p class="rvps3"><span class="rvts36">I feel duty-bound to describe,</span></p>
+<p class="rvps3"><span class="rvts36">as best I can through the generation gap,</span></p>
+<p class="rvps3"><span class="rvts36">how a Real Programmer wrote code.</span></p>
+<p class="rvps3"><span class="rvts36">I'll call him Mel,</span></p>
+<p class="rvps3"><span class="rvts36">because that was his name.</span></p>
+<p class="rvps3"><span class="rvts36"><br></span></p>
+<p class="rvps3"><span class="rvts36">I first met Mel when I went to work for Royal McBee Computer Corp.,</span></p>
+<p class="rvps3"><span class="rvts36">a now-defunct subsidiary of the typewriter company.</span></p>
+<p class="rvps3"><span class="rvts36">The firm manufactured the LGP-30,</span></p>
+<p class="rvps3"><span class="rvts36">a small, cheap (by the standards of the day)</span></p>
+<p class="rvps3"><span class="rvts36">drum-memory computer,</span></p>
+<p class="rvps3"><span class="rvts36">and had just started to manufacture</span></p>
+<p class="rvps3"><span class="rvts36">the RPC-4000, a much-improved,</span></p>
+<p class="rvps3"><span class="rvts36">bigger, better, faster — drum-memory computer.</span></p>
+<p class="rvps3"><span class="rvts36">Cores cost too much,</span></p>
+<p class="rvps3"><span class="rvts36">and weren't here to stay, anyway.</span></p>
+<p class="rvps3"><span class="rvts36">(That's why you haven't heard of the company,</span></p>
+<p class="rvps3"><span class="rvts36">or the computer.)</span></p>
+<p class="rvps3"><span class="rvts36"><br></span></p>
+<p class="rvps3"><span class="rvts36">I had been hired to write a FORTRAN compiler</span></p>
+<p class="rvps3"><span class="rvts36">for this new marvel and Mel was my guide to its wonders.</span></p>
+<p class="rvps3"><span class="rvts36">Mel didn't approve of compilers.</span></p>
+<p class="rvps3"><span class="rvts36"><br></span></p>
+<p class="rvps3"><span class="rvts36">“If a program can't rewrite its own code”,</span></p>
+<p class="rvps3"><span class="rvts36">he asked, “what good is it?”</span></p>
+<p class="rvps3"><span class="rvts36"><br></span></p>
+<p class="rvps3"><span class="rvts36">Mel had written,</span></p>
+<p class="rvps3"><span class="rvts36">in hexadecimal,</span></p>
+<p class="rvps3"><span class="rvts36">the most popular computer program the company owned.</span></p>
+<p class="rvps3"><span class="rvts36">It ran on the LGP-30</span></p>
+<p class="rvps3"><span class="rvts36">and played blackjack with potential customers</span></p>
+<p class="rvps3"><span class="rvts36">at computer shows.</span></p>
+<p class="rvps3"><span class="rvts36">Its effect was always dramatic.</span></p>
+<p class="rvps3"><span class="rvts36">The LGP-30 booth was packed at every show,</span></p>
+<p class="rvps3"><span class="rvts36">and the IBM salesmen stood around</span></p>
+<p class="rvps3"><span class="rvts36">talking to each other.</span></p>
+<p class="rvps3"><span class="rvts36">Whether or not this actually sold computers</span></p>
+<p class="rvps3"><span class="rvts36">was a question we never discussed.</span></p>
+<p class="rvps3"><span class="rvts36"><br></span></p>
+<p class="rvps3"><span class="rvts36">Mel's job was to re-write</span></p>
+<p class="rvps3"><span class="rvts36">the blackjack program for the RPC-4000.</span></p>
+<p class="rvps3"><span class="rvts36">(Port? &nbsp;What does that mean?)</span></p>
+<p class="rvps3"><span class="rvts36">The new computer had a one-plus-one</span></p>
+<p class="rvps3"><span class="rvts36">addressing scheme,</span></p>
+<p class="rvps3"><span class="rvts36">in which each machine instruction,</span></p>
+<p class="rvps3"><span class="rvts36">in addition to the operation code</span></p>
+<p class="rvps3"><span class="rvts36">and the address of the needed operand,</span></p>
+<p class="rvps3"><span class="rvts36">had a second address that indicated where, on the revolving drum,</span></p>
+<p class="rvps3"><span class="rvts36">the next instruction was located.</span></p>
+<p class="rvps3"><span class="rvts36"><br></span></p>
+<p class="rvps3"><span class="rvts36">In modern parlance,</span></p>
+<p class="rvps3"><span class="rvts36">every single instruction was followed by a GO TO!</span></p>
+<p class="rvps3"><span class="rvts36">Put that in Pascal's pipe and smoke it.</span></p>
+<p class="rvps3"><span class="rvts36"><br></span></p>
+<p class="rvps3"><span class="rvts36">Mel loved the RPC-4000</span></p>
+<p class="rvps3"><span class="rvts36">because he could optimize his code:</span></p>
+<p class="rvps3"><span class="rvts36">that is, locate instructions on the drum</span></p>
+<p class="rvps3"><span class="rvts36">so that just as one finished its job,</span></p>
+<p class="rvps3"><span class="rvts36">the next would be just arriving at the “read head”</span></p>
+<p class="rvps3"><span class="rvts36">and available for immediate execution.</span></p>
+<p class="rvps3"><span class="rvts36">There was a program to do that job,</span></p>
+<p class="rvps3"><span class="rvts36">an “optimizing assembler”,</span></p>
+<p class="rvps3"><span class="rvts36">but Mel refused to use it.</span></p>
+<p class="rvps3"><span class="rvts36"><br></span></p>
+<p class="rvps3"><span class="rvts36">“You never know where it's going to put things”,</span></p>
+<p class="rvps3"><span class="rvts36">he explained, “so you'd have to use separate constants”.</span></p>
+<p class="rvps3"><span class="rvts36"><br></span></p>
+<p class="rvps3"><span class="rvts36">It was a long time before I understood that remark.</span></p>
+<p class="rvps3"><span class="rvts36">Since Mel knew the numerical value</span></p>
+<p class="rvps3"><span class="rvts36">of every operation code,</span></p>
+<p class="rvps3"><span class="rvts36">and assigned his own drum addresses,</span></p>
+<p class="rvps3"><span class="rvts36">every instruction he wrote could also be considered</span></p>
+<p class="rvps3"><span class="rvts36">a numerical constant.</span></p>
+<p class="rvps3"><span class="rvts36">He could pick up an earlier “add” instruction, say,</span></p>
+<p class="rvps3"><span class="rvts36">and multiply by it,</span></p>
+<p class="rvps3"><span class="rvts36">if it had the right numeric value.</span></p>
+<p class="rvps3"><span class="rvts36">His code was not easy for someone else to modify.</span></p>
+<p class="rvps3"><span class="rvts36"><br></span></p>
+<p class="rvps3"><span class="rvts36">I compared Mel's hand-optimized programs</span></p>
+<p class="rvps3"><span class="rvts36">with the same code massaged by the optimizing assembler program,</span></p>
+<p class="rvps3"><span class="rvts36">and Mel's always ran faster.</span></p>
+<p class="rvps3"><span class="rvts36">That was because the “top-down” method of program design</span></p>
+<p class="rvps3"><span class="rvts36">hadn't been invented yet,</span></p>
+<p class="rvps3"><span class="rvts36">and Mel wouldn't have used it anyway.</span></p>
+<p class="rvps3"><span class="rvts36">He wrote the innermost parts of his program loops first,</span></p>
+<p class="rvps3"><span class="rvts36">so they would get first choice</span></p>
+<p class="rvps3"><span class="rvts36">of the optimum address locations on the drum.</span></p>
+<p class="rvps3"><span class="rvts36">The optimizing assembler wasn't smart enough to do it that way.</span></p>
+<p class="rvps3"><span class="rvts36"><br></span></p>
+<p class="rvps3"><span class="rvts36">Mel never wrote time-delay loops, either,</span></p>
+<p class="rvps3"><span class="rvts36">even when the balky Flexowriter</span></p>
+<p class="rvps3"><span class="rvts36">required a delay between output characters to work right.</span></p>
+<p class="rvps3"><span class="rvts36">He just located instructions on the drum</span></p>
+<p class="rvps3"><span class="rvts36">so each successive one was just past the read head</span></p>
+<p class="rvps3"><span class="rvts36">when it was needed;</span></p>
+<p class="rvps3"><span class="rvts36">the drum had to execute another complete revolution</span></p>
+<p class="rvps3"><span class="rvts36">to find the next instruction.</span></p>
+<p class="rvps3"><span class="rvts36">He coined an unforgettable term for this procedure.</span></p>
+<p class="rvps3"><span class="rvts36">Although “optimum” is an absolute term,</span></p>
+<p class="rvps3"><span class="rvts36">like “unique”, it became common verbal practice</span></p>
+<p class="rvps3"><span class="rvts36">to make it relative:</span></p>
+<p class="rvps3"><span class="rvts36">“not quite optimum” or “less optimum”</span></p>
+<p class="rvps3"><span class="rvts36">or “not very optimum”.</span></p>
+<p class="rvps3"><span class="rvts36">Mel called the maximum time-delay locations</span></p>
+<p class="rvps3"><span class="rvts36">the “most pessimum”.</span></p>
+<p class="rvps3"><span class="rvts36"><br></span></p>
+<p class="rvps3"><span class="rvts36">After he finished the blackjack program</span></p>
+<p class="rvps3"><span class="rvts36">and got it to run</span></p>
+<p class="rvps3"><span class="rvts36">(“Even the initializer is optimized”,</span></p>
+<p class="rvps3"><span class="rvts36">he said proudly),</span></p>
+<p class="rvps3"><span class="rvts36">he got a Change Request from the sales department.</span></p>
+<p class="rvps3"><span class="rvts36">The program used an elegant (optimized)</span></p>
+<p class="rvps3"><span class="rvts36">random number generator</span></p>
+<p class="rvps3"><span class="rvts36">to shuffle the “cards” and deal from the “deck”,</span></p>
+<p class="rvps3"><span class="rvts36">and some of the salesmen felt it was too fair,</span></p>
+<p class="rvps3"><span class="rvts36">since sometimes the customers lost.</span></p>
+<p class="rvps3"><span class="rvts36">They wanted Mel to modify the program</span></p>
+<p class="rvps3"><span class="rvts36">so, at the setting of a sense switch on the console,</span></p>
+<p class="rvps3"><span class="rvts36">they could change the odds and let the customer win.</span></p>
+<p class="rvps3"><span class="rvts36"><br></span></p>
+<p class="rvps3"><span class="rvts36">Mel balked.</span></p>
+<p class="rvps3"><span class="rvts36">He felt this was patently dishonest,</span></p>
+<p class="rvps3"><span class="rvts36">which it was,</span></p>
+<p class="rvps3"><span class="rvts36">and that it impinged on his personal integrity as a programmer,</span></p>
+<p class="rvps3"><span class="rvts36">which it did,</span></p>
+<p class="rvps3"><span class="rvts36">so he refused to do it.</span></p>
+<p class="rvps3"><span class="rvts36">The Head Salesman talked to Mel,</span></p>
+<p class="rvps3"><span class="rvts36">as did the Big Boss and, at the boss's urging,</span></p>
+<p class="rvps3"><span class="rvts36">a few Fellow Programmers.</span></p>
+<p class="rvps3"><span class="rvts36">Mel finally gave in and wrote the code,</span></p>
+<p class="rvps3"><span class="rvts36">but he got the test backwards,</span></p>
+<p class="rvps3"><span class="rvts36">and, when the sense switch was turned on,</span></p>
+<p class="rvps3"><span class="rvts36">the program would cheat, winning every time.</span></p>
+<p class="rvps3"><span class="rvts36">Mel was delighted with this,</span></p>
+<p class="rvps3"><span class="rvts36">claiming his subconscious was uncontrollably ethical,</span></p>
+<p class="rvps3"><span class="rvts36">and adamantly refused to fix it.</span></p>
+<p class="rvps3"><span class="rvts36"><br></span></p>
+<p class="rvps3"><span class="rvts36">After Mel had left the company for greener pa$ture$,</span></p>
+<p class="rvps3"><span class="rvts36">the Big Boss asked me to look at the code</span></p>
+<p class="rvps3"><span class="rvts36">and see if I could find the test and reverse it.</span></p>
+<p class="rvps3"><span class="rvts36">Somewhat reluctantly, I agreed to look.</span></p>
+<p class="rvps3"><span class="rvts36">Tracking Mel's code was a real adventure.</span></p>
+<p class="rvps3"><span class="rvts36"><br></span></p>
+<p class="rvps3"><span class="rvts36">I have often felt that programming is an art form,</span></p>
+<p class="rvps3"><span class="rvts36">whose real value can only be appreciated</span></p>
+<p class="rvps3"><span class="rvts36">by another versed in the same arcane art;</span></p>
+<p class="rvps3"><span class="rvts42">there are lovely gems and brilliant coups</span></p>
+<p class="rvps3"><span class="rvts42">hidden from human view and admiration, sometimes forever,</span></p>
+<p class="rvps3"><span class="rvts36">by the very nature of the process.</span></p>
+<p class="rvps3"><span class="rvts36">You can learn a lot about an individual</span></p>
+<p class="rvps3"><span class="rvts36">just by reading through his code,</span></p>
+<p class="rvps3"><span class="rvts36">even in hexadecimal.</span></p>
+<p class="rvps3"><span class="rvts36">Mel was, I think, an unsung genius.</span></p>
+<p class="rvps3"><span class="rvts36"><br></span></p>
+<p class="rvps3"><span class="rvts36">Perhaps my greatest shock came</span></p>
+<p class="rvps3"><span class="rvts36">when I found an innocent loop that had no test in it.</span></p>
+<p class="rvps3"><span class="rvts36">No test. &nbsp;None.</span></p>
+<p class="rvps3"><span class="rvts36">Common sense said it had to be a closed loop,</span></p>
+<p class="rvps3"><span class="rvts36">where the program would circle, forever, endlessly.</span></p>
+<p class="rvps3"><span class="rvts36">Program control passed right through it, however,</span></p>
+<p class="rvps3"><span class="rvts36">and safely out the other side.</span></p>
+<p class="rvps3"><span class="rvts36">It took me two weeks to figure it out.</span></p>
+<p class="rvps3"><span class="rvts36"><br></span></p>
+<p class="rvps3"><span class="rvts36">The RPC-4000 computer had a really modern facility</span></p>
+<p class="rvps3"><span class="rvts36">called an index register.</span></p>
+<p class="rvps3"><span class="rvts36">It allowed the programmer to write a program loop</span></p>
+<p class="rvps3"><span class="rvts36">that used an indexed instruction inside;</span></p>
+<p class="rvps3"><span class="rvts36">each time through,</span></p>
+<p class="rvps3"><span class="rvts36">the number in the index register</span></p>
+<p class="rvps3"><span class="rvts36">was added to the address of that instruction,</span></p>
+<p class="rvps3"><span class="rvts36">so it would refer</span></p>
+<p class="rvps3"><span class="rvts36">to the next datum in a series.</span></p>
+<p class="rvps3"><span class="rvts36">He had only to increment the index register</span></p>
+<p class="rvps3"><span class="rvts36">each time through.</span></p>
+<p class="rvps3"><span class="rvts36">Mel never used it.</span></p>
+<p class="rvps3"><span class="rvts36"><br></span></p>
+<p class="rvps3"><span class="rvts36">Instead, he would pull the instruction into a machine register,</span></p>
+<p class="rvps3"><span class="rvts36">add one to its address,</span></p>
+<p class="rvps3"><span class="rvts36">and store it back.</span></p>
+<p class="rvps3"><span class="rvts36">He would then execute the modified instruction</span></p>
+<p class="rvps3"><span class="rvts36">right from the register.</span></p>
+<p class="rvps3"><span class="rvts36">The loop was written so this additional execution time</span></p>
+<p class="rvps3"><span class="rvts36">was taken into account —</span></p>
+<p class="rvps3"><span class="rvts36">just as this instruction finished,</span></p>
+<p class="rvps3"><span class="rvts36">the next one was right under the drum's read head,</span></p>
+<p class="rvps3"><span class="rvts36">ready to go.</span></p>
+<p class="rvps3"><span class="rvts36">But the loop had no test in it.</span></p>
+<p class="rvps3"><span class="rvts36"><br></span></p>
+<p class="rvps3"><span class="rvts36">The vital clue came when I noticed</span></p>
+<p class="rvps3"><span class="rvts36">the index register bit,</span></p>
+<p class="rvps3"><span class="rvts36">the bit that lay between the address</span></p>
+<p class="rvps3"><span class="rvts36">and the operation code in the instruction word,</span></p>
+<p class="rvps3"><span class="rvts36">was turned on —</span></p>
+<p class="rvps3"><span class="rvts36">yet Mel never used the index register,</span></p>
+<p class="rvps3"><span class="rvts36">leaving it zero all the time.</span></p>
+<p class="rvps3"><span class="rvts36">When the light went on it nearly blinded me.</span></p>
+<p class="rvps3"><span class="rvts36"><br></span></p>
+<p class="rvps3"><span class="rvts36">He had located the data he was working on</span></p>
+<p class="rvps3"><span class="rvts36">near the top of memory —</span></p>
+<p class="rvps3"><span class="rvts36">the largest locations the instructions could address —</span></p>
+<p class="rvps3"><span class="rvts36">so, after the last datum was handled,</span></p>
+<p class="rvps3"><span class="rvts36">incrementing the instruction address</span></p>
+<p class="rvps3"><span class="rvts36">would make it overflow.</span></p>
+<p class="rvps3"><span class="rvts36">The carry would add one to the</span></p>
+<p class="rvps3"><span class="rvts36">operation code, changing it to the next one in the instruction set:</span></p>
+<p class="rvps3"><span class="rvts36">a jump instruction.</span></p>
+<p class="rvps3"><span class="rvts36">Sure enough, the next program instruction was</span></p>
+<p class="rvps3"><span class="rvts36">in address location zero,</span></p>
+<p class="rvps3"><span class="rvts36">and the program went happily on its way.</span></p>
+<p class="rvps3"><span class="rvts36"><br></span></p>
+<p class="rvps3"><span class="rvts36">I haven't kept in touch with Mel,</span></p>
+<p class="rvps3"><span class="rvts36">so I don't know if he ever gave in to the flood of</span></p>
+<p class="rvps3"><span class="rvts36">change that has washed over programming techniques</span></p>
+<p class="rvps3"><span class="rvts36">since those long-gone days.</span></p>
+<p class="rvps3"><span class="rvts36">I like to think he didn't.</span></p>
+<p class="rvps3"><span class="rvts36">In any event,</span></p>
+<p class="rvps3"><span class="rvts36">I was impressed enough that I quit looking for the</span></p>
+<p class="rvps3"><span class="rvts36">offending test,</span></p>
+<p class="rvps3"><span class="rvts36">telling the Big Boss I couldn't find it.</span></p>
+<p class="rvps3"><span class="rvts36">He didn't seem surprised.</span></p>
+<p class="rvps3"><span class="rvts36"><br></span></p>
+<p class="rvps3"><span class="rvts36">When I left the company,</span></p>
+<p class="rvps3"><span class="rvts36">the blackjack program would still cheat</span></p>
+<p class="rvps3"><span class="rvts36">if you turned on the right sense switch,</span></p>
+<p class="rvps3"><span class="rvts36">and I think that's how it should be.</span></p>
+<p class="rvps3"><span class="rvts36">I didn't feel comfortable</span></p>
+<p class="rvps3"><span class="rvts36">hacking up the code of a Real Programmer.</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps34"><span class="rvts10">There is joy to be found in coding. &nbsp;Find it! :-)</span></p>
+<p class="rvps3"><span class="rvts17"><br></span></p>
+<p class="rvps3"><span class="rvts17">This is one of hackerdom's great heroic epics, free verse or no. In a few spare images it captures more about the aesthetics and psychology of hacking than all the scholarly volumes on the subject put together. (But for an opposing point of view, see the entry for Real Programmer.)</span></p>
+<p class="rvps3"><span class="rvts17"><br></span></p>
+<p class="rvps3"><span class="rvts17">[1992 postscript — the author writes: “The original submission to the net was not in free verse, nor any approximation to it — it was straight prose style, in non-justified paragraphs. In bouncing around the net it apparently got modified into the ‘free verse' form now popular. In other words, it got hacked on the net. That seems appropriate, somehow.” The author adds that he likes the ‘free-verse' version better than his prose original...]</span></p>
+<p class="rvps3"><span class="rvts17"><br></span></p>
+<p class="rvps3"><span class="rvts17">[1999 update: Mel's last name is now known. The manual for the LGP-30 refers to “Mel Kaye of Royal McBee who did the bulk of the programming [...] of the ACT 1 system”.]</span></p>
+<p class="rvps3"><span class="rvts17"><br></span></p>
+<p class="rvps3"><span class="rvts17">[2001: The Royal McBee LPG-30 turns out to have one other claim to fame. It turns out that meteorologist Edward Lorenz was doing weather simulations on an LGP-30 when, in 1961, he discovered the “Butterfly Effect” and computational chaos. This seems, somehow, appropriate.]</span></p>
+<p class="rvps3"><span class="rvts17"><br></span></p>
+<p class="rvps3"><span class="rvts17">[2002: A copy of the programming manual for the LGP-30 lives at http://ed-thelen.org/comp-hist/lgp-30-man.html]</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">(The Story of Mel here is taken from </span><a class="rvts12" href="http://www.jargon.8hz.com/html/story-of-mel.html">http://www.jargon.8hz.com/html/story-of-mel.html</a><span class="rvts10">) and it does not fall under our copyright.)</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">documentation generated by HelpNDoc </span><span class="rvts10">1/30/2012 6:49 PM</span></p>
+<p class="rvps3"><span class="rvts10"><div style="font-family:Arial;font-size:12pt;background-color:#EEEEEE;background-color:teal;color:white;padding:4px;font-weight:bold">
+	FeetWetCoding version 0.0.1 copyright (c) 2011,2012 Robert Holder, Janice Dugger.<br/>
+	support@feetwetcoding.com -- Latest Source: https://github.com/rdholder/FeetWetCoding<br/>
+</div></span></p>
+<p class="rvps4"><span class="rvts21">Created with the Personal Edition of HelpNDoc: </span><a class="rvts22" href="http://www.helpndoc.com/help-authoring-tool">Full featured multi-format Help generator</a></p>
+</div>
+	
+	</body>
+	
+</html>
+

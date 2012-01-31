@@ -1,0 +1,90 @@
+﻿<html>
+	
+<head>
+	<title>01-01-003: Graphic Tools Intro</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc">
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript"><!--
+		var sTopicId = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+		if (top.frames.length == 0)
+			top.location.href = "FeetWetCoding.html?" + sTopicId
+		else if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+			top.FrameTOC.SelectTocItem(sTopicId);
+	</script>
+</head>
+
+<body>
+
+	<div id="topic_header">
+			<div id="topic_header_content">
+				<h1>01-01-003: Graphic Tools Intro</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Exercises.html">Exercises</a> &rsaquo;&rsaquo; <a href="Chapter01BeginnerExercises.html">Chapter 01: Beginner Exercises</a> &rsaquo;&rsaquo; <a href="Section02GettingStarted.html">Section 02: Getting Started</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="Section02GettingStarted.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="0101002TextontheScreen.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="0101004VariablesIntro.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// Let's draw some things on the screen. &nbsp;FeetWetCoding gives you some simple, easy to use</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// tools to draw on the screen. &nbsp;These are called FUNCTIONS. &nbsp;A function is like a tool</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// you can use to do work in your program. &nbsp;There are predefined functions that you can</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// "call" by typing them into your program, and you can also define your own functions</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// to do particular tasks for you that you need to do again and again. &nbsp;We will explore</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// functions and how they work, and how to design them in later exercises.</span></p>
+<p class="rvps3"><span class="rvts7"><br></span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// Here are some predefined graphical functions that HandsDirtyCPP gives you to work with:</span></p>
+<p class="rvps3"><span class="rvts7"><br></span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// &nbsp;DrawLine( int xStart, int yStart, int xEnd, int yEnd, int thickness, Color color );</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// &nbsp;DrawCircle( int x, int y, int r, int thickness, Color color, bool solid=false);</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// &nbsp;DrawEllipse( int x, int y, int w, int h, int thickness, Color color, bool solid=false );</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// &nbsp;DrawRectangle( int x, int y, int w, int h, int thickness, Color color, bool solid=false );</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// &nbsp;DrawText( std::string text, int x, int y, int size, Color color );</span></p>
+<p class="rvps3"><span class="rvts7"><br></span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// We are going to draw some things on the screen so you can familiarize yourself with these</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// drawing functions and how they work. &nbsp;The following code will draw a bunch of lines, circles,</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// ellipses, and rectangles of different sizes, colors and line widths on the left side of the</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// drawing area. &nbsp;Your task is to change the code below to make graphics on the left side of</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// the screen look like the graphics on the right side. &nbsp;The right side of the screen is not</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// drawn using the shape-drawing functions, but instead is a .bmp file containing a screenshot</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// of what the solution should look like. &nbsp;This .bmp file is displayed in the drawing area</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// using the DrawImage function. &nbsp;We will explain how to use DrawImage in a later exercise.</span></p>
+<p class="rvps3"><span class="rvts7"><br></span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// The first set of shapes, the drawn lines, may be the most difficult to get right. &nbsp;If you get</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// stuck on the first section, try working with the other sections first: &nbsp;the DrawCircle,</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// DrawEllipse and DrawRectangle sections. &nbsp;This will help you familiarize yourself with the</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// x,y coordinates, as well as help you get used to how the different function parameters work.</span></p>
+<p class="rvps3"><span class="rvts7"><br></span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// Don't get discouraged! &nbsp;Even experienced coders might not get every little detail exactly</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// right on their first try! &nbsp;So it is perfectly normal for a beginning programmer to have to</span></p>
+<p class="rvps3"><span class="rvts7"> &nbsp; &nbsp;// make many tries at modifying this code in order to arrive at the solution.</span></p>
+<p class="rvps3"><span class="rvts7"><br></span></p>
+<p class="rvps3"><span class="rvts7"><br></span></p>
+<p class="rvps3"><span class="rvts10">documentation generated by HelpNDoc </span><span class="rvts10">1/30/2012 6:49 PM</span></p>
+<p class="rvps3"><span class="rvts10"><div style="font-family:Arial;font-size:12pt;background-color:#EEEEEE;background-color:teal;color:white;padding:4px;font-weight:bold">
+	FeetWetCoding version 0.0.1 copyright (c) 2011,2012 Robert Holder, Janice Dugger.<br/>
+	support@feetwetcoding.com -- Latest Source: https://github.com/rdholder/FeetWetCoding<br/>
+</div></span></p>
+<p class="rvps4"><span class="rvts21">Created with the Personal Edition of HelpNDoc: </span><a class="rvts22" href="http://www.helpndoc.com/feature-tour/iphone-website-generation">Easily create iPhone documentation</a></p>
+</div>
+	
+	</body>
+	
+</html>
+

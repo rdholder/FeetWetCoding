@@ -1,0 +1,813 @@
+﻿<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+	<title>FeetWetCoding- Table of Contents</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc">
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/silver-theme/jquery-ui-1.8.12.custom.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+    <link type="text/css" rel="stylesheet" media="all" href="css/toc.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/jquery.treeview.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.8.12.custom.min.js"></script>
+	<script type="text/javascript" src="js/hndjsse.js"></script>
+	<script type="text/javascript">
+	
+		var bSearchDataLoaded = false;
+	
+		$(document).ready(function()
+		{
+			var sAnchorName = top.location.href.substring(top.location.href.lastIndexOf("#") + 1, top.location.href.length);
+			var nSelectedTab = 0;
+			if (sAnchorName == '_index') nSelectedTab = 1
+			else if (sAnchorName == '_search') nSelectedTab = 2;			
+			$("#tabs").tabs({selected: nSelectedTab});
+			$("#toc").treeview({collapsed: true});
+			$("#keywords").treeview({collapsed: true});
+			// Load search data
+			$.getScript("js/searchdata.js",	function() {
+				bSearchDataLoaded = true;
+			});
+		});
+		
+		function SelectTocItem(sLinkHref)
+		{
+			$("#toc a").each(function()
+			{
+				if ($.inArray(sLinkHref + '.htm', this.href) > -1) $(this).css('font-weight', 'bold')
+				else $(this).css('font-weight', '');
+			});
+		}
+		
+		function HideKwPopup()
+		{
+			if($("#popupMenu")) $("#popupMenu").remove();
+		}
+		
+		function ShowKwPopup(oSender, aLinks)
+		{
+			HideKwPopup();
+			if (!aLinks || !aLinks.length || aLinks.length == 0) return false
+			else if (aLinks.length == 1) return true
+			else
+			{
+				var oParentDiv = document.createElement("DIV");
+				oParentDiv.id = "popupMenu";
+				var oLink = null;
+				for (var nCnt=0; nCnt<aLinks.length; nCnt++)
+				{
+					oLink = document.createElement("A");
+					oLink.innerHTML = aLinks[nCnt][0];
+					oLink.href = aLinks[nCnt][1];
+					oLink.target = "FrameMain";
+					oLink.onclick = HideKwPopup;
+					oParentDiv.appendChild(oLink);
+				}
+				document.body.appendChild(oParentDiv);
+				var pos = $(oSender).offset(); 
+				var height = $(oSender).height();
+				$(oParentDiv).css({
+					"left": (pos.left+20) + "px",
+					"top": (pos.top + height + 5) + "px"
+				});
+				$(oParentDiv).show();
+				return false;
+			}
+		}
+		
+		function PerformSearch()
+		{
+			sValue = $("#search_value").val();
+			$("#search_results").html('Searching...');
+			var oSearchEngine = new HndJsSe;
+			oSearchEngine.ParseInput(sValue);			
+			oSearchEngine.PerformSearch();
+			if (!oSearchEngine.aResults || !oSearchEngine.aResults.length)
+			{
+				$("#search_results").html('No results found.');
+			}
+			else
+			{
+				$("#search_results").html('');
+				var oUl = $("#search_results").append("<ul id='lr'></ul>").find("ul");
+				for (var nCnt = 0; nCnt < oSearchEngine.aResults.length; nCnt++)
+				{
+					oUl.append("<li><a href='" + aTl[oSearchEngine.aResults[nCnt]][0] + "?search=" + escape(sValue) + "' target='FrameMain'>" + unescape(aTl[oSearchEngine.aResults[nCnt]][1]) + "</a></li>");
+				}
+				$("#lr").treeview({collapsed: false});
+			}
+		}
+	</script>
+</head>
+
+<body>
+
+	<div id="tabs">
+		<ul>
+			<li><a href="#tab-toc">Contents</a></li>
+			<li><a href="#tab-keywords">Index</a></li>
+			<li><a href="#tab-search">Search</a></li>
+		</ul>
+		<div id="tab-toc">
+			<ul id="toc" class="filetree toctree">
+
+				<li>
+							<a
+							href="HELP.html"
+							class="folder"
+							target="FrameMain">
+								HELP</a>
+
+				<ul><li>
+							<a
+							href="Introduction.html"
+							class="file"
+							target="FrameMain">
+								Introduction</a>
+
+				</li><li>
+							<a
+							href="InstallQtCreator.html"
+							class="file"
+							target="FrameMain">
+								Install Qt Creator</a>
+
+				</li><li>
+							<a
+							href="HowtoUseFeetWetCoding.html"
+							class="file"
+							target="FrameMain">
+								How to Use FeetWetCoding</a>
+
+				</li><li>
+							<a
+							href="QtandQtCreator.html"
+							class="file"
+							target="FrameMain">
+								Qt and Qt Creator</a>
+
+				</li><li>
+							<a
+							href="RestoreanExercise.html"
+							class="file"
+							target="FrameMain">
+								Restore an Exercise</a>
+
+				</li></ul></li><li>
+							<a
+							href="Exercises.html"
+							class="folder"
+							target="FrameMain">
+								Exercises</a>
+
+				<ul><li>
+							<a
+							href="Chapter01BeginnerExercises.html"
+							class="folder"
+							target="FrameMain">
+								Chapter 01: Beginner Exercises</a>
+
+				<ul><li>
+							<a
+							href="Section01QtCreatorBasics.html"
+							class="file"
+							target="FrameMain">
+								Section 01: Qt Creator Basics</a>
+
+				</li><li>
+							<a
+							href="Section02GettingStarted.html"
+							class="folder"
+							target="FrameMain">
+								Section 02: Getting Started</a>
+
+				<ul><li>
+							<a
+							href="0101001IntroExercise.html"
+							class="file"
+							target="FrameMain">
+								01-01-001: Intro Exercise</a>
+
+				</li><li>
+							<a
+							href="0101002TextontheScreen.html"
+							class="file"
+							target="FrameMain">
+								01-01-002: Text on the Screen</a>
+
+				</li><li>
+							<a
+							href="0101003GraphicToolsIntro.html"
+							class="file"
+							target="FrameMain">
+								01-01-003: Graphic Tools Intro</a>
+
+				</li><li>
+							<a
+							href="0101004VariablesIntro.html"
+							class="file"
+							target="FrameMain">
+								01-01-004: Variables Intro</a>
+
+				</li></ul></li><li>
+							<a
+							href="Section03TypesandVariables.html"
+							class="file"
+							target="FrameMain">
+								Section 03: Types and Variables</a>
+
+				</li><li>
+							<a
+							href="Section04ExpressionsandSyntax.html"
+							class="file"
+							target="FrameMain">
+								Section 04: Expressions and Syntax</a>
+
+				</li><li>
+							<a
+							href="Section05LoopsandLogic.html"
+							class="file"
+							target="FrameMain">
+								Section 05: Loops and Logic</a>
+
+				</li><li>
+							<a
+							href="Section06Arrays.html"
+							class="file"
+							target="FrameMain">
+								Section 06: Arrays</a>
+
+				</li><li>
+							<a
+							href="Section07PointersandReferences.html"
+							class="file"
+							target="FrameMain">
+								Section 07: Pointers and References</a>
+
+				</li><li>
+							<a
+							href="Section08TypedefsandStructs.html"
+							class="file"
+							target="FrameMain">
+								Section 08: Typedefs and Structs</a>
+
+				</li><li>
+							<a
+							href="Section09Functions.html"
+							class="file"
+							target="FrameMain">
+								Section 09: Functions</a>
+
+				</li><li>
+							<a
+							href="Section10StreamsandtheFilesystem.html"
+							class="file"
+							target="FrameMain">
+								Section 10: Streams and the Filesystem</a>
+
+				</li><li>
+							<a
+							href="Section11StandardLibrary.html"
+							class="file"
+							target="FrameMain">
+								Section 11: Standard Library</a>
+
+				</li><li>
+							<a
+							href="Section12ClassesIntroduction.html"
+							class="file"
+							target="FrameMain">
+								Section 12: Classes Introduction</a>
+
+				</li><li>
+							<a
+							href="Section13Inheritance.html"
+							class="file"
+							target="FrameMain">
+								Section 13: Inheritance</a>
+
+				</li><li>
+							<a
+							href="Section14Polymorphism.html"
+							class="file"
+							target="FrameMain">
+								Section 14: Polymorphism</a>
+
+				</li><li>
+							<a
+							href="Section15OperatorOverloading.html"
+							class="file"
+							target="FrameMain">
+								Section 15: Operator Overloading</a>
+
+				</li><li>
+							<a
+							href="Section16VectorsandMaps.html"
+							class="file"
+							target="FrameMain">
+								Section 16: Vectors and Maps</a>
+
+				</li><li>
+							<a
+							href="Section17Namespaces.html"
+							class="file"
+							target="FrameMain">
+								Section 17: Namespaces</a>
+
+				</li><li>
+							<a
+							href="Section18Templates.html"
+							class="file"
+							target="FrameMain">
+								Section 18: Templates</a>
+
+				</li><li>
+							<a
+							href="Section19Exceptions.html"
+							class="file"
+							target="FrameMain">
+								Section 19: Exceptions</a>
+
+				</li><li>
+							<a
+							href="Section20ThreadsandIPC.html"
+							class="file"
+							target="FrameMain">
+								Section 20: Threads and IPC</a>
+
+				</li><li>
+							<a
+							href="Section21Networking.html"
+							class="file"
+							target="FrameMain">
+								Section 21: Networking</a>
+
+				</li><li>
+							<a
+							href="Section22TheBuildProcessandEnvir.html"
+							class="file"
+							target="FrameMain">
+								Section 22: The Build Process and Environment</a>
+
+				</li><li>
+							<a
+							href="Section23DebuggingBasics.html"
+							class="file"
+							target="FrameMain">
+								Section 23: Debugging Basics</a>
+
+				</li><li>
+							<a
+							href="Section24Gotchas.html"
+							class="file"
+							target="FrameMain">
+								Section 24: Gotchas</a>
+
+				</li></ul></li><li>
+							<a
+							href="Chapter02IntermediateExercises.html"
+							class="folder"
+							target="FrameMain">
+								Chapter 02: Intermediate Exercises</a>
+
+				<ul><li>
+							<a
+							href="Section01DataStructures.html"
+							class="file"
+							target="FrameMain">
+								Section 01: Data Structures</a>
+
+				</li><li>
+							<a
+							href="Section02ExpressionsandSyntax.html"
+							class="file"
+							target="FrameMain">
+								Section 02: Expressions and Syntax</a>
+
+				</li><li>
+							<a
+							href="Section03LoopsandLogic.html"
+							class="file"
+							target="FrameMain">
+								Section 03: Loops and Logic</a>
+
+				</li><li>
+							<a
+							href="Section04Arrays.html"
+							class="file"
+							target="FrameMain">
+								Section 04: Arrays</a>
+
+				</li><li>
+							<a
+							href="Section05PointersandReferences.html"
+							class="file"
+							target="FrameMain">
+								Section 05: Pointers and References</a>
+
+				</li><li>
+							<a
+							href="Section06TypedefandStructs.html"
+							class="file"
+							target="FrameMain">
+								Section 06: Typedef and Structs</a>
+
+				</li><li>
+							<a
+							href="Section07Functions.html"
+							class="file"
+							target="FrameMain">
+								Section 07: Functions</a>
+
+				</li><li>
+							<a
+							href="Section08StreamsandFilesystem.html"
+							class="file"
+							target="FrameMain">
+								Section 08: Streams and Filesystem</a>
+
+				</li><li>
+							<a
+							href="Section09TheStandardLibrary.html"
+							class="file"
+							target="FrameMain">
+								Section 09: The Standard Library</a>
+
+				</li><li>
+							<a
+							href="Section10Classes.html"
+							class="file"
+							target="FrameMain">
+								Section 10: Classes</a>
+
+				</li><li>
+							<a
+							href="Section11Inheritance.html"
+							class="file"
+							target="FrameMain">
+								Section 11: Inheritance</a>
+
+				</li><li>
+							<a
+							href="Section12Polymorphism.html"
+							class="file"
+							target="FrameMain">
+								Section 12: Polymorphism</a>
+
+				</li><li>
+							<a
+							href="Section13OperatorOverloading.html"
+							class="file"
+							target="FrameMain">
+								Section 13: Operator Overloading</a>
+
+				</li><li>
+							<a
+							href="Section14Namespaces.html"
+							class="file"
+							target="FrameMain">
+								Section 14: Namespaces</a>
+
+				</li><li>
+							<a
+							href="Section15Templates.html"
+							class="file"
+							target="FrameMain">
+								Section 15: Templates</a>
+
+				</li><li>
+							<a
+							href="Section16TheStandardTemplateLibr.html"
+							class="file"
+							target="FrameMain">
+								Section 16: The Standard Template Library</a>
+
+				</li><li>
+							<a
+							href="Section17Exceptions.html"
+							class="file"
+							target="FrameMain">
+								Section 17: Exceptions</a>
+
+				</li><li>
+							<a
+							href="Section18ThreadsandIPC.html"
+							class="file"
+							target="FrameMain">
+								Section 18: Threads and IPC</a>
+
+				</li><li>
+							<a
+							href="Section19Networking.html"
+							class="file"
+							target="FrameMain">
+								Section 19: Networking</a>
+
+				</li><li>
+							<a
+							href="Section20TheBuildProcessandEnvir.html"
+							class="file"
+							target="FrameMain">
+								Section 20: The Build Process and Environment</a>
+
+				</li><li>
+							<a
+							href="Section21Debugging.html"
+							class="file"
+							target="FrameMain">
+								Section 21: Debugging</a>
+
+				</li><li>
+							<a
+							href="Section22DiscreteMath.html"
+							class="file"
+							target="FrameMain">
+								Section 22: Discrete Math</a>
+
+				</li><li>
+							<a
+							href="Section23Gotchas.html"
+							class="file"
+							target="FrameMain">
+								Section 23: Gotchas</a>
+
+				</li></ul></li><li>
+							<a
+							href="Chapter03FurtherC.html"
+							class="file"
+							target="FrameMain">
+								Chapter 03: Further C++</a>
+
+				</li><li>
+							<a
+							href="Chapter04QtCreator.html"
+							class="file"
+							target="FrameMain">
+								Chapter 04: Qt Creator</a>
+
+				</li><li>
+							<a
+							href="Chapter05BeginnerQt.html"
+							class="file"
+							target="FrameMain">
+								Chapter 05: Beginner Qt</a>
+
+				</li><li>
+							<a
+							href="Chapter06IntermediateQt.html"
+							class="file"
+							target="FrameMain">
+								Chapter 06: Intermediate Qt</a>
+
+				</li><li>
+							<a
+							href="Chapter07FurtherQt.html"
+							class="file"
+							target="FrameMain">
+								Chapter 07: Further Qt</a>
+
+				</li><li>
+							<a
+							href="Chapter08GameProgramming.html"
+							class="folder"
+							target="FrameMain">
+								Chapter 08: Game Programming</a>
+
+				<ul><li>
+							<a
+							href="Section01Introduction.html"
+							class="file"
+							target="FrameMain">
+								Section 01: Introduction</a>
+
+				</li><li>
+							<a
+							href="Section02ToolsforGames.html"
+							class="file"
+							target="FrameMain">
+								Section 02: Tools for Games</a>
+
+				</li></ul></li><li>
+							<a
+							href="Chapter09DesktopProgramming.html"
+							class="file"
+							target="FrameMain">
+								Chapter 09: Desktop Programming</a>
+
+				</li><li>
+							<a
+							href="Chapter10MobileProgramming.html"
+							class="file"
+							target="FrameMain">
+								Chapter 10: Mobile Programming</a>
+
+				</li><li>
+							<a
+							href="Chapter11ClientServer.html"
+							class="file"
+							target="FrameMain">
+								Chapter 11: Client-Server</a>
+
+				</li><li>
+							<a
+							href="Chapter12OtherLanguagesandServic.html"
+							class="folder"
+							target="FrameMain">
+								Chapter 12: Other Languages and Services</a>
+
+				<ul><li>
+							<a
+							href="Section01RegularExpressions.html"
+							class="file"
+							target="FrameMain">
+								Section 01: Regular Expressions</a>
+
+				</li><li>
+							<a
+							href="Section02InterfacingIntro.html"
+							class="file"
+							target="FrameMain">
+								Section 02: Interfacing Intro</a>
+
+				</li><li>
+							<a
+							href="Section03AssemblyLanguage.html"
+							class="file"
+							target="FrameMain">
+								Section 03: Assembly Language</a>
+
+				</li><li>
+							<a
+							href="Section04Apache.html"
+							class="file"
+							target="FrameMain">
+								Section 04: Apache</a>
+
+				</li><li>
+							<a
+							href="Section05PHPandMySQL.html"
+							class="file"
+							target="FrameMain">
+								Section 05: PHP and MySQL</a>
+
+				</li><li>
+							<a
+							href="Section06Python.html"
+							class="file"
+							target="FrameMain">
+								Section 06: Python</a>
+
+				</li><li>
+							<a
+							href="Section07Perl.html"
+							class="file"
+							target="FrameMain">
+								Section 07: Perl</a>
+
+				</li><li>
+							<a
+							href="Section08Java.html"
+							class="file"
+							target="FrameMain">
+								Section 08: Java</a>
+
+				</li><li>
+							<a
+							href="Section09Ruby.html"
+							class="file"
+							target="FrameMain">
+								Section 09: Ruby</a>
+
+				</li><li>
+							<a
+							href="Section99Miscellaneous.html"
+							class="file"
+							target="FrameMain">
+								Section 99: Miscellaneous</a>
+
+				</li></ul></li><li>
+							<a
+							href="Chapter13ProjectsandCollaboratio.html"
+							class="folder"
+							target="FrameMain">
+								Chapter 13: Projects and Collaboration</a>
+
+				<ul><li>
+							<a
+							href="Section01TheBuildToolchain.html"
+							class="file"
+							target="FrameMain">
+								Section 01: The Build Toolchain</a>
+
+				</li><li>
+							<a
+							href="Section02VersionControl.html"
+							class="file"
+							target="FrameMain">
+								Section 02: Version Control</a>
+
+				</li><li>
+							<a
+							href="Section03RepositoryHosting.html"
+							class="file"
+							target="FrameMain">
+								Section 03: Repository Hosting</a>
+
+				</li><li>
+							<a
+							href="Section04OpenSourceandLicenses.html"
+							class="file"
+							target="FrameMain">
+								Section 04: Open Source and Licenses</a>
+
+				</li><li>
+							<a
+							href="Section05ProjectOrganization.html"
+							class="file"
+							target="FrameMain">
+								Section 05: Project Organization</a>
+
+				</li><li>
+							<a
+							href="Section06Collaboration.html"
+							class="file"
+							target="FrameMain">
+								Section 06: Collaboration</a>
+
+				</li></ul></li></ul></li><li>
+							<a
+							href="Glossary.html"
+							class="file"
+							target="FrameMain">
+								Glossary</a>
+
+				</li><li>
+							<a
+							href="TheStoryofMel.html"
+							class="file"
+							target="FrameMain">
+								The Story of Mel</a>
+
+				</li><li>
+							<a
+							href="ProjectDocumentation.html"
+							class="folder"
+							target="FrameMain">
+								Project Documentation</a>
+
+				<ul><li>
+							<a
+							href="ToDo.html"
+							class="file"
+							target="FrameMain">
+								To Do</a>
+
+				</li><li>
+							<a
+							href="SystemRequirements.html"
+							class="file"
+							target="FrameMain">
+								System Requirements</a>
+
+				</li><li>
+							<a
+							href="LICENSE.html"
+							class="file"
+							target="FrameMain">
+								LICENSE</a>
+
+				</li><li>
+							<a
+							href="ContactUs.html"
+							class="file"
+							target="FrameMain">
+								Contact Us</a>
+
+				</li></ul></li></ul>
+		</div>
+		<div id="tab-keywords">
+			<ul id="keywords" class="filetree indextree">
+
+				</ul>
+		</div>
+		<div id="tab-search">
+			<form onsubmit="PerformSearch(); return false;">
+				<label for="search_value">Search:</label>
+				<input id="search_value" name="search_value"></input>
+				<input type="submit" value="search"/>
+			</form>
+			<div id="search_results"></div>
+		</div>
+	</div>
+    
+</body>
+
+</html>
+

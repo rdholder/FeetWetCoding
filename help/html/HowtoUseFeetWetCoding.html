@@ -1,0 +1,137 @@
+﻿<html>
+	
+<head>
+	<title>How to Use FeetWetCoding</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc">
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript"><!--
+		var sTopicId = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+		if (top.frames.length == 0)
+			top.location.href = "FeetWetCoding.html?" + sTopicId
+		else if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+			top.FrameTOC.SelectTocItem(sTopicId);
+	</script>
+</head>
+
+<body>
+
+	<div id="topic_header">
+			<div id="topic_header_content">
+				<h1>How to Use FeetWetCoding</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="HELP.html">HELP</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="HELP.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="InstallQtCreator.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="QtandQtCreator.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p class="rvps3"><span class="rvts25">The "</span><span class="rvts10">FeetWetCoding</span><span class="rvts25"> Qt Creator Workflow" or </span><span class="rvts30">How to use FeetWetCoding</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">"Workflow" here just means "how you work through the FeetWetCoding exercises in Qt Creator." &nbsp;In other words, we're talking about how you load up the first FeetWetCoding exercise in Qt Creator and run it, and then load up the next exercise and run that, and so on. &nbsp;It may sound a little complicated trying to describe the process here, but when you do it a few times, you will see that it is easier than this description might make it sound.</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">The exercises for Chapter 1 are located in Sources &gt; C_Basics &nbsp;within Qt Creator when you load the FeetWetCoding project (FeetWetCoding.pro). &nbsp;The exercises for each chapter are located in their respective Chapter folder. &nbsp;Each exercise also has a "solution" counterpart, which is the original exercise name with the characters "SOLN" after it.</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts11">The idea for doing exercises in </span><span class="rvts10">FeetWetCoding</span><span class="rvts11"> is that you work on one exercise, and try to accomplish the goal of that exercise, and then if you get stuck, or if you finish the exercise, you can check your work in the "&lt;exercise name&gt;SOLN" file. &nbsp;To work with a particular exercise you have to "tell" main.cpp which exercise you want to work on. &nbsp;These instructions explain how to do that.</span><span class="rvts10"> &nbsp;Don't worry if this doesn't seem to make sense right now, just learn the process, and it will start to feel natural soon.</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">From now on, we will refer to the location where you unzipped the FeetWetCoding download as "~FeetWetCoding". &nbsp;You pronounce ~FeetWetCoding as "FeetWetCoding home." &nbsp;~FeetWetCoding will usually be Libraries\Downloads on your hard drive , which is actually:</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li class="rvps3"><span class="rvts10">C:\\Users\&lt;your username&gt;\Downloads</span></li>
+</ul>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">Open the HandsDirty project in Qt Creator by clicking on the FeetWetCoding.pro file in ~FeetWetCoding:</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><img border="0" alt hspace="1" vspace="1" src="lib/ImgPlaceholder.png"></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">...you can also start Qt Creator up and navigate to the </span><span class="rvts11">FeetWetCoding.pro</span><span class="rvts10"> file that way. &nbsp;Once you have the FeetWetCoding project open in Qt Creator, you need to type the name of the exercise you want to work with in the appropriate place in the file </span><span class="rvts11">main.cpp</span><span class="rvts10">. &nbsp;The next image shows what we are talking about, but don't start working on the exercises at this time. &nbsp;Just make the changes we talk about here in this tutorial.</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">Qt Creator has a number of different views, including, "Edit", "Debug", "Projects", "Analyze" and "Help." &nbsp;You will be spending most of your time while learning to write C++ code in the "Edit" view.</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps9"><span class="rvts15">TIP: If you ever find yourself trying to see your code, and you do not see it on the right hand side of the screen, make sure you are in the "Edit" view by clicking on the "Edit" icon on the left side of Qt Creator. Sometimes you will be editing code, and then you will change the view, and won't be able to see your code. &nbsp;Clicking on "Edit" should fix it, and your code should be viewable again.</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">Doubleclick on </span><span class="rvts11">main.cpp</span><span class="rvts10"> to view it in the code editor:</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><img border="0" alt hspace="1" vspace="1" src="lib/ImgPlaceholder.png"></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">When you click the green "Run" arrow button, Qt Creator will "build" and then run the FeetWetCoding program. &nbsp;This may take a minute or more, but eventually the build should finish and the program should run. &nbsp;The first time you run FeetWetCoding, when the program runs and pops up in a new window, it should look like this:</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><img border="0" alt hspace="1" vspace="1" src="lib/ImgPlaceholder.png"></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">That previous window picture is the output of the </span><span class="rvts11">IntroExercise</span><span class="rvts10"> that is currently located in file </span><span class="rvts11">a0005.cpp</span><span class="rvts10">. </span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">So the </span><span class="rvts11">IntroExercise</span><span class="rvts10"> ran successfully (I hope!) and now you are going to check the solution. &nbsp;That means you are going to tell </span><span class="rvts11">main.cpp</span><span class="rvts10"> the next exercise you want to run. &nbsp;Every exercise file has a counterpart "solution" file paired with it. &nbsp;The solution file for </span><span class="rvts11">a0005.cpp</span><span class="rvts10"> is called </span><span class="rvts11">a0005soln.cpp</span><span class="rvts10">. &nbsp;You just ran the </span><span class="rvts11">IntroExercise</span><span class="rvts10"> which is located in </span><span class="rvts11">a0005.cpp</span><span class="rvts10">, and now you want to run the </span><span class="rvts11">IntroExerciseSoln</span><span class="rvts10"> (the solution to the exercise) which is located in </span><span class="rvts11">a0005soln.cpp</span><span class="rvts10">.</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">Doubleclick on the file </span><span class="rvts11">a0005soln.cpp</span><span class="rvts10"> so you can view the C++ code it contains. &nbsp;Then highlight the exercise name, </span><span class="rvts11">IntroExerciseSoln</span><span class="rvts10">, and CTRL-C to copy that text:</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><img border="0" alt hspace="1" vspace="1" src="lib/ImgPlaceholder.png"></p>
+<p class="rvps3"><span class="rvts11"><br></span></p>
+<p class="rvps3"><span class="rvts11"><br></span></p>
+<p class="rvps3"><span class="rvts10">Now open main.cpp in the Edit view (you can just double click on </span><span class="rvts11">main.cpp</span><span class="rvts10"> in the project files list) and paste (CTRL-V) the </span><span class="rvts11">IntroExerciseSoln</span><span class="rvts10"> text into the correct place, or you can just type it in:</span></p>
+<p class="rvps3"><span class="rvts11"><br></span></p>
+<p class="rvps3"><span class="rvts11"><br></span></p>
+<p class="rvps3"><img border="0" alt hspace="1" vspace="1" src="lib/ImgPlaceholder.png"></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">After a time, the build should finish, the program should run, and the program window should pop up which looks like this:</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><img border="0" alt hspace="1" vspace="1" src="lib/ImgPlaceholder.png"></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">As you work through the exercises, this is the basic process you will use. &nbsp;Don't work on the exercises yet, just finish this tutorial please.</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">Now we will move on to setup so that we can work with the next exercise, </span><span class="rvts11">TextOnTheScreen</span><span class="rvts10">. &nbsp;This exercise is located in file </span><span class="rvts11">a0010.cpp</span><span class="rvts10">, so doubleclick that in Qt Creator to view the code for that exercise. &nbsp;Highlight and copy the exercise name with CTRL-C:</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><img border="0" alt hspace="1" vspace="1" src="lib/ImgPlaceholder.png"></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">Doubleclick on </span><span class="rvts11">main.cpp</span><span class="rvts10"> to view it in the code editor, and paste (or type) </span><span class="rvts11">TextOnTheScreen</span><span class="rvts10"> in the correct place in </span><span class="rvts11">main.cpp</span><span class="rvts10">. &nbsp;Then click the green "Run" arrow button:</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><img border="0" alt hspace="1" vspace="1" src="lib/ImgPlaceholder.png"></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">When the build completes and the program runs, the program window that pops up should look like this:</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><img border="0" alt hspace="1" vspace="1" src="lib/ImgPlaceholder.png"></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">Now you are familiar with the basic process of how to work with the individual exercises in FeetWetCoding. &nbsp;Each exercise is also discussed in this documentation. &nbsp;Now you are ready to get started on the </span><a class="rvts12" href="Exercises.html">Exercises</a><span class="rvts10">!</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts7"><br></span></p>
+<p class="rvps3"><span class="rvts10">documentation generated by HelpNDoc </span><span class="rvts10">1/30/2012 6:49 PM</span></p>
+<p class="rvps3"><span class="rvts10"><div style="font-family:Arial;font-size:12pt;background-color:#EEEEEE;background-color:teal;color:white;padding:4px;font-weight:bold">
+	FeetWetCoding version 0.0.1 copyright (c) 2011,2012 Robert Holder, Janice Dugger.<br/>
+	support@feetwetcoding.com -- Latest Source: https://github.com/rdholder/FeetWetCoding<br/>
+</div></span></p>
+<p class="rvps4"><span class="rvts21">Created with the Personal Edition of HelpNDoc: </span><a class="rvts22" href="http://www.helpndoc.com/feature-tour">Easily create Web Help sites</a></p>
+</div>
+	
+	</body>
+	
+</html>
+
