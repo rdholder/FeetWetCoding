@@ -15,9 +15,9 @@ int DeclaringIntegersSoln::runExercise()     // copy the exercise name & paste i
 {
     Gsoln = true;
 
-    int x = 200;     // = is pronounced GETS, == is pronounced EQUALS
-    int y = 300;
-    int a = 404, b = 1201;
+    int x = 100;     // = is pronounced GETS, == is pronounced EQUALS
+    int y = 100;
+    int a = 100, b = 100;
     int c = 100, d = 100, e = 100;
 
     DrawText("seeout output below:", 50, 170, BLUE, 20);

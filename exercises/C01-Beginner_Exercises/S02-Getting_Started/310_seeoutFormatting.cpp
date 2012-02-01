@@ -15,7 +15,7 @@ int seeoutFormatting::runExercise()  // copy the exercise name & paste it into m
 {
     Gsoln = false;              // is this exercise code or solution code?
 
-    DrawText("Make the \"seeout\" output", 30, 80, BLUE, 20);
+    DrawText("Make the seeout output", 30, 80, BLUE, 20);
     DrawText("in the boxes below match...", 30, 120, BLUE, 20);
 
     seeout << "1";

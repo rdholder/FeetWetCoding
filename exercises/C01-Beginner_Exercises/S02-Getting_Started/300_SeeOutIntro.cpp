@@ -15,17 +15,13 @@ int seeoutIntro::runExercise()  // copy the exercise name & paste it into main.c
 {
     Gsoln = false;              // is this exercise code or solution code?
 
-    DrawText("Make the \"seeout\" output", 30, 80, BLUE, 20);
+    DrawText("Make the seeout output", 30, 80, BLUE, 20);
     DrawText("in the boxes below match...", 30, 120, BLUE, 20);
 
-    // "seeout" is a FeetWetCoding tool designed to work like std::cout, except
-    // that it prints its output right into to your working window so you don't
+    // seeout is a FeetWetCoding tool designed to work like std::cout, except
+    // that it prints its output right into your working window so you don't
     // have to go looking for it in the QtCreator IDE (we'll learn how to do that
     // a little later).
-
-    // The next few lines demonstrate how "seeout" works, but it's not setup exactly
-    // right, as you'll see when you run the exercise and compare the Exercise output
-    // to the Solution output.
 
     seeout << "1" << "\n";   // the "\n" (newline) means move down to the next line
     seeout << "2" << "\n";

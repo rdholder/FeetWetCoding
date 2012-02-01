@@ -11,34 +11,29 @@
 #include <setup.h>
 extern bool Gsoln;
 
-int DisplayingIntegers::runExercise()     // copy the exercise name & paste it into main.cpp
+int DisplayingIntegersSoln::runExercise()     // copy the exercise name & paste it into main.cpp
 {
-    Gsoln = false;
+    Gsoln = true;
 
     int x = 42;     // = is pronounced GETS, == is pronounced EQUALS
     int y = 32767;
     int a = 100;
     int b = 200;
 
-    DrawText("It's a harder to draw variables graphically...", 30, 50, BLUE, 12);
+    // make the left graphics area look like the right one and you will see what I mean.  :-)
+    DrawText("It's more work to draw variables graphically...", 30, 50, BLUE, 12);
     DrawText("x ==", 30, 100, BLUE, 20);
-    DrawInt(x, 30, 100, BLUE, 20);
+    DrawInt(x, 100, 100, BLUE, 20);
     DrawText("y ==", 200, 100, BLUE, 20);
-    DrawInt(y, 200, 100, BLUE, 20);
+    DrawInt(y, 300, 100, BLUE, 20);
     DrawText("a ==", 30, 300, BLUE, 20);
-    DrawInt(a, 30, 300, BLUE, 20);
+    DrawInt(a, 100, 300, BLUE, 20);
     DrawText("b ==", 200, 300, BLUE, 20);
-    DrawInt(b, 200, 300, BLUE, 20);
+    DrawInt(b, 300, 300, BLUE, 20);
 
     seeout << "...than it is to show them with seeout!\n";
     seeout << "x == " << x  << "  y == " << y << "\n";
     seeout << "a == " << a  << "  b == " << b << "\n";
-
-
-    // This is FeetWetCoding internal stuff you can ignore for now:
-    DrawReferenceBox(LEFTRIGHT);    // draw the graphical reference frame
-    DisplayingIntegersSoln *solution = new DisplayingIntegersSoln();
-    solution->runExercise();        // run Soln code to show what solution looks like
 
     return 0;
 }
