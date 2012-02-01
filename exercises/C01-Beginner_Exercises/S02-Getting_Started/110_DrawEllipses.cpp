@@ -11,8 +11,6 @@ int DrawEllipses::runExercise()
 {
     Gsoln = false;
 
-    // Things drawn later get drawn on top of things drawn earlier!
-
     // USAGE: DrawEllipse(x, y, width, height, color, thickness, solid);
     // (solid is an optional parameter, you can use it or leave it out.)
     DrawEllipse(100, 200, 10, 300, BLUE, 1);
