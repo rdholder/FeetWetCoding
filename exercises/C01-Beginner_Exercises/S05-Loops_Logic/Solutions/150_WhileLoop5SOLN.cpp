@@ -15,17 +15,17 @@ int WhileLoop5Soln::runExercise()
 {
     Gsoln = true;
 
-    int x=100, y=200;
+    int x=100, y=100;
     int horizontalstep=30, verticalstep=30;
 
-    while ( x < 300 )
+    while ( x < 280 )
     {
-        while ( y < 400 )
+        while ( y < 280 )
         {
             DrawRectangle(x, y, 25, 25, RED, 1, true);
             y += verticalstep;
         }
-        y=200;
+        y=100;
         x += horizontalstep;
     }
 

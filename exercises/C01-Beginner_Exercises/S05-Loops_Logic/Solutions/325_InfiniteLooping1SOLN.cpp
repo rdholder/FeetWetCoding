@@ -18,9 +18,9 @@ int InfiniteLooping1Soln::runExercise()
     int x=20, y=20;
     int verticalstep=30;
 
-    while ( y < 600 )
+    while ( y < 400 )
     {
-        DrawText("y must exceed 600 for this loop to end!", x, y, BLUE, 10);
+        DrawText("y must exceed 400 for this loop to end!", x, y, BLUE, 10);
         y += verticalstep;  // when this line was commented out, y stayed 20 forever!
 
     }

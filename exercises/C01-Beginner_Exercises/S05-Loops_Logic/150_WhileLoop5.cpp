@@ -20,7 +20,7 @@ int WhileLoop5::runExercise()
 
     while ( x < 400 )
     {
-        while ( y < 600 )
+        while ( y < 400 )
         {
             DrawRectangle(x, y, 25, 25, RED, 1, true);
             y += verticalstep;

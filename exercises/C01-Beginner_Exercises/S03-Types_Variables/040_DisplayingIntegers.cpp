@@ -20,6 +20,7 @@ int DisplayingIntegers::runExercise()     // copy the exercise name & paste it i
     int a = 100;
     int b = 200;
 
+    // make the left graphics area look like the right one and you will see what I mean.  :-)
     DrawText("It's more work to draw variables graphically...", 30, 50, BLUE, 12);
     DrawText("x ==", 30, 100, BLUE, 20);
     DrawInt(x, 30, 100, BLUE, 20);

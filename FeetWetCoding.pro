@@ -72,10 +72,14 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/050_GetsAndPlusGets.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/250_DrawingImages.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/250_DrawingImagesSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S03-Types_Variables/Solutions/100_DisplayingIntegersSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S03-Types_Variables/Solutions/050_DeclaringIntegersSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S03-Types_Variables/050_DeclaringIntegers.cpp \
-    exercises/C01-Beginner_Exercises/S03-Types_Variables/100_DisplayingIntegers.cpp
+    exercises/C01-Beginner_Exercises/S03-Types_Variables/Solutions/020_DeclaringIntegersSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S03-Types_Variables/Solutions/040_DisplayingIntegersSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S03-Types_Variables/040_DisplayingIntegers.cpp \
+    exercises/C01-Beginner_Exercises/S03-Types_Variables/020_DeclaringIntegers.cpp \
+    exercises/C01-Beginner_Exercises/S03-Types_Variables/080_DeclaringChars.cpp \
+    exercises/C01-Beginner_Exercises/S03-Types_Variables/200_ChoosingVariableNames.cpp \
+    exercises/C01-Beginner_Exercises/S03-Types_Variables/060_DeclaringFloats.cpp \
+    exercises/C01-Beginner_Exercises/S03-Types_Variables/Solutions/060_DeclaringFloatsSOLN.cpp
 
 
 HEADERS += \

@@ -21,10 +21,10 @@ int WhileLoop1::runExercise()       // copy the exercise name & paste it into ma
     while ( x < 400 )
     {
         x += horizontalstep;
-        DrawLine(0, 0, x, 600, BLUE, 1);
+        DrawLine(0, 0, x, 400, BLUE, 1);
     }
 
-    while ( y < 600 )
+    while ( y < 400 )
     {
         y += verticalstep;
         DrawLine(0, 0, 400, y, RED, 1);

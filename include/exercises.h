@@ -506,7 +506,37 @@ public slots:
 
 };
 
+class DeclaringFloats : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit DeclaringFloats(QObject *parent = 0):FeetWetCodingExercise(parent){}
+
+signals:
+
+public slots:
+    virtual int runExercise();
+
+};
+
+class DeclaringFloatsSoln : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit DeclaringFloatsSoln(QObject *parent = 0):FeetWetCodingExercise(parent){}
+
+signals:
+
+public slots:
+    virtual int runExercise();
+
+};
+
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
 // CH01/S04/Expressions_Syntax
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
 
 class GetsAndPlusGets : public FeetWetCodingExercise
 {

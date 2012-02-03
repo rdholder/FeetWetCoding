@@ -21,9 +21,13 @@ int InfiniteLooping1::runExercise()
     // NOTE: THIS CODE WILL CAUSE FeetWetCoding.EXE TO HANG WHEN YOU TRY TO RUN IT AND YOU
     // WILL HAVE TO KILL IT MANUALLY.  RUN IT ONCE AS IS TO SEE WHAT IT LOOKS LIKE
     // WHEN YOU HAVE AN INFINITE LOOP UNDER THE Qt LIBRARY, SO THAT YOU WILL RECOGNIZE
-    // THIS IN FUTURE PROGRAMS AND WILL KNOW WHAT TO FIX.
+    // THIS IN FUTURE PROGRAMS AND WILL KNOW WHAT TO FIX.  AFTER YOU KILL FeetWetCoding.exe
+    // UNCOMMENT THE VERTICALSTEP LINE AND RUN IT AGAIN.
 
-    while ( y < 600 )
+    // This type of logic error very well may come up again as you learn programming, so
+    // it's good for you to know how to recognize it as a possible cause of a hung executable!
+
+    while ( y < 400 )
     {
         DrawText("This loop will never end until the next line is uncommented.", x, y, BLUE, 10);
         //y += verticalstep;

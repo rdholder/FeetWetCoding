@@ -15,7 +15,7 @@ int WhileLoop4::runExercise()
 {
     Gsoln = false;                  // is this exercise code or solution code?
 
-    int x=0, y=600;                 // = is pronounced GETS, == is pronounced EQUALS
+    int x=0, y=400;                 // = is pronounced GETS, == is pronounced EQUALS
     int velocity= -45;
     int rateofchange=1;
     int horizontalstep = 12;

@@ -21,15 +21,15 @@ int WhileLoop3Soln::runExercise()
     while ( x < 400 )
     {
         x += horizontalstep;
-        DrawLine(200, 300, x, 600, BLUE, 1);
-        DrawLine(200, 300, x, 0, RED, 1);
+        DrawLine(200, 200, x, 400, BLUE, 1);
+        DrawLine(200, 200, x, 0, RED, 1);
     }
 
-    while ( y < 600 )
+    while ( y < 400 )
     {
         y += verticalstep;
-        DrawLine(200, 300, 400, y, GREEN, 1);
-        DrawLine(200, 300, 0, y, YELLOW, 1);
+        DrawLine(200, 200, 400, y, GREEN, 1);
+        DrawLine(200, 200, 0, y, YELLOW, 1);
     }
 
     return 0;

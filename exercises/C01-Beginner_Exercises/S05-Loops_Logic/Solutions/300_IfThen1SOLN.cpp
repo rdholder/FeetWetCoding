@@ -20,7 +20,7 @@ int IfThen1Soln::runExercise()
 
     while ( x < 400 )
     {
-        while ( y < 600 )
+        while ( y < 400 )
         {
             if ( x > y )
             {
