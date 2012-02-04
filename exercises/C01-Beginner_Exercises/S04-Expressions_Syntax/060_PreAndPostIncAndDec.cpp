@@ -21,10 +21,16 @@ int PreAndPostIncAndDec::runExercise()     // copy the exercise name & paste it 
     int a = 0, b = 1, c = 3, d = 5, e = 7;
     int swap1 = 0, swap2 = 0, sum = 0;
 
+    DrawText("Reference Exercise:", 50, 150, BLUE, 20);
+    DrawText("no solution needed.", 50, 180, BLUE, 20);
+
     seeout << "1st sum: " << sum++ << "\n";
     seeout << "2nd sum: " << sum++ << "\n";
     seeout << "3rd sum: " << ++sum << "\n";
-
+    seeout << "4th sum: " << sum-- << "\n";
+    seeout << "5th sum: " << sum-- << "\n";
+    seeout << "6th sum: " << --sum << "\n";
+    seeout << "7th sum: " << ++sum << "\n";
 
     // This is FeetWetCoding internal stuff you can ignore for now:
     DrawReferenceBox(LEFTRIGHT);    // draw the graphical reference frame

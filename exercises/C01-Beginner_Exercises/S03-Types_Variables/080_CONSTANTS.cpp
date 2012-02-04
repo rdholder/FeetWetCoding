@@ -25,7 +25,8 @@ int CONSTANTS::runExercise()     // copy the exercise name & paste it into main.
 
     int chessboardx = 0;
 
-    DrawText("seeout output below:", 50, 170, BLUE, 20);
+    DrawText("Reference Exercise:", 50, 150, BLUE, 20);
+    DrawText("no solution needed.", 50, 180, BLUE, 20);
 
     seeout << "The speed of light is " << LIGHTSPEEDMPH << " miles per hour.\n";
     seeout << "A pint is " << POUNDSPERPINT << " pound, the world around.\n";

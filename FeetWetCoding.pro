@@ -76,9 +76,14 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/040_OrderOfOperations.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/520_Misdirection.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/Solutions/520_MisdirectionSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/080_random-randomRange.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/020_AssignmentArithmetic.cpp \
-    exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/060_PreAndPostIncAndDec.cpp
+    exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/060_PreAndPostIncAndDec.cpp \
+    exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/200_random-randomRange.cpp \
+    exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/080_DivisionGotchas.cpp \
+    exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/100_ModulusOperator.cpp \
+    exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/110_Booleans.cpp \
+    exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/120_BlocksAndScope.cpp \
+    exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/140_MathFunctions.cpp
 
 
 HEADERS += \

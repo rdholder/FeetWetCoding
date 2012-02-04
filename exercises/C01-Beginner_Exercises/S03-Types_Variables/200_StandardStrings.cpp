@@ -10,13 +10,16 @@
 
 #include <setup.h>
 #include <exercises/C01_S03.h>
-using std::string;
 
 extern bool Gsoln;
+
+using std::string;
 
 int StandardStrings::runExercise()     // copy the exercise name & paste it into main.cpp
 {
     Gsoln = false;
+
+    // NOTICE: to use standard strings we have to say "using std::string;" above!
 
     string towel = "Always know where your towel is!";
     string fordsays = "Don't Panic!";

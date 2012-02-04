@@ -18,13 +18,26 @@ int AssignmentArithmetic::runExercise()     // copy the exercise name & paste it
 {
     Gsoln = false;
 
-    int a = 0, b = 1, c = 3, d = 5, e = 7;
-    int swap1 = 0, swap2 = 0, sum = 0;
+    int x = 0, y = 0, a = 1, b = 3, c = 5, d = 7;
 
-    seeout << "1st sum: " << sum++ << "\n";
-    seeout << "2nd sum: " << sum++ << "\n";
-    seeout << "3rd sum: " << ++sum << "\n";
+    DrawText("Reference Exercise:", 50, 150, BLUE, 20);
+    DrawText("no solution needed.", 50, 180, BLUE, 20);
 
+    x = a + b;
+    y = c + d;
+    seeout << "1st x,y: " << x << "," << y << "\n";
+    x = x + 1;
+    y += 1;
+    seeout << "2nd x,y: " << x << "," << y << "\n";
+    x = x - 1;
+    y -= 1;
+    seeout << "3rd x,y: " << x << "," << y << "\n";
+    x = x * 3;
+    y *= 3;
+    seeout << "4th x,y: " << x << "," << y << "\n";
+    x = x / 2;
+    y /= 2;
+    seeout << "5th x,y: " << x << "," << y << "\n";
 
     // This is FeetWetCoding internal stuff you can ignore for now:
     DrawReferenceBox(LEFTRIGHT);    // draw the graphical reference frame

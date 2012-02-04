@@ -12,8 +12,8 @@
 #include <setup.h>
 #include <exercises/C01_S03.h>
 extern bool Gsoln;
-using std::string;
 
+using std::string;
 
 int StandardStringsSoln::runExercise()     // copy the exercise name & paste it into main.cpp
 {

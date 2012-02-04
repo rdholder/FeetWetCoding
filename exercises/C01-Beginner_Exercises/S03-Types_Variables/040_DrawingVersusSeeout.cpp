@@ -34,7 +34,7 @@ int DrawingVersusSeeout::runExercise()     // copy the exercise name & paste it 
 
     seeout << "...than it is to show them with seeout!\n";
     seeout << "x == " << x  << "  y == " << y << "\n";
-    seeout << "a == " << a  << "  b == " << b << "\n";
+    // add a seeout line here for a and b
 
 
     // This is FeetWetCoding internal stuff you can ignore for now:

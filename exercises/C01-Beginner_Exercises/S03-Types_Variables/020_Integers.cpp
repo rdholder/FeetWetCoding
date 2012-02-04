@@ -28,7 +28,7 @@ int Integers::runExercise()     // copy the exercise name & paste it into main.c
 
     DrawText("seeout output below:", 50, 170, BLUE, 20);
 
-    seeout << "x,y == (" << x  << "," <<  y << ")\n";
+    seeout << "x,y: " << x  << "," <<  y << "\n";
     seeout << "apples: " << a << "\n";
     seeout << "bananas: " << b << "\n";
     seeout << "coconuts: " << c << "\n";

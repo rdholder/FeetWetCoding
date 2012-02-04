@@ -1,4 +1,4 @@
-// copyright (c) 2011 Robert Holder, Janice Dugger.  
+// copyright (c) 2011 Robert Holder, Janice Dugger.
 // See LICENSE.txt included with this software distribution for conditions of use.
 // FeetWetCoding/exercises/C01-BeginnerExercises/S02-GettingStarted/001_Welcome.cpp
 
@@ -14,6 +14,7 @@ int Welcome::runExercise()
 
     // USAGE: DrawText("Text.", x, y, color, fontsize);
     DrawText("Welcome to FeetWetCoding!", 20, 150, BLUE, 20);
+
 
     // This is FeetWetCoding internal stuff you can ignore for now:
     DrawReferenceBox(LEFTRIGHT);    // draw the graphical reference frame

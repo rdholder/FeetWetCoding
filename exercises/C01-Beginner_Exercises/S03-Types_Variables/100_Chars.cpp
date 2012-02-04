@@ -24,7 +24,8 @@ int Chars::runExercise()     // copy the exercise name & paste it into main.cpp
     char lettera = 'A';     // individual letters get ' quotes, not " quotes
     char letterb = 'B';     // because " denotes a string.  Don't worry, we'll get to it.  :-)
 
-    DrawText("seeout output below:", 50, 170, BLUE, 20);
+    DrawText("Reference Exercise:", 50, 150, BLUE, 20);
+    DrawText("no solution needed.", 50, 180, BLUE, 20);
 
     seeout << "Grades for Mr. Picklefeather's English Class:\n";
     seeout << "Jane: " << lettera << "\n";
