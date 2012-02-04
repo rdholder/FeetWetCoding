@@ -8,19 +8,14 @@
 // OPEN FeetWetCoding/helpinfo/html/EXERCISENAME.html
 // for more information about this exercise.
 
-#include <setup.h>
 #include <exercises/C01_S05.h>
-extern bool Gsoln;
 
-int WhileLoop4::runExercise()
+void WhileLoop4::runExercise()
 {
-    Gsoln = false;                  // is this exercise code or solution code?
-
     int x=0, y=400;                 // = is pronounced GETS, == is pronounced EQUALS
     int velocity= -45;
     int rateofchange=1;
     int horizontalstep = 12;
-    char buffer [33];
 
     while ( x < 400 )
     {
@@ -30,13 +25,4 @@ int WhileLoop4::runExercise()
         DrawCircle(x, y, 20, RED, 1);
         DrawInt(velocity, x+10, y, BLUE, 10);
     }
-
-    DrawReferenceBox(LEFTRIGHT);    // draw the graphical reference frame
-
-    // Run the Soln code to show what the solution looks like:
-    WhileLoop4Soln *solution = new WhileLoop4Soln();
-    solution->runExercise();
-
-    return 0;
-
 }

@@ -4,15 +4,11 @@
 
 // Open (double-click) the README.html file to access the documentation.
 
-#include <setup.h>
 #include <exercises/C01_S02.h>
-extern bool Gsoln;
 
-int ChangeFontSoln::runExercise()
+void ChangeFontSoln::runExercise()
 {
-    Gsoln = true;
+    // USAGE: DrawText("Text.", x, y, color, fontsize);
 
     DrawText("...to fontsize 30.", 50, 150, BLUE, 30);
-
-    return 0;
 }

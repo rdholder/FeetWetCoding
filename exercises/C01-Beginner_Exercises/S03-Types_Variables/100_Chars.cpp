@@ -8,14 +8,10 @@
 // OPEN FeetWetCoding/helpinfo/html/ch00ex00TITLE.html
 // for more information about this exercise.
 
-#include <setup.h>
 #include <exercises/C01_S03.h>
-extern bool Gsoln;
 
-int Chars::runExercise()     // copy the exercise name & paste it into main.cpp
+void Chars::runExercise()
 {
-    Gsoln = false;
-
     // We will get into strings and arrays in Chapter 01, Section 06.
     // You will probably almost never actually use single character variables in
     // this way, but this exercise is here for the sake of completeness, and for
@@ -31,11 +27,6 @@ int Chars::runExercise()     // copy the exercise name & paste it into main.cpp
     seeout << "Jane: " << lettera << "\n";
     seeout << "Jill: " << letterb << "\n";
     seeout << "(Nothing to solve in this exercise.)\n";
-
-    // This is FeetWetCoding internal stuff you can ignore for now:
-    DrawReferenceBox(LEFTRIGHT);    // draw the graphical reference frame
-
-    return 0;
 }
 
 

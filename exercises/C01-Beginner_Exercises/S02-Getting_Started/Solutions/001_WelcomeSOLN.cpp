@@ -4,15 +4,9 @@
 
 // Open (double-click) the README.html file to access the documentation.
 
-#include <setup.h>
 #include <exercises/C01_S02.h>
-extern bool Gsoln;
 
-int WelcomeSoln::runExercise()
+void WelcomeSoln::runExercise()
 {
-    Gsoln = true;
-
     DrawText("Welcome to FeetWetCoding!", 20, 150, RED, 20);
-
-    return 0;
 }

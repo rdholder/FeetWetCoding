@@ -8,14 +8,10 @@
 // OPEN FeetWetCoding/helpinfo/html/ch00ex00TITLE.html
 // for more information about this exercise.
 
-#include <setup.h>
 #include <exercises/C01_S03.h>
-extern bool Gsoln;
 
-int DrawingVersusSeeout::runExercise()     // copy the exercise name & paste it into main.cpp
+void DrawingVersusSeeout::runExercise()
 {
-    Gsoln = false;
-
     int x = 42;     // = is pronounced GETS, == is pronounced EQUALS
     int y = 32767;
     int a = 100;
@@ -35,14 +31,6 @@ int DrawingVersusSeeout::runExercise()     // copy the exercise name & paste it 
     seeout << "...than it is to show them with seeout!\n";
     seeout << "x == " << x  << "  y == " << y << "\n";
     // add a seeout line here for a and b
-
-
-    // This is FeetWetCoding internal stuff you can ignore for now:
-    DrawReferenceBox(LEFTRIGHT);    // draw the graphical reference frame
-    DrawingVersusSeeoutSoln *solution = new DrawingVersusSeeoutSoln();
-    solution->runExercise();        // run Soln code to show what solution looks like
-
-    return 0;
 }
 
 

@@ -91,7 +91,6 @@ HEADERS += \
     include/feetwetcodinglib.h \
     include/constants.h \
     include/myinclude/myheader.h \
-    include/myinclude/myheader.h \
     include/exercises/exercises.h \
     include/exercises/C01_S02.h \
     include/exercises/C01_S03.h \

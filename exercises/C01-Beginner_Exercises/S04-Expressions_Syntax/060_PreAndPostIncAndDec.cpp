@@ -8,18 +8,13 @@
 // OPEN FeetWetCoding/helpinfo/html/ch00ex00TITLE.html
 // for more information about this exercise.
 
-#include <setup.h>
 #include <exercises/C01_S04.h>
+
 using std::string;
 
-extern bool Gsoln;
-
-int PreAndPostIncAndDec::runExercise()     // copy the exercise name & paste it into main.cpp
+void PreAndPostIncAndDec::runExercise()     // copy the exercise name & paste it into main.cpp
 {
-    Gsoln = false;
-
-    int a = 0, b = 1, c = 3, d = 5, e = 7;
-    int swap1 = 0, swap2 = 0, sum = 0;
+    int sum = 0;
 
     DrawText("Reference Exercise:", 50, 150, BLUE, 20);
     DrawText("no solution needed.", 50, 180, BLUE, 20);
@@ -31,11 +26,6 @@ int PreAndPostIncAndDec::runExercise()     // copy the exercise name & paste it 
     seeout << "5th sum: " << sum-- << "\n";
     seeout << "6th sum: " << --sum << "\n";
     seeout << "7th sum: " << ++sum << "\n";
-
-    // This is FeetWetCoding internal stuff you can ignore for now:
-    DrawReferenceBox(LEFTRIGHT);    // draw the graphical reference frame
-
-    return 0;
 }
 
 

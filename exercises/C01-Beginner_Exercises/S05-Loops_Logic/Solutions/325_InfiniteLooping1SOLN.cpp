@@ -8,14 +8,10 @@
 // OPEN FeetWetCoding/helpinfo/html/EXERCISENAME.html
 // for more information about this exercise.
 
-#include <setup.h>
 #include <exercises/C01_S05.h>
-extern bool Gsoln;
 
-int InfiniteLooping1Soln::runExercise()
+void InfiniteLooping1Soln::runExercise()
 {
-    Gsoln = true;
-
     int x=20, y=20;
     int verticalstep=30;
 
@@ -25,6 +21,4 @@ int InfiniteLooping1Soln::runExercise()
         y += verticalstep;  // when this line was commented out, y stayed 20 forever!
 
     }
-
-    return 0;
 }

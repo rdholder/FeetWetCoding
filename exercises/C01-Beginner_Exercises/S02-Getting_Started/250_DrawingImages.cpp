@@ -4,14 +4,10 @@
 
 // Open (double-click) the README.html file to access the documentation.
 
-#include <setup.h>
 #include <exercises/C01_S02.h>
-extern bool Gsoln;
 
-int DrawingImages::runExercise()
+void DrawingImages::runExercise()
 {
-    Gsoln = false;
-
     // WARNING!  Please do not try to add your own images yet!  I know it's fun,
     // but until you are more familiar with Qt Creator and C++, you will most
     // likely just hose your FeetWetCoding project, and then you may not be able to
@@ -26,12 +22,4 @@ int DrawingImages::runExercise()
     DrawImage(":images/DuckFeet100x45.bmp", 10, 200);
     DrawImage(":images/spaceship50x59.jpg", 200, 200);
     DrawImage(":images/clock100x100.gif", 280, 200);
-
-
-    // This is FeetWetCoding internal stuff you can ignore for now:
-    DrawReferenceBox(LEFTRIGHT);    // draw the graphical reference frame
-    DrawingImagesSoln *solution = new DrawingImagesSoln();
-    solution->runExercise();        // run Soln code to show what solution looks like
-
-    return 0;
 }

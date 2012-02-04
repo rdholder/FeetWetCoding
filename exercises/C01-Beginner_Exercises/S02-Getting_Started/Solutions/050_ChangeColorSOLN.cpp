@@ -4,17 +4,11 @@
 
 // Open (double-click) the README.html file to access the documentation.
 
-#include <setup.h>
 #include <exercises/C01_S02.h>
-extern bool Gsoln;
 
-int ChangeColorSoln::runExercise()
+void ChangeColorSoln::runExercise()
 {
-    Gsoln = true;
-
     // USAGE: DrawText("Text.", x, y, color, fontsize);
 
     DrawText("color is RED", 50, 150, RED, 15);
-
-    return 0;
 }

@@ -4,19 +4,14 @@
 
 // Open (double-click) the README.html file to access the documentation.
 
-#include <setup.h>
 #include <exercises/C01_S02.h>
-extern bool Gsoln;
 
-int DrawCirclesSoln::runExercise()
+void DrawCirclesSoln::runExercise()
 {
-    Gsoln = true;
-
     // USAGE: DrawCircle(x, y, radius, color, thickness, solid);
     // (solid is an optional parameter, you can use it or leave it out.)
+
     DrawCircle(150, 220, 100, BLACK, 1, true);
     DrawCircle(250, 200, 200, RED, 10);
     DrawCircle(130, 180, 80, BLUE, 1);
-
-    return 0;
 }
