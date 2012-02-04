@@ -11,7 +11,7 @@ int DrawRectangles::runExercise()
 {
     Gsoln = false;
 
-    // USAGE: DrawRectangle(x, y, width, height, color, linewidth);
+    // USAGE: DrawRectangle(x, y, width, height, color, thickness, solid);
     // (solid is an optional parameter, you can use it or leave it out.)
     DrawRectangle(50, 50, 300, 300, BLACK, 1);
     DrawRectangle(150, 150, 100, 100, RED, 5);
