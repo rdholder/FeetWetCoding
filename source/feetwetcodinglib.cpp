@@ -71,12 +71,18 @@ void setupDrawingUtils()
     Gsoln = false;
     exerciseOut->setTextColor(Qt::blue);
     solnOut->setTextColor(Qt::blue);
+    exerciseOut->setFontPointSize(8);
+    solnOut->setFontPointSize(8);
+
     outboxes << "Exercise output\n\n";
     Gsoln = true;
     outboxes << "Solution output\n\n";
     Gsoln = false;
+
     exerciseOut->setTextColor(Qt::black);
     solnOut->setTextColor(Qt::black);
+    exerciseOut->setFontPointSize(10);
+    solnOut->setFontPointSize(10);
 
 }
 
