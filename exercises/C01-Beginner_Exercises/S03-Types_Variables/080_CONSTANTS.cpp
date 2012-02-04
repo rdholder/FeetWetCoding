@@ -23,7 +23,6 @@ int CONSTANTS::runExercise()     // copy the exercise name & paste it into main.
     const int CHESSBOARDX(8);
     const int CHESSBOARDY(8);
 
-    int boardsquares = 0;
     int chessboardx = 0;
 
     DrawText("seeout output below:", 50, 170, BLUE, 20);
@@ -33,8 +32,8 @@ int CONSTANTS::runExercise()     // copy the exercise name & paste it into main.
     seeout << "There are " << CHESSBOARDX * CHESSBOARDY << " squares on a chessboard.\n";
     chessboardx = 20;
     seeout << "There are still " << CHESSBOARDX * CHESSBOARDY << " squares on a chessboard.\n";
-    seeout << "(In other words, variable and constant names are case-sensitive.)\n";
-    seeout << "(Nothing to solve in this exercise.\n)";
+    seeout << "In other words, variable and constant names are case-sensitive.\n";
+    seeout << "(Nothing to solve in this exercise.)\n";
 
     // uncomment the next line and compile to see what the error looks like when you try to
     // assign a value to a constant:

@@ -18,9 +18,9 @@ int StandardStrings::runExercise()     // copy the exercise name & paste it into
 {
     Gsoln = false;
 
-    string towel ("Always know where your towel is!");
-    string fordsays ("Don't Panic!");
-    string swap ("sometext");
+    string towel = "Always know where your towel is!";
+    string fordsays = "Don't Panic!";
+    string swap = "sometext";
 
     DrawText("seeout output below:", 50, 170, BLUE, 20);
 
