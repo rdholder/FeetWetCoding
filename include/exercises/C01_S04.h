@@ -9,11 +9,11 @@
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
 
-class GetsAndPlusGets : public FeetWetCodingExercise
+class AssignmentArithmetic : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit GetsAndPlusGets(QObject *parent = 0):FeetWetCodingExercise(parent){}
+    explicit AssignmentArithmetic(QObject *parent = 0):FeetWetCodingExercise(parent){}
 
 signals:
 
@@ -22,11 +22,37 @@ public slots:
 
 };
 
-class GetsAndPlusGetsSoln : public FeetWetCodingExercise
+class PreAndPostIncAndDec : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit GetsAndPlusGetsSoln(QObject *parent = 0):FeetWetCodingExercise(parent){}
+    explicit PreAndPostIncAndDec(QObject *parent = 0):FeetWetCodingExercise(parent){}
+
+signals:
+
+public slots:
+    virtual int runExercise();
+
+};
+
+class Misdirection : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit Misdirection(QObject *parent = 0):FeetWetCodingExercise(parent){}
+
+signals:
+
+public slots:
+    virtual int runExercise();
+
+};
+
+class MisdirectionSoln : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit MisdirectionSoln(QObject *parent = 0):FeetWetCodingExercise(parent){}
 
 signals:
 

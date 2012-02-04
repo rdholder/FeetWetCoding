@@ -458,6 +458,8 @@ int random(int biggest)
 // you can supply positive or negative ints, just make sure smallest < biggest
 // for example calling it with 10,20 will give you a random int betwen 10 and 20
 // supplying -30,20 will give a random int between -30 and 20
+// if they need 0 through x they should use random(x);
+// if they need -x through 0, they should use random(x) * -1;
 int randomRange(int smallest, int biggest)
 {
     if ( smallest < biggest && smallest != 0 && biggest != 0 )

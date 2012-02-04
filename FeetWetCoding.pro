@@ -10,7 +10,6 @@ TARGET = FeetWetCoding
 TEMPLATE = app
 
 SOURCES += \
-    exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/Solutions/050_GetsAndPlusGetsSOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/325_InfiniteLooping1.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/300_IfThen1.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/150_WhileLoop5.cpp \
@@ -59,7 +58,6 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/300_seeoutIntro.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/310_seeoutFormatting.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/310_seeoutFormattingSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/050_GetsAndPlusGets.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/250_DrawingImages.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/250_DrawingImagesSOLN.cpp \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/020_Integers.cpp \
@@ -74,7 +72,13 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/080_CONSTANTS.cpp \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/300_ChoosingVariableNames.cpp \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/200_StandardStrings.cpp \
-    exercises/C01-Beginner_Exercises/S03-Types_Variables/Solutions/200_StandardStringsSOLN.cpp
+    exercises/C01-Beginner_Exercises/S03-Types_Variables/Solutions/200_StandardStringsSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/040_OrderOfOperations.cpp \
+    exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/520_Misdirection.cpp \
+    exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/Solutions/520_MisdirectionSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/080_random-randomRange.cpp \
+    exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/020_AssignmentArithmetic.cpp \
+    exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/060_PreAndPostIncAndDec.cpp
 
 
 HEADERS += \
