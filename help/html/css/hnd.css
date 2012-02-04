@@ -650,19 +650,40 @@ span.rvts108
 }
 span.rvts109
 {
- font-size: 14pt;
+ font-size: 12pt;
+ font-weight: bold;
+ color: #190000;
 }
 span.rvts110
 {
+ font-size: 18pt;
+ color: #00b050;
+}
+span.rvts111
+{
+ font-size: 18pt;
+ color: #2f6b55;
+}
+span.rvts112
+{
+ font-size: 18pt;
+ color: #00a5ff;
+}
+span.rvts113
+{
+ font-size: 14pt;
+}
+span.rvts114
+{
  font-size: 16pt;
 }
-a.rvts111, span.rvts111
+a.rvts115, span.rvts115
 {
  font-size: 12pt;
  color: #0000ff;
  text-decoration: underline;
 }
-a.rvts111:hover { color: #0000ff; }
+a.rvts115:hover { color: #0000ff; }
 /* ========== Para Styles ========== */
 p,ul,ol /* Paragraph Style */
 {
