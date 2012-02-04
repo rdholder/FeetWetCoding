@@ -490,7 +490,7 @@ void eoView::keyPressEvent( QKeyEvent *k )
         ClearScreen();
         break;
     case Qt::Key_R:
-        colortest();
+        //colortest();
         break;
     case Qt::Key_Q:
         cerr << "I got a 'q' - Quitting the app...\n";

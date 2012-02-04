@@ -8,10 +8,9 @@
 // "The Mote in God's Eye" by Larry Niven & Jerry Pournelle, page 210
 // (from "ELIZA Crossing the Ice"):
 // "There are things wrong wi' some o' the tools and 'tis my task to put them right."
-// My eternal gratitude to Niven & Pournelle for enriching my life and giving me a
-// larger world to live in.  -- rdh
 
 #include <setup.h>
+#include <include/exercises/exercises.h>
 
 FeetWetCodingExercise *exercise(NULL);
 
@@ -20,12 +19,20 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     setupDrawingUtils();
 
+
     /////////////////////////////////////////
     //////  CHOOSE YOUR EXERCISE HERE  //////
     exercise = new Welcome();
     /////////////////////////////////////////
-    exercise->runExercise();
 
+
+
+
+
+
+
+
+    exercise->runExercise();
     //Start the application loop
     return a.exec();
 }

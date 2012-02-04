@@ -9,6 +9,7 @@
 // for more information about this exercise.
 
 #include <setup.h>
+#include <exercises/C01_S05.h>
 extern bool Gsoln;
 
 int WhileLoop1Soln::runExercise()
@@ -21,13 +22,13 @@ int WhileLoop1Soln::runExercise()
     while ( x < 400 )
     {
         x += horizontalstep;
-        DrawLine(0, 600, x, 0, BLUE, 1);
+        DrawLine(0, 400, x, 0, BLUE, 1);
     }
 
-    while ( y < 600 )
+    while ( y < 400 )
     {
         y += verticalstep;
-        DrawLine(0, 600, 400, y, RED, 1);
+        DrawLine(0, 400, 400, y, RED, 1);
     }
 
     return 0;

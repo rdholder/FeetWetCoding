@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <setup.h>
+#include <exercises/FeetWetCodingExercise.h>
 
 class myprogram : public FeetWetCodingExercise
 {

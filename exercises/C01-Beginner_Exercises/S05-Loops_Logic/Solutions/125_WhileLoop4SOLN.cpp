@@ -9,13 +9,14 @@
 // for more information about this exercise.
 
 #include <setup.h>
+#include <exercises/C01_S05.h>
 extern bool Gsoln;
 
 int WhileLoop4Soln::runExercise()
 {
     Gsoln = true;
 
-    int x=0, y=600;
+    int x=0, y=400;
     int velocity= -45;
     int rateofchange=3;
     int horizontalstep = 12;

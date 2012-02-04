@@ -9,6 +9,7 @@
 // for more information about this exercise.
 
 #include <setup.h>
+#include <exercises/C01_S02.h>
 extern bool Gsoln;
 
 int DrawingText::runExercise()      // copy the exercise name & paste it into main.cpp

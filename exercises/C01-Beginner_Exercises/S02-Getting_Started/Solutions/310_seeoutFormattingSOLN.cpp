@@ -9,13 +9,14 @@
 // for more information about this exercise.
 
 #include <setup.h>
+#include <exercises/C01_S02.h>
 extern bool Gsoln;
 
 int seeoutFormattingSoln::runExercise()  // copy the exercise name & paste it into main.cpp
 {
     Gsoln = true;              // is this exercise code or solution code?
 
-    DrawText("Make the \"seeout\" output", 30, 80, BLUE, 20);
+    DrawText("Make the seeout output", 30, 80, BLUE, 20);
     DrawText("in the boxes below match...", 30, 120, BLUE, 20);
 
     seeout << "1\n";

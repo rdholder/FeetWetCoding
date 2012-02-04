@@ -22,7 +22,7 @@
 #include <sstream>
 
 #include <include/feetwetcodinglib.h>
-#include <include/exercises.h>
+
 #include <constants.h>      // FeetWetCoding constants: things we use in many exercises
 
 #endif // SETUP_H

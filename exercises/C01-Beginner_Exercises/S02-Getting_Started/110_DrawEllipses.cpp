@@ -5,13 +5,12 @@
 // Open (double-click) the README.html file to access the documentation.
 
 #include <setup.h>
+#include <exercises/C01_S02.h>
 extern bool Gsoln;
 
 int DrawEllipses::runExercise()
 {
     Gsoln = false;
-
-    // Things drawn later get drawn on top of things drawn earlier!
 
     // USAGE: DrawEllipse(x, y, width, height, color, thickness, solid);
     // (solid is an optional parameter, you can use it or leave it out.)

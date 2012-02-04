@@ -9,6 +9,7 @@
 // for more information about this exercise.
 
 #include <setup.h>
+#include <exercises/C01_S05.h>
 extern bool Gsoln;
 
 int WhileLoop2::runExercise()
@@ -21,7 +22,7 @@ int WhileLoop2::runExercise()
     while ( x < 400 )
     {
         x += horizontalstep;
-        DrawLine(200, 0, x, 300, BLUE, 1);
+        DrawLine(200, 0, x, 200, BLUE, 1);
     }
 
     x=0;
@@ -29,7 +30,7 @@ int WhileLoop2::runExercise()
     while ( x < 400 )
     {
         x += horizontalstep;
-        DrawLine(200, 600, x, 300, RED, 1);
+        DrawLine(200, 400, x, 200, RED, 1);
     }
 
     DrawReferenceBox(LEFTRIGHT);    // draw the graphical reference frame

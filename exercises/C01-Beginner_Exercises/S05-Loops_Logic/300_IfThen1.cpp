@@ -9,6 +9,7 @@
 // for more information about this exercise.
 
 #include <setup.h>
+#include <exercises/C01_S05.h>
 extern bool Gsoln;
 
 int IfThen1::runExercise()
@@ -20,7 +21,7 @@ int IfThen1::runExercise()
 
     while ( x < 400 )
     {
-        while ( y < 600 )
+        while ( y < 400 )
         {
             if ( x < y)
             {
