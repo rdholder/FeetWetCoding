@@ -9,16 +9,17 @@
 // for more information about this exercise.
 
 #include <setup.h>
+#include <exercises/C01_S03.h>
 extern bool Gsoln;
 
-int DeclaringIntegers::runExercise()     // copy the exercise name & paste it into main.cpp
+int Floats::runExercise()     // copy the exercise name & paste it into main.cpp
 {
     Gsoln = false;
 
-    int x = 100;     // = is pronounced GETS, == is pronounced EQUALS
-    int y = 100;
-    int a = 100, b = 100;   // you can declare multiple variables on one line
-    int c, d, e = 100;      // remember to initialize every variable!
+    float x = 0.001;            // = is pronounced GETS, == is pronounced EQUALS
+    float y = 100.001;
+    float a = 100, b = 100;     // you can declare multiple variables on one line
+    float c, d, e = 100;        // remember to initialize!
 
     DrawText("seeout output below:", 50, 170, BLUE, 20);
 
@@ -31,7 +32,7 @@ int DeclaringIntegers::runExercise()     // copy the exercise name & paste it in
 
     // This is FeetWetCoding internal stuff you can ignore for now:
     DrawReferenceBox(LEFTRIGHT);    // draw the graphical reference frame
-    DeclaringIntegersSoln *solution = new DeclaringIntegersSoln();
+    FloatsSoln *solution = new FloatsSoln();
     solution->runExercise();        // run Soln code to show what solution looks like
 
     return 0;

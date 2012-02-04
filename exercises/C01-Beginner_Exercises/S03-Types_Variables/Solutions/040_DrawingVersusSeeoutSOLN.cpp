@@ -9,9 +9,10 @@
 // for more information about this exercise.
 
 #include <setup.h>
+#include <exercises/C01_S03.h>
 extern bool Gsoln;
 
-int DisplayingIntegersSoln::runExercise()     // copy the exercise name & paste it into main.cpp
+int DrawingVersusSeeoutSoln::runExercise()     // copy the exercise name & paste it into main.cpp
 {
     Gsoln = true;
 

@@ -9,6 +9,7 @@
 // for more information about this exercise.
 
 #include <setup.h>
+#include <exercises/C01_S05.h>
 extern bool Gsoln;
 
 int InfiniteLooping1Soln::runExercise()

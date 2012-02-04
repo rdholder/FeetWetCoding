@@ -1,4 +1,5 @@
 #include <setup.h>
+#include <exercises/FeetWetCodingExercise.h>
 
 using namespace std;
 

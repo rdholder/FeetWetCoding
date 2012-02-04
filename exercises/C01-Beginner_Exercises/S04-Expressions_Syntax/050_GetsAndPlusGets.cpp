@@ -9,6 +9,7 @@
 // for more information about this exercise.
 
 #include <setup.h>
+#include <exercises/C01_S04.h>
 extern bool Gsoln;
 
 int GetsAndPlusGets::runExercise()  // copy the exercise name & paste it into main.cpp

@@ -9,9 +9,10 @@
 // for more information about this exercise.
 
 #include <setup.h>
+#include <exercises/C01_S03.h>
 extern bool Gsoln;
 
-int DisplayingIntegers::runExercise()     // copy the exercise name & paste it into main.cpp
+int DrawingVersusSeeout::runExercise()     // copy the exercise name & paste it into main.cpp
 {
     Gsoln = false;
 
@@ -38,7 +39,7 @@ int DisplayingIntegers::runExercise()     // copy the exercise name & paste it i
 
     // This is FeetWetCoding internal stuff you can ignore for now:
     DrawReferenceBox(LEFTRIGHT);    // draw the graphical reference frame
-    DisplayingIntegersSoln *solution = new DisplayingIntegersSoln();
+    DrawingVersusSeeoutSoln *solution = new DrawingVersusSeeoutSoln();
     solution->runExercise();        // run Soln code to show what solution looks like
 
     return 0;

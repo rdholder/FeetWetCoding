@@ -9,14 +9,15 @@
 // for more information about this exercise.
 
 #include <setup.h>
+#include <exercises/C01_S03.h>
 extern bool Gsoln;
 
-int DeclaringFloatsSoln::runExercise()     // copy the exercise name & paste it into main.cpp
+int FloatsSoln::runExercise()     // copy the exercise name & paste it into main.cpp
 {
     Gsoln = true;
 
-    float x = 0.00001;     // = is pronounced GETS, == is pronounced EQUALS
-    float y = 100.0001;
+    float x = 0.001;     // = is pronounced GETS, == is pronounced EQUALS
+    float y = 100.001;
     float a = 100, b = 100;   // you can declare multiple variables on one line
     float c = 100, d = 100 , e = 100;      // remember to initialize!
 
