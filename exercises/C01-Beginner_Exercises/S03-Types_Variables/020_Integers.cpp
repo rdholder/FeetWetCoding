@@ -8,14 +8,10 @@
 // OPEN FeetWetCoding/helpinfo/html/ch00ex00TITLE.html
 // for more information about this exercise.
 
-#include <setup.h>
 #include <exercises/C01_S03.h>
-extern bool Gsoln;
 
-int Integers::runExercise()     // copy the exercise name & paste it into main.cpp
+void Integers::runExercise()
 {
-    Gsoln = false;
-
     // THE EXERCISES IN THIS SECTION ARE MOSTLY FOR YOUR REFERENCE.  DO NOT WORRY
     // IF IT SEEMS CONFUSING OR YOU DON'T GET THE POINT OF WHY WE'RE DOING THIS!
     // You can look at these exercises and run them, and move on.  Types and
@@ -34,13 +30,6 @@ int Integers::runExercise()     // copy the exercise name & paste it into main.c
     seeout << "coconuts: " << c << "\n";
     seeout << "dates: " << d << "\n";
     seeout << "emblic: " << e << "\n";
-
-    // This is FeetWetCoding internal stuff you can ignore for now:
-    DrawReferenceBox(LEFTRIGHT);    // draw the graphical reference frame
-    IntegersSoln *solution = new IntegersSoln();
-    solution->runExercise();        // run Soln code to show what solution looks like
-
-    return 0;
 }
 
 

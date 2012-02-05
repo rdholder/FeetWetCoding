@@ -14,10 +14,13 @@ signals:
 
 public slots:
     virtual void update();
-    virtual int runExercise()=0;
 
 protected:
+    virtual void runExercise();
+    virtual void setupSolution(){} //=0;
+
     SeeOut seeout;
+    FeetWetCodingExercise *mSolutionPtr;
 };
 
 #endif // FEETWETCODINGEXERCISE_H

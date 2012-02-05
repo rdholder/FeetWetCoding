@@ -31,8 +31,6 @@ int main(int argc, char *argv[])
 
 
 
-
-    exercise->runExercise();
     //Start the application loop
     return a.exec();
 }

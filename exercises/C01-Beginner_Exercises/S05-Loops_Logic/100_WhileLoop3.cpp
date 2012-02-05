@@ -8,14 +8,10 @@
 // OPEN FeetWetCoding/helpinfo/html/EXERCISENAME.html
 // for more information about this exercise.
 
-#include <setup.h>
 #include <exercises/C01_S05.h>
-extern bool Gsoln;
 
-int WhileLoop3::runExercise()
+void WhileLoop3::runExercise()
 {
-    Gsoln = false;                  // is this exercise code or solution code?
-
     int x=0, y=0;                   // = is pronounced GETS, == is pronounced EQUALS
     int verticalstep=10, horizontalstep=15;
 
@@ -32,13 +28,4 @@ int WhileLoop3::runExercise()
         DrawLine(0, 200, 400, y, GREEN, 1);
         DrawLine(400, 200, 0, y, YELLOW, 1);
     }
-
-    DrawReferenceBox(LEFTRIGHT);    // draw the graphical reference frame
-
-    // Run the Soln code to show what the solution looks like:
-    WhileLoop3Soln *solution = new WhileLoop3Soln();
-    solution->runExercise();
-
-    return 0;
-
 }

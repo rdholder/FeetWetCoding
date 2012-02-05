@@ -13,52 +13,98 @@ class AssignmentArithmetic : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit AssignmentArithmetic(QObject *parent = 0):FeetWetCodingExercise(parent){}
+    explicit AssignmentArithmetic(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = false;
+        this->runExercise();
+        this->setupSolution();
+    }
 
 signals:
 
 public slots:
-    virtual int runExercise();
 
+protected:
+    void runExercise();
+
+    //Hide this implementation from the student
+    void setupSolution()
+    {
+        DrawReferenceBox(LEFTRIGHT);
+    }
 };
 
 class PreAndPostIncAndDec : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit PreAndPostIncAndDec(QObject *parent = 0):FeetWetCodingExercise(parent){}
+    explicit PreAndPostIncAndDec(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = false;
+        this->runExercise();
+        this->setupSolution();
+    }
 
 signals:
 
 public slots:
-    virtual int runExercise();
 
-};
+protected:
+    void runExercise();
 
-class Misdirection : public FeetWetCodingExercise
-{
-    Q_OBJECT
-public:
-    explicit Misdirection(QObject *parent = 0):FeetWetCodingExercise(parent){}
-
-signals:
-
-public slots:
-    virtual int runExercise();
-
+    //Hide this implementation from the student
+    void setupSolution()
+    {
+        DrawReferenceBox(LEFTRIGHT);
+    }
 };
 
 class MisdirectionSoln : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit MisdirectionSoln(QObject *parent = 0):FeetWetCodingExercise(parent){}
+    explicit MisdirectionSoln(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = true;
+        this->runExercise();
+    }
 
 signals:
 
 public slots:
-    virtual int runExercise();
 
+protected:
+    void runExercise();
+};
+
+class Misdirection : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit Misdirection(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = false;
+        this->runExercise();
+        this->setupSolution();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+
+    //Hide this implementation from the student
+    void setupSolution()
+    {
+        DrawReferenceBox(LEFTRIGHT);
+        mSolutionPtr = new MisdirectionSoln(); // Executes soln's runExercise();
+    }
 };
 
 #endif // C01_S04_H

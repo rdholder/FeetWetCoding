@@ -8,16 +8,12 @@
 // OPEN FeetWetCoding/helpinfo/html/ch00ex00TITLE.html
 // for more information about this exercise.
 
-#include <setup.h>
 #include <exercises/C01_S04.h>
+
 using std::string;
 
-extern bool Gsoln;
-
-int AssignmentArithmetic::runExercise()     // copy the exercise name & paste it into main.cpp
+void AssignmentArithmetic::runExercise()
 {
-    Gsoln = false;
-
     int x = 0, y = 0, a = 1, b = 3, c = 5, d = 7;
 
     DrawText("Reference Exercise:", 50, 150, BLUE, 20);
@@ -38,11 +34,6 @@ int AssignmentArithmetic::runExercise()     // copy the exercise name & paste it
     x = x / 2;
     y /= 2;
     seeout << "5th x,y: " << x << "," << y << "\n";
-
-    // This is FeetWetCoding internal stuff you can ignore for now:
-    DrawReferenceBox(LEFTRIGHT);    // draw the graphical reference frame
-
-    return 0;
 }
 
 

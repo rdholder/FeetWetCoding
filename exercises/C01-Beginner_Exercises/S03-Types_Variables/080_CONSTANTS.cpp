@@ -8,14 +8,10 @@
 // OPEN FeetWetCoding/helpinfo/html/ch00ex00TITLE.html
 // for more information about this exercise.
 
-#include <setup.h>
 #include <exercises/C01_S03.h>
-extern bool Gsoln;
 
-int CONSTANTS::runExercise()     // copy the exercise name & paste it into main.cpp
+void CONSTANTS::runExercise()     // copy the exercise name & paste it into main.cpp
 {
-    Gsoln = false;
-
     // This exercise only demonstrates const for reference.  There is nothing for you to solve.
 
     const int LIGHTSPEEDMPH(186282);
@@ -43,12 +39,6 @@ int CONSTANTS::runExercise()     // copy the exercise name & paste it into main.
 
     // ...don't forget to comment it out again after you have seen the error
     // or FeetWetCoding won't compile anymore!
-
-
-    // This is FeetWetCoding internal stuff you can ignore for now:
-    DrawReferenceBox(LEFTRIGHT);    // draw the graphical reference frame
-
-    return 0;
 }
 
 

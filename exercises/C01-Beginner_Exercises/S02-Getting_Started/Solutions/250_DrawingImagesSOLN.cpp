@@ -4,15 +4,12 @@
 
 // Open (double-click) the README.html file to access the documentation.
 
-#include <setup.h>
 #include <exercises/C01_S02.h>
-extern bool Gsoln;
 
-int DrawingImagesSoln::runExercise()
+void DrawingImagesSoln::runExercise()
 {
-    Gsoln = true;
-
     // USAGE: DrawImage("images:/filename.png", x, y);
+
     DrawImage(":images/ken-thompson-l-and-dennis-ritchie-r100x65.png", 10, 10);
     DrawImage(":images/BrianKernighan50x58.png", 130, 10);
     DrawImage(":images/BjarneStroustrup50x55.png", 200, 10);
@@ -23,6 +20,4 @@ int DrawingImagesSoln::runExercise()
     DrawImage(":images/spaceship50x59.jpg", 70, 160);
     DrawImage(":images/spaceship50x59.jpg", 280, 160);
     DrawImage(":images/spaceship50x59.jpg", 175, 260);
-
-    return 0;
 }
