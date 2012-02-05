@@ -83,7 +83,11 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/100_ModulusOperator.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/110_Booleans.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/120_BlocksAndScope.cpp \
-    exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/140_MathFunctions.cpp
+    exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/140_MathFunctions.cpp \
+    source/underconstruction/GameWidget.cpp \
+    source/underconstruction/tetris/Tetris.cpp \
+    source/underconstruction/tetris/TetrisWidget.cpp \
+    source/underconstruction/tetris/TetrisSOLN.cpp
 
 
 HEADERS += \
@@ -97,7 +101,10 @@ HEADERS += \
     include/exercises/C01_S03.h \
     include/exercises/C01_S05.h \
     include/exercises/C01_S04.h \
-    include/exercises/FeetWetCodingExercise.h
+    include/exercises/FeetWetCodingExercise.h \
+    include/underconstruction/gamewidget.h \
+    include/underconstruction/tetris/Tetris.h \
+    include/underconstruction/tetris/TetrisWidget.h
 
 FORMS +=
 
@@ -109,6 +116,23 @@ OTHER_FILES +=
 
 RESOURCES += \
     feetwetresources.qrc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
