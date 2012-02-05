@@ -9,7 +9,5 @@
 void ChangeX::runExercise()
 {
     // USAGE: DrawText("Text.", x, y, color, fontsize);
-
-    // CHANGE 10 TO 300
     DrawText("change x", 10, 150, BLUE, 15);
 }
