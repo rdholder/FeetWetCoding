@@ -8,14 +8,10 @@
 // OPEN FeetWetCoding/helpinfo/html/EXERCISENAME.html
 // for more information about this exercise.
 
-#include <setup.h>
 #include <exercises/C01_S05.h>
-extern bool Gsoln;
 
-int IfThen1Soln::runExercise()
+void IfThen1Soln::runExercise()
 {
-    Gsoln = true;
-
     int x=0, y=0;
     int horizontalstep=70, verticalstep=70;
 
@@ -41,6 +37,4 @@ int IfThen1Soln::runExercise()
         y=0;
         x += horizontalstep;
     }
-
-    return 0;
 }

@@ -4,14 +4,10 @@
 
 // Open (double-click) the README.html file to access the documentation.
 
-#include <setup.h>
 #include <exercises/C01_S02.h>
-extern bool Gsoln;
 
-int DrawCircles::runExercise()
+void DrawCircles::runExercise()
 {
-    Gsoln = false;
-
     // Things drawn later get drawn on top of things drawn earlier!
 
     // USAGE: DrawCircle(x, y, radius, color, thickness, solid);
@@ -19,11 +15,4 @@ int DrawCircles::runExercise()
     DrawCircle(130, 180, 80, BLUE, 1);
     DrawCircle(150, 220, 100, BLACK, 1, true);
     DrawCircle(250, 200, 200, RED, 10);
-
-    // This is FeetWetCoding internal stuff you can ignore for now:
-    DrawReferenceBox(LEFTRIGHT);    // draw the graphical reference frame
-    DrawCirclesSoln *solution = new DrawCirclesSoln();
-    solution->runExercise();        // run Soln code to show what solution looks like
-
-    return 0;
 }

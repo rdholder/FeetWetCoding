@@ -8,17 +8,12 @@
 // OPEN FeetWetCoding/helpinfo/html/ch00ex00TITLE.html
 // for more information about this exercise.
 
-#include <setup.h>
 #include <exercises/C01_S03.h>
-
-extern bool Gsoln;
 
 using std::string;
 
-int StandardStrings::runExercise()     // copy the exercise name & paste it into main.cpp
+void StandardStrings::runExercise()
 {
-    Gsoln = false;
-
     // NOTICE: to use standard strings we have to say "using std::string;" above!
 
     string towel = "Always know where your towel is!";
@@ -44,13 +39,6 @@ int StandardStrings::runExercise()     // copy the exercise name & paste it into
     seeout << "fordsays contains: " << fordsays << "\n";
     seeout << "Characters in towel string: " << towel.size();
     seeout << "  Characters in fordsays string: " << fordsays.size() << "\n\n";
-
-    // This is FeetWetCoding internal stuff you can ignore for now:
-    DrawReferenceBox(LEFTRIGHT);    // draw the graphical reference frame
-    StandardStringsSoln *solution = new StandardStringsSoln();
-    solution->runExercise();        // run Soln code to show what solution looks like
-
-    return 0;
 }
 
 

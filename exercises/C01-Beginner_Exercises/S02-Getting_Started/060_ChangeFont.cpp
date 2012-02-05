@@ -4,22 +4,10 @@
 
 // Open (double-click) the README.html file to access the documentation.
 
-#include <setup.h>
 #include <exercises/C01_S02.h>
-extern bool Gsoln;
 
-int ChangeFont::runExercise()
+void ChangeFont::runExercise()
 {
-    Gsoln = false;
-
     // USAGE: DrawText("Text.", x, y, color, fontsize);
     DrawText("Change fontsize 10...", 50, 150, BLUE, 10);
-
-
-    // This is FeetWetCoding internal stuff you can ignore for now:
-    DrawReferenceBox(LEFTRIGHT);    // draw the graphical reference frame
-    ChangeFontSoln *solution = new ChangeFontSoln();
-    solution->runExercise();        // run Soln code to show what solution looks like
-
-    return 0;
 }

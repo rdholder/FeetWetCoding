@@ -8,14 +8,10 @@
 // OPEN FeetWetCoding/helpinfo/html/ch00ex00TITLE.html
 // for more information about this exercise.
 
-#include <setup.h>
 #include <exercises/C01_S03.h>
-extern bool Gsoln;
 
-int FloatsSoln::runExercise()     // copy the exercise name & paste it into main.cpp
+void FloatsSoln::runExercise()
 {
-    Gsoln = true;
-
     float x = 0.001;     // = is pronounced GETS, == is pronounced EQUALS
     float y = 100.001;
     float a = 100, b = 100;   // you can declare multiple variables on one line
@@ -29,8 +25,6 @@ int FloatsSoln::runExercise()     // copy the exercise name & paste it into main
     seeout << "coconuts: " << c << "\n";
     seeout << "dates: " << d << "\n";
     seeout << "emblic: " << e << "\n";
-
-    return 0;
 }
 
 

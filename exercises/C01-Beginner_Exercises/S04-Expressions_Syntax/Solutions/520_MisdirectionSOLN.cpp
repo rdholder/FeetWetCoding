@@ -8,14 +8,10 @@
 // OPEN FeetWetCoding/helpinfo/html/Misdirection.html
 // for more information about this exercise.
 
-#include <setup.h>
 #include <exercises/C01_S04.h>
-extern bool Gsoln;
 
-int MisdirectionSoln::runExercise()
+void MisdirectionSoln::runExercise()
 {
-    Gsoln = true;
-
     int verticalstep=0;
     int a=0, x=2, y=50;
 
@@ -43,6 +39,4 @@ int MisdirectionSoln::runExercise()
     DrawText("Fourth sentence.", x, y, RED, 15);
     y += verticalstep;
     DrawText("Fifth sentence.", x, y, BLACK, 15);
-
-    return 0;
 }

@@ -8,14 +8,10 @@
 // OPEN FeetWetCoding/helpinfo/html/EXERCISENAME.html
 // for more information about this exercise.
 
-#include <setup.h>
 #include <exercises/C01_S05.h>
-extern bool Gsoln;
 
-int WhileLoop3Soln::runExercise()
+void WhileLoop3Soln::runExercise()
 {
-    Gsoln = true;
-
     int x=0, y=0;
     int verticalstep=10, horizontalstep=15;
 
@@ -32,7 +28,4 @@ int WhileLoop3Soln::runExercise()
         DrawLine(200, 200, 400, y, GREEN, 1);
         DrawLine(200, 200, 0, y, YELLOW, 1);
     }
-
-    return 0;
-
 }

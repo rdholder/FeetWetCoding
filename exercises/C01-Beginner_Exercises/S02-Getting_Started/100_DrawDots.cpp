@@ -4,14 +4,10 @@
 
 // Open (double-click) the README.html file to access the documentation.
 
-#include <setup.h>
 #include <exercises/C01_S02.h>
-extern bool Gsoln;
 
-int DrawDots::runExercise()
+void DrawDots::runExercise()
 {
-    Gsoln = false;
-
     // There is nothing for you to change in this exercise.  It just demonstrates
     // how to draw a pixel with DrawLine and small dots with DrawCircle and DrawRectangle.
     // Most of the time in graphical programing, you won't actually draw individual
@@ -24,11 +20,4 @@ int DrawDots::runExercise()
     DrawLine(200, 100, 200, 100, BLACK, 1);
     DrawCircle(150, 250, 1, BLUE, 1);
     DrawRectangle(250, 250, 1, 1, RED, 1);
-
-    // This is FeetWetCoding internal stuff you can ignore for now:
-    DrawReferenceBox(LEFTRIGHT);    // draw the graphical reference frame
-    DrawDotsSoln *solution = new DrawDotsSoln();
-    solution->runExercise();        // run Soln code to show what solution looks like
-
-    return 0;
 }

@@ -4,18 +4,13 @@
 
 // Open (double-click) the README.html file to access the documentation.
 
-#include <setup.h>
 #include <exercises/C01_S02.h>
-extern bool Gsoln;
 
-int DrawLinesSoln::runExercise()
+void DrawLinesSoln::runExercise()
 {
-    Gsoln = true;
-
     // USAGE: DrawLine(xStart, yStart, xEnd, yEnd, color, thickness);
+
     DrawLine(200, 400,   0, 0, BLUE, 1);
     DrawLine(200, 400, 200, 0, RED, 5);
     DrawLine(200, 400, 400, 0, BLACK, 10);
-
-    return 0;
 }

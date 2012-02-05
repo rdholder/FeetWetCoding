@@ -8,14 +8,10 @@
 // OPEN FeetWetCoding/helpinfo/html/Misdirection.html
 // for more information about this exercise.
 
-#include <setup.h>
 #include <exercises/C01_S04.h>
-extern bool Gsoln;
 
-int Misdirection::runExercise()  // copy the exercise name & paste it into main.cpp
+void Misdirection::runExercise()
 {
-    Gsoln = false;
-
     int verticalstep=0;             // = is pronounced GETS and don't you forget!
     int a=0, x=2, y=50;             // == is pronounced EQUALS, it's twice, like a sequel
 
@@ -31,13 +27,4 @@ int Misdirection::runExercise()  // copy the exercise name & paste it into main.
     DrawText("Fourth sentence.", y, x, RED, 15);
     y += verticalstep;
     DrawText("Fifth sentence.", x, y, BLACK, 15);
-
-    DrawReferenceBox(LEFTRIGHT);    // draw the graphical reference frame
-
-    // Run the Soln code to show what the solution looks like:
-    MisdirectionSoln *solution = new MisdirectionSoln();
-    solution->runExercise();
-
-    return 0;
-
 }

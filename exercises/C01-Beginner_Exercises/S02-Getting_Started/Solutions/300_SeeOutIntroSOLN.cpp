@@ -8,14 +8,10 @@
 // OPEN FeetWetCoding/helpinfo/html/ch00ex00TITLE.html
 // for more information about this exercise.
 
-#include <setup.h>
 #include <exercises/C01_S02.h>
-extern bool Gsoln;
 
-int seeoutIntroSoln::runExercise()  // copy the exercise name & paste it into main.cpp
+void seeoutIntroSoln::runExercise()  // copy the exercise name & paste it into main.cpp
 {
-    Gsoln = true;
-
     DrawText("Make the seeout output", 30, 80, BLUE, 20);
     DrawText("in the boxes below match...", 30, 120, BLUE, 20);
 
@@ -29,8 +25,6 @@ int seeoutIntroSoln::runExercise()  // copy the exercise name & paste it into ma
     seeout << "8" << "\n";
     seeout << "9" << "\n";
     seeout << "10" << "\n";
-
-    return 0;
 }
 
 

@@ -8,14 +8,10 @@
 // OPEN FeetWetCoding/helpinfo/html/ch00ex00TITLE.html
 // for more information about this exercise.
 
-#include <setup.h>
 #include <exercises/C01_S03.h>
-extern bool Gsoln;
 
-int IntegersSoln::runExercise()     // copy the exercise name & paste it into main.cpp
+void IntegersSoln::runExercise()
 {
-    Gsoln = true;
-
     int x = 100;     // = is pronounced GETS, == is pronounced EQUALS
     int y = 100;
     int a = 100, b = 100;
@@ -29,8 +25,6 @@ int IntegersSoln::runExercise()     // copy the exercise name & paste it into ma
     seeout << "coconuts: " << c << "\n";
     seeout << "dates: " << d << "\n";
     seeout << "emblic: " << e << "\n";
-
-    return 0;
 }
 
 

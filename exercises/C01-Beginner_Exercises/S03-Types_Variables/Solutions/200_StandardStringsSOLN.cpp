@@ -9,16 +9,12 @@
 // OPEN FeetWetCoding/helpinfo/html/ch00ex00TITLE.html
 // for more information about this exercise.
 
-#include <setup.h>
 #include <exercises/C01_S03.h>
-extern bool Gsoln;
 
 using std::string;
 
-int StandardStringsSoln::runExercise()     // copy the exercise name & paste it into main.cpp
+void StandardStringsSoln::runExercise()
 {
-    Gsoln = true;
-
     string towel ("Always know where your towel is!");
     string fordsays ("Don't Panic!");
     string swap ("sometext");
@@ -42,8 +38,6 @@ int StandardStringsSoln::runExercise()     // copy the exercise name & paste it 
     seeout << "fordsays contains: " << fordsays << "\n";
     seeout << "Characters in towel string: " << towel.size();
     seeout << "  Characters in fordsays string: " << fordsays.size() << "\n\n";
-
-    return 0;
 }
 
 
