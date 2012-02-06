@@ -143,6 +143,98 @@ protected:
     }
 };
 
+class C01S05_OYO1Soln : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit C01S05_OYO1Soln(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = true;
+        this->runExercise();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+};
+
+class C01S05_OYO1 : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit C01S05_OYO1(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = false;
+        this->runExercise();
+        this->setupSolution();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+
+    //Hide this implementation from the student
+    void setupSolution()
+    {
+        DrawReferenceBox(LEFTRIGHT);
+        mSolutionPtr = new C01S05_OYO1Soln(); // Executes soln's runExercise();
+    }
+};
+
+class C01S05_OYO2Soln : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit C01S05_OYO2Soln(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = true;
+        this->runExercise();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+};
+
+class C01S05_OYO2 : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit C01S05_OYO2(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = false;
+        this->runExercise();
+        this->setupSolution();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+
+    //Hide this implementation from the student
+    void setupSolution()
+    {
+        DrawReferenceBox(LEFTRIGHT);
+        mSolutionPtr = new C01S05_OYO2Soln(); // Executes soln's runExercise();
+    }
+};
+
 class WhileLoop4Soln : public FeetWetCodingExercise
 {
     Q_OBJECT

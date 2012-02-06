@@ -87,7 +87,11 @@ SOURCES += \
     exercises/C08-Game_Programming/S03-TopDown2D/TopDown2DSOLN.cpp \
     exercises/C08-Game_Programming/GameWidget.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/400_OnYourOwnSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/400_OnYourOwn.cpp
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/400_OnYourOwn.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/110_C01S05_OYO1.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/110_C01S05_OYO1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/112_C01S05_OYO2SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/112_C01S05_OYO2.cpp
 
 
 HEADERS += \
