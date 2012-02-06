@@ -26,11 +26,6 @@ int main(int argc, char *argv[])
     /////////////////////////////////////////
 
 
-
-
-
-
-
     //Start the application loop
     return a.exec();
 }

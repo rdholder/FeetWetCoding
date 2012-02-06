@@ -12,5 +12,5 @@
 
 void C01S05_OYO3::runExercise()
 {
-
+    seeout << "Resist the urge to peek at the solution as long as possible!  :-D\n";
 }

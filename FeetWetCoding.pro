@@ -10,13 +10,11 @@ TARGET = FeetWetCoding
 TEMPLATE = app
 
 SOURCES += \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/300_IfThen1.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/150_WhileLoop5.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/125_WhileLoop4.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/100_WhileLoop3.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/075_WhileLoop2.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/050_WhileLoop1.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/300_IfThen1SOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/150_WhileLoop5SOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/125_WhileLoop4SOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/100_WhileLoop3SOLN.cpp \
@@ -93,7 +91,11 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/110_C01S05_OYO2.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/112_C01S05_OYO3.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/055_InfiniteLooping1SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/055_InfiniteLooping1.cpp
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/055_InfiniteLooping1.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/320_IfThen1.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/400_C01S05_OYO4.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/320_IfThen1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/400_C01S05_OYO4SOLN.cpp
 
 
 HEADERS += \

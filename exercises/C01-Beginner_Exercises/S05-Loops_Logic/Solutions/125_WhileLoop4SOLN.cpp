@@ -16,7 +16,6 @@ void WhileLoop4Soln::runExercise()
     int velocity= -45;
     int rateofchange=3;
     int horizontalstep = 12;
-    char buffer [33];
 
     while ( x < 400 )
     {
@@ -24,6 +23,6 @@ void WhileLoop4Soln::runExercise()
         y += velocity;
         velocity += rateofchange;
         DrawCircle(x, y, 20, RED, 1);
-        DrawText(itoa(velocity, buffer, 10), x+10, y, BLUE, 10);
+        DrawInt(velocity, x+10, y, BLUE, 10);
     }
 }

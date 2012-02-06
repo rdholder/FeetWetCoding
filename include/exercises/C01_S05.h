@@ -419,6 +419,52 @@ protected:
     }
 };
 
+class C01S05_OYO4Soln : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit C01S05_OYO4Soln(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = true;
+        this->runExercise();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+};
+
+class C01S05_OYO4 : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit C01S05_OYO4(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = false;
+        this->runExercise();
+        this->setupSolution();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+
+    //Hide this implementation from the student
+    void setupSolution()
+    {
+        DrawReferenceBox(LEFTRIGHT);
+        mSolutionPtr = new C01S05_OYO4Soln(); // Executes soln's runExercise();
+    }
+};
+
 class InfiniteLooping1Soln : public FeetWetCodingExercise
 {
     Q_OBJECT
