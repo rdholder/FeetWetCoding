@@ -18,5 +18,6 @@
 #include <exercises/C01_S03.h>
 #include <exercises/C01_S04.h>
 #include <exercises/C01_S05.h>
+#include <exercises/C08-Game_Programming/S03-TopDown2D/TopDown2D.h>
 
 #endif // exercises_H
