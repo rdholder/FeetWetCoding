@@ -83,7 +83,9 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/100_ModulusOperator.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/110_Booleans.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/120_BlocksAndScope.cpp \
-    exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/140_MathFunctions.cpp
+    exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/140_MathFunctions.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/400_OnYourOwnSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/400_OnYourOwn.cpp
 
 
 HEADERS += \

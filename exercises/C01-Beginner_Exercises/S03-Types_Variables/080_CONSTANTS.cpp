@@ -14,10 +14,10 @@ void CONSTANTS::runExercise()     // copy the exercise name & paste it into main
 {
     // This exercise only demonstrates const for reference.  There is nothing for you to solve.
 
-    const int LIGHTSPEEDMPH(186282);
-    const int POUNDSPERPINT(1);
-    const int CHESSBOARDX(8);
-    const int CHESSBOARDY(8);
+    const int LIGHTSPEEDMPH = 186282;
+    const int POUNDSPERPINT = 1;
+    const int CHESSBOARDX = 8;
+    const int CHESSBOARDY = 8;
 
     int chessboardx = 0;
 
