@@ -62,8 +62,6 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/250_DrawingImagesSOLN.cpp \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/020_Integers.cpp \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/060_Floats.cpp \
-    exercises/C01-Beginner_Exercises/S03-Types_Variables/550_Vectors.cpp \
-    exercises/C01-Beginner_Exercises/S03-Types_Variables/600_Maps.cpp \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/Solutions/020_IntegersSOLN.cpp \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/Solutions/060_FloatsSOLN.cpp \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/040_DrawingVersusSeeout.cpp \
