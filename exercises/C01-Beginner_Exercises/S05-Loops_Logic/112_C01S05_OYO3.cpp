@@ -10,17 +10,7 @@
 
 #include <exercises/C01_S05.h>
 
-void C01S05_OYO1Soln::runExercise()
+void C01S05_OYO3::runExercise()
 {
-    int x=0, y=0;
-    int step=10;
 
-    while ( x < 200 )
-    {
-        x += step;
-        y = x;
-        DrawRectangle(x, y, 400-(x*2), 400-(y*2), BLUE, 2);
-        DrawRectangle(x+5, y+5, 390-(x*2), 390-(y*2), RED, 2);
-    }
-    seeout << "You can do it!";
 }

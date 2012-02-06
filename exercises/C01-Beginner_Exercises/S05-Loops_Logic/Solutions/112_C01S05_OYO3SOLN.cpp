@@ -10,7 +10,7 @@
 
 #include <exercises/C01_S05.h>
 
-void C01S05_OYO2Soln::runExercise()
+void C01S05_OYO3Soln::runExercise()
 {
     int x=0, y=0;
     int step=50;

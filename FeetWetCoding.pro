@@ -10,14 +10,12 @@ TARGET = FeetWetCoding
 TEMPLATE = app
 
 SOURCES += \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/325_InfiniteLooping1.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/300_IfThen1.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/150_WhileLoop5.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/125_WhileLoop4.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/100_WhileLoop3.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/075_WhileLoop2.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/050_WhileLoop1.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/325_InfiniteLooping1SOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/300_IfThen1SOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/150_WhileLoop5SOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/125_WhileLoop4SOLN.cpp \
@@ -88,10 +86,14 @@ SOURCES += \
     exercises/C08-Game_Programming/GameWidget.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/400_OnYourOwnSOLN.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/400_OnYourOwn.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/110_C01S05_OYO1.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/110_C01S05_OYO1SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/112_C01S05_OYO2SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/112_C01S05_OYO2.cpp
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/060_C01S05_OYO1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/110_C01S05_OYO2SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/112_C01S05_OYO3SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/060_C01S05_OYO1.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/110_C01S05_OYO2.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/112_C01S05_OYO3.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/055_InfiniteLooping1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/055_InfiniteLooping1.cpp
 
 
 HEADERS += \

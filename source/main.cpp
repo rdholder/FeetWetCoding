@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 
     /////////////////////////////////////////
     //////  CHOOSE YOUR EXERCISE HERE  //////
-    exercise = new C01S05_OYO2();
+    exercise = new Welcome();
     /////////////////////////////////////////
 
 
