@@ -754,4 +754,51 @@ protected:
     }
 };
 
+class OnYourOwnSoln : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit OnYourOwnSoln(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = true;
+        this->runExercise();
+    }
+
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+};
+
+class OnYourOwn : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit OnYourOwn(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = false;
+        this->runExercise();
+        this->setupSolution();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+
+    //Hide this implementation from the student
+    void setupSolution()
+    {
+        DrawReferenceBox(LEFTRIGHT);
+        mSolutionPtr = new OnYourOwnSoln(); // Executes soln's runExercise();
+    }
+};
+
 #endif // C01_S02_H
