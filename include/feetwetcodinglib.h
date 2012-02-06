@@ -54,15 +54,19 @@ int randomRange(int smallest, int biggest);
 
 Qt::GlobalColor getQColor( Color color );
 
-class eoView : public QGraphicsView
+class FWCView : public QGraphicsView
 {
+    Q_OBJECT
 public:
 
-    explicit eoView(QWidget *parent=0):QGraphicsView(parent){}
-    explicit eoView(QGraphicsScene *scene, QWidget *parent=0):QGraphicsView(scene, parent){}
-    ~eoView(){}
+    explicit FWCView(QWidget *parent=0):QGraphicsView(parent){}
+    explicit FWCView(QGraphicsScene *scene, QWidget *parent=0):QGraphicsView(scene, parent){}
+    ~FWCView(){}
 
     virtual void keyPressEvent(QKeyEvent *event);
+
+signals:
+    void keyPressSignal(QKeyEvent *event);
 
 protected:
 

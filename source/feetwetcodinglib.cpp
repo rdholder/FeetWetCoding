@@ -9,7 +9,7 @@
 
 using namespace std;
 
-QGraphicsView *view(NULL);
+FWCView *view(NULL);
 QTextEdit *exerciseOut(NULL);
 QTextEdit *solnOut(NULL);
 
@@ -45,15 +45,21 @@ void setupDrawingUtils()
     QGraphicsScene *scene = new QGraphicsScene(-BORDER, -BORDER/2,
                                                WINDOW_WIDTH+BORDER*2,
                                                WINDOW_HEIGHT+BORDER);
-    view = new eoView(scene);
+    view = new FWCView(scene);
     view->setRenderHint(QPainter::TextAntialiasing);
+
+    exerciseOut = new QTextEdit();
+    exerciseOut->ensureCursorVisible();
+    exerciseOut->setReadOnly(true);
+    exerciseOut->setFocusPolicy(Qt::NoFocus);
+
+    solnOut = new QTextEdit();
+    solnOut->ensureCursorVisible();
+    solnOut->setReadOnly(true);
+    solnOut->setFocusPolicy(Qt::NoFocus);
 
     QVBoxLayout vlayout;
     QHBoxLayout hlayout;
-    exerciseOut = new QTextEdit();
-    solnOut = new QTextEdit();
-    exerciseOut->setReadOnly(true);
-    solnOut->setReadOnly(true);
     hlayout.addWidget(exerciseOut);
     hlayout.addWidget(solnOut);
     vlayout.addWidget(view);
@@ -343,17 +349,9 @@ void DrawReferenceBox( RefBoxLayout layout )
     oss << 0 << "," << 0;
     DrawText(oss.str(), -10, -20, GRAY, dimsSize);
 
-//    oss.str("");
-//    oss << WINDOW_WIDTH << "," << 0;
-//    DrawText(oss.str(), WINDOW_WIDTH-30, -20, GRAY, dimsSize);
-
     oss.str("");
     oss << 0 << "," << WINDOW_HEIGHT;
     DrawText(oss.str(), -10, WINDOW_HEIGHT, GRAY, dimsSize);
-
-//    oss.str("");
-//    oss << WINDOW_WIDTH << "," << WINDOW_HEIGHT;
-//    DrawText(oss.str(), WINDOW_WIDTH-30, WINDOW_HEIGHT, GRAY, dimsSize);
 
     switch (layout) {
     case LEFTRIGHT:
@@ -405,12 +403,6 @@ void DrawReferenceBox( RefBoxLayout layout )
         // draw nothing inside the box
     };
 }
-
-//void PuzzleSetup(RefBoxLayout orientation, bool soln)
-//{
-//    Gsoln = soln;
-//    DrawReferenceBox(orientation);     // draw the graphical reference frame
-//}
 
 Qt::GlobalColor getQColor( Color color )
 {
@@ -472,34 +464,20 @@ int randomRange(int smallest, int biggest)
     }
 }
 
-void eoView::keyPressEvent( QKeyEvent *k )
+void FWCView::keyPressEvent( QKeyEvent *k )
 {
     switch ( k->key() )
     {
-    case Qt::Key_Up:
-        cerr << "UP\n";
-        break;
-    case Qt::Key_Down:
-        cerr << "DOWN\n";
-        break;
-    case Qt::Key_Left:
-        cerr << "LEFT\n";
-        break;
-    case Qt::Key_Right:
-        cerr << "RIGHT\n";
-        break;
-    case Qt::Key_C:
-        ClearScreen();
-        break;
-    case Qt::Key_R:
-        //colortest();
-        break;
     case Qt::Key_Q:
-        cerr << "I got a 'q' - Quitting the app...\n";
+        cerr << "Quitting the app...\n";
         QApplication::exit();
         break;
     default:
-        //cerr << "I got a rock\n";
         break;
     }
+
+    //Since there are two game widgets (exercise and solution), let
+    //the main view get the keyboard input and send it to the two
+    //widgets through a signal
+    emit keyPressSignal(k);
 }

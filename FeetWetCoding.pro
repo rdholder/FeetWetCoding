@@ -84,10 +84,10 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/110_Booleans.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/120_BlocksAndScope.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/140_MathFunctions.cpp \
-    source/underconstruction/GameWidget.cpp \
-    source/underconstruction/tetris/Tetris.cpp \
-    source/underconstruction/tetris/TetrisWidget.cpp \
-    source/underconstruction/tetris/TetrisSOLN.cpp
+    exercises/C08-Game_Programming/S03-TopDown2D/TopDown2D.cpp \
+    exercises/C08-Game_Programming/S03-TopDown2D/TopDown2DWidget.cpp \
+    exercises/C08-Game_Programming/S03-TopDown2D/TopDown2DSOLN.cpp \
+    exercises/C08-Game_Programming/GameWidget.cpp
 
 
 HEADERS += \
@@ -101,9 +101,9 @@ HEADERS += \
     include/exercises/C01_S05.h \
     include/exercises/C01_S04.h \
     include/exercises/FeetWetCodingExercise.h \
-    include/underconstruction/gamewidget.h \
-    include/underconstruction/tetris/Tetris.h \
-    include/underconstruction/tetris/TetrisWidget.h
+    include/exercises/C08-Game_Programming/S03-TopDown2D/TopDown2DWidget.h \
+    include/exercises/C08-Game_Programming/S03-TopDown2D/TopDown2D.h \
+    include/exercises/C08-Game_Programming/GameWidget.h
 
 FORMS +=
 
@@ -115,6 +115,37 @@ OTHER_FILES +=
 
 RESOURCES += \
     feetwetresources.qrc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
