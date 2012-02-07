@@ -92,10 +92,12 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/112_C01S05_OYO3.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/055_InfiniteLooping1SOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/055_InfiniteLooping1.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/320_IfThen1.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/400_C01S05_OYO4.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/320_IfThen1SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/400_C01S05_OYO4SOLN.cpp
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/400_C01S05_OYO4SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/320_IfThen2.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/320_IfThen2SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/300_IfThen1.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/300_IfThen1SOLN.cpp
 
 
 HEADERS += \

@@ -10,7 +10,7 @@
 
 #include <exercises/C01_S05.h>
 
-void IfThen1::runExercise()
+void IfThen2::runExercise()
 {
     int x=0, y=0;                   // = is pronounced GETS, == is pronounced EQUALS
     int horizontalstep=70, verticalstep=70;

@@ -10,7 +10,7 @@
 
 #include <exercises/C01_S05.h>
 
-void IfThen1Soln::runExercise()
+void IfThen2Soln::runExercise()
 {
     int x=0, y=0;
     int horizontalstep=70, verticalstep=70;

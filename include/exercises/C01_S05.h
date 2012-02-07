@@ -419,6 +419,52 @@ protected:
     }
 };
 
+class IfThen2Soln : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit IfThen2Soln(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = true;
+        this->runExercise();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+};
+
+class IfThen2 : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit IfThen2(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = false;
+        this->runExercise();
+        this->setupSolution();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+
+    //Hide this implementation from the student
+    void setupSolution()
+    {
+        DrawReferenceBox(LEFTRIGHT);
+        mSolutionPtr = new IfThen2Soln(); // Executes soln's runExercise();
+    }
+};
+
 class C01S05_OYO4Soln : public FeetWetCodingExercise
 {
     Q_OBJECT
