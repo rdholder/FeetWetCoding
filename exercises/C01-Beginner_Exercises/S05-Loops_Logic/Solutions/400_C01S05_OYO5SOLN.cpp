@@ -10,7 +10,7 @@
 
 #include <exercises/C01_S05.h>
 
-void C01S05_OYO4Soln::runExercise()
+void C01S05_OYO5Soln::runExercise()
 {
     int x = 0, y = 200;
     float velocity = 2;

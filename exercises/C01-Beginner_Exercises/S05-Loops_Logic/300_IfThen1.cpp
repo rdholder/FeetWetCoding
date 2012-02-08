@@ -29,140 +29,159 @@ void IfThen1::runExercise()
     DrawText("Reference Exercise:", 50, 150, BLUE, 20);
     DrawText("no solution needed.", 50, 180, BLUE, 20);
 
-    seeout << "Try to understand in every case below why the line prints or doesn't print.\n\n";
+    seeout << "Try to understand in every case below why each is true or false.\n\n";
 
     // basic comparison logic
-    if ( x == y ) seeout << "Conditional 1: " << x << " == " << y << "\n";
-    if ( x == z ) seeout << "Conditional 2: " << x << " == " << z << "\n";
-    if ( x != y ) seeout << "Conditional 3: " << x << " != " << y << "\n";
-    if ( x != z ) seeout << "Conditional 4: " << x << " != " << z << "\n";
-    if ( x < y )  seeout << "Conditional 5: " << x << " < " << y << "\n";
-    if ( x > y )  seeout << "Conditional 6: " << x << " > " << y << "\n";
-    if ( x > y )  seeout << "Conditional 7: " << x << " > " << y << "\n";
-    else          seeout << "Conditional 8: " << x << " < " << y << "\n";
+    if ( x == y ) seeout << "TRUE: ";
+    else seeout << "FALSE: ";
+    seeout << "Conditional 1: " << x << " == " << y << "\n";
 
-    if ( a < x && b < y && c < z )
-    {
-        seeout << "Conditional 9: " << a << " < " << x << " AND " << b << " < " << y;
-        seeout << " AND " << c << " < " << z << "\n";
-    }
+    if ( x == z ) seeout << "TRUE: ";
+    else seeout << "FALSE: ";
+    seeout << "Conditional 2: " << x << " == " << z << "\n";
 
-    if ( a < x || b < y || c < z )
-    {
-        seeout << "Conditional 10: " << a << " < " << x << " OR " << b << " < " << y;
-        seeout << " OR " << c << " < " << z << "\n";
-    }
+    if ( x != y ) seeout << "TRUE: ";
+    else seeout << "FALSE: ";
+    seeout << "Conditional 3: " << x << " != " << y << "\n";
+
+    if ( x != z ) seeout << "TRUE: ";
+    else seeout << "FALSE: ";
+    seeout << "Conditional 4: " << x << " != " << z << "\n";
+
+    if ( x < y ) seeout << "TRUE: ";
+    else seeout << "FALSE: ";
+    seeout << "Conditional 5: " << x << " < " << y << "\n";
+
+    if ( x > y ) seeout << "TRUE: ";
+    else seeout << "FALSE: ";
+    seeout << "Conditional 6: " << x << " > " << y << "\n";
 
     // you can compare ints and floats.  just be careful to remember that you can't store
     // fractional numbers in an int.
-    if ( a < b )  seeout << "Conditional 11: " << a << " < " << b << "\n";
-    if ( a < x )  seeout << "Conditional 12: " << a << " < " << x << "\n";
+    if ( a < b ) seeout << "TRUE: ";
+    else seeout << "FALSE: ";
+    seeout << "Conditional 7: " << a << " < " << b << "\n";
+
+    if ( a < x ) seeout << "TRUE: ";
+    else seeout << "FALSE: ";
+    seeout << "Conditional 8: " << a << " < " << x << "\n";
 
     // AND, OR, NOT and XOR
-    if (true)   seeout << "Conditional 13: true is true\n";
-    if (false)  seeout << "Conditional 14: false is not true\n";
-    if (!true)  seeout << "Conditional 15: NOT-true is false\n";
-    if (!false) seeout << "Conditional 16: NOT-false is true\n";
-    if ( !x )   seeout << "Conditional 17: !" << x << " is nonzero.\n";
-    if ( !a )   seeout << "Conditional 18: !" << a << " is nonzero.\n";
+    if (true) seeout << "TRUE: ";
+    else seeout << "FALSE: ";
+    seeout << "Conditional 9: true is true\n";
 
-    if ( a < x && b < y )
-    {
-        seeout << "Conditional 19: " << a << " < " << x << " AND ";
-        seeout << b << " < " << y << "\n";
-    }
+    if (false) seeout << "TRUE: ";
+    else seeout << "FALSE: ";
+    seeout << "Conditional 10: false is not true\n";
 
-    if ( a > x && b < y )
-    {
-        seeout << "Conditional: 20" << a << " > " << x << " AND ";
-        seeout << b << " < " << y << "\n";
-    }
+    if (!true) seeout << "TRUE: ";
+    else seeout << "FALSE: ";
+    seeout << "Conditional 11: NOT-true is false\n";
 
-    if ( a > x && b < y )
-    {
-        seeout << "Conditional: 21" << a << " > " << x << " OR ";
-        seeout << b << " < " << y << "\n\n";
-    }
+    if (!false) seeout << "TRUE: ";
+    else seeout << "FALSE: ";
+    seeout << "Conditional 12: NOT-false is true\n";
 
-    if ( (a < x && b < y) && ( x < y && y < c ) )
-    {
-        seeout << "Conditional 22: ( " << a << " < " << x << " AND ";
-        seeout << b << " < " << y << " )";
-        seeout << " AND ( " << x << " < " << y << " AND ";
-        seeout << y << " < " << c << " )\n";
-    }
+    if ( !x ) seeout << "TRUE: ";
+    else seeout << "FALSE: ";
+    seeout << "Conditional 13: !" << x << "\n";
 
-    if ( ( a < x && b < y) && ( x < y && y > c ) )
-    {
-        seeout << "Conditional 23: ( " << a << " < " << x << " AND ";
-        seeout << b << " < " << y << " )";
-        seeout << " AND";
-        seeout << " ( " << x << " < " << y << " AND ";
-        seeout << y << " > " << c << " )\n";
-    }
+    if ( !a ) seeout << "TRUE: ";
+    else seeout << "FALSE: ";
+    seeout << "Conditional 14: !" << a << "\n";
 
-    if ( (a < x && b < y) || ( x < y && y > c ) )
-    {
-        seeout << "Conditional 24: ( " << a << " < " << x << " AND ";
-        seeout << b << " < " << y << " )";
-        seeout << " OR";
-        seeout << "   ( " << x << " < " << y << " AND ";
-        seeout << y << " > " << c << " )\n";
-    }
+    if ( a < x && b < y ) seeout << "TRUE: ";
+    else seeout << "FALSE: ";
+    seeout << "Conditional 15: " << a << " < " << x << " AND ";
+    seeout << b << " < " << y << "\n";
 
-    if ( !(a > x) && !(b < y) )
-    {
-        seeout << "Conditional 25: NOT (" << a << " > " << x << ") AND NOT ( ";
-        seeout << b << " < " << y << " ) )\n";
-    }
+    if ( a > x && b < y ) seeout << "TRUE: ";
+    else seeout << "FALSE: ";
+    seeout << "Conditional 16: " << a << " > " << x << " AND ";
+    seeout << b << " < " << y << "\n";
 
-    if ( !(a > x && b < y) )
-    {
-        seeout << "Conditional 26: NOT ( (" << a << " > " << x << " AND ";
-        seeout << b << " < " << y << " ) )\n";
-    }
+    if ( a < x && b < y && c < z ) seeout << "TRUE: ";
+    else seeout << "FALSE: ";
+    seeout << "Conditional 17: " << a << " < " << x << " AND " << b << " < " << y;
+    seeout << " AND " << c << " < " << z << "\n";
 
-    if ( ( a < x || b < y ) && !( a < x && b < y ) )
-    {
-         seeout << "Conditional 27: XOR (Exclusive OR):\n";
-         seeout << "( " << a << " < " << x << " OR " << b << " < " << y << ")";
-         seeout << "   AND ( NOT ( " << a << " < " << x << " AND " << b << " < " << y << ") )\n";
-    }
+    if ( a < x || b < y || c < z ) seeout << "TRUE: ";
+    else seeout << "FALSE: ";
+    seeout << "Conditional 18: " << a << " < " << x << " OR " << b << " < " << y;
+    seeout << " OR " << c << " < " << z << "\n";
 
-    if ( ( a > x || b < y ) && !( a > x && b < y ) )
-    {
-         seeout << "Conditional 28: XOR (Exclusive OR):\n";
-         seeout << "( " << a << " > " << x << " OR " << b << " < " << y << ")";
-         seeout << "   AND ( NOT ( " << a << " > " << x << " AND " << b << " < " << y << ") )\n";
-    }
+    if ( (a < x && b < y) && ( x < y && y < c ) ) seeout << "TRUE:\n";
+    else seeout << "FALSE:\n";
+    seeout << "Conditional 19: ( " << a << " < " << x << " AND ";
+    seeout << b << " < " << y << " )";
+    seeout << " AND ( " << x << " < " << y << " AND ";
+    seeout << y << " < " << c << " )\n";
+
+    if ( ( a < x && b < y) && ( x < y && y > c ) ) seeout << "TRUE:\n";
+    else seeout << "FALSE:\n";
+    seeout << "Conditional 20: ( " << a << " < " << x << " AND ";
+    seeout << b << " < " << y << " )";
+    seeout << " AND";
+    seeout << " ( " << x << " < " << y << " AND ";
+    seeout << y << " > " << c << " )\n";
+
+    if ( (a < x && b < y) || ( x < y && y > c ) ) seeout << "TRUE:\n";
+    else seeout << "FALSE:\n";
+    seeout << "Conditional 21: ( " << a << " < " << x << " AND ";
+    seeout << b << " < " << y << " )";
+    seeout << " OR";
+    seeout << "   ( " << x << " < " << y << " AND ";
+    seeout << y << " > " << c << " )\n";
+
+    if ( !(a > x) && !(b < y) ) seeout << "TRUE: ";
+    else seeout << "FALSE: ";
+    seeout << "Conditional 22: NOT (" << a << " > " << x << ") AND NOT ( ";
+    seeout << b << " < " << y << " ) )\n";
+
+    if ( !(a > x && b < y) ) seeout << "TRUE: ";
+    else seeout << "FALSE: ";
+    seeout << "Conditional 23: NOT ( (" << a << " > " << x << " AND ";
+    seeout << b << " < " << y << " ) )\n";
+
+    if ( ( a < x || b < y ) && !( a < x && b < y ) ) seeout << "TRUE: ";
+    else seeout << "FALSE: ";
+    seeout << "Conditional 24: XOR (Exclusive OR):\n";
+    seeout << "( " << a << " < " << x << " OR " << b << " < " << y << ")";
+    seeout << "   AND ( NOT ( " << a << " < " << x << " AND " << b << " < " << y << ") )\n";
+
+    if ( ( a > x || b < y ) && !( a > x && b < y ) ) seeout << "TRUE: ";
+    else seeout << "FALSE: ";
+    seeout << "Conditional 25: XOR (Exclusive OR):\n";
+    seeout << "( " << a << " > " << x << " OR " << b << " < " << y << ")";
+    seeout << "   AND ( NOT ( " << a << " > " << x << " AND " << b << " < " << y << ") )\n";
 
     // string comparison
-    if ( name1 == name2 )
-    {
-        seeout << "Conditional 29: " << name1 << " is the same string as " << name2 << "\n";
-    }
-    if ( name1 == name3 )
-    {
-        seeout << "Conditional 30: " << name1 << " is the same string as " << name3 << "\n";
-    }
-    if ( name2 == name4 )
-    {
-        seeout << "Conditional 31: " << name2 << " is the same string as " << name4 << "\n";
-    }
-    if ( name1 < name2 )
-    {
-        seeout << "Conditional 32: " << name1 << " is alphanumerically less than " << name2 << "\n";
-    }
-    if ( name2 < name3 )
-    {
-        seeout << "Conditional 33: " << name2 << " is alphanumerically less than " << name3 << "\n";
-    }
-    if ( name3 < name4 )
-    {
-        seeout << "Conditional 34: " << name3 << " is alphanumerically less than " << name4 << "\n";
-    }
-    if (name1 < name3 )
-    {
-        seeout << "Conditional 35: " << name1 << " is alphanumerically less than " << name3 << "\n";
-    }
+    if ( name1 == name2 ) seeout << "TRUE: ";
+    else seeout << "FALSE: ";
+    seeout << "Conditional 26: " << name1 << " is the same string as " << name2 << "\n";
+
+    if ( name1 == name3 ) seeout << "TRUE: ";
+    else seeout << "FALSE: ";
+    seeout << "Conditional 27: " << name1 << " is the same string as " << name3 << "\n";
+
+    if ( name2 == name4 ) seeout << "TRUE: ";
+    else seeout << "FALSE: ";
+    seeout << "Conditional 28: " << name2 << " is the same string as " << name4 << "\n";
+
+    if ( name1 < name2 ) seeout << "TRUE: ";
+    else seeout << "FALSE: ";
+    seeout << "Conditional 29: " << name1 << " is alphanumerically less than " << name2 << "\n";
+
+    if ( name2 < name3 ) seeout << "TRUE: ";
+    else seeout << "FALSE: ";
+    seeout << "Conditional 30: " << name2 << " is alphanumerically less than " << name3 << "\n";
+
+    if ( name3 < name4 ) seeout << "TRUE: ";
+    else seeout << "FALSE: ";
+    seeout << "Conditional 31: " << name3 << " is alphanumerically less than " << name4 << "\n";
+
+    if (name1 < name3 ) seeout << "TRUE: ";
+    else seeout << "FALSE: ";
+    seeout << "Conditional 32: " << name1 << " is alphanumerically less than " << name3 << "\n";
 }

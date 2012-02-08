@@ -50,17 +50,16 @@ protected:
     }
 };
 
-class WhileLoop2Soln : public FeetWetCodingExercise
+class InfiniteLooping1Soln : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit WhileLoop2Soln(QObject *parent = 0)
+    explicit InfiniteLooping1Soln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
         Gsoln = true;
         this->runExercise();
     }
-
 
 signals:
 
@@ -70,11 +69,11 @@ protected:
     void runExercise();
 };
 
-class WhileLoop2 : public FeetWetCodingExercise
+class InfiniteLooping1 : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit WhileLoop2(QObject *parent = 0)
+    explicit InfiniteLooping1(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
         Gsoln = false;
@@ -93,53 +92,7 @@ protected:
     void setupSolution()
     {
         DrawReferenceBox(LEFTRIGHT);
-        mSolutionPtr = new WhileLoop2Soln(); // Executes soln's runExercise();
-    }
-};
-
-class WhileLoop3Soln : public FeetWetCodingExercise
-{
-    Q_OBJECT
-public:
-    explicit WhileLoop3Soln(QObject *parent = 0)
-        :FeetWetCodingExercise(parent)
-    {
-        Gsoln = true;
-        this->runExercise();
-    }
-
-signals:
-
-public slots:
-
-protected:
-    void runExercise();
-};
-
-class WhileLoop3 : public FeetWetCodingExercise
-{
-    Q_OBJECT
-public:
-    explicit WhileLoop3(QObject *parent = 0)
-        :FeetWetCodingExercise(parent)
-    {
-        Gsoln = false;
-        this->runExercise();
-        this->setupSolution();
-    }
-
-signals:
-
-public slots:
-
-protected:
-    void runExercise();
-
-    //Hide this implementation from the student
-    void setupSolution()
-    {
-        DrawReferenceBox(LEFTRIGHT);
-        mSolutionPtr = new WhileLoop3Soln(); // Executes soln's runExercise();
+        mSolutionPtr = new InfiniteLooping1Soln(); // Executes soln's runExercise();
     }
 };
 
@@ -235,6 +188,99 @@ protected:
     }
 };
 
+class WhileLoop2Soln : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit WhileLoop2Soln(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = true;
+        this->runExercise();
+    }
+
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+};
+
+class WhileLoop2 : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit WhileLoop2(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = false;
+        this->runExercise();
+        this->setupSolution();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+
+    //Hide this implementation from the student
+    void setupSolution()
+    {
+        DrawReferenceBox(LEFTRIGHT);
+        mSolutionPtr = new WhileLoop2Soln(); // Executes soln's runExercise();
+    }
+};
+
+class WhileLoop3Soln : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit WhileLoop3Soln(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = true;
+        this->runExercise();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+};
+
+class WhileLoop3 : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit WhileLoop3(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = false;
+        this->runExercise();
+        this->setupSolution();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+
+    //Hide this implementation from the student
+    void setupSolution()
+    {
+        DrawReferenceBox(LEFTRIGHT);
+        mSolutionPtr = new WhileLoop3Soln(); // Executes soln's runExercise();
+    }
+};
+
 class C01S05_OYO3Soln : public FeetWetCodingExercise
 {
     Q_OBJECT
@@ -278,6 +324,52 @@ protected:
     {
         DrawReferenceBox(LEFTRIGHT);
         mSolutionPtr = new C01S05_OYO3Soln(); // Executes soln's runExercise();
+    }
+};
+
+class C01S05_OYO4Soln : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit C01S05_OYO4Soln(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = true;
+        this->runExercise();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+};
+
+class C01S05_OYO4 : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit C01S05_OYO4(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = false;
+        this->runExercise();
+        this->setupSolution();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+
+    //Hide this implementation from the student
+    void setupSolution()
+    {
+        DrawReferenceBox(LEFTRIGHT);
+        mSolutionPtr = new C01S05_OYO4Soln(); // Executes soln's runExercise();
     }
 };
 
@@ -465,11 +557,11 @@ protected:
     }
 };
 
-class C01S05_OYO4Soln : public FeetWetCodingExercise
+class C01S05_OYO5Soln : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit C01S05_OYO4Soln(QObject *parent = 0)
+    explicit C01S05_OYO5Soln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
         Gsoln = true;
@@ -484,11 +576,11 @@ protected:
     void runExercise();
 };
 
-class C01S05_OYO4 : public FeetWetCodingExercise
+class C01S05_OYO5 : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit C01S05_OYO4(QObject *parent = 0)
+    explicit C01S05_OYO5(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
         Gsoln = false;
@@ -507,53 +599,7 @@ protected:
     void setupSolution()
     {
         DrawReferenceBox(LEFTRIGHT);
-        mSolutionPtr = new C01S05_OYO4Soln(); // Executes soln's runExercise();
-    }
-};
-
-class InfiniteLooping1Soln : public FeetWetCodingExercise
-{
-    Q_OBJECT
-public:
-    explicit InfiniteLooping1Soln(QObject *parent = 0)
-        :FeetWetCodingExercise(parent)
-    {
-        Gsoln = true;
-        this->runExercise();
-    }
-
-signals:
-
-public slots:
-
-protected:
-    void runExercise();
-};
-
-class InfiniteLooping1 : public FeetWetCodingExercise
-{
-    Q_OBJECT
-public:
-    explicit InfiniteLooping1(QObject *parent = 0)
-        :FeetWetCodingExercise(parent)
-    {
-        Gsoln = false;
-        this->runExercise();
-        this->setupSolution();
-    }
-
-signals:
-
-public slots:
-
-protected:
-    void runExercise();
-
-    //Hide this implementation from the student
-    void setupSolution()
-    {
-        DrawReferenceBox(LEFTRIGHT);
-        mSolutionPtr = new InfiniteLooping1Soln(); // Executes soln's runExercise();
+        mSolutionPtr = new C01S05_OYO5Soln(); // Executes soln's runExercise();
     }
 };
 

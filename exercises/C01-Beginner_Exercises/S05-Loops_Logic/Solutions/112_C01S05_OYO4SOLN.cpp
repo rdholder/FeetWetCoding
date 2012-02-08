@@ -10,7 +10,7 @@
 
 #include <exercises/C01_S05.h>
 
-void C01S05_OYO3Soln::runExercise()
+void C01S05_OYO4Soln::runExercise()
 {
     int x=0, y=0;
     int step=50;
@@ -36,12 +36,12 @@ void C01S05_OYO3Soln::runExercise()
     }
     DrawText("x", 5, 210, BLACK, 10);
     DrawText("y", 180, 5, BLACK, 10);
-    seeout << "Later in your learning you will come across coordinate space\n";
-    seeout << "transformations which will make writing this kind of code cleaner and\n";
-    seeout << "clearer, but for now, you'll just have to transform the x,y\n";
-    seeout << "coordinates of the graph to the x,y coordinates of the drawing area\n";
-    seeout << "yourself.  :-)\n\n";
-    seeout << "No fair using a bunch of individual DrawInt() calls to draw the\n";
-    seeout << "numeric axis labels individually!  Draw the numeric axis labels\n";
-    seeout << "in a while loop to make yourself learn! :-D\n";
+
+    seeout << "This is another one that takes a little finagling to get just right.\n\n";
+    seeout << "No fair using a bunch of individual DrawInt() calls to draw the ";
+    seeout << "numeric axis labels individually!  Draw the numeric axis labels ";
+    seeout << "in a while loop to make yourself learn! :-D\n\n";
+    seeout << "The nice thing about this exercise is that later, when we play around ";
+    seeout << "with drawing math functions, you will already have an understanding ";
+    seeout << "of how to draw yourself a nice, accurate set of graphical axes!";
 }
