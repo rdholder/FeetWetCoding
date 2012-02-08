@@ -12,7 +12,7 @@
 
 using std::string;
 
-void Booleans::runExercise()     // copy the exercise name & paste it into main.cpp
+void randomAndrandomRange::runExercise()     // copy the exercise name & paste it into main.cpp
 {
 
 }

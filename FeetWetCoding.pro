@@ -72,8 +72,6 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/Solutions/520_MisdirectionSOLN.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/020_AssignmentArithmetic.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/060_PreAndPostIncAndDec.cpp \
-    exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/200_random-randomRange.cpp \
-    exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/080_DivisionGotchas.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/100_ModulusOperator.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/110_Booleans.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/120_BlocksAndScope.cpp \
@@ -99,7 +97,9 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/110_C01S05_OYO3.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/112_C01S05_OYO4.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/400_C01S05_OYO5.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/400_C01S05_OYO5SOLN.cpp
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/400_C01S05_OYO5SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/200_randomAndrandomRange.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/280_DivideByZero.cpp
 
 
 HEADERS += \
