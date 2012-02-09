@@ -6,11 +6,11 @@
 // CHAPTER01/SECTION03-Types_Variables
 
 
-class IntegersSoln : public FeetWetCodingExercise
+class NumericTypesSoln : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit IntegersSoln(QObject *parent = 0)
+    explicit NumericTypesSoln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
         Gsoln = true;
@@ -25,11 +25,11 @@ protected:
     void runExercise();
 };
 
-class Integers : public FeetWetCodingExercise
+class NumericTypes : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit Integers(QObject *parent = 0)
+    explicit NumericTypes(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
         Gsoln = false;
@@ -47,7 +47,7 @@ protected:
     void setupSolution()
     {
         DrawReferenceBox(LEFTRIGHT);
-        mSolutionPtr = new IntegersSoln(); // Executes soln's runExercise();
+        mSolutionPtr = new NumericTypesSoln(); // Executes soln's runExercise();
     }
 };
 
@@ -97,52 +97,6 @@ protected:
     }
 };
 
-class FloatsSoln : public FeetWetCodingExercise
-{
-    Q_OBJECT
-public:
-    explicit FloatsSoln(QObject *parent = 0)
-        :FeetWetCodingExercise(parent)
-    {
-        Gsoln = true;
-        this->runExercise();
-    }
-
-signals:
-
-public slots:
-
-protected:
-    void runExercise();
-};
-
-class Floats : public FeetWetCodingExercise
-{
-    Q_OBJECT
-public:
-    explicit Floats(QObject *parent = 0)
-        :FeetWetCodingExercise(parent)
-    {
-        Gsoln = false;
-        this->runExercise();
-        this->setupSolution();
-    }
-
-signals:
-
-public slots:
-
-protected:
-    void runExercise();
-
-    //Hide this implementation from the student
-    void setupSolution()
-    {
-        DrawReferenceBox(LEFTRIGHT);
-        mSolutionPtr = new FloatsSoln(); // Executes soln's runExercise();
-    }
-};
-
 class CONSTANTS : public FeetWetCodingExercise
 {
     Q_OBJECT
@@ -174,6 +128,32 @@ class Chars : public FeetWetCodingExercise
     Q_OBJECT
 public:
     explicit Chars(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = false;
+        this->runExercise();
+        this->setupSolution();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+
+    //Hide this implementation from the student
+    void setupSolution()
+    {
+        DrawReferenceBox(LEFTRIGHT);
+    }
+};
+
+class Booleans : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit Booleans(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
         Gsoln = false;

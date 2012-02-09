@@ -10,23 +10,22 @@
 
 #include <exercises/C01_S04.h>
 
-using std::string;
-
 void OrderOfOperations::runExercise()
 {
+    // Read:
     // http://www.cplusplus.com/doc/tutorial/operators/
+    // "The C Programming Language", Kernighan & Ritchie, page 200 Section A7, "Expressions"
 
-    // for arithmetic, the basics are:
+    // For arithmetic, the simplified basics of precendence, or "order of operations" are:
     // resolve everything in parentheses first.
-    // resove innermost parentheses before outer ones.
+    // resolve innermost parentheses before outer ones.
     // * resolves before /
     // / resolves before + and -
 
-    // ...so basically, when in doubt, force things to resolve the way
-    // you want by grouping terms in parentheses according to which ones
-    // you want resolved first in an equation you are writing code for.
-    // it seemed very mysterious to me at first, but after you play around
-    // with it a bit, it starts to feel more natural.  :-)
+    // ...so basically, when in doubt, force things to resolve the way you want by grouping
+    // terms in parentheses according to which ones you want resolved first in an equation
+    // you are writing code for. It seemed very mysterious to me at first, but after you
+    // play around with it a bit, it starts to feel more natural.  :-)
 
     int x = 0, y = 0, a = 7, b = 11, c = 128, d = 3;
 

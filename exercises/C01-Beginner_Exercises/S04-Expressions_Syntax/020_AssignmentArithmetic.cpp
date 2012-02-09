@@ -10,8 +10,6 @@
 
 #include <exercises/C01_S04.h>
 
-using std::string;
-
 void AssignmentArithmetic::runExercise()
 {
     int x = 0, y = 0, a = 1, b = 3, c = 5, d = 7;

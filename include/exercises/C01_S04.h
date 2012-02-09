@@ -113,32 +113,6 @@ protected:
     }
 };
 
-class Booleans : public FeetWetCodingExercise
-{
-    Q_OBJECT
-public:
-    explicit Booleans(QObject *parent = 0)
-        :FeetWetCodingExercise(parent)
-    {
-        Gsoln = false;
-        this->runExercise();
-        this->setupSolution();
-    }
-
-signals:
-
-public slots:
-
-protected:
-    void runExercise();
-
-    //Hide this implementation from the student
-    void setupSolution()
-    {
-        DrawReferenceBox(LEFTRIGHT);
-    }
-};
-
 class BlocksAndScope : public FeetWetCodingExercise
 {
     Q_OBJECT

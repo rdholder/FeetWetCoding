@@ -56,15 +56,10 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/310_seeoutFormattingSOLN.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/250_DrawingImages.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/250_DrawingImagesSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S03-Types_Variables/020_Integers.cpp \
-    exercises/C01-Beginner_Exercises/S03-Types_Variables/060_Floats.cpp \
-    exercises/C01-Beginner_Exercises/S03-Types_Variables/Solutions/020_IntegersSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S03-Types_Variables/Solutions/060_FloatsSOLN.cpp \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/040_DrawingVersusSeeout.cpp \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/Solutions/040_DrawingVersusSeeoutSOLN.cpp \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/100_Chars.cpp \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/080_CONSTANTS.cpp \
-    exercises/C01-Beginner_Exercises/S03-Types_Variables/300_ChoosingVariableNames.cpp \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/200_StandardStrings.cpp \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/Solutions/200_StandardStringsSOLN.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/040_OrderOfOperations.cpp \
@@ -73,7 +68,6 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/020_AssignmentArithmetic.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/060_PreAndPostIncAndDec.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/100_ModulusOperator.cpp \
-    exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/110_Booleans.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/120_BlocksAndScope.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/140_MathFunctions.cpp \
     exercises/C08-Game_Programming/S03-TopDown2D/TopDown2D.cpp \
@@ -99,7 +93,10 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/400_C01S05_OYO5.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/400_C01S05_OYO5SOLN.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/200_randomAndrandomRange.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/280_DivideByZero.cpp
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/280_DivideByZero.cpp \
+    exercises/C01-Beginner_Exercises/S03-Types_Variables/020_NumericTypes.cpp \
+    exercises/C01-Beginner_Exercises/S03-Types_Variables/Solutions/020_NumericTypesSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S03-Types_Variables/110_Booleans.cpp
 
 
 HEADERS += \
