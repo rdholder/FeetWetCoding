@@ -9,16 +9,40 @@
 
 extern FWCView *view;
 
+TopDown2D::TopDown2D(QObject *parent)
+    :FeetWetCodingExercise(parent)
+    ,mTd2dWidget(NULL)
+{
+    Gsoln = false;
+    this->runExercise();
+    this->setupSolution();
+}
+
+TopDown2D::~TopDown2D()
+{
+    if ( mTd2dWidget )
+    {
+        mTd2dWidget->hide();
+        delete mTd2dWidget;
+        mTd2dWidget = NULL;
+    }
+    if ( mSolutionPtr )
+    {
+        delete mSolutionPtr;
+        mSolutionPtr = NULL;
+    }
+}
+
 void TopDown2D::runExercise()
 {
-    TopDown2DWidget *tw = new TopDown2DWidget(view);
-    tw->setIsSolution(false);
+    mTd2dWidget = new TopDown2DWidget(view);
+    mTd2dWidget->setIsSolution(false);
 
-    tw->setAutoFillBackground(true);
-    tw->setBackgroundRole(QPalette::Window);
-    tw->setGeometry(BORDER+2, BORDER/2+2, WINDOW_WIDTH/2-2, WINDOW_HEIGHT-2);
+    mTd2dWidget->setAutoFillBackground(true);
+    mTd2dWidget->setBackgroundRole(QPalette::Window);
+    mTd2dWidget->setGeometry(BORDER+2, BORDER/2+2, WINDOW_WIDTH/2-2, WINDOW_HEIGHT-2);
 
-    tw->show();
+    mTd2dWidget->show();
 }
 
 

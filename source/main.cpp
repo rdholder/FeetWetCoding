@@ -10,21 +10,13 @@
 // "There are things wrong wi' some o' the tools and 'tis my task to put them right."
 
 #include <setup.h>
-#include <include/exercises/exercises.h>
 
 FeetWetCodingExercise *exercise(NULL);
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    setupDrawingUtils();
-
-
-    /////////////////////////////////////////
-    //////  CHOOSE YOUR EXERCISE HERE  //////
-    exercise = new Welcome();
-    /////////////////////////////////////////
-
+    appSetup();
 
     //Start the application loop
     return a.exec();

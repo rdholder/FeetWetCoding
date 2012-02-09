@@ -3,16 +3,14 @@
 
 #include <exercises/FeetWetCodingExercise.h>
 
+class TopDown2DWidget;
+
 class TopDown2DSoln : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit TopDown2DSoln(QObject *parent = 0)
-        :FeetWetCodingExercise(parent)
-    {
-        Gsoln = true;
-        this->runExercise();
-    }
+    explicit TopDown2DSoln(QObject *parent=0);
+    virtual ~TopDown2DSoln();
 
 signals:
 
@@ -20,19 +18,16 @@ public slots:
 
 protected:
     void runExercise();
+
+    TopDown2DWidget * mTd2dWidget;
 };
 
 class TopDown2D : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit TopDown2D(QObject *parent = 0)
-        :FeetWetCodingExercise(parent)
-    {
-        Gsoln = false;
-        this->runExercise();
-        this->setupSolution();
-    }
+    explicit TopDown2D(QObject *parent = 0);
+    virtual ~TopDown2D();
 
 signals:
 
@@ -47,6 +42,8 @@ protected:
         DrawReferenceBox(LEFTRIGHT);
         mSolutionPtr = new TopDown2DSoln(); // Executes soln's runExercise();
     }
+
+    TopDown2DWidget * mTd2dWidget;
 };
 
 #endif // TOPDOWN2D_H

@@ -9,6 +9,13 @@ FeetWetCodingExercise::FeetWetCodingExercise(QObject *parent)
 {
 }
 
+FeetWetCodingExercise::~FeetWetCodingExercise()
+{
+    std::cerr << "FeetWetCodingExercise::~FeetWetCodingExercise()\n";
+    ClearScreen();
+    initOutputArea();
+}
+
 void FeetWetCodingExercise::runExercise()
 {
 }

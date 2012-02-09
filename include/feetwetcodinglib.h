@@ -1,4 +1,4 @@
-// copyright (c) 2011 Robert Holder, Janice Dugger.  
+// copyright (c) 2011 Robert Holder, Janice Dugger.
 // See LICENSE.txt included with this software distribution for conditions of use.
 
 // FeetWetCoding/include/FeetWetCodinglib.h
@@ -9,7 +9,6 @@
 #ifndef FEETWETCODINGLIB_H
 #define FEETWETCODINGLIB_H
 
-//#include <setup.h>
 #include <constants.h>
 #include <QColor>
 #include <QGraphicsView>
@@ -17,6 +16,8 @@
 #include <QTextEdit>
 #include <iostream>
 #include <sstream>
+#include <map>
+#include <vector>
 
 extern QTextEdit *exerciseOut;
 extern QTextEdit *solnOut;
@@ -33,10 +34,16 @@ extern bool Gsoln;
 //QGraphicsSimpleTextItem : provides a simple text label item
 //QGraphicsTextItem : provides an advanced text browser item
 
+//Forward class declarations
+class FeetWetCodingExercise;
+
 //Function declarations
+FeetWetCodingExercise * exerciseFactory( std::string const& name );
 void setupDrawingUtils();
+void appSetup();
 
 void ClearScreen();
+void initOutputArea();
 void DrawLine( int xStart, int yStart, int xEnd, int yEnd, Color color, int thickness );
 void DrawCircle( int x, int y, int r, Color color, int thickness, bool solid=false);
 void DrawCircleRGB( int x, int y, int r, int thickness, int red, int green, int blue, bool solid=false );
@@ -59,7 +66,7 @@ class FWCView : public QGraphicsView
     Q_OBJECT
 public:
 
-    explicit FWCView(QWidget *parent=0):QGraphicsView(parent){}
+    explicit FWCView(QWidget *parent=0) : QGraphicsView(parent){}
     explicit FWCView(QGraphicsScene *scene, QWidget *parent=0):QGraphicsView(scene, parent){}
     ~FWCView(){}
 
@@ -72,6 +79,39 @@ protected:
 
 
 private:
+
+};
+
+class FWCExerciseSelector : public QObject
+{
+    Q_OBJECT
+public:
+    FWCExerciseSelector(QObject *parent= NULL);
+    ~FWCExerciseSelector();
+
+    void selectChapter( const QString & selection );
+    void selectSection( const QString & selection );
+    void selectExercise( const QString & selection );
+
+public slots:
+    void chapterSelected( const QString & selection );
+    void sectionSelected( const QString & selection );
+    void exerciseSelected( const QString & selection );
+
+private:
+    void createExercisesMap();
+    void stopExercise();
+    void runExercise( const QString & selection="" );
+
+    FeetWetCodingExercise *mSelectedExercise;
+    std::map<QString, std::map<QString, std::vector<QString> > > mExerciseMap;
+    std::map<QString, std::map<QString, std::vector<QString> > >::iterator mChptIter;
+    std::map<QString, std::vector<QString> >::iterator mSectIter;
+    std::vector<QString>::iterator mExIter;
+
+    QString mCurrentChapter;
+    QString mCurrentSection;
+    QString mCurrentExercise;
 
 };
 

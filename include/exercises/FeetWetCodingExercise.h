@@ -9,6 +9,7 @@ class FeetWetCodingExercise : public QObject
     Q_OBJECT
 public:
     explicit FeetWetCodingExercise(QObject *parent = 0);
+    virtual ~FeetWetCodingExercise();
 
 signals:
 
