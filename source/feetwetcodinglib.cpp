@@ -8,6 +8,7 @@
 #include <QDialog>
 #include <QFontMetrics>
 #include <exercises/exercises.h>
+#include <feetwetcodinglib.h>
 
 using namespace std;
 
@@ -49,21 +50,18 @@ FeetWetCodingExercise * exerciseFactory( std::string const& name )
     if( "OnYourOwn" == name ){ return new OnYourOwn(); }
 
     //Section 3 - Types_Variables
-    if( "Integers" == name ){ return new Integers(); }
+    if( "NumericTypes" == name ){ return new NumericTypes(); }
     if( "DrawingVersusSeeout" == name ){ return new DrawingVersusSeeout(); }
-    if( "Floats" == name ){ return new Floats(); }
     if( "CONSTANTS" == name ){ return new CONSTANTS(); }
     if( "Chars" == name ){ return new Chars(); }
+    if( "Booleans" == name ){ return new Booleans(); }
     if( "StandardStrings" == name ){ return new StandardStrings(); }
-//    if( "ChoosingVariableNames" == name ){ return new ChoosingVariableNames(); }
 
     //Section 4 - Expessions_Syntax
     if( "AssignmentArithmetic" == name ){ return new AssignmentArithmetic(); }
 //    if( "OrderOfOperations" == name ){ return new OrderOfOperations(); }
     if( "PreAndPostIncAndDec" == name ){ return new PreAndPostIncAndDec(); }
-//    if( "DivisionGotchas" == name ){ return new DivisionGotchas(); }
 //    if( "ModulusOperator" == name ){ return new ModulusOperator(); }
-//    if( "Booleans" == name ){ return new Booleans(); }
 //    if( "BlocksAndScope" == name ){ return new BlocksAndScope(); }
 //    if( "MathFunctions" == name ){ return new MathFunctions(); }
 //    if( "random-randomRange" == name ){ return new random-randomRange(); }
@@ -80,6 +78,7 @@ FeetWetCodingExercise * exerciseFactory( std::string const& name )
     if( "C01S05_OYO4" == name ){ return new C01S05_OYO4(); }
     if( "WhileLoop4" == name ){ return new WhileLoop4(); }
     if( "WhileLoop5" == name ){ return new WhileLoop5(); }
+    if( "DivideByZero" == name ){ return new DivideByZero(); }
     if( "IfThen1" == name ){ return new IfThen1(); }
     if( "IfThen2" == name ){ return new IfThen2(); }
     if( "C01S05_OYO5" == name ){ return new C01S05_OYO5(); }
@@ -169,6 +168,10 @@ void setupDrawingUtils()
     // Choose the first Exercise in the list
     if ( NULL != exerciseSelector )
     {
+        //IF WE'RE GOING TO CONTINUE PUTTING
+        //AN EXERCISE IN MAIN, THEN WE DON'T
+        //WANT TO DO IT HERE, TOO. WAIT TILL
+        //THE MAIN OPTION IS REALLY GONE.
         exerciseSelector->selectChapter("");
     }
 }
@@ -638,13 +641,12 @@ void FWCExerciseSelector::createExercisesMap()
 
     //S03-Types_Variables
     exercises.clear();
-    exercises.push_back( "Integers" );
+    exercises.push_back( "NumericTypes" );
     exercises.push_back( "DrawingVersusSeeout" );
-    exercises.push_back( "Floats" );
     exercises.push_back( "CONSTANTS" );
     exercises.push_back( "Chars" );
+    exercises.push_back( "Booleans" );
     exercises.push_back( "StandardStrings" );
-    exercises.push_back( "ChoosingVariableNames" );
     sections["S03-Types_Variables"] = exercises;
 
     //S04-Expressions_Syntax
@@ -652,9 +654,7 @@ void FWCExerciseSelector::createExercisesMap()
     exercises.push_back( "AssignmentArithmetic" );
     exercises.push_back( "OrderOfOperations" );
     exercises.push_back( "PreAndPostIncAndDec" );
-    exercises.push_back( "DivisionGotchas" );
     exercises.push_back( "ModulusOperator" );
-    exercises.push_back( "Booleans" );
     exercises.push_back( "BlocksAndScope" );
     exercises.push_back( "MathFunctions" );
     exercises.push_back( "random-randomRange" );
@@ -673,6 +673,7 @@ void FWCExerciseSelector::createExercisesMap()
     exercises.push_back( "C01S05_OYO4" );
     exercises.push_back( "WhileLoop4" );
     exercises.push_back( "WhileLoop5" );
+    exercises.push_back( "DivideByZero" );
     exercises.push_back( "IfThen1" );
     exercises.push_back( "IfThen2" );
     exercises.push_back( "C01S05_OYO5" );

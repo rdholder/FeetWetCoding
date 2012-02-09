@@ -10,6 +10,7 @@
 // "There are things wrong wi' some o' the tools and 'tis my task to put them right."
 
 #include <setup.h>
+#include <include/exercises/exercises.h>
 
 FeetWetCodingExercise *exercise(NULL);
 
@@ -17,6 +18,14 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     appSetup();
+
+// DON'T NEED THIS ANYMORE, BUT YOU CAN STILL
+// USE IT IF YOU WANT... USE ClearScreen() IF
+// YOU'RE GOING TO INSTANTIATE EXERCISES IN HERE.
+    ClearScreen();
+    exercise = new Welcome();
+
+
 
     //Start the application loop
     return a.exec();
