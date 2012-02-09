@@ -14,19 +14,21 @@ void InfiniteLooping1::runExercise()
 {
     int x=20, y=20;                 // = is pronounced GETS, == is pronounced EQUALS
 
-    // NOTE: THIS CODE WILL CAUSE FeetWetCoding.EXE TO HANG WHEN YOU TRY TO RUN IT AND YOU
-    // WILL HAVE TO KILL IT MANUALLY.  RUN IT ONCE AS IS TO SEE WHAT IT LOOKS LIKE
-    // WHEN YOU HAVE AN INFINITE LOOP UNDER THE Qt LIBRARY, SO THAT YOU WILL RECOGNIZE
-    // THIS IN FUTURE PROGRAMS AND WILL KNOW WHAT TO FIX.  AFTER YOU KILL FeetWetCoding.exe
-    // UNCOMMENT THE VERTICALSTEP LINE AND RUN IT AGAIN.
+    // NOTE: THIS CODE WILL CAUSE FeetWetCoding.exe TO HANG WHEN YOU TRY TO RUN IT WITH
+    // y += 30; LINE COMMENTED OUT.  YOU WILL HAVE TO KILL IT MANUALLY.
 
-    // This type of logic error very well may come up again as you learn programming, so
+    // Run it once with the y += 30; line commented out so that you can see what it looks
+    // like when you have an infinite loop under the Qt Library.  That way, if you write
+    // code during these exercises that creates an infinite loop, you will have seen this
+    // hanging behavior already, and will have an idea of what you will need to fix.
+
+    // This type of logic error is likely to come up again as you learn programming, so
     // it's good for you to know how to recognize it as a possible cause of a hung executable!
 
     while ( y < 400 )
     {
-        DrawText("This loop will never end until the next line is uncommented.", x, y, BLUE, 10);
-        //y += 30;
+        DrawText("This loop will never end when the next line is commented out.", x, y, BLUE, 10);
+        y += 30;
 
     }
 }
