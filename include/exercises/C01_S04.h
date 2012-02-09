@@ -35,11 +35,141 @@ protected:
     }
 };
 
+class OrderOfOperations : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit OrderOfOperations(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = false;
+        this->runExercise();
+        this->setupSolution();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+
+    //Hide this implementation from the student
+    void setupSolution()
+    {
+        DrawReferenceBox(LEFTRIGHT);
+    }
+};
+
 class PreAndPostIncAndDec : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
     explicit PreAndPostIncAndDec(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = false;
+        this->runExercise();
+        this->setupSolution();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+
+    //Hide this implementation from the student
+    void setupSolution()
+    {
+        DrawReferenceBox(LEFTRIGHT);
+    }
+};
+
+class ModulusOperator : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit ModulusOperator(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = false;
+        this->runExercise();
+        this->setupSolution();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+
+    //Hide this implementation from the student
+    void setupSolution()
+    {
+        DrawReferenceBox(LEFTRIGHT);
+    }
+};
+
+class BlocksAndScope : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit BlocksAndScope(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = false;
+        this->runExercise();
+        this->setupSolution();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+
+    //Hide this implementation from the student
+    void setupSolution()
+    {
+        DrawReferenceBox(LEFTRIGHT);
+    }
+};
+
+class MathFunctions : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit MathFunctions(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = false;
+        this->runExercise();
+        this->setupSolution();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+
+    //Hide this implementation from the student
+    void setupSolution()
+    {
+        DrawReferenceBox(LEFTRIGHT);
+    }
+};
+
+class randomAndrandomRange : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit randomAndrandomRange(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
         Gsoln = false;

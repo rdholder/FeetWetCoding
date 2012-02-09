@@ -465,6 +465,32 @@ protected:
     }
 };
 
+class DivideByZero : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit DivideByZero(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = false;
+        this->runExercise();
+        this->setupSolution();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+
+    //Hide this implementation from the student
+    void setupSolution()
+    {
+        DrawReferenceBox(LEFTRIGHT);
+    }
+};
+
 class IfThen1Soln : public FeetWetCodingExercise
 {
     Q_OBJECT

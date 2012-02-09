@@ -514,101 +514,101 @@ span.rvts87
 }
 span.rvts88
 {
- font-size: 20pt;
+ font-size: 14pt;
 }
 span.rvts89
 {
- font-size: 12pt;
- font-weight: bold;
- color: #00b050;
+ font-size: 20pt;
 }
 span.rvts90
 {
  font-size: 12pt;
  font-weight: bold;
- color: #2f6b55;
+ color: #00b050;
 }
 span.rvts91
 {
  font-size: 12pt;
  font-weight: bold;
- text-decoration: line-through;
+ color: #2f6b55;
 }
 span.rvts92
 {
  font-size: 12pt;
  font-weight: bold;
- color: #ffc000;
+ text-decoration: line-through;
 }
 span.rvts93
 {
  font-size: 12pt;
  font-weight: bold;
- color: #0070c0;
+ color: #ffc000;
 }
 span.rvts94
 {
  font-size: 12pt;
  font-weight: bold;
- color: #ff8040;
+ color: #0070c0;
 }
 span.rvts95
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #ff8040;
+}
+span.rvts96
 {
  font-size: 18pt;
  color: #ff0000;
 }
-span.rvts96
+span.rvts97
 {
  font-size: 12pt;
  color: #3333ff;
 }
-span.rvts97
+span.rvts98
 {
  font-size: 12pt;
  color: #b96666;
 }
-a.rvts98, span.rvts98
+a.rvts99, span.rvts99
 {
  color: #0000ff;
  text-decoration: underline;
 }
-a.rvts98:hover { color: #0000ff; }
-a.rvts99, span.rvts99
+a.rvts99:hover { color: #0000ff; }
+a.rvts100, span.rvts100
 {
  font-size: 8pt;
  color: #808080;
  text-decoration: underline;
 }
-a.rvts99:hover { color: #00ccff; }
-span.rvts100
+a.rvts100:hover { color: #00ccff; }
+span.rvts101
 {
  font-size: 12pt;
  color: #190000;
 }
-span.rvts101
+span.rvts102
 {
  font-size: 12pt;
  font-weight: bold;
  color: #190000;
 }
-span.rvts102
+span.rvts103
 {
  font-size: 18pt;
  color: #00b050;
 }
-span.rvts103
+span.rvts104
 {
  font-size: 18pt;
  color: #2f6b55;
 }
-span.rvts104
+span.rvts105
 {
  font-size: 18pt;
  color: #00a5ff;
-}
-span.rvts105
-{
- font-size: 14pt;
 }
 /* ========== Para Styles ========== */
 p,ul,ol /* Paragraph Style */
@@ -885,23 +885,23 @@ p,ul,ol /* Paragraph Style */
 }
 .rvps39
 {
+ line-height: 1.50;
+}
+.rvps40
+{
+ text-align: center;
+}
+.rvps41
+{
  border-color: #008000;
  border-style: solid;
  border-width: 1px;
 }
-.rvps40
+.rvps42
 {
  border-color: #008000;
  border-style: solid;
  border-width: 2px;
  padding: 5px 5px 5px 5px;
  margin: 3px 3px 3px 3px;
-}
-.rvps41
-{
- line-height: 1.50;
-}
-.rvps42
-{
- text-align: center;
 }

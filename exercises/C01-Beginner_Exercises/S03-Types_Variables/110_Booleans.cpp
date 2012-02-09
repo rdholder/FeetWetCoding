@@ -8,22 +8,20 @@
 // OPEN FeetWetCoding/helpinfo/html/ch00ex00TITLE.html
 // for more information about this exercise.
 
-#include <exercises/C01_S04.h>
+#include <exercises/C01_S03.h>
 
-void PreAndPostIncAndDec::runExercise()     // copy the exercise name & paste it into main.cpp
+void Booleans::runExercise()     // copy the exercise name & paste it into main.cpp
 {
-    int sum = 0;
+    // see Chapter 01, Section 05, 300_IfThen1.cpp for how to use booleans.  Here is
+    // how to declare and assign values to them:
 
     DrawText("Reference Exercise:", 50, 150, BLUE, 20);
     DrawText("no solution needed.", 50, 180, BLUE, 20);
 
-    seeout << "1st sum: " << sum++ << "\n";
-    seeout << "2nd sum: " << sum++ << "\n";
-    seeout << "3rd sum: " << ++sum << "\n";
-    seeout << "4th sum: " << sum-- << "\n";
-    seeout << "5th sum: " << sum-- << "\n";
-    seeout << "6th sum: " << --sum << "\n";
-    seeout << "7th sum: " << ++sum << "\n";
+    bool somevar = true;
+
+    somevar = false;
+
 }
 
 
