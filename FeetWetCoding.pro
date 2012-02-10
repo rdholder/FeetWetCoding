@@ -90,14 +90,16 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/112_C01S05_OYO4SOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/110_C01S05_OYO3.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/112_C01S05_OYO4.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/400_C01S05_OYO5.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/400_C01S05_OYO5SOLN.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/200_randomAndrandomRange.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/280_DivideByZero.cpp \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/020_NumericTypes.cpp \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/Solutions/020_NumericTypesSOLN.cpp \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/110_Booleans.cpp \
-    source/lib/FWCExerciseChooser.cpp
+    source/lib/FWCExerciseChooser.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/400_C01S05_OYO5SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/400_C01S05_OYO5.cpp \
+    exercises/C01-Beginner_Exercises/S03-Types_Variables/300_Arrays.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/200_ForLoops1.cpp
 
 
 HEADERS += \

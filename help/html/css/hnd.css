@@ -610,6 +610,11 @@ span.rvts105
  font-size: 18pt;
  color: #00a5ff;
 }
+span.rvts106
+{
+ font-size: 12pt;
+ color: #00a5ff;
+}
 /* ========== Para Styles ========== */
 p,ul,ol /* Paragraph Style */
 {
