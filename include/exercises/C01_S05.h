@@ -465,6 +465,144 @@ protected:
     }
 };
 
+class ForLoops1Soln : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit ForLoops1Soln(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = true;
+        this->runExercise();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+};
+
+class ForLoops1 : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit ForLoops1(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = false;
+        this->runExercise();
+        this->setupSolution();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+
+    //Hide this implementation from the student
+    void setupSolution()
+    {
+        DrawReferenceBox(LEFTRIGHT);
+        mSolutionPtr = new ForLoops1Soln(); // Executes soln's runExercise();
+    }
+};
+
+class ForLoops2Soln : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit ForLoops2Soln(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = true;
+        this->runExercise();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+};
+
+class ForLoops2 : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit ForLoops2(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = false;
+        this->runExercise();
+        this->setupSolution();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+
+    //Hide this implementation from the student
+    void setupSolution()
+    {
+        DrawReferenceBox(LEFTRIGHT);
+        mSolutionPtr = new ForLoops2Soln(); // Executes soln's runExercise();
+    }
+};
+
+class ForLoops3Soln : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit ForLoops3Soln(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = true;
+        this->runExercise();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+};
+
+class ForLoops3 : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit ForLoops3(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = false;
+        this->runExercise();
+        this->setupSolution();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+
+    //Hide this implementation from the student
+    void setupSolution()
+    {
+        DrawReferenceBox(LEFTRIGHT);
+        mSolutionPtr = new ForLoops3Soln(); // Executes soln's runExercise();
+    }
+};
+
 class DivideByZero : public FeetWetCodingExercise
 {
     Q_OBJECT

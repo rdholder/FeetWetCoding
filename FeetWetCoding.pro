@@ -99,7 +99,14 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/400_C01S05_OYO5SOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/400_C01S05_OYO5.cpp \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/300_Arrays.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/200_ForLoops1.cpp
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/550_FontProportionsSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/550_FontProportions.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/230_ForLoops1.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/240_ForLoops2.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/250_ForLoops3.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/230_ForLoops1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/240_ForLoops2SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/250_ForLoops3SOLN.cpp
 
 
 HEADERS += \

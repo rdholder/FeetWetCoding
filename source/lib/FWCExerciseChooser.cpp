@@ -45,6 +45,7 @@ FWCExerciseChooser::getExerciseFromName( const QString & name )
     if( "seeoutIntro" == name ){ return new seeoutIntro(); }
     if( "seeoutFormatting" == name ){ return new seeoutFormatting(); }
     if( "OnYourOwn" == name ){ return new OnYourOwn(); }
+    if( "FontProportions" == name ){ return new FontProportions(); }
 
     //Section 3 - Types_Variables
     if( "NumericTypes" == name ){ return new NumericTypes(); }
@@ -76,6 +77,9 @@ FWCExerciseChooser::getExerciseFromName( const QString & name )
     if( "OYO4" == name ){ return new C01S05_OYO4(); }
     if( "WhileLoop4" == name ){ return new WhileLoop4(); }
     if( "WhileLoop5" == name ){ return new WhileLoop5(); }
+    if( "ForLoops1" == name ){ return new ForLoops1(); }
+    if( "ForLoops2" == name ){ return new ForLoops2(); }
+    if( "ForLoops3" == name ){ return new ForLoops3(); }
     if( "DivideByZero" == name ){ return new DivideByZero(); }
     if( "IfThen1" == name ){ return new IfThen1(); }
     if( "IfThen2" == name ){ return new IfThen2(); }
@@ -118,6 +122,7 @@ void FWCExerciseChooser::createExercisesMap()
     exercises.push_back( "seeoutIntro" );
     exercises.push_back( "seeoutFormatting" );
     exercises.push_back( "OnYourOwn" );
+    exercises.push_back( "FontProportions" );
     sections["S02-Getting_Started"] = exercises;
 
     //S03-Types_Variables
@@ -156,6 +161,8 @@ void FWCExerciseChooser::createExercisesMap()
     exercises.push_back( "WhileLoop4" );
     exercises.push_back( "WhileLoop5" );
     exercises.push_back( "ForLoops1" );
+    exercises.push_back( "ForLoops2" );
+    exercises.push_back( "ForLoops3" );
     exercises.push_back( "DivideByZero" );
     exercises.push_back( "IfThen1" );
     exercises.push_back( "IfThen2" );
