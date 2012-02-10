@@ -53,6 +53,7 @@ FWCExerciseChooser::getExerciseFromName( const QString & name )
     if( "Chars" == name ){ return new Chars(); }
     if( "Booleans" == name ){ return new Booleans(); }
     if( "StandardStrings" == name ){ return new StandardStrings(); }
+//    if( "Arrays" == name ){ return new Arrays(); }
 
     //Section 4 - Expessions_Syntax
     if( "AssignmentArithmetic" == name ){ return new AssignmentArithmetic(); }
@@ -67,18 +68,18 @@ FWCExerciseChooser::getExerciseFromName( const QString & name )
     //Section 5 - Loops_Logic
     if( "WhileLoop1" == name ){ return new WhileLoop1(); }
     if( "InfiniteLooping1" == name ){ return new InfiniteLooping1(); }
-    if( "C01S05_OYO1" == name ){ return new C01S05_OYO1(); }
-    if( "C01S05_OYO2" == name ){ return new C01S05_OYO2(); }
+    if( "OYO1" == name ){ return new C01S05_OYO1(); }
+    if( "OYO2" == name ){ return new C01S05_OYO2(); }
     if( "WhileLoop2" == name ){ return new WhileLoop2(); }
     if( "WhileLoop3" == name ){ return new WhileLoop3(); }
-    if( "C01S05_OYO3" == name ){ return new C01S05_OYO3(); }
-    if( "C01S05_OYO4" == name ){ return new C01S05_OYO4(); }
+    if( "OYO3" == name ){ return new C01S05_OYO3(); }
+    if( "OYO4" == name ){ return new C01S05_OYO4(); }
     if( "WhileLoop4" == name ){ return new WhileLoop4(); }
     if( "WhileLoop5" == name ){ return new WhileLoop5(); }
     if( "DivideByZero" == name ){ return new DivideByZero(); }
     if( "IfThen1" == name ){ return new IfThen1(); }
     if( "IfThen2" == name ){ return new IfThen2(); }
-    if( "C01S05_OYO5" == name ){ return new C01S05_OYO5(); }
+    if( "OYO5" == name ){ return new C01S05_OYO5(); }
 
     //Chapter 8 - Game_Programming
 
@@ -127,6 +128,7 @@ void FWCExerciseChooser::createExercisesMap()
     exercises.push_back( "Chars" );
     exercises.push_back( "Booleans" );
     exercises.push_back( "StandardStrings" );
+    exercises.push_back( "Arrays" );
     sections["S03-Types_Variables"] = exercises;
 
     //S04-Expressions_Syntax
@@ -145,18 +147,19 @@ void FWCExerciseChooser::createExercisesMap()
     exercises.clear();
     exercises.push_back( "WhileLoop1" );
     exercises.push_back( "InfiniteLooping1" );
-    exercises.push_back( "C01S05_OYO1" );
-    exercises.push_back( "C01S05_OYO2" );
+    exercises.push_back( "OYO1" );
+    exercises.push_back( "OYO2" );
     exercises.push_back( "WhileLoop2" );
     exercises.push_back( "WhileLoop3" );
-    exercises.push_back( "C01S05_OYO3" );
-    exercises.push_back( "C01S05_OYO4" );
+    exercises.push_back( "OYO3" );
+    exercises.push_back( "OYO4" );
     exercises.push_back( "WhileLoop4" );
     exercises.push_back( "WhileLoop5" );
+    exercises.push_back( "ForLoops1" );
     exercises.push_back( "DivideByZero" );
     exercises.push_back( "IfThen1" );
     exercises.push_back( "IfThen2" );
-    exercises.push_back( "C01S05_OYO5" );
+    exercises.push_back( "OYO5" );
     sections["S05-Loops_Logic"] = exercises;
 
     mExerciseMap["C01-Beginner_Exercises"] = sections;
