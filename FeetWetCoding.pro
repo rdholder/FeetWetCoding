@@ -96,7 +96,9 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/Solutions/020_NumericTypesSOLN.cpp \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/110_Booleans.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/400_C01S05_OYO5SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/400_C01S05_OYO5.cpp
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/400_C01S05_OYO5.cpp \
+    exercises/C01-Beginner_Exercises/S03-Types_Variables/300_Arrays.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/200_ForLoops1.cpp
 
 
 HEADERS += \
