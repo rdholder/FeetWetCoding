@@ -96,7 +96,8 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/280_DivideByZero.cpp \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/020_NumericTypes.cpp \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/Solutions/020_NumericTypesSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S03-Types_Variables/110_Booleans.cpp
+    exercises/C01-Beginner_Exercises/S03-Types_Variables/110_Booleans.cpp \
+    source/lib/FWCExerciseChooser.cpp
 
 
 HEADERS += \
@@ -112,7 +113,8 @@ HEADERS += \
     include/exercises/FeetWetCodingExercise.h \
     include/exercises/C08-Game_Programming/S03-TopDown2D/TopDown2DWidget.h \
     include/exercises/C08-Game_Programming/S03-TopDown2D/TopDown2D.h \
-    include/exercises/C08-Game_Programming/GameWidget.h
+    include/exercises/C08-Game_Programming/GameWidget.h \
+    include/lib/FWCExerciseChooser.h
 
 FORMS +=
 
@@ -124,6 +126,8 @@ OTHER_FILES +=
 
 RESOURCES += \
     feetwetresources.qrc
+
+
 
 
 

@@ -16,6 +16,7 @@ TopDown2D::TopDown2D(QObject *parent)
     Gsoln = false;
     this->runExercise();
     this->setupSolution();
+    view->setFocus();
 }
 
 TopDown2D::~TopDown2D()

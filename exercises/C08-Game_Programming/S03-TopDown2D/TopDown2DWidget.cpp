@@ -56,11 +56,8 @@ void TopDown2DWidget::handleKeyPress(QKeyEvent *k)
 {
     //Print to our output widgets. Set the global
     //Gsoln to print to the correct widget.
-    SeeOut seeout;
     Gsoln = getIsSolution();
     const unsigned short INCR(8);
-
-//    seeout << "Start: " << mPlayerX << "," << mPlayerY << "\n";
 
     switch ( k->key() )
     {
@@ -85,8 +82,6 @@ void TopDown2DWidget::handleKeyPress(QKeyEvent *k)
         return;
     }
 
-//    seeout << "Middle: " << mPlayerX << "," << mPlayerY << "\n";
-
     if ( mPlayerX < 0 )
         mPlayerX = WINDOW_WIDTH/2;
 
@@ -98,8 +93,6 @@ void TopDown2DWidget::handleKeyPress(QKeyEvent *k)
 
     else if ( mPlayerY > WINDOW_HEIGHT )
         mPlayerY = 0;
-
-//    seeout << "End: " << mPlayerX << "," << mPlayerY << "\n";
 
     movePlayer(mPlayerX, mPlayerY);
 }

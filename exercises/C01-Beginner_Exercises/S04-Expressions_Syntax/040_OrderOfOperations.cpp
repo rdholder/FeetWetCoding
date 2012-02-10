@@ -27,7 +27,7 @@ void OrderOfOperations::runExercise()
     // you are writing code for. It seemed very mysterious to me at first, but after you
     // play around with it a bit, it starts to feel more natural.  :-)
 
-    int x = 0, y = 0, a = 7, b = 11, c = 128, d = 3;
+    int x = 0, a = 7, b = 11, c = 128, d = 3;
 
     DrawText("Reference Exercise:", 50, 150, BLUE, 20);
     DrawText("no solution needed.", 50, 180, BLUE, 20);

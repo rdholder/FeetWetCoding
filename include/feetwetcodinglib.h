@@ -82,39 +82,6 @@ private:
 
 };
 
-class FWCExerciseSelector : public QObject
-{
-    Q_OBJECT
-public:
-    FWCExerciseSelector(QObject *parent= NULL);
-    ~FWCExerciseSelector();
-
-    void selectChapter( const QString & selection );
-    void selectSection( const QString & selection );
-    void selectExercise( const QString & selection );
-
-public slots:
-    void chapterSelected( const QString & selection );
-    void sectionSelected( const QString & selection );
-    void exerciseSelected( const QString & selection );
-
-private:
-    void createExercisesMap();
-    void stopExercise();
-    void runExercise( const QString & selection="" );
-
-    FeetWetCodingExercise *mSelectedExercise;
-    std::map<QString, std::map<QString, std::vector<QString> > > mExerciseMap;
-    std::map<QString, std::map<QString, std::vector<QString> > >::iterator mChptIter;
-    std::map<QString, std::vector<QString> >::iterator mSectIter;
-    std::vector<QString>::iterator mExIter;
-
-    QString mCurrentChapter;
-    QString mCurrentSection;
-    QString mCurrentExercise;
-
-};
-
 class solutionOrientation
 {
 public:

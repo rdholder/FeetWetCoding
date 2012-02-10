@@ -22,8 +22,8 @@ int main(int argc, char *argv[])
 // DON'T NEED THIS ANYMORE, BUT YOU CAN STILL
 // USE IT IF YOU WANT... USE ClearScreen() IF
 // YOU'RE GOING TO INSTANTIATE EXERCISES IN HERE.
-    ClearScreen();
-    exercise = new Welcome();
+//    ClearScreen();
+//    exercise = new Welcome();
 
 
 
