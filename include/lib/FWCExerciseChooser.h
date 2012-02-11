@@ -21,6 +21,7 @@ public:
     void selectChapter( const QString & selection );
     void selectSection( const QString & selection );
     void selectExercise( const QString & selection );
+    void setOkToRun(bool ok) { mOkToRun = ok; }
 
     QComboBox * getChapterChooser() { return mChapterChooser; }
     QComboBox * getSectionChooser() { return mSectionChooser; }
@@ -31,12 +32,17 @@ public slots:
     void chapterSelected( const QString & selection );
     void sectionSelected( const QString & selection );
     void exerciseSelected( const QString & selection );
+    void runCurrentExercise();
+    void saveCurrentExercise();
 
 private:
     void createExercisesMap();
     FeetWetCodingExercise * getExerciseFromName( const QString & name );
     void stopExercise();
-    void runExercise( const QString & selection="" );
+    void runExercise( const QString & selection );
+    bool getSettingLoadPreviousExerciseEnabled( const QString & filename );
+    bool loadPreviousExerciseEnabled();
+    void loadPreviousExercise();
 
     FeetWetCodingExercise *mSelectedExercise;
     std::map<QString, std::map<QString, std::vector<QString> > > mExerciseMap;
@@ -52,6 +58,7 @@ private:
     QComboBox *mSectionChooser;
     QComboBox *mExerciseChooser;
     QHBoxLayout *mHlayout;
+    bool mOkToRun;
 };
 
 

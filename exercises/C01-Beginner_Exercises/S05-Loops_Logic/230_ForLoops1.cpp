@@ -13,14 +13,17 @@
 void ForLoops1::runExercise()
 {
     int col = 0, row = 0;                   // = is pronounced GETS, == is pronounced EQUALS
+    int rowHeight = 26;
+    int colWidth = 40;
+    int fontSize = 15;
 
-    for ( row = 0; row < 8; row++ )
+    for ( row = 0; row < 10; row++ )
     {
-        for ( col = 0; col < 8; col++ )
+        for ( col = 0; col < 10; col++ )
         {
-            DrawInt( row, col*50, row*50, BLUE, 30);
-            DrawText( ",", col*50+15, row*50, BLUE, 30);
-            DrawInt( col, col*50+20, row*50, BLUE, 30);
+            DrawInt( row, col*colWidth, row*rowHeight, BLUE, fontSize);
+            DrawText( ",", col*colWidth+9, row*rowHeight, BLUE, fontSize);
+            DrawInt( col, col*colWidth+15, row*rowHeight, BLUE, fontSize);
         }
     }
 }

@@ -4,8 +4,10 @@
 
 #include <setup.h>
 #include <QHBoxLayout>
+#include <QPushButton>
 #include <QDialog>
 #include <QFontMetrics>
+#include <QFile>
 #include <feetwetcodinglib.h>
 #include <include/lib/FWCExerciseChooser.h>
 
@@ -39,7 +41,18 @@ void solutionOrientation::setOrientation(RefBoxLayout orientation)
 
 void appSetup()
 {
+    initSettingsFile();
     setupDrawingUtils();
+}
+
+void initSettingsFile()
+{
+    QFile srcFile("../FeetWetCoding/defaultconfig.txt");
+    QFile destFile("config.txt");
+    if ( !destFile.exists() )
+    {
+        srcFile.copy("config.txt");
+    }
 }
 
 void setupDrawingUtils()
@@ -67,12 +80,23 @@ void setupDrawingUtils()
 
     FWCExerciseChooser *exerciseChooser = new FWCExerciseChooser();
 
+    QHBoxLayout *hlayout1 = new QHBoxLayout();
+    QPushButton *restartExercise = new QPushButton( QObject::tr( "Re-start Exercise") );
+    restartExercise->setFocusPolicy(Qt::NoFocus);
+    QObject::connect(restartExercise, SIGNAL(clicked()),
+                     exerciseChooser, SLOT(runCurrentExercise()));
+
+    hlayout1->addWidget(restartExercise);
+    hlayout1->addStretch();
+    hlayout1->addLayout(exerciseChooser->getChooserLayout());
+
     QHBoxLayout *hlayout2 = new QHBoxLayout();
     hlayout2->addWidget(exerciseOut);
     hlayout2->addWidget(solnOut);
 
     QVBoxLayout *vlayout = new QVBoxLayout();
-    vlayout->addLayout(exerciseChooser->getChooserLayout());
+    //vlayout->addLayout(exerciseChooser->getChooserLayout());
+    vlayout->addLayout(hlayout1);
     vlayout->addWidget(view);
     vlayout->addLayout(hlayout2);
 
@@ -86,8 +110,12 @@ void setupDrawingUtils()
 
     initOutputArea();
 
+    // Done creating drawing area, so ok to run.
     // Choose the first Exercise in the list
-    exerciseChooser->selectChapter("");
+    exerciseChooser->setOkToRun(true);
+
+    std::cerr << "Done setting up drawing area. Tell chooser to run its selected exercise...\n";
+    exerciseChooser->runCurrentExercise();
 }
 
 void initOutputArea()

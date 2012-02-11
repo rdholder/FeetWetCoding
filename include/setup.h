@@ -16,6 +16,7 @@
 #include <QTime>
 #include <QTimer>
 #include <QVector>
+#include <QDebug>
 #include <qwaitcondition.h>
 
 #include <iostream>

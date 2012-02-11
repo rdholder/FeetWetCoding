@@ -39,8 +39,9 @@ class FeetWetCodingExercise;
 
 //Function declarations
 FeetWetCodingExercise * exerciseFactory( std::string const& name );
-void setupDrawingUtils();
 void appSetup();
+void initSettingsFile();
+void setupDrawingUtils();
 
 void ClearScreen();
 void initOutputArea();

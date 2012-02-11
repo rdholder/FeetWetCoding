@@ -1,7 +1,7 @@
 #include <include/lib/FWCExerciseChooser.h>
 #include <include/exercises/exercises.h>
 #include <iostream>
-#include <QDebug>
+#include <QFile>
 
 FWCExerciseChooser::FWCExerciseChooser(QObject *parent)
     :QObject(parent)
@@ -13,9 +13,24 @@ FWCExerciseChooser::FWCExerciseChooser(QObject *parent)
     ,mSectionChooser(NULL)
     ,mExerciseChooser(NULL)
     ,mHlayout(NULL)
+    ,mOkToRun(false)
 {
     mHlayout = new QHBoxLayout();
     createExercisesMap();
+
+    QObject::connect(qApp, SIGNAL(lastWindowClosed()),
+                     this, SLOT(saveCurrentExercise()));
+
+    //Try the defaultconfig if config isn't found
+    if ( loadPreviousExerciseEnabled() )
+    {
+        loadPreviousExercise();
+    }
+
+    //Need to choose a chapter, which will trigger selection
+    //of a section and exercise. This will create and populate
+    //the chapter, section, and exercise list boxes.
+    selectChapter(mCurrentChapter);
 }
 
 FWCExerciseChooser::~FWCExerciseChooser()
@@ -244,8 +259,15 @@ void FWCExerciseChooser::selectChapter( const QString & selection )
 
     mHlayout->addWidget(mSectionChooser);
 
-    // Choose the first Section in the list
-    selectSection("");
+    //Choose a section to go with the selected chapter.
+    //If our current selection exists in the new section
+    //list, great. If not, pass empty string and the first
+    //section in the list will be selected by default.
+    if ( mSectionChooser->findText(mCurrentSection) < 0 )
+    {
+        mCurrentSection.clear();
+    }
+    selectSection(mCurrentSection);
 }
 
 void FWCExerciseChooser::selectSection( const QString & selection )
@@ -289,8 +311,15 @@ void FWCExerciseChooser::selectSection( const QString & selection )
 
     mHlayout->addWidget(mExerciseChooser);
 
-    // Choose the first Exercise in the list
-    selectExercise("");
+    //Choose an exercise to go with the selected chapter.
+    //If our current selection exists in the new section
+    //list, great. If not, pass empty string and the first
+    //section in the list will be selected by default.
+    if ( mExerciseChooser->findText(mCurrentExercise) < 0 )
+    {
+        mCurrentExercise.clear();
+    }
+    selectExercise(mCurrentExercise);
 }
 
 void FWCExerciseChooser::selectExercise( const QString & selection )
@@ -333,7 +362,7 @@ void FWCExerciseChooser::selectExercise( const QString & selection )
 
     // Start the new one
     mCurrentExercise = selectedExercise;
-    runExercise(mCurrentExercise);
+    runCurrentExercise();
 }
 
 void FWCExerciseChooser::chapterSelected( const QString & selection )
@@ -367,8 +396,121 @@ void FWCExerciseChooser::stopExercise()
 
 void FWCExerciseChooser::runExercise( const QString & exerciseName )
 {
-    qDebug() << "FWCExerciseChooser::runExercise( " << exerciseName << " )\n";
+    if ( !mOkToRun )
+        return;
+
     mSelectedExercise = getExerciseFromName( exerciseName );
 }
 
+void FWCExerciseChooser::runCurrentExercise()
+{
+    if ( !mOkToRun )
+        return;
+
+    stopExercise();
+    mSelectedExercise = getExerciseFromName( mCurrentExercise );
+}
+
+void FWCExerciseChooser::saveCurrentExercise()
+{
+    QFile file("lastexercise.txt");
+    if ( file.exists() )
+    {
+        file.remove();
+    }
+
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
+    {
+        qDebug() << "Failed to open file \"lastexercise.txt\" for writing."
+                 << " Cannot save current exercise.\n";
+        return;
+    }
+
+    QTextStream out(&file);
+    out << "chapter:" << mCurrentChapter << "\n";
+    out << "section:" << mCurrentSection << "\n";
+    out << "exercise:" << mCurrentExercise << "\n";
+
+    file.close();
+}
+
+void FWCExerciseChooser::loadPreviousExercise()
+{
+    QFile file("lastexercise.txt");
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+    {
+        qDebug() << "Failed to open file \"lastexercise.txt\" for reading."
+                 << " Cannot load previous exercise.\n";
+        return;
+    }
+
+    QTextStream in(&file);
+    while (!in.atEnd())
+    {
+        QString line = in.readLine();
+        QStringList list = line.split(":", QString::SkipEmptyParts);
+        if ( 2 != list.count() )
+            continue;
+
+        if ( list.at(0).contains("chapter", Qt::CaseInsensitive) )
+        {
+            mCurrentChapter = ( list.at(1) );
+        }
+        else if ( list.at(0).contains("section", Qt::CaseInsensitive) )
+        {
+            mCurrentSection = ( list.at(1) );
+        }
+        else if ( list.at(0).contains("exercise", Qt::CaseInsensitive) )
+        {
+            mCurrentExercise = ( list.at(1) );
+        }
+    }
+
+    file.close();
+}
+
+bool FWCExerciseChooser::getSettingLoadPreviousExerciseEnabled( const QString & filename )
+{
+    QFile file(filename);
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+    {
+        throw false;
+    }
+
+    QTextStream in(&file);
+    while (!in.atEnd())
+    {
+        QString line = in.readLine();
+        QStringList list = line.split(":", QString::SkipEmptyParts);
+        if ( 2 != list.count() )
+            continue;
+
+        if ( list.at(0).contains("reload_prev_exercise", Qt::CaseInsensitive) )
+        {
+            return ( list.at(1).contains("true", Qt::CaseInsensitive) );
+        }
+    }
+
+    //Didn't find the setting
+    throw false;
+}
+
+bool FWCExerciseChooser::loadPreviousExerciseEnabled()
+{
+    try
+    {
+        // Try the user's config file first.
+        return getSettingLoadPreviousExerciseEnabled("config.txt");
+    }
+    catch ( bool val ) { qDebug() << "Failed to get prevEx setting from user config.\n"; }
+
+    try
+    {
+        // Try the default config file.
+        return getSettingLoadPreviousExerciseEnabled("../FeetWetCoding/defaultconfig.txt");
+    }
+    catch ( bool val ) { qDebug() << "Failed to get prevEx setting from default config.\n"; }
+
+    return false;
+}
 
