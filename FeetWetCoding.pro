@@ -50,10 +50,6 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/090_DrawRectanglesSOLN.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/110_DrawEllipses.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/110_DrawEllipsesSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/300_seeoutIntroSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/300_seeoutIntro.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/310_seeoutFormatting.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/310_seeoutFormattingSOLN.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/250_DrawingImages.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/250_DrawingImagesSOLN.cpp \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/040_DrawingVersusSeeout.cpp \
@@ -106,7 +102,11 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/250_ForLoops3.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/230_ForLoops1SOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/240_ForLoops2SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/250_ForLoops3SOLN.cpp
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/250_ForLoops3SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/300_SeeoutIntro.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/310_SeeoutFormatting.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/300_SeeoutIntroSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/310_SeeoutFormattingSOLN.cpp
 
 
 HEADERS += \
