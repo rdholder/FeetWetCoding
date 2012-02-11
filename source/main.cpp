@@ -19,13 +19,8 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     appSetup();
 
-// DON'T NEED THIS ANYMORE, BUT YOU CAN STILL
-// USE IT IF YOU WANT... USE ClearScreen() IF
-// YOU'RE GOING TO INSTANTIATE EXERCISES IN HERE.
-//    ClearScreen();
-//    exercise = new Welcome();
-
-
+	// The documentation is out of date.  You no longer need to paste your
+	// exercise here.  Just run it from the GUI dropdown!
 
     //Start the application loop
     return a.exec();
