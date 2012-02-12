@@ -86,16 +86,18 @@ void setupDrawingUtils()
     QObject::connect(restartExercise, SIGNAL(clicked()),
                      exerciseChooser, SLOT(runCurrentExercise()));
 
-    hlayout1->addWidget(restartExercise);
     hlayout1->addStretch();
     hlayout1->addLayout(exerciseChooser->getChooserLayout());
+    QFrame *f = new QFrame();
+    f->setFrameStyle( QFrame::VLine | QFrame::Sunken );
+    hlayout1->addWidget( f, 0 );
+    hlayout1->addWidget(restartExercise);
 
     QHBoxLayout *hlayout2 = new QHBoxLayout();
     hlayout2->addWidget(exerciseOut);
     hlayout2->addWidget(solnOut);
 
     QVBoxLayout *vlayout = new QVBoxLayout();
-    //vlayout->addLayout(exerciseChooser->getChooserLayout());
     vlayout->addLayout(hlayout1);
     vlayout->addWidget(view);
     vlayout->addLayout(hlayout2);
@@ -458,29 +460,110 @@ void DrawReferenceBox( RefBoxLayout layout )
     };
 }
 
-Qt::GlobalColor getQColor( Color color )
+QColor getQColor( Color color )
 {
+    QColor c;
     switch (color) {
-        case BLACK:
-            return Qt::black;
-        case RED:
-            return Qt::red;
-        case GREEN:
-            return Qt::green;
-        case YELLOW:
-            return Qt::yellow;
-        case BLUE:
-            return Qt::blue;
-        case PINK:
-            return Qt::magenta;
-        case DARKYELLOW:
-            return Qt::darkYellow;
-        case GRAY:
-            return Qt::gray;
+    case COLOR0:
+        return QColor(Qt::gray);
+    case COLOR1:
+        return QColor(Qt::color1);
+    case BLACK:
+        return QColor(Qt::black);
+    case WHITE:
+        return QColor(Qt::white);
+    case DARKGRAY:
+        return QColor(Qt::darkGray);
+    case GRAY:
+        return QColor(Qt::gray);
+    case LIGHTGRAY:
+        return QColor(Qt::lightGray);
+    case RED:
+        return QColor(Qt::red);
+    case GREEN:
+        return QColor(Qt::green);
+    case BLUE:
+        return QColor(Qt::blue);
+    case CYAN:
+        return QColor(Qt::cyan);
+    case MAGENTA:
+        return QColor(Qt::magenta);
+    case YELLOW:
+        return QColor(Qt::yellow);
+    case DARKRED:
+        return QColor(Qt::darkRed);
+    case DARKGREEN:
+        return QColor(Qt::darkGreen);
+    case DARKBLUE:
+        return QColor(Qt::darkBlue);
+    case DARKCYAN:
+        return QColor(Qt::darkCyan);
+    case DARKMAGENTA:
+        return QColor(Qt::darkMagenta);
+    case DARKYELLOW:
+        return QColor(Qt::darkYellow);
+    case TRANSPARENT:
+        return QColor(Qt::transparent);
+    case PINK:
+        return QColor(255, 0, 255);             // decimal rgb
+    case LAVENDER:
+        return QColor("#aa88ff");               // hex rgb
+    default:
+        return Qt::black;
     };
-    return Qt::black;
 }
 
+std::string getNameForColor( Color color )
+{
+    switch (color) {
+    case COLOR0:
+        return "COLOR0";
+    case COLOR1:
+        return "COLOR1";
+    case BLACK:
+        return "BLACK";
+    case WHITE:
+        return "WHITE";
+    case DARKGRAY:
+        return "DARKGRAY";
+    case GRAY:
+        return "GRAY";
+    case LIGHTGRAY:
+        return "LIGHTGRAY";
+    case RED:
+        return "RED";
+    case GREEN:
+        return "GREEN";
+    case BLUE:
+        return "BLUE";
+    case CYAN:
+        return "CYAN";
+    case MAGENTA:
+        return "MAGENTA";
+    case YELLOW:
+        return "YELLOW";
+    case DARKRED:
+        return "DARKRED";
+    case DARKGREEN:
+        return "DARKGREEN";
+    case DARKBLUE:
+        return "DARKBLUE";
+    case DARKCYAN:
+        return "DARKCYAN";
+    case DARKMAGENTA:
+        return "DARKMAGENTA";
+    case DARKYELLOW:
+        return "DARKYELLOW";
+    case TRANSPARENT:
+        return "TRANSPARENT";
+    case PINK:
+        return "PINK";
+    case LAVENDER:
+        return "LAVENDER";
+    default:
+        return "ERROR";
+    };
+}
 
 // random:  returns a random int between 0 and "biggest" inclusive
 // for example random(100) returns an int between 0 and 100

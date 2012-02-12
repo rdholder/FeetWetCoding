@@ -22,6 +22,8 @@
 #include <iostream>
 #include <sstream>
 
+#include <include/colors.h>
+#include <include/lib/ColorViewer.h>
 #include <include/feetwetcodinglib.h>
 
 #include <constants.h>      // FeetWetCoding constants: things we use in many exercises

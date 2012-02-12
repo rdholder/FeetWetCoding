@@ -106,7 +106,10 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/300_SeeoutIntro.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/310_SeeoutFormatting.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/300_SeeoutIntroSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/310_SeeoutFormattingSOLN.cpp
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/310_SeeoutFormattingSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S03-Types_Variables/Solutions/300_ArraysSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/350_ColorNames.cpp \
+    source/lib/ColorViewer.cpp
 
 
 HEADERS += \
@@ -123,7 +126,9 @@ HEADERS += \
     include/exercises/C08-Game_Programming/S03-TopDown2D/TopDown2DWidget.h \
     include/exercises/C08-Game_Programming/S03-TopDown2D/TopDown2D.h \
     include/exercises/C08-Game_Programming/GameWidget.h \
-    include/lib/FWCExerciseChooser.h
+    include/lib/FWCExerciseChooser.h \
+    include/colors.h \
+    include/lib/ColorViewer.h
 
 FORMS +=
 
@@ -135,66 +140,3 @@ OTHER_FILES +=
 
 RESOURCES += \
     feetwetresources.qrc
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

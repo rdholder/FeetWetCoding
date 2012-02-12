@@ -754,6 +754,32 @@ protected:
     }
 };
 
+class ColorNames : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit ColorNames(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = false;
+        this->runExercise();
+        this->setupSolution();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+
+    //Hide this implementation from the student
+    void setupSolution()
+    {
+        DrawReferenceBox(LEFTRIGHT);
+    }
+};
+
 class OnYourOwnSoln : public FeetWetCodingExercise
 {
     Q_OBJECT

@@ -10,7 +10,7 @@
 #define FEETWETCODINGLIB_H
 
 #include <constants.h>
-#include <QColor>
+#include <colors.h>
 #include <QGraphicsView>
 #include <QKeyEvent>
 #include <QTextEdit>
@@ -57,10 +57,9 @@ void DrawImage( QString filename, int x, int y );
 void DrawReferenceBox( RefBoxLayout layout );
 int random(int biggest);
 int randomRange(int smallest, int biggest);
-//void PuzzleSetup(RefBoxLayout orientation, bool soln);
 
-
-Qt::GlobalColor getQColor( Color color );
+QColor getQColor( Color color );
+std::string getNameForColor( Color color );
 
 class FWCView : public QGraphicsView
 {
@@ -102,6 +101,30 @@ class SeeOut
 {
 
 public:
+
+    void setColor(Color color)
+    {
+        if ( !Gsoln && exerciseOut )
+        {
+            exerciseOut->setTextColor(getQColor(color));
+        }
+        if ( Gsoln && solnOut )
+        {
+            solnOut->setTextColor(getQColor(color));
+        }
+    }
+
+    void setFontSize(int size)
+    {
+        if ( !Gsoln && exerciseOut )
+        {
+            exerciseOut->setFontPointSize(size);
+        }
+        if ( Gsoln && solnOut )
+        {
+            solnOut->setFontPointSize(size);
+        }
+    }
 
     template <typename T>
     SeeOut& operator<<(const T& x)

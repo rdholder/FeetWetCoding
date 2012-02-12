@@ -29,15 +29,4 @@ typedef enum {
     TOPBOTTOM
 } RefBoxLayout;
 
-typedef enum {
-    BLACK,
-    RED,
-    GREEN,
-    YELLOW,
-    BLUE,
-    PINK,
-    DARKYELLOW,
-    GRAY
-} Color;
-
 #endif // CONSTANTS_H

@@ -59,6 +59,7 @@ FWCExerciseChooser::getExerciseFromName( const QString & name )
     if( "DrawingImages" == name ){ return new DrawingImages(); }
     if( "seeoutIntro" == name ){ return new seeoutIntro(); }
     if( "seeoutFormatting" == name ){ return new seeoutFormatting(); }
+    if( "ColorNames" == name ){ return new ColorNames(); }
     if( "OnYourOwn" == name ){ return new OnYourOwn(); }
     if( "FontProportions" == name ){ return new FontProportions(); }
 
@@ -136,6 +137,7 @@ void FWCExerciseChooser::createExercisesMap()
     exercises.push_back( "DrawingImages" );
     exercises.push_back( "seeoutIntro" );
     exercises.push_back( "seeoutFormatting" );
+    exercises.push_back( "ColorNames" );
     exercises.push_back( "OnYourOwn" );
     exercises.push_back( "FontProportions" );
     sections["S02-Getting_Started"] = exercises;
