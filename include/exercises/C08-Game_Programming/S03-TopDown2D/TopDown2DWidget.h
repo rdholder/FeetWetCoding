@@ -1,3 +1,7 @@
+// FeetWetCoding/include/exercises/C08-Game_Programming/S03-TopDown2D/TopDown2DWidget.h
+// copyright (c) 2011 Robert Holder, Janice Dugger.
+// See README.html included in this distribution.
+
 #ifndef TETRISWIDGET_H
 #define TETRISWIDGET_H
 

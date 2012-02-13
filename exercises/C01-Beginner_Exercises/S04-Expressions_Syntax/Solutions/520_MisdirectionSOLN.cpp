@@ -1,12 +1,6 @@
-// copyright (c) 2011 Robert Holder, Janice Dugger.  
-// See LICENSE.txt included with this software distribution for conditions of use.
-
-// FeetWetCoding/exercises/Chapter01/Misdirection.cpp
-
-// Chapter 01 Exercise 02: Introduction to INTeger variables.
-
-// OPEN FeetWetCoding/helpinfo/html/Misdirection.html
-// for more information about this exercise.
+// FeetWetCoding/exercises/C01-BeginnerExercises/S04-Expressions_Syntax/520_MisdirectionSOLN.cpp
+// copyright (c) 2011 Robert Holder, Janice Dugger.
+// See README.html included in this distribution.
 
 #include <exercises/C01_S04.h>
 

@@ -1,10 +1,6 @@
+// FeetWetCoding/include/feetwetcodinglib.h
 // copyright (c) 2011 Robert Holder, Janice Dugger.
-// See LICENSE.txt included with this software distribution for conditions of use.
-
-// FeetWetCoding/include/FeetWetCodinglib.h
-
-// Function prototypes for the simplified graphical and other functions
-// provided to the student.
+// See README.html included in this distribution.
 
 #ifndef FEETWETCODINGLIB_H
 #define FEETWETCODINGLIB_H

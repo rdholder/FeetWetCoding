@@ -1,9 +1,6 @@
-// copyright (c) 2011 Robert Holder, Janice Dugger.  
-// See LICENSE.txt included with this software distribution for conditions of use.
-
 // FeetWetCoding/include/setup.h
-
-// This file simplifies our #includes in the source files.
+// copyright (c) 2011 Robert Holder, Janice Dugger.
+// See README.html included in this distribution.
 
 #ifndef SETUP_H
 #define SETUP_H

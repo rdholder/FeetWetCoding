@@ -1,3 +1,7 @@
+// FeetWetCoding/include/exercises/C01_S05.h
+// copyright (c) 2011 Robert Holder, Janice Dugger.
+// See README.html included in this distribution.
+
 #ifndef C01_S05_H
 #define C01_S05_H
 
@@ -718,6 +722,52 @@ protected:
     {
         DrawReferenceBox(LEFTRIGHT);
         mSolutionPtr = new IfThen2Soln(); // Executes soln's runExercise();
+    }
+};
+
+class IfThen3Soln : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit IfThen3Soln(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = true;
+        this->runExercise();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+};
+
+class IfThen3 : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit IfThen3(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = false;
+        this->runExercise();
+        this->setupSolution();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+
+    //Hide this implementation from the student
+    void setupSolution()
+    {
+        DrawReferenceBox(LEFTRIGHT);
+        mSolutionPtr = new IfThen3Soln(); // Executes soln's runExercise();
     }
 };
 

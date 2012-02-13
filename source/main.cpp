@@ -1,5 +1,6 @@
+// FeetWetCoding/source/main.cpp
 // copyright (c) 2011 Robert Holder, Janice Dugger.
-// See LICENSE.txt included with this software distribution for conditions of use.
+// See README.html included in this distribution.
 
 // FeetWetCoding: a framework that tries to make learning C/C++ a little more fun! :-)
 

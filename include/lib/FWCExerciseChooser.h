@@ -1,3 +1,7 @@
+// FeetWetCoding/include/lib/FWCExerciseChooser.h
+// copyright (c) 2011 Robert Holder, Janice Dugger.
+// See README.html included in this distribution.
+
 #ifndef FWCEXERCISECHOOSER_H
 #define FWCEXERCISECHOOSER_H
 

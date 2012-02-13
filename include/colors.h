@@ -1,3 +1,7 @@
+// FeetWetCoding/include/colors.h
+// copyright (c) 2011 Robert Holder, Janice Dugger.
+// See README.html included in this distribution.
+
 #ifndef COLORS_H
 #define COLORS_H
 

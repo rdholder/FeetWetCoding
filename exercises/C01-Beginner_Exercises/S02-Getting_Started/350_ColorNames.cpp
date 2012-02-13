@@ -1,6 +1,6 @@
+// FeetWetCoding/exercises/C01-BeginnerExercises/S02-GettingStarted/350_ColorNames.cpp
 // copyright (c) 2011 Robert Holder, Janice Dugger.
-// See LICENSE.txt included with this software distribution for conditions of use.
-// FeetWetCoding/exercises/C01-BeginnerExercises/S02-GettingStarted/001_Welcome.cpp
+// See README.html included in this distribution.
 
 // Open (double-click) the README.html file to access the documentation.
 

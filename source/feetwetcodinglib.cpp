@@ -1,6 +1,6 @@
+// FeetWetCoding/source/feetwetcodinglib.cpp
 // copyright (c) 2011 Robert Holder, Janice Dugger.
-// See LICENSE.txt included with this software distribution for conditions of use.
-
+// See README.html included in this distribution.
 
 #include <setup.h>
 #include <QHBoxLayout>

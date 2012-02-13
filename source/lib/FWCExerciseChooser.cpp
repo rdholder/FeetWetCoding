@@ -1,3 +1,7 @@
+// FeetWetCoding/source/lib/FWCExerciseChooser.cpp
+// copyright (c) 2011 Robert Holder, Janice Dugger.
+// See README.html included in this distribution.
+
 #include <include/lib/FWCExerciseChooser.h>
 #include <include/exercises/exercises.h>
 #include <iostream>
@@ -99,6 +103,7 @@ FWCExerciseChooser::getExerciseFromName( const QString & name )
     if( "DivideByZero" == name ){ return new DivideByZero(); }
     if( "IfThen1" == name ){ return new IfThen1(); }
     if( "IfThen2" == name ){ return new IfThen2(); }
+    if( "IfThen3" == name ){ return new IfThen3(); }
     if( "OYO5" == name ){ return new C01S05_OYO5(); }
 
     //Chapter 8 - Game_Programming
@@ -183,6 +188,7 @@ void FWCExerciseChooser::createExercisesMap()
     exercises.push_back( "DivideByZero" );
     exercises.push_back( "IfThen1" );
     exercises.push_back( "IfThen2" );
+    exercises.push_back( "IfThen3" );
     exercises.push_back( "OYO5" );
     sections["S05-Loops_Logic"] = exercises;
 

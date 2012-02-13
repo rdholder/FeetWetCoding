@@ -1,12 +1,6 @@
-// copyright (c) 2011 Robert Holder, Janice Dugger.  
-// See LICENSE.txt included with this software distribution for conditions of use.
-
-// FeetWetCoding/exercises/Chapter01/DrawingText.cpp
-
-// Chapter 01 Exercise 02: How to draw text on the screen.
-
-// OPEN FeetWetCoding/helpinfo/html/DrawingText.html
-// for more information about this exercise.
+// FeetWetCoding/exercises/C01-BeginnerExercises/S02-GettingStarted/200_DrawingText.cpp
+// copyright (c) 2011 Robert Holder, Janice Dugger.
+// See README.html included in this distribution.
 
 #include <exercises/C01_S02.h>
 

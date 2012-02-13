@@ -1,8 +1,6 @@
+// FeetWetCoding/exercises/C08-Game_Programming/S03-TopDown2D/TopDown2D.cpp
 // copyright (c) 2011 Robert Holder, Janice Dugger.
-// See LICENSE.txt included with this software distribution for conditions of use.
-// FeetWetCoding/.../Tetris.cpp
-
-// Open (double-click) the README.html file to access the documentation.
+// See README.html included in this distribution.
 
 #include <exercises/C08-Game_Programming/S03-TopDown2D/TopDown2D.h>
 #include <exercises/C08-Game_Programming/S03-TopDown2D/TopDown2DWidget.h>

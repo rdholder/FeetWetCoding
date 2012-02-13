@@ -1,3 +1,7 @@
+// FeetWetCoding/include/exercises/C01_S04.h
+// copyright (c) 2011 Robert Holder, Janice Dugger.
+// See README.html included in this distribution.
+
 #ifndef C01_S04_H
 #define C01_S04_H
 

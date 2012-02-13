@@ -1,12 +1,6 @@
-// copyright (c) 2011 eotsucodefoundry.com.
-// See LICENSE.txt included with this software distribution for conditions of use.
-
-// FeetWetCoding/exercises/Chapter01/SeeOut.cpp
-
-// Chapter 01 Exercise 00: Using SeeOut to print output.
-
-// OPEN FeetWetCoding/helpinfo/html/ch00ex00TITLE.html
-// for more information about this exercise.
+// FeetWetCoding/exercises/C01-BeginnerExercises/S03-Types_Variables/200_StandardStrings.cpp
+// copyright (c) 2011 Robert Holder, Janice Dugger.
+// See README.html included in this distribution.
 
 #include <exercises/C01_S03.h>
 

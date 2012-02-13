@@ -74,10 +74,6 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/400_OnYourOwn.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/055_InfiniteLooping1SOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/055_InfiniteLooping1.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/320_IfThen2.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/320_IfThen2SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/300_IfThen1.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/300_IfThen1SOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/060_C01S05_OYO1.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/070_C01S05_OYO2.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/060_C01S05_OYO1SOLN.cpp \
@@ -87,7 +83,6 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/110_C01S05_OYO3.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/112_C01S05_OYO4.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/200_randomAndrandomRange.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/280_DivideByZero.cpp \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/020_NumericTypes.cpp \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/Solutions/020_NumericTypesSOLN.cpp \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/110_Booleans.cpp \
@@ -109,7 +104,14 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/310_SeeoutFormattingSOLN.cpp \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/Solutions/300_ArraysSOLN.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/350_ColorNames.cpp \
-    source/lib/ColorViewer.cpp
+    source/lib/ColorViewer.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/300_IfThen1.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/390_DivideByZero.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/300_IfThen1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/320_IfThen3.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/320_IfThen3SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/310_IfThen2.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/310_IfThen2SOLN.cpp
 
 
 HEADERS += \

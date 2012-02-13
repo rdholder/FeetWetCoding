@@ -1,8 +1,6 @@
-// copyright (c) 2011 Robert Holder, Janice Dugger.  
-// See LICENSE.txt included with this software distribution for conditions of use.
-
 // FeetWetCoding/include/constants.h
-// Constants definitions for use by all the source files in FeetWetCoding.
+// copyright (c) 2011 Robert Holder, Janice Dugger.
+// See README.html included in this distribution.
 
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
