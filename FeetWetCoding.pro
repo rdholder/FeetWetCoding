@@ -99,11 +99,9 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/240_ForLoops2SOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/250_ForLoops3SOLN.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/300_SeeoutIntro.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/310_SeeoutFormatting.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/300_SeeoutIntroSOLN.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/310_SeeoutFormattingSOLN.cpp \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/Solutions/300_ArraysSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/350_ColorNames.cpp \
     source/lib/ColorViewer.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/300_IfThen1.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/390_DivideByZero.cpp \
@@ -111,7 +109,12 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/320_IfThen3.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/320_IfThen3SOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/310_IfThen2.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/310_IfThen2SOLN.cpp
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/310_IfThen2SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/310_SeeoutFormatting.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/520_ColorNames.cpp \
+    exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/Solutions/060_PreAndPostIncAndDecSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/330_Primes1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/330_Primes1.cpp
 
 
 HEADERS += \

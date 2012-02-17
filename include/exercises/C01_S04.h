@@ -65,6 +65,25 @@ protected:
     }
 };
 
+class PreAndPostIncAndDecSoln : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit PreAndPostIncAndDecSoln(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = true;
+        this->runExercise();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+};
+
 class PreAndPostIncAndDec : public FeetWetCodingExercise
 {
     Q_OBJECT
@@ -88,6 +107,7 @@ protected:
     void setupSolution()
     {
         DrawReferenceBox(LEFTRIGHT);
+        mSolutionPtr = new PreAndPostIncAndDecSoln(); // Executes soln's runExercise();
     }
 };
 

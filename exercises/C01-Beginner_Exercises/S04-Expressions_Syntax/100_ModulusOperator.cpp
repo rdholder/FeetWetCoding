@@ -12,9 +12,6 @@ void ModulusOperator::runExercise()     // copy the exercise name & paste it int
     DrawText("Reference Exercise:", 50, 150, BLUE, 20);
     DrawText("no solution needed.", 50, 180, BLUE, 20);
 
-    seeout << "1000%199 == " << 1000%199 << "\n";
-    seeout << "1000%200 == " << 1000%200 << "\n";
-    seeout << "1000%201 == " << 1000%201 << "\n";
     seeout << "4%5 == " <<   4%5 << "\n";
     seeout << "5%5 == " <<   5%5 << "\n";
     seeout << "6%5 == " <<   6%5 << "\n";
@@ -27,6 +24,9 @@ void ModulusOperator::runExercise()     // copy the exercise name & paste it int
     seeout << "13%5 == " << 13%5 << "\n";
     seeout << "14%5 == " << 14%5 << "\n";
     seeout << "15%5 == " << 15%5 << "\n";
+    seeout << "1000%199 == " << 1000%199 << "\n";
+    seeout << "1000%200 == " << 1000%200 << "\n";
+    seeout << "1000%201 == " << 1000%201 << "\n";
 
 }
 

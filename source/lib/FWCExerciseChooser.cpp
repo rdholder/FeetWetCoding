@@ -63,8 +63,8 @@ FWCExerciseChooser::getExerciseFromName( const QString & name )
     if( "DrawingImages" == name ){ return new DrawingImages(); }
     if( "seeoutIntro" == name ){ return new seeoutIntro(); }
     if( "seeoutFormatting" == name ){ return new seeoutFormatting(); }
-    if( "ColorNames" == name ){ return new ColorNames(); }
     if( "OnYourOwn" == name ){ return new OnYourOwn(); }
+    if( "ColorNames" == name ){ return new ColorNames(); }
     if( "FontProportions" == name ){ return new FontProportions(); }
 
     //Section 3 - Types_Variables
@@ -78,12 +78,12 @@ FWCExerciseChooser::getExerciseFromName( const QString & name )
 
     //Section 4 - Expessions_Syntax
     if( "AssignmentArithmetic" == name ){ return new AssignmentArithmetic(); }
-//    if( "OrderOfOperations" == name ){ return new OrderOfOperations(); }
+    if( "OrderOfOperations" == name ){ return new OrderOfOperations(); }
     if( "PreAndPostIncAndDec" == name ){ return new PreAndPostIncAndDec(); }
-//    if( "ModulusOperator" == name ){ return new ModulusOperator(); }
-//    if( "BlocksAndScope" == name ){ return new BlocksAndScope(); }
-//    if( "MathFunctions" == name ){ return new MathFunctions(); }
-//    if( "random-randomRange" == name ){ return new random-randomRange(); }
+    if( "ModulusOperator" == name ){ return new ModulusOperator(); }
+    if( "BlocksAndScope" == name ){ return new BlocksAndScope(); }
+    if( "MathFunctions" == name ){ return new MathFunctions(); }
+    if( "randomAndrandomRange" == name ){ return new randomAndrandomRange(); }
     if( "Misdirection" == name ){ return new Misdirection(); }
 
     //Section 5 - Loops_Logic
@@ -100,10 +100,11 @@ FWCExerciseChooser::getExerciseFromName( const QString & name )
     if( "ForLoops1" == name ){ return new ForLoops1(); }
     if( "ForLoops2" == name ){ return new ForLoops2(); }
     if( "ForLoops3" == name ){ return new ForLoops3(); }
-    if( "DivideByZero" == name ){ return new DivideByZero(); }
     if( "IfThen1" == name ){ return new IfThen1(); }
     if( "IfThen2" == name ){ return new IfThen2(); }
     if( "IfThen3" == name ){ return new IfThen3(); }
+    if( "Primes1" == name ){ return new Primes1(); }
+    if( "DivideByZero" == name ){ return new DivideByZero(); }
     if( "OYO5" == name ){ return new C01S05_OYO5(); }
 
     //Chapter 8 - Game_Programming
@@ -142,8 +143,8 @@ void FWCExerciseChooser::createExercisesMap()
     exercises.push_back( "DrawingImages" );
     exercises.push_back( "seeoutIntro" );
     exercises.push_back( "seeoutFormatting" );
-    exercises.push_back( "ColorNames" );
     exercises.push_back( "OnYourOwn" );
+    exercises.push_back( "ColorNames" );
     exercises.push_back( "FontProportions" );
     sections["S02-Getting_Started"] = exercises;
 
@@ -166,7 +167,7 @@ void FWCExerciseChooser::createExercisesMap()
     exercises.push_back( "ModulusOperator" );
     exercises.push_back( "BlocksAndScope" );
     exercises.push_back( "MathFunctions" );
-    exercises.push_back( "random-randomRange" );
+    exercises.push_back( "randomAndrandomRange" );
     exercises.push_back( "Misdirection" );
     sections["S04-Expressions_Syntax"] = exercises;
 
@@ -185,10 +186,11 @@ void FWCExerciseChooser::createExercisesMap()
     exercises.push_back( "ForLoops1" );
     exercises.push_back( "ForLoops2" );
     exercises.push_back( "ForLoops3" );
-    exercises.push_back( "DivideByZero" );
     exercises.push_back( "IfThen1" );
     exercises.push_back( "IfThen2" );
     exercises.push_back( "IfThen3" );
+    exercises.push_back( "Primes1" );
+    exercises.push_back( "DivideByZero" );
     exercises.push_back( "OYO5" );
     sections["S05-Loops_Logic"] = exercises;
 

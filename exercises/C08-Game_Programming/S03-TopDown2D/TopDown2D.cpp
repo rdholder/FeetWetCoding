@@ -42,6 +42,8 @@ void TopDown2D::runExercise()
     mTd2dWidget->setGeometry(BORDER+2, BORDER/2+2, WINDOW_WIDTH/2-2, WINDOW_HEIGHT-2);
 
     mTd2dWidget->show();
+
+    seeout << "Use arrow keys to move ship.\n";
 }
 
 
