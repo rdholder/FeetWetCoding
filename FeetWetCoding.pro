@@ -10,16 +10,6 @@ TARGET = FeetWetCoding
 TEMPLATE = app
 
 SOURCES += \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/150_WhileLoop5.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/125_WhileLoop4.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/100_WhileLoop3.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/075_WhileLoop2.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/050_WhileLoop1.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/150_WhileLoop5SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/125_WhileLoop4SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/100_WhileLoop3SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/075_WhileLoop2SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/050_WhileLoop1SOLN.cpp \
     source/main.cpp \
     source/feetwetcodinglib.cpp \
     source/feetwetcodingexercise.cpp \
@@ -72,16 +62,6 @@ SOURCES += \
     exercises/C08-Game_Programming/GameWidget.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/400_OnYourOwnSOLN.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/400_OnYourOwn.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/055_InfiniteLooping1SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/055_InfiniteLooping1.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/060_C01S05_OYO1.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/070_C01S05_OYO2.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/060_C01S05_OYO1SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/070_C01S05_OYO2SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/110_C01S05_OYO3SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/112_C01S05_OYO4SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/110_C01S05_OYO3.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/112_C01S05_OYO4.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/200_randomAndrandomRange.cpp \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/020_NumericTypes.cpp \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/Solutions/020_NumericTypesSOLN.cpp \
@@ -92,29 +72,51 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/300_Arrays.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/550_FontProportionsSOLN.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/550_FontProportions.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/230_ForLoops1.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/240_ForLoops2.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/250_ForLoops3.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/230_ForLoops1SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/240_ForLoops2SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/250_ForLoops3SOLN.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/300_SeeoutIntro.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/300_SeeoutIntroSOLN.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/310_SeeoutFormattingSOLN.cpp \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/Solutions/300_ArraysSOLN.cpp \
     source/lib/ColorViewer.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/300_IfThen1.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/390_DivideByZero.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/300_IfThen1SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/320_IfThen3.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/320_IfThen3SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/310_IfThen2.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/310_IfThen2SOLN.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/310_SeeoutFormatting.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/520_ColorNames.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/Solutions/060_PreAndPostIncAndDecSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/330_Primes1SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/330_Primes1.cpp
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/010_WhileLoop1.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/015_InfiniteLooping1.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/020_C01S05_OYO1.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/025_C01S05_OYO2.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/030_WhileLoop2.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/035_WhileLoop3.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/040_C01S05_OYO3.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/045_C01S05_OYO4.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/050_WhileLoop4.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/055_WhileLoop5.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/110_ForLoops1.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/115_ForLoops2.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/120_ForLoops3.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/210_IfThen1.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/215_IfThen2.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/220_IfThen3.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/315_Primes1.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/310_DivideByZero.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/010_WhileLoop1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/015_InfiniteLooping1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/020_C01S05_OYO1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/025_C01S05_OYO2SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/030_WhileLoop2SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/035_WhileLoop3SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/040_C01S05_OYO3SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/045_C01S05_OYO4SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/050_WhileLoop4SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/055_WhileLoop5SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/110_ForLoops1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/115_ForLoops2SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/120_ForLoops3SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/210_IfThen1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/215_IfThen2SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/220_IfThen3SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/315_Primes1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/320_Primes2.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/320_Primes2SOLN.cpp
 
 
 HEADERS += \
