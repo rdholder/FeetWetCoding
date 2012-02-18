@@ -39,8 +39,10 @@ void Primes2Soln::runExercise()
     seeout << " Instead of drawing the numbers and putting a red box around";
     seeout << " each prime, we're just drawing a dot when that number is prime.";
     seeout << " If you figured out the last exercise, you can figure this one out!\n\n";
-    seeout << "Why are there those vertical lines?";
-    seeout << " Why are there diagonal lines?\n\n";
+    seeout << "Who knew there were so many prime numbers floating around out there?!";
+    seeout << " When I created this exercises, I thought there would be a lot more black";
+    seeout << " on the screen than that!\n\nTry to think of where there are those vertical";
+    seeout << " black lines?  Why are there diagonal black lines?\n\n";
     seeout << "The reason it takes so long to run is because this is an";
     seeout << " Order N-Squared algorithm.  However big n gets, it requires";
     seeout << " n * n number of calculations, approximately.  Our break";
