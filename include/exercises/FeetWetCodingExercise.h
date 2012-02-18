@@ -6,7 +6,7 @@
 #define FEETWETCODINGEXERCISE_H
 
 #include <QObject>
-#include <feetwetcodinglib.h>
+#include <include/lib/feetwetcodinglib.h>
 
 class FeetWetCodingExercise : public QObject
 {

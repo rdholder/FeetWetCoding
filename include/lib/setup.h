@@ -19,11 +19,11 @@
 #include <iostream>
 #include <sstream>
 
-#include <include/colors.h>
-#include <include/lib/ColorViewer.h>
-#include <include/feetwetcodinglib.h>
+#include <lib/colors.h>
+#include <lib/ColorViewer.h>
+#include <lib/feetwetcodinglib.h>
 
-#include <constants.h>      // FeetWetCoding constants: things we use in many exercises
+#include <lib/constants.h>      // FeetWetCoding constants: things we use in many exercises
 
 #endif // SETUP_H
 

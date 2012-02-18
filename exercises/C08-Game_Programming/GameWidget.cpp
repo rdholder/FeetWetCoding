@@ -2,7 +2,7 @@
 // copyright (c) 2011 Robert Holder, Janice Dugger.
 // See README.html included in this distribution.
 
-#include <include/feetwetcodinglib.h>
+#include <lib/feetwetcodinglib.h>
 #include <exercises/C08-Game_Programming/GameWidget.h>
 
 #include <QPushButton>

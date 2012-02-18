@@ -10,8 +10,8 @@
 // (from "ELIZA Crossing the Ice"):
 // "There are things wrong wi' some o' the tools and 'tis my task to put them right."
 
-#include <setup.h>
-#include <include/exercises/exercises.h>
+#include <lib/setup.h>
+#include <exercises/exercises.h>
 
 FeetWetCodingExercise *exercise(NULL);
 

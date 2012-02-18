@@ -21,8 +21,7 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/075_WhileLoop2SOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/050_WhileLoop1SOLN.cpp \
     source/main.cpp \
-    source/feetwetcodinglib.cpp \
-    source/feetwetcodingexercise.cpp \
+    source/lib/feetwetcodinglib.cpp \
     source/mysource/myprogram.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/001_WelcomeSOLN.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/001_Welcome.cpp \
@@ -114,13 +113,14 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/520_ColorNames.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/Solutions/060_PreAndPostIncAndDecSOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/330_Primes1SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/330_Primes1.cpp
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/330_Primes1.cpp \
+    exercises/feetwetcodingexercise.cpp
 
 
 HEADERS += \
-    include/setup.h \
-    include/feetwetcodinglib.h \
-    include/constants.h \
+    include/lib/setup.h \
+    include/lib/feetwetcodinglib.h \
+    include/lib/constants.h \
     include/myinclude/myheader.h \
     include/exercises/exercises.h \
     include/exercises/C01_S02.h \
@@ -132,12 +132,12 @@ HEADERS += \
     include/exercises/C08-Game_Programming/S03-TopDown2D/TopDown2D.h \
     include/exercises/C08-Game_Programming/GameWidget.h \
     include/lib/FWCExerciseChooser.h \
-    include/colors.h \
+    include/lib/colors.h \
     include/lib/ColorViewer.h
 
 FORMS +=
 
-INCLUDEPATH += include
+INCLUDEPATH += include include/lib
 DEPENDPATH += . src include
 OUTPUT += Console
 

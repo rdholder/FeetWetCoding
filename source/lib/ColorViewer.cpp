@@ -2,9 +2,9 @@
 // copyright (c) 2011 Robert Holder, Janice Dugger.
 // See README.html included in this distribution.
 
-#include <include/feetwetcodinglib.h>
-#include <include/lib/ColorViewer.h>
-#include <include/colors.h>
+#include <lib/feetwetcodinglib.h>
+#include <lib/ColorViewer.h>
+#include <lib/colors.h>
 #include <string>
 
 void ColorViewer::show()
@@ -17,7 +17,7 @@ void ColorViewer::show()
     double xshift(r/2.5);
     double yshiftorig(r/5);
     double yshift(yshiftorig);
-    unsigned int position(std::string::npos);
+    size_t position(std::string::npos);
     std::string darkStr = "DARK";
     std::string ightStr = "IGHT"; //works for "light" and "bright"
     std::string transStr = "TRANS";

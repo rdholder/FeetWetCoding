@@ -5,8 +5,8 @@
 #ifndef FEETWETCODINGLIB_H
 #define FEETWETCODINGLIB_H
 
-#include <constants.h>
-#include <colors.h>
+#include <include/lib/constants.h>
+#include <include/lib/colors.h>
 #include <QGraphicsView>
 #include <QKeyEvent>
 #include <QTextEdit>
