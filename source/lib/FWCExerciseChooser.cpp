@@ -108,6 +108,18 @@ FWCExerciseChooser::getExerciseFromName( const QString & name )
     if( "Primes2" == name ){ return new Primes2(); }
     if( "OYO5" == name ){ return new C01S05_OYO5(); }
 
+    //Section 6 - ...
+
+    //Section 7 - ...
+
+    //Section 8 - ...
+
+    //Section 9 - ...
+
+    //Section 10 - Classes Intro
+    if( "Classes1" == name ){ return new Classes1(); }
+
+
     //Chapter 8 - Game_Programming
 
     //Section 3 - TopDown2D
@@ -195,6 +207,11 @@ void FWCExerciseChooser::createExercisesMap()
     exercises.push_back( "Primes2" );
     exercises.push_back( "OYO5" );
     sections["S05-Loops_Logic"] = exercises;
+
+    //S10-Classes_Intro
+    exercises.clear();
+    exercises.push_back( "Classes1" );
+    sections["S10-Classes_Intro"] = exercises;
 
     mExerciseMap["C01-Beginner_Exercises"] = sections;
 

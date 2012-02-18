@@ -116,7 +116,9 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/220_IfThen3SOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/315_Primes1SOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/320_Primes2.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/320_Primes2SOLN.cpp
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/320_Primes2SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S10-Classes_Intro/Solutions/50_Classes1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S10-Classes_Intro/50_Classes1.cpp
 
 
 HEADERS += \
@@ -135,7 +137,8 @@ HEADERS += \
     include/exercises/C08-Game_Programming/GameWidget.h \
     include/lib/FWCExerciseChooser.h \
     include/lib/colors.h \
-    include/lib/ColorViewer.h
+    include/lib/ColorViewer.h \
+    include/exercises/C01_S10.h
 
 FORMS +=
 
