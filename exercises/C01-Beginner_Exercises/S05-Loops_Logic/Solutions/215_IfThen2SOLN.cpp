@@ -1,4 +1,4 @@
-// FeetWetCoding/exercises/C01-BeginnerExercises/S05-Loops_Logic/310_IfThen2SOLN.cpp
+// FeetWetCoding/exercises/C01-BeginnerExercises/S05-Loops_Logic/215_IfThen2SOLN.cpp
 // copyright (c) 2011 Robert Holder, Janice Dugger.
 // See README.html included in this distribution.
 

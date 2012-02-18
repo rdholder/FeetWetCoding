@@ -103,6 +103,7 @@ FWCExerciseChooser::getExerciseFromName( const QString & name )
     if( "IfThen1" == name ){ return new IfThen1(); }
     if( "IfThen2" == name ){ return new IfThen2(); }
     if( "IfThen3" == name ){ return new IfThen3(); }
+    if( "Switch1" == name ){ return new Switch1(); }
     if( "DivideByZero" == name ){ return new DivideByZero(); }
     if( "Primes1" == name ){ return new Primes1(); }
     if( "Primes2" == name ){ return new Primes2(); }
@@ -190,6 +191,7 @@ void FWCExerciseChooser::createExercisesMap()
     exercises.push_back( "IfThen1" );
     exercises.push_back( "IfThen2" );
     exercises.push_back( "IfThen3" );
+    exercises.push_back( "Switch1" );
     exercises.push_back( "DivideByZero" );
     exercises.push_back( "Primes1" );
     exercises.push_back( "Primes2" );

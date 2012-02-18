@@ -771,6 +771,52 @@ protected:
     }
 };
 
+class Switch1Soln : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit Switch1Soln(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = true;
+        this->runExercise();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+};
+
+class Switch1 : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit Switch1(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = false;
+        this->runExercise();
+        this->setupSolution();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+
+    //Hide this implementation from the student
+    void setupSolution()
+    {
+        DrawReferenceBox(LEFTRIGHT);
+        mSolutionPtr = new Switch1Soln(); // Executes soln's runExercise();
+    }
+};
+
 class Primes1Soln : public FeetWetCodingExercise
 {
     Q_OBJECT

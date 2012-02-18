@@ -1,4 +1,4 @@
-// FeetWetCoding/exercises/C01-BeginnerExercises/S05-Loops_Logic/240_ForLoops2SOLN.cpp
+// FeetWetCoding/exercises/C01-BeginnerExercises/S05-Loops_Logic/115_ForLoops2SOLN.cpp
 // copyright (c) 2011 Robert Holder, Janice Dugger.
 // See README.html included in this distribution.
 
@@ -6,7 +6,7 @@
 
 void ForLoops2Soln::runExercise()
 {
-    int a = 1, x = 385, y = 0;                   // = is pronounced GETS, == is pronounced EQUALS
+    int a = 1, x = 385, y = 0;  // = is pronounced GETS, == is pronounced EQUALS
 
     for ( y = 0; y < 375; y += 25 )
     {
