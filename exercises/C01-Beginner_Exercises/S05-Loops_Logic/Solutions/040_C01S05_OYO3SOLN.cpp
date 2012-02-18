@@ -1,4 +1,4 @@
-// FeetWetCoding/exercises/C01-BeginnerExercises/S05-Loops_Logic/110_C01S05_OYO3SOLN.cpp
+// FeetWetCoding/exercises/C01-BeginnerExercises/S05-Loops_Logic/040_C01S05_OYO3SOLN.cpp
 // copyright (c) 2011 Robert Holder, Janice Dugger.
 // See README.html included in this distribution.
 

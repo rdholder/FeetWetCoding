@@ -998,11 +998,15 @@ p,ul,ol /* Paragraph Style */
 }
 .rvps43
 {
+ margin: 0px 0px 0px 24px;
+}
+.rvps44
+{
  border-color: #008000;
  border-style: solid;
  border-width: 1px;
 }
-.rvps44
+.rvps45
 {
  border-color: #008000;
  border-style: solid;

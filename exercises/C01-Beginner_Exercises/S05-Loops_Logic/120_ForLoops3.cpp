@@ -1,4 +1,4 @@
-// FeetWetCoding/exercises/C01-BeginnerExercises/S05-Loops_Logic/250_ForLoops3.cpp
+// FeetWetCoding/exercises/C01-BeginnerExercises/S05-Loops_Logic/120_ForLoops3.cpp
 // copyright (c) 2011 Robert Holder, Janice Dugger.
 // See README.html included in this distribution.
 

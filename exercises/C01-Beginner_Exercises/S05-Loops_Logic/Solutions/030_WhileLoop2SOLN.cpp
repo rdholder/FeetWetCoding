@@ -1,4 +1,4 @@
-// FeetWetCoding/exercises/C01-BeginnerExercises/S05-Loops_Logic/075_WhileLoop2SOLN.cpp
+// FeetWetCoding/exercises/C01-BeginnerExercises/S05-Loops_Logic/030_WhileLoop2SOLN.cpp
 // copyright (c) 2011 Robert Holder, Janice Dugger.
 // See README.html included in this distribution.
 
