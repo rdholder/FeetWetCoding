@@ -7,7 +7,7 @@
 
 void Primes1::runExercise()
 {
-    int n = 0, c = 0, x = 0, y = 0;
+    int n = 0, x = 0, y = 0;
     int horizontalstep = 30, verticalstep = 40;
     bool prime = true;
     Color color = DARKBLUE;

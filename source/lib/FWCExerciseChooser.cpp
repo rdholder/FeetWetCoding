@@ -103,8 +103,9 @@ FWCExerciseChooser::getExerciseFromName( const QString & name )
     if( "IfThen1" == name ){ return new IfThen1(); }
     if( "IfThen2" == name ){ return new IfThen2(); }
     if( "IfThen3" == name ){ return new IfThen3(); }
-    if( "Primes1" == name ){ return new Primes1(); }
     if( "DivideByZero" == name ){ return new DivideByZero(); }
+    if( "Primes1" == name ){ return new Primes1(); }
+    if( "Primes2" == name ){ return new Primes2(); }
     if( "OYO5" == name ){ return new C01S05_OYO5(); }
 
     //Chapter 8 - Game_Programming
@@ -189,8 +190,9 @@ void FWCExerciseChooser::createExercisesMap()
     exercises.push_back( "IfThen1" );
     exercises.push_back( "IfThen2" );
     exercises.push_back( "IfThen3" );
-    exercises.push_back( "Primes1" );
     exercises.push_back( "DivideByZero" );
+    exercises.push_back( "Primes1" );
+    exercises.push_back( "Primes2" );
     exercises.push_back( "OYO5" );
     sections["S05-Loops_Logic"] = exercises;
 

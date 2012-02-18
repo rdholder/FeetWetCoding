@@ -817,6 +817,52 @@ protected:
     }
 };
 
+class Primes2Soln : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit Primes2Soln(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = true;
+        this->runExercise();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+};
+
+class Primes2 : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit Primes2(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = false;
+        this->runExercise();
+        this->setupSolution();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+
+    //Hide this implementation from the student
+    void setupSolution()
+    {
+        DrawReferenceBox(LEFTRIGHT);
+        mSolutionPtr = new Primes2Soln(); // Executes soln's runExercise();
+    }
+};
+
 class C01S05_OYO5Soln : public FeetWetCodingExercise
 {
     Q_OBJECT

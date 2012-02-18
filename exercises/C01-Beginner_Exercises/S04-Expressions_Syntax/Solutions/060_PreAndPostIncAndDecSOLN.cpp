@@ -10,6 +10,7 @@ void PreAndPostIncAndDecSoln::runExercise()     // copy the exercise name & past
 
     DrawText("...the seeout output below.", 50, 150, BLUE, 20);
 
+
     seeout << "1st sum: " << sum++ << "\n";
     seeout << "2nd sum: " << ++sum << "\n";
     seeout << "3rd sum: " << sum++ << "\n";
