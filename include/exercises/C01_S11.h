@@ -1,16 +1,16 @@
 // copyright (c) 2011 Robert Holder, Janice Dugger.
 // See README.html included in this distribution.
 
-#ifndef C01_S10_H
-#define C01_S10_H
+#ifndef C01_S11_H
+#define C01_S11_H
 
 #include <exercises/FeetWetCodingExercise.h>
 
-class Classes1Soln : public FeetWetCodingExercise
+class TheEventLoopSoln : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit Classes1Soln(QObject *parent = 0)
+    explicit TheEventLoopSoln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
         Gsoln = true;
@@ -26,11 +26,11 @@ protected:
     void runExercise();
 };
 
-class Classes1 : public FeetWetCodingExercise
+class TheEventLoop : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit Classes1(QObject *parent = 0)
+    explicit TheEventLoop(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
         Gsoln = false;
@@ -49,8 +49,8 @@ protected:
     void setupSolution()
     {
         DrawReferenceBox(LEFTRIGHT);
-        mSolutionPtr = new Classes1Soln(); // Executes soln's runExercise();
+        mSolutionPtr = new TheEventLoopSoln(); // Executes soln's runExercise();
     }
 };
 
-#endif // C01_S10_H
+#endif // C01_S11_H

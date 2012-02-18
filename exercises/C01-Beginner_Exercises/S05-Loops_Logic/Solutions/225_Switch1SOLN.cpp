@@ -8,7 +8,7 @@ void Switch1Soln::runExercise()
 {
     int x = 0, y = 0, size = 30;
     int horizontalstep = 50, verticalstep = 50;
-    bool iscircle = true, fill = true;
+    bool iscircle = true;
     Color color = BLUE;
 
     //DrawRectangle(0, 0, 400, 400, BLACK, 1, true);

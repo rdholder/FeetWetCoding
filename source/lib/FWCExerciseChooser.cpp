@@ -120,6 +120,9 @@ FWCExerciseChooser::getExerciseFromName( const QString & name )
     //Section 10 - Classes Intro
     if( "Classes1" == name ){ return new Classes1(); }
 
+    //Section 11 - Event Handling With Qt
+    if( "TheEventLoop" == name ){ return new TheEventLoop(); }
+
 
     //Chapter 8 - Game_Programming
 
@@ -215,6 +218,11 @@ void FWCExerciseChooser::createExercisesMap()
     exercises.push_back( "Classes1" );
     sections["S10-Classes_Intro"] = exercises;
 
+    //S11-Event_Handling_With_Qt
+    exercises.clear();
+    exercises.push_back( "TheEventLoop" );
+    sections["S11-Event_Handling_With_Qt"] = exercises;
+
     mExerciseMap["C01-Beginner_Exercises"] = sections;
 
 
@@ -234,6 +242,8 @@ void FWCExerciseChooser::selectChapter( const QString & selection )
     // Make sure the combobox has been created
     if ( NULL != mChapterChooser )
     {
+        QObject::disconnect(mChapterChooser, SIGNAL(activated(QString)),
+                            this, SLOT(chapterSelected(QString)));
         mHlayout->removeWidget(mChapterChooser);
         delete mChapterChooser;
         mChapterChooser = NULL;
@@ -271,6 +281,8 @@ void FWCExerciseChooser::selectChapter( const QString & selection )
     // Update the Section list based on the chapter selection
     if ( NULL != mSectionChooser )
     {
+        QObject::disconnect(mSectionChooser, SIGNAL(activated(QString)),
+                            this, SLOT(sectionSelected(QString)));
         mHlayout->removeWidget(mSectionChooser);
         delete mSectionChooser;
         mSectionChooser = NULL;
@@ -323,6 +335,8 @@ void FWCExerciseChooser::selectSection( const QString & selection )
     // Update the Section list based on the chapter selection
     if ( NULL != mExerciseChooser )
     {
+        QObject::disconnect(mExerciseChooser, SIGNAL(activated(QString)),
+                            this, SLOT(exerciseSelected(QString)));
         mHlayout->removeWidget(mExerciseChooser);
         delete mExerciseChooser;
         mExerciseChooser = NULL;
@@ -351,6 +365,12 @@ void FWCExerciseChooser::selectSection( const QString & selection )
         mCurrentExercise.clear();
     }
     selectExercise(mCurrentExercise);
+
+    //Give the exercise chooser focus so user can use
+    //arrow keys to run through the list. (This is for
+    //when exercise is selected programatically, as it
+    //is here, rather than user selecting via the widget.)
+    //mExerciseChooser->setFocus();
 }
 
 void FWCExerciseChooser::selectExercise( const QString & selection )

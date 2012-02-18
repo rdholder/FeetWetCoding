@@ -117,10 +117,12 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/315_Primes1SOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/320_Primes2.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/320_Primes2SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S10-Classes_Intro/Solutions/50_Classes1SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S10-Classes_Intro/50_Classes1.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/225_Switch1.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/225_Switch1SOLN.cpp
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/225_Switch1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S10-Classes_Intro/Solutions/010_Classes1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S10-Classes_Intro/010_Classes1.cpp \
+    exercises/C01-Beginner_Exercises/S11-Event_Handling_With_Qt/Solutions/010_TheEventLoopSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S11-Event_Handling_With_Qt/010_TheEventLoop.cpp
 
 
 HEADERS += \
@@ -134,6 +136,7 @@ HEADERS += \
     include/exercises/C01_S05.h \
     include/exercises/C01_S04.h \
     include/exercises/C01_S10.h \
+    include/exercises/C01_S11.h \
     include/exercises/FeetWetCodingExercise.h \
     include/exercises/C08-Game_Programming/S03-TopDown2D/TopDown2DWidget.h \
     include/exercises/C08-Game_Programming/S03-TopDown2D/TopDown2D.h \
