@@ -1,4 +1,3 @@
-// FeetWetCoding/exercises/C01-BeginnerExercises/S05-Loops_Logic/120_ForLoops3SOLN.cpp
 // copyright (c) 2011 Robert Holder, Janice Dugger.
 // See README.html included in this distribution.
 
@@ -8,8 +7,10 @@ void ForLoops3Soln::runExercise()
 {
     int a = 1, x = 200, y = 200;        // = is pronounced GETS, == is pronounced EQUALS
 
-    seeout << "This exercise draws numbers on the screen randomly. Run this a few times";
-    seeout << " to see the behavior.  The point is NOT to try to make the left side look";
+    seeout << "Click the \"Re-start Exercise\" button a few times to get an idea";
+    seeout << " of the behavior we are looking for here.\n\n";
+    seeout << "This exercise draws numbers on the screen randomly. The point is to match";
+    seeout << " the drawing behavior, NOT to try to make the left side look";
     seeout << " EXACTLY like the right side!\n\n";
     seeout << " Notice that the numbers on this side stay within the drawing area box.";
     seeout << " Can you make your code draw the numbers right up to the RIGHT and BOTTOM";

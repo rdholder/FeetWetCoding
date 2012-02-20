@@ -115,14 +115,22 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/215_IfThen2SOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/220_IfThen3SOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/315_Primes1SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/320_Primes2.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/320_Primes2SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/225_Switch1.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/225_Switch1SOLN.cpp \
     exercises/C01-Beginner_Exercises/S10-Classes_Intro/Solutions/010_Classes1SOLN.cpp \
     exercises/C01-Beginner_Exercises/S10-Classes_Intro/010_Classes1.cpp \
     exercises/C01-Beginner_Exercises/S11-Event_Handling_With_Qt/Solutions/010_TheEventLoopSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S11-Event_Handling_With_Qt/010_TheEventLoop.cpp
+    exercises/C01-Beginner_Exercises/S11-Event_Handling_With_Qt/010_TheEventLoop.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/002_WhileLoopIntro.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/004_ForLoopIntro.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/002_WhileLoopIntroSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/004_ForLoopIntroSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/320_OYO_Primes2.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/320_OYO_Primes2SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/250_Switch1.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/250_Switch1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/260_OYO_IfThen4.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/260_OYO_IfThen4SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/Solutions/210_DistanceEquationSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/210_DistanceEquation.cpp
 
 
 HEADERS += \

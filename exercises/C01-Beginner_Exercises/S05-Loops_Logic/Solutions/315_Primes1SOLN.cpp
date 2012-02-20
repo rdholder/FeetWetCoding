@@ -1,4 +1,3 @@
-// FeetWetCoding/exercises/C01-BeginnerExercises/S05-Loops_Logic/315_Primes1SOLN.cpp
 // copyright (c) 2011 Robert Holder, Janice Dugger.
 // See README.html included in this distribution.
 
@@ -43,6 +42,6 @@ void Primes1Soln::runExercise()
         }
     }
     DrawText("Every number in a red box is a prime number.", 20, 370, RED, 12);
-    seeout << "A prime number is divisible by 1, and itself, but";
-    seeout << " ***none of the numbers in between!***  (hint, hint! :-)\n";
+    seeout << "A prime number is divisible by 1, and itself, but\n";
+    seeout << ">>>none of the numbers in between!<<<  (hint, hint! :-)\n";
 }

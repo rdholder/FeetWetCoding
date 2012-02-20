@@ -1,11 +1,10 @@
-// FeetWetCoding/exercises/C01-BeginnerExercises/S05-Loops_Logic/320_Primes1SOLN.cpp
 // copyright (c) 2011 Robert Holder, Janice Dugger.
 // See README.html included in this distribution.
 
 #include <exercises/C01_S05.h>
 #include <math.h>
 
-void Primes2Soln::runExercise()
+void OYO_Primes2Soln::runExercise()
 {
     int n = 2, c = 2, x = 0, y = 0;
     bool prime = true;

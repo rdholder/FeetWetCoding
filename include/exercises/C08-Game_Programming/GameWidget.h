@@ -1,4 +1,3 @@
-// FeetWetCoding/include/exercises/C08-Game_Programming/GameWidget.h
 // copyright (c) 2011 Robert Holder, Janice Dugger.
 // See README.html included in this distribution.
 

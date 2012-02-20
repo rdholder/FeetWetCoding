@@ -1,4 +1,3 @@
-// FeetWetCoding/exercises/C08-Game_Programming/S03-TopDown2D/TopDown2D.cpp
 // copyright (c) 2011 Robert Holder, Janice Dugger.
 // See README.html included in this distribution.
 

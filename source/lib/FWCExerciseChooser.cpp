@@ -1,4 +1,3 @@
-// FeetWetCoding/source/lib/FWCExerciseChooser.cpp
 // copyright (c) 2011 Robert Holder, Janice Dugger.
 // See README.html included in this distribution.
 
@@ -84,9 +83,12 @@ FWCExerciseChooser::getExerciseFromName( const QString & name )
     if( "BlocksAndScope" == name ){ return new BlocksAndScope(); }
     if( "MathFunctions" == name ){ return new MathFunctions(); }
     if( "randomAndrandomRange" == name ){ return new randomAndrandomRange(); }
+    if( "DistanceEquation" == name ){ return new DistanceEquation(); }
     if( "Misdirection" == name ){ return new Misdirection(); }
 
     //Section 5 - Loops_Logic
+    if( "WhileLoopIntro" == name ){ return new WhileLoopIntro(); }
+    if( "ForLoopIntro" == name ){ return new ForLoopIntro(); }
     if( "WhileLoop1" == name ){ return new WhileLoop1(); }
     if( "InfiniteLooping1" == name ){ return new InfiniteLooping1(); }
     if( "OYO1" == name ){ return new C01S05_OYO1(); }
@@ -103,10 +105,11 @@ FWCExerciseChooser::getExerciseFromName( const QString & name )
     if( "IfThen1" == name ){ return new IfThen1(); }
     if( "IfThen2" == name ){ return new IfThen2(); }
     if( "IfThen3" == name ){ return new IfThen3(); }
+    if( "IfThen4" == name ){ return new IfThen4(); }
     if( "Switch1" == name ){ return new Switch1(); }
     if( "DivideByZero" == name ){ return new DivideByZero(); }
     if( "Primes1" == name ){ return new Primes1(); }
-    if( "Primes2" == name ){ return new Primes2(); }
+    if( "OYO_Primes2" == name ){ return new OYO_Primes2(); }
     if( "OYO5" == name ){ return new C01S05_OYO5(); }
 
     //Section 6 - ...
@@ -185,11 +188,14 @@ void FWCExerciseChooser::createExercisesMap()
     exercises.push_back( "BlocksAndScope" );
     exercises.push_back( "MathFunctions" );
     exercises.push_back( "randomAndrandomRange" );
+    exercises.push_back( "DistanceEquation" );
     exercises.push_back( "Misdirection" );
     sections["S04-Expressions_Syntax"] = exercises;
 
     //S05-Loops_Logic
     exercises.clear();
+    exercises.push_back( "WhileLoopIntro" );
+    exercises.push_back( "ForLoopIntro" );
     exercises.push_back( "WhileLoop1" );
     exercises.push_back( "InfiniteLooping1" );
     exercises.push_back( "OYO1" );
@@ -206,10 +212,11 @@ void FWCExerciseChooser::createExercisesMap()
     exercises.push_back( "IfThen1" );
     exercises.push_back( "IfThen2" );
     exercises.push_back( "IfThen3" );
+    exercises.push_back( "IfThen4" );
     exercises.push_back( "Switch1" );
     exercises.push_back( "DivideByZero" );
     exercises.push_back( "Primes1" );
-    exercises.push_back( "Primes2" );
+    exercises.push_back( "OYO_Primes2" );
     exercises.push_back( "OYO5" );
     sections["S05-Loops_Logic"] = exercises;
 

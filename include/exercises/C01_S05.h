@@ -1,4 +1,3 @@
-// FeetWetCoding/include/exercises/C01_S05.h
 // copyright (c) 2011 Robert Holder, Janice Dugger.
 // See README.html included in this distribution.
 
@@ -6,6 +5,100 @@
 #define C01_S05_H
 
 #include <exercises/FeetWetCodingExercise.h>
+
+class WhileLoopIntroSoln : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit WhileLoopIntroSoln(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = true;
+        this->runExercise();
+    }
+
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+};
+
+class WhileLoopIntro : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit WhileLoopIntro(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = false;
+        this->runExercise();
+        this->setupSolution();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+
+    //Hide this implementation from the student
+    void setupSolution()
+    {
+        DrawReferenceBox(LEFTRIGHT);
+        mSolutionPtr = new WhileLoopIntroSoln(); // Executes soln's runExercise();
+    }
+};
+
+class ForLoopIntroSoln : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit ForLoopIntroSoln(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = true;
+        this->runExercise();
+    }
+
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+};
+
+class ForLoopIntro : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit ForLoopIntro(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = false;
+        this->runExercise();
+        this->setupSolution();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+
+    //Hide this implementation from the student
+    void setupSolution()
+    {
+        DrawReferenceBox(LEFTRIGHT);
+        mSolutionPtr = new ForLoopIntroSoln(); // Executes soln's runExercise();
+    }
+};
 
 class WhileLoop1Soln : public FeetWetCodingExercise
 {
@@ -771,6 +864,52 @@ protected:
     }
 };
 
+class IfThen4Soln : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit IfThen4Soln(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = true;
+        this->runExercise();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+};
+
+class IfThen4 : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit IfThen4(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = false;
+        this->runExercise();
+        this->setupSolution();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+
+    //Hide this implementation from the student
+    void setupSolution()
+    {
+        DrawReferenceBox(LEFTRIGHT);
+        mSolutionPtr = new IfThen4Soln(); // Executes soln's runExercise();
+    }
+};
+
 class Switch1Soln : public FeetWetCodingExercise
 {
     Q_OBJECT
@@ -863,11 +1002,11 @@ protected:
     }
 };
 
-class Primes2Soln : public FeetWetCodingExercise
+class OYO_Primes2Soln : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit Primes2Soln(QObject *parent = 0)
+    explicit OYO_Primes2Soln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
         Gsoln = true;
@@ -882,11 +1021,11 @@ protected:
     void runExercise();
 };
 
-class Primes2 : public FeetWetCodingExercise
+class OYO_Primes2 : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit Primes2(QObject *parent = 0)
+    explicit OYO_Primes2(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
         Gsoln = false;
@@ -905,7 +1044,7 @@ protected:
     void setupSolution()
     {
         DrawReferenceBox(LEFTRIGHT);
-        mSolutionPtr = new Primes2Soln(); // Executes soln's runExercise();
+        mSolutionPtr = new OYO_Primes2Soln(); // Executes soln's runExercise();
     }
 };
 

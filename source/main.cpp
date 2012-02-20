@@ -1,10 +1,9 @@
-// FeetWetCoding/source/main.cpp
 // copyright (c) 2011 Robert Holder, Janice Dugger.
 // See README.html included in this distribution.
 
-// FeetWetCoding: a framework that tries to make learning C/C++ a little more fun! :-)
+// FeetWetCoding: a framework that tries to make learning C++ a little more fun! :-)
 
-// ACKNOWLEDGEMENT: The seed of the idea for the FeetWetCoding system of learning C/C++
+// ACKNOWLEDGEMENT: The seed of the idea for the FeetWetCoding system of learning C++
 // was suggested by a passage in an outstanding science fiction book,
 // "The Mote in God's Eye" by Larry Niven & Jerry Pournelle, page 210
 // (from "ELIZA Crossing the Ice"):
@@ -26,5 +25,3 @@ int main(int argc, char *argv[])
     //Start the application loop
     return a.exec();
 }
-
-
