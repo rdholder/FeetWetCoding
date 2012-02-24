@@ -600,107 +600,8 @@ span.rvts102
 }
 span.rvts103
 {
- font-size: 20pt;
-}
-span.rvts104
-{
  font-size: 12pt;
  font-weight: bold;
- color: #00b050;
-}
-span.rvts105
-{
- font-size: 12pt;
- font-weight: bold;
- color: #2f6b55;
-}
-span.rvts106
-{
- font-size: 12pt;
- font-weight: bold;
- text-decoration: line-through;
-}
-span.rvts107
-{
- font-size: 12pt;
- font-weight: bold;
- color: #ffc000;
-}
-span.rvts108
-{
- font-size: 12pt;
- font-weight: bold;
- color: #0070c0;
-}
-span.rvts109
-{
- font-size: 12pt;
- font-weight: bold;
- color: #ff8040;
-}
-span.rvts110
-{
- font-size: 18pt;
- color: #ff0000;
-}
-span.rvts111
-{
- font-size: 12pt;
- color: #3333ff;
-}
-span.rvts112
-{
- font-size: 12pt;
- color: #b96666;
-}
-a.rvts113, span.rvts113
-{
- color: #0000ff;
- text-decoration: underline;
-}
-a.rvts113:hover { color: #0000ff; }
-a.rvts114, span.rvts114
-{
- font-size: 8pt;
- color: #808080;
- text-decoration: underline;
-}
-a.rvts114:hover { color: #00ccff; }
-span.rvts115
-{
- font-size: 12pt;
- color: #190000;
-}
-span.rvts116
-{
- font-size: 12pt;
- font-weight: bold;
- color: #190000;
-}
-span.rvts117
-{
- font-size: 18pt;
- color: #00b050;
-}
-span.rvts118
-{
- font-size: 18pt;
- color: #2f6b55;
-}
-span.rvts119
-{
- font-size: 18pt;
- color: #00a5ff;
-}
-span.rvts120
-{
- font-size: 12pt;
- color: #00a5ff;
-}
-span.rvts121
-{
- font-size: 14pt;
- color: #ff0000;
 }
 /* ========== Para Styles ========== */
 p,ul,ol /* Paragraph Style */
@@ -999,18 +900,4 @@ p,ul,ol /* Paragraph Style */
 .rvps43
 {
  margin: 0px 0px 0px 24px;
-}
-.rvps44
-{
- border-color: #008000;
- border-style: solid;
- border-width: 1px;
-}
-.rvps45
-{
- border-color: #008000;
- border-style: solid;
- border-width: 2px;
- padding: 5px 5px 5px 5px;
- margin: 3px 3px 3px 3px;
 }
