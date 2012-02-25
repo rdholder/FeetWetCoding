@@ -638,7 +638,11 @@ p,ul,ol /* Paragraph Style */
  border-width: 3px;
  margin: 0px 0px 0px 24px;
 }
-.rvps7 /* Paragraph Style */
+.rvps7
+{
+ text-align: center;
+}
+.rvps8 /* Paragraph Style */
 {
  text-align: center;
  border-color: #c0c0c0;
@@ -649,16 +653,12 @@ p,ul,ol /* Paragraph Style */
  padding: 2px 0px 2px 0px;
  margin: 7px 0px 7px 0px;
 }
-.rvps8
+.rvps9
 {
  border-color: #008000;
  border-style: solid;
  border-width: 2px;
  padding: 5px 5px 5px 5px;
-}
-.rvps9
-{
- text-align: center;
 }
 .rvps10
 {

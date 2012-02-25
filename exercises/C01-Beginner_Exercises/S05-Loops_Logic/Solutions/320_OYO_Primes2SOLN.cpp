@@ -16,7 +16,8 @@ void OYO_Primes2Soln::runExercise()
     seeout << " If you figured out the last exercise, you can figure this one out!\n\n";
     seeout << "Who knew there were so many prime numbers floating around out there?!";
     seeout << " When I created this exercise, I thought there would be a lot more black";
-    seeout << " on the screen than there is!\n\nTry to think of why there are those vertical";
+    seeout << " on the screen than there is!  (scroll down for more info)\n\n";
+    seeout << "Try to think of why there are those vertical";
     seeout << " black lines?  Why are there diagonal black lines?\n\n";
     seeout << "The reason it takes so long to run is because this is an";
     seeout << " Order N-Squared algorithm: these loops run almost six BILLION times!";
