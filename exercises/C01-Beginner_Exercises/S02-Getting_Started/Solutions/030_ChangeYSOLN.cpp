@@ -1,4 +1,3 @@
-// FeetWetCoding/exercises/C01-BeginnerExercises/S02-GettingStarted/030_ChangeYSOLN.cpp
 // copyright (c) 2011 Robert Holder, Janice Dugger.
 // See README.html included in this distribution.
 

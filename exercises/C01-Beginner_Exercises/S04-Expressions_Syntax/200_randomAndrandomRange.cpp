@@ -1,4 +1,3 @@
-// FeetWetCoding/exercises/C01-BeginnerExercises/S04-Expressions_Syntax/200_randomAndrandomRange.cpp
 // copyright (c) 2011 Robert Holder, Janice Dugger.
 // See README.html included in this distribution.
 
@@ -21,7 +20,8 @@ void randomAndrandomRange::runExercise()     // copy the exercise name & paste i
     DrawText("Reference Exercise:", 50, 150, BLUE, 20);
     DrawText("no solution needed.", 50, 180, BLUE, 20);
 
-    seeout << "You can run this program several times to see that the numbers change.\n\n";
+    seeout << "You can run this program several times to see that the numbers change";
+    seeout << " by clicking the \"Re-start Exercise\" button.\n\n";
 
     a = random(100);
     b = random(100);

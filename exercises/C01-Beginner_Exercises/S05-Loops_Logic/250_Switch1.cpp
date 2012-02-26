@@ -1,4 +1,3 @@
-// FeetWetCoding/exercises/C01-BeginnerExercises/S05-Loops_Logic/225_Switch1.cpp
 // copyright (c) 2011 Robert Holder, Janice Dugger.
 // See README.html included in this distribution.
 
@@ -35,11 +34,11 @@ void Switch1::runExercise()
 
             if ( random(2) )
             {
-                DrawCircle(x, y, size, color, 5, random(2) );
+                DrawCircle(x, y, size, color, 5 );
             }
             else
             {
-                DrawRectangle(x, y, size, size, color, 5, random(2));
+                DrawRectangle(x, y, size, size, color, 5 );
             }
         }
     }

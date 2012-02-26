@@ -1,4 +1,3 @@
-// FeetWetCoding/exercises/C01-BeginnerExercises/S05-Loops_Logic/225_Switch1Soln.cpp
 // copyright (c) 2011 Robert Holder, Janice Dugger.
 // See README.html included in this distribution.
 
@@ -58,7 +57,11 @@ void Switch1Soln::runExercise()
             }
         }
     }
+    seeout << "Click the \"Re-start Exercise\" button a few times to get an idea";
+    seeout << " of the behavior we are looking for here.\n\n";
     seeout << "Since we are picking the colors, shapes and fill randomly here,";
     seeout << " the goal is not to get both sides looking exactly alike, but";
-    seeout << " rather, to match the *behavior*.\n";
+    seeout << " rather, to match the *behavior*.\n\n";
+    seeout << "The extra colors you need are named BLACK, YELLOW, GREEN, CYAN";
+    seeout << " and DARKBLUE.\n";
 }

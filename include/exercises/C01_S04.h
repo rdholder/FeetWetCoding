@@ -1,4 +1,3 @@
-// FeetWetCoding/include/exercises/C01_S04.h
 // copyright (c) 2011 Robert Holder, Janice Dugger.
 // See README.html included in this distribution.
 
@@ -212,6 +211,52 @@ protected:
     void setupSolution()
     {
         DrawReferenceBox(LEFTRIGHT);
+    }
+};
+
+class DistanceEquationSoln : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit DistanceEquationSoln(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = true;
+        this->runExercise();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+};
+
+class DistanceEquation : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit DistanceEquation(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        Gsoln = false;
+        this->runExercise();
+        this->setupSolution();
+    }
+
+signals:
+
+public slots:
+
+protected:
+    void runExercise();
+
+    //Hide this implementation from the student
+    void setupSolution()
+    {
+        DrawReferenceBox(LEFTRIGHT);
+        mSolutionPtr = new DistanceEquationSoln(); // Executes soln's runExercise();
     }
 };
 

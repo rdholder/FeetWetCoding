@@ -13,7 +13,7 @@ void TheEventLoop::runExercise()
 // START OF POTENTIAL EXERCISE CODE
 // NOT SURE THIS IS WHAT WE WANT BUT
 // DON'T WANT TO LOSE IT JUST YET
-// --jdugger
+// --janice
 //
 //
 //#include <QApplication>

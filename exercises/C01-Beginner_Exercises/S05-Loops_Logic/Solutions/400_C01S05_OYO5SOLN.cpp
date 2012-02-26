@@ -1,4 +1,3 @@
-// FeetWetCoding/exercises/C01-BeginnerExercises/S05-Loops_Logic/400_C01S05_OYO5SOLN.cpp
 // copyright (c) 2011 Robert Holder, Janice Dugger.
 // See README.html included in this distribution.
 
@@ -12,12 +11,12 @@ void C01S05_OYO5Soln::runExercise()
     int changedirectioncounter = 50;
     bool godown = true;
 
-    seeout << "Run this a few times to get an idea of the behavior we are\n";
-    seeout << "looking for here.  Brand new coders will have to work for\n";
-    seeout << "this one.  :-)  One thing I've found that helps when I'm\n";
-    seeout << "stuck on a coding problem is to think about it awhile, and\n";
-    seeout << "then sleep on it.  Sometimes, I wake up with the answer (or at\n";
-    seeout << "least a new idea) my head!  :-)\n\n";
+    seeout << "Click the \"Re-start Exercise\" button a few times to get an idea";
+    seeout << " of the behavior we are looking for here.\n\n";
+    seeout << "Brand new coders will have to work for this one.  :-)  One thing";
+    seeout << " I've found that helps when I'm stuck on a coding problem is to";
+    seeout << " think about it awhile, and then sleep on it.  Sometimes, I wake";
+    seeout << " up with the answer (or at least a new idea) in my head!  :-)\n\n";
 
     while ( x++ < 400 )
     {
@@ -46,10 +45,10 @@ void C01S05_OYO5Soln::runExercise()
                 godown = true;
             }
 
-            seeout << "********* Direction changed! ***********\n";
+            //seeout << "********* Direction changed! ***********\n";
         }
 
         DrawCircle(x, y, 1, RED, 1);
-        seeout << "x,y: " << x << "," << y << " velocity: " << velocity << "\n";
+        //seeout << "x,y: " << x << "," << y << " velocity: " << velocity << "\n";
     }
 }
