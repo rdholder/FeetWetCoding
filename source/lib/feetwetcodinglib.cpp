@@ -120,6 +120,9 @@ void setupDrawingUtils()
 
     std::cerr << "Done setting up drawing area. Tell chooser to run its selected exercise...\n";
     exerciseChooser->runCurrentExercise();
+
+    //Finally, give focus to the drawing area
+    view->setFocus();
 }
 
 void initOutputArea()
@@ -470,15 +473,15 @@ int randomRange(int smallest, int biggest)
 
 void FWCView::keyPressEvent( QKeyEvent *k )
 {
-    switch ( k->key() )
-    {
-    case Qt::Key_Q:
-        cerr << "Quitting the app...\n";
-        QApplication::exit();
-        break;
-    default:
-        break;
-    }
+//    switch ( k->key() )
+//    {
+//    case Qt::Key_Q:
+//        cerr << "Quitting the app...\n";
+//        QApplication::exit();
+//        break;
+//    default:
+//        break;
+//    }
 
     //Send signal to QObjects who wouldn't otherwise get it,
     //for example the exercise chooser, which will pass it into

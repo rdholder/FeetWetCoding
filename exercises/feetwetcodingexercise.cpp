@@ -38,13 +38,13 @@ void FeetWetCodingExercise::update()
     this->runExercise();
 }
 
-std::string FeetWetCodingExercise::waitForKeyboardInput()
+std::string FeetWetCodingExercise::waitForKeyPress()
 {
-    if ( !mParent ) return std::string("");
+    if ( !mParent ) return std::string();
 
     bool received(false);
-    QString keystr;
 
+    mParent->startCollectingKeyBoardInput();
     while ( !received )
     {
         // Check to see if a new key event has come in
@@ -52,14 +52,52 @@ std::string FeetWetCodingExercise::waitForKeyboardInput()
         this->msleep(100);
     }
 
-    // Notify Exercise that new key event was consumed
-    // Get the key.
-    if ( mParent->getKeyEvent() )
-    {
-        mParent->newKeyEventWasConsumed();
-        keystr = mParent->getKeyEvent()->text();
-    }
+    QKeySequence key;
+    QString keystr;
+    mParent->getKeyEventInfo(key, keystr);
+    mParent->newKeyEventWasConsumed();
+    mParent->stopCollectingKeyBoardInput();
+
     return keystr.toStdString();
+}
+
+std::string FeetWetCodingExercise::getKeyboardString()
+{
+    if ( !mParent ) return std::string("");
+
+    bool done(false);
+    QString keystr, fullstring;
+    QKeySequence key;
+
+    mParent->startCollectingKeyBoardInput();
+    while ( !done )
+    {
+        // Check to see if a new key event has come in
+        if ( mParent->wasNewKeyEventReceived() )
+        {
+            // Get the key and notify Exercise
+            // that new key event was consumed
+            mParent->getKeyEventInfo(key, keystr);
+            mParent->newKeyEventWasConsumed();
+
+            if ( Qt::Key_Enter == key || Qt::Key_Return == key )
+            {
+                qDebug() << "keyEvent is ENTER";
+                done = true;
+                continue;
+            }
+            else //if ( !keyEvent->text().isEmpty() )
+            {
+                qDebug() << "keyEvent is NOT EMPTY - APPENDING " << keystr << " to string " << fullstring;
+                fullstring.append(keystr);
+            }
+        }
+        this->msleep(10);
+    }
+
+    mParent->stopCollectingKeyBoardInput();
+
+    return fullstring.toStdString();
 }
 
 int FeetWetCodingExercise::DrawLine( int xStart, int yStart, int xEnd, int yEnd, Color color, int thickness )

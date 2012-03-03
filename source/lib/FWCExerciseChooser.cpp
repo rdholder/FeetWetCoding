@@ -626,5 +626,8 @@ bool FWCExerciseChooser::loadPreviousExerciseEnabled()
 
 void FWCExerciseChooser::handleKeyEvent(QKeyEvent *event)
 {
-    mExerciseLauncher.setKeyEvent(event);
+    if ( event )
+    {
+        mExerciseLauncher.setKeyEventInfo(event->key(), event->text());
+    }
 }

@@ -23,11 +23,12 @@ public:
     //pointer. ExerciseLauncher should not delete this passed in pointer!
     void launchExercise( FeetWetCodingExercise *exercise );
     void stopCurrentExercise();
+    void startCollectingKeyBoardInput();
+    void stopCollectingKeyBoardInput();
     bool wasNewKeyEventReceived();
     void newKeyEventWasConsumed();
-    QKeySequence getKey();
-    QKeyEvent *getKeyEvent();
-    void setKeyEvent( QKeyEvent *event );
+    void setKeyEventInfo( QKeySequence key, QString str );
+    void getKeyEventInfo( QKeySequence &key, QString &str );
     void setRenderItem( FeetWetCodingExercise::RenderItem item);
     void handleRenderRequests();
 
@@ -39,10 +40,11 @@ private:
 
     FeetWetCodingExercise *mThread;
 
+    bool mCollectingKeyEvents;
     bool mNewKeyEventReceived;
 
     QKeySequence mKey;
-    QKeyEvent *mKeyEvent;
+    QString mKeyString;
     std::queue<FeetWetCodingExercise::RenderItem> mItems;
     std::map<int, QGraphicsItem*> mRenderedItems;
 

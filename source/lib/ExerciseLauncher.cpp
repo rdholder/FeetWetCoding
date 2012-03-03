@@ -3,14 +3,13 @@
 ExerciseLauncher::ExerciseLauncher(QObject *parent)
     :QObject(parent)
     ,mThread(NULL)
+    ,mCollectingKeyEvents(false)
     ,mNewKeyEventReceived(false)
-    ,mKey(0)
-    ,mKeyEvent(NULL)
 {
     //Start time for processing render requests from the exercise thread
     QTimer *timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(update()));
-    timer->start(100);
+    timer->start(10);
 }
 
 ExerciseLauncher::~ExerciseLauncher()
@@ -57,10 +56,24 @@ void ExerciseLauncher::stopCurrentExercise()
     }
 }
 
+void ExerciseLauncher::startCollectingKeyBoardInput()
+{
+    QMutexLocker locker(&eventMutex);
+    mCollectingKeyEvents = true;
+    mNewKeyEventReceived = false;
+}
+
+void ExerciseLauncher::stopCollectingKeyBoardInput()
+{
+    QMutexLocker locker(&eventMutex);
+    mCollectingKeyEvents = false;
+    mNewKeyEventReceived = false;
+}
+
 bool ExerciseLauncher::wasNewKeyEventReceived()
 {
     QMutexLocker locker(&eventMutex);
-    return mNewKeyEventReceived;
+    return (mCollectingKeyEvents && mNewKeyEventReceived);
 }
 
 void ExerciseLauncher::newKeyEventWasConsumed()
@@ -69,27 +82,21 @@ void ExerciseLauncher::newKeyEventWasConsumed()
     mNewKeyEventReceived = false;
 }
 
-QKeySequence ExerciseLauncher::getKey()
+void ExerciseLauncher::setKeyEventInfo( QKeySequence key, QString str )
 {
     QMutexLocker locker(&eventMutex);
-    return mKey;
-}
-
-QKeyEvent * ExerciseLauncher::getKeyEvent()
-{
-    QMutexLocker locker(&eventMutex);
-    return mKeyEvent;
-}
-
-void ExerciseLauncher::setKeyEvent( QKeyEvent *event )
-{
-    qDebug() << "ExerciseLauncher::setKeyEvent("<<event->text()<<")";
-    if (!event) return;
-
-    QMutexLocker locker(&eventMutex);
-    mKey = event->key();
-    mKeyEvent = event;
+    mKey = key;
+    mKeyString = str;
     mNewKeyEventReceived = true;
+//    qDebug() << "ExerciseLauncher::setKeyEventInfo( " << key << ", " << str;
+}
+
+void ExerciseLauncher::getKeyEventInfo( QKeySequence &key, QString &str )
+{
+    QMutexLocker locker(&eventMutex);
+    key = mKey;
+    str = mKeyString;
+    qDebug() << "ExerciseLauncher::getKeyEventInfo( " << key << ", " << str;
 }
 
 void ExerciseLauncher::setRenderItem( FeetWetCodingExercise::RenderItem item)
@@ -98,7 +105,7 @@ void ExerciseLauncher::setRenderItem( FeetWetCodingExercise::RenderItem item)
     //during the next event processing timeout
     QMutexLocker locker(&itemMutex);
     mItems.push(item);
-    qDebug() << "Queue item " << item.ID << " for rendering";
+    //qDebug() << "Queue item " << item.ID << " for rendering";
 }
 
 void ExerciseLauncher::handleRenderRequests()
@@ -146,7 +153,7 @@ void ExerciseLauncher::handleRenderRequests()
     //do something with it later
     mRenderedItems[item.ID] = gItem;
 
-    qDebug() << "Queue item " << item.ID << " for rendering";
+//    qDebug() << "Rendered item " << item.ID;
 }
 
 void ExerciseLauncher::update()

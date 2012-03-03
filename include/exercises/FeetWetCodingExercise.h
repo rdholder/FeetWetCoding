@@ -95,7 +95,8 @@ protected:
     static int renderedItemsCount;
     virtual void runExercise();
     virtual void setupSolution(){} //=0;
-    std::string waitForKeyboardInput();
+    std::string waitForKeyPress();
+    std::string getKeyboardString();
 
 
 //    SolutionOrientation mDrawingAreaLayout;
