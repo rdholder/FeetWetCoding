@@ -3,6 +3,7 @@
 
 #include <include/lib/FWCExerciseChooser.h>
 #include <include/exercises/exercises.h>
+#include <MyCode.h>
 #include <iostream>
 #include <QFile>
 
@@ -117,7 +118,8 @@ FWCExerciseChooser::getExerciseFromName( const QString & name )
     if( "OYO_Primes2" == name ){ return new OYO_Primes2(); }
     if( "OYO5" == name ){ return new C01S05_OYO5(); }
 
-    //Section 6 - ...
+    //Section 6 - Arrays
+    if( "Arrays1" == name ){ return new Arrays1(); }
 
     //Section 7 - ...
 
@@ -136,6 +138,19 @@ FWCExerciseChooser::getExerciseFromName( const QString & name )
 
     //Section 3 - TopDown2D
     if( "TopDown2D" == name ){ return new TopDown2D(); }
+
+    // MyCode "Chapter" (only one section)
+
+    if( "MyCode0" == name ){ return new MyCode0(); }
+    if( "MyCode1" == name ){ return new MyCode1(); }
+    if( "MyCode2" == name ){ return new MyCode2(); }
+    if( "MyCode3" == name ){ return new MyCode3(); }
+    if( "MyCode4" == name ){ return new MyCode4(); }
+    if( "MyCode5" == name ){ return new MyCode5(); }
+    if( "MyCode6" == name ){ return new MyCode6(); }
+    if( "MyCode7" == name ){ return new MyCode7(); }
+    if( "MyCode8" == name ){ return new MyCode8(); }
+    if( "MyCode9" == name ){ return new MyCode9(); }
 
     return NULL;
 }
@@ -225,6 +240,11 @@ void FWCExerciseChooser::createExercisesMap()
     exercises.push_back( "OYO5" );
     sections["S05-Loops_Logic"] = exercises;
 
+    //S06-Arrays
+    exercises.clear();
+    exercises.push_back( "Arrays1" );
+    sections["S06-Arrays"] = exercises;
+
     //S10-Classes_Intro
     exercises.clear();
     exercises.push_back( "Classes1" );
@@ -247,6 +267,25 @@ void FWCExerciseChooser::createExercisesMap()
     sections["S03-TopDown2D"] = exercises;
 
     mExerciseMap["C08-Game_Programming"] = sections;
+
+    //MyCode "Chapter"
+    sections.clear();
+
+    //MyCode "Exercises"
+    exercises.clear();
+    exercises.push_back( "MyCode0" );
+    exercises.push_back( "MyCode1" );
+    exercises.push_back( "MyCode2" );
+    exercises.push_back( "MyCode3" );
+    exercises.push_back( "MyCode4" );
+    exercises.push_back( "MyCode5" );
+    exercises.push_back( "MyCode6" );
+    exercises.push_back( "MyCode7" );
+    exercises.push_back( "MyCode8" );
+    exercises.push_back( "MyCode9" );
+    sections["MyCode"] = exercises;
+
+    mExerciseMap["MyCode"] = sections;
 }
 
 void FWCExerciseChooser::selectChapter( const QString & selection )

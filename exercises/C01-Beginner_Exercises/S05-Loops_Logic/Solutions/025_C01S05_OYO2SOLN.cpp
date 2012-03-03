@@ -13,5 +13,5 @@ void C01S05_OYO2Soln::runExercise()
     }
     seeout << "Click the \"Re-start Exercise\" button a few times to get an idea";
     seeout << " of the behavior we are looking for here.\n\n";
-    seeout << "There are 50 circles of random size and location.\n";
+    seeout << "There are 50 circles of random location and random size (up to 50).\n";
 }

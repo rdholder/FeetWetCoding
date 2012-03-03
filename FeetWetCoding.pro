@@ -131,14 +131,25 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/260_OYO_IfThen4SOLN.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/Solutions/210_DistanceEquationSOLN.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/210_DistanceEquation.cpp \
-    source/lib/ExerciseLauncher.cpp
+    source/lib/ExerciseLauncher.cpp \
+    exercises/C01-Beginner_Exercises/S06-Arrays/050_Arrays1.cpp \
+    mycode/lib/MyLib.cpp \
+    mycode/src/MyCode0.cpp \
+    mycode/src/MyCode1.cpp \
+    mycode/src/MyCode2.cpp \
+    mycode/src/MyCode3.cpp \
+    mycode/src/MyCode4.cpp \
+    mycode/src/MyCode5.cpp \
+    mycode/src/MyCode6.cpp \
+    mycode/src/MyCode7.cpp \
+    mycode/src/MyCode8.cpp \
+    mycode/src/MyCode9.cpp
 
 
 HEADERS += \
     include/lib/setup.h \
     include/lib/feetwetcodinglib.h \
     include/lib/constants.h \
-    include/myinclude/myheader.h \
     include/exercises/exercises.h \
     include/exercises/C01_S02.h \
     include/exercises/C01_S03.h \
@@ -154,7 +165,9 @@ HEADERS += \
     include/lib/colors.h \
     include/lib/ColorViewer.h \
     include/lib/ExerciseLauncher.h \
-    include/lib/SeeOut.h
+    include/lib/SeeOut.h \
+    include/exercises/C01_S06.h \
+    include/lib/MyCode.h
 
 FORMS +=
 
