@@ -14,7 +14,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = true;
-        this->runExercise();
+        //this->runExercise();
     }
 
 
@@ -34,7 +34,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = false;
-        this->runExercise();
+        //this->runExercise();
         this->setupSolution();
     }
 
@@ -61,7 +61,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = true;
-        this->runExercise();
+        //this->runExercise();
     }
 
 
@@ -81,7 +81,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = false;
-        this->runExercise();
+        //this->runExercise();
         this->setupSolution();
     }
 
@@ -108,7 +108,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = true;
-        this->runExercise();
+        //this->runExercise();
     }
 
 
@@ -128,7 +128,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = false;
-        this->runExercise();
+        //this->runExercise();
         this->setupSolution();
     }
 
@@ -155,7 +155,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = true;
-        this->runExercise();
+        //this->runExercise();
     }
 
 signals:
@@ -174,7 +174,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = false;
-        this->runExercise();
+        //this->runExercise();
         this->setupSolution();
     }
 
@@ -201,7 +201,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = true;
-        this->runExercise();
+        //this->runExercise();
     }
 
 signals:
@@ -220,7 +220,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = false;
-        this->runExercise();
+        //this->runExercise();
         this->setupSolution();
     }
 
@@ -247,7 +247,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = true;
-        this->runExercise();
+        //this->runExercise();
     }
 
 signals:
@@ -266,7 +266,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = false;
-        this->runExercise();
+        //this->runExercise();
         this->setupSolution();
     }
 
@@ -293,7 +293,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = true;
-        this->runExercise();
+        //this->runExercise();
     }
 
 
@@ -313,7 +313,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = false;
-        this->runExercise();
+        //this->runExercise();
         this->setupSolution();
     }
 
@@ -340,7 +340,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = true;
-        this->runExercise();
+        //this->runExercise();
     }
 
 signals:
@@ -359,7 +359,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = false;
-        this->runExercise();
+        //this->runExercise();
         this->setupSolution();
     }
 
@@ -386,7 +386,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = true;
-        this->runExercise();
+        //this->runExercise();
     }
 
 signals:
@@ -405,7 +405,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = false;
-        this->runExercise();
+        //this->runExercise();
         this->setupSolution();
     }
 
@@ -432,7 +432,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = true;
-        this->runExercise();
+        //this->runExercise();
     }
 
 signals:
@@ -451,7 +451,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = false;
-        this->runExercise();
+        //this->runExercise();
         this->setupSolution();
     }
 
@@ -478,7 +478,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = true;
-        this->runExercise();
+        //this->runExercise();
     }
 
 signals:
@@ -497,7 +497,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = false;
-        this->runExercise();
+        //this->runExercise();
         this->setupSolution();
     }
 
@@ -524,7 +524,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = true;
-        this->runExercise();
+        //this->runExercise();
     }
 
 signals:
@@ -543,7 +543,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = false;
-        this->runExercise();
+        //this->runExercise();
         this->setupSolution();
     }
 
@@ -570,7 +570,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = true;
-        this->runExercise();
+        //this->runExercise();
     }
 
 signals:
@@ -589,7 +589,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = false;
-        this->runExercise();
+        //this->runExercise();
         this->setupSolution();
     }
 
@@ -616,7 +616,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = true;
-        this->runExercise();
+        //this->runExercise();
     }
 
 signals:
@@ -635,7 +635,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = false;
-        this->runExercise();
+        //this->runExercise();
         this->setupSolution();
     }
 
@@ -662,7 +662,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = true;
-        this->runExercise();
+        //this->runExercise();
     }
 
 signals:
@@ -681,7 +681,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = false;
-        this->runExercise();
+        //this->runExercise();
         this->setupSolution();
     }
 
@@ -708,7 +708,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = false;
-        this->runExercise();
+        //this->runExercise();
         this->setupSolution();
     }
 
@@ -734,7 +734,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = true;
-        this->runExercise();
+        //this->runExercise();
     }
 
 signals:
@@ -753,7 +753,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = false;
-        this->runExercise();
+        //this->runExercise();
         this->setupSolution();
     }
 
@@ -780,7 +780,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = true;
-        this->runExercise();
+        //this->runExercise();
     }
 
 signals:
@@ -799,7 +799,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = false;
-        this->runExercise();
+        //this->runExercise();
         this->setupSolution();
     }
 
@@ -826,7 +826,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = true;
-        this->runExercise();
+        //this->runExercise();
     }
 
 signals:
@@ -845,7 +845,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = false;
-        this->runExercise();
+        //this->runExercise();
         this->setupSolution();
     }
 
@@ -872,7 +872,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = true;
-        this->runExercise();
+        //this->runExercise();
     }
 
 signals:
@@ -891,7 +891,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = false;
-        this->runExercise();
+        //this->runExercise();
         this->setupSolution();
     }
 
@@ -918,7 +918,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = true;
-        this->runExercise();
+        //this->runExercise();
     }
 
 signals:
@@ -937,7 +937,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = false;
-        this->runExercise();
+        //this->runExercise();
         this->setupSolution();
     }
 
@@ -964,7 +964,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = true;
-        this->runExercise();
+        //this->runExercise();
     }
 
 signals:
@@ -983,7 +983,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = false;
-        this->runExercise();
+        //this->runExercise();
         this->setupSolution();
     }
 
@@ -1010,7 +1010,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = true;
-        this->runExercise();
+        //this->runExercise();
     }
 
 signals:
@@ -1029,7 +1029,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = false;
-        this->runExercise();
+        //this->runExercise();
         this->setupSolution();
     }
 
@@ -1056,7 +1056,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = true;
-        this->runExercise();
+        //this->runExercise();
     }
 
 signals:
@@ -1075,7 +1075,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = false;
-        this->runExercise();
+        //this->runExercise();
         this->setupSolution();
     }
 

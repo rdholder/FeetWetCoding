@@ -10,6 +10,7 @@
 #include <QGraphicsView>
 #include <QKeyEvent>
 #include <QTextEdit>
+#include <QMutex>
 #include <iostream>
 #include <sstream>
 #include <map>
@@ -17,6 +18,7 @@
 
 extern QTextEdit *exerciseOut;
 extern QTextEdit *solnOut;
+extern QMutex globalmutex;
 extern bool Gsoln;
 
 //Convenience drawable items provided by Qt
@@ -41,16 +43,17 @@ void setupDrawingUtils();
 
 void ClearScreen();
 void initOutputArea();
-void DrawLine( int xStart, int yStart, int xEnd, int yEnd, Color color, int thickness );
-void DrawCircle( int x, int y, int r, Color color, int thickness, bool solid=false);
-void DrawCircleRGB( int x, int y, int r, int thickness, int red, int green, int blue, bool solid=false );
-void DrawEllipse( int x, int y, int w, int h, Color color, int thickness, bool solid=false );
-void DrawRectangle( int x, int y, int w, int h, Color color, int thickness, bool solid=false );
-void DrawText( std::string text, int x, int y, Color color, int size=12);
-void DrawInt( int number, int x, int y, Color color, int size=12 );
-void DrawFloat( float number, int x, int y, Color color, int size=12, int decimalPlaces=3 );
-void DrawImage( QString filename, int x, int y );
-void DrawReferenceBox( RefBoxLayout layout );
+
+QGraphicsItem* DrawLineRender( int xStart, int yStart, int xEnd, int yEnd, Color color, int thickness );
+QGraphicsItem* DrawCircleRender( int x, int y, int r, Color color, int thickness, bool solid=false);
+QGraphicsItem* DrawCircleRGBRender( int x, int y, int r, int thickness, int red, int green, int blue, bool solid=false );
+QGraphicsItem* DrawEllipseRender( int x, int y, int w, int h, Color color, int thickness, bool solid=false );
+QGraphicsItem* DrawRectangleRender( int x, int y, int w, int h, Color color, int thickness, bool solid=false );
+QGraphicsItem* DrawTextRender( std::string text, int x, int y, Color color, int size=12);
+QGraphicsItem* DrawIntRender( int number, int x, int y, Color color, int size=12 );
+QGraphicsItem* DrawFloatRender( float number, int x, int y, Color color, int size=12, int decimalPlaces=3 );
+QGraphicsItem* DrawImageRender( std::string filename, int x, int y );
+
 int random(int biggest);
 int randomRange(int smallest, int biggest);
 
@@ -69,7 +72,7 @@ public:
     virtual void keyPressEvent(QKeyEvent *event);
 
 signals:
-    void keyPressSignal(QKeyEvent *event);
+    void keyPressSignal(QKeyEvent *);
 
 protected:
 
@@ -78,71 +81,83 @@ private:
 
 };
 
-class solutionOrientation
-{
-public:
-    solutionOrientation(RefBoxLayout initialOrientation);
-    ~solutionOrientation();
-    RefBoxLayout getOrientation();
-    void setOrientation(RefBoxLayout);
+//class solutionOrientation
+//{
+//public:
 
-private:
-    RefBoxLayout itsOrientation;
+//    typedef enum {
+//        BLANK,
+//        LEFTRIGHT,
+//        TOPBOTTOM
+//    } RefBoxLayout;
 
-};
+//    solutionOrientation(RefBoxLayout initialOrientation);
+//    ~solutionOrientation();
+//    RefBoxLayout getOrientation();
+//    void setOrientation(RefBoxLayout);
 
-//SeeOut is a simulated "cout" that prints to a
-// text widget in addition to std::out
-class SeeOut
-{
+//private:
+//    RefBoxLayout itsOrientation;
 
-public:
+//};
 
-    void setColor(Color color)
-    {
-        if ( !Gsoln && exerciseOut )
-        {
-            exerciseOut->setTextColor(getQColor(color));
-        }
-        if ( Gsoln && solnOut )
-        {
-            solnOut->setTextColor(getQColor(color));
-        }
-    }
+////SeeOut is a simulated "cout" that prints to a
+//// text widget in addition to std::out
+//class SeeOut
+//{
 
-    void setFontSize(int size)
-    {
-        if ( !Gsoln && exerciseOut )
-        {
-            exerciseOut->setFontPointSize(size);
-        }
-        if ( Gsoln && solnOut )
-        {
-            solnOut->setFontPointSize(size);
-        }
-    }
+//public:
 
-    template <typename T>
-    SeeOut& operator<<(const T& x)
-    {
-        mOss.str("");
-        mOss << x;
-        std::cerr << mOss.str();
+//    void setColor(Color color)
+//    {
+//        QMutexLocker globallocker(&globalmutex);
+//        if ( !Gsoln && exerciseOut )
+//        {
+//            exerciseOut->setTextColor(getQColor(color));
+//        }
+//        if ( Gsoln && solnOut )
+//        {
+//            solnOut->setTextColor(getQColor(color));
+//        }
+//    }
 
-        if ( !Gsoln && exerciseOut )
-        {
-            exerciseOut->insertPlainText(mOss.str().c_str());
-        }
-        if ( Gsoln && solnOut )
-        {
-            solnOut->insertPlainText(mOss.str().c_str());
-        }
+//    void setFontSize(int size)
+//    {
+//        QMutexLocker globallocker(&globalmutex);
+//        if ( !Gsoln && exerciseOut )
+//        {
+//            exerciseOut->setFontPointSize(size);
+//        }
+//        if ( Gsoln && solnOut )
+//        {
+//            solnOut->setFontPointSize(size);
+//        }
+//    }
 
-        return *this;
-    }
+//    template <typename T>
+//    SeeOut& operator<<(const T& x)
+//    {
+//        QMutexLocker locker(&mutex);
+//        mOss.str("");
+//        mOss << x;
+//        std::cerr << mOss.str();
 
-private:
-    std::ostringstream mOss;
-};
+//        QMutexLocker globallocker(&globalmutex);
+//        if ( !Gsoln && exerciseOut )
+//        {
+//            exerciseOut->insertPlainText(mOss.str().c_str());
+//        }
+//        if ( Gsoln && solnOut )
+//        {
+//            solnOut->insertPlainText(mOss.str().c_str());
+//        }
+
+//        return *this;
+//    }
+
+//private:
+//    std::ostringstream mOss;
+//    QMutex mutex;
+//};
 
 #endif // FEETWETCODINGLIB_H

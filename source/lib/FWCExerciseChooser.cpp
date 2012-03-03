@@ -6,6 +6,11 @@
 #include <iostream>
 #include <QFile>
 
+//QMutex ExerciseLauncher::eventMutex;
+//QMutex ExerciseLauncher::itemMutex;
+//bool ExerciseLauncher::mNewKeyEventReceived(false);
+//QKeySequence ExerciseLauncher::mKey(0);
+
 FWCExerciseChooser::FWCExerciseChooser(QObject *parent)
     :QObject(parent)
     ,mSelectedExercise(NULL)
@@ -46,7 +51,7 @@ FWCExerciseChooser::getExerciseFromName( const QString & name )
     //Chapter 1
 
     //Section 2 - Getting_Started
-    if( "Welcome" == name ){ return new Welcome(); }
+    if( "Welcome" == name ){ return new Welcome(&mExerciseLauncher); }
     if( "ChangeText" == name ){ return new ChangeText(); }
     if( "ChangeX" == name ){ return new ChangeX(); }
     if( "ChangeY" == name ){ return new ChangeY(); }
@@ -415,10 +420,8 @@ void FWCExerciseChooser::selectExercise( const QString & selection )
     if ( selectedExercise.isEmpty() )
         return; // nope, so don't do anything
 
-    // Stop the old exercise
-    stopExercise();
-
-    // Start the new one
+    // Start the new exercise
+    // This stops the old one if it's still running.
     mCurrentExercise = selectedExercise;
     runCurrentExercise();
 }
@@ -444,6 +447,15 @@ void FWCExerciseChooser::exerciseSelected( const QString & selection )
 void FWCExerciseChooser::stopExercise()
 {
     qDebug() << "FWCExerciseChooser::stopExercise()\n";
+
+    //Stop the exercise *before* deleting below
+    //since the exercise launcher still needs
+    //access to the pointer to stop it.
+    mExerciseLauncher.stopCurrentExercise();
+
+    ClearScreen();
+    initOutputArea();
+
     if ( mSelectedExercise )
     {
         qDebug() << "Deleting current exercise...\n";
@@ -457,16 +469,17 @@ void FWCExerciseChooser::runExercise( const QString & exerciseName )
     if ( !mOkToRun )
         return;
 
+    stopExercise();
     mSelectedExercise = getExerciseFromName( exerciseName );
+
+    //FWCExerciseChooser retains ownership of the mSelectedExercise
+    //pointer. ExerciseLauncher should not delete this passed in pointer!
+    mExerciseLauncher.launchExercise(mSelectedExercise);
 }
 
 void FWCExerciseChooser::runCurrentExercise()
 {
-    if ( !mOkToRun )
-        return;
-
-    stopExercise();
-    mSelectedExercise = getExerciseFromName( mCurrentExercise );
+    runExercise( mCurrentExercise );
 }
 
 void FWCExerciseChooser::saveCurrentExercise()
@@ -572,3 +585,7 @@ bool FWCExerciseChooser::loadPreviousExerciseEnabled()
     return false;
 }
 
+void FWCExerciseChooser::handleKeyEvent(QKeyEvent *event)
+{
+    mExerciseLauncher.setKeyEvent(event);
+}

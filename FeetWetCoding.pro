@@ -130,7 +130,8 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/260_OYO_IfThen4.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/260_OYO_IfThen4SOLN.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/Solutions/210_DistanceEquationSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/210_DistanceEquation.cpp
+    exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/210_DistanceEquation.cpp \
+    source/lib/ExerciseLauncher.cpp
 
 
 HEADERS += \
@@ -151,7 +152,9 @@ HEADERS += \
     include/exercises/C08-Game_Programming/GameWidget.h \
     include/lib/FWCExerciseChooser.h \
     include/lib/colors.h \
-    include/lib/ColorViewer.h
+    include/lib/ColorViewer.h \
+    include/lib/ExerciseLauncher.h \
+    include/lib/SeeOut.h
 
 FORMS +=
 

@@ -14,7 +14,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = true;
-        this->runExercise();
+        //this->runExercise();
     }
 
 
@@ -34,7 +34,7 @@ public:
         :FeetWetCodingExercise(parent)
     {
         Gsoln = false;
-        this->runExercise();
+        //this->runExercise();
         this->setupSolution();
     }
 
