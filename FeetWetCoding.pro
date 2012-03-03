@@ -12,7 +12,6 @@ TEMPLATE = app
 SOURCES += \
     source/main.cpp \
     source/lib/feetwetcodinglib.cpp \
-    source/mysource/myprogram.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/001_WelcomeSOLN.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/001_Welcome.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/010_ChangeText.cpp \

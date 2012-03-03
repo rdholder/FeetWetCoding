@@ -81,25 +81,25 @@ private:
 
 };
 
-//class solutionOrientation
-//{
-//public:
+class solutionOrientation
+{
+public:
 
-//    typedef enum {
-//        BLANK,
-//        LEFTRIGHT,
-//        TOPBOTTOM
-//    } RefBoxLayout;
+    typedef enum {
+        BLANK,
+        LEFTRIGHT,
+        TOPBOTTOM
+    } RefBoxLayout;
 
-//    solutionOrientation(RefBoxLayout initialOrientation);
-//    ~solutionOrientation();
-//    RefBoxLayout getOrientation();
-//    void setOrientation(RefBoxLayout);
+    solutionOrientation(RefBoxLayout initialOrientation);
+    ~solutionOrientation();
+    RefBoxLayout getOrientation();
+    void setOrientation(RefBoxLayout);
 
-//private:
-//    RefBoxLayout itsOrientation;
+private:
+    RefBoxLayout itsOrientation;
 
-//};
+};
 
 ////SeeOut is a simulated "cout" that prints to a
 //// text widget in addition to std::out

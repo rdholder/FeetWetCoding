@@ -29,7 +29,7 @@ solutionOrientation::~solutionOrientation()
 {
 }
 
-RefBoxLayout solutionOrientation::getOrientation()
+solutionOrientation::RefBoxLayout solutionOrientation::getOrientation()
 {
     return itsOrientation;
 }
