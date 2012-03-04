@@ -15,8 +15,11 @@ public:
     explicit WelcomeSoln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
-        //this->runExercise();
+        //Update seeout with soln config
+        mSoln = true;
+        seeout.setIsSolution(mSoln);
+        seeout.setColor(BLACK);
+        seeout.setFontSize(10);
     }
 
 signals:
@@ -34,9 +37,10 @@ public:
     explicit Welcome(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
-        //this->runExercise();
-        this->setupSolution();
+        //Exercises can use parent's seeout config
+
+        //If this exercise has a solution, launch it
+        this->setupSolution(parent);
     }
 
 signals:
@@ -47,10 +51,16 @@ protected:
     void runExercise();
 
     //Hide this implementation from the student
-    void setupSolution()
+    void setupSolution(QObject *parent=0)
     {
         DrawReferenceBox(LEFTRIGHT);
-        mSolutionPtr = new WelcomeSoln(); // Executes soln's runExercise();
+        mSolutionPtr = new WelcomeSoln(parent); // Executes soln's runExercise();
+        qDebug() << "Welcome::setupSolution() - call mSolutionPtr.start()";
+        if ( mSolutionPtr )
+        {
+            mSolutionPtr->start();
+        }
+        qDebug() << "Welcome::setupSolution() - back from calling mThread.start()";
     }
 };
 
@@ -61,7 +71,7 @@ public:
     explicit ChangeTextSoln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -80,7 +90,7 @@ public:
     explicit ChangeText(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -107,7 +117,7 @@ public:
     explicit ChangeXSoln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -126,7 +136,7 @@ public:
     explicit ChangeX(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -153,7 +163,7 @@ public:
     explicit ChangeYSoln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -173,7 +183,7 @@ public:
     explicit ChangeY(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -200,7 +210,7 @@ public:
     explicit ChangeXYSoln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -220,7 +230,7 @@ public:
     explicit ChangeXY(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -247,7 +257,7 @@ public:
     explicit ChangeColorSoln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -267,7 +277,7 @@ public:
     explicit ChangeColor(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -294,7 +304,7 @@ public:
     explicit ChangeFontSoln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -314,7 +324,7 @@ public:
     explicit ChangeFont(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -341,7 +351,7 @@ public:
     explicit DrawLinesSoln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -361,7 +371,7 @@ public:
     explicit DrawLines(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -388,7 +398,7 @@ public:
     explicit DrawCirclesSoln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -408,7 +418,7 @@ public:
     explicit DrawCircles(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -435,7 +445,7 @@ public:
     explicit DrawRectanglesSoln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -455,7 +465,7 @@ public:
     explicit DrawRectangles(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -482,7 +492,7 @@ public:
     explicit DrawDotsSoln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -502,7 +512,7 @@ public:
     explicit DrawDots(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -529,7 +539,7 @@ public:
     explicit DrawEllipsesSoln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -549,7 +559,7 @@ public:
     explicit DrawEllipses(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -576,7 +586,7 @@ public:
     explicit DrawingTextSoln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -596,7 +606,7 @@ public:
     explicit DrawingText(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -623,7 +633,7 @@ public:
     explicit DrawingImagesSoln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -643,7 +653,7 @@ public:
     explicit DrawingImages(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -670,7 +680,7 @@ public:
     explicit seeoutIntroSoln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -690,7 +700,7 @@ public:
     explicit seeoutIntro(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -717,7 +727,7 @@ public:
     explicit seeoutFormattingSoln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -737,7 +747,7 @@ public:
     explicit seeoutFormatting(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -764,7 +774,7 @@ public:
     explicit ColorNames(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -790,7 +800,7 @@ public:
     explicit OnYourOwnSoln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -810,7 +820,7 @@ public:
     explicit OnYourOwn(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -837,7 +847,7 @@ public:
     explicit FontProportionsSoln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -857,7 +867,7 @@ public:
     explicit FontProportions(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }

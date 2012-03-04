@@ -10,7 +10,7 @@ TopDown2DSoln::TopDown2DSoln(QObject *parent)
     :FeetWetCodingExercise(parent)
     ,mTd2dWidget(NULL)
 {
-    Gsoln = true;
+    mSoln = true;
     this->runExercise();
 }
 

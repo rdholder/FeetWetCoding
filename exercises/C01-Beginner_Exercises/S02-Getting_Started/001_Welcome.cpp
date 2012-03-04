@@ -9,7 +9,7 @@ void Welcome::runExercise()
 {
     // USAGE: DrawText("Text.", x, y, color, fontsize);
     DrawText("Welcome to FeetWetCoding!", 20, 30, BLUE, 20);
-    DrawText("______________________", 20, 30, BLUE, 20);
+    DrawLine(20, 70, 360, 70, BLUE, 2);
 
     //******************************************************************
     // ATTN ROB: All this stuff from here down is just exmample code
@@ -17,6 +17,15 @@ void Welcome::runExercise()
     //           enabled by the threading. It's not intended for the
     //           users, so you can remove it when you're done with it.
     //******************************************************************
+
+    //Seeout test
+    seeout << "The quick brown fox ";
+    seeout.setColor(BLUE);
+    seeout << "jumps over the lazy ";
+    seeout.setColor(RED);
+    seeout.setFontSize(18);
+    seeout << "DOG";
+    seeout << "\n" << 1 << "," << 2 << "," << 3.0 << "\n";
 
     //Example 1: Pause while looping using sleep()/msleep()/usleep()
     sleep(1);
@@ -35,7 +44,7 @@ void Welcome::runExercise()
     }
 
     //Example 2: Wait for keyboard input while looping using waitForKeyPress()
-    y+=50;
+    y+=30;
     DrawText("Example 2 - waitForKeyPress():", x, y, BLUE, 14);
     sleep(1);
     std::string key, name;
@@ -54,11 +63,27 @@ void Welcome::runExercise()
 
 
     //Example 3: Wait for keyboard input while looping using getKeyboardString()
-    y+=50;
+    y+=30;
     DrawText("Example 3 - getKeyboardString()", 20, y, BLUE, 14);
     sleep(1);
     DrawText("What's your name?", x, y+20, RED, fontSize);
     name = getKeyboardString();
     std::string message = "Hi, " + name + "!";
-    DrawText(message, x+70, y+70, DARKGREEN, 18);
+    DrawText(message, x+50, y+50, DARKGREEN, 18);
+
+    //Example 4: Animation()
+    y+=80;
+    DrawText("Example 4 - Animation:", x, y, BLUE, 14);
+    y+=50;
+
+    x = 0;
+    int dx(2);
+    int circle = DrawCircle(x,y,20,PINK,1, true);
+
+    while (x < 380)
+    {
+        x+=dx;
+        ShiftDrawnItem(circle, dx, 0);
+        msleep(20);
+    }
 }

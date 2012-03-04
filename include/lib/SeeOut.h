@@ -2,6 +2,13 @@
 #define SEEOUT_H
 
 #include <feetwetcodinglib.h>
+#include <queue>
+#include <QMutex>
+#include <QDebug>
+
+using namespace std;
+
+extern QMutex globalmutex;
 
 //SeeOut is a simulated "cout" that prints to a
 // text widget in addition to std::out
@@ -10,56 +17,83 @@ class SeeOut
 
 public:
 
+    SeeOut():mIsSolution(false){}
+    ~SeeOut(){}
+
+    typedef enum
+    {
+        MESSAGE,
+        COLOR,
+        FONTSIZE
+    } RequestType;
+
+    void setIsSolution(bool isSolution)
+    {
+        mIsSolution = isSolution;
+    }
+
     void setColor(Color color)
     {
-        QMutexLocker globallocker(&globalmutex);
-        if ( !Gsoln && exerciseOut )
+        QString colorStr = QString::number((int)color);
+        if ( !mIsSolution )
         {
-//            exerciseOut->setTextColor(getQColor(color));
+            QMutexLocker globallocker(&globalmutex);
+            exerciseOutMsgQueue.push(make_pair<RequestType,QString>(COLOR, colorStr));
+            qDebug() << "exerciseOutMsgQueue.size(): " << exerciseOutMsgQueue.size();
         }
-        if ( Gsoln && solnOut )
+        else
         {
-//            solnOut->setTextColor(getQColor(color));
+            QMutexLocker globallocker(&globalmutex);
+            solnOutMsgQueue.push(make_pair<RequestType,QString>(COLOR, colorStr));
         }
     }
 
     void setFontSize(int size)
     {
-        QMutexLocker globallocker(&globalmutex);
-        if ( !Gsoln && exerciseOut )
+        QString sizeStr = QString::number(size);
+        if ( !mIsSolution )
         {
-//            exerciseOut->setFontPointSize(size);
+            QMutexLocker globallocker(&globalmutex);
+            exerciseOutMsgQueue.push(make_pair<RequestType,QString>(FONTSIZE, sizeStr));
         }
-        if ( Gsoln && solnOut )
+        else
         {
-//            solnOut->setFontPointSize(size);
+            QMutexLocker globallocker(&globalmutex);
+            solnOutMsgQueue.push(make_pair<RequestType,QString>(FONTSIZE, sizeStr));
         }
     }
 
     template <typename T>
     SeeOut& operator<<(const T& x)
     {
-        QMutexLocker locker(&mutex);
         mOss.str("");
         mOss << x;
-        std::cerr << mOss.str();
+        qDebug() << mOss.str().c_str();
 
-        QMutexLocker globallocker(&globalmutex);
-        if ( !Gsoln && exerciseOut )
+        if ( !mIsSolution )
         {
-//            exerciseOut->insertPlainText(mOss.str().c_str());
+            QMutexLocker globallocker(&globalmutex);
+            exerciseOutMsgQueue.push(make_pair<RequestType,QString>(MESSAGE, mOss.str().c_str()));
+            qDebug() << "Added __" << mOss.str().c_str() << "__ to exercise message queue.";
+            qDebug() << "exerciseOutMsgQueue.size(): " << exerciseOutMsgQueue.size();
         }
-        if ( Gsoln && solnOut )
+        else
         {
-//            solnOut->insertPlainText(mOss.str().c_str());
+            QMutexLocker globallocker(&globalmutex);
+            solnOutMsgQueue.push(make_pair<RequestType,QString>(MESSAGE, mOss.str().c_str()));
+            qDebug() << "Added __" << mOss.str().c_str() << "__ to soln message queue.";
+            qDebug() << "solnOutMsgQueue.size(): " << exerciseOutMsgQueue.size();
         }
 
         return *this;
     }
 
+    static std::queue<std::pair<SeeOut::RequestType, QString> >exerciseOutMsgQueue;
+    static std::queue<std::pair<SeeOut::RequestType, QString> >solnOutMsgQueue;
+
 private:
     std::ostringstream mOss;
-    QMutex mutex;
+    bool mIsSolution;
 };
 
 #endif // SEEOUT_H

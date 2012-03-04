@@ -16,7 +16,7 @@ public:
     explicit NumericTypesSoln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -35,7 +35,7 @@ public:
     explicit NumericTypes(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -61,7 +61,7 @@ public:
     explicit DrawingVersusSeeoutSoln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -80,7 +80,7 @@ public:
     explicit DrawingVersusSeeout(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -107,7 +107,7 @@ public:
     explicit CONSTANTS(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -133,7 +133,7 @@ public:
     explicit Chars(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -159,7 +159,7 @@ public:
     explicit Booleans(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -185,7 +185,7 @@ public:
     explicit StandardStringsSoln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -204,7 +204,7 @@ public:
     explicit StandardStrings(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }

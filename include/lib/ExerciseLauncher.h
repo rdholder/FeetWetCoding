@@ -29,8 +29,11 @@ public:
     void newKeyEventWasConsumed();
     void setKeyEventInfo( QKeySequence key, QString str );
     void getKeyEventInfo( QKeySequence &key, QString &str );
-    void setRenderItem( FeetWetCodingExercise::RenderItem item);
+    void setRenderItem( FeetWetCodingExercise::RenderItem item );
+    void updateRenderItem( FeetWetCodingExercise::RenderItemUpdate update );
     void handleRenderRequests();
+    void handleRenderUpdates();
+    void handleSeeOutRequests();
 
 public slots:
 
@@ -47,6 +50,7 @@ private:
     QString mKeyString;
     std::queue<FeetWetCodingExercise::RenderItem> mItems;
     std::map<int, QGraphicsItem*> mRenderedItems;
+    std::queue<FeetWetCodingExercise::RenderItemUpdate> mRenderItemUpdates;
 
     QMutex eventMutex;
     QMutex itemMutex;

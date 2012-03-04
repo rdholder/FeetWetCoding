@@ -19,7 +19,7 @@ public:
     explicit AssignmentArithmetic(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -45,7 +45,7 @@ public:
     explicit OrderOfOperations(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -71,7 +71,7 @@ public:
     explicit PreAndPostIncAndDecSoln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -90,7 +90,7 @@ public:
     explicit PreAndPostIncAndDec(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -117,7 +117,7 @@ public:
     explicit ModulusOperator(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -143,7 +143,7 @@ public:
     explicit BlocksAndScope(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -169,7 +169,7 @@ public:
     explicit MathFunctions(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -195,7 +195,7 @@ public:
     explicit randomAndrandomRange(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -221,7 +221,7 @@ public:
     explicit DistanceEquationSoln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -240,7 +240,7 @@ public:
     explicit DistanceEquation(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -267,7 +267,7 @@ public:
     explicit MisdirectionSoln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -286,7 +286,7 @@ public:
     explicit Misdirection(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }

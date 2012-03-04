@@ -13,7 +13,7 @@ public:
     explicit WhileLoopIntroSoln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -33,7 +33,7 @@ public:
     explicit WhileLoopIntro(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -60,7 +60,7 @@ public:
     explicit ForLoopIntroSoln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -80,7 +80,7 @@ public:
     explicit ForLoopIntro(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -107,7 +107,7 @@ public:
     explicit WhileLoop1Soln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -127,7 +127,7 @@ public:
     explicit WhileLoop1(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -154,7 +154,7 @@ public:
     explicit InfiniteLooping1Soln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -173,7 +173,7 @@ public:
     explicit InfiniteLooping1(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -200,7 +200,7 @@ public:
     explicit C01S05_OYO1Soln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -219,7 +219,7 @@ public:
     explicit C01S05_OYO1(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -246,7 +246,7 @@ public:
     explicit C01S05_OYO2Soln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -265,7 +265,7 @@ public:
     explicit C01S05_OYO2(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -292,7 +292,7 @@ public:
     explicit WhileLoop2Soln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -312,7 +312,7 @@ public:
     explicit WhileLoop2(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -339,7 +339,7 @@ public:
     explicit WhileLoop3Soln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -358,7 +358,7 @@ public:
     explicit WhileLoop3(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -385,7 +385,7 @@ public:
     explicit C01S05_OYO3Soln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -404,7 +404,7 @@ public:
     explicit C01S05_OYO3(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -431,7 +431,7 @@ public:
     explicit C01S05_OYO4Soln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -450,7 +450,7 @@ public:
     explicit C01S05_OYO4(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -477,7 +477,7 @@ public:
     explicit WhileLoop4Soln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -496,7 +496,7 @@ public:
     explicit WhileLoop4(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -523,7 +523,7 @@ public:
     explicit WhileLoop5Soln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -542,7 +542,7 @@ public:
     explicit WhileLoop5(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -569,7 +569,7 @@ public:
     explicit ForLoops1Soln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -588,7 +588,7 @@ public:
     explicit ForLoops1(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -615,7 +615,7 @@ public:
     explicit ForLoops2Soln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -634,7 +634,7 @@ public:
     explicit ForLoops2(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -661,7 +661,7 @@ public:
     explicit ForLoops3Soln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -680,7 +680,7 @@ public:
     explicit ForLoops3(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -707,7 +707,7 @@ public:
     explicit DivideByZero(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -733,7 +733,7 @@ public:
     explicit IfThen1Soln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -752,7 +752,7 @@ public:
     explicit IfThen1(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -779,7 +779,7 @@ public:
     explicit IfThen2Soln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -798,7 +798,7 @@ public:
     explicit IfThen2(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -825,7 +825,7 @@ public:
     explicit IfThen3Soln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -844,7 +844,7 @@ public:
     explicit IfThen3(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -871,7 +871,7 @@ public:
     explicit IfThen4Soln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -890,7 +890,7 @@ public:
     explicit IfThen4(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -917,7 +917,7 @@ public:
     explicit Switch1Soln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -936,7 +936,7 @@ public:
     explicit Switch1(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -963,7 +963,7 @@ public:
     explicit Primes1Soln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -982,7 +982,7 @@ public:
     explicit Primes1(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -1009,7 +1009,7 @@ public:
     explicit OYO_Primes2Soln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -1028,7 +1028,7 @@ public:
     explicit OYO_Primes2(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }
@@ -1055,7 +1055,7 @@ public:
     explicit C01S05_OYO5Soln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -1074,7 +1074,7 @@ public:
     explicit C01S05_OYO5(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }

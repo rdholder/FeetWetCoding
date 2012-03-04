@@ -7,16 +7,20 @@
 
 using namespace std;
 
+extern QMutex globalmutex;
+
 //static variable definition
 int FeetWetCodingExercise::renderedItemsCount(0);
 
 FeetWetCodingExercise::FeetWetCodingExercise(QObject *parent)
     :QThread(parent)
-//    ,mDrawingAreaLayout(BLANK)
     ,mSoln(false)
     ,mSolutionPtr(NULL)
 {
     mParent = dynamic_cast<ExerciseLauncher *>(parent);
+    seeout.setIsSolution(mSoln);
+    seeout.setColor(BLACK);
+    seeout.setFontSize(10);
 }
 
 FeetWetCodingExercise::~FeetWetCodingExercise()
@@ -31,11 +35,6 @@ void FeetWetCodingExercise::run()
 
 void FeetWetCodingExercise::runExercise()
 {
-}
-
-void FeetWetCodingExercise::update()
-{
-    this->runExercise();
 }
 
 std::string FeetWetCodingExercise::waitForKeyPress()
@@ -306,7 +305,6 @@ int FeetWetCodingExercise::DrawImage( std::string filename, int x, int y )
     return -1;
 }
 
-//void FeetWetCodingExercise::DrawReferenceBox( RefBoxLayout layout )
 void FeetWetCodingExercise::DrawReferenceBox( RefBoxLayout layout )
 {
     DrawRectangle( 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, GRAY, 1);
@@ -343,56 +341,6 @@ void FeetWetCodingExercise::DrawReferenceBox( RefBoxLayout layout )
     qApp->font().setPointSize(textSize);
     strWidth=QFontMetrics(QFont(qApp->font())).width(oss.str().c_str());
     DrawText( oss.str(), WINDOW_WIDTH*.75-strWidth/2, -20, GRAY, textSize);
-
-//    switch (layout) {
-//    case LEFTRIGHT:
-//        mDrawingAreaLayout.setOrientation(LEFTRIGHT);
-//        DrawLine( WINDOW_WIDTH/2, 0, WINDOW_WIDTH/2, WINDOW_HEIGHT, GRAY, 1);
-
-//        oss.str("");
-//        oss << WINDOW_WIDTH/2 << "," << 0;
-//        DrawText(oss.str(), (WINDOW_WIDTH/2-BORDER/2), -20, GRAY, dimsSize);
-
-//        oss.str("");
-//        oss << WINDOW_WIDTH/2 << "," << WINDOW_HEIGHT;
-//        DrawText(oss.str(), WINDOW_WIDTH/2-BORDER/2, WINDOW_HEIGHT, GRAY, dimsSize);
-
-//        oss.str("");
-//        oss << "Make this side...";
-//        qApp->font().setPointSize(textSize);
-//        strWidth=QFontMetrics(QFont(qApp->font())).width(oss.str().c_str());
-//        DrawText( oss.str(), WINDOW_WIDTH*.25-strWidth/2, -20, GRAY, 10);
-
-//        oss.str("");
-//        oss << "...look like this side.";
-//        qApp->font().setPointSize(textSize);
-//        strWidth=QFontMetrics(QFont(qApp->font())).width(oss.str().c_str());
-//        DrawText( oss.str(), WINDOW_WIDTH*.75-strWidth/2, -20, GRAY, textSize);
-//        break;
-
-//    case TOPBOTTOM:
-//        mDrawingAreaLayout.setOrientation(TOPBOTTOM);
-//        DrawLine( 0, WINDOW_HEIGHT/2, WINDOW_WIDTH, WINDOW_HEIGHT/2, GRAY, 1);
-
-//        oss.str("");
-//        oss << 0 << "," << WINDOW_HEIGHT/2;
-//        DrawText(oss.str(), -40, WINDOW_HEIGHT/2-10, GRAY, dimsSize);
-
-//        oss.str("");
-//        oss << WINDOW_WIDTH << "," << WINDOW_HEIGHT/2;
-//        DrawText(oss.str(), WINDOW_WIDTH, WINDOW_HEIGHT/2-10, GRAY, dimsSize);
-
-//        oss.str("");
-//        oss << "Make the top look like the bottom.";
-//        qApp->font().setPointSize(textSize);
-//        strWidth=QFontMetrics(QFont(qApp->font())).width(oss.str().c_str());
-//        DrawText(oss.str(), WINDOW_WIDTH/2-strWidth/2, -20, GRAY, textSize);
-
-//        break;
-//    case BLANK:
-//        break;
-//        // draw nothing inside the box
-//    };
 }
 
 bool FeetWetCodingExercise::SendRenderRequest( RenderItem item )
@@ -405,26 +353,32 @@ bool FeetWetCodingExercise::SendRenderRequest( RenderItem item )
 
     {
         QMutexLocker globallocker(&globalmutex);
-        if ( Gsoln )
+        if ( mSoln )
         {
             item.x += WINDOW_WIDTH/2;
+            item.xEnd += WINDOW_WIDTH/2;
         }
     }
-
-//    {
-//        QMutexLocker globallocker(&globalmutex);
-//        if ( mDrawingAreaLayout.getOrientation() == LEFTRIGHT && Gsoln )
-//        {
-//            item.x += WINDOW_WIDTH/2;
-//        }
-//        if ( mDrawingAreaLayout.getOrientation() == TOPBOTTOM && Gsoln)
-//        {
-//            item.y += WINDOW_HEIGHT/2;
-//        }
-//    }
 
     mParent->setRenderItem(item);
 
     return true;
 }
 
+
+void FeetWetCodingExercise::ShiftDrawnItem(int itemID, int xShift, int yShift)
+{
+    if ( !mParent )
+    {
+        qDebug() << "FeetWetCodingExercise::ShiftDrawnItem() mParent is NULL!";
+        return;
+    }
+
+    RenderItemUpdate update;
+    update.type = MOVE;
+    update.ID = itemID;
+    update.dx = xShift;
+    update.dy = yShift;
+
+    mParent->updateRenderItem(update);
+}

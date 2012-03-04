@@ -13,7 +13,7 @@ public:
     explicit Classes1Soln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
+        mSoln = true;
         //this->runExercise();
     }
 
@@ -33,7 +33,7 @@ public:
     explicit Classes1(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         //this->runExercise();
         this->setupSolution();
     }

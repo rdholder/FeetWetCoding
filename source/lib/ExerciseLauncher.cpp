@@ -1,4 +1,13 @@
 #include <ExerciseLauncher.h>
+#include <SeeOut.h>
+
+std::queue< std::pair< SeeOut::RequestType, QString > > SeeOut::exerciseOutMsgQueue;
+std::queue< std::pair< SeeOut::RequestType, QString > > SeeOut::solnOutMsgQueue;
+QMutex globalmutex;
+
+extern QTextEdit *exerciseOut;
+extern QTextEdit *solnOut;
+extern FWCView *view;
 
 ExerciseLauncher::ExerciseLauncher(QObject *parent)
     :QObject(parent)
@@ -15,7 +24,7 @@ ExerciseLauncher::ExerciseLauncher(QObject *parent)
 ExerciseLauncher::~ExerciseLauncher()
 {
     //IMPORTANT!!! Calling code retains ownership of all pointers
-    //in this class except for mThread. Don't delete them!
+    //in this class. Don't delete them!
 
     qDebug() << "~ExerciseLauncher()";
     stopCurrentExercise();
@@ -108,13 +117,23 @@ void ExerciseLauncher::setRenderItem( FeetWetCodingExercise::RenderItem item)
     //qDebug() << "Queue item " << item.ID << " for rendering";
 }
 
+void ExerciseLauncher::updateRenderItem(FeetWetCodingExercise::RenderItemUpdate update)
+{
+    QMutexLocker locker(&itemMutex);
+    mRenderItemUpdates.push(update);
+}
+
 void ExerciseLauncher::handleRenderRequests()
 {
     if (mItems.empty())
         return;
 
-    FeetWetCodingExercise::RenderItem item(mItems.front());
-    mItems.pop();
+    FeetWetCodingExercise::RenderItem item;
+    {
+        QMutexLocker locker(&itemMutex);
+        item = mItems.front();
+        mItems.pop();
+    }
 
     QGraphicsItem *gItem(NULL);
 
@@ -151,12 +170,175 @@ void ExerciseLauncher::handleRenderRequests()
 
     //Save the graphics item that was returned in case we need to
     //do something with it later
-    mRenderedItems[item.ID] = gItem;
+    {
+        QMutexLocker locker(&itemMutex);
+        mRenderedItems[item.ID] = gItem;
+    }
 
 //    qDebug() << "Rendered item " << item.ID;
+}
+
+void ExerciseLauncher::handleRenderUpdates()
+{
+    if (mRenderItemUpdates.empty())
+        return;
+
+    FeetWetCodingExercise::RenderItemUpdate update;
+    {
+        QMutexLocker locker(&itemMutex);
+        update = mRenderItemUpdates.front();
+        mRenderItemUpdates.pop();
+    }
+
+    FeetWetCodingExercise::RenderItemUpdateType type = update.type;
+    int itemID = update.ID;
+
+    //Hold the lock from here till the end of the method
+    QMutexLocker locker(&itemMutex);
+
+    std::map<int, QGraphicsItem*>::iterator iter = mRenderedItems.find(itemID);
+
+    if ( mRenderedItems.end() == iter )
+        return;
+
+    if ( NULL == mRenderedItems[itemID] )
+        return;
+
+    QGraphicsItem *item = mRenderedItems[itemID];
+
+    switch (type) {
+
+    case FeetWetCodingExercise::MOVE:
+        item->moveBy(update.dx, update.dy);
+        break;
+
+    case FeetWetCodingExercise::DELETE:
+        view->scene()->removeItem(item);
+
+        //Remove this item from the mRenderedItems map
+        if ( mRenderedItems.end() != mRenderedItems.find(itemID) )
+        {
+            mRenderedItems.erase(mRenderedItems.find(itemID));
+            delete item;
+            item = NULL;
+        }
+        break;
+
+    case FeetWetCodingExercise::CHANGE_X_Y:
+        item->setPos(update.x, update.y);
+        break;
+
+    case FeetWetCodingExercise::CHANGE_XEND_YEND:
+        //TODO: FINISH CODING THESE
+        break;
+
+    case FeetWetCodingExercise::CHANGE_WIDTH_AND_HEIGHT:
+        //TODO: FINISH CODING THESE
+        break;
+
+    case FeetWetCodingExercise::CHANGE_RADIUS:
+        //TODO: FINISH CODING THESE
+        break;
+
+    case FeetWetCodingExercise::CHANGE_COLOR:
+        //TODO: FINISH CODING THESE
+        break;
+
+    case FeetWetCodingExercise::CHANGE_LINE_WIDTH:
+        //TODO: FINISH CODING THESE
+        break;
+
+    case FeetWetCodingExercise::CHANGE_FONT_SIZE:
+        //TODO: FINISH CODING THESE
+        break;
+
+    case FeetWetCodingExercise::CHANGE_INT_VAL:
+        //TODO: FINISH CODING THESE
+        break;
+
+    case FeetWetCodingExercise::CHANGE_FLOAT_VAL:
+        //TODO: FINISH CODING THESE
+        break;
+
+    default:
+        break;
+    }
+}
+
+void ExerciseLauncher::handleSeeOutRequests()
+{
+    //MIGHT NEED TO MAKE THIS A WHILE LOOP AND GO TILL EMPTY (OR MAX PROCESSED PER UPDATE).
+    //AND SAME WITH OTHER DATA BEING PASSED AROUND, LIKE KEYEVENTS, DRAWN ITEMS, ETC.
+    //LET'S WAIT AND SEE IF IT'S NEEDED, THOUGH.
+
+    if ( !SeeOut::exerciseOutMsgQueue.empty() && exerciseOut )
+    {
+        std::pair<SeeOut::RequestType, QString> request;
+
+        {
+            QMutexLocker globallocker(&globalmutex);
+            request = SeeOut::exerciseOutMsgQueue.front();
+            SeeOut::exerciseOutMsgQueue.pop();
+        }
+
+        SeeOut::RequestType type(request.first);
+        QString value(request.second);
+
+        switch (type) {
+
+        case SeeOut::MESSAGE:
+            exerciseOut->insertPlainText(value);
+            break;
+
+        case SeeOut::COLOR:
+            exerciseOut->setTextColor(getQColor((Color)value.toInt()));
+            break;
+
+        case SeeOut::FONTSIZE:
+            exerciseOut->setFontPointSize(value.toInt());
+            break;
+
+        default:
+            break;
+        }
+    }
+
+    if ( !SeeOut::solnOutMsgQueue.empty() && solnOut )
+    {
+        std::pair<SeeOut::RequestType, QString> request;
+
+        {
+            QMutexLocker globallocker(&globalmutex);
+            request = SeeOut::solnOutMsgQueue.front();
+            SeeOut::solnOutMsgQueue.pop();
+        }
+
+        SeeOut::RequestType type(request.first);
+        QString value(request.second);
+
+        switch (type) {
+
+        case SeeOut::MESSAGE:
+            solnOut->insertPlainText(value);
+            break;
+
+        case SeeOut::COLOR:
+            solnOut->setTextColor(getQColor((Color)value.toInt()));
+            break;
+
+        case SeeOut::FONTSIZE:
+            solnOut->setFontPointSize(value.toInt());
+            break;
+
+        default:
+            break;
+        }
+    }
 }
 
 void ExerciseLauncher::update()
 {
     handleRenderRequests();
+    handleRenderUpdates();
+    handleSeeOutRequests();
 }

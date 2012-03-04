@@ -10,7 +10,6 @@ TopDown2DWidget::TopDown2DWidget(QWidget *parent)
     ,mPlayerX(0)
     ,mPlayerY(0)
 {
-    Gsoln = getIsSolution();
     initializeGameBoard();
 }
 
@@ -59,7 +58,8 @@ void TopDown2DWidget::handleKeyPress(QKeyEvent *k)
 {
     //Print to our output widgets. Set the global
     //Gsoln to print to the correct widget.
-    Gsoln = getIsSolution();
+    //TODO: FITURE OUT HOW TO DO THIS WITHOUT GLOBAL Gsoln
+    //Gsoln = getIsSolution();
     const unsigned short INCR(8);
 
     switch ( k->key() )

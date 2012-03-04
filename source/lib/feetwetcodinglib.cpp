@@ -16,9 +16,6 @@ using namespace std;
 FWCView *view(NULL);
 QTextEdit *exerciseOut(NULL);
 QTextEdit *solnOut(NULL);
-QMutex globalmutex;
-
-bool Gsoln = false;
 
 solutionOrientation::solutionOrientation(RefBoxLayout initialOrientation)
 {
@@ -112,8 +109,6 @@ void setupDrawingUtils()
                            WINDOW_HEIGHT+2.5*BORDER+OUTTEXT_HEIGHT);
     theWindow->show();
 
-    initOutputArea();
-
     // Done creating drawing area, so ok to run.
     // Choose the first Exercise in the list
     exerciseChooser->setOkToRun(true);
@@ -134,21 +129,15 @@ void initOutputArea()
     solnOut->clear();
 
     SeeOut outboxes;
-    Gsoln = false;
-    exerciseOut->setTextColor(Qt::blue);
-    solnOut->setTextColor(Qt::blue);
-    exerciseOut->setFontPointSize(8);
-    solnOut->setFontPointSize(8);
-
+    outboxes.setIsSolution(false);
+    outboxes.setColor(BLUE);
+    outboxes.setFontSize(8);
     outboxes << "Exercise output\n\n";
-    Gsoln = true;
-    outboxes << "Solution output\n\n";
-    Gsoln = false;
 
-    exerciseOut->setTextColor(Qt::black);
-    solnOut->setTextColor(Qt::black);
-    exerciseOut->setFontPointSize(10);
-    solnOut->setFontPointSize(10);
+    outboxes.setIsSolution(true);
+    outboxes.setColor(BLUE);
+    outboxes.setFontSize(8);
+    outboxes << "Solution output\n\n";
 }
 
 void ClearScreen()

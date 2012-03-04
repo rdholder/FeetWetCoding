@@ -85,16 +85,46 @@ public:
 //        RefBoxLayout refboxlayout;
     } RenderItem;
 
-signals:
+    typedef enum
+    {
+        MOVE,
+        DELETE,
+        CHANGE_X_Y,
+        CHANGE_XEND_YEND,
+        CHANGE_WIDTH_AND_HEIGHT,
+        CHANGE_RADIUS,
+        CHANGE_COLOR,
+        CHANGE_LINE_WIDTH,
+        CHANGE_FONT_SIZE,
+        CHANGE_INT_VAL,
+        CHANGE_FLOAT_VAL
+    } RenderItemUpdateType;
 
-public slots:
-    virtual void update();
+    typedef struct
+    {
+        RenderItemUpdateType type;
+        int ID;
+        int dx;
+        int dy;
+        int x;
+        int y;
+        int xEnd;
+        int yEnd;
+        int width;
+        int height;
+        int radius;
+        Color color;
+        int linewidth;
+        int fontsize;
+        int intval;
+        float floatval;
+    } RenderItemUpdate;
 
 protected:
 
     static int renderedItemsCount;
     virtual void runExercise();
-    virtual void setupSolution(){} //=0;
+    virtual void setupSolution(QObject *parent=0){} //=0;
     std::string waitForKeyPress();
     std::string getKeyboardString();
 
@@ -103,6 +133,9 @@ protected:
     bool mSoln;
     SeeOut seeout;
     FeetWetCodingExercise *mSolutionPtr;
+
+    //Shift a drawn item's x/y location by xShift/yShift.
+    void ShiftDrawnItem(int itemID, int xShift, int yShift);
 
     //Return ID of the item to be drawn. This ID can be used later
     //to operate on the corresponding QGraphicsItem.
@@ -120,9 +153,10 @@ protected:
 
     void DrawReferenceBox( RefBoxLayout layout=LEFTRIGHT );
 
+    ExerciseLauncher *mParent;
+
 private:
     void run();
-    ExerciseLauncher *mParent;
 };
 
 #endif // FEETWETCODINGEXERCISE_H

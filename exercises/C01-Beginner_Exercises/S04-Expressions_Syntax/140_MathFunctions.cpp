@@ -27,7 +27,7 @@ void MathFunctions::runExercise()     // copy the exercise name & paste it into 
     DrawText("no solution needed.", 50, 180, BLUE, 20);
 
     x = -20;
-    result = abs(x);
+//    result = abs(x);
     seeout << "Absolute value of " << x << " == " << result << "\n";
 
     x = 500;
