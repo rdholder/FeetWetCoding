@@ -10,9 +10,9 @@ TopDown2D::TopDown2D(QObject *parent)
     :FeetWetCodingExercise(parent)
     ,mTd2dWidget(NULL)
 {
-    Gsoln = false;
-    this->runExercise();
-    this->setupSolution();
+    mSoln = false;
+//    this->runExercise();
+    this->setupSolution(parent);
     view->setFocus();
 }
 

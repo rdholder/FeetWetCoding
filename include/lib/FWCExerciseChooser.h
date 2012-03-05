@@ -4,12 +4,15 @@
 #ifndef FWCEXERCISECHOOSER_H
 #define FWCEXERCISECHOOSER_H
 
+#include <ExerciseLauncher.h>
 #include <QObject>
 #include <QString>
 #include <QComboBox>
 #include <QHBoxLayout>
 #include <map>
 #include <vector>
+
+#include <QDebug>
 
 //Forward declarations
 class FeetWetCodingExercise;
@@ -26,6 +29,7 @@ public:
     void selectExercise( const QString & selection );
     void setOkToRun(bool ok) { mOkToRun = ok; }
 
+    FeetWetCodingExercise * getCurrentExercise(){ return mSelectedExercise; }
     QComboBox * getChapterChooser() { return mChapterChooser; }
     QComboBox * getSectionChooser() { return mSectionChooser; }
     QComboBox * getExerciseChooser() { return mExerciseChooser; }
@@ -37,6 +41,8 @@ public slots:
     void exerciseSelected( const QString & selection );
     void runCurrentExercise();
     void saveCurrentExercise();
+    void handleKeyEvent(QKeyEvent *event);
+    void handleNewMousePosEvent(QPoint pos);
 
 private:
     void createExercisesMap();
@@ -62,6 +68,8 @@ private:
     QComboBox *mExerciseChooser;
     QHBoxLayout *mHlayout;
     bool mOkToRun;
+
+    ExerciseLauncher mExerciseLauncher;
 };
 
 

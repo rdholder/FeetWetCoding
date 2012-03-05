@@ -44,7 +44,7 @@ void TheEventLoop::runExercise()
 
 //void ExerciseWidget::mousePressEvent ( QMouseEvent * event )
 //{
-//    Gsoln = false;
+//    mSoln = false;
 
 //    this->setBackgroundColor();
 //    int x = event->x();

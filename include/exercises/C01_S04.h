@@ -19,20 +19,27 @@ public:
     explicit AssignmentArithmetic(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
-        this->runExercise();
-        this->setupSolution();
+        //Exercises can use parent's seeout config
+
+        //If this exercise has a solution, launch it
+        this->setupSolution(parent);
     }
-
-signals:
-
-public slots:
+    ~AssignmentArithmetic()
+    {
+        if ( mSolutionPtr )
+        {
+            mSolutionPtr->terminate();
+            mSolutionPtr->wait();
+            delete mSolutionPtr;
+            mSolutionPtr = NULL;
+        }
+    }
 
 protected:
     void runExercise();
 
     //Hide this implementation from the student
-    void setupSolution()
+    void setupSolution(QObject *parent=0)
     {
         DrawReferenceBox(LEFTRIGHT);
     }
@@ -45,20 +52,27 @@ public:
     explicit OrderOfOperations(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
-        this->runExercise();
-        this->setupSolution();
+        //Exercises can use parent's seeout config
+
+        //If this exercise has a solution, launch it
+        this->setupSolution(parent);
     }
-
-signals:
-
-public slots:
+    ~OrderOfOperations()
+    {
+        if ( mSolutionPtr )
+        {
+            mSolutionPtr->terminate();
+            mSolutionPtr->wait();
+            delete mSolutionPtr;
+            mSolutionPtr = NULL;
+        }
+    }
 
 protected:
     void runExercise();
 
     //Hide this implementation from the student
-    void setupSolution()
+    void setupSolution(QObject *parent=0)
     {
         DrawReferenceBox(LEFTRIGHT);
     }
@@ -71,13 +85,13 @@ public:
     explicit PreAndPostIncAndDecSoln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
-        this->runExercise();
+        //Update seeout with soln config
+        mSoln = true;
+        mPane = 1; //Solution is always in pane 1 for now
+        seeout.setIsSolution(mSoln);
+        seeout.setColor(BLACK);
+        seeout.setFontSize(10);
     }
-
-signals:
-
-public slots:
 
 protected:
     void runExercise();
@@ -90,23 +104,34 @@ public:
     explicit PreAndPostIncAndDec(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
-        this->runExercise();
-        this->setupSolution();
+        //Exercises can use parent's seeout config
+
+        //If this exercise has a solution, launch it
+        this->setupSolution(parent);
     }
-
-signals:
-
-public slots:
+    ~PreAndPostIncAndDec()
+    {
+        if ( mSolutionPtr )
+        {
+            mSolutionPtr->terminate();
+            mSolutionPtr->wait();
+            delete mSolutionPtr;
+            mSolutionPtr = NULL;
+        }
+    }
 
 protected:
     void runExercise();
 
     //Hide this implementation from the student
-    void setupSolution()
+    void setupSolution(QObject *parent=0)
     {
         DrawReferenceBox(LEFTRIGHT);
-        mSolutionPtr = new PreAndPostIncAndDecSoln(); // Executes soln's runExercise();
+        mSolutionPtr = new PreAndPostIncAndDecSoln(parent);
+        if ( mSolutionPtr )
+        {
+            mSolutionPtr->start();
+        }
     }
 };
 
@@ -117,20 +142,27 @@ public:
     explicit ModulusOperator(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
-        this->runExercise();
-        this->setupSolution();
+        //Exercises can use parent's seeout config
+
+        //If this exercise has a solution, launch it
+        this->setupSolution(parent);
     }
-
-signals:
-
-public slots:
+    ~ModulusOperator()
+    {
+        if ( mSolutionPtr )
+        {
+            mSolutionPtr->terminate();
+            mSolutionPtr->wait();
+            delete mSolutionPtr;
+            mSolutionPtr = NULL;
+        }
+    }
 
 protected:
     void runExercise();
 
     //Hide this implementation from the student
-    void setupSolution()
+    void setupSolution(QObject *parent=0)
     {
         DrawReferenceBox(LEFTRIGHT);
     }
@@ -143,20 +175,27 @@ public:
     explicit BlocksAndScope(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
-        this->runExercise();
-        this->setupSolution();
+        //Exercises can use parent's seeout config
+
+        //If this exercise has a solution, launch it
+        this->setupSolution(parent);
     }
-
-signals:
-
-public slots:
+    ~BlocksAndScope()
+    {
+        if ( mSolutionPtr )
+        {
+            mSolutionPtr->terminate();
+            mSolutionPtr->wait();
+            delete mSolutionPtr;
+            mSolutionPtr = NULL;
+        }
+    }
 
 protected:
     void runExercise();
 
     //Hide this implementation from the student
-    void setupSolution()
+    void setupSolution(QObject *parent=0)
     {
         DrawReferenceBox(LEFTRIGHT);
     }
@@ -169,20 +208,27 @@ public:
     explicit MathFunctions(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
-        this->runExercise();
-        this->setupSolution();
+        //Exercises can use parent's seeout config
+
+        //If this exercise has a solution, launch it
+        this->setupSolution(parent);
     }
-
-signals:
-
-public slots:
+    ~MathFunctions()
+    {
+        if ( mSolutionPtr )
+        {
+            mSolutionPtr->terminate();
+            mSolutionPtr->wait();
+            delete mSolutionPtr;
+            mSolutionPtr = NULL;
+        }
+    }
 
 protected:
     void runExercise();
 
     //Hide this implementation from the student
-    void setupSolution()
+    void setupSolution(QObject *parent=0)
     {
         DrawReferenceBox(LEFTRIGHT);
     }
@@ -195,20 +241,27 @@ public:
     explicit randomAndrandomRange(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
-        this->runExercise();
-        this->setupSolution();
+        //Exercises can use parent's seeout config
+
+        //If this exercise has a solution, launch it
+        this->setupSolution(parent);
     }
-
-signals:
-
-public slots:
+    ~randomAndrandomRange()
+    {
+        if ( mSolutionPtr )
+        {
+            mSolutionPtr->terminate();
+            mSolutionPtr->wait();
+            delete mSolutionPtr;
+            mSolutionPtr = NULL;
+        }
+    }
 
 protected:
     void runExercise();
 
     //Hide this implementation from the student
-    void setupSolution()
+    void setupSolution(QObject *parent=0)
     {
         DrawReferenceBox(LEFTRIGHT);
     }
@@ -221,13 +274,13 @@ public:
     explicit DistanceEquationSoln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
-        this->runExercise();
+        //Update seeout with soln config
+        mSoln = true;
+        mPane = 1; //Solution is always in pane 1 for now
+        seeout.setIsSolution(mSoln);
+        seeout.setColor(BLACK);
+        seeout.setFontSize(10);
     }
-
-signals:
-
-public slots:
 
 protected:
     void runExercise();
@@ -240,23 +293,34 @@ public:
     explicit DistanceEquation(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
-        this->runExercise();
-        this->setupSolution();
+        //Exercises can use parent's seeout config
+
+        //If this exercise has a solution, launch it
+        this->setupSolution(parent);
     }
-
-signals:
-
-public slots:
+    ~DistanceEquation()
+    {
+        if ( mSolutionPtr )
+        {
+            mSolutionPtr->terminate();
+            mSolutionPtr->wait();
+            delete mSolutionPtr;
+            mSolutionPtr = NULL;
+        }
+    }
 
 protected:
     void runExercise();
 
     //Hide this implementation from the student
-    void setupSolution()
+    void setupSolution(QObject *parent=0)
     {
         DrawReferenceBox(LEFTRIGHT);
-        mSolutionPtr = new DistanceEquationSoln(); // Executes soln's runExercise();
+        mSolutionPtr = new DistanceEquationSoln(parent);
+        if ( mSolutionPtr )
+        {
+            mSolutionPtr->start();
+        }
     }
 };
 
@@ -267,13 +331,13 @@ public:
     explicit MisdirectionSoln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = true;
-        this->runExercise();
+        //Update seeout with soln config
+        mSoln = true;
+        mPane = 1; //Solution is always in pane 1 for now
+        seeout.setIsSolution(mSoln);
+        seeout.setColor(BLACK);
+        seeout.setFontSize(10);
     }
-
-signals:
-
-public slots:
 
 protected:
     void runExercise();
@@ -286,23 +350,34 @@ public:
     explicit Misdirection(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
-        this->runExercise();
-        this->setupSolution();
+        //Exercises can use parent's seeout config
+
+        //If this exercise has a solution, launch it
+        this->setupSolution(parent);
     }
-
-signals:
-
-public slots:
+    ~Misdirection()
+    {
+        if ( mSolutionPtr )
+        {
+            mSolutionPtr->terminate();
+            mSolutionPtr->wait();
+            delete mSolutionPtr;
+            mSolutionPtr = NULL;
+        }
+    }
 
 protected:
     void runExercise();
 
     //Hide this implementation from the student
-    void setupSolution()
+    void setupSolution(QObject *parent=0)
     {
         DrawReferenceBox(LEFTRIGHT);
-        mSolutionPtr = new MisdirectionSoln(); // Executes soln's runExercise();
+        mSolutionPtr = new MisdirectionSoln(parent);
+        if ( mSolutionPtr )
+        {
+            mSolutionPtr->start();
+        }
     }
 };
 

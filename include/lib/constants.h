@@ -20,10 +20,4 @@ const int MAX_Y(MIN_Y+WINDOW_HEIGHT);   // The lower right corner of our drawing
 const int KEEPGOINGSIGNAL(1);
 const int ENDPROGRAMSIGNAL(2);
 
-typedef enum {
-    BLANK,
-    LEFTRIGHT,
-    TOPBOTTOM
-} RefBoxLayout;
-
 #endif // CONSTANTS_H

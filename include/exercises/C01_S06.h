@@ -12,15 +12,14 @@
 //public:
 //    explicit WhileLoopIntroSoln(QObject *parent = 0)
 //        :FeetWetCodingExercise(parent)
-//    {
-//        Gsoln = true;
-//        this->runExercise();
-//    }
-
-
-//signals:
-
-//public slots:
+//{
+//    //Update seeout with soln config
+//    mSoln = true;
+//    mPane = 1; //Solution is always in pane 1 for now
+//    seeout.setIsSolution(mSoln);
+//    seeout.setColor(BLACK);
+//    seeout.setFontSize(10);
+//}
 
 //protected:
 //    void runExercise();
@@ -33,23 +32,34 @@ public:
     explicit Arrays1(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
-        this->runExercise();
-        this->setupSolution();
+        //Exercises can use parent's seeout config
+
+        //If this exercise has a solution, launch it
+        this->setupSolution(parent);
     }
-
-signals:
-
-public slots:
+    ~Arrays1()
+    {
+        if ( mSolutionPtr )
+        {
+            mSolutionPtr->terminate();
+            mSolutionPtr->wait();
+            delete mSolutionPtr;
+            mSolutionPtr = NULL;
+        }
+    }
 
 protected:
     void runExercise();
 
     //Hide this implementation from the student
-    void setupSolution()
+    void setupSolution(QObject *parent=0)
     {
         DrawReferenceBox(LEFTRIGHT);
-        //mSolutionPtr = new Arrays1Soln(); // Executes soln's runExercise();
+        //mSolutionPtr = new Arrays1Soln(parent);
+        if ( mSolutionPtr )
+        {
+            mSolutionPtr->start();
+        }
     }
 };
 

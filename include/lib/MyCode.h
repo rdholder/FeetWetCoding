@@ -10,7 +10,7 @@ public:
     explicit MyCode0(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         this->runExercise();
     }
 
@@ -30,7 +30,7 @@ public:
     explicit MyCode1(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         this->runExercise();
     }
 
@@ -50,7 +50,7 @@ public:
     explicit MyCode2(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         this->runExercise();
     }
 
@@ -70,7 +70,7 @@ public:
     explicit MyCode3(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         this->runExercise();
     }
 
@@ -90,7 +90,7 @@ public:
     explicit MyCode4(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         this->runExercise();
     }
 
@@ -110,7 +110,7 @@ public:
     explicit MyCode5(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         this->runExercise();
     }
 
@@ -130,7 +130,7 @@ public:
     explicit MyCode6(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         this->runExercise();
     }
 
@@ -150,7 +150,7 @@ public:
     explicit MyCode7(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         this->runExercise();
     }
 
@@ -170,7 +170,7 @@ public:
     explicit MyCode8(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         this->runExercise();
     }
 
@@ -190,7 +190,7 @@ public:
     explicit MyCode9(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        Gsoln = false;
+        mSoln = false;
         this->runExercise();
     }
 

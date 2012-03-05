@@ -7,17 +7,16 @@
 #include <QDialog>
 #include <QFontMetrics>
 #include <QFile>
+#include <QMutex>
 #include <feetwetcodinglib.h>
 #include <include/lib/FWCExerciseChooser.h>
 
 using namespace std;
 
 FWCView *view(NULL);
+QDialog *theWindow(NULL);
 QTextEdit *exerciseOut(NULL);
 QTextEdit *solnOut(NULL);
-
-solutionOrientation drawingAreaLayout(BLANK);
-bool Gsoln = false;
 
 solutionOrientation::solutionOrientation(RefBoxLayout initialOrientation)
 {
@@ -28,7 +27,7 @@ solutionOrientation::~solutionOrientation()
 {
 }
 
-RefBoxLayout solutionOrientation::getOrientation()
+solutionOrientation::RefBoxLayout solutionOrientation::getOrientation()
 {
     return itsOrientation;
 }
@@ -84,6 +83,11 @@ void setupDrawingUtils()
     restartExercise->setFocusPolicy(Qt::NoFocus);
     QObject::connect(restartExercise, SIGNAL(clicked()),
                      exerciseChooser, SLOT(runCurrentExercise()));
+    QObject::connect(view, SIGNAL(keyPressSignal(QKeyEvent*)),
+                     exerciseChooser, SLOT(handleKeyEvent(QKeyEvent*)));
+    view->setMouseTracking(true);
+    QObject::connect(view, SIGNAL(newMousePos(QPoint)),
+                     exerciseChooser, SLOT(handleNewMousePosEvent(QPoint)));
 
     hlayout1->addStretch();
     hlayout1->addLayout(exerciseChooser->getChooserLayout());
@@ -102,21 +106,20 @@ void setupDrawingUtils()
     vlayout->addLayout(hlayout2);
 
     // Create the run-time window
-    QDialog *theWindow =  new QDialog();
+    theWindow = new QDialog();
     theWindow->setLayout(vlayout);
     theWindow->setGeometry(WINDOW_X, WINDOW_Y,
                            WINDOW_WIDTH+2.5*BORDER,
                            WINDOW_HEIGHT+2.5*BORDER+OUTTEXT_HEIGHT);
     theWindow->show();
 
-    initOutputArea();
-
     // Done creating drawing area, so ok to run.
     // Choose the first Exercise in the list
     exerciseChooser->setOkToRun(true);
-
-    std::cerr << "Done setting up drawing area. Tell chooser to run its selected exercise...\n";
     exerciseChooser->runCurrentExercise();
+
+    //Finally, give focus to the drawing area
+    view->setFocus();
 }
 
 void initOutputArea()
@@ -128,21 +131,15 @@ void initOutputArea()
     solnOut->clear();
 
     SeeOut outboxes;
-    Gsoln = false;
-    exerciseOut->setTextColor(Qt::blue);
-    solnOut->setTextColor(Qt::blue);
-    exerciseOut->setFontPointSize(8);
-    solnOut->setFontPointSize(8);
-
+    outboxes.setIsSolution(false);
+    outboxes.setColor(BLUE);
+    outboxes.setFontSize(8);
     outboxes << "Exercise output\n\n";
-    Gsoln = true;
-    outboxes << "Solution output\n\n";
-    Gsoln = false;
 
-    exerciseOut->setTextColor(Qt::black);
-    solnOut->setTextColor(Qt::black);
-    exerciseOut->setFontPointSize(10);
-    solnOut->setFontPointSize(10);
+    outboxes.setIsSolution(true);
+    outboxes.setColor(BLUE);
+    outboxes.setFontSize(8);
+    outboxes << "Solution output\n\n";
 }
 
 void ClearScreen()
@@ -153,19 +150,8 @@ void ClearScreen()
     }
 }
 
-void DrawLine( int xStart, int yStart, int xEnd, int yEnd, Color color, int thickness )
+QGraphicsItem* DrawLineRender( int xStart, int yStart, int xEnd, int yEnd, Color color, int thickness )
 {
-    if ( drawingAreaLayout.getOrientation() == LEFTRIGHT && Gsoln )
-    {
-        xStart += WINDOW_WIDTH/2;
-        xEnd += WINDOW_WIDTH/2;
-    }
-    if ( drawingAreaLayout.getOrientation() == TOPBOTTOM && Gsoln )
-    {
-        yStart += WINDOW_HEIGHT/2;
-        yEnd += WINDOW_HEIGHT/2;
-    }
-
     QGraphicsLineItem *newLine = new QGraphicsLineItem(xStart, yStart, xEnd, yEnd);
 
     // Create a line and add it to the scene
@@ -174,20 +160,12 @@ void DrawLine( int xStart, int yStart, int xEnd, int yEnd, Color color, int thic
     pen.setWidth(thickness);
     newLine->setPen(pen);
     view->scene()->addItem(newLine);
+
+    return newLine;
 }
 
-void DrawCircle( int x, int y, int r, Color color, int thickness, bool solid)
+QGraphicsItem* DrawCircleRender( int x, int y, int r, Color color, int thickness, bool solid)
 {
-
-    if ( drawingAreaLayout.getOrientation() == LEFTRIGHT && Gsoln )
-    {
-        x += WINDOW_WIDTH/2;
-    }
-    if ( drawingAreaLayout.getOrientation() == TOPBOTTOM && Gsoln )
-    {
-        y += WINDOW_HEIGHT/2;
-    }
-
     QGraphicsEllipseItem *newCircle = new QGraphicsEllipseItem(x-(r/2), y-(r/2), r, r);
 
     if ( solid )
@@ -205,20 +183,12 @@ void DrawCircle( int x, int y, int r, Color color, int thickness, bool solid)
     //painter.setRenderHint(QPainter::Antialiasing);
     newCircle->setPen(pen);
     view->scene()->addItem(newCircle);
+
+    return newCircle;
 }
 
-void DrawCircleRGB( int x, int y, int r, int red, int green, int blue, int thickness, bool solid )
+QGraphicsItem* DrawCircleRGBRender( int x, int y, int r, int red, int green, int blue, int thickness, bool solid )
 {
-
-    if ( drawingAreaLayout.getOrientation() == LEFTRIGHT && Gsoln )
-    {
-        x += WINDOW_WIDTH/2;
-    }
-    if ( drawingAreaLayout.getOrientation() == TOPBOTTOM && Gsoln )
-    {
-        y += WINDOW_HEIGHT/2;
-    }
-
     QGraphicsEllipseItem *newCircle = new QGraphicsEllipseItem(x-(r/2), y-(r/2), r, r);
 
     QColor color;
@@ -240,20 +210,12 @@ void DrawCircleRGB( int x, int y, int r, int red, int green, int blue, int thick
     //painter.setRenderHint(QPainter::Antialiasing);
     newCircle->setPen(pen);
     view->scene()->addItem(newCircle);
+
+    return newCircle;
 }
 
-void DrawEllipse( int x, int y, int w, int h, Color color, int thickness, bool solid )
+QGraphicsItem* DrawEllipseRender( int x, int y, int w, int h, Color color, int thickness, bool solid )
 {
-
-    if ( drawingAreaLayout.getOrientation() == LEFTRIGHT && Gsoln )
-    {
-        x += WINDOW_WIDTH/2;
-    }
-    if ( drawingAreaLayout.getOrientation() == TOPBOTTOM && Gsoln )
-    {
-        y += WINDOW_HEIGHT/2;
-    }
-
     QGraphicsEllipseItem *newCircle = new QGraphicsEllipseItem(x-(w/2), y-(h/2), w, h);
 
     if ( solid )
@@ -271,21 +233,15 @@ void DrawEllipse( int x, int y, int w, int h, Color color, int thickness, bool s
     //painter.setRenderHint(QPainter::Antialiasing);
     newCircle->setPen(pen);
     view->scene()->addItem(newCircle);
+
+    return newCircle;
 }
 
-void DrawRectangle( int x, int y, int w, int h, Color color, int thickness, bool solid )
+QGraphicsItem* DrawRectangleRender( int x, int y, int w, int h, Color color, int thickness, bool solid )
 {
-    if ( drawingAreaLayout.getOrientation() == LEFTRIGHT && Gsoln )
-    {
-        x += WINDOW_WIDTH/2;
-    }
-    if ( drawingAreaLayout.getOrientation() == TOPBOTTOM && Gsoln )
-    {
-        y += WINDOW_HEIGHT/2;
-    }
-
     QGraphicsRectItem *newRect = new QGraphicsRectItem(x, y, w, h);
 
+//    qDebug() << "newRect: " << x << "," << y <<"," << w << "," << h;
     if ( solid )
     {
         QBrush brush(Qt::SolidPattern);
@@ -299,20 +255,13 @@ void DrawRectangle( int x, int y, int w, int h, Color color, int thickness, bool
     pen.setWidth(thickness);
     newRect->setPen(pen);
     view->scene()->addItem(newRect);
+
+    return newRect;
 }
 
 
-void DrawText( std::string text, int x, int y,  Color color, int size )
+QGraphicsItem* DrawTextRender( std::string text, int x, int y,  Color color, int size )
 {
-    if ( drawingAreaLayout.getOrientation() == LEFTRIGHT && Gsoln )
-    {
-        x += WINDOW_WIDTH/2;
-    }
-    if ( drawingAreaLayout.getOrientation() == TOPBOTTOM && Gsoln )
-    {
-        y += WINDOW_HEIGHT/2;
-    }
-
     QGraphicsTextItem *newText = new QGraphicsTextItem(text.c_str());
 
     // Create a line and add it to the scene
@@ -322,19 +271,12 @@ void DrawText( std::string text, int x, int y,  Color color, int size )
     newText->setPos(x, y);
     newText->setDefaultTextColor(getQColor(color));
     view->scene()->addItem(newText);
+
+    return newText;
 }
 
-void DrawInt( int number, int x, int y, Color color, int fontSize )
+QGraphicsItem* DrawIntRender( int number, int x, int y, Color color, int fontSize )
 {
-    if ( drawingAreaLayout.getOrientation() == LEFTRIGHT && Gsoln )
-    {
-        x += WINDOW_WIDTH/2;
-    }
-    if ( drawingAreaLayout.getOrientation() == TOPBOTTOM && Gsoln )
-    {
-        y += WINDOW_HEIGHT/2;
-    }
-
     QString str;
     str.setNum(number);
 
@@ -347,19 +289,12 @@ void DrawInt( int number, int x, int y, Color color, int fontSize )
     newText->setPos(x, y);
     newText->setDefaultTextColor(getQColor(color));
     view->scene()->addItem(newText);
+
+    return newText;
 }
 
-void DrawFloat( float number, int x, int y, Color color, int fontSize, int decimalPlaces )
+QGraphicsItem* DrawFloatRender( float number, int x, int y, Color color, int fontSize, int decimalPlaces )
 {
-    if ( drawingAreaLayout.getOrientation() == LEFTRIGHT && Gsoln )
-    {
-        x += WINDOW_WIDTH/2;
-    }
-    if ( drawingAreaLayout.getOrientation() == TOPBOTTOM && Gsoln )
-    {
-        y += WINDOW_HEIGHT/2;
-    }
-
     QString str;
     str.setNum(number, 'f', decimalPlaces);
 
@@ -372,99 +307,27 @@ void DrawFloat( float number, int x, int y, Color color, int fontSize, int decim
     newText->setPos(x, y);
     newText->setDefaultTextColor(getQColor(color));
     view->scene()->addItem(newText);
+
+    return newText;
 }
 
-void DrawImage( QString filename, int x, int y )
+QGraphicsItem* DrawImageRender( std::string filename, int x, int y )
 {
-    QPixmap pixmap( filename );
+    QPixmap pixmap( filename.c_str() );
     QGraphicsPixmapItem *newPixmap = new QGraphicsPixmapItem(pixmap);
-
-    if ( drawingAreaLayout.getOrientation() == LEFTRIGHT && Gsoln )
-    {
-        x += WINDOW_WIDTH/2;
-    }
-    if ( drawingAreaLayout.getOrientation() == TOPBOTTOM && Gsoln )
-    {
-        y += WINDOW_HEIGHT/2;
-    }
 
     // Load an image from a file and add it to the scene
     newPixmap->setPos(x, y);
     view->scene()->addItem(newPixmap);
-}
 
-void DrawReferenceBox( RefBoxLayout layout )
-{
-    DrawRectangle( 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, GRAY, 1);
-    std::ostringstream oss;
-    int strWidth(10);
-    int dimsSize(8);
-    int textSize(10);
-
-    oss << 0 << "," << 0;
-    DrawText(oss.str(), -10, -20, GRAY, dimsSize);
-
-    oss.str("");
-    oss << 0 << "," << WINDOW_HEIGHT;
-    DrawText(oss.str(), -10, WINDOW_HEIGHT, GRAY, dimsSize);
-
-    switch (layout) {
-    case LEFTRIGHT:
-        drawingAreaLayout.setOrientation(LEFTRIGHT);
-        DrawLine( WINDOW_WIDTH/2, 0, WINDOW_WIDTH/2, WINDOW_HEIGHT, GRAY, 1);
-
-        oss.str("");
-        oss << WINDOW_WIDTH/2 << "," << 0;
-        DrawText(oss.str(), (WINDOW_WIDTH/2-BORDER/2), -20, GRAY, dimsSize);
-
-        oss.str("");
-        oss << WINDOW_WIDTH/2 << "," << WINDOW_HEIGHT;
-        DrawText(oss.str(), WINDOW_WIDTH/2-BORDER/2, WINDOW_HEIGHT, GRAY, dimsSize);
-
-        oss.str("");
-        oss << "Make this side...";
-        qApp->font().setPointSize(textSize);
-        strWidth=QFontMetrics(QFont(qApp->font())).width(oss.str().c_str());
-        DrawText( oss.str(), WINDOW_WIDTH*.25-strWidth/2, -20, GRAY, 10);
-
-        oss.str("");
-        oss << "...look like this side.";
-        qApp->font().setPointSize(textSize);
-        strWidth=QFontMetrics(QFont(qApp->font())).width(oss.str().c_str());
-        DrawText( oss.str(), WINDOW_WIDTH*.75-strWidth/2, -20, GRAY, textSize);
-        break;
-
-    case TOPBOTTOM:
-        drawingAreaLayout.setOrientation(TOPBOTTOM);
-        DrawLine( 0, WINDOW_HEIGHT/2, WINDOW_WIDTH, WINDOW_HEIGHT/2, GRAY, 1);
-
-        oss.str("");
-        oss << 0 << "," << WINDOW_HEIGHT/2;
-        DrawText(oss.str(), -40, WINDOW_HEIGHT/2-10, GRAY, dimsSize);
-
-        oss.str("");
-        oss << WINDOW_WIDTH << "," << WINDOW_HEIGHT/2;
-        DrawText(oss.str(), WINDOW_WIDTH, WINDOW_HEIGHT/2-10, GRAY, dimsSize);
-
-        oss.str("");
-        oss << "Make the top look like the bottom.";
-        qApp->font().setPointSize(textSize);
-        strWidth=QFontMetrics(QFont(qApp->font())).width(oss.str().c_str());
-        DrawText(oss.str(), WINDOW_WIDTH/2-strWidth/2, -20, GRAY, textSize);
-
-        break;
-    case BLANK:
-    break;
-        // draw nothing inside the box
-    };
+    return newPixmap;
 }
 
 QColor getQColor( Color color )
 {
-    QColor c;
     switch (color) {
     case COLOR0:
-        return QColor(Qt::gray);
+        return Qt::gray;
     case COLOR1:
         return QColor(Qt::color1);
     case BLACK:
@@ -602,18 +465,21 @@ int randomRange(int smallest, int biggest)
 
 void FWCView::keyPressEvent( QKeyEvent *k )
 {
-    switch ( k->key() )
-    {
-    case Qt::Key_Q:
-        cerr << "Quitting the app...\n";
-        QApplication::exit();
-        break;
-    default:
-        break;
-    }
-
-    //Since there are two game widgets (exercise and solution), let
-    //the main view get the keyboard input and send it to the two
-    //widgets through a signal
+    //Send signal to QObjects who wouldn't otherwise get it,
+    //for example the exercise chooser, which will pass it into
+    //the current exercise thread.
     emit keyPressSignal(k);
+}
+
+void FWCView::mouseMoveEvent(QMouseEvent *event)
+{
+    if ( !event )
+        return;
+
+    //Send signal to QObjects who wouldn't otherwise get it,
+    //for example the exercise chooser, which will use the
+    //mouse's current position to determine which exercise
+    //pane should receive keyboard input.
+//    qDebug() << "emit newMousePos("<<event->pos()<<")";
+    emit newMousePos(event->pos());
 }

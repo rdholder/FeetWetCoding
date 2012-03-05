@@ -12,7 +12,6 @@ TEMPLATE = app
 SOURCES += \
     source/main.cpp \
     source/lib/feetwetcodinglib.cpp \
-    source/mysource/myprogram.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/001_WelcomeSOLN.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/001_Welcome.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/010_ChangeText.cpp \
@@ -131,6 +130,7 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/260_OYO_IfThen4SOLN.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/Solutions/210_DistanceEquationSOLN.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/210_DistanceEquation.cpp \
+    source/lib/ExerciseLauncher.cpp \
     exercises/C01-Beginner_Exercises/S06-Arrays/050_Arrays1.cpp \
     mycode/lib/MyLib.cpp \
     mycode/src/MyCode0.cpp \
@@ -163,6 +163,8 @@ HEADERS += \
     include/lib/FWCExerciseChooser.h \
     include/lib/colors.h \
     include/lib/ColorViewer.h \
+    include/lib/ExerciseLauncher.h \
+    include/lib/SeeOut.h \
     include/exercises/C01_S06.h \
     include/lib/MyCode.h
 
