@@ -15,6 +15,7 @@ int FeetWetCodingExercise::renderedItemsCount(0);
 FeetWetCodingExercise::FeetWetCodingExercise(QObject *parent)
     :QThread(parent)
     ,mSoln(false)
+    ,mPane(0)
     ,mSolutionPtr(NULL)
 {
     mParent = dynamic_cast<ExerciseLauncher *>(parent);
@@ -43,19 +44,19 @@ std::string FeetWetCodingExercise::waitForKeyPress()
 
     bool received(false);
 
-    mParent->startCollectingKeyBoardInput();
+    mParent->startCollectingKeyBoardInput(mPane);
     while ( !received )
     {
         // Check to see if a new key event has come in
-        received = mParent->wasNewKeyEventReceived();
+        received = mParent->wasNewKeyEventReceived(mPane);
         this->msleep(100);
     }
 
     QKeySequence key;
     QString keystr;
-    mParent->getKeyEventInfo(key, keystr);
-    mParent->newKeyEventWasConsumed();
-    mParent->stopCollectingKeyBoardInput();
+    mParent->getKeyEventInfo(key, keystr/*, mPane*/);
+    mParent->newKeyEventWasConsumed(mPane);
+    mParent->stopCollectingKeyBoardInput(mPane);
 
     return keystr.toStdString();
 }
@@ -68,16 +69,16 @@ std::string FeetWetCodingExercise::getKeyboardString()
     QString keystr, fullstring;
     QKeySequence key;
 
-    mParent->startCollectingKeyBoardInput();
+    mParent->startCollectingKeyBoardInput(mPane);
     while ( !done )
     {
         // Check to see if a new key event has come in
-        if ( mParent->wasNewKeyEventReceived() )
+        if ( mParent->wasNewKeyEventReceived(mPane) )
         {
             // Get the key and notify Exercise
             // that new key event was consumed
             mParent->getKeyEventInfo(key, keystr);
-            mParent->newKeyEventWasConsumed();
+            mParent->newKeyEventWasConsumed(mPane);
 
             if ( Qt::Key_Enter == key || Qt::Key_Return == key )
             {
@@ -94,7 +95,7 @@ std::string FeetWetCodingExercise::getKeyboardString()
         this->msleep(10);
     }
 
-    mParent->stopCollectingKeyBoardInput();
+    mParent->stopCollectingKeyBoardInput(mPane);
 
     return fullstring.toStdString();
 }

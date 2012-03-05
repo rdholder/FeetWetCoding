@@ -131,6 +131,7 @@ protected:
 
 //    SolutionOrientation mDrawingAreaLayout;
     bool mSoln;
+    int mPane;
     SeeOut seeout;
     FeetWetCodingExercise *mSolutionPtr;
 

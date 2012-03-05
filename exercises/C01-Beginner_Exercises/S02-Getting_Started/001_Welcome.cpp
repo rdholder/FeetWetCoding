@@ -19,13 +19,13 @@ void Welcome::runExercise()
     //******************************************************************
 
     //Seeout test
-    seeout << "The quick brown fox ";
-    seeout.setColor(BLUE);
-    seeout << "jumps over the lazy ";
-    seeout.setColor(RED);
-    seeout.setFontSize(18);
-    seeout << "DOG";
-    seeout << "\n" << 1 << "," << 2 << "," << 3.0 << "\n";
+//    seeout << "The quick brown fox ";
+//    seeout.setColor(BLUE);
+//    seeout << "jumps over the lazy ";
+//    seeout.setColor(RED);
+//    seeout.setFontSize(18);
+//    seeout << "DOG";
+//    seeout << "\n" << 1 << "," << 2 << "," << 3.0 << "\n";
 
     //Example 1: Pause while looping using sleep()/msleep()/usleep()
     sleep(1);

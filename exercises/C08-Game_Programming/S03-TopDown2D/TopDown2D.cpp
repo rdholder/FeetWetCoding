@@ -11,8 +11,8 @@ TopDown2D::TopDown2D(QObject *parent)
     ,mTd2dWidget(NULL)
 {
     mSoln = false;
-    this->runExercise();
-    this->setupSolution();
+//    this->runExercise();
+    this->setupSolution(parent);
     view->setFocus();
 }
 

@@ -1,5 +1,6 @@
 #include <ExerciseLauncher.h>
 #include <SeeOut.h>
+#include <utility>
 
 std::queue< std::pair< SeeOut::RequestType, QString > > SeeOut::exerciseOutMsgQueue;
 std::queue< std::pair< SeeOut::RequestType, QString > > SeeOut::solnOutMsgQueue;
@@ -12,13 +13,15 @@ extern FWCView *view;
 ExerciseLauncher::ExerciseLauncher(QObject *parent)
     :QObject(parent)
     ,mThread(NULL)
-    ,mCollectingKeyEvents(false)
-    ,mNewKeyEventReceived(false)
+    ,mWhichPaneHasFocus(0)
+    ,mPaneHighlight(NULL)
 {
-    //Start time for processing render requests from the exercise thread
+    initSharedDataBuffers();
+
+    //Start time for processing requests from the exercise thread
     QTimer *timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(update()));
-    timer->start(10);
+    timer->start();
 }
 
 ExerciseLauncher::~ExerciseLauncher()
@@ -34,61 +37,106 @@ ExerciseLauncher::~ExerciseLauncher()
 //pointer. ExerciseLauncher should not delete this passed in pointer!
 void ExerciseLauncher::launchExercise( FeetWetCodingExercise *exercise )
 {
-    qDebug() << "ExerciseLauncher::runExercise() - call mThread.start()";
+    qDebug() << "ExerciseLauncher::launchExercise() - assigning exercise to mThread...";
     mThread = exercise;
     if ( mThread )
     {
+        qDebug() << "ExerciseLauncher::runExercise() - call mThread.start()";
         mThread->start();
+        qDebug() << "ExerciseLauncher::runExercise() - back from calling mThread.start()";
     }
-    qDebug() << "ExerciseLauncher::runExercise() - back from calling mThread.start()";
+    else
+    {
+        qDebug() << "ExerciseLauncher::launchExercise() - mThread is NULL after assgnmt!";
+    }
 }
 
 void ExerciseLauncher::stopCurrentExercise()
 {
+    qDebug() << "ENTER - ExerciseLauncher::stopCurrentExercise()";
     if ( !mThread )
     {
-        qDebug() << "~ExerciseLauncher::stopCurrentExercise() - mThread is already NULL";
+        qDebug() << "ExerciseLauncher::stopCurrentExercise() - mThread is already NULL";
+        qDebug() << "EXIT EARLY - ExerciseLauncher::stopCurrentExercise()";
         return;
     }
 
     if( mThread->isRunning() )
     {
-        qDebug() << "~ExerciseLauncher::stopCurrentExercise() - mThread is not NULL and still running";
-        qDebug() << "~ExerciseLauncher() - call mThread->terminate()";
+        qDebug() << "ExerciseLauncher::stopCurrentExercise() - mThread is not NULL and still running";
+        qDebug() << "ExerciseLauncher() - call mThread->terminate()";
         mThread->terminate();
-        qDebug() << "~ExerciseLauncher() - call mThread->wait()";
+        qDebug() << "ExerciseLauncher() - call mThread->wait()";
         mThread->wait();
+        qDebug() << "ExerciseLauncher() - back from calling mThread->wait()";
     }
     else
     {
-        qDebug() << "~ExerciseLauncher::stopCurrentExercise() - mThread is not NULL but no longer running";
+        qDebug() << "ExerciseLauncher::stopCurrentExercise() - mThread is not NULL but no longer running";
+    }
+
+    initSharedDataBuffers();
+
+    qDebug() << "EXIT - ExerciseLauncher::stopCurrentExercise()";
+}
+
+void ExerciseLauncher::initSharedDataBuffers()
+{
+    QMutexLocker locker(&eventMutex);
+
+    mItems.clear();
+    mRenderItemUpdates.clear();
+    mRenderedItems.clear();
+
+    //Setup key event maps
+    //TODO: SIZE THESE BASES ON NUM_PANES. ALWAYS 2 PANES FOR NOW.
+    mCollectingKeyEvents[0] = false;
+    mCollectingKeyEvents[1] = false;
+    mNewKeyEventReceived[0] = false;
+    mNewKeyEventReceived[1] = false;
+}
+
+void ExerciseLauncher::startCollectingKeyBoardInput( int pane )
+{
+    QMutexLocker locker(&eventMutex);
+    if ( mCollectingKeyEvents.end() != mCollectingKeyEvents.find(pane) &&
+         mNewKeyEventReceived.end() != mNewKeyEventReceived.find(pane) )
+    {
+        mCollectingKeyEvents[pane] = true;
+        mNewKeyEventReceived[pane] = false;
     }
 }
 
-void ExerciseLauncher::startCollectingKeyBoardInput()
+void ExerciseLauncher::stopCollectingKeyBoardInput( int pane )
 {
     QMutexLocker locker(&eventMutex);
-    mCollectingKeyEvents = true;
-    mNewKeyEventReceived = false;
+    if ( mCollectingKeyEvents.end() != mCollectingKeyEvents.find(pane) &&
+         mNewKeyEventReceived.end() != mNewKeyEventReceived.find(pane) )
+    {
+        mCollectingKeyEvents[pane] = false;
+        mNewKeyEventReceived[pane] = false;
+    }
 }
 
-void ExerciseLauncher::stopCollectingKeyBoardInput()
+bool ExerciseLauncher::wasNewKeyEventReceived( int pane )
 {
     QMutexLocker locker(&eventMutex);
-    mCollectingKeyEvents = false;
-    mNewKeyEventReceived = false;
+    if ( mCollectingKeyEvents.end() != mCollectingKeyEvents.find(pane) &&
+         mNewKeyEventReceived.end() != mNewKeyEventReceived.find(pane) )
+    {
+        return (mCollectingKeyEvents[pane] && mNewKeyEventReceived[pane]);
+    }
+
+    return false;
 }
 
-bool ExerciseLauncher::wasNewKeyEventReceived()
+void ExerciseLauncher::newKeyEventWasConsumed( int pane )
 {
     QMutexLocker locker(&eventMutex);
-    return (mCollectingKeyEvents && mNewKeyEventReceived);
-}
-
-void ExerciseLauncher::newKeyEventWasConsumed()
-{
-    QMutexLocker locker(&eventMutex);
-    mNewKeyEventReceived = false;
+    if ( mNewKeyEventReceived.end() != mNewKeyEventReceived.find(pane) )
+    {
+        mNewKeyEventReceived[pane] = false;
+    }
 }
 
 void ExerciseLauncher::setKeyEventInfo( QKeySequence key, QString str )
@@ -96,31 +144,81 @@ void ExerciseLauncher::setKeyEventInfo( QKeySequence key, QString str )
     QMutexLocker locker(&eventMutex);
     mKey = key;
     mKeyString = str;
-    mNewKeyEventReceived = true;
+    mNewKeyEventReceived[mWhichPaneHasFocus] = true;
 //    qDebug() << "ExerciseLauncher::setKeyEventInfo( " << key << ", " << str;
 }
 
-void ExerciseLauncher::getKeyEventInfo( QKeySequence &key, QString &str )
+void ExerciseLauncher::getKeyEventInfo( QKeySequence &key, QString &str/*, int pane*/ )
 {
     QMutexLocker locker(&eventMutex);
     key = mKey;
     str = mKeyString;
+//    pane = mWhichPaneHasFocus;
     qDebug() << "ExerciseLauncher::getKeyEventInfo( " << key << ", " << str;
 }
 
+void ExerciseLauncher::setWhichPaneHasFocus( int pane )
+{
+    QMutexLocker locker(&eventMutex);
+    //qDebug() << "ExerciseLauncher::setWhichPaneHasFocus(" << pane << ")";
+    mWhichPaneHasFocus = pane;
+
+    //TODO: RESETTING POS ON THIS ISN'T WORKING FOR SOME REASON.
+    return;
+
+    if ( mPaneHighlight )
+    {
+        view->scene()->removeItem(mPaneHighlight);
+        delete mPaneHighlight;
+        mPaneHighlight = NULL;
+    }
+    switch ( mWhichPaneHasFocus )
+    {
+    case 0:
+        if ( mPaneHighlight )
+        {
+            //mPaneHighlight->setPos(0, 0);
+        }
+        else
+        {
+            mPaneHighlight = DrawRectangleRender( 0, 0, WINDOW_WIDTH/2, WINDOW_HEIGHT, GREEN, 3);
+        }
+        break;
+
+    case 1:
+        if ( mPaneHighlight )
+        {
+            //mPaneHighlight->setPos( WINDOW_WIDTH/2, 0 );
+        }
+        else
+        {
+            mPaneHighlight = DrawRectangleRender( WINDOW_WIDTH/2, 0, WINDOW_WIDTH/2, WINDOW_HEIGHT, GREEN, 3);
+        }
+        break;
+
+    default:
+        break;
+    }
+}
+
+int ExerciseLauncher::getWhichPaneHasFocus()
+{
+    QMutexLocker locker(&eventMutex);
+    return mWhichPaneHasFocus;
+}
 void ExerciseLauncher::setRenderItem( FeetWetCodingExercise::RenderItem item)
 {
     //Store the item in the queue for rendering
     //during the next event processing timeout
     QMutexLocker locker(&itemMutex);
-    mItems.push(item);
+    mItems.push_back(item);
     //qDebug() << "Queue item " << item.ID << " for rendering";
 }
 
 void ExerciseLauncher::updateRenderItem(FeetWetCodingExercise::RenderItemUpdate update)
 {
     QMutexLocker locker(&itemMutex);
-    mRenderItemUpdates.push(update);
+    mRenderItemUpdates.push_back(update);
 }
 
 void ExerciseLauncher::handleRenderRequests()
@@ -132,7 +230,7 @@ void ExerciseLauncher::handleRenderRequests()
     {
         QMutexLocker locker(&itemMutex);
         item = mItems.front();
-        mItems.pop();
+        mItems.pop_front();
     }
 
     QGraphicsItem *gItem(NULL);
@@ -187,7 +285,7 @@ void ExerciseLauncher::handleRenderUpdates()
     {
         QMutexLocker locker(&itemMutex);
         update = mRenderItemUpdates.front();
-        mRenderItemUpdates.pop();
+        mRenderItemUpdates.pop_front();
     }
 
     FeetWetCodingExercise::RenderItemUpdateType type = update.type;

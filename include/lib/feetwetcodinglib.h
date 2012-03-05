@@ -66,9 +66,11 @@ public:
     ~FWCView(){}
 
     virtual void keyPressEvent(QKeyEvent *event);
+    virtual void mouseMoveEvent(QMouseEvent *event);
 
 signals:
     void keyPressSignal(QKeyEvent *);
+    void newMousePos(QPoint);
 
 protected:
 

@@ -42,6 +42,7 @@ public slots:
     void runCurrentExercise();
     void saveCurrentExercise();
     void handleKeyEvent(QKeyEvent *event);
+    void handleNewMousePosEvent(QPoint pos);
 
 private:
     void createExercisesMap();

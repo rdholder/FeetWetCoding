@@ -11,7 +11,7 @@ TopDown2DSoln::TopDown2DSoln(QObject *parent)
     ,mTd2dWidget(NULL)
 {
     mSoln = true;
-    this->runExercise();
+//    this->runExercise();
 }
 
 TopDown2DSoln::~TopDown2DSoln()

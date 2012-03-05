@@ -40,10 +40,14 @@ protected:
     void runExercise();
 
     //Hide this implementation from the student
-    void setupSolution()
+    void setupSolution(QObject *parent=0)
     {
         DrawReferenceBox(LEFTRIGHT);
-        mSolutionPtr = new TopDown2DSoln(); // Executes soln's runExercise();
+        mSolutionPtr = new TopDown2DSoln(parent);
+        if ( mSolutionPtr )
+        {
+            mSolutionPtr->start();
+        }
     }
 
     TopDown2DWidget * mTd2dWidget;

@@ -6,11 +6,14 @@
 #include <MyCode.h>
 #include <iostream>
 #include <QFile>
+#include <QDialog>
 
 //QMutex ExerciseLauncher::eventMutex;
 //QMutex ExerciseLauncher::itemMutex;
 //bool ExerciseLauncher::mNewKeyEventReceived(false);
 //QKeySequence ExerciseLauncher::mKey(0);
+
+extern QDialog *theWindow;
 
 FWCExerciseChooser::FWCExerciseChooser(QObject *parent)
     :QObject(parent)
@@ -53,73 +56,73 @@ FWCExerciseChooser::getExerciseFromName( const QString & name )
 
     //Section 2 - Getting_Started
     if( "Welcome" == name ){ return new Welcome(&mExerciseLauncher); }
-    if( "ChangeText" == name ){ return new ChangeText(); }
-    if( "ChangeX" == name ){ return new ChangeX(); }
-    if( "ChangeY" == name ){ return new ChangeY(); }
-    if( "ChangeXY" == name ){ return new ChangeXY(); }
-    if( "ChangeColor" == name ){ return new ChangeColor(); }
-    if( "ChangeFont" == name ){ return new ChangeFont(); }
-    if( "DrawLines" == name ){ return new DrawLines(); }
-    if( "DrawCircles" == name ){ return new DrawCircles(); }
-    if( "DrawRectangles" == name ){ return new DrawRectangles(); }
-    if( "DrawDots" == name ){ return new DrawDots(); }
-    if( "DrawEllipses" == name ){ return new DrawEllipses(); }
-    if( "DrawingText" == name ){ return new DrawingText(); }
-    if( "DrawingImages" == name ){ return new DrawingImages(); }
-    if( "seeoutIntro" == name ){ return new seeoutIntro(); }
-    if( "seeoutFormatting" == name ){ return new seeoutFormatting(); }
-    if( "OnYourOwn" == name ){ return new OnYourOwn(); }
-    if( "ColorNames" == name ){ return new ColorNames(); }
-    if( "FontProportions" == name ){ return new FontProportions(); }
+    if( "ChangeText" == name ){ return new ChangeText(&mExerciseLauncher); }
+    if( "ChangeX" == name ){ return new ChangeX(&mExerciseLauncher); }
+    if( "ChangeY" == name ){ return new ChangeY(&mExerciseLauncher); }
+    if( "ChangeXY" == name ){ return new ChangeXY(&mExerciseLauncher); }
+    if( "ChangeColor" == name ){ return new ChangeColor(&mExerciseLauncher); }
+    if( "ChangeFont" == name ){ return new ChangeFont(&mExerciseLauncher); }
+    if( "DrawLines" == name ){ return new DrawLines(&mExerciseLauncher); }
+    if( "DrawCircles" == name ){ return new DrawCircles(&mExerciseLauncher); }
+    if( "DrawRectangles" == name ){ return new DrawRectangles(&mExerciseLauncher); }
+    if( "DrawDots" == name ){ return new DrawDots(&mExerciseLauncher); }
+    if( "DrawEllipses" == name ){ return new DrawEllipses(&mExerciseLauncher); }
+    if( "DrawingText" == name ){ return new DrawingText(&mExerciseLauncher); }
+    if( "DrawingImages" == name ){ return new DrawingImages(&mExerciseLauncher); }
+    if( "seeoutIntro" == name ){ return new seeoutIntro(&mExerciseLauncher); }
+    if( "seeoutFormatting" == name ){ return new seeoutFormatting(&mExerciseLauncher); }
+    if( "OnYourOwn" == name ){ return new OnYourOwn(&mExerciseLauncher); }
+    if( "ColorNames" == name ){ return new ColorNames(&mExerciseLauncher); }
+    if( "FontProportions" == name ){ return new FontProportions(&mExerciseLauncher); }
 
     //Section 3 - Types_Variables
-    if( "NumericTypes" == name ){ return new NumericTypes(); }
-    if( "DrawingVersusSeeout" == name ){ return new DrawingVersusSeeout(); }
-    if( "CONSTANTS" == name ){ return new CONSTANTS(); }
-    if( "Chars" == name ){ return new Chars(); }
-    if( "Booleans" == name ){ return new Booleans(); }
-    if( "StandardStrings" == name ){ return new StandardStrings(); }
-//    if( "Arrays" == name ){ return new Arrays(); }
+    if( "NumericTypes" == name ){ return new NumericTypes(&mExerciseLauncher); }
+    if( "DrawingVersusSeeout" == name ){ return new DrawingVersusSeeout(&mExerciseLauncher); }
+    if( "CONSTANTS" == name ){ return new CONSTANTS(&mExerciseLauncher); }
+    if( "Chars" == name ){ return new Chars(&mExerciseLauncher); }
+    if( "Booleans" == name ){ return new Booleans(&mExerciseLauncher); }
+    if( "StandardStrings" == name ){ return new StandardStrings(&mExerciseLauncher); }
+//    if( "Arrays" == name ){ return new Arrays(&mExerciseLauncher); }
 
     //Section 4 - Expessions_Syntax
-    if( "AssignmentArithmetic" == name ){ return new AssignmentArithmetic(); }
-    if( "OrderOfOperations" == name ){ return new OrderOfOperations(); }
-    if( "PreAndPostIncAndDec" == name ){ return new PreAndPostIncAndDec(); }
-    if( "ModulusOperator" == name ){ return new ModulusOperator(); }
-    if( "BlocksAndScope" == name ){ return new BlocksAndScope(); }
-    if( "MathFunctions" == name ){ return new MathFunctions(); }
-    if( "randomAndrandomRange" == name ){ return new randomAndrandomRange(); }
-    if( "DistanceEquation" == name ){ return new DistanceEquation(); }
-    if( "Misdirection" == name ){ return new Misdirection(); }
+    if( "AssignmentArithmetic" == name ){ return new AssignmentArithmetic(&mExerciseLauncher); }
+    if( "OrderOfOperations" == name ){ return new OrderOfOperations(&mExerciseLauncher); }
+    if( "PreAndPostIncAndDec" == name ){ return new PreAndPostIncAndDec(&mExerciseLauncher); }
+    if( "ModulusOperator" == name ){ return new ModulusOperator(&mExerciseLauncher); }
+    if( "BlocksAndScope" == name ){ return new BlocksAndScope(&mExerciseLauncher); }
+    if( "MathFunctions" == name ){ return new MathFunctions(&mExerciseLauncher); }
+    if( "randomAndrandomRange" == name ){ return new randomAndrandomRange(&mExerciseLauncher); }
+    if( "DistanceEquation" == name ){ return new DistanceEquation(&mExerciseLauncher); }
+    if( "Misdirection" == name ){ return new Misdirection(&mExerciseLauncher); }
 
     //Section 5 - Loops_Logic
-    if( "WhileLoopIntro" == name ){ return new WhileLoopIntro(); }
-    if( "ForLoopIntro" == name ){ return new ForLoopIntro(); }
-    if( "WhileLoop1" == name ){ return new WhileLoop1(); }
-    if( "InfiniteLooping1" == name ){ return new InfiniteLooping1(); }
-    if( "OYO1" == name ){ return new C01S05_OYO1(); }
-    if( "OYO2" == name ){ return new C01S05_OYO2(); }
-    if( "WhileLoop2" == name ){ return new WhileLoop2(); }
-    if( "WhileLoop3" == name ){ return new WhileLoop3(); }
-    if( "OYO3" == name ){ return new C01S05_OYO3(); }
-    if( "OYO4" == name ){ return new C01S05_OYO4(); }
-    if( "WhileLoop4" == name ){ return new WhileLoop4(); }
-    if( "WhileLoop5" == name ){ return new WhileLoop5(); }
-    if( "ForLoops1" == name ){ return new ForLoops1(); }
-    if( "ForLoops2" == name ){ return new ForLoops2(); }
-    if( "ForLoops3" == name ){ return new ForLoops3(); }
-    if( "IfThen1" == name ){ return new IfThen1(); }
-    if( "IfThen2" == name ){ return new IfThen2(); }
-    if( "IfThen3" == name ){ return new IfThen3(); }
-    if( "IfThen4" == name ){ return new IfThen4(); }
-    if( "Switch1" == name ){ return new Switch1(); }
-    if( "DivideByZero" == name ){ return new DivideByZero(); }
-    if( "Primes1" == name ){ return new Primes1(); }
-    if( "OYO_Primes2" == name ){ return new OYO_Primes2(); }
-    if( "OYO5" == name ){ return new C01S05_OYO5(); }
+    if( "WhileLoopIntro" == name ){ return new WhileLoopIntro(&mExerciseLauncher); }
+    if( "ForLoopIntro" == name ){ return new ForLoopIntro(&mExerciseLauncher); }
+    if( "WhileLoop1" == name ){ return new WhileLoop1(&mExerciseLauncher); }
+    if( "InfiniteLooping1" == name ){ return new InfiniteLooping1(&mExerciseLauncher); }
+    if( "OYO1" == name ){ return new C01S05_OYO1(&mExerciseLauncher); }
+    if( "OYO2" == name ){ return new C01S05_OYO2(&mExerciseLauncher); }
+    if( "WhileLoop2" == name ){ return new WhileLoop2(&mExerciseLauncher); }
+    if( "WhileLoop3" == name ){ return new WhileLoop3(&mExerciseLauncher); }
+    if( "OYO3" == name ){ return new C01S05_OYO3(&mExerciseLauncher); }
+    if( "OYO4" == name ){ return new C01S05_OYO4(&mExerciseLauncher); }
+    if( "WhileLoop4" == name ){ return new WhileLoop4(&mExerciseLauncher); }
+    if( "WhileLoop5" == name ){ return new WhileLoop5(&mExerciseLauncher); }
+    if( "ForLoops1" == name ){ return new ForLoops1(&mExerciseLauncher); }
+    if( "ForLoops2" == name ){ return new ForLoops2(&mExerciseLauncher); }
+    if( "ForLoops3" == name ){ return new ForLoops3(&mExerciseLauncher); }
+    if( "IfThen1" == name ){ return new IfThen1(&mExerciseLauncher); }
+    if( "IfThen2" == name ){ return new IfThen2(&mExerciseLauncher); }
+    if( "IfThen3" == name ){ return new IfThen3(&mExerciseLauncher); }
+    if( "IfThen4" == name ){ return new IfThen4(&mExerciseLauncher); }
+    if( "Switch1" == name ){ return new Switch1(&mExerciseLauncher); }
+    if( "DivideByZero" == name ){ return new DivideByZero(&mExerciseLauncher); }
+    if( "Primes1" == name ){ return new Primes1(&mExerciseLauncher); }
+    if( "OYO_Primes2" == name ){ return new OYO_Primes2(&mExerciseLauncher); }
+    if( "OYO5" == name ){ return new C01S05_OYO5(&mExerciseLauncher); }
 
     //Section 6 - Arrays
-    if( "Arrays1" == name ){ return new Arrays1(); }
+    if( "Arrays1" == name ){ return new Arrays1(&mExerciseLauncher); }
 
     //Section 7 - ...
 
@@ -128,29 +131,29 @@ FWCExerciseChooser::getExerciseFromName( const QString & name )
     //Section 9 - ...
 
     //Section 10 - Classes Intro
-    if( "Classes1" == name ){ return new Classes1(); }
+    if( "Classes1" == name ){ return new Classes1(&mExerciseLauncher); }
 
     //Section 11 - Event Handling With Qt
-    if( "TheEventLoop" == name ){ return new TheEventLoop(); }
+    if( "TheEventLoop" == name ){ return new TheEventLoop(&mExerciseLauncher); }
 
 
     //Chapter 8 - Game_Programming
 
     //Section 3 - TopDown2D
-    if( "TopDown2D" == name ){ return new TopDown2D(); }
+    if( "TopDown2D" == name ){ return new TopDown2D(&mExerciseLauncher); }
 
     // MyCode "Chapter" (only one section)
 
-    if( "MyCode0" == name ){ return new MyCode0(); }
-    if( "MyCode1" == name ){ return new MyCode1(); }
-    if( "MyCode2" == name ){ return new MyCode2(); }
-    if( "MyCode3" == name ){ return new MyCode3(); }
-    if( "MyCode4" == name ){ return new MyCode4(); }
-    if( "MyCode5" == name ){ return new MyCode5(); }
-    if( "MyCode6" == name ){ return new MyCode6(); }
-    if( "MyCode7" == name ){ return new MyCode7(); }
-    if( "MyCode8" == name ){ return new MyCode8(); }
-    if( "MyCode9" == name ){ return new MyCode9(); }
+    if( "MyCode0" == name ){ return new MyCode0(&mExerciseLauncher); }
+    if( "MyCode1" == name ){ return new MyCode1(&mExerciseLauncher); }
+    if( "MyCode2" == name ){ return new MyCode2(&mExerciseLauncher); }
+    if( "MyCode3" == name ){ return new MyCode3(&mExerciseLauncher); }
+    if( "MyCode4" == name ){ return new MyCode4(&mExerciseLauncher); }
+    if( "MyCode5" == name ){ return new MyCode5(&mExerciseLauncher); }
+    if( "MyCode6" == name ){ return new MyCode6(&mExerciseLauncher); }
+    if( "MyCode7" == name ){ return new MyCode7(&mExerciseLauncher); }
+    if( "MyCode8" == name ){ return new MyCode8(&mExerciseLauncher); }
+    if( "MyCode9" == name ){ return new MyCode9(&mExerciseLauncher); }
 
     return NULL;
 }
@@ -184,7 +187,7 @@ void FWCExerciseChooser::createExercisesMap()
     exercises.push_back( "seeoutIntro" );
     exercises.push_back( "seeoutFormatting" );
     exercises.push_back( "OnYourOwn" );
-    exercises.push_back( "ColorNames" );
+//    exercises.push_back( "ColorNames" );
     exercises.push_back( "FontProportions" );
     sections["S02-Getting_Started"] = exercises;
 
@@ -196,7 +199,7 @@ void FWCExerciseChooser::createExercisesMap()
     exercises.push_back( "Chars" );
     exercises.push_back( "Booleans" );
     exercises.push_back( "StandardStrings" );
-    exercises.push_back( "Arrays" );
+//    exercises.push_back( "Arrays" );
     sections["S03-Types_Variables"] = exercises;
 
     //S04-Expressions_Syntax
@@ -251,22 +254,22 @@ void FWCExerciseChooser::createExercisesMap()
     sections["S10-Classes_Intro"] = exercises;
 
     //S11-Event_Handling_With_Qt
-    exercises.clear();
-    exercises.push_back( "TheEventLoop" );
-    sections["S11-Event_Handling_With_Qt"] = exercises;
+//    exercises.clear();
+//    exercises.push_back( "TheEventLoop" );
+//    sections["S11-Event_Handling_With_Qt"] = exercises;
 
     mExerciseMap["C01-Beginner_Exercises"] = sections;
 
 
     //C08-Game_Programming
-    sections.clear();
+//    sections.clear();
 
-    //S03-TopDown2D
-    exercises.clear();
-    exercises.push_back( "TopDown2D" );
-    sections["S03-TopDown2D"] = exercises;
+//    //S03-TopDown2D
+//    exercises.clear();
+//    exercises.push_back( "TopDown2D" );
+//    sections["S03-TopDown2D"] = exercises;
 
-    mExerciseMap["C08-Game_Programming"] = sections;
+//    mExerciseMap["C08-Game_Programming"] = sections;
 
     //MyCode "Chapter"
     sections.clear();
@@ -426,11 +429,14 @@ void FWCExerciseChooser::selectSection( const QString & selection )
 
 void FWCExerciseChooser::selectExercise( const QString & selection )
 {
+    qDebug() << "FWCExerciseChooser::selectExercise(" << selection << ")";
+
     if ( mExerciseMap.find(mCurrentChapter) == mExerciseMap.end() ||
          mExerciseMap[mCurrentChapter].find(mCurrentSection) ==
          mExerciseMap[mCurrentChapter].end() ||
          mExerciseMap[mCurrentChapter][mCurrentSection].empty() )
     {
+        qDebug() << "FAILED TO FIND CURRENT SECTION!";
         return;
     }
 
@@ -438,12 +444,14 @@ void FWCExerciseChooser::selectExercise( const QString & selection )
 
     if ( selection.isEmpty() )
     {
+        qDebug() << "Empty selection, so selecting first exercise in current section";
         selectedExercise = mExerciseMap[mCurrentChapter][mCurrentSection].at(0);
         mExerciseChooser->setCurrentIndex(0);
     }
 
     else
     {
+        qDebug() << "LOOKING FOR " << selection;
         for ( unsigned int i=0; i < mExerciseMap[mCurrentChapter][mCurrentSection].size(); ++i )
         {
             if ( selection == mExerciseMap[mCurrentChapter][mCurrentSection][i] )  // found it
@@ -457,11 +465,16 @@ void FWCExerciseChooser::selectExercise( const QString & selection )
 
     // Did we find it?
     if ( selectedExercise.isEmpty() )
+    {
+        qDebug() << "FAILED TO FIND SELECTED EXERCISE!";
         return; // nope, so don't do anything
+    }
 
     // Start the new exercise
     // This stops the old one if it's still running.
     mCurrentExercise = selectedExercise;
+
+    qDebug() << "CALL runCurrentExercise() with mCurrentExercise==" << selectedExercise;
     runCurrentExercise();
 }
 
@@ -485,14 +498,16 @@ void FWCExerciseChooser::exerciseSelected( const QString & selection )
 
 void FWCExerciseChooser::stopExercise()
 {
-    qDebug() << "FWCExerciseChooser::stopExercise()\n";
+    qDebug() << "ENTER - FWCExerciseChooser::stopExercise()\n";
 
     //Stop the exercise *before* deleting below
     //since the exercise launcher still needs
     //access to the pointer to stop it.
     mExerciseLauncher.stopCurrentExercise();
 
+    qDebug() << "Back from asking launcher to stop current exercise... Clearing screen.";
     ClearScreen();
+    qDebug() << "Initing output area";
     initOutputArea();
 
     if ( mSelectedExercise )
@@ -500,7 +515,14 @@ void FWCExerciseChooser::stopExercise()
         qDebug() << "Deleting current exercise...\n";
         delete mSelectedExercise;
         mSelectedExercise = NULL;
+        qDebug() << "Back from deleting current exercise...\n";
     }
+    else
+    {
+        qDebug() << "mSelectedExercise is NULL here: " << __LINE__;
+    }
+
+    qDebug() << "EXIT - FWCExerciseChooser::stopExercise()\n";
 }
 
 void FWCExerciseChooser::runExercise( const QString & exerciseName )
@@ -508,17 +530,31 @@ void FWCExerciseChooser::runExercise( const QString & exerciseName )
     if ( !mOkToRun )
         return;
 
+    qDebug() << "FWCExerciseChooser::runExercise() - calling this->stopExercise()";
     stopExercise();
+    qDebug() << "FWCExerciseChooser::runExercise() - back from calling this->stopExercise()";
+
+    qDebug() << "FWCExerciseChooser::runExercise(" << exerciseName << ") - back from calling stopExercise()";
     mSelectedExercise = getExerciseFromName( exerciseName );
+
+    if ( NULL == mSelectedExercise )
+        qDebug() << "WHOA! mSelectedExercise IS NULL!";
 
     //FWCExerciseChooser retains ownership of the mSelectedExercise
     //pointer. ExerciseLauncher should not delete this passed in pointer!
+
+    qDebug() << "About to ask launcher to launch mSelectedExercise";
     mExerciseLauncher.launchExercise(mSelectedExercise);
+    qDebug() << "Back from asking launcher to launch mSelectedExercise";
 }
 
 void FWCExerciseChooser::runCurrentExercise()
 {
+    qDebug() << "\n\n\n*****************************************************";
+    qDebug() << "START NEXT SELECTION - ENTER FWCExerciseChooser::runCurrentExercise()";
     runExercise( mCurrentExercise );
+    qDebug() << "                     - EXIT FWCExerciseChooser::runCurrentExercise()";
+    qDebug() << "*****************************************************";
 }
 
 void FWCExerciseChooser::saveCurrentExercise()
@@ -630,4 +666,55 @@ void FWCExerciseChooser::handleKeyEvent(QKeyEvent *event)
     {
         mExerciseLauncher.setKeyEventInfo(event->key(), event->text());
     }
+}
+
+void FWCExerciseChooser::handleNewMousePosEvent(QPoint pos)
+{
+    //Figure out which exercise pane should get keyboard inputs
+    //based on where the mouse is located
+    int x(pos.x());
+    int y(pos.y());
+    int pane(-1);
+
+    //TODO: ADD DATA MEMBER FOR NUM_PANES. (WHO SETS IT?)
+    //      ONLY SUPPORTING 2 FOR NOW.
+    int numPanes(2);
+
+    switch ( numPanes ) {
+
+    case 2:
+        if ( x > 0 && x < theWindow->width()/2-WINDOW_X )
+            pane = 0;
+        else if ( x >= (theWindow->width()/2-WINDOW_X) && x < theWindow->width() )
+            pane = 1;
+        break;
+
+    case 4:
+        if ( x > 0 && x < theWindow->width()/2-WINDOW_X )
+        {
+            if ( y > 0 && y < theWindow->height()/2 )
+                pane = 0;
+            else
+                pane = 2;
+        }
+        else if ( x >= theWindow->width()/2-WINDOW_X && x < theWindow->width() )
+        {
+            if ( y > 0 && y < theWindow->height()/2 )
+                pane = 1;
+            else if ( y >= theWindow->height()/2 && y < theWindow->height() )
+                pane = 3;
+        }
+
+        break;
+
+    default:
+        pane = 0;
+        break;
+    }
+
+    //Make sure we got a valid pane
+    if ( pane < 0 )
+        pane = 0;
+
+    mExerciseLauncher.setWhichPaneHasFocus(pane);
 }

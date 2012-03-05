@@ -49,6 +49,6 @@ void OYO_Primes2Soln::runExercise()
             }
             n++;
         }
-        seeout << "Drew line " << y+1 << "...\n";
+        //seeout << "Drew line " << y+1 << "...\n";
     }
 }

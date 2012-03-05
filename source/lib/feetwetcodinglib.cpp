@@ -14,6 +14,7 @@
 using namespace std;
 
 FWCView *view(NULL);
+QDialog *theWindow(NULL);
 QTextEdit *exerciseOut(NULL);
 QTextEdit *solnOut(NULL);
 
@@ -84,6 +85,9 @@ void setupDrawingUtils()
                      exerciseChooser, SLOT(runCurrentExercise()));
     QObject::connect(view, SIGNAL(keyPressSignal(QKeyEvent*)),
                      exerciseChooser, SLOT(handleKeyEvent(QKeyEvent*)));
+    view->setMouseTracking(true);
+    QObject::connect(view, SIGNAL(newMousePos(QPoint)),
+                     exerciseChooser, SLOT(handleNewMousePosEvent(QPoint)));
 
     hlayout1->addStretch();
     hlayout1->addLayout(exerciseChooser->getChooserLayout());
@@ -102,7 +106,7 @@ void setupDrawingUtils()
     vlayout->addLayout(hlayout2);
 
     // Create the run-time window
-    QDialog *theWindow =  new QDialog();
+    theWindow = new QDialog();
     theWindow->setLayout(vlayout);
     theWindow->setGeometry(WINDOW_X, WINDOW_Y,
                            WINDOW_WIDTH+2.5*BORDER,
@@ -112,8 +116,6 @@ void setupDrawingUtils()
     // Done creating drawing area, so ok to run.
     // Choose the first Exercise in the list
     exerciseChooser->setOkToRun(true);
-
-    std::cerr << "Done setting up drawing area. Tell chooser to run its selected exercise...\n";
     exerciseChooser->runCurrentExercise();
 
     //Finally, give focus to the drawing area
@@ -239,6 +241,7 @@ QGraphicsItem* DrawRectangleRender( int x, int y, int w, int h, Color color, int
 {
     QGraphicsRectItem *newRect = new QGraphicsRectItem(x, y, w, h);
 
+//    qDebug() << "newRect: " << x << "," << y <<"," << w << "," << h;
     if ( solid )
     {
         QBrush brush(Qt::SolidPattern);
@@ -462,18 +465,21 @@ int randomRange(int smallest, int biggest)
 
 void FWCView::keyPressEvent( QKeyEvent *k )
 {
-//    switch ( k->key() )
-//    {
-//    case Qt::Key_Q:
-//        cerr << "Quitting the app...\n";
-//        QApplication::exit();
-//        break;
-//    default:
-//        break;
-//    }
-
     //Send signal to QObjects who wouldn't otherwise get it,
     //for example the exercise chooser, which will pass it into
     //the current exercise thread.
     emit keyPressSignal(k);
+}
+
+void FWCView::mouseMoveEvent(QMouseEvent *event)
+{
+    if ( !event )
+        return;
+
+    //Send signal to QObjects who wouldn't otherwise get it,
+    //for example the exercise chooser, which will use the
+    //mouse's current position to determine which exercise
+    //pane should receive keyboard input.
+//    qDebug() << "emit newMousePos("<<event->pos()<<")";
+    emit newMousePos(event->pos());
 }
