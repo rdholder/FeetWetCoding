@@ -1296,6 +1296,66 @@ protected:
     }
 };
 
+class Sleep1Soln : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit Sleep1Soln(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        //Update seeout with soln config
+        mSoln = true;
+        mPane = 1; //Solution is always in pane 1 for now
+        seeout.setIsSolution(mSoln);
+        seeout.setColor(BLACK);
+        seeout.setFontSize(10);
+    }
+
+protected:
+    void runExercise();
+};
+
+class Sleep1 : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit Sleep1(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        //Exercises can use parent's seeout config
+
+        //If this exercise has a solution, launch it
+        this->setupSolution(parent);
+    }
+    ~Sleep1()
+    {
+        qDebug() << "++++++++++++++++++++++ ~OYO_Primes2() +++++++++++++++++++++";
+        if ( mSolutionPtr )
+        {
+            qDebug() << "~OYO_Primes2() - calling mSolutionPtr->terminate()/wait()";
+            mSolutionPtr->terminate();
+//            mSolutionPtr->wait();
+            qDebug() << "~OYO_Primes2() - back from mSolutionPtr->wait()";
+            delete mSolutionPtr;
+            mSolutionPtr = NULL;
+        }
+    }
+
+protected:
+    void runExercise();
+
+    //Hide this implementation from the student
+    void setupSolution(QObject *parent=0)
+    {
+        DrawReferenceBox(LEFTRIGHT);
+        mSolutionPtr = new Sleep1Soln(parent);
+        if ( mSolutionPtr )
+        {
+            mSolutionPtr->start();
+        }
+    }
+};
+
 class C01S05_OYO5Soln : public FeetWetCodingExercise
 {
     Q_OBJECT

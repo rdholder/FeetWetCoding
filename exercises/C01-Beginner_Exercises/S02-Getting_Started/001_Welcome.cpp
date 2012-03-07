@@ -27,6 +27,8 @@ void Welcome::runExercise()
     seeout << "DOG";
     seeout << "\n" << 1 << "," << 2 << "," << 3.0 << "\n";
 
+    seeout << "RAND_MAX: " << RAND_MAX << "\n";
+
     //Example 1: Pause while looping using sleep()/msleep()/usleep()
     sleep(1);
     int x=20;

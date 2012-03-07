@@ -65,8 +65,6 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/Solutions/020_NumericTypesSOLN.cpp \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/110_Booleans.cpp \
     source/lib/FWCExerciseChooser.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/400_C01S05_OYO5SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/400_C01S05_OYO5.cpp \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/300_Arrays.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/550_FontProportionsSOLN.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/550_FontProportions.cpp \
@@ -142,7 +140,11 @@ SOURCES += \
     mycode/src/MyCode6.cpp \
     mycode/src/MyCode7.cpp \
     mycode/src/MyCode8.cpp \
-    mycode/src/MyCode9.cpp
+    mycode/src/MyCode9.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/450_C01S05_OYO5.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/450_C01S05_OYO5SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/400_Sleep1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/400_Sleep1.cpp
 
 
 HEADERS += \
