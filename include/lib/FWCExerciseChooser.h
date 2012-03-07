@@ -28,6 +28,7 @@ public:
     void selectSection( const QString & selection );
     void selectExercise( const QString & selection );
     void setOkToRun(bool ok) { mOkToRun = ok; }
+    void sceneCleared();
 
     FeetWetCodingExercise * getCurrentExercise(){ return mSelectedExercise; }
     QComboBox * getChapterChooser() { return mChapterChooser; }

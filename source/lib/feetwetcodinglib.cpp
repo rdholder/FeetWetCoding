@@ -15,6 +15,7 @@ using namespace std;
 
 FWCView *view(NULL);
 QDialog *theWindow(NULL);
+FWCExerciseChooser *exerciseChooser(NULL);
 QTextEdit *exerciseOut(NULL);
 QTextEdit *solnOut(NULL);
 
@@ -76,7 +77,7 @@ void setupDrawingUtils()
     solnOut->setReadOnly(true);
     solnOut->setFocusPolicy(Qt::NoFocus);
 
-    FWCExerciseChooser *exerciseChooser = new FWCExerciseChooser();
+    exerciseChooser = new FWCExerciseChooser();
 
     QHBoxLayout *hlayout1 = new QHBoxLayout();
     QPushButton *restartExercise = new QPushButton( QObject::tr( "Re-start Exercise") );
@@ -147,6 +148,10 @@ void ClearScreen()
     if ( view && view->scene() )
     {
         view->scene()->clear();
+    }
+    if ( exerciseChooser )
+    {
+        exerciseChooser->sceneCleared();
     }
 }
 
@@ -241,7 +246,6 @@ QGraphicsItem* DrawRectangleRender( int x, int y, int w, int h, Color color, int
 {
     QGraphicsRectItem *newRect = new QGraphicsRectItem(x, y, w, h);
 
-//    qDebug() << "newRect: " << x << "," << y <<"," << w << "," << h;
     if ( solid )
     {
         QBrush brush(Qt::SolidPattern);

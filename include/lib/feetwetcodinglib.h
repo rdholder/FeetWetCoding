@@ -71,6 +71,7 @@ public:
 signals:
     void keyPressSignal(QKeyEvent *);
     void newMousePos(QPoint);
+    void sceneCleared();
 
 protected:
 

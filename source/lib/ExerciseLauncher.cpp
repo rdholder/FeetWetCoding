@@ -1,27 +1,30 @@
 #include <ExerciseLauncher.h>
 #include <SeeOut.h>
+#include <QDialog>
 #include <utility>
 
-std::queue< std::pair< SeeOut::RequestType, QString > > SeeOut::exerciseOutMsgQueue;
-std::queue< std::pair< SeeOut::RequestType, QString > > SeeOut::solnOutMsgQueue;
+std::deque< std::pair< SeeOut::RequestType, QString > > SeeOut::exerciseOutMsgQueue;
+std::deque< std::pair< SeeOut::RequestType, QString > > SeeOut::solnOutMsgQueue;
 QMutex globalmutex;
 
 extern QTextEdit *exerciseOut;
 extern QTextEdit *solnOut;
 extern FWCView *view;
+extern QDialog *theWindow;
 
 ExerciseLauncher::ExerciseLauncher(QObject *parent)
     :QObject(parent)
+    ,mTimer(NULL)
     ,mThread(NULL)
     ,mWhichPaneHasFocus(0)
     ,mPaneHighlight(NULL)
 {
     initSharedDataBuffers();
 
-    //Start time for processing requests from the exercise thread
-    QTimer *timer = new QTimer(this);
-    connect(timer, SIGNAL(timeout()), this, SLOT(update()));
-    timer->start();
+    //Connect timer for processing requests from the exercise thread
+    mTimer = new QTimer(this);
+    connect(mTimer, SIGNAL(timeout()), this, SLOT(update()));
+    //mTimer->start();
 }
 
 ExerciseLauncher::~ExerciseLauncher()
@@ -37,11 +40,25 @@ ExerciseLauncher::~ExerciseLauncher()
 //pointer. ExerciseLauncher should not delete this passed in pointer!
 void ExerciseLauncher::launchExercise( FeetWetCodingExercise *exercise )
 {
+    if ( NULL == exercise )
+    {
+        qDebug() << "ExerciseLauncher::launchExercise() - exercise is NULL!";
+    }
+
+//    if ( mThread )
+//    {
+//        disconnect(mThread, SIGNAL(finished()), this, SLOT(threadFinished()));
+//    }
+
     qDebug() << "ExerciseLauncher::launchExercise() - assigning exercise to mThread...";
     mThread = exercise;
+
     if ( mThread )
     {
-        qDebug() << "ExerciseLauncher::runExercise() - call mThread.start()";
+        //connect(mThread, SIGNAL(finished()), this, SLOT(threadFinished()));
+
+        mTimer->start();
+        qDebug() << "ExerciseLauncher::runExercise() - call mThread.start() from GUI thread " << qApp->thread()->currentThread();
         mThread->start();
         qDebug() << "ExerciseLauncher::runExercise() - back from calling mThread.start()";
     }
@@ -53,11 +70,10 @@ void ExerciseLauncher::launchExercise( FeetWetCodingExercise *exercise )
 
 void ExerciseLauncher::stopCurrentExercise()
 {
-    qDebug() << "ENTER - ExerciseLauncher::stopCurrentExercise()";
     if ( !mThread )
     {
         qDebug() << "ExerciseLauncher::stopCurrentExercise() - mThread is already NULL";
-        qDebug() << "EXIT EARLY - ExerciseLauncher::stopCurrentExercise()";
+        //mTimer->stop();
         return;
     }
 
@@ -76,34 +92,38 @@ void ExerciseLauncher::stopCurrentExercise()
     }
 
     initSharedDataBuffers();
-
-    qDebug() << "EXIT - ExerciseLauncher::stopCurrentExercise()";
+    //mTimer->stop();
 }
 
 void ExerciseLauncher::initSharedDataBuffers()
 {
-    QMutexLocker locker(&eventMutex);
-
-    mItems.clear();
-    mRenderItemUpdates.clear();
-    mRenderedItems.clear();
+    //This method grabs the eventMutex lock, so don't do it here
+    clearRenderedItems();
 
     //Setup key event maps
     //TODO: SIZE THESE BASES ON NUM_PANES. ALWAYS 2 PANES FOR NOW.
+    QMutexLocker locker(&eventMutex);
     mCollectingKeyEvents[0] = false;
     mCollectingKeyEvents[1] = false;
     mNewKeyEventReceived[0] = false;
     mNewKeyEventReceived[1] = false;
 }
 
+bool ExerciseLauncher::collectingKeyEvents()
+{
+    return (mCollectingKeyEvents[0] || mCollectingKeyEvents[1]);
+}
+
 void ExerciseLauncher::startCollectingKeyBoardInput( int pane )
 {
-    QMutexLocker locker(&eventMutex);
-    if ( mCollectingKeyEvents.end() != mCollectingKeyEvents.find(pane) &&
-         mNewKeyEventReceived.end() != mNewKeyEventReceived.find(pane) )
     {
-        mCollectingKeyEvents[pane] = true;
-        mNewKeyEventReceived[pane] = false;
+        QMutexLocker locker(&eventMutex);
+        if ( mCollectingKeyEvents.end() != mCollectingKeyEvents.find(pane) &&
+             mNewKeyEventReceived.end() != mNewKeyEventReceived.find(pane) )
+        {
+            mCollectingKeyEvents[pane] = true;
+            mNewKeyEventReceived[pane] = false;
+        }
     }
 }
 
@@ -145,7 +165,6 @@ void ExerciseLauncher::setKeyEventInfo( QKeySequence key, QString str )
     mKey = key;
     mKeyString = str;
     mNewKeyEventReceived[mWhichPaneHasFocus] = true;
-//    qDebug() << "ExerciseLauncher::setKeyEventInfo( " << key << ", " << str;
 }
 
 void ExerciseLauncher::getKeyEventInfo( QKeySequence &key, QString &str/*, int pane*/ )
@@ -153,47 +172,45 @@ void ExerciseLauncher::getKeyEventInfo( QKeySequence &key, QString &str/*, int p
     QMutexLocker locker(&eventMutex);
     key = mKey;
     str = mKeyString;
-//    pane = mWhichPaneHasFocus;
-    qDebug() << "ExerciseLauncher::getKeyEventInfo( " << key << ", " << str;
 }
 
 void ExerciseLauncher::setWhichPaneHasFocus( int pane )
 {
-    QMutexLocker locker(&eventMutex);
-    //qDebug() << "ExerciseLauncher::setWhichPaneHasFocus(" << pane << ")";
-    mWhichPaneHasFocus = pane;
-
-    //TODO: RESETTING POS ON THIS ISN'T WORKING FOR SOME REASON.
-    return;
-
-    if ( mPaneHighlight )
+    if ( !collectingKeyEvents() )
     {
-        view->scene()->removeItem(mPaneHighlight);
-        delete mPaneHighlight;
-        mPaneHighlight = NULL;
+        if ( mPaneHighlight )
+        {
+            view->scene()->removeItem(mPaneHighlight);
+            mPaneHighlight = NULL;
+        }
+        return;
     }
+
+    //Make sure the view can get keyboard input
+    if ( view )
+        view->setFocus();
+
+    QMutexLocker locker(&eventMutex);
+
+    //Only give focus if we're collecting for this pane
+    if ( mCollectingKeyEvents[pane] )
+    {
+        mWhichPaneHasFocus = pane;
+    }
+
+    if ( NULL == mPaneHighlight )
+    {
+        mPaneHighlight = DrawRectangleRender( 0, 0, WINDOW_WIDTH/2, WINDOW_HEIGHT, GREEN, 2);
+    }
+
     switch ( mWhichPaneHasFocus )
     {
     case 0:
-        if ( mPaneHighlight )
-        {
-            //mPaneHighlight->setPos(0, 0);
-        }
-        else
-        {
-            mPaneHighlight = DrawRectangleRender( 0, 0, WINDOW_WIDTH/2, WINDOW_HEIGHT, GREEN, 3);
-        }
+            mPaneHighlight->setPos(0, 0);
         break;
 
     case 1:
-        if ( mPaneHighlight )
-        {
-            //mPaneHighlight->setPos( WINDOW_WIDTH/2, 0 );
-        }
-        else
-        {
-            mPaneHighlight = DrawRectangleRender( WINDOW_WIDTH/2, 0, WINDOW_WIDTH/2, WINDOW_HEIGHT, GREEN, 3);
-        }
+            mPaneHighlight->setPos(WINDOW_WIDTH/2, 0);
         break;
 
     default:
@@ -376,7 +393,7 @@ void ExerciseLauncher::handleSeeOutRequests()
         {
             QMutexLocker globallocker(&globalmutex);
             request = SeeOut::exerciseOutMsgQueue.front();
-            SeeOut::exerciseOutMsgQueue.pop();
+            SeeOut::exerciseOutMsgQueue.pop_front();
         }
 
         SeeOut::RequestType type(request.first);
@@ -408,7 +425,7 @@ void ExerciseLauncher::handleSeeOutRequests()
         {
             QMutexLocker globallocker(&globalmutex);
             request = SeeOut::solnOutMsgQueue.front();
-            SeeOut::solnOutMsgQueue.pop();
+            SeeOut::solnOutMsgQueue.pop_front();
         }
 
         SeeOut::RequestType type(request.first);
@@ -434,9 +451,124 @@ void ExerciseLauncher::handleSeeOutRequests()
     }
 }
 
+void ExerciseLauncher::checkNeedForPanelSelection()
+{
+    static bool collecting(false);
+    static const int LEFT(0);
+    static const int RIGHT(1);
+    int leftOrRight;
+    bool leftSideCollecting(false);
+    bool rightSideCollecting(false);
+
+    {
+        //Lock, grab the data, unlock
+        QMutexLocker locker(&eventMutex);
+        leftSideCollecting = mCollectingKeyEvents[LEFT];
+        rightSideCollecting = mCollectingKeyEvents[RIGHT];
+    }
+
+    if ( collectingKeyEvents() != collecting )
+    {
+        collecting = collectingKeyEvents();
+
+        //Assume LEFT till we learn otherwise
+        leftOrRight = LEFT;
+
+        if ( collecting )
+        {
+            if ( leftSideCollecting && rightSideCollecting )
+            {
+                //Both sides are collecting keyboard input.
+                //See which side of the screen the mouse is
+                //currently on and set focus there.
+                if ( QCursor::pos().x() > theWindow->width()/2 )
+                    leftOrRight = RIGHT;
+            }
+            else if ( leftSideCollecting )
+            {
+                //Only the left side is collecting
+                leftOrRight = LEFT;
+            }
+            else if ( rightSideCollecting )
+            {
+                //Only the right side is collecting
+                leftOrRight = RIGHT;
+            }
+        }
+        else
+        {
+            //Since we're not collecting, pass invalid pane
+            //to trigger the method to get rid of the highlighting.
+            leftOrRight = -1;
+        }
+
+        //Set the focus
+        setWhichPaneHasFocus(leftOrRight);
+    }
+}
+
+void ExerciseLauncher::sceneCleared()
+{
+    clearRenderedItems();
+}
+
+void ExerciseLauncher::clearRenderedItems()
+{
+    QMutexLocker locker(&eventMutex);
+    mItems.clear();
+    mRenderItemUpdates.clear();
+    mRenderedItems.clear();
+    SeeOut::exerciseOutMsgQueue.clear();
+    SeeOut::solnOutMsgQueue.clear();
+
+    //If rendered items just got cleared
+    //then this pointer is no longer valid
+    mPaneHighlight = NULL;
+}
+
+bool ExerciseLauncher::buffersAreEmpty()
+{
+    QMutexLocker locker(&eventMutex);
+
+    int numItems = mItems.size() + mRenderItemUpdates.size() + SeeOut::exerciseOutMsgQueue.size() + SeeOut::solnOutMsgQueue.size();
+    int numRenderedItems = mRenderedItems.size();
+
+    bool empty = mItems.empty() &&
+                 mRenderItemUpdates.empty()&&
+                 SeeOut::exerciseOutMsgQueue.empty() &&
+                 SeeOut::solnOutMsgQueue.empty();
+
+    //This is actually kind of neat to watch. Primes 2 has lots of
+    //rendered items, so it's a good one.
+    //Keep it commented out when not specifically watching it, tho.
+//    if ( empty )
+//        qDebug() << "WE'RE EMPTY!";
+//    else
+//        qDebug() << "NUM ITEMS LEFT IN BUFFERS: " << numItems;
+
+//    qDebug() << "NUM RENDERED ITEMS: " << numRenderedItems;
+
+    return empty;
+}
+
 void ExerciseLauncher::update()
 {
     handleRenderRequests();
     handleRenderUpdates();
     handleSeeOutRequests();
+    checkNeedForPanelSelection();
+
+    if ( buffersAreEmpty() && mThread->isFinished() )
+    {
+        qDebug() << "&&&&&&&&&&& - Thread is done and buffers are empty so stopping timer - &&&&&&&&&&&&&&&&&&&";
+        mTimer->stop();
+    }
+}
+
+void ExerciseLauncher::threadFinished()
+{
+    qDebug() << "\n\n\n&&&&&&&&&&&&&&&&&&&&&&&&&& -- ExerciseLauncher::threadFinished() - from thread " << qApp->thread()->currentThread();
+
+//    if ( )
+    //Exercise finished. We can stop the timer.
 }

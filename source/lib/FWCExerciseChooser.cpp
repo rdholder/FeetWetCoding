@@ -532,8 +532,6 @@ void FWCExerciseChooser::runExercise( const QString & exerciseName )
 
     qDebug() << "FWCExerciseChooser::runExercise() - calling this->stopExercise()";
     stopExercise();
-    qDebug() << "FWCExerciseChooser::runExercise() - back from calling this->stopExercise()";
-
     qDebug() << "FWCExerciseChooser::runExercise(" << exerciseName << ") - back from calling stopExercise()";
     mSelectedExercise = getExerciseFromName( exerciseName );
 
@@ -717,4 +715,9 @@ void FWCExerciseChooser::handleNewMousePosEvent(QPoint pos)
         pane = 0;
 
     mExerciseLauncher.setWhichPaneHasFocus(pane);
+}
+
+void FWCExerciseChooser::sceneCleared()
+{
+    mExerciseLauncher.sceneCleared();
 }

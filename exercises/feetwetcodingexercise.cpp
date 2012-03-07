@@ -26,7 +26,6 @@ FeetWetCodingExercise::FeetWetCodingExercise(QObject *parent)
 
 FeetWetCodingExercise::~FeetWetCodingExercise()
 {
-    std::cerr << "FeetWetCodingExercise::~FeetWetCodingExercise()\n";
 }
 
 void FeetWetCodingExercise::run()
@@ -82,13 +81,13 @@ std::string FeetWetCodingExercise::getKeyboardString()
 
             if ( Qt::Key_Enter == key || Qt::Key_Return == key )
             {
-                qDebug() << "keyEvent is ENTER";
+                //qDebug() << "keyEvent is ENTER";
                 done = true;
                 continue;
             }
-            else //if ( !keyEvent->text().isEmpty() )
+            else
             {
-                qDebug() << "keyEvent is NOT EMPTY - APPENDING " << keystr << " to string " << fullstring;
+                //qDebug() << "keyEvent is NOT EMPTY - APPENDING " << keystr << " to string " << fullstring;
                 fullstring.append(keystr);
             }
         }

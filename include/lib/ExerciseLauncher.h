@@ -34,16 +34,24 @@ public:
     int getWhichPaneHasFocus();
     void setRenderItem( FeetWetCodingExercise::RenderItem item );
     void updateRenderItem( FeetWetCodingExercise::RenderItemUpdate update );
-    void handleRenderRequests();
-    void handleRenderUpdates();
-    void handleSeeOutRequests();
+    void clearRenderedItems();
+    bool collectingKeyEvents();
 
 public slots:
 
     void update();
+    void sceneCleared();
+    void threadFinished();
 
 private:
 
+    void handleRenderRequests();
+    void handleRenderUpdates();
+    void handleSeeOutRequests();
+    void checkNeedForPanelSelection();
+    bool buffersAreEmpty();
+
+    QTimer *mTimer;
     FeetWetCodingExercise *mThread;
 
     std::map<int, bool> mCollectingKeyEvents;
