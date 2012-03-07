@@ -63,7 +63,6 @@ void Welcome::runExercise()
         count--;
     }
 
-
     //Example 3: Wait for keyboard input while looping using getKeyboardString()
     y+=30;
     DrawText("Example 3 - getKeyboardString()", 20, y, BLUE, 14);

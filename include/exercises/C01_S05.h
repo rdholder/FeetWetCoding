@@ -1329,13 +1329,13 @@ public:
     }
     ~Sleep1()
     {
-        qDebug() << "++++++++++++++++++++++ ~OYO_Primes2() +++++++++++++++++++++";
+        qDebug() << "++++++++++++++++++++++ ~Sleep1() +++++++++++++++++++++";
         if ( mSolutionPtr )
         {
-            qDebug() << "~OYO_Primes2() - calling mSolutionPtr->terminate()/wait()";
+            qDebug() << "~Sleep1() - calling mSolutionPtr->terminate()/wait()";
             mSolutionPtr->terminate();
 //            mSolutionPtr->wait();
-            qDebug() << "~OYO_Primes2() - back from mSolutionPtr->wait()";
+            qDebug() << "~Sleep1() - back from mSolutionPtr->wait()";
             delete mSolutionPtr;
             mSolutionPtr = NULL;
         }
@@ -1349,6 +1349,66 @@ protected:
     {
         DrawReferenceBox(LEFTRIGHT);
         mSolutionPtr = new Sleep1Soln(parent);
+        if ( mSolutionPtr )
+        {
+            mSolutionPtr->start();
+        }
+    }
+};
+
+class SingleKey1Soln : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit SingleKey1Soln(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        //Update seeout with soln config
+        mSoln = true;
+        mPane = 1; //Solution is always in pane 1 for now
+        seeout.setIsSolution(mSoln);
+        seeout.setColor(BLACK);
+        seeout.setFontSize(10);
+    }
+
+protected:
+    void runExercise();
+};
+
+class SingleKey1 : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit SingleKey1(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        //Exercises can use parent's seeout config
+
+        //If this exercise has a solution, launch it
+        this->setupSolution(parent);
+    }
+    ~SingleKey1()
+    {
+        qDebug() << "++++++++++++++++++++++ ~SingleKey1() +++++++++++++++++++++";
+        if ( mSolutionPtr )
+        {
+            qDebug() << "~SingleKey1() - calling mSolutionPtr->terminate()/wait()";
+            mSolutionPtr->terminate();
+//            mSolutionPtr->wait();
+            qDebug() << "~SingleKey1() - back from mSolutionPtr->wait()";
+            delete mSolutionPtr;
+            mSolutionPtr = NULL;
+        }
+    }
+
+protected:
+    void runExercise();
+
+    //Hide this implementation from the student
+    void setupSolution(QObject *parent=0)
+    {
+        DrawReferenceBox(LEFTRIGHT);
+        mSolutionPtr = new SingleKey1Soln(parent);
         if ( mSolutionPtr )
         {
             mSolutionPtr->start();

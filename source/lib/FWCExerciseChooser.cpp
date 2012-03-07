@@ -120,6 +120,7 @@ FWCExerciseChooser::getExerciseFromName( const QString & name )
     if( "Primes1" == name ){ return new Primes1(&mExerciseLauncher); }
     if( "OYO_Primes2" == name ){ return new OYO_Primes2(&mExerciseLauncher); }
     if( "Sleep1" == name ){ return new Sleep1(&mExerciseLauncher); }
+    if( "SingleKey1" == name ){ return new SingleKey1(&mExerciseLauncher); }
     if( "OYO5" == name ){ return new C01S05_OYO5(&mExerciseLauncher); }
 
     //Section 6 - Arrays
@@ -242,6 +243,7 @@ void FWCExerciseChooser::createExercisesMap()
     exercises.push_back( "Primes1" );
     exercises.push_back( "OYO_Primes2" );
     exercises.push_back( "Sleep1" );
+    exercises.push_back( "SingleKey1" );
     exercises.push_back( "OYO5" );
     sections["S05-Loops_Logic"] = exercises;
 
