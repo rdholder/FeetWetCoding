@@ -6,25 +6,19 @@
 
 void Arrays1::runExercise()
 {
-    int n = 0, x = 20, y = 50;
-    int horizontalstep = 50, verticalstep = 40;
-    int CircleSizes[8] = { 5, 10, 15, 20, 25, 30, 35, 40 };
+    int n = 0;
+
+    int IntOccurance[10] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
     Color color = DARKBLUE;
 
-    for ( n = 1; n < 8; n++ )
+    for ( n = 1; n < 10000000; n++ )
     {
-        DrawCircle( x, y, CircleSizes[n], color, 1, true);
-        x += horizontalstep;
-
+        IntOccurance[random(10)]++;
     }
 
-    x = 20;
-    y += verticalstep;
-
-    for ( n = 1; n < 8; n++ )
+    for ( n = 0; n < 10; n++ )
     {
-        DrawCircle( x, y, CircleSizes[n], color, 1, true);
-        x += horizontalstep;
-
+        seeout << n << ": " << IntOccurance[n] << "\n";
     }
+
 }

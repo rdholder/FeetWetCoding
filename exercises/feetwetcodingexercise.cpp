@@ -22,6 +22,9 @@ FeetWetCodingExercise::FeetWetCodingExercise(QObject *parent)
     seeout.setIsSolution(mSoln);
     seeout.setColor(BLACK);
     seeout.setFontSize(10);
+
+//    seeout << "fwce-ThreadID: " << qApp->thread()->currentThread() << "\n";
+
 }
 
 FeetWetCodingExercise::~FeetWetCodingExercise()
@@ -31,6 +34,11 @@ FeetWetCodingExercise::~FeetWetCodingExercise()
 
 void FeetWetCodingExercise::run()
 {
+    int ctime = QTime::currentTime().msec();
+    qsrand(ctime);
+//    seeout << "fwce_run-ThreadID: " << qApp->thread()->currentThread();
+//    seeout << " ctime: " << ctime << "\n";
+
     runExercise();
 }
 

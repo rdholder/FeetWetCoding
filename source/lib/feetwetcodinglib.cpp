@@ -57,7 +57,7 @@ void setupDrawingUtils()
 {
     //Seed the random number generator
     QTime time = QTime::currentTime();
-    qsrand(time.msec()/4);
+    qsrand(time.msec()/4); // rdh5mar2012: why is this 4?  I forget, need to check
 
     // Setup the drawing area stuff
     QGraphicsScene *scene = new QGraphicsScene(-BORDER, -BORDER/2,
@@ -431,6 +431,12 @@ std::string getNameForColor( Color color )
 // for example random(100) returns an int between 0 and 100
 int random(int biggest)
 {
+//    SeeOut seeout;
+//    seeout << "rnd-ThreadID: " << qApp->thread()->currentThread() << "\n";
+
+//    int ctime = QTime::currentTime().msec();
+//    qsrand(ctime);
+
     if (biggest > 0)
     {
         //Seed the random number generator

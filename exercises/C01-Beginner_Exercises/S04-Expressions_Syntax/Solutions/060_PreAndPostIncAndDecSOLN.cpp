@@ -16,7 +16,11 @@ void PreAndPostIncAndDecSoln::runExercise()     // copy the exercise name & past
     seeout << "4th sum: " << ++sum << "\n";
     seeout << "5th sum: " << sum-- << "\n";
     seeout << "6th sum: " << --sum << "\n";
-    seeout << "7th sum: " << --sum << "\n";
+    seeout << "7th sum: " << --sum << "\n\n";
+
+    seeout << "You can get these numbers without adding or deleting any";
+    seeout << " lines from your program, but rather just by changing the";
+    seeout << " ++ and -- operators.\n";
 }
 
 
