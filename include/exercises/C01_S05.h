@@ -1356,11 +1356,11 @@ protected:
     }
 };
 
-class SingleKey1Soln : public FeetWetCodingExercise
+class SingleKeyInput1Soln : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit SingleKey1Soln(QObject *parent = 0)
+    explicit SingleKeyInput1Soln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
         //Update seeout with soln config
@@ -1375,11 +1375,11 @@ protected:
     void runExercise();
 };
 
-class SingleKey1 : public FeetWetCodingExercise
+class SingleKeyInput1 : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit SingleKey1(QObject *parent = 0)
+    explicit SingleKeyInput1(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
         //Exercises can use parent's seeout config
@@ -1387,15 +1387,15 @@ public:
         //If this exercise has a solution, launch it
         this->setupSolution(parent);
     }
-    ~SingleKey1()
+    ~SingleKeyInput1()
     {
-        qDebug() << "++++++++++++++++++++++ ~SingleKey1() +++++++++++++++++++++";
+        qDebug() << "++++++++++++++++++++++ ~SingleKeyInput1() +++++++++++++++++++++";
         if ( mSolutionPtr )
         {
-            qDebug() << "~SingleKey1() - calling mSolutionPtr->terminate()/wait()";
+            qDebug() << "~SingleKeyInput1() - calling mSolutionPtr->terminate()/wait()";
             mSolutionPtr->terminate();
 //            mSolutionPtr->wait();
-            qDebug() << "~SingleKey1() - back from mSolutionPtr->wait()";
+            qDebug() << "~SingleKeyInput1() - back from mSolutionPtr->wait()";
             delete mSolutionPtr;
             mSolutionPtr = NULL;
         }
@@ -1408,7 +1408,127 @@ protected:
     void setupSolution(QObject *parent=0)
     {
         DrawReferenceBox(LEFTRIGHT);
-        mSolutionPtr = new SingleKey1Soln(parent);
+        mSolutionPtr = new SingleKeyInput1Soln(parent);
+        if ( mSolutionPtr )
+        {
+            mSolutionPtr->start();
+        }
+    }
+};
+
+class StringInput1Soln : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit StringInput1Soln(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        //Update seeout with soln config
+        mSoln = true;
+        mPane = 1; //Solution is always in pane 1 for now
+        seeout.setIsSolution(mSoln);
+        seeout.setColor(BLACK);
+        seeout.setFontSize(10);
+    }
+
+protected:
+    void runExercise();
+};
+
+class StringInput1 : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit StringInput1(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        //Exercises can use parent's seeout config
+
+        //If this exercise has a solution, launch it
+        this->setupSolution(parent);
+    }
+    ~StringInput1()
+    {
+        qDebug() << "++++++++++++++++++++++ ~StringInput1() +++++++++++++++++++++";
+        if ( mSolutionPtr )
+        {
+            qDebug() << "~StringInput1() - calling mSolutionPtr->terminate()/wait()";
+            mSolutionPtr->terminate();
+//            mSolutionPtr->wait();
+            qDebug() << "~StringInput1() - back from mSolutionPtr->wait()";
+            delete mSolutionPtr;
+            mSolutionPtr = NULL;
+        }
+    }
+
+protected:
+    void runExercise();
+
+    //Hide this implementation from the student
+    void setupSolution(QObject *parent=0)
+    {
+        DrawReferenceBox(LEFTRIGHT);
+        mSolutionPtr = new StringInput1Soln(parent);
+        if ( mSolutionPtr )
+        {
+            mSolutionPtr->start();
+        }
+    }
+};
+
+class ShiftDrawnItem1Soln : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit ShiftDrawnItem1Soln(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        //Update seeout with soln config
+        mSoln = true;
+        mPane = 1; //Solution is always in pane 1 for now
+        seeout.setIsSolution(mSoln);
+        seeout.setColor(BLACK);
+        seeout.setFontSize(10);
+    }
+
+protected:
+    void runExercise();
+};
+
+class ShiftDrawnItem1 : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit ShiftDrawnItem1(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        //Exercises can use parent's seeout config
+
+        //If this exercise has a solution, launch it
+        this->setupSolution(parent);
+    }
+    ~ShiftDrawnItem1()
+    {
+        qDebug() << "++++++++++++++++++++++ ~ShiftDrawnItem1() +++++++++++++++++++++";
+        if ( mSolutionPtr )
+        {
+            qDebug() << "~ShiftDrawnItem1() - calling mSolutionPtr->terminate()/wait()";
+            mSolutionPtr->terminate();
+//            mSolutionPtr->wait();
+            qDebug() << "~ShiftDrawnItem1() - back from mSolutionPtr->wait()";
+            delete mSolutionPtr;
+            mSolutionPtr = NULL;
+        }
+    }
+
+protected:
+    void runExercise();
+
+    //Hide this implementation from the student
+    void setupSolution(QObject *parent=0)
+    {
+        DrawReferenceBox(LEFTRIGHT);
+        mSolutionPtr = new ShiftDrawnItem1Soln(parent);
         if ( mSolutionPtr )
         {
             mSolutionPtr->start();

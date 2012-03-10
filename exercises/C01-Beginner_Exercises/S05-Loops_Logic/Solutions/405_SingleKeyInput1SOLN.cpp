@@ -4,10 +4,10 @@
 #include <exercises/C01_S05.h>
 #include <math.h>
 
-void SingleKey1Soln::runExercise()
+void SingleKeyInput1Soln::runExercise()
 {
     int x = 10, y = 20;
-    int fontSize = 30;
+    int fontSize = 60;
     std::string key;
     Color color = DARKBLUE;
 
@@ -21,15 +21,15 @@ void SingleKey1Soln::runExercise()
         DrawText(key, x, y, color, fontSize);
 
         x += fontSize;
-        if ( x > 400-fontSize )
+        if (x > 400-trunc(fontSize*1.5))
         {
             x = 10;
-            y += trunc ( fontSize * 1.2 );
-            if ( y > 400 - (fontSize * 2) )
+            y += fontSize * 2;
+            if (y > 400-(fontSize * 2))
             {
                 x = 10;
                 y = 20;
-                DrawRectangle(0, 0, 399, 399, WHITE, 1, true);
+                DrawRectangle(3, 3, 396, 396, WHITE, 1, true);
             }
         }
     }

@@ -145,8 +145,12 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/400_Sleep1.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/480_C01S05_OYO5.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/480_C01S05_OYO5SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/410_SingleKey1SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/410_SingleKey1.cpp
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/410_StringInput1.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/405_SingleKeyInput1.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/405_SingleKeyInput1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/410_StringInput1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/415_ShiftDrawnItem1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/415_ShiftDrawnItem1.cpp
 
 
 HEADERS += \
