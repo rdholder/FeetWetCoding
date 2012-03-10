@@ -530,9 +530,6 @@ bool ExerciseLauncher::buffersAreEmpty()
 {
     QMutexLocker locker(&eventMutex);
 
-    int numItems = mItems.size() + mRenderItemUpdates.size() + SeeOut::exerciseOutMsgQueue.size() + SeeOut::solnOutMsgQueue.size();
-    int numRenderedItems = mRenderedItems.size();
-
     bool empty = mItems.empty() &&
                  mRenderItemUpdates.empty()&&
                  SeeOut::exerciseOutMsgQueue.empty() &&
@@ -541,11 +538,15 @@ bool ExerciseLauncher::buffersAreEmpty()
     //This is actually kind of neat to watch. Primes 2 has lots of
     //rendered items, so it's a good one.
     //Keep it commented out when not specifically watching it, tho.
+    //--------------------------------------------------------------
 //    if ( empty )
 //        qDebug() << "WE'RE EMPTY!";
 //    else
+//    {
+//        int numItems = mItems.size() + mRenderItemUpdates.size() + SeeOut::exerciseOutMsgQueue.size() + SeeOut::solnOutMsgQueue.size();
 //        qDebug() << "NUM ITEMS LEFT IN BUFFERS: " << numItems;
-
+//    }
+//    int numRenderedItems = mRenderedItems.size();
 //    qDebug() << "NUM RENDERED ITEMS: " << numRenderedItems;
 
     return empty;
