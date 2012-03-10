@@ -10,6 +10,8 @@ void Sleep1::runExercise()
     int delayInMilliseconds = 1000;
     Color color = DARKBLUE;
 
+    seeout << "delayInMilliseconds == " << delayInMilliseconds << "\n";
+
     for (y = 0; y < 400; y += verticalstep )
     {
         for ( x = 0; x < 400; x += horizontalstep )
@@ -18,5 +20,6 @@ void Sleep1::runExercise()
             msleep(delayInMilliseconds);
         }
         delayInMilliseconds /= 2;
+        seeout << "delayInMilliseconds == " << delayInMilliseconds << "\n";
     }
 }
