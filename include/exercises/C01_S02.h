@@ -41,13 +41,10 @@ public:
     }
     ~Welcome()
     {
-        qDebug() << "++++++++++++++++++++++ ~Welcome() ++++++++++++++++++";
         if ( mSolutionPtr )
         {
-            qDebug() << "~Welcome() - calling mSolutionPtr->terminate()/wait()";
             mSolutionPtr->terminate();
             mSolutionPtr->wait();
-            qDebug() << "~Welcome() - back from calling mSolutionPtr->terminate()/wait()";
             delete mSolutionPtr;
             mSolutionPtr = NULL;
         }

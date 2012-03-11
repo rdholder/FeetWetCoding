@@ -24,7 +24,6 @@ ExerciseLauncher::ExerciseLauncher(QObject *parent)
     //Connect timer for processing requests from the exercise thread
     mTimer = new QTimer(this);
     connect(mTimer, SIGNAL(timeout()), this, SLOT(update()));
-    //mTimer->start();
 }
 
 ExerciseLauncher::~ExerciseLauncher()
@@ -32,7 +31,6 @@ ExerciseLauncher::~ExerciseLauncher()
     //IMPORTANT!!! Calling code retains ownership of all pointers
     //in this class. Don't delete them!
 
-    qDebug() << "~ExerciseLauncher()";
     stopCurrentExercise();
 }
 
@@ -45,22 +43,15 @@ void ExerciseLauncher::launchExercise( FeetWetCodingExercise *exercise )
         qDebug() << "ExerciseLauncher::launchExercise() - exercise is NULL!";
     }
 
-//    if ( mThread )
-//    {
-//        disconnect(mThread, SIGNAL(finished()), this, SLOT(threadFinished()));
-//    }
-
+#ifdef DEBUG
     qDebug() << "ExerciseLauncher::launchExercise() - assigning exercise to mThread...";
+#endif
     mThread = exercise;
 
     if ( mThread )
     {
-        //connect(mThread, SIGNAL(finished()), this, SLOT(threadFinished()));
-
         mTimer->start();
-        qDebug() << "ExerciseLauncher::runExercise() - call mThread.start() from GUI thread " << qApp->thread()->currentThread();
         mThread->start();
-        qDebug() << "ExerciseLauncher::runExercise() - back from calling mThread.start()";
     }
     else
     {
@@ -72,27 +63,26 @@ void ExerciseLauncher::stopCurrentExercise()
 {
     if ( !mThread )
     {
-        qDebug() << "ExerciseLauncher::stopCurrentExercise() - mThread is already NULL";
-        //mTimer->stop();
         return;
     }
 
     if( mThread->isRunning() )
     {
+#ifdef DEBUG
         qDebug() << "ExerciseLauncher::stopCurrentExercise() - mThread is not NULL and still running";
-        qDebug() << "ExerciseLauncher() - call mThread->terminate()";
+        qDebug() << "ExerciseLauncher() - call mThread->terminate(); mThread->wait()";
+#endif
         mThread->terminate();
-        qDebug() << "ExerciseLauncher() - call mThread->wait()";
         mThread->wait();
-        qDebug() << "ExerciseLauncher() - back from calling mThread->wait()";
     }
     else
     {
+#ifdef DEBUG
         qDebug() << "ExerciseLauncher::stopCurrentExercise() - mThread is not NULL but no longer running";
+#endif
     }
 
     initSharedDataBuffers();
-    //mTimer->stop();
 }
 
 void ExerciseLauncher::initSharedDataBuffers()
@@ -229,7 +219,6 @@ void ExerciseLauncher::setRenderItem( FeetWetCodingExercise::RenderItem item)
     //during the next event processing timeout
     QMutexLocker locker(&itemMutex);
     mItems.push_back(item);
-    //qDebug() << "Queue item " << item.ID << " for rendering";
 }
 
 void ExerciseLauncher::updateRenderItem(FeetWetCodingExercise::RenderItemUpdate update)
@@ -289,8 +278,6 @@ void ExerciseLauncher::handleRenderRequests()
         QMutexLocker locker(&itemMutex);
         mRenderedItems[item.ID] = gItem;
     }
-
-//    qDebug() << "Rendered item " << item.ID;
 }
 
 void ExerciseLauncher::handleRenderUpdates()
@@ -535,6 +522,7 @@ bool ExerciseLauncher::buffersAreEmpty()
                  SeeOut::exerciseOutMsgQueue.empty() &&
                  SeeOut::solnOutMsgQueue.empty();
 
+#ifdef DEBUG
     //This is actually kind of neat to watch. Primes 2 has lots of
     //rendered items, so it's a good one.
     //Keep it commented out when not specifically watching it, tho.
@@ -548,6 +536,7 @@ bool ExerciseLauncher::buffersAreEmpty()
 //    }
 //    int numRenderedItems = mRenderedItems.size();
 //    qDebug() << "NUM RENDERED ITEMS: " << numRenderedItems;
+#endif
 
     return empty;
 }
@@ -561,15 +550,9 @@ void ExerciseLauncher::update()
 
     if ( buffersAreEmpty() && mThread->isFinished() )
     {
-        qDebug() << "&&&&&&&&&&& - Thread is done and buffers are empty so stopping timer - &&&&&&&&&&&&&&&&&&&";
+#ifdef DEBUG
+        qDebug() << "Thread is done and buffers are empty so stopping timer - &&&&&&&&&&&&&&&&&&&";
+#endif
         mTimer->stop();
     }
-}
-
-void ExerciseLauncher::threadFinished()
-{
-    qDebug() << "\n\n\n&&&&&&&&&&&&&&&&&&&&&&&&&& -- ExerciseLauncher::threadFinished() - from thread " << qApp->thread()->currentThread();
-
-//    if ( )
-    //Exercise finished. We can stop the timer.
 }

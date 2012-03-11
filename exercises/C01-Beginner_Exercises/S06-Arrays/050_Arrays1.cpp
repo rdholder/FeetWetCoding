@@ -9,7 +9,7 @@ void Arrays1::runExercise()
     int n = 0;
 
     int IntOccurance[10] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-    Color color = DARKBLUE;
+    //Color color = DARKBLUE;
 
     for ( n = 1; n < 10000000; n++ )
     {

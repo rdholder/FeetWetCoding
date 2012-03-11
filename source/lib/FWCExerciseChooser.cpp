@@ -427,18 +427,13 @@ void FWCExerciseChooser::selectSection( const QString & selection )
         mCurrentExercise.clear();
     }
     selectExercise(mCurrentExercise);
-
-    //Give the exercise chooser focus so user can use
-    //arrow keys to run through the list. (This is for
-    //when exercise is selected programatically, as it
-    //is here, rather than user selecting via the widget.)
-    //mExerciseChooser->setFocus();
 }
 
 void FWCExerciseChooser::selectExercise( const QString & selection )
 {
+#ifdef DEBUG
     qDebug() << "FWCExerciseChooser::selectExercise(" << selection << ")";
-
+#endif
     if ( mExerciseMap.find(mCurrentChapter) == mExerciseMap.end() ||
          mExerciseMap[mCurrentChapter].find(mCurrentSection) ==
          mExerciseMap[mCurrentChapter].end() ||
@@ -452,14 +447,15 @@ void FWCExerciseChooser::selectExercise( const QString & selection )
 
     if ( selection.isEmpty() )
     {
+#ifdef DEBUG
         qDebug() << "Empty selection, so selecting first exercise in current section";
+#endif
         selectedExercise = mExerciseMap[mCurrentChapter][mCurrentSection].at(0);
         mExerciseChooser->setCurrentIndex(0);
     }
 
     else
     {
-        qDebug() << "LOOKING FOR " << selection;
         for ( unsigned int i=0; i < mExerciseMap[mCurrentChapter][mCurrentSection].size(); ++i )
         {
             if ( selection == mExerciseMap[mCurrentChapter][mCurrentSection][i] )  // found it
@@ -482,55 +478,56 @@ void FWCExerciseChooser::selectExercise( const QString & selection )
     // This stops the old one if it's still running.
     mCurrentExercise = selectedExercise;
 
+#ifdef DEBUG
     qDebug() << "CALL runCurrentExercise() with mCurrentExercise==" << selectedExercise;
+#endif
     runCurrentExercise();
 }
 
 void FWCExerciseChooser::chapterSelected( const QString & selection )
 {
+#ifdef DEBUG
     qDebug() << "chapterSelected(): " << selection << "\n";
+#endif
     selectChapter(selection);
 }
 
 void FWCExerciseChooser::sectionSelected( const QString & selection )
 {
+#ifdef DEBUG
     qDebug() << "sectionSelected(): " << selection << "\n";
+#endif
     selectSection(selection);
 }
 
 void FWCExerciseChooser::exerciseSelected( const QString & selection )
 {
+#ifdef DEBUG
     qDebug() << "exerciseSelected(): " << selection << "\n";
+#endif
     selectExercise(selection);
 }
 
 void FWCExerciseChooser::stopExercise()
 {
-    qDebug() << "ENTER - FWCExerciseChooser::stopExercise()\n";
-
-    //Stop the exercise *before* deleting below
-    //since the exercise launcher still needs
-    //access to the pointer to stop it.
+    //Tell launcher to stop the exercise *before* deleting it (below).
+    //Chooser owns the pointer, but Launcher needs it in order to stop it.
     mExerciseLauncher.stopCurrentExercise();
 
-    qDebug() << "Back from asking launcher to stop current exercise... Clearing screen.";
     ClearScreen();
-    qDebug() << "Initing output area";
     initOutputArea();
 
     if ( mSelectedExercise )
     {
-        qDebug() << "Deleting current exercise...\n";
         delete mSelectedExercise;
         mSelectedExercise = NULL;
-        qDebug() << "Back from deleting current exercise...\n";
     }
     else
     {
+#ifdef DEBUG
         qDebug() << "mSelectedExercise is NULL here: " << __LINE__;
+#endif
     }
-
-    qDebug() << "EXIT - FWCExerciseChooser::stopExercise()\n";
 }
 
 void FWCExerciseChooser::runExercise( const QString & exerciseName )
@@ -538,29 +535,38 @@ void FWCExerciseChooser::runExercise( const QString & exerciseName )
     if ( !mOkToRun )
         return;
 
-    qDebug() << "FWCExerciseChooser::runExercise() - calling this->stopExercise()";
     stopExercise();
-    qDebug() << "FWCExerciseChooser::runExercise(" << exerciseName << ") - back from calling stopExercise()";
     mSelectedExercise = getExerciseFromName( exerciseName );
 
     if ( NULL == mSelectedExercise )
+    {
         qDebug() << "WHOA! mSelectedExercise IS NULL!";
+        return;
+    }
 
     //FWCExerciseChooser retains ownership of the mSelectedExercise
     //pointer. ExerciseLauncher should not delete this passed in pointer!
 
-    qDebug() << "About to ask launcher to launch mSelectedExercise";
     mExerciseLauncher.launchExercise(mSelectedExercise);
-    qDebug() << "Back from asking launcher to launch mSelectedExercise";
 }
 
 void FWCExerciseChooser::runCurrentExercise()
 {
+#ifdef DEBUG
     qDebug() << "\n\n\n*****************************************************";
     qDebug() << "START NEXT SELECTION - ENTER FWCExerciseChooser::runCurrentExercise()";
+#endif
     runExercise( mCurrentExercise );
-    qDebug() << "                     - EXIT FWCExerciseChooser::runCurrentExercise()";
-    qDebug() << "*****************************************************";
+
+    //Give the exercise chooser focus so user can use
+    //arrow keys to run through the list. (This is for
+    //when exercise is selected programatically, as it
+    //is here, rather than user selecting via the widget.)
+    if ( NULL != mExerciseChooser )
+    {
+        //TODO: THIS ISN'T WORKING FOR SOME REASON
+        mExerciseChooser->setFocus();
+    }
 }
 
 void FWCExerciseChooser::saveCurrentExercise()
@@ -573,8 +579,10 @@ void FWCExerciseChooser::saveCurrentExercise()
 
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
     {
+#ifdef DEBUG
         qDebug() << "Failed to open file \"lastexercise.txt\" for writing."
                  << " Cannot save current exercise.\n";
+#endif
         return;
     }
 

@@ -18,13 +18,14 @@ FeetWetCodingExercise::FeetWetCodingExercise(QObject *parent)
     ,mPane(0)
     ,mSolutionPtr(NULL)
 {
+#ifdef DEBUG
+    qDebug() << "FeetWetCodingExercise::FeetWetCodingExercise() - (GUI) ThreadID: " << qApp->thread()->currentThread();
+#endif
+
     mParent = dynamic_cast<ExerciseLauncher *>(parent);
     seeout.setIsSolution(mSoln);
     seeout.setColor(BLACK);
     seeout.setFontSize(10);
-
-//    seeout << "fwce-ThreadID: " << qApp->thread()->currentThread() << "\n";
-
 }
 
 FeetWetCodingExercise::~FeetWetCodingExercise()
@@ -33,10 +34,12 @@ FeetWetCodingExercise::~FeetWetCodingExercise()
 
 void FeetWetCodingExercise::run()
 {
+#ifdef DEBUG
+    qDebug() << "FeetWetCodingExercise::run() - (Exercise/Soln) ThreadID: " << qApp->thread()->currentThread();
+#endif
+
     int ctime = QTime::currentTime().msec();
     qsrand(ctime);
-//    seeout << "fwce_run-ThreadID: " << qApp->thread()->currentThread();
-//    seeout << " ctime: " << ctime << "\n";
 
     runExercise();
 }
@@ -89,13 +92,15 @@ std::string FeetWetCodingExercise::getKeyboardString()
 
             if ( Qt::Key_Enter == key || Qt::Key_Return == key )
             {
-                //qDebug() << "keyEvent is ENTER";
                 done = true;
                 continue;
             }
             else
             {
-                //qDebug() << "keyEvent is NOT EMPTY - APPENDING " << keystr << " to string " << fullstring;
+#ifdef DEBUG
+
+                qDebug() << "keyEvent is NOT EMPTY - APPENDING " << keystr << " to string " << fullstring;
+#endif
                 fullstring.append(keystr);
             }
         }

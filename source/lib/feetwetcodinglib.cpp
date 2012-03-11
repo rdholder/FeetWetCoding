@@ -120,7 +120,7 @@ void setupDrawingUtils()
     exerciseChooser->runCurrentExercise();
 
     //Finally, give focus to the drawing area
-    view->setFocus();
+    //view->setFocus();
 }
 
 void initOutputArea()
@@ -490,6 +490,5 @@ void FWCView::mouseMoveEvent(QMouseEvent *event)
     //for example the exercise chooser, which will use the
     //mouse's current position to determine which exercise
     //pane should receive keyboard input.
-//    qDebug() << "emit newMousePos("<<event->pos()<<")";
     emit newMousePos(event->pos());
 }

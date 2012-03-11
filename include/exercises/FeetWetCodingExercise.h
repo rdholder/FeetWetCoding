@@ -12,20 +12,6 @@
 
 class ExerciseLauncher;
 
-//class SolutionOrientation
-//{
-//public:
-
-//    SolutionOrientation(FeetWetCodingExercise::RefBoxLayout initialOrientation);
-//    ~SolutionOrientation();
-//    RefBoxLayout getOrientation();
-//    void setOrientation(FeetWetCodingExercise::RefBoxLayout);
-
-//private:
-//    RefBoxLayout itsOrientation;
-
-//};
-
 class FeetWetCodingExercise : public QThread
 {
     Q_OBJECT
@@ -82,7 +68,6 @@ public:
         int intvalue;
         float floatvalue;
         int decimalplaces;
-//        RefBoxLayout refboxlayout;
     } RenderItem;
 
     typedef enum
@@ -128,8 +113,6 @@ protected:
     std::string waitForKeyPress();
     std::string getKeyboardString();
 
-
-//    SolutionOrientation mDrawingAreaLayout;
     bool mSoln;
     int mPane;
     SeeOut seeout;

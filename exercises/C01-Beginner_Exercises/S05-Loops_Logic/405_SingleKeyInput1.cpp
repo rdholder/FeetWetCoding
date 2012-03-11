@@ -17,7 +17,7 @@ void SingleKeyInput1::runExercise()
     int x = 100, y = 0;
     int fontSize = 200;
     std::string key;
-    Color color = DARKBLUE;
+    //Color color = DARKBLUE;
 
     seeout.setColor(DARKRED);
     seeout.setFontSize(18);

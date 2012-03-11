@@ -41,7 +41,6 @@ public slots:
 
     void update();
     void sceneCleared();
-    void threadFinished();
 
 private:
 
