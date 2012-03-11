@@ -191,7 +191,7 @@ void FWCExerciseChooser::createExercisesMap()
     exercises.push_back( "seeoutIntro" );
     exercises.push_back( "seeoutFormatting" );
     exercises.push_back( "OnYourOwn" );
-//    exercises.push_back( "ColorNames" );
+    exercises.push_back( "ColorNames" );
     exercises.push_back( "FontProportions" );
     sections["S02-Getting_Started"] = exercises;
 

@@ -105,9 +105,11 @@ public:
         float floatval;
     } RenderItemUpdate;
 
+    bool solutionIsFinished();
+
 protected:
 
-    static int renderedItemsCount;
+//    static int renderedItemsCount;
     virtual void runExercise();
     virtual void setupSolution(QObject *parent=0){} //=0;
     std::string waitForKeyPress();
@@ -133,10 +135,11 @@ protected:
     int DrawInt( int number, int x, int y, Color color, int size=12 );
     int DrawFloat( float number, int x, int y, Color color, int size=12, int decimalPlaces=3 );
     int DrawImage( std::string filename, int x, int y );
-    bool SendRenderRequest( RenderItem item );
+    int SendRenderRequest( RenderItem item );
 
     void DrawReferenceBox( RefBoxLayout layout=LEFTRIGHT );
 
+    QMutex solutionmutex;
     ExerciseLauncher *mParent;
 
 private:

@@ -9,8 +9,9 @@ void ColorNames::runExercise()
 {
     seeout << "(Nothing to solve in this exercise.)\n\n";
 
-    ColorViewer colorViewer;
+    //ColorViewer is a FeetWetCoding class that shows what each
+    //pre-defined color looks like.
+    ColorViewer colorViewer(mParent);
     colorViewer.show();
 }
-
 

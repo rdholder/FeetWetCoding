@@ -9,9 +9,6 @@ using namespace std;
 
 extern QMutex globalmutex;
 
-//static variable definition
-int FeetWetCodingExercise::renderedItemsCount(0);
-
 FeetWetCodingExercise::FeetWetCodingExercise(QObject *parent)
     :QThread(parent)
     ,mSoln(false)
@@ -115,7 +112,6 @@ std::string FeetWetCodingExercise::getKeyboardString()
 int FeetWetCodingExercise::DrawLine( int xStart, int yStart, int xEnd, int yEnd, Color color, int thickness )
 {
     RenderItem item;
-    item.ID = renderedItemsCount++;
     item.type = LINE;
     item.x = xStart;
     item.y = yStart;
@@ -124,21 +120,15 @@ int FeetWetCodingExercise::DrawLine( int xStart, int yStart, int xEnd, int yEnd,
     item.color = color;
     item.linewidth = thickness;
 
-    //If successful, return the handle to the QGraphicsItem
-    //that will be added to the scene for this item in case
-    //we need to operate on it later.
-    if ( SendRenderRequest(item) )
-    {
-        return item.ID;
-    }
-
-    return -1;
+    //Return the handle to the QGraphicsItem
+    //that will be drawn for this item in case
+    //we need to update it later.
+    return SendRenderRequest(item);
 }
 
-int FeetWetCodingExercise::DrawCircle( int x, int y, int r, Color color, int thickness, bool solid)
+int FeetWetCodingExercise::DrawCircle( int x, int y, int r, Color color, int thickness, bool solid )
 {
     RenderItem item;
-    item.ID = renderedItemsCount++;
     item.type = CIRCLE;
     item.x = x;
     item.y = y;
@@ -147,21 +137,15 @@ int FeetWetCodingExercise::DrawCircle( int x, int y, int r, Color color, int thi
     item.linewidth = thickness;
     item.solid = solid;
 
-    //If successful, return the handle to the QGraphicsItem
-    //that will be added to the scene for this item in case
-    //we need to operate on it later.
-    if ( SendRenderRequest(item) )
-    {
-        return item.ID;
-    }
-
-    return -1;
+    //Return the handle to the QGraphicsItem
+    //that will be drawn for this item in case
+    //we need to update it later.
+    return SendRenderRequest(item);
 }
 
 int FeetWetCodingExercise::DrawCircleRGB( int x, int y, int r, int thickness, int red, int green, int blue, bool solid )
 {
     RenderItem item;
-    item.ID = renderedItemsCount++;
     item.type = CIRCLERGB;
     item.x = x;
     item.y = y;
@@ -172,21 +156,15 @@ int FeetWetCodingExercise::DrawCircleRGB( int x, int y, int r, int thickness, in
     item.linewidth = thickness;
     item.solid = solid;
 
-    //If successful, return the handle to the QGraphicsItem
-    //that will be added to the scene for this item in case
-    //we need to operate on it later.
-    if ( SendRenderRequest(item) )
-    {
-        return item.ID;
-    }
-
-    return -1;
+    //Return the handle to the QGraphicsItem
+    //that will be drawn for this item in case
+    //we need to update it later.
+    return SendRenderRequest(item);
 }
 
 int FeetWetCodingExercise::DrawEllipse( int x, int y, int w, int h, Color color, int thickness, bool solid )
 {
     RenderItem item;
-    item.ID = renderedItemsCount++;
     item.type = ELLIPSE;
     item.x = x;
     item.y = y;
@@ -196,21 +174,15 @@ int FeetWetCodingExercise::DrawEllipse( int x, int y, int w, int h, Color color,
     item.linewidth = thickness;
     item.solid = solid;
 
-    //If successful, return the handle to the QGraphicsItem
-    //that will be added to the scene for this item in case
-    //we need to operate on it later.
-    if ( SendRenderRequest(item) )
-    {
-        return item.ID;
-    }
-
-    return -1;
+    //Return the handle to the QGraphicsItem
+    //that will be drawn for this item in case
+    //we need to update it later.
+    return SendRenderRequest(item);
 }
 
 int FeetWetCodingExercise::DrawRectangle( int x, int y, int w, int h, Color color, int thickness, bool solid )
 {
     RenderItem item;
-    item.ID = renderedItemsCount++;
     item.type = RECTANGLE;
     item.x = x;
     item.y = y;
@@ -220,21 +192,15 @@ int FeetWetCodingExercise::DrawRectangle( int x, int y, int w, int h, Color colo
     item.linewidth = thickness;
     item.solid = solid;
 
-    //If successful, return the handle to the QGraphicsItem
-    //that will be added to the scene for this item in case
-    //we need to operate on it later.
-    if ( SendRenderRequest(item) )
-    {
-        return item.ID;
-    }
-
-    return -1;
+    //Return the handle to the QGraphicsItem
+    //that will be drawn for this item in case
+    //we need to update it later.
+    return SendRenderRequest(item);
 }
 
-int FeetWetCodingExercise::DrawText( std::string text, int x, int y, Color color, int size)
+int FeetWetCodingExercise::DrawText( std::string text, int x, int y, Color color, int size )
 {
     RenderItem item;
-    item.ID = renderedItemsCount++;
     item.type = TEXT;
     item.text = text;
     item.x = x;
@@ -242,21 +208,15 @@ int FeetWetCodingExercise::DrawText( std::string text, int x, int y, Color color
     item.color = color;
     item.fontsize = size;
 
-    //If successful, return the handle to the QGraphicsItem
-    //that will be added to the scene for this item in case
-    //we need to operate on it later.
-    if ( SendRenderRequest(item) )
-    {
-        return item.ID;
-    }
-
-    return -1;
+    //Return the handle to the QGraphicsItem
+    //that will be drawn for this item in case
+    //we need to update it later.
+    return SendRenderRequest(item);
 }
 
 int FeetWetCodingExercise::DrawInt( int number, int x, int y, Color color, int size )
 {
     RenderItem item;
-    item.ID = renderedItemsCount++;
     item.type = INT;
     item.intvalue = number;
     item.x = x;
@@ -264,21 +224,15 @@ int FeetWetCodingExercise::DrawInt( int number, int x, int y, Color color, int s
     item.color = color;
     item.fontsize = size;
 
-    //If successful, return the handle to the QGraphicsItem
-    //that will be added to the scene for this item in case
-    //we need to operate on it later.
-    if ( SendRenderRequest(item) )
-    {
-        return item.ID;
-    }
-
-    return -1;
+    //Return the handle to the QGraphicsItem
+    //that will be drawn for this item in case
+    //we need to update it later.
+    return SendRenderRequest(item);
 }
 
 int FeetWetCodingExercise::DrawFloat( float number, int x, int y, Color color, int size, int decimalPlaces )
 {
     RenderItem item;
-    item.ID = renderedItemsCount++;
     item.type = FLOAT;
     item.floatvalue = number;
     item.x = x;
@@ -287,35 +241,24 @@ int FeetWetCodingExercise::DrawFloat( float number, int x, int y, Color color, i
     item.fontsize = size;
     item.decimalplaces = decimalPlaces;
 
-    //If successful, return the handle to the QGraphicsItem
-    //that will be added to the scene for this item in case
-    //we need to operate on it later.
-    if ( SendRenderRequest(item) )
-    {
-        return item.ID;
-    }
-
-    return -1;
+    //Return the handle to the QGraphicsItem
+    //that will be drawn for this item in case
+    //we need to update it later.
+    return SendRenderRequest(item);
 }
 
 int FeetWetCodingExercise::DrawImage( std::string filename, int x, int y )
 {
     RenderItem item;
-    item.ID = renderedItemsCount++;
     item.type = IMAGE;
     item.imagefile = filename;
     item.x = x;
     item.y = y;
 
-    //If successful, return the handle to the QGraphicsItem
-    //that will be added to the scene for this item in case
-    //we need to operate on it later.
-    if ( SendRenderRequest(item) )
-    {
-        return item.ID;
-    }
-
-    return -1;
+    //Return the handle to the QGraphicsItem
+    //that will be drawn for this item in case
+    //we need to update it later.
+    return SendRenderRequest(item);
 }
 
 void FeetWetCodingExercise::DrawReferenceBox( RefBoxLayout layout )
@@ -356,12 +299,12 @@ void FeetWetCodingExercise::DrawReferenceBox( RefBoxLayout layout )
     DrawText( oss.str(), WINDOW_WIDTH*.75-strWidth/2, -20, GRAY, textSize);
 }
 
-bool FeetWetCodingExercise::SendRenderRequest( RenderItem item )
+int FeetWetCodingExercise::SendRenderRequest( RenderItem item )
 {
     if ( !mParent )
     {
         qDebug() << "FeetWetCodingExercise::sendRenderRequest() mParent is NULL!";
-        return false;
+        return -1;
     }
 
     {
@@ -373,9 +316,7 @@ bool FeetWetCodingExercise::SendRenderRequest( RenderItem item )
         }
     }
 
-    mParent->setRenderItem(item);
-
-    return true;
+    return mParent->setRenderItem(item);
 }
 
 
@@ -394,4 +335,14 @@ void FeetWetCodingExercise::ShiftDrawnItem(int itemID, int xShift, int yShift)
     update.dy = yShift;
 
     mParent->updateRenderItem(update);
+}
+
+bool FeetWetCodingExercise::solutionIsFinished()
+{
+    QMutexLocker solnlocker(&solutionmutex);
+
+    if ( NULL == mSolutionPtr )
+        return true;
+
+    return mSolutionPtr->isFinished();
 }

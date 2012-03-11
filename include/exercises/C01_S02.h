@@ -920,6 +920,25 @@ protected:
     }
 };
 
+class ColorNamesSoln : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit ColorNamesSoln(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        //Update seeout with soln config
+        mSoln = true;
+        mPane = 1; //Solution is always in pane 1 for now
+        seeout.setIsSolution(mSoln);
+        seeout.setColor(BLACK);
+        seeout.setFontSize(10);
+    }
+
+protected:
+    void runExercise();
+};
+
 class ColorNames : public FeetWetCodingExercise
 {
     Q_OBJECT
@@ -950,6 +969,11 @@ protected:
     void setupSolution(QObject *parent=0)
     {
         DrawReferenceBox(LEFTRIGHT);
+        mSolutionPtr = new ColorNamesSoln(parent);
+        if ( mSolutionPtr )
+        {
+            mSolutionPtr->start();
+        }
     }
 };
 

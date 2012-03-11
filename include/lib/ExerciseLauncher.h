@@ -32,7 +32,10 @@ public:
     void getKeyEventInfo( QKeySequence &key, QString &str );
     void setWhichPaneHasFocus( int pane );
     int getWhichPaneHasFocus();
-    void setRenderItem( FeetWetCodingExercise::RenderItem item );
+
+    //Adds a render item request. Returns unique ID of render item.
+    int setRenderItem( FeetWetCodingExercise::RenderItem item );
+
     void updateRenderItem( FeetWetCodingExercise::RenderItemUpdate update );
     void clearRenderedItems();
     bool collectingKeyEvents();
@@ -43,6 +46,11 @@ public slots:
     void sceneCleared();
 
 private:
+
+    //Every item that gets rendered gets a unique ID
+    //based on this value, which is incremented with
+    //every new rendered item.
+    static int renderedItemsCount;
 
     void handleRenderRequests();
     void handleRenderUpdates();

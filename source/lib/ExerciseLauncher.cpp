@@ -12,6 +12,9 @@ extern QTextEdit *solnOut;
 extern FWCView *view;
 extern QDialog *theWindow;
 
+//static variable definition
+int ExerciseLauncher::renderedItemsCount(0);
+
 ExerciseLauncher::ExerciseLauncher(QObject *parent)
     :QObject(parent)
     ,mTimer(NULL)
@@ -213,12 +216,14 @@ int ExerciseLauncher::getWhichPaneHasFocus()
     QMutexLocker locker(&eventMutex);
     return mWhichPaneHasFocus;
 }
-void ExerciseLauncher::setRenderItem( FeetWetCodingExercise::RenderItem item)
+int ExerciseLauncher::setRenderItem( FeetWetCodingExercise::RenderItem item)
 {
     //Store the item in the queue for rendering
     //during the next event processing timeout
     QMutexLocker locker(&itemMutex);
+    item.ID = renderedItemsCount++;
     mItems.push_back(item);
+    return item.ID;
 }
 
 void ExerciseLauncher::updateRenderItem(FeetWetCodingExercise::RenderItemUpdate update)
@@ -548,11 +553,11 @@ void ExerciseLauncher::update()
     handleSeeOutRequests();
     checkNeedForPanelSelection();
 
-    if ( buffersAreEmpty() && mThread->isFinished() )
+    if ( buffersAreEmpty() && mThread->isFinished() && mThread->solutionIsFinished() )
     {
-#ifdef DEBUG
+//#ifdef DEBUG
         qDebug() << "Thread is done and buffers are empty so stopping timer - &&&&&&&&&&&&&&&&&&&";
-#endif
+//#endif
         mTimer->stop();
     }
 }

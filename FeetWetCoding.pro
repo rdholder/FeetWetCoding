@@ -150,7 +150,8 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/405_SingleKeyInput1SOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/410_StringInput1SOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/415_ShiftDrawnItem1SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/415_ShiftDrawnItem1.cpp
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/415_ShiftDrawnItem1.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/520_ColorNamesSOLN.cpp
 
 
 HEADERS += \
