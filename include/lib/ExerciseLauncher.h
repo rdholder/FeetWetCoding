@@ -29,7 +29,8 @@ public:
     bool wasNewKeyEventReceived( int pane );
     void newKeyEventWasConsumed( int pane );
     void setKeyEvent( QKeyEvent event );
-    bool getKeyEventInfo( QKeySequence &key, QString &str, int pane );
+    bool getKeyEventInfo( QKeySequence &key, QString &str, int pane, bool latestOnly=false );
+//    bool getKeyEventInfo( QKeySequence &key, QString &str, int pane );
     void setWhichPaneHasFocus( int pane );
     int getWhichPaneHasFocus();
     int getNumPanes() { return mNumPanes; }

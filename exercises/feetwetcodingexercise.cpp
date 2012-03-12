@@ -61,7 +61,7 @@ std::string FeetWetCodingExercise::waitForKeyPress()
 
     QKeySequence key;
     QString keystr;
-    mParent->getKeyEventInfo(key, keystr, mPane);
+    mParent->getKeyEventInfo(key, keystr, mPane, true);
     mParent->newKeyEventWasConsumed(mPane);
     mParent->stopCollectingKeyBoardInput(mPane);
 
