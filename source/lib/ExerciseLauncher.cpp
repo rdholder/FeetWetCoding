@@ -20,6 +20,7 @@ ExerciseLauncher::ExerciseLauncher(QObject *parent)
     :QObject(parent)
     ,mTimer(NULL)
     ,mThread(NULL)
+    ,mNumPanes(2)
     ,mWhichPaneHasFocus(0)
     ,mPaneHighlight(NULL)
 {
@@ -95,29 +96,39 @@ void ExerciseLauncher::initSharedDataBuffers()
     clearRenderedItems();
 
     //Setup key event maps
-    //TODO: SIZE THESE BASES ON NUM_PANES. ALWAYS 2 PANES FOR NOW.
-    QMutexLocker locker(&eventMutex);
-    mCollectingKeyEvents[0] = false;
-    mCollectingKeyEvents[1] = false;
-    mNewKeyEventReceived[0] = false;
-    mNewKeyEventReceived[1] = false;
+    {
+        QMutexLocker locker(&eventMutex);
+
+        for ( int i=0; i < mNumPanes; ++i )
+        {
+            mCollectingKeyEvents[i] = false;
+            mNewKeyEventReceived[i] = false;
+            mKeyEvents[i] = std::deque<QKeyEvent>();
+        }
+    }
 }
 
 bool ExerciseLauncher::collectingKeyEvents()
 {
-    return (mCollectingKeyEvents[0] || mCollectingKeyEvents[1]);
+    QMutexLocker locker(&eventMutex);
+    for ( int i=0; i < mNumPanes; ++i )
+    {
+        if ( mCollectingKeyEvents[i] )
+        {
+            return true;
+        }
+    }
+    return false;
 }
 
 void ExerciseLauncher::startCollectingKeyBoardInput( int pane )
 {
+    QMutexLocker locker(&eventMutex);
+    if ( mCollectingKeyEvents.end() != mCollectingKeyEvents.find(pane) &&
+         mNewKeyEventReceived.end() != mNewKeyEventReceived.find(pane) )
     {
-        QMutexLocker locker(&eventMutex);
-        if ( mCollectingKeyEvents.end() != mCollectingKeyEvents.find(pane) &&
-             mNewKeyEventReceived.end() != mNewKeyEventReceived.find(pane) )
-        {
-            mCollectingKeyEvents[pane] = true;
-            mNewKeyEventReceived[pane] = false;
-        }
+        mCollectingKeyEvents[pane] = true;
+        mNewKeyEventReceived[pane] = false;
     }
 }
 
@@ -153,19 +164,30 @@ void ExerciseLauncher::newKeyEventWasConsumed( int pane )
     }
 }
 
-void ExerciseLauncher::setKeyEventInfo( QKeySequence key, QString str )
+void ExerciseLauncher::setKeyEvent( QKeyEvent event )
 {
     QMutexLocker locker(&eventMutex);
-    mKey = key;
-    mKeyString = str;
+    mKeyEvents[mWhichPaneHasFocus].push_back(event);
+
     mNewKeyEventReceived[mWhichPaneHasFocus] = true;
 }
 
-void ExerciseLauncher::getKeyEventInfo( QKeySequence &key, QString &str/*, int pane*/ )
+bool ExerciseLauncher::getKeyEventInfo( QKeySequence &key, QString &str, int pane )
 {
     QMutexLocker locker(&eventMutex);
-    key = mKey;
-    str = mKeyString;
+    if ( mKeyEvents.end() == mKeyEvents.find(pane) )
+        return false;
+
+    if ( (mKeyEvents[pane]).empty() )
+        return false;
+
+    QKeyEvent event((mKeyEvents[pane]).front());
+    (mKeyEvents[pane]).pop_front();
+
+    key = event.key();
+    str = event.text();
+
+    return true;
 }
 
 void ExerciseLauncher::setWhichPaneHasFocus( int pane )
@@ -300,6 +322,15 @@ void ExerciseLauncher::handleRenderUpdates()
     renderTimer.start();
 
     FeetWetCodingExercise::RenderItemUpdate update;
+    QGraphicsItem *item(NULL);
+    QGraphicsTextItem *textItem(NULL);
+    QGraphicsLineItem *lineItem(NULL);
+    QGraphicsEllipseItem  *circleItem(NULL);
+    QAbstractGraphicsShapeItem *shapeItem(NULL);
+    QGraphicsRectItem *rectItem(NULL);
+    QFont font(qApp->font());
+    QPen pen;
+    QBrush brush(Qt::SolidPattern);
 
     while ( renderTimer.elapsed() < 10 )
     {
@@ -327,15 +358,19 @@ void ExerciseLauncher::handleRenderUpdates()
         if ( NULL == mRenderedItems[itemID] )
             return;
 
-        QGraphicsItem *item = mRenderedItems[itemID];
+        item = mRenderedItems[itemID];
 
         switch (type) {
 
         case FeetWetCodingExercise::MOVE:
+            item->setPos(update.x, update.y);
+            break;
+
+        case FeetWetCodingExercise::SHIFT:
             item->moveBy(update.dx, update.dy);
             break;
 
-        case FeetWetCodingExercise::DELETE:
+        case FeetWetCodingExercise::ERASE:
             view->scene()->removeItem(item);
 
             //Remove this item from the mRenderedItems map
@@ -347,40 +382,100 @@ void ExerciseLauncher::handleRenderUpdates()
             }
             break;
 
-        case FeetWetCodingExercise::CHANGE_X_Y:
-            item->setPos(update.x, update.y);
+        case FeetWetCodingExercise::CHANGE_Z:
+            item->setZValue(update.z);
+            break;
+
+        case FeetWetCodingExercise::SCALE:
+            item->setScale(update.scalefactor);
+            break;
+
+        case FeetWetCodingExercise::ROTATE:
+            item->setRotation(update.angledegrees);
             break;
 
         case FeetWetCodingExercise::CHANGE_XEND_YEND:
-            //TODO: FINISH CODING THESE
+            lineItem = dynamic_cast<QGraphicsLineItem *>(item);
+            if ( lineItem )
+            {
+                lineItem->setLine(lineItem->line().x1(),
+                                  lineItem->line().y1(),
+                                  update.xEnd, update.yEnd);
+            }
             break;
 
         case FeetWetCodingExercise::CHANGE_WIDTH_AND_HEIGHT:
-            //TODO: FINISH CODING THESE
+            rectItem = dynamic_cast<QGraphicsRectItem *>(item);
+            if ( rectItem )
+            {
+                rectItem->setRect(rectItem->rect().x(),
+                              rectItem->rect().y(),
+                              update.width, update.height);
+            }
             break;
 
         case FeetWetCodingExercise::CHANGE_RADIUS:
-            //TODO: FINISH CODING THESE
+            circleItem = dynamic_cast<QGraphicsEllipseItem *>(item);
+            if ( circleItem )
+            {
+                circleItem->setRect(circleItem->x(), circleItem->y(),
+                                    update.radius, update.radius);
+            }
             break;
 
         case FeetWetCodingExercise::CHANGE_COLOR:
-            //TODO: FINISH CODING THESE
+            shapeItem = dynamic_cast<QAbstractGraphicsShapeItem *>(item);
+            if ( shapeItem )
+            {
+                if ( update.solid )
+                {
+                    brush.setColor(getQColor(update.color));
+                    shapeItem->setBrush(brush);
+                }
+                pen.setColor(getQColor(update.color));
+                shapeItem->setPen(pen);
+            }
             break;
 
         case FeetWetCodingExercise::CHANGE_LINE_WIDTH:
-            //TODO: FINISH CODING THESE
-            break;
+            shapeItem = dynamic_cast<QAbstractGraphicsShapeItem *>(item);
+            if ( shapeItem )
+            {
+                pen.setWidth(update.linewidth);
+                shapeItem->setPen(pen);
+            }              break;
 
         case FeetWetCodingExercise::CHANGE_FONT_SIZE:
-            //TODO: FINISH CODING THESE
+            textItem = dynamic_cast<QGraphicsTextItem *>(item);
+            if ( textItem )
+            {
+                font.setPointSize(update.fontsize);
+                textItem->setFont(font);
+            }
+            break;
+
+        case FeetWetCodingExercise::CHANGE_TEXT_VAL:
+            textItem = dynamic_cast<QGraphicsTextItem *>(item);
+            if ( textItem )
+            {
+                textItem->setPlainText(update.textval.c_str());
+            }
             break;
 
         case FeetWetCodingExercise::CHANGE_INT_VAL:
-            //TODO: FINISH CODING THESE
+            textItem = dynamic_cast<QGraphicsTextItem *>(item);
+            if ( textItem )
+            {
+                textItem->setPlainText(QString::number(update.intval));
+            }
             break;
 
         case FeetWetCodingExercise::CHANGE_FLOAT_VAL:
-            //TODO: FINISH CODING THESE
+            textItem = dynamic_cast<QGraphicsTextItem *>(item);
+            if ( textItem )
+            {
+                textItem->setPlainText(QString::number(update.floatval));
+            }
             break;
 
         default:
@@ -591,5 +686,7 @@ void ExerciseLauncher::update()
         qDebug() << "Thread is done and buffers are empty so stopping timer - &&&&&&&&&&&&&&&&&&&";
 #endif
         mTimer->stop();
+
+        emit currentExerciseFinished();
     }
 }

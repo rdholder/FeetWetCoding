@@ -56,12 +56,12 @@ std::string FeetWetCodingExercise::waitForKeyPress()
     {
         // Check to see if a new key event has come in
         received = mParent->wasNewKeyEventReceived(mPane);
-        this->msleep(100);
+        this->msleep(10);
     }
 
     QKeySequence key;
     QString keystr;
-    mParent->getKeyEventInfo(key, keystr/*, mPane*/);
+    mParent->getKeyEventInfo(key, keystr, mPane);
     mParent->newKeyEventWasConsumed(mPane);
     mParent->stopCollectingKeyBoardInput(mPane);
 
@@ -75,6 +75,7 @@ std::string FeetWetCodingExercise::getKeyboardString()
     bool done(false);
     QString keystr, fullstring;
     QKeySequence key;
+    int id(-1);
 
     mParent->startCollectingKeyBoardInput(mPane);
     while ( !done )
@@ -84,7 +85,7 @@ std::string FeetWetCodingExercise::getKeyboardString()
         {
             // Get the key and notify Exercise
             // that new key event was consumed
-            mParent->getKeyEventInfo(key, keystr);
+            mParent->getKeyEventInfo(key, keystr, mPane);
             mParent->newKeyEventWasConsumed(mPane);
 
             if ( Qt::Key_Enter == key || Qt::Key_Return == key )
@@ -100,8 +101,22 @@ std::string FeetWetCodingExercise::getKeyboardString()
 #endif
                 fullstring.append(keystr);
             }
+
+            if ( id < 0 )
+            {
+                id = DrawText("Input: " + fullstring.toStdString(), 10, 380, GRAY, 10);
+            }
+            else
+            {
+                ChangeText(id, "Input: " + fullstring.toStdString());
+            }
         }
         this->msleep(10);
+    }
+
+    if ( id >= 0 )
+    {
+        EraseItem(id);
     }
 
     mParent->stopCollectingKeyBoardInput(mPane);
@@ -122,8 +137,12 @@ int FeetWetCodingExercise::DrawLine( int xStart, int yStart, int xEnd, int yEnd,
 
     //Return the handle to the QGraphicsItem
     //that will be drawn for this item in case
-    //we need to update it later.
-    return SendRenderRequest(item);
+    //we need to update it later. Save it to
+    //the mDrawnItems vector as well, so we
+    //can clear all items at once if we want.
+    int id = SendRenderRequest(item);
+    mDrawnItems.push_back(id);
+    return id;
 }
 
 int FeetWetCodingExercise::DrawCircle( int x, int y, int r, Color color, int thickness, bool solid )
@@ -139,8 +158,12 @@ int FeetWetCodingExercise::DrawCircle( int x, int y, int r, Color color, int thi
 
     //Return the handle to the QGraphicsItem
     //that will be drawn for this item in case
-    //we need to update it later.
-    return SendRenderRequest(item);
+    //we need to update it later. Save it to
+    //the mDrawnItems vector as well, so we
+    //can clear all items at once if we want.
+    int id = SendRenderRequest(item);
+    mDrawnItems.push_back(id);
+    return id;
 }
 
 int FeetWetCodingExercise::DrawCircleRGB( int x, int y, int r, int thickness, int red, int green, int blue, bool solid )
@@ -158,8 +181,12 @@ int FeetWetCodingExercise::DrawCircleRGB( int x, int y, int r, int thickness, in
 
     //Return the handle to the QGraphicsItem
     //that will be drawn for this item in case
-    //we need to update it later.
-    return SendRenderRequest(item);
+    //we need to update it later. Save it to
+    //the mDrawnItems vector as well, so we
+    //can clear all items at once if we want.
+    int id = SendRenderRequest(item);
+    mDrawnItems.push_back(id);
+    return id;
 }
 
 int FeetWetCodingExercise::DrawEllipse( int x, int y, int w, int h, Color color, int thickness, bool solid )
@@ -176,8 +203,12 @@ int FeetWetCodingExercise::DrawEllipse( int x, int y, int w, int h, Color color,
 
     //Return the handle to the QGraphicsItem
     //that will be drawn for this item in case
-    //we need to update it later.
-    return SendRenderRequest(item);
+    //we need to update it later. Save it to
+    //the mDrawnItems vector as well, so we
+    //can clear all items at once if we want.
+    int id = SendRenderRequest(item);
+    mDrawnItems.push_back(id);
+    return id;
 }
 
 int FeetWetCodingExercise::DrawRectangle( int x, int y, int w, int h, Color color, int thickness, bool solid )
@@ -194,8 +225,12 @@ int FeetWetCodingExercise::DrawRectangle( int x, int y, int w, int h, Color colo
 
     //Return the handle to the QGraphicsItem
     //that will be drawn for this item in case
-    //we need to update it later.
-    return SendRenderRequest(item);
+    //we need to update it later. Save it to
+    //the mDrawnItems vector as well, so we
+    //can clear all items at once if we want.
+    int id = SendRenderRequest(item);
+    mDrawnItems.push_back(id);
+    return id;
 }
 
 int FeetWetCodingExercise::DrawText( std::string text, int x, int y, Color color, int size )
@@ -210,8 +245,12 @@ int FeetWetCodingExercise::DrawText( std::string text, int x, int y, Color color
 
     //Return the handle to the QGraphicsItem
     //that will be drawn for this item in case
-    //we need to update it later.
-    return SendRenderRequest(item);
+    //we need to update it later. Save it to
+    //the mDrawnItems vector as well, so we
+    //can clear all items at once if we want.
+    int id = SendRenderRequest(item);
+    mDrawnItems.push_back(id);
+    return id;
 }
 
 int FeetWetCodingExercise::DrawInt( int number, int x, int y, Color color, int size )
@@ -226,8 +265,12 @@ int FeetWetCodingExercise::DrawInt( int number, int x, int y, Color color, int s
 
     //Return the handle to the QGraphicsItem
     //that will be drawn for this item in case
-    //we need to update it later.
-    return SendRenderRequest(item);
+    //we need to update it later. Save it to
+    //the mDrawnItems vector as well, so we
+    //can clear all items at once if we want.
+    int id = SendRenderRequest(item);
+    mDrawnItems.push_back(id);
+    return id;
 }
 
 int FeetWetCodingExercise::DrawFloat( float number, int x, int y, Color color, int size, int decimalPlaces )
@@ -243,8 +286,12 @@ int FeetWetCodingExercise::DrawFloat( float number, int x, int y, Color color, i
 
     //Return the handle to the QGraphicsItem
     //that will be drawn for this item in case
-    //we need to update it later.
-    return SendRenderRequest(item);
+    //we need to update it later. Save it to
+    //the mDrawnItems vector as well, so we
+    //can clear all items at once if we want.
+    int id = SendRenderRequest(item);
+    mDrawnItems.push_back(id);
+    return id;
 }
 
 int FeetWetCodingExercise::DrawImage( std::string filename, int x, int y )
@@ -257,46 +304,60 @@ int FeetWetCodingExercise::DrawImage( std::string filename, int x, int y )
 
     //Return the handle to the QGraphicsItem
     //that will be drawn for this item in case
-    //we need to update it later.
-    return SendRenderRequest(item);
+    //we need to update it later. Save it to
+    //the mDrawnItems vector as well, so we
+    //can clear all items at once if we want.
+    int id = SendRenderRequest(item);
+    mDrawnItems.push_back(id);
+    return id;
 }
 
 void FeetWetCodingExercise::DrawReferenceBox( RefBoxLayout layout )
 {
-    DrawRectangle( 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, GRAY, 1);
     std::ostringstream oss;
     int strWidth(10);
     int dimsSize(8);
     int textSize(10);
 
+    //Save the ref box drawn items so that we can preserve them
+    //when all the other drawn items get cleared.
+    mRefBoxItems.clear();
+    mRefBoxItems.push_back(DrawRectangle( 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, GRAY, 1));
+
     oss << 0 << "," << 0;
-    DrawText(oss.str(), -10, -20, GRAY, dimsSize);
+    mRefBoxItems.push_back(DrawText(oss.str(), -10, -20, GRAY, dimsSize));
 
     oss.str("");
     oss << 0 << "," << WINDOW_HEIGHT;
-    DrawText(oss.str(), -10, WINDOW_HEIGHT, GRAY, dimsSize);
+    mRefBoxItems.push_back(DrawText(oss.str(), -10, WINDOW_HEIGHT, GRAY, dimsSize));
 
-    DrawLine( WINDOW_WIDTH/2, 0, WINDOW_WIDTH/2, WINDOW_HEIGHT, GRAY, 1);
+    mRefBoxItems.push_back(DrawLine( WINDOW_WIDTH/2, 0, WINDOW_WIDTH/2, WINDOW_HEIGHT, GRAY, 1));
 
     oss.str("");
     oss << WINDOW_WIDTH/2 << "," << 0;
-    DrawText(oss.str(), (WINDOW_WIDTH/2-BORDER/2), -20, GRAY, dimsSize);
+    mRefBoxItems.push_back(DrawText(oss.str(), (WINDOW_WIDTH/2-BORDER/2), -20, GRAY, dimsSize));
 
     oss.str("");
     oss << WINDOW_WIDTH/2 << "," << WINDOW_HEIGHT;
-    DrawText(oss.str(), WINDOW_WIDTH/2-BORDER/2, WINDOW_HEIGHT, GRAY, dimsSize);
+    mRefBoxItems.push_back(DrawText(oss.str(), WINDOW_WIDTH/2-BORDER/2, WINDOW_HEIGHT, GRAY, dimsSize));
 
     oss.str("");
     oss << "Make this side...";
     qApp->font().setPointSize(textSize);
     strWidth=QFontMetrics(QFont(qApp->font())).width(oss.str().c_str());
-    DrawText( oss.str(), WINDOW_WIDTH*.25-strWidth/2, -20, GRAY, 10);
+    mRefBoxItems.push_back(DrawText( oss.str(), WINDOW_WIDTH*.25-strWidth/2, -20, GRAY, 10));
 
     oss.str("");
     oss << "...look like this side.";
     qApp->font().setPointSize(textSize);
     strWidth=QFontMetrics(QFont(qApp->font())).width(oss.str().c_str());
-    DrawText( oss.str(), WINDOW_WIDTH*.75-strWidth/2, -20, GRAY, textSize);
+    mRefBoxItems.push_back(DrawText( oss.str(), WINDOW_WIDTH*.75-strWidth/2, -20, GRAY, textSize));
+
+    //Draw reference box on top of everything else
+    for ( unsigned int i=0; i < mRefBoxItems.size(); ++i )
+    {
+        ChangeZ(mRefBoxItems[i], 1000);
+    }
 }
 
 int FeetWetCodingExercise::SendRenderRequest( RenderItem item )
@@ -319,22 +380,281 @@ int FeetWetCodingExercise::SendRenderRequest( RenderItem item )
     return mParent->setRenderItem(item);
 }
 
-
-void FeetWetCodingExercise::ShiftDrawnItem(int itemID, int xShift, int yShift)
+void FeetWetCodingExercise::MoveItem(int itemID, int newX, int newY)
 {
     if ( !mParent )
     {
-        qDebug() << "FeetWetCodingExercise::ShiftDrawnItem() mParent is NULL!";
+        qDebug() << "FeetWetCodingExercise::MoveItem() mParent is NULL!";
         return;
     }
 
     RenderItemUpdate update;
     update.type = MOVE;
     update.ID = itemID;
+    update.x = newX;
+    update.y = newY;
+
+    mParent->updateRenderItem(update);
+}
+
+void FeetWetCodingExercise::ShiftItem(int itemID, int xShift, int yShift)
+{
+    if ( !mParent )
+    {
+        qDebug() << "FeetWetCodingExercise::ShiftItem() mParent is NULL!";
+        return;
+    }
+
+    RenderItemUpdate update;
+    update.type = SHIFT;
+    update.ID = itemID;
     update.dx = xShift;
     update.dy = yShift;
 
     mParent->updateRenderItem(update);
+}
+
+void FeetWetCodingExercise::EraseItem(int itemID)
+{
+    if ( !mParent )
+    {
+        qDebug() << "FeetWetCodingExercise::EraseItem() mParent is NULL!";
+        return;
+    }
+
+    RenderItemUpdate update;
+    update.type = ERASE;
+    update.ID = itemID;
+
+    mParent->updateRenderItem(update);
+
+    //Remove this item from our local list as well
+    std::vector<int>::iterator iter(std::find(mDrawnItems.begin(), mDrawnItems.end(), itemID));
+    if ( mDrawnItems.end() != iter )
+    {
+        mDrawnItems.erase(iter);
+    }
+}
+
+void FeetWetCodingExercise::ChangeZ(int itemID, int z)
+{
+    if ( !mParent )
+    {
+        qDebug() << "FeetWetCodingExercise::ChangeZ() mParent is NULL!";
+        return;
+    }
+
+    RenderItemUpdate update;
+    update.type = CHANGE_Z;
+    update.ID = itemID;
+    update.z = z;
+
+    mParent->updateRenderItem(update);
+}
+
+void FeetWetCodingExercise::ScaleItem(int itemID, float scalefactor)
+{
+    if ( !mParent )
+    {
+        qDebug() << "FeetWetCodingExercise::Scale() mParent is NULL!";
+        return;
+    }
+
+    RenderItemUpdate update;
+    update.type = SCALE;
+    update.ID = itemID;
+    update.scalefactor = scalefactor;
+
+    mParent->updateRenderItem(update);
+}
+
+void FeetWetCodingExercise::RotateItem(int itemID, float angledegrees)
+{
+    if ( !mParent )
+    {
+        qDebug() << "FeetWetCodingExercise::Rotate() mParent is NULL!";
+        return;
+    }
+
+    RenderItemUpdate update;
+    update.type = ROTATE;
+    update.ID = itemID;
+    update.angledegrees = angledegrees;
+
+    mParent->updateRenderItem(update);
+}
+
+void FeetWetCodingExercise::ChangeLineEnd(int itemID, int xEnd, int yEnd)
+{
+    if ( !mParent )
+    {
+        qDebug() << "FeetWetCodingExercise::ChangeLineEnd() mParent is NULL!";
+        return;
+    }
+
+    RenderItemUpdate update;
+    update.type = CHANGE_XEND_YEND;
+    update.ID = itemID;
+    update.xEnd = xEnd;
+    update.yEnd = yEnd;
+
+    mParent->updateRenderItem(update);
+}
+
+void FeetWetCodingExercise::ChangeWidthAndHeight(int itemID, int w, int h)
+{
+    if ( !mParent )
+    {
+        qDebug() << "FeetWetCodingExercise::ChangeWidthAndHeight() mParent is NULL!";
+        return;
+    }
+
+    RenderItemUpdate update;
+    update.type = CHANGE_WIDTH_AND_HEIGHT;
+    update.ID = itemID;
+    update.width = w;
+    update.height = h;
+
+    mParent->updateRenderItem(update);
+}
+
+void FeetWetCodingExercise::ChangeRadius(int itemID, int radius)
+{
+    if ( !mParent )
+    {
+        qDebug() << "FeetWetCodingExercise::ChangeRadius() mParent is NULL!";
+        return;
+    }
+
+    RenderItemUpdate update;
+    update.type = CHANGE_RADIUS;
+    update.ID = itemID;
+    update.radius = radius;
+
+    mParent->updateRenderItem(update);
+}
+
+void FeetWetCodingExercise::ChangeColor(int itemID, Color color, bool solid)
+{
+    if ( !mParent )
+    {
+        qDebug() << "FeetWetCodingExercise::ChangeColor() mParent is NULL!";
+        return;
+    }
+
+    RenderItemUpdate update;
+    update.type = CHANGE_COLOR;
+    update.ID = itemID;
+    update.color = color;
+    update.solid = solid;
+
+    mParent->updateRenderItem(update);
+}
+
+void FeetWetCodingExercise::ChangeLineWidth(int itemID, int width)
+{
+    if ( !mParent )
+    {
+        qDebug() << "FeetWetCodingExercise::ChangeLineWidth() mParent is NULL!";
+        return;
+    }
+
+    RenderItemUpdate update;
+    update.type = CHANGE_LINE_WIDTH;
+    update.ID = itemID;
+    update.linewidth = width;
+
+    mParent->updateRenderItem(update);
+}
+
+void FeetWetCodingExercise::ChangeFontSize(int itemID, int size)
+{
+    if ( !mParent )
+    {
+        qDebug() << "FeetWetCodingExercise::ChangeFontSize() mParent is NULL!";
+        return;
+    }
+
+    RenderItemUpdate update;
+    update.type = CHANGE_FONT_SIZE;
+    update.ID = itemID;
+    update.fontsize = size;
+
+    mParent->updateRenderItem(update);
+}
+
+
+void FeetWetCodingExercise::ChangeText(int itemID, std::string text)
+{
+    if ( !mParent )
+    {
+        qDebug() << "FeetWetCodingExercise::ChangeText() mParent is NULL!";
+        return;
+    }
+
+    RenderItemUpdate update;
+    update.type = CHANGE_TEXT_VAL;
+    update.ID = itemID;
+    update.textval = text;
+
+    mParent->updateRenderItem(update);
+}
+
+void FeetWetCodingExercise::ChangeInt(int itemID, int intval)
+{
+    if ( !mParent )
+    {
+        qDebug() << "FeetWetCodingExercise::ChangeInt() mParent is NULL!";
+        return;
+    }
+
+    RenderItemUpdate update;
+    update.type = CHANGE_INT_VAL;
+    update.ID = itemID;
+    update.intval = intval;
+
+    mParent->updateRenderItem(update);
+}
+
+void FeetWetCodingExercise::ChangeFloat(int itemID, int floatval)
+{
+    if ( !mParent )
+    {
+        qDebug() << "FeetWetCodingExercise::ChangeFloat() mParent is NULL!";
+        return;
+    }
+
+    RenderItemUpdate update;
+    update.type = CHANGE_FLOAT_VAL;
+    update.ID = itemID;
+    update.floatval = floatval;
+
+    mParent->updateRenderItem(update);
+}
+
+void FeetWetCodingExercise::ClearItems()
+{
+    std::vector<int>itemsToErase;
+    std::vector<int>::iterator iter;
+
+    for( iter = mDrawnItems.begin(); iter != mDrawnItems.end(); ++iter)
+    {
+        //Don't erase the ref box drawn elements
+        if ( mRefBoxItems.end() == std::find(mRefBoxItems.begin(), mRefBoxItems.end(), *iter) )
+        {
+            //We can't erease from the main list here since we're iterating
+            //over the main list and erasing from it will mess up out iterator.
+            //Save the items to erase, then erase from the main list as we
+            //iterate over the saved items.
+            itemsToErase.push_back(*iter);
+        }
+    }
+
+    //Now erase the items from the main list
+    for ( iter = itemsToErase.begin(); iter != itemsToErase.end(); ++iter )
+    {
+        EraseItem(*iter);
+    }
 }
 
 bool FeetWetCodingExercise::solutionIsFinished()

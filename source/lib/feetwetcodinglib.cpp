@@ -118,9 +118,6 @@ void setupDrawingUtils()
     // Choose the first Exercise in the list
     exerciseChooser->setOkToRun(true);
     exerciseChooser->runCurrentExercise();
-
-    //Finally, give focus to the drawing area
-    //view->setFocus();
 }
 
 void initOutputArea()

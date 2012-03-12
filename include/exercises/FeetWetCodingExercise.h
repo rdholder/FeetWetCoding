@@ -73,14 +73,18 @@ public:
     typedef enum
     {
         MOVE,
-        DELETE,
-        CHANGE_X_Y,
+        SHIFT,
+        ERASE,
+        CHANGE_Z,
+        SCALE,
+        ROTATE,
         CHANGE_XEND_YEND,
         CHANGE_WIDTH_AND_HEIGHT,
         CHANGE_RADIUS,
         CHANGE_COLOR,
         CHANGE_LINE_WIDTH,
         CHANGE_FONT_SIZE,
+        CHANGE_TEXT_VAL,
         CHANGE_INT_VAL,
         CHANGE_FLOAT_VAL
     } RenderItemUpdateType;
@@ -93,14 +97,19 @@ public:
         int dy;
         int x;
         int y;
+        int z;
+        float scalefactor;
+        float angledegrees;
         int xEnd;
         int yEnd;
         int width;
         int height;
         int radius;
         Color color;
+        bool solid;
         int linewidth;
         int fontsize;
+        std::string textval;
         int intval;
         float floatval;
     } RenderItemUpdate;
@@ -109,7 +118,6 @@ public:
 
 protected:
 
-//    static int renderedItemsCount;
     virtual void runExercise();
     virtual void setupSolution(QObject *parent=0){} //=0;
     std::string waitForKeyPress();
@@ -121,7 +129,22 @@ protected:
     FeetWetCodingExercise *mSolutionPtr;
 
     //Shift a drawn item's x/y location by xShift/yShift.
-    void ShiftDrawnItem(int itemID, int xShift, int yShift);
+    void MoveItem(int itemID, int newX, int newY);
+    void ShiftItem(int itemID, int xShift, int yShift);
+    void EraseItem(int itemID);
+    void ChangeZ(int itemID, int z);
+    void ScaleItem(int itemID, float scalefactor);
+    void RotateItem(int itemID, float angledegrees);
+    void ChangeLineEnd(int itemID, int xEnd, int yEnd);
+    void ChangeWidthAndHeight(int itemID, int w, int h);
+    void ChangeRadius(int itemID, int radius);
+    void ChangeColor(int itemID, Color color, bool solid=false);
+    void ChangeLineWidth(int itemID, int width);
+    void ChangeFontSize(int itemID, int size);
+    void ChangeText(int itemID, std::string text);
+    void ChangeInt(int itemID, int intval);
+    void ChangeFloat(int itemID, int floatval);
+    void ClearItems();
 
     //Return ID of the item to be drawn. This ID can be used later
     //to operate on the corresponding QGraphicsItem.
@@ -136,9 +159,10 @@ protected:
     int DrawFloat( float number, int x, int y, Color color, int size=12, int decimalPlaces=3 );
     int DrawImage( std::string filename, int x, int y );
     int SendRenderRequest( RenderItem item );
-
     void DrawReferenceBox( RefBoxLayout layout=LEFTRIGHT );
 
+    std::vector<int> mDrawnItems;
+    std::vector<int> mRefBoxItems;
     QMutex solutionmutex;
     ExerciseLauncher *mParent;
 

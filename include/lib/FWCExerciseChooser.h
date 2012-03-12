@@ -28,6 +28,7 @@ public:
     void selectSection( const QString & selection );
     void selectExercise( const QString & selection );
     void setOkToRun(bool ok) { mOkToRun = ok; }
+    void giveFocusToExerciseChooser();
     void sceneCleared();
 
     FeetWetCodingExercise * getCurrentExercise(){ return mSelectedExercise; }
@@ -44,6 +45,7 @@ public slots:
     void saveCurrentExercise();
     void handleKeyEvent(QKeyEvent *event);
     void handleNewMousePosEvent(QPoint pos);
+    void currentExerciseFinished();
 
 private:
     void createExercisesMap();

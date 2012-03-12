@@ -17,16 +17,18 @@ void SingleKeyInput1::runExercise()
     int x = 100, y = 0;
     int fontSize = 200;
     std::string key;
-    //Color color = DARKBLUE;
+    Color color = DARKGREEN;
 
     seeout.setColor(DARKRED);
     seeout.setFontSize(18);
     seeout << "Press keys, or q to quit.\n";
 
-    while ( key != "q" || key != "Q" )
+    while ( key != "q" && key != "Q" )
     {
         key = waitForKeyPress();
-        DrawRectangle(1, 1, 398, 398, WHITE, 1, true);
-        DrawText(key, x, y, DARKGREEN, fontSize);
+        ClearItems();
+        DrawText(key, x, y, color, fontSize);
     }
+    ClearItems();
+    DrawText("DONE!", 60, 150, color, 60);
 }
