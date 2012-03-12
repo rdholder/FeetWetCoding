@@ -2,6 +2,7 @@
 #include <SeeOut.h>
 #include <QDialog>
 #include <QTime>
+#include <QTransform>
 #include <utility>
 
 std::deque< std::pair< SeeOut::RequestType, QString > > SeeOut::exerciseOutMsgQueue;
@@ -172,7 +173,7 @@ void ExerciseLauncher::setKeyEvent( QKeyEvent event )
     mNewKeyEventReceived[mWhichPaneHasFocus] = true;
 }
 
-bool ExerciseLauncher::getKeyEventInfo( QKeySequence &key, QString &str, int pane )
+bool ExerciseLauncher::getKeyEventInfo( QKeySequence &key, QString &str, int pane, bool latestOnly )
 {
     QMutexLocker locker(&eventMutex);
     if ( mKeyEvents.end() == mKeyEvents.find(pane) )
@@ -181,12 +182,20 @@ bool ExerciseLauncher::getKeyEventInfo( QKeySequence &key, QString &str, int pan
     if ( (mKeyEvents[pane]).empty() )
         return false;
 
-    QKeyEvent event((mKeyEvents[pane]).front());
-    (mKeyEvents[pane]).pop_front();
-
-    key = event.key();
-    str = event.text();
-
+    if ( latestOnly )
+    {
+        QKeyEvent event((mKeyEvents[pane]).back());
+        (mKeyEvents[pane]).clear();
+        key = event.key();
+        str = event.text();
+    }
+    else
+    {
+        QKeyEvent event((mKeyEvents[pane]).front());
+        (mKeyEvents[pane]).pop_front();
+        key = event.key();
+        str = event.text();
+    }
     return true;
 }
 
@@ -332,6 +341,9 @@ void ExerciseLauncher::handleRenderUpdates()
     QPen pen;
     QBrush brush(Qt::SolidPattern);
 
+    QTransform transform;
+    int centerX, centerY;
+
     while ( renderTimer.elapsed() < 10 )
     {
         {
@@ -391,7 +403,13 @@ void ExerciseLauncher::handleRenderUpdates()
             break;
 
         case FeetWetCodingExercise::ROTATE:
-            item->setRotation(update.angledegrees);
+            transform = QTransform();
+            centerX = item->boundingRect().width()/2;
+            centerY = item->boundingRect().height()/2;
+            transform.translate( centerX , centerY );
+            transform.rotate( update.angledegrees );
+            transform.translate( -centerX , -centerY );
+            item->setTransform( transform );
             break;
 
         case FeetWetCodingExercise::CHANGE_XEND_YEND:
