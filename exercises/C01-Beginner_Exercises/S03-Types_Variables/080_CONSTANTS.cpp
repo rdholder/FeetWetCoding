@@ -7,7 +7,7 @@ void CONSTANTS::runExercise()     // copy the exercise name & paste it into main
 {
     // This exercise only demonstrates const for reference.  There is nothing for you to solve.
 
-    const int LIGHTSPEEDMPH = 186282;
+    const int LIGHTSPEEDMPS = 186282;
     const int POUNDSPERPINT = 1;
     const int CHESSBOARDX = 8;
     const int CHESSBOARDY = 8;
@@ -17,7 +17,7 @@ void CONSTANTS::runExercise()     // copy the exercise name & paste it into main
     DrawText("Reference Exercise:", 50, 150, BLUE, 20);
     DrawText("no solution needed.", 50, 180, BLUE, 20);
 
-    seeout << "The speed of light is " << LIGHTSPEEDMPH << " miles per hour.\n";
+    seeout << "The speed of light is " << LIGHTSPEEDMPS << " miles per second.\n";
     seeout << "A pint is " << POUNDSPERPINT << " pound, the world around.\n";
     seeout << "There are " << CHESSBOARDX * CHESSBOARDY << " squares on a chessboard.\n";
     chessboardx = 20;
