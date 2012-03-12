@@ -13,8 +13,9 @@ void ShiftDrawnItem1Soln::runExercise()
 
     while (x < 380)
     {
-        ShiftDrawnItem(circle, dx, dy);
-        ShiftDrawnItem(velocity, dx, dy);
+        ShiftItem(circle, dx, dy);
+        ShiftItem(velocity, dx, dy);
+        ChangeInt(velocity, dy);
         x+=dx;
         dy += rateofchange;
         msleep(20);

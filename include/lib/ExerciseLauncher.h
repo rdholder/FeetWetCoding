@@ -28,10 +28,11 @@ public:
     void stopCollectingKeyBoardInput( int pane );
     bool wasNewKeyEventReceived( int pane );
     void newKeyEventWasConsumed( int pane );
-    void setKeyEventInfo( QKeySequence key, QString str );
-    void getKeyEventInfo( QKeySequence &key, QString &str );
+    void setKeyEvent( QKeyEvent event );
+    bool getKeyEventInfo( QKeySequence &key, QString &str, int pane );
     void setWhichPaneHasFocus( int pane );
     int getWhichPaneHasFocus();
+    int getNumPanes() { return mNumPanes; }
 
     //Adds a render item request. Returns unique ID of render item.
     int setRenderItem( FeetWetCodingExercise::RenderItem item );
@@ -44,6 +45,9 @@ public slots:
 
     void update();
     void sceneCleared();
+
+signals:
+    void currentExerciseFinished();
 
 private:
 
@@ -63,9 +67,11 @@ private:
 
     std::map<int, bool> mCollectingKeyEvents;
     std::map<int, bool> mNewKeyEventReceived;
+    std::map<int, std::deque<QKeyEvent> > mKeyEvents;
 
     QKeySequence mKey;
     QString mKeyString;
+    int mNumPanes;
     int mWhichPaneHasFocus;
     QGraphicsItem *mPaneHighlight;
     std::deque<FeetWetCodingExercise::RenderItem> mItems;

@@ -33,6 +33,9 @@ FWCExerciseChooser::FWCExerciseChooser(QObject *parent)
     QObject::connect(qApp, SIGNAL(lastWindowClosed()),
                      this, SLOT(saveCurrentExercise()));
 
+    QObject::connect(&mExerciseLauncher, SIGNAL(currentExerciseFinished()),
+                     this, SLOT(currentExerciseFinished()));
+
     //Try the defaultconfig if config isn't found
     if ( loadPreviousExerciseEnabled() )
     {
@@ -43,6 +46,10 @@ FWCExerciseChooser::FWCExerciseChooser(QObject *parent)
     //of a section and exercise. This will create and populate
     //the chapter, section, and exercise list boxes.
     selectChapter(mCurrentChapter);
+
+    //Give the exercise chooser focus so user can use
+    //arrow keys to run through the list.
+    giveFocusToExerciseChooser();
 }
 
 FWCExerciseChooser::~FWCExerciseChooser()
@@ -540,7 +547,7 @@ void FWCExerciseChooser::runExercise( const QString & exerciseName )
 
     if ( NULL == mSelectedExercise )
     {
-        qDebug() << "WHOA! mSelectedExercise IS NULL!";
+        qDebug() << "mSelectedExercise IS NULL!";
         return;
     }
 
@@ -548,6 +555,9 @@ void FWCExerciseChooser::runExercise( const QString & exerciseName )
     //pointer. ExerciseLauncher should not delete this passed in pointer!
 
     mExerciseLauncher.launchExercise(mSelectedExercise);
+
+    //DO WE STILL NEED THIS HERE?
+    giveFocusToExerciseChooser();
 }
 
 void FWCExerciseChooser::runCurrentExercise()
@@ -557,16 +567,6 @@ void FWCExerciseChooser::runCurrentExercise()
     qDebug() << "START NEXT SELECTION - ENTER FWCExerciseChooser::runCurrentExercise()";
 #endif
     runExercise( mCurrentExercise );
-
-    //Give the exercise chooser focus so user can use
-    //arrow keys to run through the list. (This is for
-    //when exercise is selected programatically, as it
-    //is here, rather than user selecting via the widget.)
-    if ( NULL != mExerciseChooser )
-    {
-        //TODO: THIS ISN'T WORKING FOR SOME REASON
-        mExerciseChooser->setFocus();
-    }
 }
 
 void FWCExerciseChooser::saveCurrentExercise()
@@ -676,10 +676,7 @@ bool FWCExerciseChooser::loadPreviousExerciseEnabled()
 
 void FWCExerciseChooser::handleKeyEvent(QKeyEvent *event)
 {
-    if ( event )
-    {
-        mExerciseLauncher.setKeyEventInfo(event->key(), event->text());
-    }
+    mExerciseLauncher.setKeyEvent(*event);
 }
 
 void FWCExerciseChooser::handleNewMousePosEvent(QPoint pos)
@@ -690,11 +687,7 @@ void FWCExerciseChooser::handleNewMousePosEvent(QPoint pos)
     int y(pos.y());
     int pane(-1);
 
-    //TODO: ADD DATA MEMBER FOR NUM_PANES. (WHO SETS IT?)
-    //      ONLY SUPPORTING 2 FOR NOW.
-    int numPanes(2);
-
-    switch ( numPanes ) {
+    switch ( mExerciseLauncher.getNumPanes() ) {
 
     case 2:
         if ( x > 0 && x < theWindow->width()/2-WINDOW_X )
@@ -736,4 +729,19 @@ void FWCExerciseChooser::handleNewMousePosEvent(QPoint pos)
 void FWCExerciseChooser::sceneCleared()
 {
     mExerciseLauncher.sceneCleared();
+}
+
+void FWCExerciseChooser::currentExerciseFinished()
+{
+    giveFocusToExerciseChooser();
+}
+
+void FWCExerciseChooser::giveFocusToExerciseChooser()
+{
+    //Give the exercise chooser focus so user can use
+    //arrow keys to run through the list.
+    if ( NULL != mExerciseChooser )
+    {
+        mExerciseChooser->setFocus();
+    }
 }

@@ -7,12 +7,16 @@ void ShiftDrawnItem1::runExercise()
 {
     int x(20), y(200);
     int dx(2);
+    int dy(0);
     int circle = DrawCircle(x,y,20,DARKRED,1, true);
+    int velocity = DrawInt(dy, x+20, y-12, DARKBLUE);
 
     while (x < 380)
     {
         x+=dx;
-        ShiftDrawnItem(circle, dx, 0);
+        ShiftItem(circle, dx, 0);
+        ShiftItem(velocity, dx, dy);
+        ChangeInt(velocity, dy);
         msleep(20);
     }
 }

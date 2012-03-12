@@ -11,11 +11,15 @@ void StringInput1::runExercise()
     std::string name, greeting;
     Color color = DARKBLUE;
 
-    DrawText("Mouseover this window, then", 30, 100, color);
-    DrawText("type your name and hit ENTER:", 30, 130, color);
+    int text1 = DrawText("Mouseover this window, then", 30, 100, color);
+    int text2 = DrawText("type your name and hit ENTER:", 30, 130, color);
     name = getKeyboardString();
-    DrawRectangle(3, 3, 397, 397, WHITE, 1, true);
 
+    //Clear the old text...
+    EraseItem(text1);
+    EraseItem(text2);
+
+    //And add the new...
     for ( count=0; count < 50; count++ )
     {
         fontSize = random(10)+3;

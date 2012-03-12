@@ -15,9 +15,10 @@ void SingleKeyInput1Soln::runExercise()
     seeout.setFontSize(18);
     seeout << "Press keys, or q to quit.\n";
 
-    while ( key != "q" || key != "Q" )
+    while ( key != "q" && key != "Q" )
     {
         key = waitForKeyPress();
+
         DrawText(key, x, y, color, fontSize);
 
         x += fontSize;
@@ -29,8 +30,10 @@ void SingleKeyInput1Soln::runExercise()
             {
                 x = 10;
                 y = 20;
-                DrawRectangle(3, 3, 396, 396, WHITE, 1, true);
+                ClearItems();
             }
         }
     }
+    ClearItems();
+    DrawText("DONE!", 60, 150, color, 60);
 }
