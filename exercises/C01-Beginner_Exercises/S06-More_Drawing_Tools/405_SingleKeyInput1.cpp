@@ -1,7 +1,7 @@
 // copyright (c) 2011 Robert Holder, Janice Dugger.
 // See README.html included in this distribution.
 
-#include <exercises/C01_S05.h>
+#include <exercises/C01_S06.h>
 
 // You are seeing some new syntax here with key = waitForKeyPress()
 // This is because waitForKeyPress() is a function that is returning

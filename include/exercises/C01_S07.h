@@ -1,35 +1,35 @@
 // copyright (c) 2011 Robert Holder, Janice Dugger.
 // See README.html included in this distribution.
 
-#ifndef C01_S11_H
-#define C01_S11_H
+#ifndef C01_S07_H
+#define C01_S07_H
 
 #include <exercises/FeetWetCodingExercise.h>
 
-class TheEventLoopSoln : public FeetWetCodingExercise
+//class WhileLoopIntroSoln : public FeetWetCodingExercise
+//{
+//    Q_OBJECT
+//public:
+//    explicit WhileLoopIntroSoln(QObject *parent = 0)
+//        :FeetWetCodingExercise(parent)
+//{
+//    //Update seeout with soln config
+//    mSoln = true;
+//    mPane = 1; //Solution is always in pane 1 for now
+//    seeout.setIsSolution(mSoln);
+//    seeout.setColor(BLACK);
+//    seeout.setFontSize(10);
+//}
+
+//protected:
+//    void runExercise();
+//};
+
+class Arrays1 : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit TheEventLoopSoln(QObject *parent = 0)
-        :FeetWetCodingExercise(parent)
-    {
-        //Update seeout with soln config
-        mSoln = true;
-        mPane = 1; //Solution is always in pane 1 for now
-        seeout.setIsSolution(mSoln);
-        seeout.setColor(BLACK);
-        seeout.setFontSize(10);
-    }
-
-protected:
-    void runExercise();
-};
-
-class TheEventLoop : public FeetWetCodingExercise
-{
-    Q_OBJECT
-public:
-    explicit TheEventLoop(QObject *parent = 0)
+    explicit Arrays1(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
         //Exercises can use parent's seeout config
@@ -37,7 +37,7 @@ public:
         //If this exercise has a solution, launch it
         this->setupSolution(parent);
     }
-    ~TheEventLoop()
+    ~Arrays1()
     {
         if ( mSolutionPtr )
         {
@@ -55,7 +55,7 @@ protected:
     void setupSolution(QObject *parent=0)
     {
         DrawReferenceBox(LEFTRIGHT);
-        mSolutionPtr = new TheEventLoopSoln(parent);
+        //mSolutionPtr = new Arrays1Soln(parent);
         if ( mSolutionPtr )
         {
             mSolutionPtr->start();
@@ -63,4 +63,6 @@ protected:
     }
 };
 
-#endif // C01_S11_H
+
+
+#endif // C01_S07_H

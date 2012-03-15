@@ -10,8 +10,8 @@
 #include <exercises/C01_S04.h>
 #include <exercises/C01_S05.h>
 #include <exercises/C01_S06.h>
-#include <exercises/C01_S10.h>
-#include <exercises/C01_S11.h>
+#include <exercises/C01_S07.h>
+#include <exercises/C01_S09.h>
 #include <exercises/C08-Game_Programming/S03-TopDown2D/TopDown2D.h>
 #include <lib/feetwetcodinglib.h>
 

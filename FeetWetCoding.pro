@@ -12,7 +12,10 @@ TEMPLATE = app
 SOURCES += \
     source/main.cpp \
     source/lib/feetwetcodinglib.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/001_WelcomeSOLN.cpp \
+    source/lib/ExerciseLauncher.cpp \
+    source/lib/ColorViewer.cpp \
+    exercises/feetwetcodingexercise.cpp \
+    source/lib/FWCExerciseChooser.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/001_Welcome.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/010_ChangeText.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/020_ChangeX.cpp \
@@ -20,63 +23,62 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/040_ChangeXY.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/050_ChangeColor.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/060_ChangeFont.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/060_ChangeFontSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/200_DrawingText.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/070_DrawLines.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/080_DrawCircles.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/100_DrawDots.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/090_DrawRectangles.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/110_DrawEllipses.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/250_DrawingImages.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/310_SeeoutFormatting.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/400_OnYourOwn.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/550_FontProportions.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/300_SeeoutIntro.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/520_ColorNames.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/001_WelcomeSOLN.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/010_ChangeTextSOLN.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/020_ChangeXSOLN.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/030_ChangeYSOLN.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/040_ChangeXYSOLN.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/050_ChangeColorSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/200_DrawingText.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/200_DrawingTextSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/070_DrawLines.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/060_ChangeFontSOLN.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/070_DrawLinesSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/080_DrawCircles.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/080_DrawCirclesSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/100_DrawDots.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/100_DrawDotsSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/090_DrawRectangles.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/090_DrawRectanglesSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/110_DrawEllipses.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/110_DrawEllipsesSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/250_DrawingImages.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/200_DrawingTextSOLN.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/250_DrawingImagesSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/300_SeeoutIntroSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/310_SeeoutFormattingSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/400_OnYourOwnSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/520_ColorNamesSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/550_FontProportionsSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S03-Types_Variables/020_NumericTypes.cpp \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/040_DrawingVersusSeeout.cpp \
-    exercises/C01-Beginner_Exercises/S03-Types_Variables/Solutions/040_DrawingVersusSeeoutSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S03-Types_Variables/100_Chars.cpp \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/080_CONSTANTS.cpp \
+    exercises/C01-Beginner_Exercises/S03-Types_Variables/100_Chars.cpp \
+    exercises/C01-Beginner_Exercises/S03-Types_Variables/110_Booleans.cpp \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/200_StandardStrings.cpp \
+    exercises/C01-Beginner_Exercises/S03-Types_Variables/300_Arrays.cpp \
+    exercises/C01-Beginner_Exercises/S03-Types_Variables/Solutions/020_NumericTypesSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S03-Types_Variables/Solutions/040_DrawingVersusSeeoutSOLN.cpp \
     exercises/C01-Beginner_Exercises/S03-Types_Variables/Solutions/200_StandardStringsSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S03-Types_Variables/Solutions/300_ArraysSOLN.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/040_OrderOfOperations.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/520_Misdirection.cpp \
-    exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/Solutions/520_MisdirectionSOLN.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/020_AssignmentArithmetic.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/060_PreAndPostIncAndDec.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/100_ModulusOperator.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/120_BlocksAndScope.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/140_MathFunctions.cpp \
-    exercises/C08-Game_Programming/S03-TopDown2D/TopDown2D.cpp \
-    exercises/C08-Game_Programming/S03-TopDown2D/TopDown2DWidget.cpp \
-    exercises/C08-Game_Programming/S03-TopDown2D/TopDown2DSOLN.cpp \
-    exercises/C08-Game_Programming/GameWidget.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/400_OnYourOwnSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/400_OnYourOwn.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/200_randomAndrandomRange.cpp \
-    exercises/C01-Beginner_Exercises/S03-Types_Variables/020_NumericTypes.cpp \
-    exercises/C01-Beginner_Exercises/S03-Types_Variables/Solutions/020_NumericTypesSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S03-Types_Variables/110_Booleans.cpp \
-    source/lib/FWCExerciseChooser.cpp \
-    exercises/C01-Beginner_Exercises/S03-Types_Variables/300_Arrays.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/550_FontProportionsSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/550_FontProportions.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/300_SeeoutIntro.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/300_SeeoutIntroSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/310_SeeoutFormattingSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S03-Types_Variables/Solutions/300_ArraysSOLN.cpp \
-    source/lib/ColorViewer.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/310_SeeoutFormatting.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/520_ColorNames.cpp \
+    exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/210_DistanceEquation.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/Solutions/060_PreAndPostIncAndDecSOLN.cpp \
-    exercises/feetwetcodingexercise.cpp \
+    exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/Solutions/210_DistanceEquationSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/Solutions/520_MisdirectionSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/002_WhileLoopIntro.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/004_ForLoopIntro.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/010_WhileLoop1.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/015_InfiniteLooping1.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/020_C01S05_OYO1.cpp \
@@ -93,8 +95,15 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/210_IfThen1.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/215_IfThen2.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/220_IfThen3.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/315_Primes1.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/250_Switch1.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/260_OYO_IfThen4.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/310_DivideByZero.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/315_Primes1.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/320_OYO_Primes2.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/480_C01S05_OYO5.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/002_WhileLoopIntroSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/004_ForLoopIntroSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/480_C01S05_OYO5SOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/010_WhileLoop1SOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/015_InfiniteLooping1SOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/020_C01S05_OYO1SOLN.cpp \
@@ -111,25 +120,25 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/210_IfThen1SOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/215_IfThen2SOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/220_IfThen3SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/315_Primes1SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S10-Classes_Intro/Solutions/010_Classes1SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S10-Classes_Intro/010_Classes1.cpp \
-    exercises/C01-Beginner_Exercises/S11-Event_Handling_With_Qt/Solutions/010_TheEventLoopSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S11-Event_Handling_With_Qt/010_TheEventLoop.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/002_WhileLoopIntro.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/004_ForLoopIntro.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/002_WhileLoopIntroSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/004_ForLoopIntroSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/320_OYO_Primes2.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/320_OYO_Primes2SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/250_Switch1.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/250_Switch1SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/260_OYO_IfThen4.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/260_OYO_IfThen4SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/Solutions/210_DistanceEquationSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/210_DistanceEquation.cpp \
-    source/lib/ExerciseLauncher.cpp \
-    exercises/C01-Beginner_Exercises/S06-Arrays/050_Arrays1.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/315_Primes1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/320_OYO_Primes2SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/400_Sleep1.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/405_SingleKeyInput1.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/410_StringInput1.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/415_ShiftDrawnItem1.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/Solutions/400_Sleep1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/Solutions/405_SingleKeyInput1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/Solutions/410_StringInput1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/Solutions/415_ShiftDrawnItem1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S07-Storing_Data/050_Arrays1.cpp \
+    exercises/C01-Beginner_Exercises/S09-Classes_Intro/Solutions/010_Classes1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S09-Classes_Intro/010_Classes1.cpp \
+    exercises/C08-Game_Programming/S03-TopDown2D/TopDown2D.cpp \
+    exercises/C08-Game_Programming/S03-TopDown2D/TopDown2DWidget.cpp \
+    exercises/C08-Game_Programming/S03-TopDown2D/TopDown2DSOLN.cpp \
+    exercises/C08-Game_Programming/GameWidget.cpp \
     mycode/lib/MyLib.cpp \
     mycode/src/MyCode0.cpp \
     mycode/src/MyCode1.cpp \
@@ -140,19 +149,7 @@ SOURCES += \
     mycode/src/MyCode6.cpp \
     mycode/src/MyCode7.cpp \
     mycode/src/MyCode8.cpp \
-    mycode/src/MyCode9.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/400_Sleep1SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/400_Sleep1.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/480_C01S05_OYO5.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/480_C01S05_OYO5SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/410_StringInput1.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/405_SingleKeyInput1.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/405_SingleKeyInput1SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/410_StringInput1SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/415_ShiftDrawnItem1SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/415_ShiftDrawnItem1.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/520_ColorNamesSOLN.cpp
-
+    mycode/src/MyCode9.cpp
 
 HEADERS += \
     include/lib/setup.h \
@@ -163,8 +160,6 @@ HEADERS += \
     include/exercises/C01_S03.h \
     include/exercises/C01_S05.h \
     include/exercises/C01_S04.h \
-    include/exercises/C01_S10.h \
-    include/exercises/C01_S11.h \
     include/exercises/FeetWetCodingExercise.h \
     include/exercises/C08-Game_Programming/S03-TopDown2D/TopDown2DWidget.h \
     include/exercises/C08-Game_Programming/S03-TopDown2D/TopDown2D.h \
@@ -174,8 +169,10 @@ HEADERS += \
     include/lib/ColorViewer.h \
     include/lib/ExerciseLauncher.h \
     include/lib/SeeOut.h \
-    include/exercises/C01_S06.h \
-    include/lib/MyCode.h
+    include/lib/MyCode.h \
+    include/exercises/C01_S09.h \
+    include/exercises/C01_S07.h \
+    include/exercises/C01_S06.h
 
 FORMS +=
 

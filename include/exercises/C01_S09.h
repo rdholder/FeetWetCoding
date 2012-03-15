@@ -1,8 +1,8 @@
 // copyright (c) 2011 Robert Holder, Janice Dugger.
 // See README.html included in this distribution.
 
-#ifndef C01_S10_H
-#define C01_S10_H
+#ifndef C01_S09_H
+#define C01_S09_H
 
 #include <exercises/FeetWetCodingExercise.h>
 
@@ -63,4 +63,4 @@ protected:
     }
 };
 
-#endif // C01_S10_H
+#endif // C01_S09_H

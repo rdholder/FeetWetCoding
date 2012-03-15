@@ -126,13 +126,15 @@ FWCExerciseChooser::getExerciseFromName( const QString & name )
     if( "DivideByZero" == name ){ return new DivideByZero(&mExerciseLauncher); }
     if( "Primes1" == name ){ return new Primes1(&mExerciseLauncher); }
     if( "OYO_Primes2" == name ){ return new OYO_Primes2(&mExerciseLauncher); }
+    if( "OYO5" == name ){ return new C01S05_OYO5(&mExerciseLauncher); }
+
+    //Section 6 - More_Drawing_Tools
     if( "Sleep1" == name ){ return new Sleep1(&mExerciseLauncher); }
     if( "SingleKeyInput1" == name ){ return new SingleKeyInput1(&mExerciseLauncher); }
     if( "StringInput1" == name ){ return new StringInput1(&mExerciseLauncher); }
     if( "ShiftDrawnItem1" == name ){ return new ShiftDrawnItem1(&mExerciseLauncher); }
-    if( "OYO5" == name ){ return new C01S05_OYO5(&mExerciseLauncher); }
 
-    //Section 6 - Arrays
+    //Section 7 - Storing_Data
     if( "Arrays1" == name ){ return new Arrays1(&mExerciseLauncher); }
 
     //Section 7 - ...
@@ -141,12 +143,8 @@ FWCExerciseChooser::getExerciseFromName( const QString & name )
 
     //Section 9 - ...
 
-    //Section 10 - Classes Intro
+    //Section 9 - Classes Intro
     if( "Classes1" == name ){ return new Classes1(&mExerciseLauncher); }
-
-    //Section 11 - Event Handling With Qt
-    if( "TheEventLoop" == name ){ return new TheEventLoop(&mExerciseLauncher); }
-
 
     //Chapter 8 - Game_Programming
 
@@ -251,27 +249,26 @@ void FWCExerciseChooser::createExercisesMap()
     exercises.push_back( "DivideByZero" );
     exercises.push_back( "Primes1" );
     exercises.push_back( "OYO_Primes2" );
+    exercises.push_back( "OYO5" );
+    sections["S05-Loops_Logic"] = exercises;
+
+    //S06-More_Drawing_Tools
+    exercises.clear();
     exercises.push_back( "Sleep1" );
     exercises.push_back( "SingleKeyInput1" );
     exercises.push_back( "StringInput1" );
     exercises.push_back( "ShiftDrawnItem1" );
-    exercises.push_back( "OYO5" );
-    sections["S05-Loops_Logic"] = exercises;
+    sections["S06-More_Drawing_Tools"] = exercises;
 
-    //S06-Arrays
+    //S07-Storing_Data
     exercises.clear();
     exercises.push_back( "Arrays1" );
-    sections["S06-Arrays"] = exercises;
+    sections["S07-Storing_Data"] = exercises;
 
-    //S10-Classes_Intro
+    //S09-Classes_Intro
     exercises.clear();
     exercises.push_back( "Classes1" );
-    sections["S10-Classes_Intro"] = exercises;
-
-    //S11-Event_Handling_With_Qt
-//    exercises.clear();
-//    exercises.push_back( "TheEventLoop" );
-//    sections["S11-Event_Handling_With_Qt"] = exercises;
+    sections["S09-Classes_Intro"] = exercises;
 
     mExerciseMap["C01-Beginner_Exercises"] = sections;
 
