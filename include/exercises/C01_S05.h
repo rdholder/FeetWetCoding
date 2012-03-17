@@ -42,6 +42,7 @@ public:
         if ( mSolutionPtr )
         {
             mSolutionPtr->terminate();
+            mSolutionPtr->wait();
             delete mSolutionPtr;
             mSolutionPtr = NULL;
         }
@@ -98,6 +99,7 @@ public:
         if ( mSolutionPtr )
         {
             mSolutionPtr->terminate();
+            mSolutionPtr->wait();
             delete mSolutionPtr;
             mSolutionPtr = NULL;
         }
@@ -154,6 +156,7 @@ public:
         if ( mSolutionPtr )
         {
             mSolutionPtr->terminate();
+            mSolutionPtr->wait();
             delete mSolutionPtr;
             mSolutionPtr = NULL;
         }
@@ -210,6 +213,7 @@ public:
         if ( mSolutionPtr )
         {
             mSolutionPtr->terminate();
+            mSolutionPtr->wait();
             delete mSolutionPtr;
             mSolutionPtr = NULL;
         }
@@ -266,6 +270,7 @@ public:
         if ( mSolutionPtr )
         {
             mSolutionPtr->terminate();
+            mSolutionPtr->wait();
             delete mSolutionPtr;
             mSolutionPtr = NULL;
         }
@@ -322,6 +327,7 @@ public:
         if ( mSolutionPtr )
         {
             mSolutionPtr->terminate();
+            mSolutionPtr->wait();
             delete mSolutionPtr;
             mSolutionPtr = NULL;
         }
@@ -378,6 +384,7 @@ public:
         if ( mSolutionPtr )
         {
             mSolutionPtr->terminate();
+            mSolutionPtr->wait();
             delete mSolutionPtr;
             mSolutionPtr = NULL;
         }
@@ -434,6 +441,7 @@ public:
         if ( mSolutionPtr )
         {
             mSolutionPtr->terminate();
+            mSolutionPtr->wait();
             delete mSolutionPtr;
             mSolutionPtr = NULL;
         }
@@ -490,6 +498,7 @@ public:
         if ( mSolutionPtr )
         {
             mSolutionPtr->terminate();
+            mSolutionPtr->wait();
             delete mSolutionPtr;
             mSolutionPtr = NULL;
         }
@@ -546,6 +555,7 @@ public:
         if ( mSolutionPtr )
         {
             mSolutionPtr->terminate();
+            mSolutionPtr->wait();
             delete mSolutionPtr;
             mSolutionPtr = NULL;
         }
@@ -602,6 +612,7 @@ public:
         if ( mSolutionPtr )
         {
             mSolutionPtr->terminate();
+            mSolutionPtr->wait();
             delete mSolutionPtr;
             mSolutionPtr = NULL;
         }
@@ -658,6 +669,7 @@ public:
         if ( mSolutionPtr )
         {
             mSolutionPtr->terminate();
+            mSolutionPtr->wait();
             delete mSolutionPtr;
             mSolutionPtr = NULL;
         }
@@ -714,6 +726,7 @@ public:
         if ( mSolutionPtr )
         {
             mSolutionPtr->terminate();
+            mSolutionPtr->wait();
             delete mSolutionPtr;
             mSolutionPtr = NULL;
         }
@@ -770,6 +783,7 @@ public:
         if ( mSolutionPtr )
         {
             mSolutionPtr->terminate();
+            mSolutionPtr->wait();
             delete mSolutionPtr;
             mSolutionPtr = NULL;
         }
@@ -826,6 +840,7 @@ public:
         if ( mSolutionPtr )
         {
             mSolutionPtr->terminate();
+            mSolutionPtr->wait();
             delete mSolutionPtr;
             mSolutionPtr = NULL;
         }
@@ -856,13 +871,14 @@ public:
         //Exercises can use parent's seeout config
 
         //If this exercise has a solution, launch it
-        this->setupSolution(parent);
+        //this->setupSolution(parent);
     }
     ~DivideByZero()
     {
         if ( mSolutionPtr )
         {
             mSolutionPtr->terminate();
+            mSolutionPtr->wait();
             delete mSolutionPtr;
             mSolutionPtr = NULL;
         }
@@ -914,6 +930,7 @@ public:
         if ( mSolutionPtr )
         {
             mSolutionPtr->terminate();
+            mSolutionPtr->wait();
             delete mSolutionPtr;
             mSolutionPtr = NULL;
         }
@@ -970,6 +987,7 @@ public:
         if ( mSolutionPtr )
         {
             mSolutionPtr->terminate();
+            mSolutionPtr->wait();
             delete mSolutionPtr;
             mSolutionPtr = NULL;
         }
@@ -1026,6 +1044,7 @@ public:
         if ( mSolutionPtr )
         {
             mSolutionPtr->terminate();
+            mSolutionPtr->wait();
             delete mSolutionPtr;
             mSolutionPtr = NULL;
         }
@@ -1082,6 +1101,7 @@ public:
         if ( mSolutionPtr )
         {
             mSolutionPtr->terminate();
+            mSolutionPtr->wait();
             delete mSolutionPtr;
             mSolutionPtr = NULL;
         }
@@ -1138,6 +1158,7 @@ public:
         if ( mSolutionPtr )
         {
             mSolutionPtr->terminate();
+            mSolutionPtr->wait();
             delete mSolutionPtr;
             mSolutionPtr = NULL;
         }
@@ -1194,6 +1215,7 @@ public:
         if ( mSolutionPtr )
         {
             mSolutionPtr->terminate();
+            mSolutionPtr->wait();
             delete mSolutionPtr;
             mSolutionPtr = NULL;
         }
@@ -1250,6 +1272,7 @@ public:
         if ( mSolutionPtr )
         {
             mSolutionPtr->terminate();
+            mSolutionPtr->wait();
             delete mSolutionPtr;
             mSolutionPtr = NULL;
         }
@@ -1306,6 +1329,7 @@ public:
         if ( mSolutionPtr )
         {
             mSolutionPtr->terminate();
+            mSolutionPtr->wait();
             delete mSolutionPtr;
             mSolutionPtr = NULL;
         }
