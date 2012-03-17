@@ -124,14 +124,44 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/260_OYO_IfThen4SOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/315_Primes1SOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/320_OYO_Primes2SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/400_Sleep1.cpp \
-    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/405_SingleKeyInput1.cpp \
-    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/410_StringInput1.cpp \
-    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/415_ShiftDrawnItem1.cpp \
-    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/Solutions/400_Sleep1SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/Solutions/405_SingleKeyInput1SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/Solutions/410_StringInput1SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/Solutions/415_ShiftDrawnItem1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/010_Sleep1.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/020_SingleKeyInput1.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/030_StringInput1.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/040_ShiftItem1.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/050_MoveItem1.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/060_ScaleItem1.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/070_RotateItem1.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/080_ChangeZ1.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/090_ChangeLineEnd1.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/100_ChangeWidthAndHeight1.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/110_ChangeRadius1.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/120_ChangeColor1.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/130_ChangeLineWidth1.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/140_ChangeFontSize1.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/150_ChangeText1.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/160_ChangeInt1.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/170_ChangeFloat1.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/180_EraseItem1.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/190_ClearItems1.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/Solutions/010_Sleep1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/Solutions/020_SingleKeyInput1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/Solutions/030_StringInput1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/Solutions/040_ShiftItem1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/Solutions/050_MoveItem1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/Solutions/060_ScaleItem1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/Solutions/070_RotateItem1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/Solutions/080_ChangeZ1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/Solutions/090_ChangeLineEnd1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/Solutions/100_ChangeWidthAndHeight1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/Solutions/110_ChangeRadius1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/Solutions/120_ChangeColor1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/Solutions/130_ChangeLineWidth1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/Solutions/140_ChangeFontSize1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/Solutions/150_ChangeText1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/Solutions/160_ChangeInt1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/Solutions/170_ChangeFloat1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/Solutions/180_EraseItem1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-More_Drawing_Tools/Solutions/190_ClearItems1SOLN.cpp \
     exercises/C01-Beginner_Exercises/S07-Storing_Data/050_Arrays1.cpp \
     exercises/C01-Beginner_Exercises/S09-Classes_Intro/Solutions/010_Classes1SOLN.cpp \
     exercises/C01-Beginner_Exercises/S09-Classes_Intro/010_Classes1.cpp \

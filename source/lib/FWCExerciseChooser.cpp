@@ -132,7 +132,22 @@ FWCExerciseChooser::getExerciseFromName( const QString & name )
     if( "Sleep1" == name ){ return new Sleep1(&mExerciseLauncher); }
     if( "SingleKeyInput1" == name ){ return new SingleKeyInput1(&mExerciseLauncher); }
     if( "StringInput1" == name ){ return new StringInput1(&mExerciseLauncher); }
-    if( "ShiftDrawnItem1" == name ){ return new ShiftDrawnItem1(&mExerciseLauncher); }
+    if( "ShiftItem1" == name ){ return new ShiftItem1(&mExerciseLauncher); }
+    if( "MoveItem1" == name ){ return new Sleep1(&mExerciseLauncher); }
+    if( "ScaleItem1" == name ){ return new Sleep1(&mExerciseLauncher); }
+    if( "RotateItem1" == name ){ return new Sleep1(&mExerciseLauncher); }
+    if( "ChangeZ1" == name ){ return new Sleep1(&mExerciseLauncher); }
+    if( "ChangeLineEnd1" == name ){ return new Sleep1(&mExerciseLauncher); }
+    if( "ChangeWidthAndHeight1" == name ){ return new Sleep1(&mExerciseLauncher); }
+    if( "ChangeRadius1" == name ){ return new Sleep1(&mExerciseLauncher); }
+    if( "ChangeColor1" == name ){ return new Sleep1(&mExerciseLauncher); }
+    if( "ChangeLineWidth1" == name ){ return new Sleep1(&mExerciseLauncher); }
+    if( "ChangeFontSize1" == name ){ return new Sleep1(&mExerciseLauncher); }
+    if( "ChangeText1" == name ){ return new Sleep1(&mExerciseLauncher); }
+    if( "ChangeInt1" == name ){ return new Sleep1(&mExerciseLauncher); }
+    if( "ChangeFloat1" == name ){ return new Sleep1(&mExerciseLauncher); }
+    if( "EraseItem1" == name ){ return new Sleep1(&mExerciseLauncher); }
+    if( "ClearItems1" == name ){ return new Sleep1(&mExerciseLauncher); }
 
     //Section 7 - Storing_Data
     if( "Arrays1" == name ){ return new Arrays1(&mExerciseLauncher); }
@@ -257,7 +272,22 @@ void FWCExerciseChooser::createExercisesMap()
     exercises.push_back( "Sleep1" );
     exercises.push_back( "SingleKeyInput1" );
     exercises.push_back( "StringInput1" );
-    exercises.push_back( "ShiftDrawnItem1" );
+    exercises.push_back( "ShiftItem1" );
+    exercises.push_back( "MoveItem1" );
+    exercises.push_back( "ScaleItem1" );
+    exercises.push_back( "RotateItem1" );
+    exercises.push_back( "ChangeZ1" );
+    exercises.push_back( "ChangeLineEnd1" );
+    exercises.push_back( "ChangeWidthAndHeight1" );
+    exercises.push_back( "ChangeRadius1" );
+    exercises.push_back( "ChangeColor1" );
+    exercises.push_back( "ChangeLineWidth1" );
+    exercises.push_back( "ChangeFontSize1" );
+    exercises.push_back( "ChangeText1" );
+    exercises.push_back( "ChangeInt1" );
+    exercises.push_back( "ChangeFloat1" );
+    exercises.push_back( "EraseItem1" );
+    exercises.push_back( "ClearItems1" );
     sections["S06-More_Drawing_Tools"] = exercises;
 
     //S07-Storing_Data

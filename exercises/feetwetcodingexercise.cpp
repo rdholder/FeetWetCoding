@@ -104,7 +104,7 @@ std::string FeetWetCodingExercise::getKeyboardString()
 
             if ( id < 0 )
             {
-                id = DrawText("Input: " + fullstring.toStdString(), 10, 380, GRAY, 10);
+                id = DrawText("Input: " + fullstring.toStdString(), 10, 380, GRAY, 12);
             }
             else
             {
@@ -642,8 +642,8 @@ void FeetWetCodingExercise::ClearItems()
         //Don't erase the ref box drawn elements
         if ( mRefBoxItems.end() == std::find(mRefBoxItems.begin(), mRefBoxItems.end(), *iter) )
         {
-            //We can't erease from the main list here since we're iterating
-            //over the main list and erasing from it will mess up out iterator.
+            //We can't erase from the main list here since we're iterating
+            //over the main list and erasing from it will mess up our iterator.
             //Save the items to erase, then erase from the main list as we
             //iterate over the saved items.
             itemsToErase.push_back(*iter);

@@ -1,4 +1,4 @@
-FeetWetCoding Version 0.01
+FeetWetCoding Version 0.2r1
 Copyright (c) 2011, Robert Holder, Janice Dugger
 All rights reserved.
 

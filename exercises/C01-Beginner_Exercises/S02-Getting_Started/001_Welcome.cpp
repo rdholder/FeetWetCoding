@@ -8,5 +8,5 @@
 void Welcome::runExercise()
 {
     // USAGE: DrawText("Text.", x, y, color, fontsize);
-    DrawText("Welcome to FeetWetCoding!", 20, 150, BLUE, 20);
+    DrawText("Hello James Allen!", 20, 150, BLUE, 20);
 }

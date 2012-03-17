@@ -3,21 +3,20 @@
 
 #include <exercises/C01_S06.h>
 
-void ShiftDrawnItem1Soln::runExercise()
+void EraseItem1::runExercise()
 {
-    int x(20), y(380);
+    int x(20), y(200);
     int dx(2);
-    double dy(-9), rateofchange(0.1);
+    int dy(0);
     int circle = DrawCircle(x,y,20,DARKRED,1, true);
     int velocity = DrawInt(dy, x+20, y-12, DARKBLUE);
 
     while (x < 380)
     {
-        ShiftItem(circle, dx, dy);
+        x+=dx;
+        ShiftItem(circle, dx, 0);
         ShiftItem(velocity, dx, dy);
         ChangeInt(velocity, dy);
-        x+=dx;
-        dy += rateofchange;
         msleep(20);
     }
 }

@@ -12,8 +12,8 @@ void SingleKeyInput1Soln::runExercise()
     Color color = DARKBLUE;
 
     seeout.setColor(DARKRED);
-    seeout.setFontSize(18);
-    seeout << "Press keys, or q to quit.\n";
+    seeout.setFontSize(15);
+    seeout << "Hover mouse over the solution drawing area and press keys, or q to quit.\n";
 
     while ( key != "q" && key != "Q" )
     {

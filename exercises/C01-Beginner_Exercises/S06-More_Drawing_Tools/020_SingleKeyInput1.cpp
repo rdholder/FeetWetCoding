@@ -20,8 +20,12 @@ void SingleKeyInput1::runExercise()
     Color color = DARKGREEN;
 
     seeout.setColor(DARKRED);
-    seeout.setFontSize(18);
-    seeout << "Press keys, or q to quit.\n";
+    seeout.setFontSize(15);
+    seeout << "Hover mouse over the exercise drawing area and press keys, or q to quit.\n";
+    seeout.setFontSize(10);
+    seeout.setColor(DARKBLUE);
+    seeout << "(Try hitting some CTRL-key combinations to see some special characters";
+    seeout << " in addition to the regular alphanumeric characters.  :-)\n";
 
     while ( key != "q" && key != "Q" )
     {
