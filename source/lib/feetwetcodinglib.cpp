@@ -7,6 +7,7 @@
 #include <QDialog>
 #include <QFontMetrics>
 #include <QFile>
+#include <QDir>
 #include <QMutex>
 #include <feetwetcodinglib.h>
 #include <include/lib/FWCExerciseChooser.h>
@@ -46,7 +47,7 @@ void appSetup()
 
 void initSettingsFile()
 {
-    QFile srcFile("../FeetWetCoding/defaultconfig.txt");
+    QFile srcFile(getDefaultConfigFilePath());
     QFile destFile("config.txt");
     if ( !destFile.exists() )
     {
@@ -426,6 +427,36 @@ std::string getNameForColor( Color color )
     default:
         return "ERROR";
     };
+}
+
+QString getDefaultConfigFilePath()
+{
+    QString configfile("defaultconfig.txt");
+    QDir parentDir(QDir::current());
+    if ( false == parentDir.cdUp() )
+    {
+        qDebug() << "Failed to cd to parent directory!";
+        return QString();
+    }
+
+    QStringList filters;
+    filters << "FeetWetCoding*";
+    parentDir.setNameFilters(filters);
+    parentDir.setFilter(QDir::Dirs);
+    QString path(parentDir.path());
+
+    QStringList dirnames(parentDir.entryList());
+    QDir sourcedir;
+
+    for ( int i=0; i < dirnames.length(); ++i )
+    {
+        if ( QFile::exists( path + "/" + dirnames.at(i) + "/" + configfile ) )
+        {
+            sourcedir.setPath(path + "/" + dirnames.at(i));
+        }
+    }
+
+    return ( sourcedir.path() + "/" + configfile);
 }
 
 // random:  returns a random int between 0 and "biggest" inclusive
