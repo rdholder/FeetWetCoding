@@ -67,7 +67,7 @@ public:
     {
         mOss.str("");
         mOss << x;
-        qDebug() << mOss.str().c_str();
+        std::cerr << mOss.str();
 
         if ( !mIsSolution )
         {

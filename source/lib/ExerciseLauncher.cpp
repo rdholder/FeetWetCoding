@@ -459,9 +459,21 @@ void ExerciseLauncher::handleRenderUpdates()
             shapeItem = dynamic_cast<QAbstractGraphicsShapeItem *>(item);
             if ( shapeItem )
             {
+                pen = shapeItem->pen();
                 pen.setWidth(update.linewidth);
                 shapeItem->setPen(pen);
-            }              break;
+            }
+            else
+            {
+                lineItem = dynamic_cast<QGraphicsLineItem *>(item);
+                if ( lineItem )
+                {
+                    pen = lineItem->pen();
+                    pen.setWidth(update.linewidth);
+                    lineItem->setPen(pen);
+                }
+            }
+            break;
 
         case FeetWetCodingExercise::CHANGE_FONT_SIZE:
             textItem = dynamic_cast<QGraphicsTextItem *>(item);
