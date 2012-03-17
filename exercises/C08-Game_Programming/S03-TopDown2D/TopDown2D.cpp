@@ -43,6 +43,8 @@ void TopDown2D::runExercise()
     mTd2dWidget->show();
 
     seeout << "Use arrow keys to move ship.\n";
+    seeout << "MOVE SHIP MOVE SHIP MOVE SHIP MOVE SHIP\n";
+    seeout << "YOU KNOW WHAT YOU DOING TAKE OFF EVERY ZIG\n";
 }
 
 
