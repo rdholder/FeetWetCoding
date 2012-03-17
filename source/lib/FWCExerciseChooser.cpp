@@ -6,6 +6,7 @@
 #include <MyCode.h>
 #include <iostream>
 #include <QFile>
+#include <QDir>
 #include <QDialog>
 
 //QMutex ExerciseLauncher::eventMutex;
@@ -694,7 +695,7 @@ bool FWCExerciseChooser::loadPreviousExerciseEnabled()
     try
     {
         // Try the default config file.
-        return getSettingLoadPreviousExerciseEnabled("../FeetWetCoding/defaultconfig.txt");
+        return getSettingLoadPreviousExerciseEnabled(getDefaultConfigFilePath());
     }
     catch ( bool val ) { qDebug() << "Failed to get prevEx setting from default config.\n"; }
 

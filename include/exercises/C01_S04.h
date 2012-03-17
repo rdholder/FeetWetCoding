@@ -22,7 +22,7 @@ public:
         //Exercises can use parent's seeout config
 
         //If this exercise has a solution, launch it
-        this->setupSolution(parent);
+        //this->setupSolution(parent);
     }
     ~AssignmentArithmetic()
     {
@@ -55,7 +55,7 @@ public:
         //Exercises can use parent's seeout config
 
         //If this exercise has a solution, launch it
-        this->setupSolution(parent);
+        //this->setupSolution(parent);
     }
     ~OrderOfOperations()
     {
@@ -145,7 +145,7 @@ public:
         //Exercises can use parent's seeout config
 
         //If this exercise has a solution, launch it
-        this->setupSolution(parent);
+        //this->setupSolution(parent);
     }
     ~ModulusOperator()
     {
@@ -178,7 +178,7 @@ public:
         //Exercises can use parent's seeout config
 
         //If this exercise has a solution, launch it
-        this->setupSolution(parent);
+        //this->setupSolution(parent);
     }
     ~BlocksAndScope()
     {
@@ -211,7 +211,7 @@ public:
         //Exercises can use parent's seeout config
 
         //If this exercise has a solution, launch it
-        this->setupSolution(parent);
+        //this->setupSolution(parent);
     }
     ~MathFunctions()
     {
@@ -244,7 +244,7 @@ public:
         //Exercises can use parent's seeout config
 
         //If this exercise has a solution, launch it
-        this->setupSolution(parent);
+        //this->setupSolution(parent);
     }
     ~randomAndrandomRange()
     {
@@ -296,7 +296,7 @@ public:
         //Exercises can use parent's seeout config
 
         //If this exercise has a solution, launch it
-        this->setupSolution(parent);
+        //this->setupSolution(parent);
     }
     ~DistanceEquation()
     {
