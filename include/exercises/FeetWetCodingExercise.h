@@ -129,35 +129,35 @@ protected:
     FeetWetCodingExercise *mSolutionPtr;
 
     //Shift a drawn item's x/y location by xShift/yShift.
-    void MoveItem(int itemID, int newX, int newY);
-    void ShiftItem(int itemID, int xShift, int yShift);
-    void EraseItem(int itemID);
-    void ChangeZ(int itemID, int z);
-    void ScaleItem(int itemID, float scalefactor);
-    void RotateItem(int itemID, float angledegrees);
-    void ChangeLineEnd(int itemID, int xEnd, int yEnd);
-    void ChangeWidthAndHeight(int itemID, int w, int h);
-    void ChangeRadius(int itemID, int radius);
-    void ChangeColor(int itemID, Color color, bool solid=false);
-    void ChangeLineWidth(int itemID, int width);
-    void ChangeFontSize(int itemID, int size);
-    void ChangeText(int itemID, std::string text);
-    void ChangeInt(int itemID, int intval);
-    void ChangeFloat(int itemID, int floatval);
-    void ClearItems();
+    void fwcMoveItem(int itemID, int newX, int newY);
+    void fwcShiftItem(int itemID, int xShift, int yShift);
+    void fwcEraseItem(int itemID);
+    void fwcChangeZ(int itemID, int z);
+    void fwcScaleItem(int itemID, float scalefactor);
+    void fwcRotateItem(int itemID, float angledegrees);
+    void fwcChangeLineEnd(int itemID, int xEnd, int yEnd);
+    void fwcChangeWidthAndHeight(int itemID, int w, int h);
+    void fwcChangeRadius(int itemID, int radius);
+    void fwcChangeColor(int itemID, Color color, bool solid=false);
+    void fwcChangeLineWidth(int itemID, int width);
+    void fwcChangeFontSize(int itemID, int size);
+    void fwcChangeText(int itemID, std::string text);
+    void fwcChangeInt(int itemID, int intval);
+    void fwcChangeFloat(int itemID, int floatval);
+    void fwcClearItems();
 
     //Return ID of the item to be drawn. This ID can be used later
     //to operate on the corresponding QGraphicsItem.
     //Returns -1 if item could not be queued for drawing.
-    int DrawLine( int xStart, int yStart, int xEnd, int yEnd, Color color, int thickness );
-    int DrawCircle( int x, int y, int r, Color color, int thickness, bool solid=false);
-    int DrawCircleRGB( int x, int y, int r, int thickness, int red, int green, int blue, bool solid=false );
-    int DrawEllipse( int x, int y, int w, int h, Color color, int thickness, bool solid=false );
-    int DrawRectangle( int x, int y, int w, int h, Color color, int thickness, bool solid=false );
-    int DrawText( std::string text, int x, int y, Color color, int size=12);
-    int DrawInt( int number, int x, int y, Color color, int size=12 );
-    int DrawFloat( float number, int x, int y, Color color, int size=12, int decimalPlaces=3 );
-    int DrawImage( std::string filename, int x, int y );
+    int fwcDrawLine( int xStart, int yStart, int xEnd, int yEnd, Color color, int thickness );
+    int fwcDrawCircle( int x, int y, int r, Color color, int thickness, bool solid=false);
+    int fwcDrawCircleRGB( int x, int y, int r, int thickness, int red, int green, int blue, bool solid=false );
+    int fwcDrawEllipse( int x, int y, int w, int h, Color color, int thickness, bool solid=false );
+    int fwcDrawRectangle( int x, int y, int w, int h, Color color, int thickness, bool solid=false );
+    int fwcDrawText( std::string text, int x, int y, Color color, int size=12);
+    int fwcDrawInt( int number, int x, int y, Color color, int size=12 );
+    int fwcDrawFloat( float number, int x, int y, Color color, int size=12, int decimalPlaces=3 );
+    int fwcDrawImage( std::string filename, int x, int y );
     int SendRenderRequest( RenderItem item );
     void DrawReferenceBox( RefBoxLayout layout=LEFTRIGHT );
 

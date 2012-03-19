@@ -13,7 +13,7 @@ void Primes1Soln::runExercise()
 
     for ( n = 1; n < 101; n++ )
     {
-        DrawInt(n, x, y, color);
+        fwcDrawInt(n, x, y, color);
 
         for ( c = 2; c < n-1; c++ )
         {
@@ -30,7 +30,7 @@ void Primes1Soln::runExercise()
         }
         if ( prime )
         {
-            DrawRectangle(x, y, horizontalstep-5, verticalstep-10, RED, 1);
+            fwcDrawRectangle(x, y, horizontalstep-5, verticalstep-10, RED, 1);
         }
         prime = true;
 
@@ -41,7 +41,7 @@ void Primes1Soln::runExercise()
             y += verticalstep;
         }
     }
-    DrawText("Every number in a red box is a prime number.", 20, 370, RED, 12);
+    fwcDrawText("Every number in a red box is a prime number.", 20, 370, RED, 12);
     seeout << "A prime number is divisible by 1, and itself, but\n";
     seeout << ">>>none of the numbers in between!<<<  (hint, hint! :-)\n";
 }

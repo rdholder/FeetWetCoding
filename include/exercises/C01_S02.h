@@ -350,11 +350,11 @@ protected:
     }
 };
 
-class ChangeFontSoln : public FeetWetCodingExercise
+class ChangeFontSizeSoln : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit ChangeFontSoln(QObject *parent = 0)
+    explicit ChangeFontSizeSoln(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
         //Update seeout with soln config
@@ -369,11 +369,11 @@ protected:
     void runExercise();
 };
 
-class ChangeFont : public FeetWetCodingExercise
+class ChangeFontSize : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit ChangeFont(QObject *parent = 0)
+    explicit ChangeFontSize(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
         //Exercises can use parent's seeout config
@@ -381,7 +381,7 @@ public:
         //If this exercise has a solution, launch it
         this->setupSolution(parent);
     }
-    ~ChangeFont()
+    ~ChangeFontSize()
     {
         if ( mSolutionPtr )
         {
@@ -399,7 +399,7 @@ protected:
     void setupSolution(QObject *parent=0)
     {
         DrawReferenceBox(LEFTRIGHT);
-        mSolutionPtr = new ChangeFontSoln(parent);
+        mSolutionPtr = new ChangeFontSizeSoln(parent);
         if ( mSolutionPtr )
         {
             mSolutionPtr->start();

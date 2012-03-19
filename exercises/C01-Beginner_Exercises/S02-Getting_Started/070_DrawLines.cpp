@@ -5,8 +5,8 @@
 
 void DrawLines::runExercise()
 {
-    // USAGE: DrawLine(xStart, yStart, xEnd, yEnd, color, thickness);
-    DrawLine(0, 200, 400,   0, BLUE, 1);
-    DrawLine(0, 200, 400, 200, RED, 5);
-    DrawLine(0, 200, 400, 400, BLACK, 10);
+    // USAGE: fwcDrawLine(xStart, yStart, xEnd, yEnd, color, thickness);
+    fwcDrawLine(0, 200, 400,   0, BLUE, 1);
+    fwcDrawLine(0, 200, 400, 200, RED, 5);
+    fwcDrawLine(0, 200, 400, 400, BLACK, 10);
 }

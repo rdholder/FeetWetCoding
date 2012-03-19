@@ -6,9 +6,9 @@
 void ChangeLineWidth1::runExercise()
 {
     int x(100), y(200), count(0), laserwidth(1);
-    int line = DrawLine(x, y, x+200, y, RED, laserwidth);
-    int circle1 = DrawCircle(x,y,20,DARKRED,1, true);
-    int circle2 = DrawCircle(x+200,y,20,DARKBLUE,1, true);
+    int line = fwcDrawLine(x, y, x+200, y, RED, laserwidth);
+    int circle1 = fwcDrawCircle(x,y,20,DARKRED,1, true);
+    int circle2 = fwcDrawCircle(x+200,y,20,DARKBLUE,1, true);
 
     while (count++ < 100)
     {
@@ -20,7 +20,7 @@ void ChangeLineWidth1::runExercise()
         {
             laserwidth = 1;
         }
-        ChangeLineWidth(line, laserwidth);
+        fwcChangeLineWidth(line, laserwidth);
         msleep(50);
     }
 }

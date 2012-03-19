@@ -1,0 +1,92 @@
+﻿<html>
+	
+<head>
+	<title>Exercise 030_ChangeY.cpp</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc">
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript"><!--
+		var sTopicId = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+		if (top.frames.length == 0)
+			top.location.href = "FeetWetCoding.html?" + sTopicId
+		else if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+			top.FrameTOC.SelectTocItem(sTopicId);
+	</script>
+</head>
+
+<body>
+
+	<div id="topic_header">
+			<div id="topic_header_content">
+				<h1>Exercise 030_ChangeY.cpp</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Exercises.html">Exercises</a> &rsaquo;&rsaquo; <a href="Chapter01BeginnerExercises.html">Chapter 01 Beginner Exercises</a> &rsaquo;&rsaquo; <a href="Section02GettingStarted.html">Section 02: Getting Started</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="Section02GettingStarted.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="Exercise020_ChangeXcpp.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="Exercise040_ChangeXYcpp.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p class="rvps3"><span class="rvts34">Chapter 01, Section 02, Exercise 030: &nbsp;ChangeY</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">In this exercise, you will learn:</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li class="rvps3"><span class="rvts10">How to change the y coordinate that controls the vertical position for drawing on the runtime exercise draw area.</span></li>
+</ul>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">This exercise is similar to the last one, except that instead of changing the horizontal postion of your text, you are changing the vertical position. &nbsp;Change the y value to make the exercise draw in the same location in </span><span class="rvts15">your</span><span class="rvts10"> drawing area as where the solution draws on </span><span class="rvts15">it's</span><span class="rvts10"> side of the window. &nbsp;In this case, the y value is 50, the third parameter. &nbsp;Remember to close the FWC window before you try to run your program again in Qt Creator.</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts17">Whoa! &nbsp;I thought Y gets bigger as it goes </span><span class="rvts58">up</span><span class="rvts17">! &nbsp;What gives?</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">Back in algebra or geometry class, y </span><span class="rvts15">does</span><span class="rvts10"> get bigger as it goes upwards. &nbsp;But the way the Qt library does graphics, y gets bigger as it goes </span><span class="rvts15">downwards</span><span class="rvts10">.</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">That's because we orient ourselves to the top left corner of our window, because windows can resize, and everything else on the window is relative to that top left corner. &nbsp;Go ahead and resize a window and you will see that all of any window's content is located with respect to that top left corner.</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">So graphically, that top left corner is the anchor of the whole graphical circus. &nbsp;If y got bigger going up from that top left corner, then we would constantly be drawing with negative numbers for y. &nbsp;We could do this, but it's an extra character to type the "-" character, and we'd be typing it constantly. &nbsp;Plus, it seems kind of weird to have x be positive numbers, but y be negative for how we locate things on the screen. &nbsp;So the people who made Qt just flipped the y-axis upside down from how it works in algebra and geometry class. &nbsp;And Qt is not the only drawing toolkit that does this, other toolkits do as well. &nbsp;(But not all, some locate y=0 at the lower left corner of the drawing area, I believe.)</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">If you have done (or are doing) lots of algebra, geometry or other work where you are doing mathematical graphing, this make take a little getting used to, but soon it will be second nature.</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">When you've got y where you like it, you're done. &nbsp;You're moving right along!</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">When you are ready, you can proceed to </span><a class="rvts12" href="Exercise040_ChangeXYcpp.html">040_ChangeXY.cpp</a><span class="rvts10">.</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts7"><br></span></p>
+<p class="rvps3"><span class="rvts10"><div style="font-family:Arial;font-size:12pt;background-color:#EEEEEE;background-color:teal;color:white;padding:4px;font-weight:bold">
+FeetWetCoding version 0.2r1 copyright (c) 2011,2012 Robert Holder, Janice Dugger.
+<br/>
+<!--
+<style>
+a:visited{color:#FFFFFF;}
+a:link {color:#FFFFFF;}
+</style>
+-->
+...click the ZIP button on our <a href="https://github.com/FeetWetCoding/FeetWetCoding" TARGET="_top">Github page</a> for the latest source!
+</div></span></p>
+<p class="rvps8"><span class="rvts40">Created with the Personal Edition of HelpNDoc: </span><a class="rvts41" href="http://www.helpndoc.com/feature-tour">Easily create PDF Help documents</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; &lt;Dates&gt; by &lt;Authors&gt;. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

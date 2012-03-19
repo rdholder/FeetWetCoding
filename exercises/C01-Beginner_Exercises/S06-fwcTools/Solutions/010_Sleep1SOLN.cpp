@@ -14,7 +14,7 @@ void Sleep1Soln::runExercise()
     {
         for ( x = 50; x < 400; x += horizontalstep )
         {
-            DrawCircle(x, y, 40, color, 1, true);
+            fwcDrawCircle(x, y, 40, color, 1, true);
             msleep(delayInMilliseconds);
             if ( color == DARKBLUE ) color = DARKCYAN;
             else color = DARKBLUE;

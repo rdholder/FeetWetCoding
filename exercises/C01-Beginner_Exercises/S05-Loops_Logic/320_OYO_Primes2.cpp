@@ -6,5 +6,5 @@
 
 void OYO_Primes2::runExercise()
 {
-    DrawRectangle(0, 0, 400, 400, BLACK, 1, true);
+    fwcDrawRectangle(0, 0, 400, 400, BLACK, 1, true);
 }

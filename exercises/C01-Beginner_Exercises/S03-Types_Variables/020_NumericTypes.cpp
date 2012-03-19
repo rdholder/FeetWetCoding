@@ -22,10 +22,10 @@ void NumericTypes::runExercise()
     // If you like math:
     // http://docs.oracle.com/cd/E19422-01/819-3693/ncg_goldberg.html
 
-    DrawText("Make the seeout output", 30, 80, BLUE, 20);
-    DrawText("in the boxes below match...", 30, 120, BLUE, 20);
-    DrawText("Be sure to scroll down to see all the output!", 30, 160, BLUE, 12);
-    DrawText("Hint: You can also make the window taller.", 30, 180, BLUE, 12);
+    fwcDrawText("Make the seeout output", 30, 80, BLUE, 20);
+    fwcDrawText("in the boxes below match...", 30, 120, BLUE, 20);
+    fwcDrawText("Be sure to scroll down to see all the output!", 30, 160, BLUE, 12);
+    fwcDrawText("Hint: You can also make the window taller.", 30, 180, BLUE, 12);
 
     int x = 100;                // = is pronounced GETS, == is pronounced EQUALS
     long y;                     // remember to initialize every variable!

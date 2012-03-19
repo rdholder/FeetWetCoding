@@ -22,14 +22,14 @@ void MisdirectionSoln::runExercise()
 
     verticalstep=y;
     a=x;
-    DrawText("First sentence.", x, y, BLACK, 15);
+    fwcDrawText("First sentence.", x, y, BLACK, 15);
     y = y + verticalstep;
-    DrawText("Second sentence.", x, y, BLACK, 15);
+    fwcDrawText("Second sentence.", x, y, BLACK, 15);
     y += verticalstep;
-    DrawText("Third sentence.", x, y, BLACK, 15);
+    fwcDrawText("Third sentence.", x, y, BLACK, 15);
     y += verticalstep;
     a += x;
-    DrawText("Fourth sentence.", x, y, RED, 15);
+    fwcDrawText("Fourth sentence.", x, y, RED, 15);
     y += verticalstep;
-    DrawText("Fifth sentence.", x, y, BLACK, 15);
+    fwcDrawText("Fifth sentence.", x, y, BLACK, 15);
 }

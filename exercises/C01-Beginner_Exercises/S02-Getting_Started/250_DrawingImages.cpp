@@ -11,11 +11,11 @@ void DrawingImages::runExercise()
     // get any exercises to run at all!  We will show you how to use your own
     // images down the road, but there is a lot to learn first.  :-)
 
-    // USAGE: DrawImage("images:/filename.png", x, y);
-    DrawImage(":images/ken-thompson-l-and-dennis-ritchie-r100x65.png", 10, 10);
-    DrawImage(":images/BrianKernighan50x58.png", 130, 10);
-    DrawImage(":images/BjarneStroustrup50x55.png", 200, 10);
-    DrawImage(":images/DuckFeet100x45.bmp", 10, 200);
-    DrawImage(":images/spaceship50x59.jpg", 200, 200);
-    DrawImage(":images/clock100x100.gif", 280, 200);
+    // USAGE: fwcDrawImage("images:/filename.png", x, y);
+    fwcDrawImage(":images/ken-thompson-l-and-dennis-ritchie-r100x65.png", 10, 10);
+    fwcDrawImage(":images/BrianKernighan50x58.png", 130, 10);
+    fwcDrawImage(":images/BjarneStroustrup50x55.png", 200, 10);
+    fwcDrawImage(":images/DuckFeet100x45.bmp", 10, 200);
+    fwcDrawImage(":images/spaceship50x59.jpg", 200, 200);
+    fwcDrawImage(":images/clock100x100.gif", 280, 200);
 }

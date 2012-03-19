@@ -5,10 +5,10 @@
 
 void DrawRectanglesSoln::runExercise()
 {
-    // USAGE: DrawRectangle(x, y, width, height, color, linewidth);
+    // USAGE: fwcDrawRectangle(x, y, width, height, color, linewidth);
     // (solid is an optional parameter, you can use it or leave it out.)
 
-    DrawRectangle(50, 50, 50, 50, BLACK, 1);
-    DrawRectangle(150, 150, 50, 100, RED, 5, true);
-    DrawRectangle(250, 250, 100, 50, BLUE, 10);
+    fwcDrawRectangle(50, 50, 50, 50, BLACK, 1);
+    fwcDrawRectangle(150, 150, 50, 100, RED, 5, true);
+    fwcDrawRectangle(250, 250, 100, 50, BLUE, 10);
 }

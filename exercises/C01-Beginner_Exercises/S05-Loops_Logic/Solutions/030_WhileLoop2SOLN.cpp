@@ -11,7 +11,7 @@ void WhileLoop2Soln::runExercise()
     while ( y < 400 )
     {
         y += verticalstep;
-        DrawLine(0, 200, 200, y, BLUE, 1);
+        fwcDrawLine(0, 200, 200, y, BLUE, 1);
     }
 
     y=0;
@@ -19,6 +19,6 @@ void WhileLoop2Soln::runExercise()
     while ( y < 400 )
     {
         y += verticalstep;
-        DrawLine(400, 200, 200, y, RED, 1);
+        fwcDrawLine(400, 200, 200, y, RED, 1);
     }
 }

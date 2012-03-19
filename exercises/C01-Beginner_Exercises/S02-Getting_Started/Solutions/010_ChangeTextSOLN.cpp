@@ -5,7 +5,7 @@
 
 void ChangeTextSoln::runExercise()
 {
-    // USAGE: DrawText("Text.", x, y, color, fontsize);
+    // USAGE: fwcDrawText("Text.", x, y, color, fontsize);
 
-    DrawText("...your name! :-)", 100, 150, BLUE, 15);
+    fwcDrawText("...your name! :-)", 100, 150, BLUE, 15);
 }

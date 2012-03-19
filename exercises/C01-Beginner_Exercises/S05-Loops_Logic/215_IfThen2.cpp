@@ -13,7 +13,7 @@ void IfThen2::runExercise()
     {
         for (y = 0; y < 400; y += verticalstep )
         {
-            DrawRectangle(x, y, 48, 48, color, 1, true);
+            fwcDrawRectangle(x, y, 48, 48, color, 1, true);
         }
         if ( color == DARKCYAN ) color = DARKBLUE;   // = is pronounced GETS, == is pronounced EQUALS  :-)
         else color = DARKCYAN;

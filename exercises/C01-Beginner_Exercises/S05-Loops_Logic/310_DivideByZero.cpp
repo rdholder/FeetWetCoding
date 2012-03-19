@@ -15,8 +15,8 @@ void DivideByZero::runExercise()     // copy the exercise name & paste it into m
 
     int a = 256, b = 8;
 
-    DrawText("Reference Exercise:", 50, 150, BLUE, 20);
-    DrawText("no solution needed.", 50, 180, BLUE, 20);
+    fwcDrawText("Reference Exercise:", 50, 150, BLUE, 20);
+    fwcDrawText("no solution needed.", 50, 180, BLUE, 20);
 
     for ( b = 8; b > - 8; b-- )
     {

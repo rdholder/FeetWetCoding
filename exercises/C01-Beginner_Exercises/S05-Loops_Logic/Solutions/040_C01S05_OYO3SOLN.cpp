@@ -12,8 +12,8 @@ void C01S05_OYO3Soln::runExercise()
     {
         x += step;
         y = x;
-        DrawRectangle(x, y, 400-(x*2), 400-(y*2), BLUE, 2);
-        DrawRectangle(x+5, y+5, 390-(x*2), 390-(y*2), RED, 2);
+        fwcDrawRectangle(x, y, 400-(x*2), 400-(y*2), BLUE, 2);
+        fwcDrawRectangle(x+5, y+5, 390-(x*2), 390-(y*2), RED, 2);
     }
     seeout << "Makes for kind of a psychedelic optical illusion, huh?\n";
     seeout << "That's not your screen flickering, that's some property of how\n";

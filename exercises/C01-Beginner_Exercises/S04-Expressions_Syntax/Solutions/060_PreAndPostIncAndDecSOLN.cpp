@@ -7,7 +7,7 @@ void PreAndPostIncAndDecSoln::runExercise()     // copy the exercise name & past
 {
     int sum = 0;
 
-    DrawText("...the seeout output below.", 50, 150, BLUE, 20);
+    fwcDrawText("...the seeout output below.", 50, 150, BLUE, 20);
 
 
     seeout << "1st sum: " << sum++ << "\n";

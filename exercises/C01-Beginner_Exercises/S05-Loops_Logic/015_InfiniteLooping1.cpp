@@ -20,7 +20,7 @@ void InfiniteLooping1::runExercise()
 
     while ( y < 400 )
     {
-        DrawText("This loop will never end when the next line is commented out.", x, y, BLUE, 10);
+        fwcDrawText("This loop will never end when the next line is commented out.", x, y, BLUE, 10);
         y += 30;
 
     }

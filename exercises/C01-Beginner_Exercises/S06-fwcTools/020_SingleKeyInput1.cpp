@@ -30,9 +30,9 @@ void SingleKeyInput1::runExercise()
     while ( key != "q" && key != "Q" )
     {
         key = waitForKeyPress();
-        ClearItems();
-        DrawText(key, x, y, color, fontSize);
+        fwcClearItems();
+        fwcDrawText(key, x, y, color, fontSize);
     }
-    ClearItems();
-    DrawText("DONE!", 60, 150, color, 60);
+    fwcClearItems();
+    fwcDrawText("DONE!", 60, 150, color, 60);
 }

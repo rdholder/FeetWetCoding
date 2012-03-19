@@ -17,8 +17,8 @@ void BlocksAndScope::runExercise()     // copy the exercise name & paste it into
     // Scoping issues can come into play when writing your algorithms, and especially
     // when debugging them.
 
-    DrawText("Reference Exercise:", 50, 150, BLUE, 20);
-    DrawText("no solution needed.", 50, 180, BLUE, 20);
+    fwcDrawText("Reference Exercise:", 50, 150, BLUE, 20);
+    fwcDrawText("no solution needed.", 50, 180, BLUE, 20);
 
     seeout << "1st a == " << a << "\n";
     { // new scope

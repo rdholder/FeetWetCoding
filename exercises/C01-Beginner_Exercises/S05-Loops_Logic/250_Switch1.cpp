@@ -10,7 +10,7 @@ void Switch1::runExercise()
     bool iscircle = true;
     Color color = BLUE;
 
-    //DrawRectangle(0, 0, 400, 400, BLACK, 1, true);
+    //fwcDrawRectangle(0, 0, 400, 400, BLACK, 1, true);
 
     for ( x = 0; x < 400; x += horizontalstep )
     {
@@ -34,11 +34,11 @@ void Switch1::runExercise()
 
             if ( random(2) )
             {
-                DrawCircle(x, y, size, color, 5 );
+                fwcDrawCircle(x, y, size, color, 5 );
             }
             else
             {
-                DrawRectangle(x, y, size, size, color, 5 );
+                fwcDrawRectangle(x, y, size, size, color, 5 );
             }
         }
     }

@@ -5,7 +5,7 @@
 
 void ChangeColorSoln::runExercise()
 {
-    // USAGE: DrawText("Text.", x, y, color, fontsize);
+    // USAGE: fwcDrawText("Text.", x, y, color, fontsize);
 
-    DrawText("color is RED", 50, 150, RED, 15);
+    fwcDrawText("color is RED", 50, 150, RED, 15);
 }

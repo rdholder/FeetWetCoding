@@ -11,7 +11,7 @@ void WhileLoop2::runExercise()
     while ( x < 400 )
     {
         x += horizontalstep;
-        DrawLine(200, 0, x, 200, BLUE, 1);
+        fwcDrawLine(200, 0, x, 200, BLUE, 1);
     }
 
     x=0;
@@ -19,6 +19,6 @@ void WhileLoop2::runExercise()
     while ( x < 400 )
     {
         x += horizontalstep;
-        DrawLine(200, 400, x, 200, RED, 1);
+        fwcDrawLine(200, 400, x, 200, RED, 1);
     }
 }

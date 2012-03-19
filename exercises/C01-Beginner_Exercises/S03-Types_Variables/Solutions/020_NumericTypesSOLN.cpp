@@ -5,8 +5,8 @@
 
 void NumericTypesSoln::runExercise()
 {
-    DrawText("Make the seeout output", 30, 80, BLUE, 20);
-    DrawText("in the boxes below match...", 30, 120, BLUE, 20);
+    fwcDrawText("Make the seeout output", 30, 80, BLUE, 20);
+    fwcDrawText("in the boxes below match...", 30, 120, BLUE, 20);
 
     int x = 100;                // = is pronounced GETS, == is pronounced EQUALS
     double y = 200;             // remember to initialize every variable!

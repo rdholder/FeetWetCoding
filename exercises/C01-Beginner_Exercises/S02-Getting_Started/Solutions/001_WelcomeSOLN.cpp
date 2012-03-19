@@ -5,5 +5,5 @@
 
 void WelcomeSoln::runExercise()
 {
-    DrawText("Welcome to FeetWetCoding!", 20, 150, RED, 20);
+    fwcDrawText("Welcome to FeetWetCoding!", 20, 150, RED, 20);
 }

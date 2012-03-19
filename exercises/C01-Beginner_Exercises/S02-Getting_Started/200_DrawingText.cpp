@@ -5,33 +5,33 @@
 
 void DrawingText::runExercise()
 {
-    DrawText("This is at location 5, 10 with font size 10 in black.", 5, 10, BLACK, 10);
-    DrawText("This is at location 5, 30 with font size 13 in blue.",  5, 30, BLUE, 13);
+    fwcDrawText("This is at location 5, 10 with font size 10 in black.", 5, 10, BLACK, 10);
+    fwcDrawText("This is at location 5, 30 with font size 13 in blue.",  5, 30, BLUE, 13);
 
-    DrawText("Help!",         5, 70, GREEN, 15);
-    DrawText("I'm",          50, 70, GREEN, 15);
-    DrawText("all",          70, 70, GREEN, 15);
-    DrawText("messed",       85, 70, GREEN, 15);
-    DrawText("up!",         145, 70, GREEN, 15);
+    fwcDrawText("Help!",         5, 70, GREEN, 15);
+    fwcDrawText("I'm",          50, 70, GREEN, 15);
+    fwcDrawText("all",          70, 70, GREEN, 15);
+    fwcDrawText("messed",       85, 70, GREEN, 15);
+    fwcDrawText("up!",         145, 70, GREEN, 15);
 
-    DrawText("This",        160, 130, RED, 15);
-    DrawText("sentence",    210, 130, RED, 15);
-    DrawText("is",          300, 130, RED, 15);
-    DrawText("out",           5, 130, RED, 15);
-    DrawText("of",           50, 130, RED, 15);
-    DrawText("order!",      100, 130, RED, 15);
+    fwcDrawText("This",        160, 130, RED, 15);
+    fwcDrawText("sentence",    210, 130, RED, 15);
+    fwcDrawText("is",          300, 130, RED, 15);
+    fwcDrawText("out",           5, 130, RED, 15);
+    fwcDrawText("of",           50, 130, RED, 15);
+    fwcDrawText("order!",      100, 130, RED, 15);
 
-    DrawText("Make",          5, 180, PINK, 8);
-    DrawText("these",        40, 180, PINK, 10);
-    DrawText("words",        80, 180, PINK, 12);
-    DrawText("have",        130, 180, PINK, 14);
-    DrawText("fontsize",    180, 180, PINK, 16);
-    DrawText("10.",         260, 180, PINK, 18);
+    fwcDrawText("Make",          5, 180, PINK, 8);
+    fwcDrawText("these",        40, 180, PINK, 10);
+    fwcDrawText("words",        80, 180, PINK, 12);
+    fwcDrawText("have",        130, 180, PINK, 14);
+    fwcDrawText("fontsize",    180, 180, PINK, 16);
+    fwcDrawText("10.",         260, 180, PINK, 18);
 
-    DrawText("Make",        200, 230, GRAY, 15);
-    DrawText("these",       210, 255, GRAY, 15);
-    DrawText("words",       190, 280, GRAY, 15);
-    DrawText("line",        205, 305, GRAY, 15);
-    DrawText("up",          195, 330, GRAY, 15);
-    DrawText("vertically!", 180, 355, GRAY, 15);
+    fwcDrawText("Make",        200, 230, GRAY, 15);
+    fwcDrawText("these",       210, 255, GRAY, 15);
+    fwcDrawText("words",       190, 280, GRAY, 15);
+    fwcDrawText("line",        205, 305, GRAY, 15);
+    fwcDrawText("up",          195, 330, GRAY, 15);
+    fwcDrawText("vertically!", 180, 355, GRAY, 15);
 }

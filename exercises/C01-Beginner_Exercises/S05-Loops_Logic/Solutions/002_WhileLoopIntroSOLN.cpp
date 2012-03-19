@@ -11,7 +11,7 @@ void WhileLoopIntroSoln::runExercise()
     // we can base our loop on x...
     while ( x < 100 )
     {
-        DrawCircle(x, y, 10, BLACK, 1, true);
+        fwcDrawCircle(x, y, 10, BLACK, 1, true);
         x += horizontalstep;
     }
 
@@ -20,7 +20,7 @@ void WhileLoopIntroSoln::runExercise()
     y = 100;
     while ( n < 5 )
     {
-        DrawCircle(x, y, 10, BLUE, 1, true);
+        fwcDrawCircle(x, y, 10, BLUE, 1, true);
         x += horizontalstep;
         n++;
     }
@@ -32,7 +32,7 @@ void WhileLoopIntroSoln::runExercise()
     y = 150;
     while ( n++ < 5 )
     {
-        DrawCircle(x, y, 10, DARKGREEN, 1, true);
+        fwcDrawCircle(x, y, 10, DARKGREEN, 1, true);
         x += horizontalstep;
     }
 
@@ -42,7 +42,7 @@ void WhileLoopIntroSoln::runExercise()
     y = 200;
     while ( n++ < 5 )
     {
-        DrawCircle(x, y, 10, RED, 1, true);
+        fwcDrawCircle(x, y, 10, RED, 1, true);
         x += horizontalstep;
     }
 
@@ -52,7 +52,7 @@ void WhileLoopIntroSoln::runExercise()
     {
         while ( col++ < 5 )
         {
-            DrawCircle(x, y, 10, DARKRED, 1, true);
+            fwcDrawCircle(x, y, 10, DARKRED, 1, true);
             x += horizontalstep;
         }
         col = 0;
@@ -68,7 +68,7 @@ void WhileLoopIntroSoln::runExercise()
     {
         while ( col++ < 10 )
         {
-            DrawCircle(x, y, 10, DARKCYAN, 1, true);
+            fwcDrawCircle(x, y, 10, DARKCYAN, 1, true);
             x += horizontalstep;
         }
         col = 0;

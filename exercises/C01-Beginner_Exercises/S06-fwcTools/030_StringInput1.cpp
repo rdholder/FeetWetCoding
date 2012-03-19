@@ -11,13 +11,13 @@ void StringInput1::runExercise()
     std::string name, greeting;
     Color color = DARKBLUE;
 
-    int text1 = DrawText("Mouseover this window, then", 30, 100, color);
-    int text2 = DrawText("type your name and hit ENTER:", 30, 130, color);
+    int text1 = fwcDrawText("Mouseover this window, then", 30, 100, color);
+    int text2 = fwcDrawText("type your name and hit ENTER:", 30, 130, color);
     name = getKeyboardString();
 
     //Clear the old text...
-    EraseItem(text1);
-    EraseItem(text2);
+    fwcEraseItem(text1);
+    fwcEraseItem(text2);
 
     //And add the new...
     for ( count=0; count < 50; count++ )
@@ -29,7 +29,7 @@ void StringInput1::runExercise()
 
         x = random(400-greeting.size()*fontSize);
         y = random(400-fontSize*2);
-        DrawText(greeting, x, y, color, fontSize);
+        fwcDrawText(greeting, x, y, color, fontSize);
         msleep(100);
     }
 }

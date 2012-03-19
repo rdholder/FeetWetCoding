@@ -11,7 +11,7 @@ void StandardStringsSoln::runExercise()
     string fordsays ("Don't Panic!");
     string swap ("sometext");
 
-    DrawText("seeout output below:", 50, 170, BLUE, 20);
+    fwcDrawText("seeout output below:", 50, 170, BLUE, 20);
 
     seeout << "towel contains: " << towel << "\n";
     seeout << "fordsays contains: " << fordsays << "\n";

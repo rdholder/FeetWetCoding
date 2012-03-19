@@ -5,8 +5,8 @@
 
 void seeoutIntro::runExercise()
 {
-    DrawText("Make the seeout output", 30, 80, BLUE, 20);
-    DrawText("in the boxes below match...", 30, 120, BLUE, 20);
+    fwcDrawText("Make the seeout output", 30, 80, BLUE, 20);
+    fwcDrawText("in the boxes below match...", 30, 120, BLUE, 20);
 
     // seeout is a FeetWetCoding tool designed to work like std::cout, except
     // that it prints its output right into your working window so you don't

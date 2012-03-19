@@ -5,5 +5,5 @@
 
 void ChangeLineEnd1::runExercise()
 {
-    DrawText("This is a stub exercise that has not been completed.", 20, 200, DARKBLUE);
+    fwcDrawText("This is a stub exercise that has not been completed.", 20, 200, DARKBLUE);
 }

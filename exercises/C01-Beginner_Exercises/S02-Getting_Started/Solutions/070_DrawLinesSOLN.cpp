@@ -5,9 +5,9 @@
 
 void DrawLinesSoln::runExercise()
 {
-    // USAGE: DrawLine(xStart, yStart, xEnd, yEnd, color, thickness);
+    // USAGE: fwcDrawLine(xStart, yStart, xEnd, yEnd, color, thickness);
 
-    DrawLine(200, 400,   0, 0, BLUE, 1);
-    DrawLine(200, 400, 200, 0, RED, 5);
-    DrawLine(200, 400, 400, 0, BLACK, 10);
+    fwcDrawLine(200, 400,   0, 0, BLUE, 1);
+    fwcDrawLine(200, 400, 200, 0, RED, 5);
+    fwcDrawLine(200, 400, 400, 0, BLACK, 10);
 }

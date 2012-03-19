@@ -5,7 +5,7 @@
 
 void ChangeYSoln::runExercise()
 {
-    // USAGE: DrawText("Text.", x, y, color, fontsize);
+    // USAGE: fwcDrawText("Text.", x, y, color, fontsize);
 
-    DrawText("change y", 50, 300, BLUE, 15);
+    fwcDrawText("change y", 50, 300, BLUE, 15);
 }

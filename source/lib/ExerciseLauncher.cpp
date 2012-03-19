@@ -225,7 +225,7 @@ void ExerciseLauncher::setWhichPaneHasFocus( int pane )
 
     if ( NULL == mPaneHighlight )
     {
-        mPaneHighlight = DrawRectangleRender( 0, 0, WINDOW_WIDTH/2, WINDOW_HEIGHT, GREEN, 2);
+        mPaneHighlight = fwcDrawRectangleRender( 0, 0, WINDOW_WIDTH/2, WINDOW_HEIGHT, GREEN, 2);
     }
 
     switch ( mWhichPaneHasFocus )
@@ -288,31 +288,31 @@ void ExerciseLauncher::handleRenderRequests()
         switch (item.type) {
 
         case FeetWetCodingExercise::LINE:
-            gItem = DrawLineRender( item.x, item.y, item.xEnd, item.yEnd, item.color, item.linewidth);
+            gItem = fwcDrawLineRender( item.x, item.y, item.xEnd, item.yEnd, item.color, item.linewidth);
             break;
         case FeetWetCodingExercise::CIRCLE:
-            gItem = DrawCircleRender( item.x, item.y, item.radius, item.color, item.linewidth, item.solid);
+            gItem = fwcDrawCircleRender( item.x, item.y, item.radius, item.color, item.linewidth, item.solid);
             break;
         case FeetWetCodingExercise::CIRCLERGB:
-            gItem = DrawCircleRGBRender( item.x, item.y, item.radius, item.linewidth, item.RGBred, item.RGBgreen, item.RGBblue, item.solid);
+            gItem = fwcDrawCircleRGBRender( item.x, item.y, item.radius, item.linewidth, item.RGBred, item.RGBgreen, item.RGBblue, item.solid);
             break;
         case FeetWetCodingExercise::ELLIPSE:
-            gItem = DrawEllipseRender( item.x, item.y, item.width, item.height, item.color, item.linewidth, item.solid);
+            gItem = fwcDrawEllipseRender( item.x, item.y, item.width, item.height, item.color, item.linewidth, item.solid);
             break;
         case FeetWetCodingExercise::RECTANGLE:
-            gItem = DrawRectangleRender( item.x, item.y, item.width, item.height, item.color, item.linewidth, item.solid);
+            gItem = fwcDrawRectangleRender( item.x, item.y, item.width, item.height, item.color, item.linewidth, item.solid);
             break;
         case FeetWetCodingExercise::TEXT:
-            gItem = DrawTextRender( item.text, item.x, item.y, item.color, item.fontsize);
+            gItem = fwcDrawTextRender( item.text, item.x, item.y, item.color, item.fontsize);
             break;
         case FeetWetCodingExercise::INT:
-            gItem = DrawIntRender( item.intvalue, item.x, item.y, item.color, item.fontsize);
+            gItem = fwcDrawIntRender( item.intvalue, item.x, item.y, item.color, item.fontsize);
             break;
         case FeetWetCodingExercise::FLOAT:
-            gItem = DrawFloatRender( item.floatvalue, item.x, item.y, item.color, item.fontsize, item.decimalplaces );
+            gItem = fwcDrawFloatRender( item.floatvalue, item.x, item.y, item.color, item.fontsize, item.decimalplaces );
             break;
         case FeetWetCodingExercise::IMAGE:
-            gItem = DrawImageRender( item.imagefile, item.x, item.y );
+            gItem = fwcDrawImageRender( item.imagefile, item.x, item.y );
             break;
         }
 

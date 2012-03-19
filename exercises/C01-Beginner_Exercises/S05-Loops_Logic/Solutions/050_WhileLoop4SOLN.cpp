@@ -15,7 +15,7 @@ void WhileLoop4Soln::runExercise()
         x += horizontalstep;
         y += velocity;
         velocity += rateofchange;
-        DrawCircle(x, y, 20, RED, 1);
-        DrawInt(velocity, x+10, y, BLUE, 10);
+        fwcDrawCircle(x, y, 20, RED, 1);
+        fwcDrawInt(velocity, x+10, y, BLUE, 10);
     }
 }

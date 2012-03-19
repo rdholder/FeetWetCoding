@@ -5,6 +5,6 @@
 
 void Classes1::runExercise()
 {
-    DrawText("Exercise Under\nConstruction", 50, 100, BLUE, 24);
+    fwcDrawText("Exercise Under\nConstruction", 50, 100, BLUE, 24);
 }
 

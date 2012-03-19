@@ -69,7 +69,7 @@ FWCExerciseChooser::getExerciseFromName( const QString & name )
     if( "ChangeY" == name ){ return new ChangeY(&mExerciseLauncher); }
     if( "ChangeXY" == name ){ return new ChangeXY(&mExerciseLauncher); }
     if( "ChangeColor" == name ){ return new ChangeColor(&mExerciseLauncher); }
-    if( "ChangeFont" == name ){ return new ChangeFont(&mExerciseLauncher); }
+    if( "ChangeFontSize" == name ){ return new ChangeFontSize(&mExerciseLauncher); }
     if( "DrawLines" == name ){ return new DrawLines(&mExerciseLauncher); }
     if( "DrawCircles" == name ){ return new DrawCircles(&mExerciseLauncher); }
     if( "DrawRectangles" == name ){ return new DrawRectangles(&mExerciseLauncher); }
@@ -201,7 +201,7 @@ void FWCExerciseChooser::createExercisesMap()
     exercises.push_back( "ChangeY" );
     exercises.push_back( "ChangeXY" );
     exercises.push_back( "ChangeColor" );
-    exercises.push_back( "ChangeFont" );
+    exercises.push_back( "ChangeFontSize" );
     exercises.push_back( "DrawLines" );
     exercises.push_back( "DrawCircles" );
     exercises.push_back( "DrawRectangles" );

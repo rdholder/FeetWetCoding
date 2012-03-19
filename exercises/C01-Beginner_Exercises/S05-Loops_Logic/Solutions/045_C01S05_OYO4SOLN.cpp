@@ -8,13 +8,13 @@ void C01S05_OYO4Soln::runExercise()
     int x=0, y=0;
     int step=50;
 
-    DrawLine(0, 200, 400, 200, BLACK, 1);
-    DrawLine(200, 0, 200, 400, BLACK, 1);
+    fwcDrawLine(0, 200, 400, 200, BLACK, 1);
+    fwcDrawLine(200, 0, 200, 400, BLACK, 1);
 
     while ( x < 400 )
     {
-        DrawLine(x, 200, x, 195, BLACK, 1);
-        DrawLine(200, y, 205, y, BLACK, 1);
+        fwcDrawLine(x, 200, x, 195, BLACK, 1);
+        fwcDrawLine(200, y, 205, y, BLACK, 1);
         x += step;
         y = x;
     }
@@ -22,16 +22,16 @@ void C01S05_OYO4Soln::runExercise()
     y = -200;
     while ( x < 200 && y < 200 )
     {
-        DrawInt(x, x+195, 180, BLACK, 7);
-        DrawInt(y, 205, ((y * -1) + 195), BLACK, 7);
+        fwcDrawInt(x, x+195, 180, BLACK, 7);
+        fwcDrawInt(y, 205, ((y * -1) + 195), BLACK, 7);
         x += step;
         y += step;
     }
-    DrawText("x", 5, 210, BLACK, 10);
-    DrawText("y", 180, 5, BLACK, 10);
+    fwcDrawText("x", 5, 210, BLACK, 10);
+    fwcDrawText("y", 180, 5, BLACK, 10);
 
     seeout << "This is another one that takes a little finagling to get just right.\n\n";
-    seeout << "No fair using a bunch of individual DrawInt() calls to draw the ";
+    seeout << "No fair using a bunch of individual fwcDrawInt() calls to draw the ";
     seeout << "numeric axis labels individually!  Draw the numeric axis labels ";
     seeout << "in a while loop to make yourself learn! :-D\n\n";
     seeout << "The nice thing about this exercise is that later, when we play around ";

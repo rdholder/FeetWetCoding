@@ -11,13 +11,13 @@ void StringInput1Soln::runExercise()
     std::string name, greeting;
     Color color = DARKBLUE;
 
-    int text1 = DrawText("Mouseover this window, then", 30, 100, color);
-    int text2 = DrawText("type your name and hit ENTER:", 30, 130, color);
+    int text1 = fwcDrawText("Mouseover this window, then", 30, 100, color);
+    int text2 = fwcDrawText("type your name and hit ENTER:", 30, 130, color);
     name = getKeyboardString();
 
     //Clear the old text...
-    EraseItem(text1);
-    EraseItem(text2);
+    fwcEraseItem(text1);
+    fwcEraseItem(text2);
 
     //And add the new...
     greeting.assign("Hi ");
@@ -26,7 +26,7 @@ void StringInput1Soln::runExercise()
 
     x = 200-(greeting.size()*fontSize)/4;
 
-    DrawText(greeting, x, 180, color, fontSize);
+    fwcDrawText(greeting, x, 180, color, fontSize);
 
     seeout << "Notice that in this solution, the greeting is more or less";
     seeout << " centered in the drawing area, regardless of how many";

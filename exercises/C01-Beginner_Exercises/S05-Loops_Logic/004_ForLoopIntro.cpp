@@ -11,7 +11,7 @@ void ForLoopIntro::runExercise()
     // we can base our loop on x...
     for ( x = 50; x < 400; x += horizontalstep)
     {
-        DrawCircle(x, y, 10, BLACK, 1, true);
+        fwcDrawCircle(x, y, 10, BLACK, 1, true);
     }
 
     // ...or we can base it on the number of circles we want.
@@ -20,7 +20,7 @@ void ForLoopIntro::runExercise()
     y = 100;
     for ( n = 0; n < 5; n++)
     {
-        DrawCircle(x, y, 10, BLUE, 1, true);
+        fwcDrawCircle(x, y, 10, BLUE, 1, true);
         x += horizontalstep;
     }
 
@@ -31,7 +31,7 @@ void ForLoopIntro::runExercise()
     y = 200;
     for ( n = 0; n < 5; ++n)
     {
-        DrawCircle(x, y, 10, RED, 1, true);
+        fwcDrawCircle(x, y, 10, RED, 1, true);
         x += horizontalstep;
     }
 
@@ -41,7 +41,7 @@ void ForLoopIntro::runExercise()
     {
         for ( col = 0; col < 4; col++ )
         {
-            DrawCircle(x, y, 10, DARKRED, 1, true);
+            fwcDrawCircle(x, y, 10, DARKRED, 1, true);
             x += horizontalstep;
         }
         x = 50;

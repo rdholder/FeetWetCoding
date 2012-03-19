@@ -19,7 +19,7 @@ void SingleKeyInput1Soln::runExercise()
     {
         key = waitForKeyPress();
 
-        DrawText(key, x, y, color, fontSize);
+        fwcDrawText(key, x, y, color, fontSize);
 
         x += fontSize;
         if (x > 400-trunc(fontSize*1.5))
@@ -30,10 +30,10 @@ void SingleKeyInput1Soln::runExercise()
             {
                 x = 10;
                 y = 20;
-                ClearItems();
+                fwcClearItems();
             }
         }
     }
-    ClearItems();
-    DrawText("DONE!", 60, 150, color, 60);
+    fwcClearItems();
+    fwcDrawText("DONE!", 60, 150, color, 60);
 }

@@ -153,7 +153,7 @@ void ClearScreen()
     }
 }
 
-QGraphicsItem* DrawLineRender( int xStart, int yStart, int xEnd, int yEnd, Color color, int thickness )
+QGraphicsItem* fwcDrawLineRender( int xStart, int yStart, int xEnd, int yEnd, Color color, int thickness )
 {
     QGraphicsLineItem *newLine = new QGraphicsLineItem(xStart, yStart, xEnd, yEnd);
 
@@ -167,7 +167,7 @@ QGraphicsItem* DrawLineRender( int xStart, int yStart, int xEnd, int yEnd, Color
     return newLine;
 }
 
-QGraphicsItem* DrawCircleRender( int x, int y, int r, Color color, int thickness, bool solid)
+QGraphicsItem* fwcDrawCircleRender( int x, int y, int r, Color color, int thickness, bool solid)
 {
     QGraphicsEllipseItem *newCircle = new QGraphicsEllipseItem(x-(r/2), y-(r/2), r, r);
 
@@ -190,7 +190,7 @@ QGraphicsItem* DrawCircleRender( int x, int y, int r, Color color, int thickness
     return newCircle;
 }
 
-QGraphicsItem* DrawCircleRGBRender( int x, int y, int r, int red, int green, int blue, int thickness, bool solid )
+QGraphicsItem* fwcDrawCircleRGBRender( int x, int y, int r, int red, int green, int blue, int thickness, bool solid )
 {
     QGraphicsEllipseItem *newCircle = new QGraphicsEllipseItem(x-(r/2), y-(r/2), r, r);
 
@@ -217,7 +217,7 @@ QGraphicsItem* DrawCircleRGBRender( int x, int y, int r, int red, int green, int
     return newCircle;
 }
 
-QGraphicsItem* DrawEllipseRender( int x, int y, int w, int h, Color color, int thickness, bool solid )
+QGraphicsItem* fwcDrawEllipseRender( int x, int y, int w, int h, Color color, int thickness, bool solid )
 {
     QGraphicsEllipseItem *newCircle = new QGraphicsEllipseItem(x-(w/2), y-(h/2), w, h);
 
@@ -240,7 +240,7 @@ QGraphicsItem* DrawEllipseRender( int x, int y, int w, int h, Color color, int t
     return newCircle;
 }
 
-QGraphicsItem* DrawRectangleRender( int x, int y, int w, int h, Color color, int thickness, bool solid )
+QGraphicsItem* fwcDrawRectangleRender( int x, int y, int w, int h, Color color, int thickness, bool solid )
 {
     QGraphicsRectItem *newRect = new QGraphicsRectItem(x, y, w, h);
 
@@ -262,7 +262,7 @@ QGraphicsItem* DrawRectangleRender( int x, int y, int w, int h, Color color, int
 }
 
 
-QGraphicsItem* DrawTextRender( std::string text, int x, int y,  Color color, int size )
+QGraphicsItem* fwcDrawTextRender( std::string text, int x, int y,  Color color, int size )
 {
     QGraphicsTextItem *newText = new QGraphicsTextItem(text.c_str());
 
@@ -277,7 +277,7 @@ QGraphicsItem* DrawTextRender( std::string text, int x, int y,  Color color, int
     return newText;
 }
 
-QGraphicsItem* DrawIntRender( int number, int x, int y, Color color, int fontSize )
+QGraphicsItem* fwcDrawIntRender( int number, int x, int y, Color color, int fontSize )
 {
     QString str;
     str.setNum(number);
@@ -295,7 +295,7 @@ QGraphicsItem* DrawIntRender( int number, int x, int y, Color color, int fontSiz
     return newText;
 }
 
-QGraphicsItem* DrawFloatRender( float number, int x, int y, Color color, int fontSize, int decimalPlaces )
+QGraphicsItem* fwcDrawFloatRender( float number, int x, int y, Color color, int fontSize, int decimalPlaces )
 {
     QString str;
     str.setNum(number, 'f', decimalPlaces);
@@ -313,7 +313,7 @@ QGraphicsItem* DrawFloatRender( float number, int x, int y, Color color, int fon
     return newText;
 }
 
-QGraphicsItem* DrawImageRender( std::string filename, int x, int y )
+QGraphicsItem* fwcDrawImageRender( std::string filename, int x, int y )
 {
     QPixmap pixmap( filename.c_str() );
     QGraphicsPixmapItem *newPixmap = new QGraphicsPixmapItem(pixmap);

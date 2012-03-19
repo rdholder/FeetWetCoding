@@ -63,14 +63,14 @@ void ColorViewer::show()
                 yshift = r/3.75;
             }
 
-            DrawCircle(x, y, r, color, 1, true);
-            DrawCircle(x, y, r, BLACK, 1);
+            fwcDrawCircle(x, y, r, color, 1, true);
+            fwcDrawCircle(x, y, r, BLACK, 1);
 
             switch (color) {
 
             case WHITE:
             case TRANSPARENT:
-                DrawText(colorStr, x-xshift, y-yshift, BLACK, fontSize);
+                fwcDrawText(colorStr, x-xshift, y-yshift, BLACK, fontSize);
                 seeout.setColor(BLACK);
                 seeout << colorStrOrig << ":\t     "
                        << getQColor(color).name().toStdString() << "\n";
@@ -79,14 +79,14 @@ void ColorViewer::show()
             case YELLOW:
             case CYAN:
             case GREEN:
-                DrawText(colorStr, x-xshift, y-yshift, BLACK, fontSize);
+                fwcDrawText(colorStr, x-xshift, y-yshift, BLACK, fontSize);
                 seeout.setColor(color);
                 seeout << colorStrOrig << ": \t     "
                        << getQColor(color).name().toStdString() << "\n";
                 break;
 
             default:
-                DrawText(colorStr, x-xshift, y-yshift, WHITE, fontSize);
+                fwcDrawText(colorStr, x-xshift, y-yshift, WHITE, fontSize);
                 seeout.setColor(color);
                 seeout << colorStrOrig << ": \t     "
                        << getQColor(color).name().toStdString() << "\n";
@@ -97,7 +97,7 @@ void ColorViewer::show()
     }
 }
 
-int ColorViewer::DrawCircle( int x, int y, int r, Color color, int thickness, bool solid )
+int ColorViewer::fwcDrawCircle( int x, int y, int r, Color color, int thickness, bool solid )
 {
     FeetWetCodingExercise::RenderItem item;
     item.type = FeetWetCodingExercise::CIRCLE;
@@ -111,7 +111,7 @@ int ColorViewer::DrawCircle( int x, int y, int r, Color color, int thickness, bo
     return mRenderServer->setRenderItem(item);
 }
 
-int ColorViewer::DrawText( std::string text, int x, int y, Color color, int size )
+int ColorViewer::fwcDrawText( std::string text, int x, int y, Color color, int size )
 {
     FeetWetCodingExercise::RenderItem item;
     item.type = FeetWetCodingExercise::TEXT;

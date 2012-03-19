@@ -22,7 +22,6 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/030_ChangeY.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/040_ChangeXY.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/050_ChangeColor.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/060_ChangeFont.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/200_DrawingText.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/070_DrawLines.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/080_DrawCircles.cpp \
@@ -41,7 +40,6 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/030_ChangeYSOLN.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/040_ChangeXYSOLN.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/050_ChangeColorSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/060_ChangeFontSOLN.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/070_DrawLinesSOLN.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/080_DrawCirclesSOLN.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/100_DrawDotsSOLN.cpp \
@@ -179,7 +177,9 @@ SOURCES += \
     mycode/src/MyCode6.cpp \
     mycode/src/MyCode7.cpp \
     mycode/src/MyCode8.cpp \
-    mycode/src/MyCode9.cpp
+    mycode/src/MyCode9.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/060_ChangeFontSize.cpp \
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/060_ChangeFontSizeSOLN.cpp
 
 
 HEADERS += \

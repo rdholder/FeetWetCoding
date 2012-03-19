@@ -9,10 +9,10 @@ void DistanceEquationSoln::runExercise()     // copy the exercise name & paste i
     int x1 = random(200), y1 = random(400), x2 = random(300)+100, y2 = random(400);
     int distance = 0;
 
-    DrawLine(x1, y1, x2, y2, BLUE, 1);
+    fwcDrawLine(x1, y1, x2, y2, BLUE, 1);
     distance = sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2)); // don't forget to #include <math.h>!
-    DrawText("Line length = ", x1, y1, BLACK, 10);
-    DrawInt(distance, x1 + 80, y1, BLACK, 10);
+    fwcDrawText("Line length = ", x1, y1, BLACK, 10);
+    fwcDrawInt(distance, x1 + 80, y1, BLACK, 10);
 
     seeout << "This program generates a new random line every time you hit the";
     seeout << " 'Re-start Exercise' button.  Just add the code to make your";

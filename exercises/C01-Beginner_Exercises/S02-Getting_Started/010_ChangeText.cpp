@@ -5,6 +5,6 @@
 
 void ChangeText::runExercise()
 {
-    // USAGE: DrawText("Text.", x, y, color, fontsize);
-    DrawText("Change this text to...", 50, 150, BLUE, 15);
+    // USAGE: fwcDrawText("Text.", x, y, color, fontsize);
+    fwcDrawText("Change this text to...", 50, 150, BLUE, 15);
 }

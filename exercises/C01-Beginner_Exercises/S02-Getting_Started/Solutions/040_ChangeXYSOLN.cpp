@@ -5,7 +5,7 @@
 
 void ChangeXYSoln::runExercise()
 {
-    // USAGE: DrawText("Text.", x, y, color, fontsize);
+    // USAGE: fwcDrawText("Text.", x, y, color, fontsize);
 
-    DrawText("99,101", 99, 101, BLUE, 15);
+    fwcDrawText("99,101", 99, 101, BLUE, 15);
 }

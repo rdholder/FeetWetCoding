@@ -13,7 +13,7 @@ void Primes1::runExercise()
 
     for ( n = 1; n < 101; n++ )
     {
-        DrawInt(n, x, y, color);
+        fwcDrawInt(n, x, y, color);
 
         prime = true;
 
