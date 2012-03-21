@@ -42,33 +42,51 @@
 		</div>
 	<div id="topic_content">
 		
-<p class="rvps3"><span class="rvts34">Chapter 01, Section 02, Exercise 020: &nbsp;ChangeX</span></p>
+<p class="rvps3"><img border="0" alt hspace="1" vspace="1" src="lib/duckfeet50x46.png"><span class="rvts153"> </span><span class="rvts132">Chapter 01, Section 02, Exercise 020: &nbsp;ChangeX</span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">In this exercise, you will learn:</span></p>
+<p class="rvps3"><span class="rvts14">In this exercise, you will learn:</span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
 <ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
 <li class="rvps3"><span class="rvts10">How to change the x coordinate that controls the horizontal position for drawing on the runtime exercise draw area.</span></li>
 </ul>
 <p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts14">To do this exercise you need to know:</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li class="rvps3"><a class="rvts12" href="HowtoUseFeetWetCoding.html">How</a><span class="rvts10"> to load the fwc project in Qt Creator, and run it.</span></li>
+</ul>
+<p class="rvps3"><span class="rvts10"><br></span></p>
 <p class="rvps3"><span class="rvts17">What is the "x-axis"?</span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">A long time ago, this guy named Rene Descartes (pronounced: Reh Nay Day Cart) created something called the "</span><a class="rvts12" href="http://en.wikipedia.org/wiki/Cartesian_coordinate_system" target="_blank">Cartesian Coordinate System</a><span class="rvts10">", which is just a fancy way of saying that you have a graphical horizontal direction and a vertical direction, so that you can locate things you draw according to numeric coordinates. &nbsp;(Okay, there's more to it than that, but that's all we need to know right now!)</span></p>
+<p class="rvps3"><span class="rvts10">A long time ago, a 1337 hacker named Rene Descartes (pronounced: Reh Nay Day Cart) created something called the "</span><a class="rvts12" href="http://en.wikipedia.org/wiki/Cartesian_coordinate_system" target="_blank">Cartesian Coordinate System</a><span class="rvts10">", which was later adapted into the kind of horizontal/vertical graph you are probably familiar with from algebra and geometry class. &nbsp;This Cartesian Coordinate thing looks like this:</span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">It sounds pretty straightforward, but at the time he created it, this didn't exist! &nbsp;I'm not a historian (and not any big deal when it comes to mathematics either) so I don't know how in the heck people designed things back then, but it must have been pretty rough if they didn't even have the concept of X-Y coordinates! :-D</span></p>
+<p class="rvps7"><img border="0" alt hspace="1" vspace="1" src="lib/CartesianCoordinateGraph.png"></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">So here in our drawing area, x starts at zero on the left side of the drawing area, and gets bigger as you move to the right. &nbsp;The right edge of </span><span class="rvts15">your</span><span class="rvts10"> drawing area is 400.</span></p>
+<p class="rvps3"><span class="rvts10">It looks pretty straightforward, but at the time he created it, this wasn't commonly used! &nbsp;I'm not a historian (and not any big deal when it comes to mathematics either) so I don't know how in the heck people designed things back then, but it must have been pretty rough before guys like Descartes, Fermat, Newton, Liebniz and all these other math whizzes showed up and hacked science and engineering out of raw chunks of pure thought for the rest of us to use and enjoy!</span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">It turns out you can draw outside that box. &nbsp;The box exists to give you some reference perspective for when you are drawing things on the screen. &nbsp;Later on in your programming experience, you will draw on much bigger areas than that, but for now 400x400 is plenty of room to learn with.</span></p>
+<p class="rvps3"><span class="rvts10">So here in our drawing area, x starts at zero on the left side of the drawing area, and gets bigger as you move to the right. &nbsp;The right edge of </span><span class="rvts15">your</span><span class="rvts10"> drawing area is 400. &nbsp;We're talking about the drawing area you see when you run fwc:</span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">In this exercise, you need to change the x parameter that is being passed to </span><span class="rvts61">fwcDrawText()</span><span class="rvts10"> so that the text string </span><span class="rvts61">change x</span><span class="rvts10"> shows up near the right edge of your drawing area. &nbsp;Just make a guess about what x should be, and run your program. &nbsp;It doesn't have to be exactly the same as the solution, the point is for you to get comfortable changing parameters in a function call, so you can see how to make the functions you use do the work you want them to do. &nbsp;The number we are looking to change here is 10. &nbsp;Since x gets bigger as it goes to the right edge of the drawing area, you want a number bigger than 10 but less than 400, which is the right edge.</span></p>
+<p class="rvps7"><img border="0" alt hspace="1" vspace="1" src="lib/DrawingArea.png"></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">It turns out you can draw outside that box when fwc runs. &nbsp;The box exists to give you some reference perspective for when you are drawing things on the screen. &nbsp;Later on in your programming experience, you will draw on much bigger areas than that, but for now 400x400 is plenty of room to learn with.</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">In this exercise, you need to change the x parameter that is being passed to </span><span class="rvts76">fwcDrawText()</span><span class="rvts10"> so that the text string </span><span class="rvts76">change x</span><span class="rvts10"> shows up near the right edge of your drawing area, the way it does in the SOLN.</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">Just make a guess about what x should be, and run your program. &nbsp;It doesn't have to be exactly the same as the solution, the point is for you to get comfortable changing parameters in a function call, so you can see how to make the functions you use do the work you want them to do. &nbsp;The number we are looking to change here is 10. &nbsp;Since x gets bigger as it goes to the right edge of the drawing area, you want a number bigger than 10 but less than 400, which is the right edge.</span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
 <p class="rvps3"><span class="rvts10">Change 10 to the number you think is correct, and close the FeetWetCoding window, and then run FeetWetCoding again in Qt Creator by pressing the green run arrow.</span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
 <p class="rvps3"><span class="rvts10">When you've got x where you like it, you're done. &nbsp;Good job!</span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps41"><span class="rvts10">When you are done, check the solution code, which lives one directory below your exercise code in the "Solutions" directory, and is named:</span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li class="rvps41"><span class="rvts79">020_ChangeXSOLN.cpp</span></li>
+</ul>
+<p class="rvps43"><span class="rvts134">Always </span><span class="rvts188">understand</span><span class="rvts134"> the SOLN code before you proceed to the next exercise!</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
 <p class="rvps3"><span class="rvts10">When you are ready, you can proceed to </span><a class="rvts12" href="Exercise030_ChangeYcpp.html">030_ChangeY.cpp</a><span class="rvts10">.</span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts7"><br></span></p>
+<p class="rvps3"><span class="rvts10">documentation generated by HelpNDoc </span><span class="rvts10">3/20/2012 8:03 PM</span></p>
 <p class="rvps3"><span class="rvts10"><div style="font-family:Arial;font-size:12pt;background-color:#EEEEEE;background-color:teal;color:white;padding:4px;font-weight:bold">
 FeetWetCoding version 0.2r1 copyright (c) 2011,2012 Robert Holder, Janice Dugger.
 <br/>
@@ -83,11 +101,6 @@ a:link {color:#FFFFFF;}
 <p class="rvps8"><span class="rvts40">Created with the Personal Edition of HelpNDoc: </span><a class="rvts41" href="http://www.helpndoc.com/feature-tour">Easily create Web Help sites</a></p>
 </div>
 	
-	<div id="topic_footer">
-
-			<div id="topic_footer_content">
-				Copyright &copy; &lt;Dates&gt; by &lt;Authors&gt;. All Rights Reserved.</div>
-		</div>
 	</body>
 	
 </html>

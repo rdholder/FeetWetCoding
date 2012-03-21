@@ -5,10 +5,10 @@
 
 void DrawCirclesSoln::runExercise()
 {
-    // USAGE: fwcDrawCircle(x, y, radius, color, thickness, solid);
+    // USAGE: fwcDrawCircle(x, y, radius, color, linewidth, solid);
     // (solid is an optional parameter, you can use it or leave it out.)
 
-    fwcDrawCircle(150, 220, 100, BLACK, 1, true);
-    fwcDrawCircle(250, 200, 200, RED, 10);
-    fwcDrawCircle(130, 180, 80, BLUE, 1);
+    fwcDrawCircle(200, 200, 200, RED, 10);
+    fwcDrawCircle(300, 200, 100, BLACK, 1, true);
+    fwcDrawCircle(100, 200, 80, BLUE, 1);
 }

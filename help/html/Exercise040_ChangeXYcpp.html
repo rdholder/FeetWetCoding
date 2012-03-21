@@ -42,23 +42,38 @@
 		</div>
 	<div id="topic_content">
 		
-<p class="rvps3"><span class="rvts34">Chapter 01, Section 02, Exercise 040: &nbsp;ChangeXY</span></p>
+<p class="rvps3"><img border="0" alt hspace="1" vspace="1" src="lib/duckfeet50x46.png"><span class="rvts153"> </span><span class="rvts132">Chapter 01, Section 02, Exercise 040: &nbsp;ChangeXY</span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">In this exercise, you will learn:</span></p>
+<p class="rvps3"><span class="rvts14">In this exercise, you will learn:</span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
 <ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li class="rvps3"><span class="rvts10">What "x,y coordinate" means.</span></li>
 <li class="rvps3"><span class="rvts10">How to change both the x and y coordinates, to give you some experience judging where things are in the drawing area.</span></li>
 </ul>
 <p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">This exercise is similar to the last two, except that now you are changing </span><span class="rvts15">both</span><span class="rvts10"> the horizontal </span><span class="rvts15">and</span><span class="rvts10"> vertical position. &nbsp;Go ahead and see if you can change the x and y values to make the exercise match the solution. &nbsp;In this case, the x value (the second parameter, after the text string parameter) is 250 and the y value is 300, the third parameter. &nbsp;Remember to close the FWC window before you try to run your program again in Qt Creator.</span></p>
+<p class="rvps3"><span class="rvts14">To do this exercise you need to know:</span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">Notice that </span><span class="rvts15">changing the x and y parameters</span><span class="rvts10"> is what changes the location on the screen. &nbsp;The numbers in the first parameter </span><span class="rvts61">"250,300"</span><span class="rvts10"> &nbsp;(which is not a number, but a string of characters) are just the text that you display, and do not control where on the screen something gets drawn. &nbsp;Your program will happily draw </span><span class="rvts61">"250,300"</span><span class="rvts10"> at the x,y coordinates 99,101 if you only change the x and y parameters, but leave the first parameter, the text string, as </span><span class="rvts61">"250,300"</span><span class="rvts10">.</span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li class="rvps3"><a class="rvts12" href="HowtoUseFeetWetCoding.html">How</a><span class="rvts10"> to load the fwc project in Qt Creator, and run it.</span></li>
+</ul>
 <p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">If you want to draw a number on the screen (instead of the </span><span class="rvts15">text string</span><span class="rvts10"> for a number, such as </span><span class="rvts61">"250"</span><span class="rvts10">) you will need to use a different function that we provide, called </span><span class="rvts61">fwcDrawInt()</span><span class="rvts10"> which we will get to in a few exercises.</span></p>
+<p class="rvps3"><span class="rvts10">Throughout fwc, we will talk about coordinates on the screen. &nbsp;A coordinate is the x location and y location, separated by a comma like this: 250,300. &nbsp;That coordinate refers to the location on the screen where x=250 and y=300. &nbsp;That is what we mean when we talk about "x,y" coordinates.</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">This exercise is similar to the last two, except that now you are changing </span><span class="rvts15">both</span><span class="rvts10"> the horizontal </span><span class="rvts15">and</span><span class="rvts10"> vertical position. &nbsp;Go ahead and see if you can change the x and y values to make the exercise visually match the solution. &nbsp;In this case, the x value (the second parameter, after the text string parameter) is 250 and the y value is 300, the third parameter. &nbsp;Remember to close the fwc window before you try to run your program again in Qt Creator.</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">Notice that </span><span class="rvts15">changing the x and y parameters</span><span class="rvts10"> is what changes the location on the screen. &nbsp;The numbers in the first parameter </span><span class="rvts76">"250,300"</span><span class="rvts10"> &nbsp;(which is not a number, but a string of characters) are just the text that you display, and do not control where on the screen something gets drawn. &nbsp;Your program will happily draw </span><span class="rvts76">"250,300"</span><span class="rvts10"> at the x,y coordinates 99,101 if you only change the x and y parameters, but leave the first parameter, the text string, as </span><span class="rvts76">"250,300"</span><span class="rvts10">.</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">If you want to draw a number on the screen (instead of the </span><span class="rvts15">text string</span><span class="rvts10"> for a number, such as </span><span class="rvts76">"250"</span><span class="rvts10">) you will need to use a different function that we provide, called </span><span class="rvts76">fwcDrawInt()</span><span class="rvts10"> which we will get to in a few exercises.</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps41"><span class="rvts10">When you are done, check the solution code, which lives one directory below your exercise code in the "Solutions" directory, and is named:</span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li class="rvps41"><span class="rvts79">040_ChangeXYSOLN.cpp</span></li>
+</ul>
+<p class="rvps43"><span class="rvts134">Always </span><span class="rvts188">understand</span><span class="rvts134"> the SOLN code before you proceed to the next exercise!</span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
 <p class="rvps3"><span class="rvts10">When you are ready, you can proceed to </span><a class="rvts12" href="Exercise050_ChangeColorcpp.html">050_ChangeColor.cpp</a><span class="rvts10">.</span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts7"><br></span></p>
+<p class="rvps3"><span class="rvts10">documentation generated by HelpNDoc </span><span class="rvts10">3/20/2012 8:03 PM</span></p>
 <p class="rvps3"><span class="rvts10"><div style="font-family:Arial;font-size:12pt;background-color:#EEEEEE;background-color:teal;color:white;padding:4px;font-weight:bold">
 FeetWetCoding version 0.2r1 copyright (c) 2011,2012 Robert Holder, Janice Dugger.
 <br/>
@@ -73,11 +88,6 @@ a:link {color:#FFFFFF;}
 <p class="rvps8"><span class="rvts40">Created with the Personal Edition of HelpNDoc: </span><a class="rvts41" href="http://www.helpndoc.com/help-authoring-tool">Free help authoring environment</a></p>
 </div>
 	
-	<div id="topic_footer">
-
-			<div id="topic_footer_content">
-				Copyright &copy; &lt;Dates&gt; by &lt;Authors&gt;. All Rights Reserved.</div>
-		</div>
 	</body>
 	
 </html>

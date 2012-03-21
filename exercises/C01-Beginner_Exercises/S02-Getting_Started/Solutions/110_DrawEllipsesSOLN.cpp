@@ -7,7 +7,7 @@ void DrawEllipsesSoln::runExercise()
 {
     // Things drawn later get drawn on top of things drawn earlier!
 
-    // USAGE: fwcDrawEllipse(x, y, width, height, color, thickness, solid);
+    // USAGE: fwcDrawEllipse(x, y, width, height, color, linewidth, solid);
     // (solid is an optional parameter, you can use it or leave it out.)
 
     fwcDrawEllipse(200, 100, 300, 50, BLUE, 1, true);

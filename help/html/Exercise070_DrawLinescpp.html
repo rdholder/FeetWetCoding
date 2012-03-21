@@ -1,0 +1,105 @@
+﻿<html>
+	
+<head>
+	<title>Exercise 070_DrawLines.cpp</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc">
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript"><!--
+		var sTopicId = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+		if (top.frames.length == 0)
+			top.location.href = "FeetWetCoding.html?" + sTopicId
+		else if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+			top.FrameTOC.SelectTocItem(sTopicId);
+	</script>
+</head>
+
+<body>
+
+	<div id="topic_header">
+			<div id="topic_header_content">
+				<h1>Exercise 070_DrawLines.cpp</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Exercises.html">Exercises</a> &rsaquo;&rsaquo; <a href="Chapter01BeginnerExercises.html">Chapter 01 Beginner Exercises</a> &rsaquo;&rsaquo; <a href="Section02GettingStarted.html">Section 02: Getting Started</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="Section02GettingStarted.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="Exercise060_ChangeFontSizecpp.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="Exercise080_DrawCirclescpp.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p class="rvps3"><img border="0" alt hspace="1" vspace="1" src="lib/duckfeet50x46.png"><span class="rvts153"> </span><span class="rvts132">Chapter 01, Section 02, Exercise 070: &nbsp;DrawLines</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts14">In this exercise, you will learn:</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li class="rvps3"><span class="rvts10">How to draw lines on your drawing area using the </span><span class="rvts76">fwcDrawLine()</span><span class="rvts10"> function.</span></li>
+<li class="rvps3"><span class="rvts10">What parameters the </span><span class="rvts76">fwcDrawLine()</span><span class="rvts10">function takes.</span></li>
+<li class="rvps3"><span class="rvts10">What a pixel is.</span></li>
+<li class="rvps3"><span class="rvts10">What the abbreviation </span><span class="rvts79">px</span><span class="rvts10"> means.</span></li>
+</ul>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts14">To do this exercise you need to know:</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li class="rvps3"><a class="rvts12" href="HowtoUseFeetWetCoding.html">How</a><span class="rvts10"> to load the fwc project in Qt Creator, and run it.</span></li>
+</ul>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">070_DrawLines.cpp draws three lines on your drawing area. &nbsp;You need to position your three lines look to look like the lines in the SOLN.</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">Here is the first line of code, preceded by the USAGE comment for the </span><span class="rvts79">fwcDrawLine()</span><span class="rvts10"> function:</span></p>
+<p class="rvps42"><span class="rvts79"> &nbsp; &nbsp;// USAGE: fwcDrawLine(xStart, yStart, xEnd, yEnd, color, linewidth);</span><br><span class="rvts79"> &nbsp; &nbsp;fwcDrawLine(0, 200, 400, &nbsp; 0, BLUE, 1);</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">So </span><span class="rvts79">fwcDrawLine()</span><span class="rvts10"> is expecting you to specify two coordinate pairs to describe where you want the line drawn on the screen: &nbsp;the starting point of the line, located by </span><span class="rvts79">xStart,yStart</span><span class="rvts10">, and the end point of the line, located by </span><span class="rvts79">xEnd,yEnd</span><span class="rvts10">. &nbsp;The function call after the comment will draw a line from a starting point of 0,200 to an end point of 400,0.</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">The next parameter after these x,y coordinates is the color of the line, followed by the </span><span class="rvts79">linewidth</span><span class="rvts10"> of the line in pixels. &nbsp;(Throughout fwc you will see the word pixel abbreviated to </span><span class="rvts79">px</span><span class="rvts10">.) &nbsp;A pixel is a dot on the screen, and is the smallest thing you can draw. &nbsp;A pixel has an x,y location and a color. &nbsp;With the fwc drawing tools, we mostly draw shapes on the screen like lines, circles and rectangles, and while some exercises will draw pixels, we usually don't draw individual pixels.</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">Go ahead and play around with the numbered parameters </span><span class="rvts79">xStart,yStart</span><span class="rvts10"> and </span><span class="rvts79">xEnd,yEnd. </span><span class="rvts10">Make your changes and run your program to see if you can get your lines to be in the same position and orientation as the SOLN lines. &nbsp;Leave the color and </span><span class="rvts79">linewidth</span><span class="rvts10"> parameters alone until your lines match up with those of the SOLN. </span></p>
+<p class="rvps41"><span class="rvts10">When you are done, check the solution code, which lives one directory below your exercise code in the "Solutions" directory, and is named:</span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li class="rvps41"><span class="rvts79">070_DrawLinesSOLN.cpp</span></li>
+</ul>
+<p class="rvps43"><span class="rvts134">Always </span><span class="rvts188">understand</span><span class="rvts134"> the SOLN code before you proceed to the next exercise!</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10"> After you achieve the solution here, feel free to change the </span><span class="rvts79">color</span><span class="rvts10"> and </span><span class="rvts79">linewidth</span><span class="rvts10"> parameters to your hearts content to see what they do!</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">When you are ready, you can proceed to </span><a class="rvts12" href="Exercise080_DrawCirclescpp.html">080_DrawCircles.cpp</a><span class="rvts10">.</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">documentation generated by HelpNDoc </span><span class="rvts10">3/20/2012 8:03 PM</span></p>
+<p class="rvps3"><span class="rvts10"><div style="font-family:Arial;font-size:12pt;background-color:#EEEEEE;background-color:teal;color:white;padding:4px;font-weight:bold">
+FeetWetCoding version 0.2r1 copyright (c) 2011,2012 Robert Holder, Janice Dugger.
+<br/>
+<!--
+<style>
+a:visited{color:#FFFFFF;}
+a:link {color:#FFFFFF;}
+</style>
+-->
+...click the ZIP button on our <a href="https://github.com/FeetWetCoding/FeetWetCoding" TARGET="_top">Github page</a> for the latest source!
+</div></span></p>
+<p class="rvps8"><span class="rvts40">Created with the Personal Edition of HelpNDoc: </span><a class="rvts41" href="http://www.helpndoc.com/help-authoring-tool">Single source CHM, PDF, DOC and HTML Help creation</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; &lt;Dates&gt; by &lt;Authors&gt;. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

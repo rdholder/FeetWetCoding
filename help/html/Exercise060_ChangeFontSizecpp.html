@@ -1,0 +1,111 @@
+﻿<html>
+	
+<head>
+	<title>Exercise 060_ChangeFontSize.cpp</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc">
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript"><!--
+		var sTopicId = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+		if (top.frames.length == 0)
+			top.location.href = "FeetWetCoding.html?" + sTopicId
+		else if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+			top.FrameTOC.SelectTocItem(sTopicId);
+	</script>
+</head>
+
+<body>
+
+	<div id="topic_header">
+			<div id="topic_header_content">
+				<h1>Exercise 060_ChangeFontSize.cpp</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Exercises.html">Exercises</a> &rsaquo;&rsaquo; <a href="Chapter01BeginnerExercises.html">Chapter 01 Beginner Exercises</a> &rsaquo;&rsaquo; <a href="Section02GettingStarted.html">Section 02: Getting Started</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="Section02GettingStarted.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="Exercise050_ChangeColorcpp.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="Exercise070_DrawLinescpp.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p class="rvps3"><img border="0" alt hspace="1" vspace="1" src="lib/duckfeet50x46.png"><span class="rvts153"> </span><span class="rvts132">Chapter 01, Section 02, Exercise 060: &nbsp;ChangeFontSize</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts14">In this exercise, you will learn:</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li class="rvps3"><span class="rvts10">How to change the font size of text you draw in the drawing area.</span></li>
+<li class="rvps3"><span class="rvts10">The fontsize parameter determines the fontsize of the text you draw.</span></li>
+<li class="rvps3"><span class="rvts10">The fontsize parameter is optional.</span></li>
+</ul>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts14">To do this exercise you need to know:</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li class="rvps3"><a class="rvts12" href="HowtoUseFeetWetCoding.html">How</a><span class="rvts10"> to load the fwc project in Qt Creator, and run it.</span></li>
+</ul>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">Once again, in this exercise, we are just changing a parameter in the function </span><span class="rvts79">fwcDrawText()</span><span class="rvts10">. &nbsp;In this case, we are changing the fifth parameter, </span><span class="rvts79">fontsize</span><span class="rvts10">.</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">Now that you have had some practice with changing parameters and running the fwc software, this documentation is going to start assuming that you have an understanding of topics that you have covered, so that the documentation doesn't repeat itself needlessly and get all bloated and difficult to read.</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">We are assuming now that you understand the basic idea of what a parameter is, and how to change it. &nbsp;So from now on, we will just say, "Change the ____ parameter."</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">Also, it is important for you to begin to try to deduce what you are supposed to do on your own. &nbsp;You need to be able to look at the fwc window when it runs, and start to try to figure out for yourself how to make things work. &nbsp;We are still going to help you along, but a big part of what you are doing when you are learning to program is not just memorizing C++ language, but also you are </span><span class="rvts80">learning how to think</span><span class="rvts10"> in a methodical, observant, analytical way. &nbsp;Programming is not the typing of commands into a program: &nbsp;</span><span class="rvts15">programming is learning a structured way of thinking about how to solve problems.</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">So it is important for you to start flexing those brain muscles! &nbsp;This documentation will try to be overt in stating new ideas and language elements that you haven't yet been exposed to, but the ones you </span><span class="rvts15">have</span><span class="rvts10"> been exposed to already, we are going to rely on you to use those mental tools, and </span><span class="rvts15">notice</span><span class="rvts10"> things about how the code works when fwc runs.</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps43"><span class="rvts14">With every new exercise, look at the screen carefully, and try to notice everything that is different from what </span><span class="rvts62">your</span><span class="rvts14"> exercise code is doing, compared to what the </span><span class="rvts62">solution</span><span class="rvts14"> code is doing. &nbsp;That is a big part of learning to code: &nbsp;learning how to </span><span class="rvts62">notice</span><span class="rvts14"> what the program is </span><span class="rvts62">actually doing</span><span class="rvts14"> rather than what you </span><span class="rvts62">think</span><span class="rvts14"> it is doing! &nbsp;:-)</span></p>
+<p class="rvps3"><span class="rvts14"><br></span></p>
+<p class="rvps3"><span class="rvts10">There is a old rhyme that illustrates this:</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps11"><span class="rvts10">I hate this dumb computer!</span></p>
+<p class="rvps11"><span class="rvts10">I really want to sell it!</span></p>
+<p class="rvps11"><span class="rvts10">It never does just what I want</span></p>
+<p class="rvps11"><span class="rvts15">But only what I tell it!</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps41"><span class="rvts10">When you are done, check the solution code, which lives one directory below your exercise code in the "Solutions" directory, and is named:</span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li class="rvps41"><span class="rvts79">050_ChangeColorSOLN.cpp</span></li>
+</ul>
+<p class="rvps43"><span class="rvts134">Always </span><span class="rvts188">understand</span><span class="rvts134"> the SOLN code before you proceed to the next exercise!</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">When you are ready, you can proceed to </span><a class="rvts12" href="Exercise070_DrawLinescpp.html">070_DrawLines.cpp</a><span class="rvts10">.</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">documentation generated by HelpNDoc </span><span class="rvts10">3/20/2012 8:03 PM</span></p>
+<p class="rvps3"><span class="rvts10"><div style="font-family:Arial;font-size:12pt;background-color:#EEEEEE;background-color:teal;color:white;padding:4px;font-weight:bold">
+FeetWetCoding version 0.2r1 copyright (c) 2011,2012 Robert Holder, Janice Dugger.
+<br/>
+<!--
+<style>
+a:visited{color:#FFFFFF;}
+a:link {color:#FFFFFF;}
+</style>
+-->
+...click the ZIP button on our <a href="https://github.com/FeetWetCoding/FeetWetCoding" TARGET="_top">Github page</a> for the latest source!
+</div></span></p>
+<p class="rvps8"><span class="rvts40">Created with the Personal Edition of HelpNDoc: </span><a class="rvts41" href="http://www.helpndoc.com">Free Web Help generator</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; &lt;Dates&gt; by &lt;Authors&gt;. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

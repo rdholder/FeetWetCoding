@@ -124,7 +124,7 @@ std::string FeetWetCodingExercise::getKeyboardString()
     return fullstring.toStdString();
 }
 
-int FeetWetCodingExercise::fwcDrawLine( int xStart, int yStart, int xEnd, int yEnd, Color color, int thickness )
+int FeetWetCodingExercise::fwcDrawLine( int xStart, int yStart, int xEnd, int yEnd, Color color, int linewidth )
 {
     RenderItem item;
     item.type = LINE;
@@ -133,7 +133,7 @@ int FeetWetCodingExercise::fwcDrawLine( int xStart, int yStart, int xEnd, int yE
     item.xEnd = xEnd;
     item.yEnd = yEnd;
     item.color = color;
-    item.linewidth = thickness;
+    item.linewidth = linewidth;
 
     //Return the handle to the QGraphicsItem
     //that will be drawn for this item in case
@@ -145,7 +145,7 @@ int FeetWetCodingExercise::fwcDrawLine( int xStart, int yStart, int xEnd, int yE
     return id;
 }
 
-int FeetWetCodingExercise::fwcDrawCircle( int x, int y, int r, Color color, int thickness, bool solid )
+int FeetWetCodingExercise::fwcDrawCircle( int x, int y, int r, Color color, int linewidth, bool solid )
 {
     RenderItem item;
     item.type = CIRCLE;
@@ -153,7 +153,7 @@ int FeetWetCodingExercise::fwcDrawCircle( int x, int y, int r, Color color, int 
     item.y = y;
     item.radius = r;
     item.color = color;
-    item.linewidth = thickness;
+    item.linewidth = linewidth;
     item.solid = solid;
 
     //Return the handle to the QGraphicsItem
@@ -166,7 +166,7 @@ int FeetWetCodingExercise::fwcDrawCircle( int x, int y, int r, Color color, int 
     return id;
 }
 
-int FeetWetCodingExercise::fwcDrawCircleRGB( int x, int y, int r, int thickness, int red, int green, int blue, bool solid )
+int FeetWetCodingExercise::fwcDrawCircleRGB( int x, int y, int r, int linewidth, int red, int green, int blue, bool solid )
 {
     RenderItem item;
     item.type = CIRCLERGB;
@@ -176,7 +176,7 @@ int FeetWetCodingExercise::fwcDrawCircleRGB( int x, int y, int r, int thickness,
     item.RGBred = red;
     item.RGBgreen = green;
     item.RGBblue = blue;
-    item.linewidth = thickness;
+    item.linewidth = linewidth;
     item.solid = solid;
 
     //Return the handle to the QGraphicsItem
@@ -189,7 +189,7 @@ int FeetWetCodingExercise::fwcDrawCircleRGB( int x, int y, int r, int thickness,
     return id;
 }
 
-int FeetWetCodingExercise::fwcDrawEllipse( int x, int y, int w, int h, Color color, int thickness, bool solid )
+int FeetWetCodingExercise::fwcDrawEllipse( int x, int y, int w, int h, Color color, int linewidth, bool solid )
 {
     RenderItem item;
     item.type = ELLIPSE;
@@ -198,7 +198,7 @@ int FeetWetCodingExercise::fwcDrawEllipse( int x, int y, int w, int h, Color col
     item.width = w;
     item.height = h;
     item.color = color;
-    item.linewidth = thickness;
+    item.linewidth = linewidth;
     item.solid = solid;
 
     //Return the handle to the QGraphicsItem
@@ -211,7 +211,7 @@ int FeetWetCodingExercise::fwcDrawEllipse( int x, int y, int w, int h, Color col
     return id;
 }
 
-int FeetWetCodingExercise::fwcDrawRectangle( int x, int y, int w, int h, Color color, int thickness, bool solid )
+int FeetWetCodingExercise::fwcDrawRectangle( int x, int y, int w, int h, Color color, int linewidth, bool solid )
 {
     RenderItem item;
     item.type = RECTANGLE;
@@ -220,7 +220,7 @@ int FeetWetCodingExercise::fwcDrawRectangle( int x, int y, int w, int h, Color c
     item.width = w;
     item.height = h;
     item.color = color;
-    item.linewidth = thickness;
+    item.linewidth = linewidth;
     item.solid = solid;
 
     //Return the handle to the QGraphicsItem
@@ -342,13 +342,13 @@ void FeetWetCodingExercise::DrawReferenceBox( RefBoxLayout layout )
     mRefBoxItems.push_back(fwcDrawText(oss.str(), WINDOW_WIDTH/2-BORDER/2, WINDOW_HEIGHT, GRAY, dimsSize));
 
     oss.str("");
-    oss << "Make this side...";
+    oss << "YOUR Drawing Area";
     qApp->font().setPointSize(textSize);
     strWidth=QFontMetrics(QFont(qApp->font())).width(oss.str().c_str());
     mRefBoxItems.push_back(fwcDrawText( oss.str(), WINDOW_WIDTH*.25-strWidth/2, -20, GRAY, 10));
 
     oss.str("");
-    oss << "...look like this side.";
+    oss << "SOLUTION Drawing Area";
     qApp->font().setPointSize(textSize);
     strWidth=QFontMetrics(QFont(qApp->font())).width(oss.str().c_str());
     mRefBoxItems.push_back(fwcDrawText( oss.str(), WINDOW_WIDTH*.75-strWidth/2, -20, GRAY, textSize));

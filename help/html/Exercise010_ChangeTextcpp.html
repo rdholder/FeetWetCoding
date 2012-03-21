@@ -42,67 +42,92 @@
 		</div>
 	<div id="topic_content">
 		
-<p class="rvps3"><span class="rvts34">Chapter 01, Section 02, Exercise 010: &nbsp;ChangeText</span></p>
+<p class="rvps3"><img border="0" alt hspace="1" vspace="1" src="lib/duckfeet50x46.png"><span class="rvts153"> </span><span class="rvts132">Chapter 01, Section 02, Exercise 010: &nbsp;ChangeText</span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">In this exercise, you will learn:</span></p>
+<p class="rvps3"><span class="rvts14">In this exercise, you will learn:</span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
 <ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
-<li class="rvps3"><span class="rvts10">How to change text that is drawn in the graphical drawing area using the </span><span class="rvts61">fwcDrawText()</span><span class="rvts10"> function.</span></li>
+<li class="rvps3"><span class="rvts10">What a function is.</span></li>
+<li class="rvps3"><span class="rvts10">What a parameter is.</span></li>
+<li class="rvps3"><span class="rvts10">How to change text that is drawn in the graphical drawing area using the </span><span class="rvts76">fwcDrawText()</span><span class="rvts10"> function.</span></li>
 </ul>
 <p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts17">What is a "function"?</span></p>
+<p class="rvps3"><span class="rvts14">To do this exercise you need to know:</span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">A function is a command you can type into your program that will do a specific job. &nbsp;In this case, we are using the </span><span class="rvts61">fwcDrawText()</span><span class="rvts10"> function, which draws some text on the graphical drawing area, which is the big box taking up approximately the top left third of the FeetWetCoding window at runtime (i.e. when the program you wrote in the Qt Creator text editor actually runs.) &nbsp;You can think of a function as a way of getting a bunch of work done in a single command.</span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li class="rvps3"><a class="rvts12" href="HowtoUseFeetWetCoding.html">How</a><span class="rvts10"> to load the fwc project in Qt Creator, and run it.</span></li>
+</ul>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts14">Online Resources:</span></p>
+<p class="rvps3"><span class="rvts10">These links are for your reference. &nbsp;You can read them now, or if they seem confusing or overwhelming, you may come back to them later.</span></p>
+<p class="rvps3"><a class="rvts12" href="http://www.cplusplus.com/doc/tutorial/functions/" target="_blank">http://www.cplusplus.com/doc/tutorial/functions/</a></p>
+<p class="rvps3"><a class="rvts12" href="http://en.cppreference.com/w/cpp/language/function" target="_blank">http://en.cppreference.com/w/cpp/language/function</a></p>
+<p class="rvps3"><span class="rvts14"><br></span></p>
+<p class="rvps3"><span class="rvts14">What is a "function"?</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">For right now, think of function as a command you can type into your program that will </span><span class="rvts15">do a specific job</span><span class="rvts10">.</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">In this case, we are using the </span><span class="rvts76">fwcDrawText()</span><span class="rvts10"> function, which draws some text on the graphical drawing area, which is the big box taking up approximately the top left third of the FeetWetCoding window at runtime (i.e. when the program you wrote in the Qt Creator text editor actually runs.) &nbsp;You can think of a function as a way of getting a bunch of work done in a single command.</span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
 <p class="rvps3"><span class="rvts10">Every function has a unique name.</span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">The name of a function is case-sensitive. &nbsp;</span><span class="rvts61">SomeFunction()</span><span class="rvts10"> is a different function than </span><span class="rvts61">somefunction()</span><span class="rvts10">.</span></p>
+<p class="rvps3"><span class="rvts10">The name of a function is case-sensitive. &nbsp;</span><span class="rvts76">SomeFunction()</span><span class="rvts10"> is a different function than </span><span class="rvts76">somefunction()</span><span class="rvts10">.</span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
 <p class="rvps3"><span class="rvts10">When we type a function into our program, we say that we are "calling" that function. &nbsp;At runtime, the computer goes off and does the work associated with that function, and then </span><span class="rvts15">returns</span><span class="rvts10"> back to our code, and runs the next line that occurs after the function is finished doing it's work.</span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
 <p class="rvps3"><span class="rvts10">Most functions take parameters.</span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts17">What is a "parameter"?</span></p>
+<p class="rvps3"><span class="rvts14">What is a "parameter"?</span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
 <p class="rvps3"><span class="rvts10">A parameter is a way of </span><span class="rvts15">passing</span><span class="rvts10"> information to a function. &nbsp;The information can be numbers, letters, variables and other things that we will get to in later exercises. &nbsp;For now, just think of parameters as information you give to a function to help it get it's work done.</span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
 <p class="rvps3"><span class="rvts10">Parameters are located between the parentheses immediately after the function name, and are separated by commas.</span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">Here is an example of a comment line, followed by the </span><span class="rvts61">fwcDrawText()</span><span class="rvts10"> function with some parameters:</span></p>
+<p class="rvps3"><span class="rvts10">Here is an example of a comment line, followed by the </span><span class="rvts76">fwcDrawText()</span><span class="rvts10"> function with some parameters:</span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps42"><span class="rvts61"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts61">// USAGE: fwcDrawText("Text.", x, y, color, fontsize);</span><br><span class="rvts61"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts61">fwcDrawText("Change this text to...", 50, 150, BLUE, 15);</span></p>
-<p class="rvps3"><span class="rvts61"><br></span></p>
-<p class="rvps3"><span class="rvts10">Remember the discussion of comments from the last exercise? &nbsp;So the // characters at the beginning of the first line means </span><span class="rvts15">that line is not code</span><span class="rvts10">. &nbsp;It is just a handy little human-readable note describing some information about the code. &nbsp;This particular </span><span class="rvts15">comment</span><span class="rvts10"> is usage information, describing how to use the fwcDrawText() function, and it explains that </span><span class="rvts61">fwcDrawText()</span><span class="rvts10"> (which is </span><span class="rvts15">called</span><span class="rvts10"> on the next line in the box above) takes five parameters:</span></p>
+<p class="rvps42"><span class="rvts76"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts76">// USAGE: fwcDrawText("Text.", x, y, color, fontsize);</span><br><span class="rvts76"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts76">fwcDrawText("Change this text to...", 50, 150, BLUE, 15);</span></p>
+<p class="rvps3"><span class="rvts76"><br></span></p>
+<p class="rvps3"><span class="rvts10">Remember the discussion of comments from the last exercise? &nbsp;So the // characters at the beginning of the first line means </span><span class="rvts15">that line is not code</span><span class="rvts10">. &nbsp;It is just a handy little human-readable note describing some information about the code. &nbsp;This particular </span><span class="rvts15">comment</span><span class="rvts10"> is usage information, describing how to use the fwcDrawText() function, and it explains that </span><span class="rvts76">fwcDrawText()</span><span class="rvts10"> (which is </span><span class="rvts15">called</span><span class="rvts10"> on the next line in the box above) takes five parameters:</span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
 <ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
-<li class="rvps3"><span class="rvts10">1st Parameter: &nbsp;a string of text, indicated by the " double-quotes around the text we want to draw on the screen. &nbsp;In this case, the text we are drawing on the screen is </span><span class="rvts61">"Change this text to..."</span></li>
-<li class="rvps3"><span class="rvts10">2nd Parameter: </span><span class="rvts61">x</span><span class="rvts10">, a number which tells </span><span class="rvts61">fwcDrawText()</span><span class="rvts10"> where on the horizontal x-axis we want to locate the text on the screen.</span></li>
-<li class="rvps3"><span class="rvts10">3rd Parameter: </span><span class="rvts61">y</span><span class="rvts10">, a number which tells </span><span class="rvts61">fwcDrawText()</span><span class="rvts10"> where on the vertical y-axis we want to locate the text on the screen.</span></li>
-<li class="rvps3"><span class="rvts10">4th Parameter: </span><span class="rvts61">color</span><span class="rvts10">, which tells </span><span class="rvts61">fwcDrawText()</span><span class="rvts10"> what color we want the text to be.</span></li>
-<li class="rvps3"><span class="rvts10">5th Parameter: </span><span class="rvts61">fontsize</span><span class="rvts10">, which tells </span><span class="rvts61">fwcDrawText()</span><span class="rvts10"> what size font we want the text to be drawn as.</span></li>
+<li class="rvps3"><span class="rvts10">1st Parameter: &nbsp;a string of text, indicated by the " double-quotes around the text we want to draw on the screen. &nbsp;In this case, the text we are drawing on the screen is </span><span class="rvts76">"Change this text to..."</span></li>
+<li class="rvps3"><span class="rvts10">2nd Parameter: </span><span class="rvts76">x</span><span class="rvts10">, a number which tells </span><span class="rvts76">fwcDrawText()</span><span class="rvts10"> where on the horizontal x-axis we want to locate the text on the screen.</span></li>
+<li class="rvps3"><span class="rvts10">3rd Parameter: </span><span class="rvts76">y</span><span class="rvts10">, a number which tells </span><span class="rvts76">fwcDrawText()</span><span class="rvts10"> where on the vertical y-axis we want to locate the text on the screen.</span></li>
+<li class="rvps3"><span class="rvts10">4th Parameter: </span><span class="rvts76">color</span><span class="rvts10">, which tells </span><span class="rvts76">fwcDrawText()</span><span class="rvts10"> what color we want the text to be.</span></li>
+<li class="rvps3"><span class="rvts10">5th Parameter: </span><span class="rvts76">fontsize</span><span class="rvts10">, which tells </span><span class="rvts76">fwcDrawText()</span><span class="rvts10"> what size font we want the text to be drawn as.</span></li>
 </ul>
 <p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">So this is a pretty simple program: &nbsp;really it is just one line, as the comment doesn't count as code! &nbsp;Go ahead and run this exercise, and you will see that your exercise code on the left side of the runtime window is drawing the text </span><span class="rvts61">Change this text to...</span><span class="rvts10"> , while you can see that on the solution (right) side of the runtime window, the text is &nbsp;</span><span class="rvts61">...your name! :-)</span></p>
+<p class="rvps3"><span class="rvts10">These parameter names (x, y, color, fontsize) are named for our convenience. &nbsp;We will usually use the same name in the USAGE comment that we actually named the parameter in the code. &nbsp;We will cover this subject in later exercises.</span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">The goal in these exercises is to make the left side of the window (where </span><span class="rvts15">your</span><span class="rvts10"> code runs) match the right side of the window (where the </span><span class="rvts15">solution</span><span class="rvts10"> code runs) however in this exercise, we want to change </span><span class="rvts61">"Change this text to..." </span><span class="rvts10">to whatever your name is, so you can see how to write text to the screen.</span></p>
+<p class="rvps43"><span class="rvts14">Pay close attention every time you see a USAGE (or any other) comment in the code. &nbsp;The USAGE comments are especially important, because they indicate what the parameters DO for the function they are describing!</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">So this is a pretty simple program: &nbsp;really it is just one line, as the comment doesn't count as code! &nbsp;Go ahead and run this exercise, and you will see that your exercise code on the left side of the runtime window is drawing the text </span><span class="rvts76">Change this text to...</span><span class="rvts10"> , while you can see that on the solution (right) side of the runtime window, the text is &nbsp;</span><span class="rvts76">...your name! :-)</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">The goal in these exercises is to make the left side of the window (where </span><span class="rvts15">your</span><span class="rvts10"> code runs) match the right side of the window (where the </span><span class="rvts15">solution</span><span class="rvts10"> code runs) however in this exercise, we want to change </span><span class="rvts76">"Change this text to..." </span><span class="rvts10">to whatever your name is, so you can see how to write text to the screen.</span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
 <p class="rvps3"><span class="rvts15">Alright!</span><span class="rvts10"> &nbsp;Your first programming task! &nbsp;Close the running FeetWetCoding program like you would close any program by hitting the X button on it's window. &nbsp;Notice you do not want to close Qt Creator, where you edit your code in the FeetWetCoding project, only close the running FWC program.</span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">Then just go and change the string (we call a series of letters a "string") to your name, and hit the green arrow in Qt Creator to run the program again with the change you just made. &nbsp;Keep the double-quotes, which tells C++ that this is a text string. &nbsp;So for my name, I would change that line to:</span></p>
+<p class="rvps3"><span class="rvts10">Then just go and change the string (we call a series of characters like letters and numbers a "string") to your name, and hit the green arrow in Qt Creator to run the program again with the change you just made. &nbsp;Keep the double-quotes, which tells C++ that this is a text string. &nbsp;So for my name, I would change that line to:</span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps42"><span class="rvts61"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts61">fwcDrawText("Robert", 50, 150, BLUE, 15);</span></p>
-<p class="rvps3"><span class="rvts61"><br></span></p>
+<p class="rvps42"><span class="rvts76"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts76">fwcDrawText("Robert", 50, 150, BLUE, 15);</span></p>
+<p class="rvps3"><span class="rvts76"><br></span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
 <p class="rvps3"><span class="rvts10">Congratulations! &nbsp;You have made your first code change! &nbsp;You have taken your first step into a larger world.</span></p>
 <p class="rvps3"><span class="rvts10">:-D Welcome! &nbsp;Enjoy your adventure in coding!</span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps43"><span class="rvts10">You may notice that the name of the draw text function starts with "</span><span class="rvts61">fwc</span><span class="rvts10">" which stands for feet wet coding. &nbsp;All of the names of the drawing tools you will use start with "</span><span class="rvts61">fwc</span><span class="rvts10">" because they were created specifically for this learning software. &nbsp;We name them this way because we want to make it clear from the beginning that </span><span class="rvts15">these tools are not part of standard C++</span><span class="rvts10">. &nbsp;C++ does not, by itself, have tools for drawing in a window.</span><br><span class="rvts10"></span><br><span class="rvts10">You will recognize our simplified drawing tools because they start with "</span><span class="rvts61">fwc</span><span class="rvts10">" and </span><span class="rvts15">you should understand that these "</span><span class="rvts61">fwc</span><span class="rvts15">" tools will not work except within the FeetWetCoding learning software. &nbsp;</span><span class="rvts10">They are not for "real world" programming, but are just here to help you learn.</span><br><span class="rvts10"></span><br><span class="rvts10">Since C++ does not provide them, drawing tools are provided by graphical libraries, like Qt. &nbsp;(Qt actually provides a lot more than just drawing tools, but for now, you can think of Qt as a graphical tools library.) &nbsp;But the drawing tools that Qt (or any other graphical toolkit library) provides are not something that is easy for the beginning programmer to use. &nbsp;The "right" way to do graphics is to directly use Qt or OpenGL or wxwidgets or DirectX or whatever graphical toolkit you like, but it will be awhile before you are able to do that, since you are just starting out.</span><br><span class="rvts10"></span><br><span class="rvts10">This is a big reason why FeetWetCoding was created. &nbsp;We have tried to improve the learning process (and make it a little more fun) by creating a small number of simplified drawing tools for you to use. &nbsp;Graphics don't just make your programs more fun, they also make it </span><span class="rvts15">visually obvious</span><span class="rvts10"> when your program is working correctly, and when it is not, so we believe that using graphics can help you learn! &nbsp;</span><br><span class="rvts10"></span><br><span class="rvts10">Later, after you have more experience, you will be able to use the Qt drawing tools directly, but for now, the </span><span class="rvts61">fwc</span><span class="rvts10"> tools should be plenty for you to learn the basics of programming in C++ ...and have some fun with graphics while you learn!</span></p>
+<p class="rvps43"><span class="rvts10">You may notice that the name of the draw text function starts with "</span><span class="rvts76">fwc</span><span class="rvts10">" which stands for feet wet coding. &nbsp;All of the names of the drawing tools you will use start with "</span><span class="rvts76">fwc</span><span class="rvts10">" because they were created specifically for this learning software. &nbsp;We name them this way because we want to make it clear from the beginning that </span><span class="rvts15">these tools are not part of standard C++</span><span class="rvts10">. &nbsp;C++ does not, by itself, have tools for drawing in a window.</span><br><span class="rvts10"></span><br><span class="rvts10">You will recognize our simplified drawing tools because they start with "</span><span class="rvts76">fwc</span><span class="rvts10">" and </span><span class="rvts15">you should understand that these "</span><span class="rvts76">fwc</span><span class="rvts15">" tools will not work except within the FeetWetCoding learning software. &nbsp;</span><span class="rvts10">They are not for "real world" programming, but are just here to help you learn.</span><br><span class="rvts10"></span><br><span class="rvts10">Since C++ does not provide them, drawing tools are provided by graphical libraries, like Qt. &nbsp;(Qt actually provides a lot more than just drawing tools, but for now, you can think of Qt as a graphical tools library.) &nbsp;But the drawing tools that Qt (or any other graphical toolkit library) provides are not something that is easy for the beginning programmer to use. &nbsp;The "right" way to do graphics is to directly use Qt or OpenGL or wxwidgets or DirectX or whatever graphical toolkit you like, but it will be awhile before you are able to do that, since you are just starting out.</span><br><span class="rvts10"></span><br><span class="rvts10">This is a big reason why FeetWetCoding was created. &nbsp;We have tried to improve the learning process (and make it a little more fun) by creating a small number of simplified drawing tools for you to use. &nbsp;Graphics don't just make your programs more fun, they also make it </span><span class="rvts15">visually obvious</span><span class="rvts10"> when your program is working correctly, </span><span class="rvts15">and</span><span class="rvts10"> even better, graphics make it visually obvious when your program is </span><span class="rvts15">not</span><span class="rvts10"> working correctly! &nbsp;We believe that using graphics can help you learn.</span><br><span class="rvts10"></span><br><span class="rvts10">Later, after you have more experience, you will be able to use the Qt drawing tools directly, but for now, the fwc tools should be plenty for you to learn the basics of programming in C++ ...and have some fun with graphics too!</span></p>
+<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps41"><span class="rvts10">When you are done, check the solution code, which lives one directory below your exercise code in the "Solutions" directory, and is named:</span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li class="rvps41"><span class="rvts79">010_ChangeTextSOLN.cpp</span></li>
+</ul>
+<p class="rvps43"><span class="rvts134">Always </span><span class="rvts188">understand</span><span class="rvts134"> the SOLN code before you proceed to the next exercise!</span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
 <p class="rvps3"><span class="rvts10">When you are ready, you can proceed to </span><a class="rvts12" href="Exercise020_ChangeXcpp.html">020_ChangeX.cpp</a><span class="rvts10">.</span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts7"><br></span></p>
+<p class="rvps3"><span class="rvts10">documentation generated by HelpNDoc </span><span class="rvts10">3/20/2012 8:03 PM</span></p>
 <p class="rvps3"><span class="rvts10"><div style="font-family:Arial;font-size:12pt;background-color:#EEEEEE;background-color:teal;color:white;padding:4px;font-weight:bold">
 FeetWetCoding version 0.2r1 copyright (c) 2011,2012 Robert Holder, Janice Dugger.
 <br/>
@@ -117,11 +142,6 @@ a:link {color:#FFFFFF;}
 <p class="rvps8"><span class="rvts40">Created with the Personal Edition of HelpNDoc: </span><a class="rvts41" href="http://www.helpndoc.com/feature-tour">Full featured Help generator</a></p>
 </div>
 	
-	<div id="topic_footer">
-
-			<div id="topic_footer_content">
-				Copyright &copy; &lt;Dates&gt; by &lt;Authors&gt;. All Rights Reserved.</div>
-		</div>
 	</body>
 	
 </html>

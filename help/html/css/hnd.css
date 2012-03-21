@@ -272,299 +272,322 @@ span.rvts48
 {
  font-size: 16pt;
 }
-span.rvts49
+a.rvts49, span.rvts49
 {
- font-size: 16pt;
+ color: #0000ff;
  text-decoration: underline;
 }
+a.rvts49:hover { color: #0000ff; }
 a.rvts50, span.rvts50
 {
- font-size: 14pt;
+ font-size: 8pt;
  color: #0000ff;
  text-decoration: underline;
 }
 a.rvts50:hover { color: #0000ff; }
 a.rvts51, span.rvts51
 {
- font-size: 14pt;
+ font-size: 8pt;
  color: #0000ff;
  text-decoration: underline;
 }
 a.rvts51:hover { color: #0000ff; }
 a.rvts52, span.rvts52
 {
- font-size: 12pt;
- font-style: italic;
- color: #0000ff;
+ font-size: 8pt;
+ color: #99ccff;
  text-decoration: underline;
 }
-a.rvts52:hover { color: #0000ff; }
-span.rvts53
+a.rvts52:hover { color: #00ccff; }
+a.rvts53, span.rvts53
 {
- font-size: 12pt;
+ font-size: 8pt;
+ color: #c0c0c0;
  text-decoration: underline;
 }
-span.rvts54
+a.rvts53:hover { color: #00ccff; }
+a.rvts54, span.rvts54
 {
- font-size: 16pt;
- font-style: italic;
+ font-size: 8pt;
+ color: #969696;
+ text-decoration: underline;
 }
+a.rvts54:hover { color: #00ccff; }
 a.rvts55, span.rvts55
 {
- font-size: 16pt;
- font-style: italic;
+ font-size: 8pt;
+ color: #808080;
+ text-decoration: underline;
+}
+a.rvts55:hover { color: #00ccff; }
+a.rvts56, span.rvts56
+{
+ font-size: 14pt;
  color: #0000ff;
  text-decoration: underline;
 }
-a.rvts55:hover { color: #0000ff; }
-span.rvts56
-{
- font-size: 16pt;
- font-weight: bold;
-}
+a.rvts56:hover { color: #0000ff; }
 span.rvts57
 {
- font-size: 14pt;
- font-style: italic;
- font-weight: bold;
+ font-size: 16pt;
+ text-decoration: underline;
 }
-span.rvts58
+a.rvts58, span.rvts58
 {
  font-size: 14pt;
- font-style: italic;
+ color: #0000ff;
+ text-decoration: underline;
 }
+a.rvts58:hover { color: #0000ff; }
 a.rvts59, span.rvts59
 {
  font-size: 14pt;
- font-style: italic;
- font-weight: bold;
  color: #0000ff;
  text-decoration: underline;
 }
 a.rvts59:hover { color: #0000ff; }
-span.rvts60
-{
- font-size: 18pt;
- font-style: italic;
-}
-span.rvts61
+a.rvts60, span.rvts60
 {
  font-size: 12pt;
- font-family: 'Courier New', 'Courier', monospace;
-}
-a.rvts62, span.rvts62
-{
- font-size: 14pt;
+ font-style: italic;
  color: #0000ff;
  text-decoration: underline;
 }
-a.rvts62:hover { color: #0000ff; }
-span.rvts63
+a.rvts60:hover { color: #0000ff; }
+span.rvts61
 {
- font-size: 14pt;
+ font-size: 12pt;
  text-decoration: underline;
 }
+span.rvts62
+{
+ font-size: 16pt;
+ font-style: italic;
+}
+a.rvts63, span.rvts63
+{
+ font-size: 16pt;
+ font-style: italic;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts63:hover { color: #0000ff; }
 span.rvts64
 {
- font-size: 14pt;
- font-family: 'Courier New', 'Courier', monospace;
+ font-size: 16pt;
+ font-weight: bold;
 }
 span.rvts65
 {
- font-size: 12pt;
+ font-size: 14pt;
  font-style: italic;
  font-weight: bold;
 }
 span.rvts66
 {
- font-family: 'Courier New', 'Courier', monospace;
+ font-size: 14pt;
+ font-style: italic;
 }
-span.rvts67
-{
- font-size: 11pt;
-}
-span.rvts68
-{
- font-size: 11pt;
- font-family: 'Courier New', 'Courier', monospace;
-}
-a.rvts69, span.rvts69
+a.rvts67, span.rvts67
 {
  font-size: 14pt;
+ font-style: italic;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts67:hover { color: #0000ff; }
+a.rvts68, span.rvts68
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts68:hover { color: #0000ff; }
+a.rvts69, span.rvts69
+{
+ font-size: 8pt;
  color: #0000ff;
  text-decoration: underline;
 }
 a.rvts69:hover { color: #0000ff; }
-span.rvts70
+a.rvts70, span.rvts70
 {
- font-size: 24pt;
- font-weight: bold;
- color: #ff0000;
-}
-a.rvts71, span.rvts71
-{
+ font-size: 8pt;
  color: #0000ff;
  text-decoration: underline;
 }
-a.rvts71:hover { color: #0000ff; }
+a.rvts70:hover { color: #0000ff; }
+a.rvts71, span.rvts71
+{
+ font-size: 8pt;
+ color: #99ccff;
+ text-decoration: underline;
+}
+a.rvts71:hover { color: #00ccff; }
 a.rvts72, span.rvts72
 {
  font-size: 8pt;
- color: #808080;
+ color: #c0c0c0;
  text-decoration: underline;
 }
 a.rvts72:hover { color: #00ccff; }
 a.rvts73, span.rvts73
 {
- font-size: 14pt;
- color: #0000ff;
+ font-size: 8pt;
+ color: #969696;
  text-decoration: underline;
 }
-a.rvts73:hover { color: #0000ff; }
+a.rvts73:hover { color: #00ccff; }
 a.rvts74, span.rvts74
 {
- color: #0000ff;
- text-decoration: underline;
-}
-a.rvts74:hover { color: #0000ff; }
-a.rvts75, span.rvts75
-{
  font-size: 8pt;
  color: #808080;
  text-decoration: underline;
 }
-a.rvts75:hover { color: #00ccff; }
-a.rvts76, span.rvts76
-{
- font-size: 14pt;
- color: #0000ff;
- text-decoration: underline;
-}
-a.rvts76:hover { color: #0000ff; }
-span.rvts77
-{
- font-style: italic;
-}
-a.rvts78, span.rvts78
-{
- font-size: 12pt;
- font-weight: bold;
- color: #0000ff;
- text-decoration: underline;
-}
-a.rvts78:hover { color: #0000ff; }
-a.rvts79, span.rvts79
-{
- color: #0000ff;
- text-decoration: underline;
-}
-a.rvts79:hover { color: #0000ff; }
-a.rvts80, span.rvts80
-{
- font-size: 8pt;
- color: #808080;
- text-decoration: underline;
-}
-a.rvts80:hover { color: #00ccff; }
-a.rvts81, span.rvts81
-{
- font-size: 14pt;
- color: #0000ff;
- text-decoration: underline;
-}
-a.rvts81:hover { color: #0000ff; }
-a.rvts82, span.rvts82
-{
- font-size: 8pt;
- color: #808080;
- text-decoration: underline;
-}
-a.rvts82:hover { color: #00ccff; }
-a.rvts83, span.rvts83
-{
- font-size: 14pt;
- color: #0000ff;
- text-decoration: underline;
-}
-a.rvts83:hover { color: #0000ff; }
-span.rvts84
+a.rvts74:hover { color: #00ccff; }
+span.rvts75
 {
  font-size: 18pt;
- color: #ffc000;
+ font-style: italic;
 }
+span.rvts76
+{
+ font-size: 12pt;
+ font-family: 'Courier New', 'Courier', monospace;
+}
+a.rvts77, span.rvts77
+{
+ font-size: 14pt;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts77:hover { color: #0000ff; }
+span.rvts78
+{
+ font-size: 14pt;
+ text-decoration: underline;
+}
+span.rvts79
+{
+ font-size: 14pt;
+ font-family: 'Courier New', 'Courier', monospace;
+}
+span.rvts80
+{
+ font-size: 12pt;
+ font-style: italic;
+ font-weight: bold;
+}
+span.rvts81
+{
+ font-family: 'Courier New', 'Courier', monospace;
+}
+span.rvts82
+{
+ font-size: 11pt;
+}
+span.rvts83
+{
+ font-size: 11pt;
+ font-family: 'Courier New', 'Courier', monospace;
+}
+a.rvts84, span.rvts84
+{
+ font-size: 14pt;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts84:hover { color: #0000ff; }
 span.rvts85
 {
- font-size: 18pt;
- color: #ff8040;
-}
-span.rvts86
-{
- font-size: 18pt;
- color: #7f0000;
-}
-span.rvts87
-{
- font-size: 18pt;
- color: #8b0000;
-}
-span.rvts88
-{
- font-size: 28pt;
-}
-span.rvts89
-{
- font-size: 12pt;
+ font-size: 24pt;
  font-weight: bold;
- color: #588877;
+ color: #ff0000;
 }
-span.rvts90
+a.rvts86, span.rvts86
 {
- font-size: 12pt;
- font-weight: bold;
- color: #ffc000;
+ color: #0000ff;
+ text-decoration: underline;
 }
-span.rvts91
+a.rvts86:hover { color: #0000ff; }
+a.rvts87, span.rvts87
 {
- font-size: 12pt;
- font-weight: bold;
- color: #007bbf;
+ font-size: 8pt;
+ color: #0000ff;
+ text-decoration: underline;
 }
-span.rvts92
+a.rvts87:hover { color: #0000ff; }
+a.rvts88, span.rvts88
+{
+ font-size: 8pt;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts88:hover { color: #0000ff; }
+a.rvts89, span.rvts89
+{
+ font-size: 8pt;
+ color: #99ccff;
+ text-decoration: underline;
+}
+a.rvts89:hover { color: #00ccff; }
+a.rvts90, span.rvts90
+{
+ font-size: 8pt;
+ color: #c0c0c0;
+ text-decoration: underline;
+}
+a.rvts90:hover { color: #00ccff; }
+a.rvts91, span.rvts91
+{
+ font-size: 8pt;
+ color: #969696;
+ text-decoration: underline;
+}
+a.rvts91:hover { color: #00ccff; }
+a.rvts92, span.rvts92
+{
+ font-size: 8pt;
+ color: #808080;
+ text-decoration: underline;
+}
+a.rvts92:hover { color: #00ccff; }
+a.rvts93, span.rvts93
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts93:hover { color: #0000ff; }
+a.rvts94, span.rvts94
+{
+ font-size: 8pt;
+ color: #808080;
+ text-decoration: underline;
+}
+a.rvts94:hover { color: #00ccff; }
+a.rvts95, span.rvts95
 {
  font-size: 14pt;
- font-weight: bold;
- color: #007bbf;
+ color: #0000ff;
+ text-decoration: underline;
 }
-span.rvts93
+a.rvts95:hover { color: #0000ff; }
+a.rvts96, span.rvts96
 {
- font-size: 24pt;
+ color: #0000ff;
+ text-decoration: underline;
 }
-span.rvts94
+a.rvts96:hover { color: #0000ff; }
+a.rvts97, span.rvts97
 {
- font-size: 20pt;
+ font-size: 8pt;
+ color: #808080;
+ text-decoration: underline;
 }
-span.rvts95
-{
- font-size: 20pt;
- font-weight: bold;
-}
-span.rvts96
-{
- font-size: 20pt;
- font-style: italic;
- font-weight: bold;
-}
-span.rvts97
-{
- font-size: 20pt;
- font-style: italic;
- font-weight: bold;
- color: #8b0000;
-}
+a.rvts97:hover { color: #00ccff; }
 a.rvts98, span.rvts98
 {
- font-size: 12pt;
- font-weight: bold;
+ font-size: 14pt;
  color: #0000ff;
  text-decoration: underline;
 }
@@ -582,65 +605,58 @@ a.rvts100, span.rvts100
  text-decoration: underline;
 }
 a.rvts100:hover { color: #00ccff; }
-span.rvts101
+a.rvts101, span.rvts101
 {
- font-size: 12pt;
- font-weight: bold;
+ font-size: 14pt;
+ color: #0000ff;
  text-decoration: underline;
 }
+a.rvts101:hover { color: #0000ff; }
 a.rvts102, span.rvts102
 {
- font-size: 12pt;
- font-weight: bold;
+ font-size: 14pt;
  color: #0000ff;
  text-decoration: underline;
 }
 a.rvts102:hover { color: #0000ff; }
 a.rvts103, span.rvts103
 {
- font-size: 12pt;
- font-weight: bold;
  color: #0000ff;
  text-decoration: underline;
 }
 a.rvts103:hover { color: #0000ff; }
 a.rvts104, span.rvts104
 {
- color: #0000ff;
- text-decoration: underline;
-}
-a.rvts104:hover { color: #0000ff; }
-a.rvts105, span.rvts105
-{
  font-size: 8pt;
  color: #808080;
  text-decoration: underline;
 }
-a.rvts105:hover { color: #00ccff; }
+a.rvts104:hover { color: #00ccff; }
+a.rvts105, span.rvts105
+{
+ font-size: 14pt;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts105:hover { color: #0000ff; }
 a.rvts106, span.rvts106
 {
- font-size: 12pt;
- font-weight: bold;
+ font-size: 14pt;
  color: #0000ff;
  text-decoration: underline;
 }
 a.rvts106:hover { color: #0000ff; }
 a.rvts107, span.rvts107
 {
- font-size: 12pt;
- font-weight: bold;
+ font-size: 14pt;
  color: #0000ff;
  text-decoration: underline;
 }
 a.rvts107:hover { color: #0000ff; }
-a.rvts108, span.rvts108
+span.rvts108
 {
- font-size: 12pt;
- font-weight: bold;
- color: #0000ff;
- text-decoration: underline;
+ font-style: italic;
 }
-a.rvts108:hover { color: #0000ff; }
 a.rvts109, span.rvts109
 {
  font-size: 12pt;
@@ -651,169 +667,1442 @@ a.rvts109, span.rvts109
 a.rvts109:hover { color: #0000ff; }
 a.rvts110, span.rvts110
 {
- font-size: 12pt;
- font-weight: bold;
  color: #0000ff;
  text-decoration: underline;
 }
 a.rvts110:hover { color: #0000ff; }
 a.rvts111, span.rvts111
 {
- font-size: 12pt;
- font-weight: bold;
- color: #0000ff;
+ font-size: 8pt;
+ color: #808080;
  text-decoration: underline;
 }
-a.rvts111:hover { color: #0000ff; }
-span.rvts112
-{
- font-size: 12pt;
- font-weight: bold;
- color: #0000ff;
-}
-span.rvts113
-{
- font-size: 12pt;
- color: #0000ff;
-}
-span.rvts114
-{
- font-size: 12pt;
- font-family: 'Courier New', 'Courier', monospace;
- font-style: italic;
-}
-a.rvts115, span.rvts115
-{
- font-size: 12pt;
- font-weight: bold;
- color: #0000ff;
- text-decoration: underline;
-}
-a.rvts115:hover { color: #0000ff; }
-a.rvts116, span.rvts116
-{
- font-size: 12pt;
- font-weight: bold;
- color: #0000ff;
- text-decoration: underline;
-}
-a.rvts116:hover { color: #0000ff; }
-a.rvts117, span.rvts117
-{
- font-size: 12pt;
- font-weight: bold;
- color: #0000ff;
- text-decoration: underline;
-}
-a.rvts117:hover { color: #0000ff; }
-a.rvts118, span.rvts118
-{
- font-size: 12pt;
- font-weight: bold;
- color: #0000ff;
- text-decoration: underline;
-}
-a.rvts118:hover { color: #0000ff; }
-a.rvts119, span.rvts119
-{
- font-size: 12pt;
- font-weight: bold;
- color: #0000ff;
- text-decoration: underline;
-}
-a.rvts119:hover { color: #0000ff; }
-a.rvts120, span.rvts120
-{
- font-size: 12pt;
- font-weight: bold;
- color: #0000ff;
- text-decoration: underline;
-}
-a.rvts120:hover { color: #0000ff; }
-a.rvts121, span.rvts121
-{
- font-size: 12pt;
- font-weight: bold;
- color: #0000ff;
- text-decoration: underline;
-}
-a.rvts121:hover { color: #0000ff; }
-a.rvts122, span.rvts122
-{
- font-size: 12pt;
- font-weight: bold;
- color: #0000ff;
- text-decoration: underline;
-}
-a.rvts122:hover { color: #0000ff; }
-span.rvts123
-{
- font-size: 18pt;
-}
-span.rvts124
+a.rvts111:hover { color: #00ccff; }
+a.rvts112, span.rvts112
 {
  font-size: 14pt;
- font-family: 'Cordia New';
-}
-span.rvts125
-{
- font-size: 14pt;
- font-family: 'Courier New', 'Courier', monospace;
- font-weight: bold;
-}
-span.rvts126
-{
- font-size: 12pt;
- font-family: 'Courier New', 'Courier', monospace;
- font-weight: bold;
-}
-a.rvts127, span.rvts127
-{
  color: #0000ff;
  text-decoration: underline;
 }
-a.rvts127:hover { color: #0000ff; }
-a.rvts128, span.rvts128
+a.rvts112:hover { color: #0000ff; }
+a.rvts113, span.rvts113
 {
  font-size: 8pt;
  color: #808080;
  text-decoration: underline;
 }
-a.rvts128:hover { color: #00ccff; }
-span.rvts129
-{
- font-size: 8pt;
- vertical-align: super;
-}
-span.rvts130
+a.rvts113:hover { color: #00ccff; }
+a.rvts114, span.rvts114
 {
  font-size: 14pt;
+ color: #0000ff;
+ text-decoration: underline;
 }
-span.rvts131
+a.rvts114:hover { color: #0000ff; }
+span.rvts115
+{
+ font-size: 18pt;
+ color: #ffc000;
+}
+span.rvts116
+{
+ font-size: 18pt;
+ color: #ff8040;
+}
+span.rvts117
+{
+ font-size: 18pt;
+ color: #7f0000;
+}
+span.rvts118
+{
+ font-size: 18pt;
+ color: #8b0000;
+}
+span.rvts119
+{
+ font-size: 28pt;
+}
+span.rvts120
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #588877;
+}
+span.rvts121
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #ffc000;
+}
+span.rvts122
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #007bbf;
+}
+span.rvts123
 {
  font-size: 14pt;
  font-weight: bold;
+ color: #007bbf;
 }
+span.rvts124
+{
+ font-size: 24pt;
+}
+span.rvts125
+{
+ font-size: 20pt;
+}
+span.rvts126
+{
+ font-size: 20pt;
+ font-weight: bold;
+}
+span.rvts127
+{
+ font-size: 20pt;
+ font-style: italic;
+ font-weight: bold;
+}
+span.rvts128
+{
+ font-size: 20pt;
+ font-style: italic;
+ font-weight: bold;
+ color: #8b0000;
+}
+span.rvts129
+{
+ font-size: 12pt;
+ font-weight: bold;
+ text-decoration: underline;
+}
+a.rvts130, span.rvts130
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts130:hover { color: #0000ff; }
+a.rvts131, span.rvts131
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts131:hover { color: #0000ff; }
 span.rvts132
 {
- font-size: 14pt;
- font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial', 'Helvetica', sans-serif;
+ font-size: 18pt;
  font-weight: bold;
 }
 span.rvts133
 {
+ font-size: 18pt;
+ font-weight: bold;
+ color: #8b0000;
+}
+span.rvts134
+{
+ font-size: 18pt;
+ font-weight: bold;
+ color: #ff0000;
+}
+a.rvts135, span.rvts135
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts135:hover { color: #0000ff; }
+a.rvts136, span.rvts136
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts136:hover { color: #0000ff; }
+span.rvts137
+{
+ font-size: 24pt;
+}
+span.rvts138
+{
+ font-size: 24pt;
+ font-weight: bold;
+}
+span.rvts139
+{
+ font-size: 24pt;
+ font-weight: bold;
+}
+a.rvts140, span.rvts140
+{
+ font-size: 8pt;
+ color: #808080;
+ text-decoration: underline;
+}
+a.rvts140:hover { color: #00ccff; }
+a.rvts141, span.rvts141
+{
+ font-size: 8pt;
+ color: #808080;
+ text-decoration: underline;
+}
+a.rvts141:hover { color: #00ccff; }
+a.rvts142, span.rvts142
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts142:hover { color: #0000ff; }
+a.rvts143, span.rvts143
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts143:hover { color: #0000ff; }
+a.rvts144, span.rvts144
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts144:hover { color: #0000ff; }
+span.rvts145
+{
+ font-size: 18pt;
+}
+span.rvts146
+{
+ font-size: 16pt;
+ font-style: italic;
+}
+span.rvts147
+{
+ font-size: 24pt;
+ font-style: italic;
+}
+span.rvts148
+{
+ font-size: 24pt;
+ font-style: italic;
+ font-weight: bold;
+}
+a.rvts149, span.rvts149
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts149:hover { color: #0000ff; }
+a.rvts150, span.rvts150
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts150:hover { color: #0000ff; }
+a.rvts151, span.rvts151
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts151:hover { color: #0000ff; }
+a.rvts152, span.rvts152
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts152:hover { color: #0000ff; }
+span.rvts153
+{
+ font-size: 18pt;
+ font-weight: bold;
+}
+a.rvts154, span.rvts154
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts154:hover { color: #0000ff; }
+a.rvts155, span.rvts155
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts155:hover { color: #0000ff; }
+a.rvts156, span.rvts156
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts156:hover { color: #0000ff; }
+a.rvts157, span.rvts157
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts157:hover { color: #0000ff; }
+a.rvts158, span.rvts158
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts158:hover { color: #0000ff; }
+a.rvts159, span.rvts159
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts159:hover { color: #0000ff; }
+a.rvts160, span.rvts160
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts160:hover { color: #0000ff; }
+a.rvts161, span.rvts161
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts161:hover { color: #0000ff; }
+span.rvts162
+{
+ font-size: 12pt;
+ font-weight: bold;
+}
+span.rvts163
+{
+ font-size: 12pt;
+ font-style: italic;
+ font-weight: bold;
+}
+span.rvts164
+{
+ font-size: 12pt;
+ font-style: italic;
+ font-weight: bold;
+ text-decoration: underline;
+}
+span.rvts165
+{
+ font-size: 18pt;
+ font-style: italic;
+ font-weight: bold;
+}
+span.rvts166
+{
+ font-size: 18pt;
+ font-style: italic;
+ font-weight: bold;
+ text-decoration: underline;
+}
+a.rvts167, span.rvts167
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts167:hover { color: #0000ff; }
+a.rvts168, span.rvts168
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts168:hover { color: #0000ff; }
+a.rvts169, span.rvts169
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts169:hover { color: #0000ff; }
+a.rvts170, span.rvts170
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts170:hover { color: #0000ff; }
+a.rvts171, span.rvts171
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts171:hover { color: #0000ff; }
+a.rvts172, span.rvts172
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts172:hover { color: #0000ff; }
+a.rvts173, span.rvts173
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts173:hover { color: #0000ff; }
+a.rvts174, span.rvts174
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts174:hover { color: #0000ff; }
+a.rvts175, span.rvts175
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts175:hover { color: #0000ff; }
+a.rvts176, span.rvts176
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts176:hover { color: #0000ff; }
+a.rvts177, span.rvts177
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts177:hover { color: #0000ff; }
+a.rvts178, span.rvts178
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts178:hover { color: #0000ff; }
+a.rvts179, span.rvts179
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts179:hover { color: #0000ff; }
+a.rvts180, span.rvts180
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts180:hover { color: #0000ff; }
+a.rvts181, span.rvts181
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts181:hover { color: #0000ff; }
+a.rvts182, span.rvts182
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts182:hover { color: #0000ff; }
+a.rvts183, span.rvts183
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts183:hover { color: #0000ff; }
+a.rvts184, span.rvts184
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts184:hover { color: #0000ff; }
+a.rvts185, span.rvts185
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts185:hover { color: #0000ff; }
+a.rvts186, span.rvts186
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts186:hover { color: #0000ff; }
+span.rvts187
+{
+ font-size: 12pt;
+ font-family: 'Cordia New';
+}
+span.rvts188
+{
+ font-size: 18pt;
+ font-style: italic;
+ font-weight: bold;
+ color: #ff0000;
+}
+a.rvts189, span.rvts189
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts189:hover { color: #0000ff; }
+a.rvts190, span.rvts190
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts190:hover { color: #0000ff; }
+span.rvts191
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+}
+span.rvts192
+{
+ font-size: 12pt;
+ color: #0000ff;
+}
+span.rvts193
+{
+ font-size: 12pt;
+ font-family: 'Courier New', 'Courier', monospace;
+ font-style: italic;
+}
+a.rvts194, span.rvts194
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts194:hover { color: #0000ff; }
+a.rvts195, span.rvts195
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts195:hover { color: #0000ff; }
+a.rvts196, span.rvts196
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts196:hover { color: #0000ff; }
+a.rvts197, span.rvts197
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts197:hover { color: #0000ff; }
+a.rvts198, span.rvts198
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts198:hover { color: #0000ff; }
+a.rvts199, span.rvts199
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts199:hover { color: #0000ff; }
+a.rvts200, span.rvts200
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts200:hover { color: #0000ff; }
+a.rvts201, span.rvts201
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts201:hover { color: #0000ff; }
+a.rvts202, span.rvts202
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts202:hover { color: #0000ff; }
+a.rvts203, span.rvts203
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts203:hover { color: #0000ff; }
+a.rvts204, span.rvts204
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts204:hover { color: #0000ff; }
+a.rvts205, span.rvts205
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts205:hover { color: #0000ff; }
+a.rvts206, span.rvts206
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts206:hover { color: #0000ff; }
+a.rvts207, span.rvts207
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts207:hover { color: #0000ff; }
+a.rvts208, span.rvts208
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts208:hover { color: #0000ff; }
+a.rvts209, span.rvts209
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts209:hover { color: #0000ff; }
+a.rvts210, span.rvts210
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts210:hover { color: #0000ff; }
+a.rvts211, span.rvts211
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts211:hover { color: #0000ff; }
+a.rvts212, span.rvts212
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts212:hover { color: #0000ff; }
+a.rvts213, span.rvts213
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts213:hover { color: #0000ff; }
+a.rvts214, span.rvts214
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts214:hover { color: #0000ff; }
+a.rvts215, span.rvts215
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts215:hover { color: #0000ff; }
+a.rvts216, span.rvts216
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts216:hover { color: #0000ff; }
+a.rvts217, span.rvts217
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts217:hover { color: #0000ff; }
+a.rvts218, span.rvts218
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts218:hover { color: #0000ff; }
+a.rvts219, span.rvts219
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts219:hover { color: #0000ff; }
+a.rvts220, span.rvts220
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts220:hover { color: #0000ff; }
+a.rvts221, span.rvts221
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts221:hover { color: #0000ff; }
+a.rvts222, span.rvts222
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts222:hover { color: #0000ff; }
+a.rvts223, span.rvts223
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts223:hover { color: #0000ff; }
+a.rvts224, span.rvts224
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts224:hover { color: #0000ff; }
+a.rvts225, span.rvts225
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts225:hover { color: #0000ff; }
+a.rvts226, span.rvts226
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts226:hover { color: #0000ff; }
+a.rvts227, span.rvts227
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts227:hover { color: #0000ff; }
+a.rvts228, span.rvts228
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts228:hover { color: #0000ff; }
+a.rvts229, span.rvts229
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts229:hover { color: #0000ff; }
+a.rvts230, span.rvts230
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts230:hover { color: #0000ff; }
+a.rvts231, span.rvts231
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts231:hover { color: #0000ff; }
+a.rvts232, span.rvts232
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts232:hover { color: #0000ff; }
+a.rvts233, span.rvts233
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts233:hover { color: #0000ff; }
+a.rvts234, span.rvts234
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts234:hover { color: #0000ff; }
+a.rvts235, span.rvts235
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts235:hover { color: #0000ff; }
+a.rvts236, span.rvts236
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts236:hover { color: #0000ff; }
+a.rvts237, span.rvts237
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts237:hover { color: #0000ff; }
+a.rvts238, span.rvts238
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts238:hover { color: #0000ff; }
+a.rvts239, span.rvts239
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts239:hover { color: #0000ff; }
+a.rvts240, span.rvts240
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts240:hover { color: #0000ff; }
+a.rvts241, span.rvts241
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts241:hover { color: #0000ff; }
+a.rvts242, span.rvts242
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts242:hover { color: #0000ff; }
+a.rvts243, span.rvts243
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts243:hover { color: #0000ff; }
+a.rvts244, span.rvts244
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts244:hover { color: #0000ff; }
+a.rvts245, span.rvts245
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts245:hover { color: #0000ff; }
+a.rvts246, span.rvts246
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts246:hover { color: #0000ff; }
+span.rvts247
+{
+ font-size: 14pt;
+ font-family: 'Cordia New';
+}
+a.rvts248, span.rvts248
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts248:hover { color: #0000ff; }
+a.rvts249, span.rvts249
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts249:hover { color: #0000ff; }
+a.rvts250, span.rvts250
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts250:hover { color: #0000ff; }
+a.rvts251, span.rvts251
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts251:hover { color: #0000ff; }
+a.rvts252, span.rvts252
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts252:hover { color: #0000ff; }
+a.rvts253, span.rvts253
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts253:hover { color: #0000ff; }
+a.rvts254, span.rvts254
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts254:hover { color: #0000ff; }
+a.rvts255, span.rvts255
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts255:hover { color: #0000ff; }
+a.rvts256, span.rvts256
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts256:hover { color: #0000ff; }
+a.rvts257, span.rvts257
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts257:hover { color: #0000ff; }
+a.rvts258, span.rvts258
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts258:hover { color: #0000ff; }
+a.rvts259, span.rvts259
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts259:hover { color: #0000ff; }
+a.rvts260, span.rvts260
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts260:hover { color: #0000ff; }
+a.rvts261, span.rvts261
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts261:hover { color: #0000ff; }
+a.rvts262, span.rvts262
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts262:hover { color: #0000ff; }
+a.rvts263, span.rvts263
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts263:hover { color: #0000ff; }
+a.rvts264, span.rvts264
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts264:hover { color: #0000ff; }
+a.rvts265, span.rvts265
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts265:hover { color: #0000ff; }
+a.rvts266, span.rvts266
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts266:hover { color: #0000ff; }
+a.rvts267, span.rvts267
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts267:hover { color: #0000ff; }
+a.rvts268, span.rvts268
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts268:hover { color: #0000ff; }
+a.rvts269, span.rvts269
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts269:hover { color: #0000ff; }
+a.rvts270, span.rvts270
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts270:hover { color: #0000ff; }
+a.rvts271, span.rvts271
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts271:hover { color: #0000ff; }
+a.rvts272, span.rvts272
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts272:hover { color: #0000ff; }
+a.rvts273, span.rvts273
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts273:hover { color: #0000ff; }
+a.rvts274, span.rvts274
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts274:hover { color: #0000ff; }
+a.rvts275, span.rvts275
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts275:hover { color: #0000ff; }
+a.rvts276, span.rvts276
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts276:hover { color: #0000ff; }
+a.rvts277, span.rvts277
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts277:hover { color: #0000ff; }
+a.rvts278, span.rvts278
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts278:hover { color: #0000ff; }
+a.rvts279, span.rvts279
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts279:hover { color: #0000ff; }
+a.rvts280, span.rvts280
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts280:hover { color: #0000ff; }
+a.rvts281, span.rvts281
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts281:hover { color: #0000ff; }
+a.rvts282, span.rvts282
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts282:hover { color: #0000ff; }
+a.rvts283, span.rvts283
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts283:hover { color: #0000ff; }
+a.rvts284, span.rvts284
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts284:hover { color: #0000ff; }
+a.rvts285, span.rvts285
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts285:hover { color: #0000ff; }
+a.rvts286, span.rvts286
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts286:hover { color: #0000ff; }
+a.rvts287, span.rvts287
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts287:hover { color: #0000ff; }
+a.rvts288, span.rvts288
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts288:hover { color: #0000ff; }
+a.rvts289, span.rvts289
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts289:hover { color: #0000ff; }
+a.rvts290, span.rvts290
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts290:hover { color: #0000ff; }
+a.rvts291, span.rvts291
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts291:hover { color: #0000ff; }
+a.rvts292, span.rvts292
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts292:hover { color: #0000ff; }
+a.rvts293, span.rvts293
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts293:hover { color: #0000ff; }
+a.rvts294, span.rvts294
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts294:hover { color: #0000ff; }
+a.rvts295, span.rvts295
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts295:hover { color: #0000ff; }
+a.rvts296, span.rvts296
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts296:hover { color: #0000ff; }
+a.rvts297, span.rvts297
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts297:hover { color: #0000ff; }
+a.rvts298, span.rvts298
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts298:hover { color: #0000ff; }
+a.rvts299, span.rvts299
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts299:hover { color: #0000ff; }
+a.rvts300, span.rvts300
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts300:hover { color: #0000ff; }
+a.rvts301, span.rvts301
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts301:hover { color: #0000ff; }
+span.rvts302
+{
+ font-size: 14pt;
+ font-family: 'Courier New', 'Courier', monospace;
+ font-weight: bold;
+}
+span.rvts303
+{
+ font-size: 12pt;
+ font-family: 'Courier New', 'Courier', monospace;
+ font-weight: bold;
+}
+a.rvts304, span.rvts304
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts304:hover { color: #0000ff; }
+span.rvts305
+{
+ font-size: 8pt;
+ vertical-align: super;
+}
+span.rvts306
+{
+ font-size: 14pt;
+}
+span.rvts307
+{
+ font-size: 14pt;
+ font-weight: bold;
+}
+span.rvts308
+{
+ font-size: 14pt;
+ font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial', 'Helvetica', sans-serif;
+ font-weight: bold;
+}
+span.rvts309
+{
  font-size: 16pt;
  font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial', 'Helvetica', sans-serif;
  font-weight: bold;
 }
-span.rvts134
+span.rvts310
 {
  font-size: 16pt;
  font-weight: bold;
 }
-span.rvts135
+span.rvts311
 {
- font-size: 12pt;
+ font-size: 36pt;
+}
+span.rvts312
+{
+ font-size: 48pt;
+}
+span.rvts313
+{
+ font-size: 48pt;
+ font-weight: bold;
+}
+span.rvts314
+{
+ font-size: 36pt;
  font-weight: bold;
 }
 /* ========== Para Styles ========== */
@@ -1109,10 +2398,10 @@ p,ul,ol /* Paragraph Style */
 }
 .rvps44
 {
- text-align: center;
  border-color: #008000;
  border-style: solid;
- border-width: 5px;
+ border-width: 3px;
+ padding: 20px 20px 20px 20px;
 }
 .rvps45
 {
@@ -1120,7 +2409,6 @@ p,ul,ol /* Paragraph Style */
  border-color: #008000;
  border-style: solid;
  border-width: 5px;
- margin: 0px 0px 0px 24px;
 }
 .rvps46
 {
@@ -1128,7 +2416,7 @@ p,ul,ol /* Paragraph Style */
  border-color: #008000;
  border-style: solid;
  border-width: 5px;
- margin: 0px 0px 0px 48px;
+ margin: 0px 0px 0px 24px;
 }
 .rvps47
 {
@@ -1136,7 +2424,7 @@ p,ul,ol /* Paragraph Style */
  border-color: #008000;
  border-style: solid;
  border-width: 5px;
- margin: 0px 0px 0px 72px;
+ margin: 0px 0px 0px 48px;
 }
 .rvps48
 {
@@ -1144,9 +2432,17 @@ p,ul,ol /* Paragraph Style */
  border-color: #008000;
  border-style: solid;
  border-width: 5px;
- margin: 0px 0px 0px 96px;
+ margin: 0px 0px 0px 72px;
 }
 .rvps49
+{
+ text-align: center;
+ border-color: #008000;
+ border-style: solid;
+ border-width: 5px;
+ margin: 0px 0px 0px 96px;
+}
+.rvps50
 {
  text-align: center;
  border-color: #000000;
@@ -1154,7 +2450,7 @@ p,ul,ol /* Paragraph Style */
  border-width: 5px;
  padding: 5px 5px 5px 5px;
 }
-.rvps50
+.rvps51
 {
  text-align: center;
  border-color: #008000;
@@ -1163,15 +2459,15 @@ p,ul,ol /* Paragraph Style */
  padding: 5px 5px 5px 5px;
  margin: 3px 3px 3px 3px;
 }
-.rvps51
+.rvps52
 {
  line-height: 1.50;
 }
-.rvps52
+.rvps53
 {
  text-align: center;
 }
-.rvps53
+.rvps54
 {
  margin: 0px 0px 0px 24px;
 }

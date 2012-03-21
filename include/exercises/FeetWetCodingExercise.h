@@ -149,11 +149,11 @@ protected:
     //Return ID of the item to be drawn. This ID can be used later
     //to operate on the corresponding QGraphicsItem.
     //Returns -1 if item could not be queued for drawing.
-    int fwcDrawLine( int xStart, int yStart, int xEnd, int yEnd, Color color, int thickness );
-    int fwcDrawCircle( int x, int y, int r, Color color, int thickness, bool solid=false);
-    int fwcDrawCircleRGB( int x, int y, int r, int thickness, int red, int green, int blue, bool solid=false );
-    int fwcDrawEllipse( int x, int y, int w, int h, Color color, int thickness, bool solid=false );
-    int fwcDrawRectangle( int x, int y, int w, int h, Color color, int thickness, bool solid=false );
+    int fwcDrawLine( int xStart, int yStart, int xEnd, int yEnd, Color color, int linewidth );
+    int fwcDrawCircle( int x, int y, int r, Color color, int linewidth, bool solid=false);
+    int fwcDrawCircleRGB( int x, int y, int r, int linewidth, int red, int green, int blue, bool solid=false );
+    int fwcDrawEllipse( int x, int y, int w, int h, Color color, int linewidth, bool solid=false );
+    int fwcDrawRectangle( int x, int y, int w, int h, Color color, int linewidth, bool solid=false );
     int fwcDrawText( std::string text, int x, int y, Color color, int size=12);
     int fwcDrawInt( int number, int x, int y, Color color, int size=12 );
     int fwcDrawFloat( float number, int x, int y, Color color, int size=12, int decimalPlaces=3 );

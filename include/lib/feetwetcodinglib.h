@@ -40,11 +40,11 @@ void setupDrawingUtils();
 void ClearScreen();
 void initOutputArea();
 
-QGraphicsItem* fwcDrawLineRender( int xStart, int yStart, int xEnd, int yEnd, Color color, int thickness );
-QGraphicsItem* fwcDrawCircleRender( int x, int y, int r, Color color, int thickness, bool solid=false);
-QGraphicsItem* fwcDrawCircleRGBRender( int x, int y, int r, int thickness, int red, int green, int blue, bool solid=false );
-QGraphicsItem* fwcDrawEllipseRender( int x, int y, int w, int h, Color color, int thickness, bool solid=false );
-QGraphicsItem* fwcDrawRectangleRender( int x, int y, int w, int h, Color color, int thickness, bool solid=false );
+QGraphicsItem* fwcDrawLineRender( int xStart, int yStart, int xEnd, int yEnd, Color color, int linewidth );
+QGraphicsItem* fwcDrawCircleRender( int x, int y, int r, Color color, int linewidth, bool solid=false);
+QGraphicsItem* fwcDrawCircleRGBRender( int x, int y, int r, int linewidth, int red, int green, int blue, bool solid=false );
+QGraphicsItem* fwcDrawEllipseRender( int x, int y, int w, int h, Color color, int linewidth, bool solid=false );
+QGraphicsItem* fwcDrawRectangleRender( int x, int y, int w, int h, Color color, int linewidth, bool solid=false );
 QGraphicsItem* fwcDrawTextRender( std::string text, int x, int y, Color color, int size=12);
 QGraphicsItem* fwcDrawIntRender( int number, int x, int y, Color color, int size=12 );
 QGraphicsItem* fwcDrawFloatRender( float number, int x, int y, Color color, int size=12, int decimalPlaces=3 );

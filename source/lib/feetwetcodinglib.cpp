@@ -153,21 +153,21 @@ void ClearScreen()
     }
 }
 
-QGraphicsItem* fwcDrawLineRender( int xStart, int yStart, int xEnd, int yEnd, Color color, int thickness )
+QGraphicsItem* fwcDrawLineRender( int xStart, int yStart, int xEnd, int yEnd, Color color, int linewidth )
 {
     QGraphicsLineItem *newLine = new QGraphicsLineItem(xStart, yStart, xEnd, yEnd);
 
     // Create a line and add it to the scene
     QPen pen;
     pen.setColor(getQColor(color));
-    pen.setWidth(thickness);
+    pen.setWidth(linewidth);
     newLine->setPen(pen);
     view->scene()->addItem(newLine);
 
     return newLine;
 }
 
-QGraphicsItem* fwcDrawCircleRender( int x, int y, int r, Color color, int thickness, bool solid)
+QGraphicsItem* fwcDrawCircleRender( int x, int y, int r, Color color, int linewidth, bool solid)
 {
     QGraphicsEllipseItem *newCircle = new QGraphicsEllipseItem(x-(r/2), y-(r/2), r, r);
 
@@ -181,7 +181,7 @@ QGraphicsItem* fwcDrawCircleRender( int x, int y, int r, Color color, int thickn
     // Create an ellipse and add it to the scene
     QPen pen;
     pen.setColor(getQColor(color));
-    pen.setWidth(thickness);
+    pen.setWidth(linewidth);
 
     //painter.setRenderHint(QPainter::Antialiasing);
     newCircle->setPen(pen);
@@ -190,7 +190,7 @@ QGraphicsItem* fwcDrawCircleRender( int x, int y, int r, Color color, int thickn
     return newCircle;
 }
 
-QGraphicsItem* fwcDrawCircleRGBRender( int x, int y, int r, int red, int green, int blue, int thickness, bool solid )
+QGraphicsItem* fwcDrawCircleRGBRender( int x, int y, int r, int red, int green, int blue, int linewidth, bool solid )
 {
     QGraphicsEllipseItem *newCircle = new QGraphicsEllipseItem(x-(r/2), y-(r/2), r, r);
 
@@ -202,7 +202,7 @@ QGraphicsItem* fwcDrawCircleRGBRender( int x, int y, int r, int red, int green, 
     color.setGreen(green);
     color.setBlue(blue);
     pen.setColor(color);
-    pen.setWidth(thickness);
+    pen.setWidth(linewidth);
 
     if ( solid )
     {
@@ -217,7 +217,7 @@ QGraphicsItem* fwcDrawCircleRGBRender( int x, int y, int r, int red, int green, 
     return newCircle;
 }
 
-QGraphicsItem* fwcDrawEllipseRender( int x, int y, int w, int h, Color color, int thickness, bool solid )
+QGraphicsItem* fwcDrawEllipseRender( int x, int y, int w, int h, Color color, int linewidth, bool solid )
 {
     QGraphicsEllipseItem *newCircle = new QGraphicsEllipseItem(x-(w/2), y-(h/2), w, h);
 
@@ -231,7 +231,7 @@ QGraphicsItem* fwcDrawEllipseRender( int x, int y, int w, int h, Color color, in
     // Create a line and add it to the scene
     QPen pen;
     pen.setColor(getQColor(color));
-    pen.setWidth(thickness);
+    pen.setWidth(linewidth);
 
     //painter.setRenderHint(QPainter::Antialiasing);
     newCircle->setPen(pen);
@@ -240,7 +240,7 @@ QGraphicsItem* fwcDrawEllipseRender( int x, int y, int w, int h, Color color, in
     return newCircle;
 }
 
-QGraphicsItem* fwcDrawRectangleRender( int x, int y, int w, int h, Color color, int thickness, bool solid )
+QGraphicsItem* fwcDrawRectangleRender( int x, int y, int w, int h, Color color, int linewidth, bool solid )
 {
     QGraphicsRectItem *newRect = new QGraphicsRectItem(x, y, w, h);
 
@@ -254,7 +254,7 @@ QGraphicsItem* fwcDrawRectangleRender( int x, int y, int w, int h, Color color, 
     // Create a line and add it to the scene
     QPen pen;
     pen.setColor(getQColor(color));
-    pen.setWidth(thickness);
+    pen.setWidth(linewidth);
     newRect->setPen(pen);
     view->scene()->addItem(newRect);
 

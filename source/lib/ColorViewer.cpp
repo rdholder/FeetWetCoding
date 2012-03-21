@@ -97,7 +97,7 @@ void ColorViewer::show()
     }
 }
 
-int ColorViewer::fwcDrawCircle( int x, int y, int r, Color color, int thickness, bool solid )
+int ColorViewer::fwcDrawCircle( int x, int y, int r, Color color, int linewidth, bool solid )
 {
     FeetWetCodingExercise::RenderItem item;
     item.type = FeetWetCodingExercise::CIRCLE;
@@ -105,7 +105,7 @@ int ColorViewer::fwcDrawCircle( int x, int y, int r, Color color, int thickness,
     item.y = y;
     item.radius = r;
     item.color = color;
-    item.linewidth = thickness;
+    item.linewidth = linewidth;
     item.solid = solid;
 
     return mRenderServer->setRenderItem(item);
