@@ -55,6 +55,7 @@ int randomRange(int smallest, int biggest);
 
 QColor getQColor( Color color );
 std::string getNameForColor( Color color );
+QString getProjectPath();
 QString getDefaultConfigFilePath();
 
 class FWCView : public QGraphicsView
