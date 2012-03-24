@@ -8,9 +8,8 @@ void seeoutFormatting::runExercise()
     fwcDrawText("Make the seeout output", 30, 80, BLUE, 20);
     fwcDrawText("in the boxes below match...", 30, 120, BLUE, 20);
 
-    seeout << "1";
-    seeout << "2";
-    seeout << "3" << "\n";
+    seeout << "1" << "2" << "3";
+    seeout << "\n";
     seeout << "I";
     seeout << "need";
     seeout << "my";

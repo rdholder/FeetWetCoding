@@ -10,14 +10,24 @@
 	<!--[if lte IE 8]>
 		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
 	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/hnd.js"></script>
 	<script type="text/javascript"><!--
-		var sTopicId = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
 		if (top.frames.length == 0)
-			top.location.href = "FeetWetCoding.html?" + sTopicId
+		{
+			var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+			top.location.href = "FeetWetCoding.html?" + sTopicUrl;
+		}
 		else if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
-			top.FrameTOC.SelectTocItem(sTopicId);
+		{
+			top.FrameTOC.SelectTocItem("Attribution");
+		}
 	</script>
 </head>
 
@@ -42,14 +52,14 @@
 		</div>
 	<div id="topic_content">
 		
-<p class="rvps3"><span class="rvts10">FeetWetCoding uses the following resources. &nbsp;These resources are used under the Creative Commons license, or are in the public domain, except where otherwise noted. &nbsp;If we are in error, and we are using your artwork, or other copyrighted materials without your permission, we apologize for the mistake! &nbsp;Please </span><a class="rvts12" href="ContactUs.html">contact us</a><span class="rvts10">, and we will remove your copyrighted materials from our project immediately!</span></p>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts14">Images</span></p>
+<p class="rvps3"><span class="rvts8">FeetWetCoding uses the following resources. &nbsp;These resources are used under the Creative Commons license, or are in the public domain, except where otherwise noted. &nbsp;If we are in error, and we are using your artwork, or other copyrighted materials without your permission, we apologize for the mistake! &nbsp;Please </span><a class="rvts9" href="ContactUs.html">contact us</a><span class="rvts8">, and we will remove your copyrighted materials from our project immediately!</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3"><span class="rvts10">Images</span></p>
 <div class="rvps3"><table width="100%" border="1" cellpadding="1" cellspacing="2" style="border-color: #000000; border-style: solid;">
 <tr valign="top">
-<td width="274" style="border-color: #000000; border-style: solid;"><p class="rvps53"><span class="rvts48">Image Filename in FeetWetCoding Distro</span></p>
+<td width="274" style="border-color: #000000; border-style: solid;"><p class="rvps49"><span class="rvts52">Image Filename in FeetWetCoding Distro</span></p>
 </td>
-<td width="702" style="border-color: #000000; border-style: solid;"><p class="rvps53"><span class="rvts48">Attribution Information</span></p>
+<td width="702" style="border-color: #000000; border-style: solid;"><p class="rvps49"><span class="rvts52">Attribution Information</span></p>
 </td>
 </tr>
 <tr valign="top">
@@ -106,16 +116,16 @@
 </tr>
 </table>
 </div>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts14">Sounds</span></p>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts14">Other Resources</span></p>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10"><div style="font-family:Arial;font-size:12pt;background-color:#EEEEEE;background-color:teal;color:white;padding:4px;font-weight:bold">
-FeetWetCoding version 0.2r1 copyright (c) 2011,2012 Robert Holder, Janice Dugger.
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3"><span class="rvts10">Sounds</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3"><span class="rvts10">Other Resources</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3"><span class="rvts8"><div style="font-family:Arial;font-size:12pt;background-color:#EEEEEE;background-color:teal;color:white;padding:4px;font-weight:bold">
+FeetWetCoding version 0.2.2 released 2012Mar24 copyright (c) 2011,2012 Robert Holder, Janice Dugger.
 <br/>
 <!--
 <style>
@@ -125,7 +135,7 @@ a:link {color:#FFFFFF;}
 -->
 ...click the ZIP button on our <a href="https://github.com/FeetWetCoding/FeetWetCoding" TARGET="_top">Github page</a> for the latest source!
 </div></span></p>
-<p class="rvps8"><span class="rvts40">Created with the Personal Edition of HelpNDoc: </span><a class="rvts41" href="http://www.helpndoc.com">Full featured Documentation generator</a></p>
+<p class="rvps7"><span class="rvts23">Created with the Personal Edition of HelpNDoc: </span><a class="rvts24" href="http://www.helpndoc.com">Full featured Documentation generator</a></p>
 </div>
 	
 	</body>

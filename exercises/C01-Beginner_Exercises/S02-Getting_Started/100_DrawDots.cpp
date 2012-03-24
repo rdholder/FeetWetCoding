@@ -14,8 +14,9 @@ void DrawDots::runExercise()
     // USAGE: fwcDrawCircle(x, y, radius, color, linewidth, solid);
     // USAGE: fwcDrawRectangle(x, y, width, height, color, linewidth);
     // (solid is an optional parameter: you can use it or leave it out.)
-    fwcDrawRectangle(0, 0, 400, 400, BLACK, 1, true);
-    fwcDrawLine(200, 100, 200, 101, WHITE, 1);
-    fwcDrawCircle(150, 250, 1, BLUE, 1);
-    fwcDrawRectangle(250, 250, 1, 1, RED, 1);
+
+    fwcDrawRectangle(150, 250, 1, 1, RED, 1);
+    fwcDrawLine(200, 100, 200, 101, GREEN, 1);
+    fwcDrawCircle(250, 250, 1, BLUE, 1);
+
 }

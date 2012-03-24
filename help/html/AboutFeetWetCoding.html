@@ -10,14 +10,24 @@
 	<!--[if lte IE 8]>
 		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
 	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/hnd.js"></script>
 	<script type="text/javascript"><!--
-		var sTopicId = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
 		if (top.frames.length == 0)
-			top.location.href = "FeetWetCoding.html?" + sTopicId
+		{
+			var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+			top.location.href = "FeetWetCoding.html?" + sTopicUrl;
+		}
 		else if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
-			top.FrameTOC.SelectTocItem(sTopicId);
+		{
+			top.FrameTOC.SelectTocItem("AboutFeetWetCoding");
+		}
 	</script>
 </head>
 
@@ -28,12 +38,12 @@
 				<h1>About FeetWetCoding</h1>
 				
 				<div id="topic_breadcrumb">
-					<a href="HELP.html">HELP</a> &rsaquo;&rsaquo; </div>
+					<a href="FeetWetCodingHelp.html">FeetWetCoding Help</a> &rsaquo;&rsaquo; </div>
 				</div>
 			<div id="topic_header_nav">
-				<a href="HELP.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				<a href="FeetWetCodingHelp.html"><img src="img/arrow_up.png" alt="Parent"/></a>
 				
-				<a href="HELP.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				<a href="FeetWetCodingHelp.html"><img src="img/arrow_left.png" alt="Previous"/></a>
 				
 				<a href="InstallQtCreator.html"><img src="img/arrow_right.png" alt="Next"/></a>
 				
@@ -42,73 +52,79 @@
 		</div>
 	<div id="topic_content">
 		
-<p class="rvps3"><span class="rvts10">FeetWetCoding is a set of C++ source and header files, with html documentation, that helps the beginning programmer as they learn C++. FeetWetCoding is not a complete, self-contained way to learn C++. It is a supplement to traditional methods of learning the language such as using a C++ textbook or taking a programming language class.</span></p>
+<p class="rvps3"><span class="rvts8">FeetWetCoding is a set of C++ source and header files, with html documentation, that helps the beginning programmer as they learn C++. FeetWetCoding is not a complete, self-contained way to learn C++. It is a supplement to traditional methods of learning the language such as using a C++ textbook or taking a programming language class.</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3"><span class="rvts8">With our learning framework, the student works towards a programming goal displayed on the screen, and can compare their work with the solution code which is provided.</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3"><span class="rvts8">See </span><a class="rvts15" href="http://goo.gl/WlUmf" target="_blank">Screenshots of FeetWetCoding in action</a><span class="rvts8">!</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3"><span class="rvts8">Our software allows the beginner to draw simple graphics on the screen without first having to learn a widget toolkit. With our learning framework, the beginning programmer is drawing on the screen the first day, and is not limited to cout console style programs. We believe that learning to program is a lot more engaging when graphics are involved. Our software uses the Qt library, but no knowledge of Qt is required of the beginning programmer.</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3"><span class="rvts8">We guide the beginning programmer through a series of structured exercises that build upon each other. &nbsp;The beginner works to make the exercise code match the output of the solution code, which is also included, and can be checked when the beginner has finished the exercise, or if they get stuck.</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3"><span class="rvts8">FeetWetCoding is an open source project that is free to download, use and modify. </span><span class="rvts11">It is not finished yet, but is in active development.</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3"><span class="rvts8">Click the ZIP button on our Github page at </span><a class="rvts15" href="https://github.com/FeetWetCoding/FeetWetCoding" target="_blank">https://github.com/FeetWetCoding/FeetWetCoding</a><span class="rvts8"> to download the latest source.</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3"><span class="rvts8">Since we are using Qt and the Qt Creator IDE, our source will run unmodified on Windows, Mac OS X, and Linux. All that is required is a screen resolution at least 1024 x 768, and the Qt SDK.</span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">With our learning framework, the student works towards a programming goal displayed on the screen, and can compare their work with the solution code which is provided.</span></p>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">See </span><a class="rvts12" href="http://goo.gl/WlUmf" target="_blank">Screenshots of FeetWetCoding in action</a><span class="rvts10">!</span></p>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">Our software allows the beginner to draw simple graphics on the screen without first having to learn a widget toolkit. With our learning framework, the beginning programmer is drawing on the screen the first day, and is not limited to cout console style programs. We believe that learning to program is a lot more engaging when graphics are involved. Our software uses the Qt library, but no knowledge of Qt is required of the beginning programmer.</span></p>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">We guide the beginning programmer through a series of structured exercises that build upon each other. &nbsp;The beginner works to make the exercise code match the output of the solution code, which is also included, and can be checked when the beginner has finished the exercise, or if they get stuck.</span></p>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">FeetWetCoding is an open source project that is free to download, use and modify. </span><span class="rvts15">It is not finished yet, but is in active development.</span></p>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">Click the ZIP button on our Github page at </span><a class="rvts12" href="https://github.com/FeetWetCoding/FeetWetCoding" target="_blank">https://github.com/FeetWetCoding/FeetWetCoding</a><span class="rvts10"> to download the latest source.</span></p>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">Since we are using Qt and the Qt Creator IDE, our source will run unmodified on Windows, Mac OS X, and Linux. All that is required is a screen resolution at least 1024 x 768, and the Qt SDK.</span></p>
-<p class="rvps3"><span class="rvts14"><br></span></p>
-<p class="rvps3"><span class="rvts14">Why do you want to learn C++?</span></p>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">If you just want to develop a small game, you might be interested in:</span></p>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
-<li class="rvps3"><span class="rvts10"> </span><a class="rvts12" href="http://blitzmax.com/" target="_blank">blitzmax</a><span class="rvts10"> -- Robert played around with this, and thinks it's awesome.</span></li>
-<li class="rvps3"><span class="rvts10"> </span><a class="rvts12" href="http://unity3d.com/" target="_blank">Unity3d</a><span class="rvts10"> -- looks powerful, but big and complicated.</span></li>
-<li class="rvps3"><span class="rvts10">(list others here)</span></li>
-</ul>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">Learning C++ is hard for many people, no matter how you slice it. &nbsp;We've known and worked with people who are exceptional, who picked it up quickly, and those kinds of people are a joy to be around, in a technical sense. &nbsp;But for both of us, learning C++ definitely had it's difficult moments, and we had to work at it.</span></p>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">If you just want to make a fun game for your own enjoyment, and don't really care what language you use, you absolutely should give something like Blitzmax a try. &nbsp;Blitzmax is a nice, well-integrated way to easily jump in and start doing fun stuff right away, and it is very beginner-friendly. &nbsp;Python also has a reputation for being much easier to jump into and get things done with.</span></p>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">If, however, you have your heart set on learning C++, we hope we can help!</span></p>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps9"><span class="rvts10">The single, best piece of advice I can give you if you want to learn C++ (or any programming language, really) is to find someone who already knows it well, who is willing to help you and answer your questions. &nbsp;It is fine to learn on your own, but you will make more progress more quickly when you have someone to turn to when you get stuck. &nbsp;This is especially true with compilation/build issues. &nbsp;Access to someone who knows your build toolchain inside and out is invaluable. &nbsp;There are people who take the position that you should not even be messing around with an IDE when you are first coding, and those people have a point. &nbsp;Learning the IDE is extra overhead and can add confusion. &nbsp;But we feel that the benefits that come from working in an IDE outweigh the front-loaded frustration and confusion that has to be gotten through. &nbsp;If you can't find someone in person, look to the forums!</span></p>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps2"><span class="rvts48">Why FeetWetCoding Is Designed The Way It Is</span></p>
-<p class="rvps2"><span class="rvts45"><br></span></p>
-<p class="rvps2"><span class="rvts45">We have learned that there's more to getting this project right than coding skills. &nbsp;A big part of what this project is about is not just showing the features of C++. &nbsp;Our hope is that we can design the exercises and this documentation in a way that </span><span class="rvts46">helps the beginning programmer in overcoming his or her frustrations</span><span class="rvts45">. &nbsp;Note that this is a different goal than just "learning the language", and different from the formal way people normally learn C++.</span></p>
-<p class="rvps2"><span class="rvts45"><br></span></p>
-<p class="rvps2"><span class="rvts45">In the typical C++ textbook, there is usually fifty pages or so of exposition on the language fundamentals: &nbsp;types, variables, functions, and all the basic bits and pieces of the language, in a long list, before the beginner ever gets to start playing with actual code. &nbsp;This is the reason why we put the drawing stuff up front in Chapter 01, Section 02 "Getting Started." &nbsp;We understand that the formal way to present this stuff is to lay out all the little pieces of the language first, and there are good reasons why the texts do it that way.</span></p>
-<p class="rvps2"><span class="rvts45"><br></span></p>
-<p class="rvps2"><span class="rvts45">But the way I learned to code is I learned a command that let me write stuff on the screen, and then I played around with that. &nbsp;Then I learned how to read a string as user input, and I played with that. &nbsp;Then I learned how to draw dots on the screen, and played with that and by flipping through the reference book looking for tools to use, I slowly was able to accrete enough little components of the language to be able to start doing more interesting things. &nbsp;I don't think I've </span><span class="rvts46">ever</span><span class="rvts45"> sat down and opened a programming language textbook to page one and started reading forward in a sensible, linear way. &nbsp;My hat is off to everyone who does it that way, but that was not me. &nbsp;We believe a lot of people learn to program in this way, by jumping around and playing with the tools, the way people play with Legos. &nbsp;It's not formal and proper, but it's fun. &nbsp;:-)</span></p>
-<p class="rvps2"><span class="rvts45"><br></span></p>
-<p class="rvps2"><span class="rvts45">So yes, we want to show elegant hacks in the exercises, and yes, we </span><span class="rvts46">absolutely</span><span class="rvts45"> want to teach The Right Things The Right Way, and not teach the wrong things, or teach the right things the wrong way. &nbsp;It turns out, now that I have been working on this problem awhile, this is a lot harder to do than I had initially thought. &nbsp;I have a lot more respect now for authors of programming language texts and training materials than I did before (and I had plenty before!)</span></p>
-<p class="rvps2"><span class="rvts10"><br></span></p>
-<p class="rvps2"><span class="rvts14">Here are the goals of the FeetWetCoding learning framework:</span></p>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
-<li class="rvps3"><span class="rvts10">The core design goal of FeetWetCoding is to get the person who is trying to learn C++ to start working with the compiler and actively changing source code from day one, rather than passively reading a textbook. &nbsp;Textbooks on C++ are necessary to the learning process, and there are some great ones out there, but programming is not a passive activity. &nbsp;Unlike many other disciplines, </span><span class="rvts11">you can't really learn programming by reading alone</span><span class="rvts10">: &nbsp;you </span><span class="rvts11">must</span><span class="rvts10"> get your feet wet by modifying and running programs in order to learn how to program.</span></li>
-<li class="rvps3"><span class="rvts10">One of our primary goals is to ensure that once someone downloads our software package, they have all the necessary information they need to start coding within minutes. &nbsp;We want to completely eliminate the confusing and overwhelming experience that too many beginners have to go through in googling forums and websites to just get their very first program to even compile and run!</span></li>
-<li class="rvps3"><span class="rvts10">Our project tries to give the new programmer the ability to do some simple graphical programming early, which makes programming more fun and intuitive. &nbsp;These days, in order to draw anything on the screen, you must have some idea of how to use classes and how event-driven programming works, or else you have to accept the limitations of &nbsp;a "game designer" environment (speaking of which, </span><a class="rvts12" href="http://blitzmax.com/" target="_blank">blitzmax</a><span class="rvts10"> seems pretty awesome in our opinion!) &nbsp;This is a real shame for the beginner, because in the early days of personal computing, the beginning programmer was able to have the experience of drawing on the screen in the first day or two of coding. &nbsp;The graphics may have been crude, and the language (BASIC) may have been limited, but it sure was a lot more fun to learn that way than with all this "cin" and "cout" drudgery! &nbsp;Learning to program by using cout is not nearly as fun as even the simplest graphical programs!</span></li>
-<li class="rvps3"><span class="rvts10">This will always be an Open Source project, and will always be not only "free as in freedom", but "free as in beer" for individuals who want to learn C++.</span></li>
-<li class="rvps3"><span class="rvts10">This learning framework intends to help beginning programmers learn C and C++ from within the QtCreator (pronounced "cute creator") SDK (Software Developer's Kit) using the Qt (pronounced "cute") programming library. &nbsp;We chose Qt and QtCreator because they are free to individuals, and QtCreator SDK spares the beginning programmer the overwhelming task of mucking about trying to get WxWidgets or some other rendering library set up in the build toolchain, before they can even write "Hello World"! &nbsp;Qt works well on Windows PCs, Macs and Linux boxes. &nbsp;Qt and Qt Creator have a large user base, and the documentation for Qt is excellent. &nbsp;Qt and QtCreator solve some annoying problems for us, and they do it elegantly and free of charge.</span></li>
-<li class="rvps3"><span class="rvts10">Here in North America, the pronunciation of Qt as "cute" does sound a little odd and, well, cutesy, to the ear of many engineers and programmers. &nbsp;But the Qt people wrote it, and they get to decide what it is called and how to pronounce it, and that is how they pronounce it! &nbsp;:-) &nbsp;And anyways, for many people, pronouncing it as "que tee" means QT or Quick Time. &nbsp;Don't confuse Qt with QT, they have nothing to do with each other.</span></li>
-</ul>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">Here is what FeetWetCoding</span><span class="rvts18"> is NOT:</span></p>
-<p class="rvps3"><span class="rvts18"><br></span></p>
-<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
-<li class="rvps3"><span class="rvts10">FeetWetCoding is not a way to learn Python, Java, WxWidgets, OpenGL, or any other language or software library besides C++/Qt. &nbsp;We (or someone else) may expand the FeetWetCoding concept in the future to introduce other languages and libraries, but that does not exist at the time this document was written.</span></li>
-<li class="rvps3"><span class="rvts10">This set of source does not work with Eclipse, NetBeans, VisualStudio, or any other development environment besides Qt and QtCreator. &nbsp;Again, we may try to adapt FeetWetCoding to other build environments and tools at some point, but there is no plan to even </span><span class="rvts15">start</span><span class="rvts10"> to think about that at the current time.</span></li>
-<li class="rvps3"><span class="rvts10">This is NOT a complete, official, academic style textbook way to learn C++! &nbsp;</span><span class="rvts11">You will need to take a programming class or get a good C++ textbook</span><span class="rvts10">, either one that we recommend, or another one. &nbsp;If you intend to make programming your career, you will benefit greatly from proper academic instruction. &nbsp;FeetWetCoding does not, and never will claim to be a complete, authoritative, formal way to learn C++. &nbsp;We try to teach the right things the right way, and it is a core goal for us that we never teach bad habits. &nbsp;If you are an experienced programmer and you see something in the exercises that you think is teaching bad programming habits, your feedback is welcome. &nbsp;We may have reasons for doing things the way we are doing them, but we will always listen to feedback on the exercises. &nbsp;We sincerely want to get those exercises as right as we can.</span></li>
-</ul>
-<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts10">Why do you want to learn C++?</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3"><span class="rvts8">If you just want to develop a small game, you might be interested in:</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<span class="rvts8"> </span><a class="rvts15" href="http://blitzmax.com/" target="_blank">blitzmax</a><span class="rvts8"> -- Robert played around with this, and thinks it's awesome.</span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<span class="rvts8"> </span><a class="rvts15" href="http://unity3d.com/" target="_blank">Unity3d</a><span class="rvts8"> -- looks powerful, but big and complicated.</span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<span class="rvts8">(list others here)</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3"><span class="rvts8">Learning C++ is hard for many people, no matter how you slice it. &nbsp;We've known and worked with people who are exceptional, who picked it up quickly, and those kinds of people are a joy to be around, in a technical sense. &nbsp;But for both of us, learning C++ definitely had it's difficult moments, and we had to work at it.</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3"><span class="rvts8">If you just want to make a fun game for your own enjoyment, and don't really care what language you use, you absolutely should give something like Blitzmax a try. &nbsp;Blitzmax is a nice, well-integrated way to easily jump in and start doing fun stuff right away, and it is very beginner-friendly. &nbsp;Python also has a reputation for being much easier to jump into and get things done with.</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3"><span class="rvts8">If, however, you have your heart set on learning C++, we hope we can help!</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps8"><span class="rvts8">The single, best piece of advice I can give you if you want to learn C++ (or any programming language, really) is to find someone who already knows it well, who is willing to help you and answer your questions. &nbsp;It is fine to learn on your own, but you will make more progress more quickly when you have someone to turn to when you get stuck. &nbsp;This is especially true with compilation/build issues. &nbsp;Access to someone who knows your build toolchain inside and out is invaluable. &nbsp;There are people who take the position that you should not even be messing around with an IDE when you are first coding, and those people have a point. &nbsp;Learning the IDE is extra overhead and can add confusion. &nbsp;But we feel that the benefits that come from working in an IDE outweigh the front-loaded frustration and confusion that has to be gotten through. &nbsp;If you can't find someone in person, look to the forums!</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps2"><span class="rvts52">Why FeetWetCoding Is Designed The Way It Is</span></p>
+<p class="rvps2"><span class="rvts20"><br></span></p>
+<p class="rvps2"><span class="rvts20">We have learned that there's more to getting this project right than coding skills. &nbsp;A big part of what this project is about is not just showing the features of C++. &nbsp;Our hope is that we can design the exercises and this documentation in a way that </span><span class="rvts22">helps the beginning programmer in overcoming his or her frustrations</span><span class="rvts20">. &nbsp;Note that this is a different goal than just "learning the language", and different from the formal way people normally learn C++.</span></p>
+<p class="rvps2"><span class="rvts20"><br></span></p>
+<p class="rvps2"><span class="rvts20">In the typical C++ textbook, there is usually fifty pages or so of exposition on the language fundamentals: &nbsp;types, variables, functions, and all the basic bits and pieces of the language, in a long list, before the beginner ever gets to start playing with actual code. &nbsp;This is the reason why we put the drawing stuff up front in Chapter 01, Section 02 "Getting Started." &nbsp;We understand that the formal way to present this stuff is to lay out all the little pieces of the language first, and there are good reasons why the texts do it that way.</span></p>
+<p class="rvps2"><span class="rvts20"><br></span></p>
+<p class="rvps2"><span class="rvts20">But the way I learned to code is I learned a command that let me write stuff on the screen, and then I played around with that. &nbsp;Then I learned how to read a string as user input, and I played with that. &nbsp;Then I learned how to draw dots on the screen, and played with that and by flipping through the reference book looking for tools to use, I slowly was able to accrete enough little components of the language to be able to start doing more interesting things. &nbsp;I don't think I've </span><span class="rvts22">ever</span><span class="rvts20"> sat down and opened a programming language textbook to page one and started reading forward in a sensible, linear way. &nbsp;My hat is off to everyone who does it that way, but that was not me. &nbsp;We believe a lot of people learn to program in this way, by jumping around and playing with the tools, the way people play with Legos. &nbsp;It's not formal and proper, but it's fun. &nbsp;:-)</span></p>
+<p class="rvps2"><span class="rvts20"><br></span></p>
+<p class="rvps2"><span class="rvts20">So yes, we want to show elegant hacks in the exercises, and yes, we </span><span class="rvts22">absolutely</span><span class="rvts20"> want to teach The Right Things The Right Way, and not teach the wrong things, or teach the right things the wrong way. &nbsp;It turns out, now that I have been working on this problem awhile, this is a lot harder to do than I had initially thought. &nbsp;I have a lot more respect now for authors of programming language texts and training materials than I did before (and I had plenty before!)</span></p>
+<p class="rvps2"><span class="rvts8"><br></span></p>
+<p class="rvps2"><span class="rvts10">Here are the goals of the FeetWetCoding learning framework:</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<span class="rvts8">The core design goal of FeetWetCoding is to get the person who is trying to learn C++ to start working with the compiler and actively changing source code from day one, rather than passively reading a textbook. &nbsp;Textbooks on C++ are necessary to the learning process, and there are some great ones out there, but programming is not a passive activity. &nbsp;Unlike many other disciplines, </span><span class="rvts25">you can't really learn programming by reading alone</span><span class="rvts8">: &nbsp;you </span><span class="rvts25">must</span><span class="rvts8"> get your feet wet by modifying and running programs in order to learn how to program.</span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<span class="rvts8">One of our primary goals is to ensure that once someone downloads our software package, they have all the necessary information they need to start coding within minutes. &nbsp;We want to completely eliminate the confusing and overwhelming experience that too many beginners have to go through in googling forums and websites to just get their very first program to even compile and run!</span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<span class="rvts8">Our project tries to give the new programmer the ability to do some simple graphical programming early, which makes programming more fun and intuitive. &nbsp;These days, in order to draw anything on the screen, you must have some idea of how to use classes and how event-driven programming works, or else you have to accept the limitations of &nbsp;a "game designer" environment (speaking of which, </span><a class="rvts15" href="http://blitzmax.com/" target="_blank">blitzmax</a><span class="rvts8"> seems pretty awesome in our opinion!) &nbsp;This is a real shame for the beginner, because in the early days of personal computing, the beginning programmer was able to have the experience of drawing on the screen in the first day or two of coding. &nbsp;The graphics may have been crude, and the language (BASIC) may have been limited, but it sure was a lot more fun to learn that way than with all this "cin" and "cout" drudgery! &nbsp;Learning to program by using cout is not nearly as fun as even the simplest graphical programs!</span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<span class="rvts8">This will always be an Open Source project, and will always be not only "free as in freedom", but "free as in beer" for individuals who want to learn C++.</span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<span class="rvts8">This learning framework intends to help beginning programmers learn C and C++ from within the QtCreator (pronounced "cute creator") SDK (Software Developer's Kit) using the Qt (pronounced "cute") programming library. &nbsp;We chose Qt and QtCreator because they are free to individuals, and QtCreator SDK spares the beginning programmer the overwhelming task of mucking about trying to get WxWidgets or some other rendering library set up in the build toolchain, before they can even write "Hello World"! &nbsp;Qt works well on Windows PCs, Macs and Linux boxes. &nbsp;Qt and Qt Creator have a large user base, and the documentation for Qt is excellent. &nbsp;Qt and QtCreator solve some annoying problems for us, and they do it elegantly and free of charge.</span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<span class="rvts8">Here in North America, the pronunciation of Qt as "cute" does sound a little odd and, well, cutesy, to the ear of many engineers and programmers. &nbsp;But the Qt people wrote it, and they get to decide what it is called and how to pronounce it, and that is how they pronounce it! &nbsp;:-) &nbsp;And anyways, for many people, pronouncing it as "que tee" means QT or Quick Time. &nbsp;Don't confuse Qt with QT, they have nothing to do with each other.</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3"><span class="rvts8">Here is what FeetWetCoding</span><span class="rvts12"> is NOT:</span></p>
+<p class="rvps3"><span class="rvts12"><br></span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<span class="rvts8">FeetWetCoding is not a way to learn Python, Java, WxWidgets, OpenGL, or any other language or software library besides C++/Qt. &nbsp;We (or someone else) may expand the FeetWetCoding concept in the future to introduce other languages and libraries, but that does not exist at the time this document was written.</span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<span class="rvts8">This set of source does not work with Eclipse, NetBeans, VisualStudio, or any other development environment besides Qt and QtCreator. &nbsp;Again, we may try to adapt FeetWetCoding to other build environments and tools at some point, but there is no plan to even </span><span class="rvts11">start</span><span class="rvts8"> to think about that at the current time.</span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<span class="rvts8">This is NOT a complete, official, academic style textbook way to learn C++! &nbsp;</span><span class="rvts25">You will need to take a programming class or get a good C++ textbook</span><span class="rvts8">, either one that we recommend, or another one. &nbsp;If you intend to make programming your career, you will benefit greatly from proper academic instruction. &nbsp;FeetWetCoding does not, and never will claim to be a complete, authoritative, formal way to learn C++. &nbsp;We try to teach the right things the right way, and it is a core goal for us that we never teach bad habits. &nbsp;If you are an experienced programmer and you see something in the exercises that you think is teaching bad programming habits, your feedback is welcome. &nbsp;We may have reasons for doing things the way we are doing them, but we will always listen to feedback on the exercises. &nbsp;We sincerely want to get those exercises as right as we can.</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
 <p class="rvps3"><span class="rvts7"><br></span></p>
-<p class="rvps3"><span class="rvts10">documentation generated by HelpNDoc </span><span class="rvts10">3/20/2012 8:03 PM</span></p>
-<p class="rvps3"><span class="rvts10"><div style="font-family:Arial;font-size:12pt;background-color:#EEEEEE;background-color:teal;color:white;padding:4px;font-weight:bold">
-FeetWetCoding version 0.2r1 copyright (c) 2011,2012 Robert Holder, Janice Dugger.
+<p class="rvps3"><span class="rvts8">documentation generated by HelpNDoc </span><span class="rvts8">3/24/2012 4:03 PM</span></p>
+<p class="rvps3"><span class="rvts8"><div style="font-family:Arial;font-size:12pt;background-color:#EEEEEE;background-color:teal;color:white;padding:4px;font-weight:bold">
+FeetWetCoding version 0.2.2 released 2012Mar24 copyright (c) 2011,2012 Robert Holder, Janice Dugger.
 <br/>
 <!--
 <style>
@@ -118,7 +134,7 @@ a:link {color:#FFFFFF;}
 -->
 ...click the ZIP button on our <a href="https://github.com/FeetWetCoding/FeetWetCoding" TARGET="_top">Github page</a> for the latest source!
 </div></span></p>
-<p class="rvps8"><span class="rvts40">Created with the Personal Edition of HelpNDoc: </span><a class="rvts41" href="http://www.helpndoc.com">Free HTML Help documentation generator</a></p>
+<p class="rvps7"><span class="rvts23">Created with the Personal Edition of HelpNDoc: </span><a class="rvts24" href="http://www.helpndoc.com">Free HTML Help documentation generator</a></p>
 </div>
 	
 	</body>

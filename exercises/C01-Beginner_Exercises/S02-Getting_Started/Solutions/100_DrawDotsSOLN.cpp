@@ -12,7 +12,10 @@ void DrawDotsSoln::runExercise()
     // USAGE: fwcDrawRectangle(x, y, width, height, color, linewidth);
     // (solid is an optional parameter: you can use it or leave it out.)
 
-    fwcDrawLine(200, 100, 200, 101, BLACK, 1);
-    fwcDrawCircle(150, 250, 1, BLUE, 1);
-    fwcDrawRectangle(250, 250, 1, 1, RED, 1);
+    fwcDrawRectangle(0, 0, 400, 400, BLACK, 1, true);
+
+    fwcDrawRectangle(100, 200, 1, 1, RED, 1);
+    fwcDrawLine(200, 200, 200, 201, GREEN, 1);
+    fwcDrawCircle(300, 200, 1, BLUE, 1);
+
 }

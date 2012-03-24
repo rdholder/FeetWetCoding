@@ -10,14 +10,24 @@
 	<!--[if lte IE 8]>
 		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
 	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/hnd.js"></script>
 	<script type="text/javascript"><!--
-		var sTopicId = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
 		if (top.frames.length == 0)
-			top.location.href = "FeetWetCoding.html?" + sTopicId
+		{
+			var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+			top.location.href = "FeetWetCoding.html?" + sTopicUrl;
+		}
 		else if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
-			top.FrameTOC.SelectTocItem(sTopicId);
+		{
+			top.FrameTOC.SelectTocItem("RestoreanExercise");
+		}
 	</script>
 </head>
 
@@ -28,10 +38,10 @@
 				<h1>Restore an Exercise</h1>
 				
 				<div id="topic_breadcrumb">
-					<a href="HELP.html">HELP</a> &rsaquo;&rsaquo; </div>
+					<a href="FeetWetCodingHelp.html">FeetWetCoding Help</a> &rsaquo;&rsaquo; </div>
 				</div>
 			<div id="topic_header_nav">
-				<a href="HELP.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				<a href="FeetWetCodingHelp.html"><img src="img/arrow_up.png" alt="Parent"/></a>
 				
 				<a href="QtandQtCreator.html"><img src="img/arrow_left.png" alt="Previous"/></a>
 				
@@ -42,31 +52,28 @@
 		</div>
 	<div id="topic_content">
 		
-<p class="rvps3"><span class="rvts10">You might hose your exercise code to the point where you want to start over from the original exercise code. &nbsp;We have talked about ways to make this easier, but at this time, the way to do it is to copy the original file for the exercise you are working on from the feetwetcoding .zip file that you downloaded. &nbsp;If you don't have that .zip file anymore, you can just download it again by clicking the ZIP button on this page:</span></p>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
-<li class="rvps3"><span class="rvts10">https://github.com/FeetWetCoding/FeetWetCoding</span></li>
-</ul>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">...however you should be aware that the exercise might have changed since you last downloaded feetwetcoding, so be sure to run the exercise and see if it is different from what you had been working on. &nbsp;Even if it has changed, it should essentially still cover the same learning material you were working on.</span></p>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">Also, realize that sometimes, as we are developing this software, the exercise numbers change. &nbsp;So for example</span></p>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
-<li class="rvps3"><span class="rvts10">400_C01S05_OYO5.cpp</span></li>
-</ul>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">...recently (2012Mar) changed to:</span></p>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
-<li class="rvps3"><span class="rvts10">480_C01S05_OYO5.cpp</span></li>
-</ul>
+<p class="rvps3"><span class="rvts8">You might hose your exercise code to the point where you want to start over from the original exercise code. &nbsp;We have talked about ways to make this easier, but at this time, the way to do it is to copy the original file for the exercise you are working on from the feetwetcoding .zip file that you downloaded. &nbsp;If you don't have that .zip file anymore, you can just download it again by clicking the ZIP button on this page:</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<span class="rvts8">https://github.com/FeetWetCoding/FeetWetCoding</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3"><span class="rvts8">...however you should be aware that the exercise might have changed since you last downloaded feetwetcoding, so be sure to run the exercise and see if it is different from what you had been working on. &nbsp;Even if it has changed, it should essentially still cover the same learning material you were working on.</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3"><span class="rvts8">Also, realize that sometimes, as we are developing this software, the exercise numbers change. &nbsp;So for example</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<span class="rvts8">400_C01S05_OYO5.cpp</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3"><span class="rvts8">...recently (2012Mar) changed to:</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<span class="rvts8">480_C01S05_OYO5.cpp</span></p>
 <p class="rvps3"><span class="rvts7"><br></span></p>
-<p class="rvps3"><span class="rvts10">The exercise code is still the same, it just has a different number now.</span></p>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">documentation generated by HelpNDoc </span><span class="rvts10">3/20/2012 8:03 PM</span></p>
-<p class="rvps3"><span class="rvts10"><div style="font-family:Arial;font-size:12pt;background-color:#EEEEEE;background-color:teal;color:white;padding:4px;font-weight:bold">
-FeetWetCoding version 0.2r1 copyright (c) 2011,2012 Robert Holder, Janice Dugger.
+<p class="rvps3"><span class="rvts8">The exercise code is still the same, it just has a different number now.</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3"><span class="rvts8">documentation generated by HelpNDoc </span><span class="rvts8">3/24/2012 4:03 PM</span></p>
+<p class="rvps3"><span class="rvts8"><div style="font-family:Arial;font-size:12pt;background-color:#EEEEEE;background-color:teal;color:white;padding:4px;font-weight:bold">
+FeetWetCoding version 0.2.2 released 2012Mar24 copyright (c) 2011,2012 Robert Holder, Janice Dugger.
 <br/>
 <!--
 <style>
@@ -76,7 +83,7 @@ a:link {color:#FFFFFF;}
 -->
 ...click the ZIP button on our <a href="https://github.com/FeetWetCoding/FeetWetCoding" TARGET="_top">Github page</a> for the latest source!
 </div></span></p>
-<p class="rvps8"><span class="rvts40">Created with the Personal Edition of HelpNDoc: </span><a class="rvts41" href="http://www.helpndoc.com/feature-tour">Easily create HTML Help documents</a></p>
+<p class="rvps7"><span class="rvts23">Created with the Personal Edition of HelpNDoc: </span><a class="rvts24" href="http://www.helpndoc.com/feature-tour">Easily create HTML Help documents</a></p>
 </div>
 	
 	</body>

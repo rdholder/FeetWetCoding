@@ -10,14 +10,24 @@
 	<!--[if lte IE 8]>
 		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
 	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/hnd.js"></script>
 	<script type="text/javascript"><!--
-		var sTopicId = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
 		if (top.frames.length == 0)
-			top.location.href = "FeetWetCoding.html?" + sTopicId
+		{
+			var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+			top.location.href = "FeetWetCoding.html?" + sTopicUrl;
+		}
 		else if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
-			top.FrameTOC.SelectTocItem(sTopicId);
+		{
+			top.FrameTOC.SelectTocItem("ReleaseChecklist");
+		}
 	</script>
 </head>
 
@@ -42,129 +52,129 @@
 		</div>
 	<div id="topic_content">
 		
-<p class="rvps2"><span class="rvts45">Print this out and check 'em off for every master release so we don't forget any steps:</span></p>
-<p class="rvps2"><span class="rvts45"><br></span></p>
+<p class="rvps2"><span class="rvts20">Print this out and check 'em off for every master release so we don't forget any steps:</span></p>
+<p class="rvps2"><span class="rvts20"><br></span></p>
 <div class="rvps2"><table width="100%" border="1" cellpadding="1" cellspacing="2" style="border-color: #000000; border-style: solid;">
 <tr valign="top">
-<td width="24" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts309">&radic;</span></p>
+<td width="24" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts161">&radic;</span></p>
 </td>
-<td width="803" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts310">Task</span></p>
-</td>
-</tr>
-<tr valign="top">
-<td width="24" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts306"><br></span></p>
-</td>
-<td width="803" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts306">Create Version Release Issue in google code project.</span></p>
+<td width="803" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts162">Task</span></p>
 </td>
 </tr>
 <tr valign="top">
-<td width="24" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts306"><br></span></p>
+<td width="24" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts158"><br></span></p>
 </td>
-<td width="803" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts306">In google code, pull up all "Fixed" issues and verify that they have been implemented correctly.</span></p>
-</td>
-</tr>
-<tr valign="top">
-<td width="24" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts306"><br></span></p>
-</td>
-<td width="803" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts306">Edit helpndoc Version Information Page.</span></p>
+<td width="803" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts158">Create Version Release Issue in google code project.</span></p>
 </td>
 </tr>
 <tr valign="top">
-<td width="24" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts306"><br></span></p>
+<td width="24" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts158"><br></span></p>
 </td>
-<td width="803" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts306">Change version number in both README.html files, the file LICENSE.txt, and in the helpndoc LICENSE page.</span></p>
-</td>
-</tr>
-<tr valign="top">
-<td width="24" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts306"><br></span></p>
-</td>
-<td width="803" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts306">Generate documentation for distro.</span></p>
+<td width="803" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts158">In google code, pull up all "Fixed" issues and verify that they have been implemented correctly.</span></p>
 </td>
 </tr>
 <tr valign="top">
-<td width="24" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts306"><br></span></p>
+<td width="24" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts158"><br></span></p>
 </td>
-<td width="803" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts306">Verify documentation coherence and copy the .hnd file to google docs.</span></p>
-</td>
-</tr>
-<tr valign="top">
-<td width="24" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts306"><br></span></p>
-</td>
-<td width="803" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts306">Zip help/html dir, xfer up to feetwetcoding.com, unzip, and verify changes on pages.</span></p>
-<p class="rvps2"><span class="rvts306">(in chrome options &gt; Under the Hood &gt; Content Settings &gt; All cookies and site data</span></p>
-<p class="rvps2"><span class="rvts306">then search on feetwet and blow out the entries for feetwetcoding.com)</span></p>
+<td width="803" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts158">Edit helpndoc Version Information Page.</span></p>
 </td>
 </tr>
 <tr valign="top">
-<td width="24" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts306"><br></span></p>
+<td width="24" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts158"><br></span></p>
 </td>
-<td width="803" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts306">Ensure github dev branch has all latest changes for dev from both our machines.</span></p>
-</td>
-</tr>
-<tr valign="top">
-<td width="24" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts306"><br></span></p>
-</td>
-<td width="803" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts306">Pull down distro from dev branch ZIP button and build from scratch.</span></p>
+<td width="803" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts158">Change version number in both README.html files, the file LICENSE.txt, and in the helpndoc LICENSE page.</span></p>
 </td>
 </tr>
 <tr valign="top">
-<td width="24" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts306"><br></span></p>
+<td width="24" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts158"><br></span></p>
 </td>
-<td width="803" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts306">Verify functionality of changes, spot check core functionality.</span></p>
-</td>
-</tr>
-<tr valign="top">
-<td width="24" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts306"><br></span></p>
-</td>
-<td width="803" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts306">Merge dev into master locally.</span></p>
+<td width="803" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts158">Generate documentation for distro.</span></p>
 </td>
 </tr>
 <tr valign="top">
-<td width="24" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts306"><br></span></p>
+<td width="24" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts158"><br></span></p>
 </td>
-<td width="803" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts306">Push master up to github, and fetch/merge on both machines.</span></p>
-</td>
-</tr>
-<tr valign="top">
-<td width="24" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts306"><br></span></p>
-</td>
-<td width="803" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts306">Pull distro down from master branch ZIP button and build from scratch on Windows, Mac &amp; Linux. &nbsp;On the Mac, reduce system screen resolution to 1024x768 to verify we are good at that rez.</span></p>
+<td width="803" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts158">Verify documentation coherence and copy the .hnd file to google docs.</span></p>
 </td>
 </tr>
 <tr valign="top">
-<td width="24" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts306"><br></span></p>
+<td width="24" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts158"><br></span></p>
 </td>
-<td width="803" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts306">Verify functionality of changes, spot check core functionality.</span></p>
-</td>
-</tr>
-<tr valign="top">
-<td width="24" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts306"><br></span></p>
-</td>
-<td width="803" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts306">Switch back to dev branch on both machines.</span></p>
+<td width="803" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts158">Zip help/html dir, xfer up to feetwetcoding.com, unzip, and verify changes on pages.</span></p>
+<p class="rvps2"><span class="rvts158">(in chrome options &gt; Under the Hood &gt; Content Settings &gt; All cookies and site data</span></p>
+<p class="rvps2"><span class="rvts158">then search on feetwet and blow out the entries for feetwetcoding.com)</span></p>
 </td>
 </tr>
 <tr valign="top">
-<td width="24" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts306"><br></span></p>
+<td width="24" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts158"><br></span></p>
 </td>
-<td width="803" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts306">Publish new release notice on feetwetcoding.com front page, google+ project stream, facebook stream, google groups.</span></p>
-</td>
-</tr>
-<tr valign="top">
-<td width="24" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts306"><br></span></p>
-</td>
-<td width="803" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts306">Upload helpndoc file to google docs.</span></p>
+<td width="803" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts158">Ensure github dev branch has all latest changes for dev from both our machines.</span></p>
 </td>
 </tr>
 <tr valign="top">
-<td width="24" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts306"><br></span></p>
+<td width="24" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts158"><br></span></p>
 </td>
-<td width="803" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts306">Close Version Release Issue in google code project.</span></p>
+<td width="803" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts158">Pull down distro from dev branch ZIP button and build from scratch.</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="24" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts158"><br></span></p>
+</td>
+<td width="803" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts158">Verify functionality of changes, spot check core functionality.</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="24" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts158"><br></span></p>
+</td>
+<td width="803" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts158">Merge dev into master locally.</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="24" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts158"><br></span></p>
+</td>
+<td width="803" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts158">Push master up to github, and fetch/merge on both machines.</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="24" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts158"><br></span></p>
+</td>
+<td width="803" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts158">Pull distro down from master branch ZIP button and build from scratch on Windows, Mac &amp; Linux. &nbsp;On the Mac, reduce system screen resolution to 1024x768 to verify we are good at that rez.</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="24" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts158"><br></span></p>
+</td>
+<td width="803" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts158">Verify functionality of changes, spot check core functionality.</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="24" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts158"><br></span></p>
+</td>
+<td width="803" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts158">Switch back to dev branch on both machines.</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="24" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts158"><br></span></p>
+</td>
+<td width="803" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts158">Publish new release notice on feetwetcoding.com front page, google+ project stream, facebook stream, google groups.</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="24" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts158"><br></span></p>
+</td>
+<td width="803" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts158">Upload helpndoc file to google docs.</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="24" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts158"><br></span></p>
+</td>
+<td width="803" style="border-color: #000000; border-style: solid;"><p class="rvps2"><span class="rvts158">Close Version Release Issue in google code project.</span></p>
 </td>
 </tr>
 </table>
 </div>
-<p class="rvps2"><span class="rvts45"><br></span></p>
-<p class="rvps8"><span class="rvts40">Created with the Personal Edition of HelpNDoc: </span><a class="rvts41" href="http://www.helpndoc.com/feature-tour/iphone-website-generation">Easily create iPhone documentation</a></p>
+<p class="rvps2"><span class="rvts20"><br></span></p>
+<p class="rvps7"><span class="rvts23">Created with the Personal Edition of HelpNDoc: </span><a class="rvts24" href="http://www.helpndoc.com/feature-tour/iphone-website-generation">Easily create iPhone documentation</a></p>
 </div>
 	
 	</body>
