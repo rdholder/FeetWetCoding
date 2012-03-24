@@ -315,7 +315,23 @@ QGraphicsItem* fwcDrawFloatRender( float number, int x, int y, Color color, int 
 
 QGraphicsItem* fwcDrawImageRender( std::string filename, int x, int y )
 {
-    QPixmap pixmap( filename.c_str() );
+    QString imageFilePath(getProjectPath() + "/images/" + QString(filename.c_str()));
+
+    if ( false == QFile::exists(imageFilePath) )
+    {
+        SeeOut seeout;
+        seeout << "ERROR: Can't find image file " << imageFilePath.toStdString() << "\n";
+        return NULL;
+    }
+
+    QPixmap pixmap;
+    if ( false == pixmap.load(imageFilePath) )
+    {
+        SeeOut seeout;
+        seeout << "ERROR: Failed to create pixmap from image file " << imageFilePath.toStdString() << "\n";
+        return NULL;
+    }
+
     QGraphicsPixmapItem *newPixmap = new QGraphicsPixmapItem(pixmap);
 
     // Load an image from a file and add it to the scene
@@ -429,9 +445,14 @@ std::string getNameForColor( Color color )
     };
 }
 
-QString getDefaultConfigFilePath()
+QString getProjectPath()
 {
-    QString configfile("defaultconfig.txt");
+    //Project path will contain the project file
+    QString projectFile("FeetWetCoding.pro");
+
+    //Assuming we're running from the default
+    //build directory, which lives in the same
+    //parent directory as the project directory
     QDir parentDir(QDir::current());
     if ( false == parentDir.cdUp() )
     {
@@ -450,13 +471,19 @@ QString getDefaultConfigFilePath()
 
     for ( int i=0; i < dirnames.length(); ++i )
     {
-        if ( QFile::exists( path + "/" + dirnames.at(i) + "/" + configfile ) )
+        if ( QFile::exists( path + "/" + dirnames.at(i) + "/" + projectFile ) )
         {
             sourcedir.setPath(path + "/" + dirnames.at(i));
         }
     }
 
-    return ( sourcedir.path() + "/" + configfile);
+    return ( sourcedir.path() );
+}
+
+QString getDefaultConfigFilePath()
+{
+    QString configfile("defaultconfig.txt");
+    return ( getProjectPath() + "/" + configfile );
 }
 
 // random:  returns a random int between 0 and "biggest" inclusive

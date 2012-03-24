@@ -5,17 +5,20 @@
 
 void DrawingImages::runExercise()
 {
-    // WARNING!  Please do not try to add your own images yet!  I know it's fun,
-    // but until you are more familiar with Qt Creator and C++, you will most
-    // likely just hose your FeetWetCoding project, and then you may not be able to
-    // get any exercises to run at all!  We will show you how to use your own
-    // images down the road, but there is a lot to learn first.  :-)
+    // USAGE: fwcDrawImage("filename.png", x, y);
+    //        filename.png must be an image file in your FeetWetCoding
+    //        project folder's "img" sub-directory.
 
-    // USAGE: fwcDrawImage("images:/filename.png", x, y);
-    fwcDrawImage(":images/ken-thompson-l-and-dennis-ritchie-r100x65.png", 10, 10);
-    fwcDrawImage(":images/BrianKernighan50x58.png", 130, 10);
-    fwcDrawImage(":images/BjarneStroustrup50x55.png", 200, 10);
-    fwcDrawImage(":images/DuckFeet100x45.bmp", 10, 200);
-    fwcDrawImage(":images/spaceship50x59.jpg", 200, 200);
-    fwcDrawImage(":images/clock100x100.gif", 280, 200);
+    fwcDrawImage("ken-thompson-l-and-dennis-ritchie-r100x65.png", 10, 10);
+    fwcDrawImage("BrianKernighan50x58.png", 130, 10);
+    fwcDrawImage("BjarneStroustrup50x55.png", 200, 10);
+    fwcDrawImage("DuckFeet100x45.bmp", 10, 200);
+    fwcDrawImage("spaceship50x59.jpg", 200, 200);
+    fwcDrawImage("clock100x100.gif", 280, 200);
+
+    // NOTE: This demonstrates what happens when you pass a bad
+    //       filename to fwcDrawImage. Notice the message that
+    //       appears in your "Exercise output" panel when you run this.
+
+    fwcDrawImage("badfilename.gif", 280, 200);
 }

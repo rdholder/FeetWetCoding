@@ -5,16 +5,18 @@
 
 void DrawingImagesSoln::runExercise()
 {
-    // USAGE: fwcDrawImage("images:/filename.png", x, y);
+    // USAGE: fwcDrawImage("filename.png", x, y);
+    //        filename.png must be an image file in your FeetWetCoding
+    //        project folder's "img" sub-directory.
 
-    fwcDrawImage(":images/ken-thompson-l-and-dennis-ritchie-r100x65.png", 10, 10);
-    fwcDrawImage(":images/BrianKernighan50x58.png", 130, 10);
-    fwcDrawImage(":images/BjarneStroustrup50x55.png", 200, 10);
-    fwcDrawImage(":images/Qtlogo59x71.png", 300, 10);
-    fwcDrawImage(":images/DuckFeet100x45.bmp", 150, 340);
-    fwcDrawImage(":images/clock100x100.gif", 150, 150);
-    fwcDrawImage(":images/spaceship50x59.jpg", 175, 80);
-    fwcDrawImage(":images/spaceship50x59.jpg", 70, 160);
-    fwcDrawImage(":images/spaceship50x59.jpg", 280, 160);
-    fwcDrawImage(":images/spaceship50x59.jpg", 175, 260);
+    fwcDrawImage("ken-thompson-l-and-dennis-ritchie-r100x65.png", 10, 10);
+    fwcDrawImage("BrianKernighan50x58.png", 130, 10);
+    fwcDrawImage("BjarneStroustrup50x55.png", 200, 10);
+    fwcDrawImage("Qtlogo59x71.png", 300, 10);
+    fwcDrawImage("DuckFeet100x45.bmp", 150, 340);
+    fwcDrawImage("clock100x100.gif", 150, 150);
+    fwcDrawImage("spaceship50x59.jpg", 175, 80);
+    fwcDrawImage("spaceship50x59.jpg", 70, 160);
+    fwcDrawImage("spaceship50x59.jpg", 280, 160);
+    fwcDrawImage("spaceship50x59.jpg", 175, 260);
 }
