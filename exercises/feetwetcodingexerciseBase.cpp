@@ -339,13 +339,13 @@ void FeetWetCodingExerciseBase::DrawReferenceBox()
     mRefBoxItems.push_back(fwcDrawText(oss.str(), WINDOW_WIDTH/2-BORDER/2, WINDOW_HEIGHT, GRAY, dimsSize));
 
     oss.str("");
-    oss << "YOUR Drawing Area";
+    oss << "Make YOUR Drawing Area...";
     qApp->font().setPointSize(textSize);
     strWidth=QFontMetrics(QFont(qApp->font())).width(oss.str().c_str());
     mRefBoxItems.push_back(fwcDrawText( oss.str(), WINDOW_WIDTH*.25-strWidth/2, -20, GRAY, 10));
 
     oss.str("");
-    oss << "SOLUTION Drawing Area";
+    oss << "...look like the SOLUTION Drawing Area";
     qApp->font().setPointSize(textSize);
     strWidth=QFontMetrics(QFont(qApp->font())).width(oss.str().c_str());
     mRefBoxItems.push_back(fwcDrawText( oss.str(), WINDOW_WIDTH*.75-strWidth/2, -20, GRAY, textSize));

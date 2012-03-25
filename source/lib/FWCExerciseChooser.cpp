@@ -9,11 +9,6 @@
 #include <QDir>
 #include <QDialog>
 
-//QMutex ExerciseLauncher::eventMutex;
-//QMutex ExerciseLauncher::itemMutex;
-//bool ExerciseLauncher::mNewKeyEventReceived(false);
-//QKeySequence ExerciseLauncher::mKey(0);
-
 extern QDialog *theWindow;
 
 FWCExerciseChooser::FWCExerciseChooser(QObject *parent)

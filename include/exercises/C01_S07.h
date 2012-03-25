@@ -6,17 +6,17 @@
 
 #include <exercises/FeetWetCodingExerciseBase.h>
 
-//class WhileLoopIntroSoln : public FeetWetCodingSolution
-//{
-//    Q_OBJECT
-//public:
-//    explicit WhileLoopIntroSoln(QObject *parent = 0)
-//        :FeetWetCodingSolution(parent){}
+class Arrays1Soln : public FeetWetCodingSolution
+{
+    Q_OBJECT
+public:
+    explicit Arrays1Soln(QObject *parent = 0)
+        :FeetWetCodingSolution(parent){}
 
 
-//protected:
-//    void runExercise();
-//};
+protected:
+    void runExercise();
+};
 
 class Arrays1 : public FeetWetCodingExercise
 {
@@ -26,12 +26,19 @@ public:
         :FeetWetCodingExercise(parent)
     {
         //If this exercise has a solution, launch it
-        //this->setupSolution(parent);
+        this->setupSolution(parent);
     }
 
 protected:
     void runExercise();
-    void setupSolution(QObject *){}
+    void setupSolution(QObject *parent=0)
+    {
+        mSolutionPtr = new Arrays1Soln(parent);
+        if ( mSolutionPtr )
+        {
+            mSolutionPtr->start();
+        }
+    }
 };
 
 
