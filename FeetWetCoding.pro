@@ -179,7 +179,8 @@ SOURCES += \
     mycode/src/MyCode9.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/060_ChangeFontSize.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/060_ChangeFontSizeSOLN.cpp \
-    exercises/feetwetcodingexerciseBase.cpp
+    exercises/feetwetcodingexerciseBase.cpp \
+    exercises/C01-Beginner_Exercises/S07-Storing_Data/Solutions/050_Arrays1SOLN.cpp
 
 
 HEADERS += \
