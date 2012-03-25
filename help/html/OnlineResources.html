@@ -10,14 +10,24 @@
 	<!--[if lte IE 8]>
 		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
 	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/hnd.js"></script>
 	<script type="text/javascript"><!--
-		var sTopicId = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
 		if (top.frames.length == 0)
-			top.location.href = "FeetWetCoding.html?" + sTopicId
+		{
+			var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+			top.location.href = "FeetWetCoding.html?" + sTopicUrl;
+		}
 		else if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
-			top.FrameTOC.SelectTocItem(sTopicId);
+		{
+			top.FrameTOC.SelectTocItem("OnlineResources");
+		}
 	</script>
 </head>
 
@@ -28,10 +38,10 @@
 				<h1>Online Resources</h1>
 				
 				<div id="topic_breadcrumb">
-					<a href="HELP.html">HELP</a> &rsaquo;&rsaquo; </div>
+					<a href="FeetWetCodingHelp.html">FeetWetCoding Help</a> &rsaquo;&rsaquo; </div>
 				</div>
 			<div id="topic_header_nav">
-				<a href="HELP.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				<a href="FeetWetCodingHelp.html"><img src="img/arrow_up.png" alt="Parent"/></a>
 				
 				<a href="RestoreanExercise.html"><img src="img/arrow_left.png" alt="Previous"/></a>
 				
@@ -42,47 +52,58 @@
 		</div>
 	<div id="topic_content">
 		
-<p class="rvps3"><span class="rvts14">Other C++ Tutorial Resources</span></p>
-<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
-<li class="rvps3"><span class="rvts10"> </span><a class="rvts12" href="http://www.cplusplus.com/doc/tutorial/" target="_blank">cplusplus Tutorial</a><span class="rvts10"> -- an online tutorial to help you learn C++. </span></li>
-<li class="rvps3"><span class="rvts10"> </span><a class="rvts12" href="http://www.learncpp.com/" target="_blank">learncpp.com</a><span class="rvts10"> </span></li>
-<li class="rvps3"><span class="rvts10"> </span><a class="rvts12" href="http://www.functionx.com/cpp/" target="_blank">functionx.com</a><span class="rvts10"> </span></li>
-</ul>
-<p class="rvps3"><span class="rvts14"><br></span></p>
-<p class="rvps3"><span class="rvts14">C++ Libraries &amp; Toolkits</span></p>
-<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
-<li class="rvps3"><span class="rvts10"> </span><a class="rvts12" href="http://www.thefreecountry.com/sourcecode/cpp.shtml" target="_blank">Freecountry's list of free C/C++ Libraries</a><span class="rvts10"> </span></li>
-<li class="rvps3"><span class="rvts10"> </span><a class="rvts12" href="http://pocoproject.org/" target="_blank">POCO Networking Libraries</a><span class="rvts10"> &nbsp;</span></li>
-</ul>
-<p class="rvps3"><span class="rvts14"><br></span></p>
-<p class="rvps3"><span class="rvts14">Resources</span></p>
+<p class="rvps3"><span class="rvts10">Other C++ Tutorial Resources</span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<span class="rvts8"> </span><a class="rvts9" href="http://www.cplusplus.com/doc/tutorial/" target="_blank">cplusplus Tutorial</a><span class="rvts8"> -- an online tutorial to help you learn C++. </span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<span class="rvts8"> </span><a class="rvts9" href="http://www.learncpp.com/" target="_blank">learncpp.com</a><span class="rvts8"> </span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<span class="rvts8"> </span><a class="rvts9" href="http://www.functionx.com/cpp/" target="_blank">functionx.com</a><span class="rvts8"> </span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
-<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
-<li class="rvps3"><span class="rvts10"> </span><a class="rvts12" href="http://www.cplusplus.com/forum/beginner/" target="_blank">cplusplus beginner forum</a><span class="rvts10"> </span></li>
-<li class="rvps3"><span class="rvts10"> </span><a class="rvts12" href="http://stackoverflow.com/" target="_blank">stackoverflow.com</a><span class="rvts10"> -- a place to ask and answer programming questions </span></li>
-<li class="rvps3"><span class="rvts10"> </span><a class="rvts12" href="http://www.pidgin.im/" target="_blank">Pidgin</a><span class="rvts10"> -- a jabber/irc/etc. client.</span></li>
-<li class="rvps3"><span class="rvts10"> </span><a class="rvts12" href="http://jcatki.no-ip.org:8080/c++/" target="_blank">##C++ freenode irc info page</a><span class="rvts10"> </span></li>
-<li class="rvps3"><span class="rvts10"> </span><a class="rvts12" href="http://developer.qt.nokia.com/resources" target="_blank">Qt Developer Network</a><span class="rvts10"> -- lots of great resources here!</span></li>
-<li class="rvps3"><span class="rvts10"> </span><a class="rvts12" href="http://www.cygwin.com/" target="_blank">Cygwin</a><span class="rvts10"> -- a unixy shell environment for windows (includes mingw.)</span></li>
-<li class="rvps3"><span class="rvts10"> </span><a class="rvts12" href="http://git-scm.com/" target="_blank">Git</a><span class="rvts10"> -- a distributed version control system. </span></li>
-<li class="rvps3"><span class="rvts10"> </span><a class="rvts12" href="https://github.com/" target="_blank">Github</a><span class="rvts10"> -- git repository hosting.</span></li>
-<li class="rvps3"><span class="rvts10"> </span><a class="rvts12" href="https://gitorious.org/" target="_blank">Gitorious</a><span class="rvts10"> -- git repository hosting.</span></li>
-<li class="rvps3"><span class="rvts10"> </span><a class="rvts12" href="http://gcc.gnu.org/onlinedocs/" target="_blank">gcc</a><span class="rvts10"> -- online documentation for the gcc compiler. </span></li>
-<li class="rvps3"><span class="rvts10"> </span><a class="rvts12" href="http://www.gnu.org/software/make/" target="_blank">make</a><span class="rvts10"> -- the gnu make tool. </span></li>
-<li class="rvps3"><span class="rvts10"> </span><a class="rvts12" href="http://www.youtube.com/user/FeetWetCoding?feature=guide" target="_blank">FeetWetCoding Youtube Channel</a><span class="rvts10"> -- no original videos yet, but some links to interesting videos by others.</span></li>
-</ul>
+<p class="rvps3"><span class="rvts10">C++ Libraries &amp; Toolkits</span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<span class="rvts8"> </span><a class="rvts9" href="http://www.thefreecountry.com/sourcecode/cpp.shtml" target="_blank">Freecountry's list of free C/C++ Libraries</a><span class="rvts8"> </span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<span class="rvts8"> </span><a class="rvts9" href="http://pocoproject.org/" target="_blank">POCO Networking Libraries</a><span class="rvts8"> &nbsp;</span></p>
 <p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts14">gittown</span></p>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">We are also working on </span><a class="rvts12" href="https://github.com/rdholder/gittown" target="_blank">gittown</a><span class="rvts10">, a git repository designed to help us (and maybe others) learn to use git in a fun way. &nbsp;As of 1Feb2012, it is just a few files. &nbsp;The framework of what we want to do with it is not there yet, and it is not yet helpful to anyone trying to learn git. &nbsp;But soon! &nbsp;:-)</span></p>
-<p class="rvps2"><span class="rvts45"><br></span></p>
-<p class="rvps2"><span class="rvts45">Forums</span></p>
-<p class="rvps2"><span class="rvts45"><br></span></p>
-<p class="rvps2"><span class="rvts45">IRC</span></p>
-<p class="rvps2"><span class="rvts45"><br></span></p>
-<p class="rvps3"><span class="rvts10">documentation generated by HelpNDoc </span><span class="rvts10">3/20/2012 8:03 PM</span></p>
-<p class="rvps3"><span class="rvts10"><div style="font-family:Arial;font-size:12pt;background-color:#EEEEEE;background-color:teal;color:white;padding:4px;font-weight:bold">
-FeetWetCoding version 0.2r1 copyright (c) 2011,2012 Robert Holder, Janice Dugger.
+<p class="rvps3"><span class="rvts10">Resources</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<span class="rvts8"> </span><a class="rvts9" href="http://www.cplusplus.com/forum/beginner/" target="_blank">cplusplus beginner forum</a><span class="rvts8"> </span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<span class="rvts8"> </span><a class="rvts9" href="http://stackoverflow.com/" target="_blank">stackoverflow.com</a><span class="rvts8"> -- a place to ask and answer programming questions </span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<span class="rvts8"> </span><a class="rvts9" href="http://www.pidgin.im/" target="_blank">Pidgin</a><span class="rvts8"> -- a jabber/irc/etc. client.</span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<span class="rvts8"> </span><a class="rvts9" href="http://jcatki.no-ip.org:8080/c++/" target="_blank">##C++ freenode irc info page</a><span class="rvts8"> </span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<span class="rvts8"> </span><a class="rvts9" href="http://developer.qt.nokia.com/resources" target="_blank">Qt Developer Network</a><span class="rvts8"> -- lots of great resources here!</span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<span class="rvts8"> </span><a class="rvts9" href="http://www.cygwin.com/" target="_blank">Cygwin</a><span class="rvts8"> -- a unixy shell environment for windows (includes mingw.)</span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<span class="rvts8"> </span><a class="rvts9" href="http://git-scm.com/" target="_blank">Git</a><span class="rvts8"> -- a distributed version control system. </span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<span class="rvts8"> </span><a class="rvts9" href="https://github.com/" target="_blank">Github</a><span class="rvts8"> -- git repository hosting.</span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<span class="rvts8"> </span><a class="rvts9" href="https://gitorious.org/" target="_blank">Gitorious</a><span class="rvts8"> -- git repository hosting.</span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<span class="rvts8"> </span><a class="rvts9" href="http://gcc.gnu.org/onlinedocs/" target="_blank">gcc</a><span class="rvts8"> -- online documentation for the gcc compiler. </span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<span class="rvts8"> </span><a class="rvts9" href="http://www.gnu.org/software/make/" target="_blank">make</a><span class="rvts8"> -- the gnu make tool. </span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<span class="rvts8"> </span><a class="rvts9" href="http://www.youtube.com/user/FeetWetCoding?feature=guide" target="_blank">FeetWetCoding Youtube Channel</a><span class="rvts8"> -- no original videos yet, but some links to interesting videos by others.</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3"><span class="rvts10">gittown</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3"><span class="rvts8">We are also working on </span><a class="rvts9" href="https://github.com/rdholder/gittown" target="_blank">gittown</a><span class="rvts8">, a git repository designed to help us (and maybe others) learn to use git in a fun way. &nbsp;As of 1Feb2012, it is just a few files. &nbsp;The framework of what we want to do with it is not there yet, and it is not yet helpful to anyone trying to learn git. &nbsp;But soon! &nbsp;:-)</span></p>
+<p class="rvps2"><span class="rvts20"><br></span></p>
+<p class="rvps2"><span class="rvts20">Forums</span></p>
+<p class="rvps2"><span class="rvts20"><br></span></p>
+<p class="rvps2"><span class="rvts20">IRC</span></p>
+<p class="rvps2"><span class="rvts20"><br></span></p>
+<p class="rvps3"><span class="rvts8">documentation generated by HelpNDoc </span><span class="rvts8">3/24/2012 4:03 PM</span></p>
+<p class="rvps3"><span class="rvts8"><div style="font-family:Arial;font-size:12pt;background-color:#EEEEEE;background-color:teal;color:white;padding:4px;font-weight:bold">
+FeetWetCoding version 0.2.2 released 2012Mar24 copyright (c) 2011,2012 Robert Holder, Janice Dugger.
 <br/>
 <!--
 <style>
@@ -92,7 +113,7 @@ a:link {color:#FFFFFF;}
 -->
 ...click the ZIP button on our <a href="https://github.com/FeetWetCoding/FeetWetCoding" TARGET="_top">Github page</a> for the latest source!
 </div></span></p>
-<p class="rvps8"><span class="rvts40">Created with the Personal Edition of HelpNDoc: </span><a class="rvts41" href="http://www.helpndoc.com/feature-tour/iphone-website-generation">Create iPhone web-based documentation</a></p>
+<p class="rvps7"><span class="rvts23">Created with the Personal Edition of HelpNDoc: </span><a class="rvts24" href="http://www.helpndoc.com/feature-tour/iphone-website-generation">Create iPhone web-based documentation</a></p>
 </div>
 	
 	</body>

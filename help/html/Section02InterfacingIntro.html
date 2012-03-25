@@ -10,14 +10,24 @@
 	<!--[if lte IE 8]>
 		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
 	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/hnd.js"></script>
 	<script type="text/javascript"><!--
-		var sTopicId = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
 		if (top.frames.length == 0)
-			top.location.href = "FeetWetCoding.html?" + sTopicId
+		{
+			var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+			top.location.href = "FeetWetCoding.html?" + sTopicUrl;
+		}
 		else if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
-			top.FrameTOC.SelectTocItem(sTopicId);
+		{
+			top.FrameTOC.SelectTocItem("Section02InterfacingIntro");
+		}
 	</script>
 </head>
 
@@ -42,13 +52,13 @@
 		</div>
 	<div id="topic_content">
 		
-<p class="rvps3"><span class="rvts10">As of the current version, FeetWetCoding does not yet have exercises in this category.</span></p>
-<p class="rvps3"><span class="rvts10"><br></span></p>
+<p class="rvps3"><span class="rvts8">As of the current version, FeetWetCoding does not yet have exercises in this category.</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
 <p class="rvps2"><span class="rvts6"><br></span></p>
 <p class="rvps2"><span class="rvts6"><br></span></p>
 <p class="rvps3"><span class="rvts7"><br></span></p>
-<p class="rvps3"><span class="rvts10"><div style="font-family:Arial;font-size:12pt;background-color:#EEEEEE;background-color:teal;color:white;padding:4px;font-weight:bold">
-FeetWetCoding version 0.2r1 copyright (c) 2011,2012 Robert Holder, Janice Dugger.
+<p class="rvps3"><span class="rvts8"><div style="font-family:Arial;font-size:12pt;background-color:#EEEEEE;background-color:teal;color:white;padding:4px;font-weight:bold">
+FeetWetCoding version 0.2.2 released 2012Mar24 copyright (c) 2011,2012 Robert Holder, Janice Dugger.
 <br/>
 <!--
 <style>
@@ -58,7 +68,7 @@ a:link {color:#FFFFFF;}
 -->
 ...click the ZIP button on our <a href="https://github.com/FeetWetCoding/FeetWetCoding" TARGET="_top">Github page</a> for the latest source!
 </div></span></p>
-<p class="rvps8"><span class="rvts40">Created with the Personal Edition of HelpNDoc: </span><a class="rvts41" href="http://www.helpndoc.com">Full featured Documentation generator</a></p>
+<p class="rvps7"><span class="rvts23">Created with the Personal Edition of HelpNDoc: </span><a class="rvts24" href="http://www.helpndoc.com">Full featured Documentation generator</a></p>
 </div>
 	
 	</body>

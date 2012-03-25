@@ -10,14 +10,24 @@
 	<!--[if lte IE 8]>
 		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
 	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/hnd.js"></script>
 	<script type="text/javascript"><!--
-		var sTopicId = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
 		if (top.frames.length == 0)
-			top.location.href = "FeetWetCoding.html?" + sTopicId
+		{
+			var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+			top.location.href = "FeetWetCoding.html?" + sTopicUrl;
+		}
 		else if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
-			top.FrameTOC.SelectTocItem(sTopicId);
+		{
+			top.FrameTOC.SelectTocItem("Exercises");
+		}
 	</script>
 </head>
 
@@ -38,51 +48,66 @@
 		</div>
 	<div id="topic_content">
 		
-<p class="rvps3"><img border="0" alt hspace="1" vspace="1" src="lib/duckfeet50x46.png"><span class="rvts138"> </span><span class="rvts139">FeetWetCoding Exercises</span></p>
-<p class="rvps3"><span class="rvts34"><br></span></p>
-<p class="rvps33"><span class="rvts118">"Talk is cheap. &nbsp;Show me the code." -- Linus Torvalds</span></p>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">(NOTE: Many software projects make the mistake of allowing their documentation to lag far behind the software development itself, and this project is no exception. &nbsp;Good documentation is a big priority for us, but our software has changed so much in the past few months that we realized it is not a good use of our time to try to document a moving target. &nbsp;Further down the road, we will be able to write up the help for each individual exercise, but as of Spring 2012, that stuff just doesn't exist. &nbsp;Sorry! &nbsp;We promise we will get to it!)</span></p>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps9"><span class="rvts11">It is important that you do the exercises in order, even the reference exercises. &nbsp;The later exercises use things you learn in the earlier ones.</span><br><span class="rvts10"></span><br><span class="rvts10">If you are a beginner, be sure to do the exercises numbered 000-499 in each section. &nbsp;The exercises will make more sense if you do them in order: &nbsp;later exercises build on concepts and topics covered in earlier ones. &nbsp;Exercises numbered 500 and above can sometimes include topics and language elements that have not yet been covered and the number 500+ exercises can safely be postponed until later if they are confusing. &nbsp;</span><span class="rvts11">If you do the 000-499 exercises in each section, you should be able to safely move on to the next section and make good progress.</span></p>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">C++ comes from the language C, or to put it more formally, C++ is a superset of C. &nbsp;You need to know the basics of C in order to move on to the newer ideas that C++ provides about how a programming language should work.</span></p>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">It turns out that the way you design a program in C is pretty different from the way you do it in C++. &nbsp;Many people who want to learn C++ wonder if they should "learn C first." &nbsp;The answer is "yes, and no." &nbsp;Yes, you need to learn the basic commands, variable types, syntax, and so on that were originally designed in C because C++ uses all of that. &nbsp;But if you want to learn C++, you do not first need to program strictly in C for a long time and then "step up" to C++ when you feel you have mastered C. &nbsp;You can do that if you want, but it is not necessary to master C first in order to learn C++.</span></p>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">Many people like the C programming language, and still use it today. &nbsp;The Linux kernel is written in C. &nbsp;There is nothing wrong with learning C and being a C programmer, if that is what you want to do. &nbsp;But FeetWetCoding is intended to help you learn C++.</span></p>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">This learning framework is to be used </span><span class="rvts15">in conjunction with a C++ textbook or other educational coursework.</span><span class="rvts10"> &nbsp;Someone who was very determined might be able to figure out how C++ works just from these exercises, but trying to do it that way would be </span><span class="rvts15">tremendously</span><span class="rvts10"> more difficult than if you have a good C++ book to refer to. &nbsp;There have already been many great C++ books written, and it is not the goal of the FeetWetCoding project to reproduce everything contained in those books.</span></p>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts11">What this means is that FeetWetCoding does not explain everything about C++.&nbsp;</span><span class="rvts10"> The exercises assume you have read, or have access to, some kind of C++ reference material. &nbsp;Here in this help documentation, we provide links to online C++ (and other) references such as:</span></p>
-<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
-<li class="rvps3"><a class="rvts12" href="http://www.cplusplus.com/reference/">http://www.cplusplus.com/reference/</a></li>
-</ul>
+<p class="rvps3"><img border="0" alt hspace="1" vspace="1" src="lib/duckfeet50x46.png"><span class="rvts113"> </span><span class="rvts114">FeetWetCoding Exercises</span></p>
+<p class="rvps3"><span class="rvts67"><br></span></p>
+<p class="rvps3"><span class="rvts67">How many exercises are there?</span></p>
+<p class="rvps3"><span class="rvts67"><br></span></p>
+<p class="rvps3"><span class="rvts8">As of March 2012, we have </span><span class="rvts71">code exercises</span><span class="rvts8"> written for the following sections of Chapter01:</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<span class="rvts8">Section02: Getting Started</span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<span class="rvts49">Section03: Types and Variables</span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<span class="rvts49">Section04: Expressions and Syntax</span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<span class="rvts49">Section05: Loops and Logic</span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<span class="rvts49">Section06: fwcTools</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3"><span class="rvts8">...tutorial pages have been written for the sections in black. &nbsp;The sections in </span><span class="rvts49">red</span><span class="rvts8"> have not had their tutorials written yet, but you can still give those exercises a try. &nbsp;Since we write the exercise code before the documentation, the tutorials lag behind the code.</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3"><span class="rvts8">This documentation has lots of chapters in it that have no content. &nbsp;We sketched those chapters out just to try to have an idea where this project might go, as a sort of roadmap. </span><span class="rvts12">The only chapter that has any exercises or documentation at this time is Chapter01 Beginner Exercises.</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps8"><span class="rvts25">It is important that you do the exercises in order, even the reference exercises. &nbsp;The later exercises use things you learn in the earlier ones.</span><br><span class="rvts8"></span><br><span class="rvts8">If you are a beginner, be sure to do the exercises numbered 000-499 in each section. &nbsp;The exercises will make more sense if you do them in order: &nbsp;later exercises build on concepts and topics covered in earlier ones. &nbsp;Exercises numbered 500 and above can sometimes include topics and language elements that have not yet been covered and the number 500+ exercises can safely be postponed until later if they are confusing. &nbsp;</span><span class="rvts25">If you do the 000-499 exercises in each section, you should be able to safely move on to the next section and make good progress.</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3"><span class="rvts10">INTRODUCTION</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3"><span class="rvts8">C++ comes from the language C, or to put it more formally, C++ is a superset of C. &nbsp;You need to know the basics of C in order to move on to the newer ideas that C++ provides about how a programming language should work.</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3"><span class="rvts8">It turns out that the way you design a program in C is pretty different from the way you do it in C++. &nbsp;Many people who want to learn C++ wonder if they should "learn C first." &nbsp;The answer is "yes, and no." &nbsp;Yes, you need to learn the basic commands, variable types, syntax, and so on that were originally designed in C because C++ uses all of that. &nbsp;But if you want to learn C++, you do not first need to program strictly in C for a long time and then "step up" to C++ when you feel you have mastered C. &nbsp;You can do that if you want, but it is not necessary to master C first in order to learn C++.</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3"><span class="rvts8">Many people like the C programming language, and still use it today. &nbsp;The Linux kernel is written in C. &nbsp;There is nothing wrong with learning C and being a C programmer, if that is what you want to do. &nbsp;But FeetWetCoding is intended to help you learn C++.</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3"><span class="rvts8">This learning framework is to be used </span><span class="rvts11">in conjunction with a C++ textbook or other educational coursework.</span><span class="rvts8"> &nbsp;Someone who was very determined might be able to figure out how C++ works just from these exercises, but trying to do it that way would be </span><span class="rvts11">tremendously</span><span class="rvts8"> more difficult than if you have a good C++ book to refer to. &nbsp;There have already been many great C++ books written, and it is not the goal of the FeetWetCoding project to reproduce everything contained in those books.</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3"><span class="rvts25">What this means is that FeetWetCoding does not explain everything about C++.&nbsp;</span><span class="rvts8"> The exercises assume you have read, or have access to, some kind of C++ reference material. &nbsp;Here in this help documentation, we provide links to online C++ (and other) references such as:</span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<a class="rvts9" href="http://www.cplusplus.com/reference/">http://www.cplusplus.com/reference/</a></p>
 <p class="rvps3"><span class="rvts7"><br></span></p>
-<p class="rvps3"><span class="rvts10">The first thing you must do if you have not already is to purchase the following book. &nbsp;It is indispensible. &nbsp;If you do not have K&amp;R on the shelf, you are not a </span><a class="rvts12" href="TheStoryofMel.html">Real Programmer</a><span class="rvts10">! :-)</span></p>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
-<li class="rvps3"><a class="rvts12" href="http://www.amazon.com/Programming-Language-2nd-Brian-Kernighan/dp/0131103628">The C Programming Language</a><span class="rvts10"> Kernighan &amp; Ritchie</span></li>
-</ul>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">...but seriously, it is a good book, and a classic. &nbsp;At the very least, check it out from your local library, and give it a look-through!</span></p>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">Here are C++ books we own that we have used ourselves, and we can recommend them on that basis:</span></p>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
-<li class="rvps3"><a class="rvts12" href="http://www.amazon.com/Sams-Teach-Yourself-Linux-Days/dp/0672318954">Sams Teach Yourself C++ for Linux in 21 Days</a><span class="rvts10"> Liberty &amp; Horvath -- This is Robert's favorite C++ book. &nbsp;Everything is well organized, and the authors are very clear and complete in their explanations. &nbsp;This book is </span><span class="rvts15">enjoyable</span><span class="rvts10"> to read and learn from, which is an achievement for a technical book.</span></li>
-<li class="rvps3"><span class="rvts10">(DEVNOTE: This list sucks. &nbsp;It only has one entry, and I'm not even sure that book is still in print! &nbsp;This is my fault (Robert) too... bleh! &nbsp;We need more and better recommendations here. &nbsp;LUCKILY I've got some good books coming from amazon in the next day I think! (2012Mar19) SO... my apologies that this list is so LAME!!! :-) &nbsp;I'm working on it, I'm working on it, I'm working on it ...PANIC(0) KERNEL SEGFAULT robert's brain is thrashing on swap... :-)</span></li>
-</ul>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">The Chapter structure is intended to ensure that exercises and documentation can be added in the future without disrupting the existing structure. &nbsp;We will probably never actually provide material for all the topics listed there, even with the help of other collaborators that might join our project as time goes by. &nbsp;But after redesigning the exercise structure and renaming exercise filenames several times (a tedious process), we realized that we need to have a general overview structure in place so that new material can be easily inserted. &nbsp;This is the reason so many of the chapters are empty: &nbsp;it is not that we are so ambitious, it is that we are tired of renaming files and directories over and over!</span></p>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">Note: &nbsp;Every FeetWetCoding exercise source code file will have a page of documentation supporting it. &nbsp;</span><span class="rvts15">Not every page of documentation will have source code associated with it.</span><span class="rvts10"> &nbsp;There is supporting documentation here for subjects related to C++, but which are not actually about C++ programming.</span></p>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">You are now ready to proceed to the "</span><a class="rvts12" href="Chapter01BeginnerExercises.html">Chapter01: Beginner Exercises</a><span class="rvts10">"!</span></p>
-<p class="rvps3"><span class="rvts10"><br></span></p>
-<p class="rvps3"><span class="rvts10">documentation generated by HelpNDoc </span><span class="rvts10">3/20/2012 8:03 PM</span></p>
-<p class="rvps3"><span class="rvts10"><div style="font-family:Arial;font-size:12pt;background-color:#EEEEEE;background-color:teal;color:white;padding:4px;font-weight:bold">
-FeetWetCoding version 0.2r1 copyright (c) 2011,2012 Robert Holder, Janice Dugger.
+<p class="rvps3"><span class="rvts8">The first thing you must do if you have not already is to purchase the following book. &nbsp;It is indispensible. &nbsp;If you do not have K&amp;R on the shelf, you are not a </span><a class="rvts9" href="TheStoryofMel.html">Real Programmer</a><span class="rvts8">! :-)</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<a class="rvts9" href="http://www.amazon.com/Programming-Language-2nd-Brian-Kernighan/dp/0131103628">The C Programming Language</a><span class="rvts8"> Kernighan &amp; Ritchie</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3"><span class="rvts8">...but seriously, it is a good book, and a classic. &nbsp;At the very least, check it out from your local library, and give it a look-through!</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3"><span class="rvts8">Here are C++ books we own that we have used ourselves, and we can recommend them on that basis:</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<a class="rvts9" href="http://www.amazon.com/Sams-Teach-Yourself-Linux-Days/dp/0672318954">Sams Teach Yourself C++ for Linux in 21 Days</a><span class="rvts8"> Liberty &amp; Horvath -- This is Robert's favorite C++ book. &nbsp;Everything is well organized, and the authors are very clear and complete in their explanations. &nbsp;This book is </span><span class="rvts11">enjoyable</span><span class="rvts8"> to read and learn from, which is an achievement for a technical book.</span></p>
+<p class="rvps3" style="text-indent: -24px; padding-left: 24px; margin-left: 0px;"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">●</span>
+<span class="rvts8">(DEVNOTE: This list sucks. &nbsp;It only has one entry, and I'm not even sure that book is still in print! &nbsp;This is my fault (Robert) too... bleh! &nbsp;We need more and better recommendations here. &nbsp;LUCKILY I've got some good books coming from amazon in the next day I think! (2012Mar19) SO... my apologies that this list is so LAME!!! :-) &nbsp;I'm working on it, I'm working on it, I'm working on it ...PANIC(0) KERNEL SEGFAULT robert's brain is thrashing on swap... :-)</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3"><span class="rvts8">The Chapter structure is intended to ensure that exercises and documentation can be added in the future without disrupting the existing structure. &nbsp;We will probably never actually provide material for all the topics listed there, even with the help of other collaborators that might join our project as time goes by. &nbsp;But after redesigning the exercise structure and renaming exercise filenames several times (a tedious process), we realized that we need to have a general overview structure in place so that new material can be easily inserted. &nbsp;This is the reason so many of the chapters are empty: &nbsp;it is not that we are so ambitious, it is that we are tired of renaming files and directories over and over!</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3"><span class="rvts8">Note: &nbsp;Every FeetWetCoding exercise source code file will have a page of documentation supporting it. &nbsp;</span><span class="rvts11">Not every page of documentation will have source code associated with it.</span><span class="rvts8"> &nbsp;There is supporting documentation here for subjects related to C++, but which are not actually about C++ programming.</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3"><span class="rvts8">You are now ready to proceed to the "</span><a class="rvts9" href="Chapter01BeginnerExercises.html">Chapter01: Beginner Exercises</a><span class="rvts8">"!</span></p>
+<p class="rvps3"><span class="rvts8"><br></span></p>
+<p class="rvps3"><span class="rvts8">documentation generated by HelpNDoc </span><span class="rvts8">3/24/2012 4:03 PM</span></p>
+<p class="rvps3"><span class="rvts8"><div style="font-family:Arial;font-size:12pt;background-color:#EEEEEE;background-color:teal;color:white;padding:4px;font-weight:bold">
+FeetWetCoding version 0.2.2 released 2012Mar24 copyright (c) 2011,2012 Robert Holder, Janice Dugger.
 <br/>
 <!--
 <style>
@@ -92,7 +117,7 @@ a:link {color:#FFFFFF;}
 -->
 ...click the ZIP button on our <a href="https://github.com/FeetWetCoding/FeetWetCoding" TARGET="_top">Github page</a> for the latest source!
 </div></span></p>
-<p class="rvps8"><span class="rvts40">Created with the Personal Edition of HelpNDoc: </span><a class="rvts41" href="http://www.helpndoc.com">Full featured Documentation generator</a></p>
+<p class="rvps7"><span class="rvts23">Created with the Personal Edition of HelpNDoc: </span><a class="rvts24" href="http://www.helpndoc.com">Full featured Documentation generator</a></p>
 </div>
 	
 	</body>
