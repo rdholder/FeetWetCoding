@@ -1,7 +1,7 @@
 #ifndef EXERCISELAUNCHER_H
 #define EXERCISELAUNCHER_H
 
-#include <exercises/FeetWetCodingExercise.h>
+#include <exercises/FeetWetCodingExerciseBase.h>
 #include <QApplication>
 #include <QTimer>
 #include <QMutex>

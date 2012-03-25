@@ -4,22 +4,14 @@
 #ifndef C01_S06_H
 #define C01_S06_H
 
-#include <exercises/FeetWetCodingExercise.h>
+#include <exercises/FeetWetCodingExerciseBase.h>
 
-class Sleep1Soln : public FeetWetCodingExercise
+class Sleep1Soln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
     explicit Sleep1Soln(QObject *parent = 0)
-        :FeetWetCodingExercise(parent)
-    {
-        //Update seeout with soln config
-        mSoln = true;
-        mPane = 1; //Solution is always in pane 1 for now
-        seeout.setIsSolution(mSoln);
-        seeout.setColor(BLACK);
-        seeout.setFontSize(10);
-    }
+        :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
@@ -37,24 +29,12 @@ public:
         //If this exercise has a solution, launch it
         this->setupSolution(parent);
     }
-    ~Sleep1()
-    {
-        if ( mSolutionPtr )
-        {
-            mSolutionPtr->terminate();
-            mSolutionPtr->wait();
-            delete mSolutionPtr;
-            mSolutionPtr = NULL;
-        }
-    }
 
 protected:
     void runExercise();
 
-    //Hide this implementation from the student
     void setupSolution(QObject *parent=0)
     {
-        DrawReferenceBox(LEFTRIGHT);
         mSolutionPtr = new Sleep1Soln(parent);
         if ( mSolutionPtr )
         {
@@ -63,20 +43,12 @@ protected:
     }
 };
 
-class SingleKeyInput1Soln : public FeetWetCodingExercise
+class SingleKeyInput1Soln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
     explicit SingleKeyInput1Soln(QObject *parent = 0)
-        :FeetWetCodingExercise(parent)
-    {
-        //Update seeout with soln config
-        mSoln = true;
-        mPane = 1; //Solution is always in pane 1 for now
-        seeout.setIsSolution(mSoln);
-        seeout.setColor(BLACK);
-        seeout.setFontSize(10);
-    }
+        :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
@@ -94,24 +66,12 @@ public:
         //If this exercise has a solution, launch it
         this->setupSolution(parent);
     }
-    ~SingleKeyInput1()
-    {
-        if ( mSolutionPtr )
-        {
-            mSolutionPtr->terminate();
-            mSolutionPtr->wait();
-            delete mSolutionPtr;
-            mSolutionPtr = NULL;
-        }
-    }
 
 protected:
     void runExercise();
 
-    //Hide this implementation from the student
     void setupSolution(QObject *parent=0)
     {
-        DrawReferenceBox(LEFTRIGHT);
         mSolutionPtr = new SingleKeyInput1Soln(parent);
         if ( mSolutionPtr )
         {
@@ -120,20 +80,12 @@ protected:
     }
 };
 
-class StringInput1Soln : public FeetWetCodingExercise
+class StringInput1Soln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
     explicit StringInput1Soln(QObject *parent = 0)
-        :FeetWetCodingExercise(parent)
-    {
-        //Update seeout with soln config
-        mSoln = true;
-        mPane = 1; //Solution is always in pane 1 for now
-        seeout.setIsSolution(mSoln);
-        seeout.setColor(BLACK);
-        seeout.setFontSize(10);
-    }
+        :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
@@ -146,29 +98,15 @@ public:
     explicit StringInput1(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        //Exercises can use parent's seeout config
-
         //If this exercise has a solution, launch it
         this->setupSolution(parent);
-    }
-    ~StringInput1()
-    {
-        if ( mSolutionPtr )
-        {
-            mSolutionPtr->terminate();
-            mSolutionPtr->wait();
-            delete mSolutionPtr;
-            mSolutionPtr = NULL;
-        }
     }
 
 protected:
     void runExercise();
 
-    //Hide this implementation from the student
     void setupSolution(QObject *parent=0)
     {
-        DrawReferenceBox(LEFTRIGHT);
         mSolutionPtr = new StringInput1Soln(parent);
         if ( mSolutionPtr )
         {
@@ -177,20 +115,12 @@ protected:
     }
 };
 
-class ShiftItem1Soln : public FeetWetCodingExercise
+class ShiftItem1Soln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
     explicit ShiftItem1Soln(QObject *parent = 0)
-        :FeetWetCodingExercise(parent)
-    {
-        //Update seeout with soln config
-        mSoln = true;
-        mPane = 1; //Solution is always in pane 1 for now
-        seeout.setIsSolution(mSoln);
-        seeout.setColor(BLACK);
-        seeout.setFontSize(10);
-    }
+        :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
@@ -203,29 +133,15 @@ public:
     explicit ShiftItem1(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        //Exercises can use parent's seeout config
-
         //If this exercise has a solution, launch it
         this->setupSolution(parent);
-    }
-    ~ShiftItem1()
-    {
-        if ( mSolutionPtr )
-        {
-            mSolutionPtr->terminate();
-            mSolutionPtr->wait();
-            delete mSolutionPtr;
-            mSolutionPtr = NULL;
-        }
     }
 
 protected:
     void runExercise();
 
-    //Hide this implementation from the student
     void setupSolution(QObject *parent=0)
     {
-        DrawReferenceBox(LEFTRIGHT);
         mSolutionPtr = new ShiftItem1Soln(parent);
         if ( mSolutionPtr )
         {
@@ -234,20 +150,12 @@ protected:
     }
 };
 
-class MoveItem1Soln : public FeetWetCodingExercise
+class MoveItem1Soln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
     explicit MoveItem1Soln(QObject *parent = 0)
-        :FeetWetCodingExercise(parent)
-    {
-        //Update seeout with soln config
-        mSoln = true;
-        mPane = 1; //Solution is always in pane 1 for now
-        seeout.setIsSolution(mSoln);
-        seeout.setColor(BLACK);
-        seeout.setFontSize(10);
-    }
+        :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
@@ -260,29 +168,15 @@ public:
     explicit MoveItem1(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        //Exercises can use parent's seeout config
-
         //If this exercise has a solution, launch it
         this->setupSolution(parent);
-    }
-    ~MoveItem1()
-    {
-        if ( mSolutionPtr )
-        {
-            mSolutionPtr->terminate();
-            mSolutionPtr->wait();
-            delete mSolutionPtr;
-            mSolutionPtr = NULL;
-        }
     }
 
 protected:
     void runExercise();
 
-    //Hide this implementation from the student
     void setupSolution(QObject *parent=0)
     {
-        DrawReferenceBox(LEFTRIGHT);
         mSolutionPtr = new MoveItem1Soln(parent);
         if ( mSolutionPtr )
         {
@@ -291,20 +185,12 @@ protected:
     }
 };
 
-class ScaleItem1Soln : public FeetWetCodingExercise
+class ScaleItem1Soln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
     explicit ScaleItem1Soln(QObject *parent = 0)
-        :FeetWetCodingExercise(parent)
-    {
-        //Update seeout with soln config
-        mSoln = true;
-        mPane = 1; //Solution is always in pane 1 for now
-        seeout.setIsSolution(mSoln);
-        seeout.setColor(BLACK);
-        seeout.setFontSize(10);
-    }
+        :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
@@ -317,29 +203,15 @@ public:
     explicit ScaleItem1(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        //Exercises can use parent's seeout config
-
         //If this exercise has a solution, launch it
         this->setupSolution(parent);
-    }
-    ~ScaleItem1()
-    {
-        if ( mSolutionPtr )
-        {
-            mSolutionPtr->terminate();
-            mSolutionPtr->wait();
-            delete mSolutionPtr;
-            mSolutionPtr = NULL;
-        }
     }
 
 protected:
     void runExercise();
 
-    //Hide this implementation from the student
     void setupSolution(QObject *parent=0)
     {
-        DrawReferenceBox(LEFTRIGHT);
         mSolutionPtr = new ScaleItem1Soln(parent);
         if ( mSolutionPtr )
         {
@@ -348,20 +220,12 @@ protected:
     }
 };
 
-class RotateItem1Soln : public FeetWetCodingExercise
+class RotateItem1Soln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
     explicit RotateItem1Soln(QObject *parent = 0)
-        :FeetWetCodingExercise(parent)
-    {
-        //Update seeout with soln config
-        mSoln = true;
-        mPane = 1; //Solution is always in pane 1 for now
-        seeout.setIsSolution(mSoln);
-        seeout.setColor(BLACK);
-        seeout.setFontSize(10);
-    }
+        :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
@@ -374,29 +238,15 @@ public:
     explicit RotateItem1(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        //Exercises can use parent's seeout config
-
         //If this exercise has a solution, launch it
         this->setupSolution(parent);
-    }
-    ~RotateItem1()
-    {
-        if ( mSolutionPtr )
-        {
-            mSolutionPtr->terminate();
-            mSolutionPtr->wait();
-            delete mSolutionPtr;
-            mSolutionPtr = NULL;
-        }
     }
 
 protected:
     void runExercise();
 
-    //Hide this implementation from the student
     void setupSolution(QObject *parent=0)
     {
-        DrawReferenceBox(LEFTRIGHT);
         mSolutionPtr = new RotateItem1Soln(parent);
         if ( mSolutionPtr )
         {
@@ -405,20 +255,12 @@ protected:
     }
 };
 
-class ChangeZ1Soln : public FeetWetCodingExercise
+class ChangeZ1Soln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
     explicit ChangeZ1Soln(QObject *parent = 0)
-        :FeetWetCodingExercise(parent)
-    {
-        //Update seeout with soln config
-        mSoln = true;
-        mPane = 1; //Solution is always in pane 1 for now
-        seeout.setIsSolution(mSoln);
-        seeout.setColor(BLACK);
-        seeout.setFontSize(10);
-    }
+        :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
@@ -431,29 +273,15 @@ public:
     explicit ChangeZ1(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        //Exercises can use parent's seeout config
-
         //If this exercise has a solution, launch it
         this->setupSolution(parent);
-    }
-    ~ChangeZ1()
-    {
-        if ( mSolutionPtr )
-        {
-            mSolutionPtr->terminate();
-            mSolutionPtr->wait();
-            delete mSolutionPtr;
-            mSolutionPtr = NULL;
-        }
     }
 
 protected:
     void runExercise();
 
-    //Hide this implementation from the student
     void setupSolution(QObject *parent=0)
     {
-        DrawReferenceBox(LEFTRIGHT);
         mSolutionPtr = new ChangeZ1Soln(parent);
         if ( mSolutionPtr )
         {
@@ -462,20 +290,12 @@ protected:
     }
 };
 
-class ChangeLineEnd1Soln : public FeetWetCodingExercise
+class ChangeLineEnd1Soln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
     explicit ChangeLineEnd1Soln(QObject *parent = 0)
-        :FeetWetCodingExercise(parent)
-    {
-        //Update seeout with soln config
-        mSoln = true;
-        mPane = 1; //Solution is always in pane 1 for now
-        seeout.setIsSolution(mSoln);
-        seeout.setColor(BLACK);
-        seeout.setFontSize(10);
-    }
+        :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
@@ -488,29 +308,15 @@ public:
     explicit ChangeLineEnd1(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        //Exercises can use parent's seeout config
-
         //If this exercise has a solution, launch it
         this->setupSolution(parent);
-    }
-    ~ChangeLineEnd1()
-    {
-        if ( mSolutionPtr )
-        {
-            mSolutionPtr->terminate();
-            mSolutionPtr->wait();
-            delete mSolutionPtr;
-            mSolutionPtr = NULL;
-        }
     }
 
 protected:
     void runExercise();
 
-    //Hide this implementation from the student
     void setupSolution(QObject *parent=0)
     {
-        DrawReferenceBox(LEFTRIGHT);
         mSolutionPtr = new ChangeLineEnd1Soln(parent);
         if ( mSolutionPtr )
         {
@@ -519,20 +325,12 @@ protected:
     }
 };
 
-class ChangeWidthAndHeight1Soln : public FeetWetCodingExercise
+class ChangeWidthAndHeight1Soln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
     explicit ChangeWidthAndHeight1Soln(QObject *parent = 0)
-        :FeetWetCodingExercise(parent)
-    {
-        //Update seeout with soln config
-        mSoln = true;
-        mPane = 1; //Solution is always in pane 1 for now
-        seeout.setIsSolution(mSoln);
-        seeout.setColor(BLACK);
-        seeout.setFontSize(10);
-    }
+        :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
@@ -545,29 +343,15 @@ public:
     explicit ChangeWidthAndHeight1(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        //Exercises can use parent's seeout config
-
         //If this exercise has a solution, launch it
         this->setupSolution(parent);
-    }
-    ~ChangeWidthAndHeight1()
-    {
-        if ( mSolutionPtr )
-        {
-            mSolutionPtr->terminate();
-            mSolutionPtr->wait();
-            delete mSolutionPtr;
-            mSolutionPtr = NULL;
-        }
     }
 
 protected:
     void runExercise();
 
-    //Hide this implementation from the student
     void setupSolution(QObject *parent=0)
     {
-        DrawReferenceBox(LEFTRIGHT);
         mSolutionPtr = new ChangeWidthAndHeight1Soln(parent);
         if ( mSolutionPtr )
         {
@@ -576,20 +360,12 @@ protected:
     }
 };
 
-class ChangeRadius1Soln : public FeetWetCodingExercise
+class ChangeRadius1Soln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
     explicit ChangeRadius1Soln(QObject *parent = 0)
-        :FeetWetCodingExercise(parent)
-    {
-        //Update seeout with soln config
-        mSoln = true;
-        mPane = 1; //Solution is always in pane 1 for now
-        seeout.setIsSolution(mSoln);
-        seeout.setColor(BLACK);
-        seeout.setFontSize(10);
-    }
+        :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
@@ -602,29 +378,15 @@ public:
     explicit ChangeRadius1(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        //Exercises can use parent's seeout config
-
         //If this exercise has a solution, launch it
         this->setupSolution(parent);
-    }
-    ~ChangeRadius1()
-    {
-        if ( mSolutionPtr )
-        {
-            mSolutionPtr->terminate();
-            mSolutionPtr->wait();
-            delete mSolutionPtr;
-            mSolutionPtr = NULL;
-        }
     }
 
 protected:
     void runExercise();
 
-    //Hide this implementation from the student
     void setupSolution(QObject *parent=0)
     {
-        DrawReferenceBox(LEFTRIGHT);
         mSolutionPtr = new ChangeRadius1Soln(parent);
         if ( mSolutionPtr )
         {
@@ -633,20 +395,12 @@ protected:
     }
 };
 
-class ChangeColor1Soln : public FeetWetCodingExercise
+class ChangeColor1Soln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
     explicit ChangeColor1Soln(QObject *parent = 0)
-        :FeetWetCodingExercise(parent)
-    {
-        //Update seeout with soln config
-        mSoln = true;
-        mPane = 1; //Solution is always in pane 1 for now
-        seeout.setIsSolution(mSoln);
-        seeout.setColor(BLACK);
-        seeout.setFontSize(10);
-    }
+        :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
@@ -659,29 +413,15 @@ public:
     explicit ChangeColor1(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        //Exercises can use parent's seeout config
-
         //If this exercise has a solution, launch it
         this->setupSolution(parent);
-    }
-    ~ChangeColor1()
-    {
-        if ( mSolutionPtr )
-        {
-            mSolutionPtr->terminate();
-            mSolutionPtr->wait();
-            delete mSolutionPtr;
-            mSolutionPtr = NULL;
-        }
     }
 
 protected:
     void runExercise();
 
-    //Hide this implementation from the student
     void setupSolution(QObject *parent=0)
     {
-        DrawReferenceBox(LEFTRIGHT);
         mSolutionPtr = new ChangeColor1Soln(parent);
         if ( mSolutionPtr )
         {
@@ -690,20 +430,12 @@ protected:
     }
 };
 
-class ChangeLineWidth1Soln : public FeetWetCodingExercise
+class ChangeLineWidth1Soln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
     explicit ChangeLineWidth1Soln(QObject *parent = 0)
-        :FeetWetCodingExercise(parent)
-    {
-        //Update seeout with soln config
-        mSoln = true;
-        mPane = 1; //Solution is always in pane 1 for now
-        seeout.setIsSolution(mSoln);
-        seeout.setColor(BLACK);
-        seeout.setFontSize(10);
-    }
+        :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
@@ -716,29 +448,15 @@ public:
     explicit ChangeLineWidth1(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        //Exercises can use parent's seeout config
-
         //If this exercise has a solution, launch it
         this->setupSolution(parent);
-    }
-    ~ChangeLineWidth1()
-    {
-        if ( mSolutionPtr )
-        {
-            mSolutionPtr->terminate();
-            mSolutionPtr->wait();
-            delete mSolutionPtr;
-            mSolutionPtr = NULL;
-        }
     }
 
 protected:
     void runExercise();
 
-    //Hide this implementation from the student
     void setupSolution(QObject *parent=0)
     {
-        DrawReferenceBox(LEFTRIGHT);
         mSolutionPtr = new ChangeLineWidth1Soln(parent);
         if ( mSolutionPtr )
         {
@@ -747,20 +465,12 @@ protected:
     }
 };
 
-class ChangeFontSize1Soln : public FeetWetCodingExercise
+class ChangeFontSize1Soln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
     explicit ChangeFontSize1Soln(QObject *parent = 0)
-        :FeetWetCodingExercise(parent)
-    {
-        //Update seeout with soln config
-        mSoln = true;
-        mPane = 1; //Solution is always in pane 1 for now
-        seeout.setIsSolution(mSoln);
-        seeout.setColor(BLACK);
-        seeout.setFontSize(10);
-    }
+        :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
@@ -773,29 +483,15 @@ public:
     explicit ChangeFontSize1(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        //Exercises can use parent's seeout config
-
         //If this exercise has a solution, launch it
         this->setupSolution(parent);
-    }
-    ~ChangeFontSize1()
-    {
-        if ( mSolutionPtr )
-        {
-            mSolutionPtr->terminate();
-            mSolutionPtr->wait();
-            delete mSolutionPtr;
-            mSolutionPtr = NULL;
-        }
     }
 
 protected:
     void runExercise();
 
-    //Hide this implementation from the student
     void setupSolution(QObject *parent=0)
     {
-        DrawReferenceBox(LEFTRIGHT);
         mSolutionPtr = new ChangeFontSize1Soln(parent);
         if ( mSolutionPtr )
         {
@@ -804,20 +500,12 @@ protected:
     }
 };
 
-class ChangeText1Soln : public FeetWetCodingExercise
+class ChangeText1Soln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
     explicit ChangeText1Soln(QObject *parent = 0)
-        :FeetWetCodingExercise(parent)
-    {
-        //Update seeout with soln config
-        mSoln = true;
-        mPane = 1; //Solution is always in pane 1 for now
-        seeout.setIsSolution(mSoln);
-        seeout.setColor(BLACK);
-        seeout.setFontSize(10);
-    }
+        :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
@@ -830,29 +518,15 @@ public:
     explicit ChangeText1(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        //Exercises can use parent's seeout config
-
         //If this exercise has a solution, launch it
         this->setupSolution(parent);
-    }
-    ~ChangeText1()
-    {
-        if ( mSolutionPtr )
-        {
-            mSolutionPtr->terminate();
-            mSolutionPtr->wait();
-            delete mSolutionPtr;
-            mSolutionPtr = NULL;
-        }
     }
 
 protected:
     void runExercise();
 
-    //Hide this implementation from the student
     void setupSolution(QObject *parent=0)
     {
-        DrawReferenceBox(LEFTRIGHT);
         mSolutionPtr = new ChangeText1Soln(parent);
         if ( mSolutionPtr )
         {
@@ -861,20 +535,12 @@ protected:
     }
 };
 
-class ChangeInt1Soln : public FeetWetCodingExercise
+class ChangeInt1Soln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
     explicit ChangeInt1Soln(QObject *parent = 0)
-        :FeetWetCodingExercise(parent)
-    {
-        //Update seeout with soln config
-        mSoln = true;
-        mPane = 1; //Solution is always in pane 1 for now
-        seeout.setIsSolution(mSoln);
-        seeout.setColor(BLACK);
-        seeout.setFontSize(10);
-    }
+        :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
@@ -887,29 +553,15 @@ public:
     explicit ChangeInt1(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        //Exercises can use parent's seeout config
-
         //If this exercise has a solution, launch it
         this->setupSolution(parent);
-    }
-    ~ChangeInt1()
-    {
-        if ( mSolutionPtr )
-        {
-            mSolutionPtr->terminate();
-            mSolutionPtr->wait();
-            delete mSolutionPtr;
-            mSolutionPtr = NULL;
-        }
     }
 
 protected:
     void runExercise();
 
-    //Hide this implementation from the student
     void setupSolution(QObject *parent=0)
     {
-        DrawReferenceBox(LEFTRIGHT);
         mSolutionPtr = new ChangeInt1Soln(parent);
         if ( mSolutionPtr )
         {
@@ -918,20 +570,12 @@ protected:
     }
 };
 
-class ChangeFloat1Soln : public FeetWetCodingExercise
+class ChangeFloat1Soln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
     explicit ChangeFloat1Soln(QObject *parent = 0)
-        :FeetWetCodingExercise(parent)
-    {
-        //Update seeout with soln config
-        mSoln = true;
-        mPane = 1; //Solution is always in pane 1 for now
-        seeout.setIsSolution(mSoln);
-        seeout.setColor(BLACK);
-        seeout.setFontSize(10);
-    }
+        :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
@@ -944,29 +588,15 @@ public:
     explicit ChangeFloat1(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        //Exercises can use parent's seeout config
-
         //If this exercise has a solution, launch it
         this->setupSolution(parent);
-    }
-    ~ChangeFloat1()
-    {
-        if ( mSolutionPtr )
-        {
-            mSolutionPtr->terminate();
-            mSolutionPtr->wait();
-            delete mSolutionPtr;
-            mSolutionPtr = NULL;
-        }
     }
 
 protected:
     void runExercise();
 
-    //Hide this implementation from the student
     void setupSolution(QObject *parent=0)
     {
-        DrawReferenceBox(LEFTRIGHT);
         mSolutionPtr = new ChangeFloat1Soln(parent);
         if ( mSolutionPtr )
         {
@@ -975,20 +605,12 @@ protected:
     }
 };
 
-class EraseItem1Soln : public FeetWetCodingExercise
+class EraseItem1Soln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
     explicit EraseItem1Soln(QObject *parent = 0)
-        :FeetWetCodingExercise(parent)
-    {
-        //Update seeout with soln config
-        mSoln = true;
-        mPane = 1; //Solution is always in pane 1 for now
-        seeout.setIsSolution(mSoln);
-        seeout.setColor(BLACK);
-        seeout.setFontSize(10);
-    }
+        :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
@@ -1001,29 +623,15 @@ public:
     explicit EraseItem1(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        //Exercises can use parent's seeout config
-
         //If this exercise has a solution, launch it
         this->setupSolution(parent);
-    }
-    ~EraseItem1()
-    {
-        if ( mSolutionPtr )
-        {
-            mSolutionPtr->terminate();
-            mSolutionPtr->wait();
-            delete mSolutionPtr;
-            mSolutionPtr = NULL;
-        }
     }
 
 protected:
     void runExercise();
 
-    //Hide this implementation from the student
     void setupSolution(QObject *parent=0)
     {
-        DrawReferenceBox(LEFTRIGHT);
         mSolutionPtr = new EraseItem1Soln(parent);
         if ( mSolutionPtr )
         {
@@ -1032,20 +640,12 @@ protected:
     }
 };
 
-class ClearItems1Soln : public FeetWetCodingExercise
+class ClearItems1Soln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
     explicit ClearItems1Soln(QObject *parent = 0)
-        :FeetWetCodingExercise(parent)
-    {
-        //Update seeout with soln config
-        mSoln = true;
-        mPane = 1; //Solution is always in pane 1 for now
-        seeout.setIsSolution(mSoln);
-        seeout.setColor(BLACK);
-        seeout.setFontSize(10);
-    }
+        :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
@@ -1058,29 +658,15 @@ public:
     explicit ClearItems1(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        //Exercises can use parent's seeout config
-
         //If this exercise has a solution, launch it
         this->setupSolution(parent);
-    }
-    ~ClearItems1()
-    {
-        if ( mSolutionPtr )
-        {
-            mSolutionPtr->terminate();
-            mSolutionPtr->wait();
-            delete mSolutionPtr;
-            mSolutionPtr = NULL;
-        }
     }
 
 protected:
     void runExercise();
 
-    //Hide this implementation from the student
     void setupSolution(QObject *parent=0)
     {
-        DrawReferenceBox(LEFTRIGHT);
         mSolutionPtr = new ClearItems1Soln(parent);
         if ( mSolutionPtr )
         {

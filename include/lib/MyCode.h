@@ -1,7 +1,7 @@
 #ifndef MYCODE_H
 #define MYCODE_H
 
-#include <exercises/FeetWetCodingExercise.h>
+#include <exercises/FeetWetCodingExerciseBase.h>
 
 class MyCode0 : public FeetWetCodingExercise
 {

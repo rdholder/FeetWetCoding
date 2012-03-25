@@ -2,37 +2,34 @@
 // See README.html included in this distribution.
 
 #include <setup.h>
-#include <exercises/FeetWetCodingExercise.h>
+#include <exercises/FeetWetCodingExerciseBase.h>
 #include <ExerciseLauncher.h>
 
 using namespace std;
 
 extern QMutex globalmutex;
 
-FeetWetCodingExercise::FeetWetCodingExercise(QObject *parent)
+FeetWetCodingExerciseBase::FeetWetCodingExerciseBase(QObject *parent)
     :QThread(parent)
     ,mSoln(false)
     ,mPane(0)
     ,mSolutionPtr(NULL)
 {
 #ifdef DEBUG
-    qDebug() << "FeetWetCodingExercise::FeetWetCodingExercise() - (GUI) ThreadID: " << qApp->thread()->currentThread();
+    qDebug() << "FeetWetCodingExerciseBase::FeetWetCodingExerciseBase() - (GUI) ThreadID: " << qApp->thread()->currentThread();
 #endif
 
     mParent = dynamic_cast<ExerciseLauncher *>(parent);
-    seeout.setIsSolution(mSoln);
-    seeout.setColor(BLACK);
-    seeout.setFontSize(10);
 }
 
-FeetWetCodingExercise::~FeetWetCodingExercise()
+FeetWetCodingExerciseBase::~FeetWetCodingExerciseBase()
 {
 }
 
-void FeetWetCodingExercise::run()
+void FeetWetCodingExerciseBase::run()
 {
 #ifdef DEBUG
-    qDebug() << "FeetWetCodingExercise::run() - (Exercise/Soln) ThreadID: " << qApp->thread()->currentThread();
+    qDebug() << "FeetWetCodingExerciseBase::run() - (Exercise/Soln) ThreadID: " << qApp->thread()->currentThread();
 #endif
 
     int ctime = QTime::currentTime().msec();
@@ -41,11 +38,11 @@ void FeetWetCodingExercise::run()
     runExercise();
 }
 
-void FeetWetCodingExercise::runExercise()
+void FeetWetCodingExerciseBase::runExercise()
 {
 }
 
-std::string FeetWetCodingExercise::waitForKeyPress()
+std::string FeetWetCodingExerciseBase::waitForKeyPress()
 {
     if ( !mParent ) return std::string();
 
@@ -68,7 +65,7 @@ std::string FeetWetCodingExercise::waitForKeyPress()
     return keystr.toStdString();
 }
 
-std::string FeetWetCodingExercise::getKeyboardString()
+std::string FeetWetCodingExerciseBase::getKeyboardString()
 {
     if ( !mParent ) return std::string("");
 
@@ -124,7 +121,7 @@ std::string FeetWetCodingExercise::getKeyboardString()
     return fullstring.toStdString();
 }
 
-int FeetWetCodingExercise::fwcDrawLine( int xStart, int yStart, int xEnd, int yEnd, Color color, int linewidth )
+int FeetWetCodingExerciseBase::fwcDrawLine( int xStart, int yStart, int xEnd, int yEnd, Color color, int linewidth )
 {
     RenderItem item;
     item.type = LINE;
@@ -145,7 +142,7 @@ int FeetWetCodingExercise::fwcDrawLine( int xStart, int yStart, int xEnd, int yE
     return id;
 }
 
-int FeetWetCodingExercise::fwcDrawCircle( int x, int y, int r, Color color, int linewidth, bool solid )
+int FeetWetCodingExerciseBase::fwcDrawCircle( int x, int y, int r, Color color, int linewidth, bool solid )
 {
     RenderItem item;
     item.type = CIRCLE;
@@ -166,7 +163,7 @@ int FeetWetCodingExercise::fwcDrawCircle( int x, int y, int r, Color color, int 
     return id;
 }
 
-int FeetWetCodingExercise::fwcDrawCircleRGB( int x, int y, int r, int linewidth, int red, int green, int blue, bool solid )
+int FeetWetCodingExerciseBase::fwcDrawCircleRGB( int x, int y, int r, int linewidth, int red, int green, int blue, bool solid )
 {
     RenderItem item;
     item.type = CIRCLERGB;
@@ -189,7 +186,7 @@ int FeetWetCodingExercise::fwcDrawCircleRGB( int x, int y, int r, int linewidth,
     return id;
 }
 
-int FeetWetCodingExercise::fwcDrawEllipse( int x, int y, int w, int h, Color color, int linewidth, bool solid )
+int FeetWetCodingExerciseBase::fwcDrawEllipse( int x, int y, int w, int h, Color color, int linewidth, bool solid )
 {
     RenderItem item;
     item.type = ELLIPSE;
@@ -211,7 +208,7 @@ int FeetWetCodingExercise::fwcDrawEllipse( int x, int y, int w, int h, Color col
     return id;
 }
 
-int FeetWetCodingExercise::fwcDrawRectangle( int x, int y, int w, int h, Color color, int linewidth, bool solid )
+int FeetWetCodingExerciseBase::fwcDrawRectangle( int x, int y, int w, int h, Color color, int linewidth, bool solid )
 {
     RenderItem item;
     item.type = RECTANGLE;
@@ -233,7 +230,7 @@ int FeetWetCodingExercise::fwcDrawRectangle( int x, int y, int w, int h, Color c
     return id;
 }
 
-int FeetWetCodingExercise::fwcDrawText( std::string text, int x, int y, Color color, int size )
+int FeetWetCodingExerciseBase::fwcDrawText( std::string text, int x, int y, Color color, int size )
 {
     RenderItem item;
     item.type = TEXT;
@@ -253,7 +250,7 @@ int FeetWetCodingExercise::fwcDrawText( std::string text, int x, int y, Color co
     return id;
 }
 
-int FeetWetCodingExercise::fwcDrawInt( int number, int x, int y, Color color, int size )
+int FeetWetCodingExerciseBase::fwcDrawInt( int number, int x, int y, Color color, int size )
 {
     RenderItem item;
     item.type = INT;
@@ -273,7 +270,7 @@ int FeetWetCodingExercise::fwcDrawInt( int number, int x, int y, Color color, in
     return id;
 }
 
-int FeetWetCodingExercise::fwcDrawFloat( float number, int x, int y, Color color, int size, int decimalPlaces )
+int FeetWetCodingExerciseBase::fwcDrawFloat( float number, int x, int y, Color color, int size, int decimalPlaces )
 {
     RenderItem item;
     item.type = FLOAT;
@@ -294,7 +291,7 @@ int FeetWetCodingExercise::fwcDrawFloat( float number, int x, int y, Color color
     return id;
 }
 
-int FeetWetCodingExercise::fwcDrawImage( std::string filename, int x, int y )
+int FeetWetCodingExerciseBase::fwcDrawImage( std::string filename, int x, int y )
 {
     RenderItem item;
     item.type = IMAGE;
@@ -312,7 +309,7 @@ int FeetWetCodingExercise::fwcDrawImage( std::string filename, int x, int y )
     return id;
 }
 
-void FeetWetCodingExercise::DrawReferenceBox( RefBoxLayout layout )
+void FeetWetCodingExerciseBase::DrawReferenceBox()
 {
     std::ostringstream oss;
     int strWidth(10);
@@ -360,11 +357,11 @@ void FeetWetCodingExercise::DrawReferenceBox( RefBoxLayout layout )
     }
 }
 
-int FeetWetCodingExercise::SendRenderRequest( RenderItem item )
+int FeetWetCodingExerciseBase::SendRenderRequest( RenderItem item )
 {
     if ( !mParent )
     {
-        qDebug() << "FeetWetCodingExercise::sendRenderRequest() mParent is NULL!";
+        qDebug() << "FeetWetCodingExerciseBase::sendRenderRequest() mParent is NULL!";
         return -1;
     }
 
@@ -380,11 +377,11 @@ int FeetWetCodingExercise::SendRenderRequest( RenderItem item )
     return mParent->setRenderItem(item);
 }
 
-void FeetWetCodingExercise::fwcMoveItem(int itemID, int newX, int newY)
+void FeetWetCodingExerciseBase::fwcMoveItem(int itemID, int newX, int newY)
 {
     if ( !mParent )
     {
-        qDebug() << "FeetWetCodingExercise::fwcMoveItem() mParent is NULL!";
+        qDebug() << "FeetWetCodingExerciseBase::fwcMoveItem() mParent is NULL!";
         return;
     }
 
@@ -397,11 +394,11 @@ void FeetWetCodingExercise::fwcMoveItem(int itemID, int newX, int newY)
     mParent->updateRenderItem(update);
 }
 
-void FeetWetCodingExercise::fwcShiftItem(int itemID, int xShift, int yShift)
+void FeetWetCodingExerciseBase::fwcShiftItem(int itemID, int xShift, int yShift)
 {
     if ( !mParent )
     {
-        qDebug() << "FeetWetCodingExercise::fwcShiftItem() mParent is NULL!";
+        qDebug() << "FeetWetCodingExerciseBase::fwcShiftItem() mParent is NULL!";
         return;
     }
 
@@ -414,11 +411,11 @@ void FeetWetCodingExercise::fwcShiftItem(int itemID, int xShift, int yShift)
     mParent->updateRenderItem(update);
 }
 
-void FeetWetCodingExercise::fwcEraseItem(int itemID)
+void FeetWetCodingExerciseBase::fwcEraseItem(int itemID)
 {
     if ( !mParent )
     {
-        qDebug() << "FeetWetCodingExercise::fwcEraseItem() mParent is NULL!";
+        qDebug() << "FeetWetCodingExerciseBase::fwcEraseItem() mParent is NULL!";
         return;
     }
 
@@ -436,11 +433,11 @@ void FeetWetCodingExercise::fwcEraseItem(int itemID)
     }
 }
 
-void FeetWetCodingExercise::fwcChangeZ(int itemID, int z)
+void FeetWetCodingExerciseBase::fwcChangeZ(int itemID, int z)
 {
     if ( !mParent )
     {
-        qDebug() << "FeetWetCodingExercise::fwcChangeZ() mParent is NULL!";
+        qDebug() << "FeetWetCodingExerciseBase::fwcChangeZ() mParent is NULL!";
         return;
     }
 
@@ -452,11 +449,11 @@ void FeetWetCodingExercise::fwcChangeZ(int itemID, int z)
     mParent->updateRenderItem(update);
 }
 
-void FeetWetCodingExercise::fwcScaleItem(int itemID, float scalefactor)
+void FeetWetCodingExerciseBase::fwcScaleItem(int itemID, float scalefactor)
 {
     if ( !mParent )
     {
-        qDebug() << "FeetWetCodingExercise::Scale() mParent is NULL!";
+        qDebug() << "FeetWetCodingExerciseBase::Scale() mParent is NULL!";
         return;
     }
 
@@ -468,11 +465,11 @@ void FeetWetCodingExercise::fwcScaleItem(int itemID, float scalefactor)
     mParent->updateRenderItem(update);
 }
 
-void FeetWetCodingExercise::fwcRotateItem(int itemID, float angledegrees)
+void FeetWetCodingExerciseBase::fwcRotateItem(int itemID, float angledegrees)
 {
     if ( !mParent )
     {
-        qDebug() << "FeetWetCodingExercise::Rotate() mParent is NULL!";
+        qDebug() << "FeetWetCodingExerciseBase::Rotate() mParent is NULL!";
         return;
     }
 
@@ -484,11 +481,11 @@ void FeetWetCodingExercise::fwcRotateItem(int itemID, float angledegrees)
     mParent->updateRenderItem(update);
 }
 
-void FeetWetCodingExercise::fwcChangeLineEnd(int itemID, int xEnd, int yEnd)
+void FeetWetCodingExerciseBase::fwcChangeLineEnd(int itemID, int xEnd, int yEnd)
 {
     if ( !mParent )
     {
-        qDebug() << "FeetWetCodingExercise::fwcChangeLineEnd() mParent is NULL!";
+        qDebug() << "FeetWetCodingExerciseBase::fwcChangeLineEnd() mParent is NULL!";
         return;
     }
 
@@ -501,11 +498,11 @@ void FeetWetCodingExercise::fwcChangeLineEnd(int itemID, int xEnd, int yEnd)
     mParent->updateRenderItem(update);
 }
 
-void FeetWetCodingExercise::fwcChangeWidthAndHeight(int itemID, int w, int h)
+void FeetWetCodingExerciseBase::fwcChangeWidthAndHeight(int itemID, int w, int h)
 {
     if ( !mParent )
     {
-        qDebug() << "FeetWetCodingExercise::fwcChangeWidthAndHeight() mParent is NULL!";
+        qDebug() << "FeetWetCodingExerciseBase::fwcChangeWidthAndHeight() mParent is NULL!";
         return;
     }
 
@@ -518,11 +515,11 @@ void FeetWetCodingExercise::fwcChangeWidthAndHeight(int itemID, int w, int h)
     mParent->updateRenderItem(update);
 }
 
-void FeetWetCodingExercise::fwcChangeRadius(int itemID, int radius)
+void FeetWetCodingExerciseBase::fwcChangeRadius(int itemID, int radius)
 {
     if ( !mParent )
     {
-        qDebug() << "FeetWetCodingExercise::fwcChangeRadius() mParent is NULL!";
+        qDebug() << "FeetWetCodingExerciseBase::fwcChangeRadius() mParent is NULL!";
         return;
     }
 
@@ -534,11 +531,11 @@ void FeetWetCodingExercise::fwcChangeRadius(int itemID, int radius)
     mParent->updateRenderItem(update);
 }
 
-void FeetWetCodingExercise::fwcChangeColor(int itemID, Color color, bool solid)
+void FeetWetCodingExerciseBase::fwcChangeColor(int itemID, Color color, bool solid)
 {
     if ( !mParent )
     {
-        qDebug() << "FeetWetCodingExercise::fwcChangeColor() mParent is NULL!";
+        qDebug() << "FeetWetCodingExerciseBase::fwcChangeColor() mParent is NULL!";
         return;
     }
 
@@ -551,11 +548,11 @@ void FeetWetCodingExercise::fwcChangeColor(int itemID, Color color, bool solid)
     mParent->updateRenderItem(update);
 }
 
-void FeetWetCodingExercise::fwcChangeLineWidth(int itemID, int width)
+void FeetWetCodingExerciseBase::fwcChangeLineWidth(int itemID, int width)
 {
     if ( !mParent )
     {
-        qDebug() << "FeetWetCodingExercise::fwcChangeLineWidth() mParent is NULL!";
+        qDebug() << "FeetWetCodingExerciseBase::fwcChangeLineWidth() mParent is NULL!";
         return;
     }
 
@@ -567,11 +564,11 @@ void FeetWetCodingExercise::fwcChangeLineWidth(int itemID, int width)
     mParent->updateRenderItem(update);
 }
 
-void FeetWetCodingExercise::fwcChangeFontSize(int itemID, int size)
+void FeetWetCodingExerciseBase::fwcChangeFontSize(int itemID, int size)
 {
     if ( !mParent )
     {
-        qDebug() << "FeetWetCodingExercise::fwcChangeFontSize() mParent is NULL!";
+        qDebug() << "FeetWetCodingExerciseBase::fwcChangeFontSize() mParent is NULL!";
         return;
     }
 
@@ -584,11 +581,11 @@ void FeetWetCodingExercise::fwcChangeFontSize(int itemID, int size)
 }
 
 
-void FeetWetCodingExercise::fwcChangeText(int itemID, std::string text)
+void FeetWetCodingExerciseBase::fwcChangeText(int itemID, std::string text)
 {
     if ( !mParent )
     {
-        qDebug() << "FeetWetCodingExercise::fwcChangeText() mParent is NULL!";
+        qDebug() << "FeetWetCodingExerciseBase::fwcChangeText() mParent is NULL!";
         return;
     }
 
@@ -600,11 +597,11 @@ void FeetWetCodingExercise::fwcChangeText(int itemID, std::string text)
     mParent->updateRenderItem(update);
 }
 
-void FeetWetCodingExercise::fwcChangeInt(int itemID, int intval)
+void FeetWetCodingExerciseBase::fwcChangeInt(int itemID, int intval)
 {
     if ( !mParent )
     {
-        qDebug() << "FeetWetCodingExercise::fwcChangeInt() mParent is NULL!";
+        qDebug() << "FeetWetCodingExerciseBase::fwcChangeInt() mParent is NULL!";
         return;
     }
 
@@ -616,11 +613,11 @@ void FeetWetCodingExercise::fwcChangeInt(int itemID, int intval)
     mParent->updateRenderItem(update);
 }
 
-void FeetWetCodingExercise::fwcChangeFloat(int itemID, int floatval)
+void FeetWetCodingExerciseBase::fwcChangeFloat(int itemID, int floatval)
 {
     if ( !mParent )
     {
-        qDebug() << "FeetWetCodingExercise::fwcChangeFloat() mParent is NULL!";
+        qDebug() << "FeetWetCodingExerciseBase::fwcChangeFloat() mParent is NULL!";
         return;
     }
 
@@ -632,7 +629,7 @@ void FeetWetCodingExercise::fwcChangeFloat(int itemID, int floatval)
     mParent->updateRenderItem(update);
 }
 
-void FeetWetCodingExercise::fwcClearItems()
+void FeetWetCodingExerciseBase::fwcClearItems()
 {
     std::vector<int>itemsToErase;
     std::vector<int>::iterator iter;
@@ -657,7 +654,7 @@ void FeetWetCodingExercise::fwcClearItems()
     }
 }
 
-bool FeetWetCodingExercise::solutionIsFinished()
+bool FeetWetCodingExerciseBase::solutionIsFinished()
 {
     QMutexLocker solnlocker(&solutionmutex);
 
