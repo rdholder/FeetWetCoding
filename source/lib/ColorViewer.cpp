@@ -2,7 +2,7 @@
 // See README.html included in this distribution.
 
 #include <lib/feetwetcodinglib.h>
-#include <exercises/FeetWetCodingExercise.h>
+#include <exercises/FeetWetCodingExerciseBase.h>
 #include <lib/ColorViewer.h>
 #include <lib/colors.h>
 #include <SeeOut.h>

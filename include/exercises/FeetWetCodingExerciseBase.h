@@ -12,12 +12,12 @@
 
 class ExerciseLauncher;
 
-class FeetWetCodingExercise : public QThread
+class FeetWetCodingExerciseBase : public QThread
 {
     Q_OBJECT
 public:
-    explicit FeetWetCodingExercise(QObject *parent = 0);
-    virtual ~FeetWetCodingExercise();
+    explicit FeetWetCodingExerciseBase(QObject *parent = 0);
+    virtual ~FeetWetCodingExerciseBase();
 
     typedef enum {
         BLANK,
@@ -119,14 +119,13 @@ public:
 protected:
 
     virtual void runExercise();
-    virtual void setupSolution(QObject *parent=0){} //=0;
     std::string waitForKeyPress();
     std::string getKeyboardString();
 
     bool mSoln;
     int mPane;
     SeeOut seeout;
-    FeetWetCodingExercise *mSolutionPtr;
+    FeetWetCodingExerciseBase *mSolutionPtr;
 
     //Shift a drawn item's x/y location by xShift/yShift.
     void fwcMoveItem(int itemID, int newX, int newY);
@@ -159,7 +158,7 @@ protected:
     int fwcDrawFloat( float number, int x, int y, Color color, int size=12, int decimalPlaces=3 );
     int fwcDrawImage( std::string filename, int x, int y );
     int SendRenderRequest( RenderItem item );
-    void DrawReferenceBox( RefBoxLayout layout=LEFTRIGHT );
+    void DrawReferenceBox();
 
     std::vector<int> mDrawnItems;
     std::vector<int> mRefBoxItems;
@@ -168,6 +167,69 @@ protected:
 
 private:
     void run();
+};
+
+class FeetWetCodingExercise : public FeetWetCodingExerciseBase
+{
+    Q_OBJECT
+public:
+    explicit FeetWetCodingExercise(QObject *parent = 0)
+        :FeetWetCodingExerciseBase(parent)
+    {
+        mSoln = false;
+
+        //Update seeout with soln config
+        seeout.setIsSolution(mSoln);
+        seeout.setColor(BLACK);
+        seeout.setFontSize(10);
+
+        //Non-solution exercises need to draw the reference box
+        DrawReferenceBox();
+    }
+
+    virtual ~FeetWetCodingExercise()
+    {
+        if ( mSolutionPtr )
+        {
+            mSolutionPtr->terminate();
+            mSolutionPtr->wait();
+            delete mSolutionPtr;
+            mSolutionPtr = NULL;
+        }
+    }
+
+protected:
+
+    //Not every exercise has a solution, so
+    //setupSolution is not pure virtual
+    virtual void setupSolution(QObject *){}
+
+    //Pure virtual runExercise()
+    virtual void runExercise()=0;
+};
+
+class FeetWetCodingSolution : public FeetWetCodingExerciseBase
+{
+    Q_OBJECT
+public:
+    explicit FeetWetCodingSolution(QObject *parent = 0)
+        :FeetWetCodingExerciseBase(parent)
+    {
+        mSoln = true;
+
+        //Update seeout with soln config
+        seeout.setIsSolution(mSoln);
+        seeout.setColor(BLACK);
+        seeout.setFontSize(10);
+
+        //Solution is always in pane 1 for now
+        mPane = 1;
+    }
+
+    virtual ~FeetWetCodingSolution(){}
+
+protected:
+    virtual void runExercise()=0;
 };
 
 #endif // FEETWETCODINGEXERCISE_H

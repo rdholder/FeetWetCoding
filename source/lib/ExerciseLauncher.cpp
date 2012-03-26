@@ -248,7 +248,7 @@ int ExerciseLauncher::getWhichPaneHasFocus()
     QMutexLocker locker(&eventMutex);
     return mWhichPaneHasFocus;
 }
-int ExerciseLauncher::setRenderItem( FeetWetCodingExercise::RenderItem item)
+int ExerciseLauncher::setRenderItem( FeetWetCodingExerciseBase::RenderItem item)
 {
     //Store the item in the queue for rendering
     //during the next event processing timeout
@@ -258,7 +258,7 @@ int ExerciseLauncher::setRenderItem( FeetWetCodingExercise::RenderItem item)
     return item.ID;
 }
 
-void ExerciseLauncher::updateRenderItem(FeetWetCodingExercise::RenderItemUpdate update)
+void ExerciseLauncher::updateRenderItem(FeetWetCodingExerciseBase::RenderItemUpdate update)
 {
     QMutexLocker locker(&itemMutex);
     mRenderItemUpdates.push_back(update);
@@ -269,7 +269,7 @@ void ExerciseLauncher::handleRenderRequests()
     QTime renderTimer;
     renderTimer.start();
 
-    FeetWetCodingExercise::RenderItem item;
+    FeetWetCodingExerciseBase::RenderItem item;
 
     while ( renderTimer.elapsed() < 10 )
     {
@@ -287,31 +287,31 @@ void ExerciseLauncher::handleRenderRequests()
 
         switch (item.type) {
 
-        case FeetWetCodingExercise::LINE:
+        case FeetWetCodingExerciseBase::LINE:
             gItem = fwcDrawLineRender( item.x, item.y, item.xEnd, item.yEnd, item.color, item.linewidth);
             break;
-        case FeetWetCodingExercise::CIRCLE:
+        case FeetWetCodingExerciseBase::CIRCLE:
             gItem = fwcDrawCircleRender( item.x, item.y, item.radius, item.color, item.linewidth, item.solid);
             break;
-        case FeetWetCodingExercise::CIRCLERGB:
+        case FeetWetCodingExerciseBase::CIRCLERGB:
             gItem = fwcDrawCircleRGBRender( item.x, item.y, item.radius, item.linewidth, item.RGBred, item.RGBgreen, item.RGBblue, item.solid);
             break;
-        case FeetWetCodingExercise::ELLIPSE:
+        case FeetWetCodingExerciseBase::ELLIPSE:
             gItem = fwcDrawEllipseRender( item.x, item.y, item.width, item.height, item.color, item.linewidth, item.solid);
             break;
-        case FeetWetCodingExercise::RECTANGLE:
+        case FeetWetCodingExerciseBase::RECTANGLE:
             gItem = fwcDrawRectangleRender( item.x, item.y, item.width, item.height, item.color, item.linewidth, item.solid);
             break;
-        case FeetWetCodingExercise::TEXT:
+        case FeetWetCodingExerciseBase::TEXT:
             gItem = fwcDrawTextRender( item.text, item.x, item.y, item.color, item.fontsize);
             break;
-        case FeetWetCodingExercise::INT:
+        case FeetWetCodingExerciseBase::INT:
             gItem = fwcDrawIntRender( item.intvalue, item.x, item.y, item.color, item.fontsize);
             break;
-        case FeetWetCodingExercise::FLOAT:
+        case FeetWetCodingExerciseBase::FLOAT:
             gItem = fwcDrawFloatRender( item.floatvalue, item.x, item.y, item.color, item.fontsize, item.decimalplaces );
             break;
-        case FeetWetCodingExercise::IMAGE:
+        case FeetWetCodingExerciseBase::IMAGE:
             gItem = fwcDrawImageRender( item.imagefile, item.x, item.y );
             break;
         }
@@ -330,7 +330,7 @@ void ExerciseLauncher::handleRenderUpdates()
     QTime renderTimer;
     renderTimer.start();
 
-    FeetWetCodingExercise::RenderItemUpdate update;
+    FeetWetCodingExerciseBase::RenderItemUpdate update;
     QGraphicsItem *item(NULL);
     QGraphicsTextItem *textItem(NULL);
     QGraphicsLineItem *lineItem(NULL);
@@ -356,7 +356,7 @@ void ExerciseLauncher::handleRenderUpdates()
             mRenderItemUpdates.pop_front();
         }
 
-        FeetWetCodingExercise::RenderItemUpdateType type = update.type;
+        FeetWetCodingExerciseBase::RenderItemUpdateType type = update.type;
         int itemID = update.ID;
 
         //Hold the lock from here till the end of the method
@@ -374,15 +374,15 @@ void ExerciseLauncher::handleRenderUpdates()
 
         switch (type) {
 
-        case FeetWetCodingExercise::MOVE:
+        case FeetWetCodingExerciseBase::MOVE:
             item->setPos(update.x, update.y);
             break;
 
-        case FeetWetCodingExercise::SHIFT:
+        case FeetWetCodingExerciseBase::SHIFT:
             item->moveBy(update.dx, update.dy);
             break;
 
-        case FeetWetCodingExercise::ERASE:
+        case FeetWetCodingExerciseBase::ERASE:
             view->scene()->removeItem(item);
 
             //Remove this item from the mRenderedItems map
@@ -394,15 +394,15 @@ void ExerciseLauncher::handleRenderUpdates()
             }
             break;
 
-        case FeetWetCodingExercise::CHANGE_Z:
+        case FeetWetCodingExerciseBase::CHANGE_Z:
             item->setZValue(update.z);
             break;
 
-        case FeetWetCodingExercise::SCALE:
+        case FeetWetCodingExerciseBase::SCALE:
             item->setScale(update.scalefactor);
             break;
 
-        case FeetWetCodingExercise::ROTATE:
+        case FeetWetCodingExerciseBase::ROTATE:
             transform = QTransform();
             centerX = item->boundingRect().width()/2;
             centerY = item->boundingRect().height()/2;
@@ -412,7 +412,7 @@ void ExerciseLauncher::handleRenderUpdates()
             item->setTransform( transform );
             break;
 
-        case FeetWetCodingExercise::CHANGE_XEND_YEND:
+        case FeetWetCodingExerciseBase::CHANGE_XEND_YEND:
             lineItem = dynamic_cast<QGraphicsLineItem *>(item);
             if ( lineItem )
             {
@@ -422,7 +422,7 @@ void ExerciseLauncher::handleRenderUpdates()
             }
             break;
 
-        case FeetWetCodingExercise::CHANGE_WIDTH_AND_HEIGHT:
+        case FeetWetCodingExerciseBase::CHANGE_WIDTH_AND_HEIGHT:
             rectItem = dynamic_cast<QGraphicsRectItem *>(item);
             if ( rectItem )
             {
@@ -432,7 +432,7 @@ void ExerciseLauncher::handleRenderUpdates()
             }
             break;
 
-        case FeetWetCodingExercise::CHANGE_RADIUS:
+        case FeetWetCodingExerciseBase::CHANGE_RADIUS:
             circleItem = dynamic_cast<QGraphicsEllipseItem *>(item);
             if ( circleItem )
             {
@@ -441,7 +441,7 @@ void ExerciseLauncher::handleRenderUpdates()
             }
             break;
 
-        case FeetWetCodingExercise::CHANGE_COLOR:
+        case FeetWetCodingExerciseBase::CHANGE_COLOR:
             shapeItem = dynamic_cast<QAbstractGraphicsShapeItem *>(item);
             if ( shapeItem )
             {
@@ -455,7 +455,7 @@ void ExerciseLauncher::handleRenderUpdates()
             }
             break;
 
-        case FeetWetCodingExercise::CHANGE_LINE_WIDTH:
+        case FeetWetCodingExerciseBase::CHANGE_LINE_WIDTH:
             shapeItem = dynamic_cast<QAbstractGraphicsShapeItem *>(item);
             if ( shapeItem )
             {
@@ -475,7 +475,7 @@ void ExerciseLauncher::handleRenderUpdates()
             }
             break;
 
-        case FeetWetCodingExercise::CHANGE_FONT_SIZE:
+        case FeetWetCodingExerciseBase::CHANGE_FONT_SIZE:
             textItem = dynamic_cast<QGraphicsTextItem *>(item);
             if ( textItem )
             {
@@ -484,7 +484,7 @@ void ExerciseLauncher::handleRenderUpdates()
             }
             break;
 
-        case FeetWetCodingExercise::CHANGE_TEXT_VAL:
+        case FeetWetCodingExerciseBase::CHANGE_TEXT_VAL:
             textItem = dynamic_cast<QGraphicsTextItem *>(item);
             if ( textItem )
             {
@@ -492,7 +492,7 @@ void ExerciseLauncher::handleRenderUpdates()
             }
             break;
 
-        case FeetWetCodingExercise::CHANGE_INT_VAL:
+        case FeetWetCodingExerciseBase::CHANGE_INT_VAL:
             textItem = dynamic_cast<QGraphicsTextItem *>(item);
             if ( textItem )
             {
@@ -500,7 +500,7 @@ void ExerciseLauncher::handleRenderUpdates()
             }
             break;
 
-        case FeetWetCodingExercise::CHANGE_FLOAT_VAL:
+        case FeetWetCodingExerciseBase::CHANGE_FLOAT_VAL:
             textItem = dynamic_cast<QGraphicsTextItem *>(item);
             if ( textItem )
             {

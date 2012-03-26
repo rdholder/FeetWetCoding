@@ -6,6 +6,8 @@
 
 void Arrays1::runExercise()
 {
+    fwcDrawText("Exercise Under\nConstruction", 50, 100, BLUE, 24);
+
     int n = 0;
 
     int IntOccurance[10] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };

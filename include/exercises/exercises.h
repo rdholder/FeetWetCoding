@@ -4,7 +4,7 @@
 #ifndef exercises_H
 #define exercises_H
 
-#include <exercises/FeetWetCodingExercise.h>
+#include <exercises/FeetWetCodingExerciseBase.h>
 #include <exercises/C01_S02.h>
 #include <exercises/C01_S03.h>
 #include <exercises/C01_S04.h>

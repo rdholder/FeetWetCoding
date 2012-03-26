@@ -14,7 +14,6 @@ SOURCES += \
     source/lib/feetwetcodinglib.cpp \
     source/lib/ExerciseLauncher.cpp \
     source/lib/ColorViewer.cpp \
-    exercises/feetwetcodingexercise.cpp \
     source/lib/FWCExerciseChooser.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/001_Welcome.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/010_ChangeText.cpp \
@@ -179,7 +178,9 @@ SOURCES += \
     mycode/src/MyCode8.cpp \
     mycode/src/MyCode9.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/060_ChangeFontSize.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/060_ChangeFontSizeSOLN.cpp
+    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/060_ChangeFontSizeSOLN.cpp \
+    exercises/feetwetcodingexerciseBase.cpp \
+    exercises/C01-Beginner_Exercises/S07-Storing_Data/Solutions/050_Arrays1SOLN.cpp
 
 
 HEADERS += \
@@ -191,7 +192,6 @@ HEADERS += \
     include/exercises/C01_S03.h \
     include/exercises/C01_S05.h \
     include/exercises/C01_S04.h \
-    include/exercises/FeetWetCodingExercise.h \
     include/exercises/C08-Game_Programming/S03-TopDown2D/TopDown2DWidget.h \
     include/exercises/C08-Game_Programming/S03-TopDown2D/TopDown2D.h \
     include/exercises/C08-Game_Programming/GameWidget.h \
@@ -203,7 +203,8 @@ HEADERS += \
     include/lib/MyCode.h \
     include/exercises/C01_S09.h \
     include/exercises/C01_S07.h \
-    include/exercises/C01_S06.h
+    include/exercises/C01_S06.h \
+    include/exercises/FeetWetCodingExerciseBase.h
 
 FORMS +=
 

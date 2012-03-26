@@ -4,7 +4,7 @@
 #ifndef TOPDOWN2D_H
 #define TOPDOWN2D_H
 
-#include <exercises/FeetWetCodingExercise.h>
+#include <exercises/FeetWetCodingExerciseBase.h>
 
 class TopDown2DWidget;
 
@@ -39,10 +39,9 @@ public slots:
 protected:
     void runExercise();
 
-    //Hide this implementation from the student
     void setupSolution(QObject *parent=0)
     {
-        DrawReferenceBox(LEFTRIGHT);
+        DrawReferenceBox();
         mSolutionPtr = new TopDown2DSoln(parent);
         if ( mSolutionPtr )
         {

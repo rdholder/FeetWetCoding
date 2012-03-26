@@ -5,5 +5,5 @@
 
 void ChangeRadius1Soln::runExercise()
 {
-    fwcDrawText("This is a stub exercise that has not been completed.", 20, 200, DARKBLUE);
+    fwcDrawText("Exercise Under\nConstruction", 50, 100, BLUE, 24);
 }

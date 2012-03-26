@@ -4,26 +4,19 @@
 #ifndef C01_S07_H
 #define C01_S07_H
 
-#include <exercises/FeetWetCodingExercise.h>
+#include <exercises/FeetWetCodingExerciseBase.h>
 
-//class WhileLoopIntroSoln : public FeetWetCodingExercise
-//{
-//    Q_OBJECT
-//public:
-//    explicit WhileLoopIntroSoln(QObject *parent = 0)
-//        :FeetWetCodingExercise(parent)
-//{
-//    //Update seeout with soln config
-//    mSoln = true;
-//    mPane = 1; //Solution is always in pane 1 for now
-//    seeout.setIsSolution(mSoln);
-//    seeout.setColor(BLACK);
-//    seeout.setFontSize(10);
-//}
+class Arrays1Soln : public FeetWetCodingSolution
+{
+    Q_OBJECT
+public:
+    explicit Arrays1Soln(QObject *parent = 0)
+        :FeetWetCodingSolution(parent){}
 
-//protected:
-//    void runExercise();
-//};
+
+protected:
+    void runExercise();
+};
 
 class Arrays1 : public FeetWetCodingExercise
 {
@@ -32,30 +25,15 @@ public:
     explicit Arrays1(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
-        //Exercises can use parent's seeout config
-
         //If this exercise has a solution, launch it
-        //this->setupSolution(parent);
-    }
-    ~Arrays1()
-    {
-        if ( mSolutionPtr )
-        {
-            mSolutionPtr->terminate();
-            mSolutionPtr->wait();
-            delete mSolutionPtr;
-            mSolutionPtr = NULL;
-        }
+        this->setupSolution(parent);
     }
 
 protected:
     void runExercise();
-
-    //Hide this implementation from the student
     void setupSolution(QObject *parent=0)
     {
-        DrawReferenceBox(LEFTRIGHT);
-        //mSolutionPtr = new Arrays1Soln(parent);
+        mSolutionPtr = new Arrays1Soln(parent);
         if ( mSolutionPtr )
         {
             mSolutionPtr->start();
