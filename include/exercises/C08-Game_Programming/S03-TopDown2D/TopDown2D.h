@@ -41,7 +41,7 @@ protected:
 
     void setupSolution(QObject *parent=0)
     {
-        DrawReferenceBox();
+        DrawReferenceBox(BLACK);
         mSolutionPtr = new TopDown2DSoln(parent);
         if ( mSolutionPtr )
         {

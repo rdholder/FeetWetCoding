@@ -878,32 +878,29 @@ span.rvts142
 }
 span.rvts143
 {
- font-size: 14pt;
- font-style: italic;
+ font-size: 16pt;
+ color: #007bbf;
 }
 span.rvts144
 {
  font-size: 16pt;
+ color: #680000;
+}
+span.rvts145
+{
+ font-size: 16pt;
+ color: #23503f;
+}
+span.rvts146
+{
+ font-size: 14pt;
+ font-style: italic;
+}
+span.rvts147
+{
+ font-size: 16pt;
  color: #ff0000;
 }
-a.rvts145, span.rvts145
-{
- color: #0000ff;
- text-decoration: underline;
-}
-a.rvts145:hover { color: #0000ff; }
-a.rvts146, span.rvts146
-{
- color: #0000ff;
- text-decoration: underline;
-}
-a.rvts146:hover { color: #0000ff; }
-a.rvts147, span.rvts147
-{
- color: #0000ff;
- text-decoration: underline;
-}
-a.rvts147:hover { color: #0000ff; }
 a.rvts148, span.rvts148
 {
  color: #0000ff;
@@ -934,79 +931,97 @@ a.rvts152, span.rvts152
  text-decoration: underline;
 }
 a.rvts152:hover { color: #0000ff; }
-span.rvts153
-{
- font-size: 14pt;
- font-family: 'Cordia New';
-}
-span.rvts154
-{
- font-size: 14pt;
- font-family: 'Courier New', 'Courier', monospace;
- font-weight: bold;
-}
-span.rvts155
-{
- font-size: 12pt;
- font-family: 'Courier New', 'Courier', monospace;
- font-weight: bold;
-}
-a.rvts156, span.rvts156
+a.rvts153, span.rvts153
 {
  color: #0000ff;
  text-decoration: underline;
 }
-a.rvts156:hover { color: #0000ff; }
+a.rvts153:hover { color: #0000ff; }
+a.rvts154, span.rvts154
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts154:hover { color: #0000ff; }
+a.rvts155, span.rvts155
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts155:hover { color: #0000ff; }
+span.rvts156
+{
+ font-size: 14pt;
+ font-family: 'Cordia New';
+}
 span.rvts157
+{
+ font-size: 14pt;
+ font-family: 'Courier New', 'Courier', monospace;
+ font-weight: bold;
+}
+span.rvts158
+{
+ font-size: 12pt;
+ font-family: 'Courier New', 'Courier', monospace;
+ font-weight: bold;
+}
+a.rvts159, span.rvts159
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts159:hover { color: #0000ff; }
+span.rvts160
 {
  font-size: 8pt;
  vertical-align: super;
 }
-span.rvts158
-{
- font-size: 14pt;
-}
-span.rvts159
-{
- font-size: 14pt;
- font-weight: bold;
-}
-span.rvts160
-{
- font-size: 14pt;
- font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial', 'Helvetica', sans-serif;
- font-weight: bold;
-}
 span.rvts161
 {
- font-size: 16pt;
- font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial', 'Helvetica', sans-serif;
- font-weight: bold;
+ font-size: 14pt;
 }
 span.rvts162
 {
- font-size: 16pt;
+ font-size: 14pt;
  font-weight: bold;
 }
 span.rvts163
 {
- font-size: 12pt;
+ font-size: 14pt;
+ font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial', 'Helvetica', sans-serif;
  font-weight: bold;
 }
 span.rvts164
 {
- font-size: 36pt;
+ font-size: 16pt;
+ font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial', 'Helvetica', sans-serif;
+ font-weight: bold;
 }
 span.rvts165
 {
- font-size: 48pt;
+ font-size: 16pt;
+ font-weight: bold;
 }
 span.rvts166
+{
+ font-size: 12pt;
+ font-weight: bold;
+}
+span.rvts167
+{
+ font-size: 36pt;
+}
+span.rvts168
+{
+ font-size: 48pt;
+}
+span.rvts169
 {
  font-size: 48pt;
  font-weight: bold;
 }
-span.rvts167
+span.rvts170
 {
  font-size: 36pt;
  font-weight: bold;

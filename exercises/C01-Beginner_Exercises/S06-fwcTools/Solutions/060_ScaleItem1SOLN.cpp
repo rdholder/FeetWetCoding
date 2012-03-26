@@ -5,5 +5,59 @@
 
 void ScaleItem1Soln::runExercise()
 {
-    fwcDrawText("Exercise Under\nConstruction", 50, 100, BLUE, 24);
+    int lightbulbx(0), lightbulby(0), maxradius(100), linewidth(10), fontsize(15);
+    int circle1x(100), circle1y(200), circle1radius(5);
+    int circle2x(200), circle2y(200), circle2radius(5);
+    int circle3x(300), circle3y(200), circle3radius(5);
+
+    std::string key;
+
+    seeout << "Hover mouse over the drawing area above and press + or -";
+    seeout << " to change the circle sizes.  Press q to quit.\n";
+
+    int circle1 = fwcDrawCircle(circle1x,circle1y,circle1radius,DARKBLUE,linewidth,true);
+    int circle2 = fwcDrawCircle(circle2x,circle2y,circle2radius,DARKBLUE,linewidth,true);
+    int circle3 = fwcDrawCircle(circle3x,circle3y,circle3radius,DARKBLUE,linewidth,true);
+
+    while ( key != "q" && key != "Q" )
+    {
+        key = waitForKeyPress();        // = is pronounced "GETS"
+
+        if ( key == "+" )               // == is pronounced "EQUALS" :-)
+        {
+
+            if ( circle1radius < maxradius )
+            {
+                fwcScaleItem(circle1, 1.05);
+            }
+            else if ( circle2radius < maxradius )
+            {
+                fwcScaleItem(circle2, 1.05);
+            }
+            else if ( circle3radius < maxradius )
+            {
+                fwcScaleItem(circle3, 1.05);
+            }
+        }
+
+        if ( key == "-" )               // == is pronounced "EQUALS" :-)
+        {
+
+            if ( circle3radius > 5 )
+            {
+                fwcScaleItem(circle3, 0.95);
+            }
+            else if ( circle2radius > 5 )
+            {
+                fwcScaleItem(circle2, 0.95);
+            }
+            else if ( circle1radius > 5 )
+            {
+                fwcScaleItem(circle1, 0.95);
+            }
+        }
+    }
+
+    fwcClearItems();
+    fwcDrawText("DONE!", 60, 150, DARKBLUE, 60);
 }

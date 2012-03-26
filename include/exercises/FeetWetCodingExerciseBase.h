@@ -158,7 +158,7 @@ protected:
     int fwcDrawFloat( float number, int x, int y, Color color, int size=12, int decimalPlaces=3 );
     int fwcDrawImage( std::string filename, int x, int y );
     int SendRenderRequest( RenderItem item );
-    void DrawReferenceBox();
+    void DrawReferenceBox(Color color);
 
     std::vector<int> mDrawnItems;
     std::vector<int> mRefBoxItems;
@@ -184,7 +184,7 @@ public:
         seeout.setFontSize(10);
 
         //Non-solution exercises need to draw the reference box
-        DrawReferenceBox();
+        DrawReferenceBox(BLACK);
     }
 
     virtual ~FeetWetCodingExercise()

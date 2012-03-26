@@ -309,7 +309,7 @@ int FeetWetCodingExerciseBase::fwcDrawImage( std::string filename, int x, int y 
     return id;
 }
 
-void FeetWetCodingExerciseBase::DrawReferenceBox()
+void FeetWetCodingExerciseBase::DrawReferenceBox(Color color)
 {
     std::ostringstream oss;
     int strWidth(10);
@@ -319,36 +319,36 @@ void FeetWetCodingExerciseBase::DrawReferenceBox()
     //Save the ref box drawn items so that we can preserve them
     //when all the other drawn items get cleared.
     mRefBoxItems.clear();
-    mRefBoxItems.push_back(fwcDrawRectangle( 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, GRAY, 1));
+    mRefBoxItems.push_back(fwcDrawRectangle( 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, color, 1));
 
     oss << 0 << "," << 0;
-    mRefBoxItems.push_back(fwcDrawText(oss.str(), -10, -20, GRAY, dimsSize));
+    mRefBoxItems.push_back(fwcDrawText(oss.str(), -10, -20, color, dimsSize));
 
     oss.str("");
     oss << 0 << "," << WINDOW_HEIGHT;
-    mRefBoxItems.push_back(fwcDrawText(oss.str(), -10, WINDOW_HEIGHT, GRAY, dimsSize));
+    mRefBoxItems.push_back(fwcDrawText(oss.str(), -10, WINDOW_HEIGHT, color, dimsSize));
 
-    mRefBoxItems.push_back(fwcDrawLine( WINDOW_WIDTH/2, 0, WINDOW_WIDTH/2, WINDOW_HEIGHT, GRAY, 1));
+    mRefBoxItems.push_back(fwcDrawLine( WINDOW_WIDTH/2, 0, WINDOW_WIDTH/2, WINDOW_HEIGHT, color, 1));
 
     oss.str("");
     oss << WINDOW_WIDTH/2 << "," << 0;
-    mRefBoxItems.push_back(fwcDrawText(oss.str(), (WINDOW_WIDTH/2-BORDER/2), -20, GRAY, dimsSize));
+    mRefBoxItems.push_back(fwcDrawText(oss.str(), (WINDOW_WIDTH/2-BORDER/2), -20, color, dimsSize));
 
     oss.str("");
     oss << WINDOW_WIDTH/2 << "," << WINDOW_HEIGHT;
-    mRefBoxItems.push_back(fwcDrawText(oss.str(), WINDOW_WIDTH/2-BORDER/2, WINDOW_HEIGHT, GRAY, dimsSize));
+    mRefBoxItems.push_back(fwcDrawText(oss.str(), WINDOW_WIDTH/2-BORDER/2, WINDOW_HEIGHT, color, dimsSize));
 
     oss.str("");
-    oss << "Make YOUR Drawing Area...";
+    oss << "Make YOUR Code...";
     qApp->font().setPointSize(textSize);
     strWidth=QFontMetrics(QFont(qApp->font())).width(oss.str().c_str());
-    mRefBoxItems.push_back(fwcDrawText( oss.str(), WINDOW_WIDTH*.25-strWidth/2, -20, GRAY, 10));
+    mRefBoxItems.push_back(fwcDrawText( oss.str(), WINDOW_WIDTH*.25-strWidth/2, -20, color, 10));
 
     oss.str("");
-    oss << "...look like the SOLUTION Drawing Area";
+    oss << "...do what the SOLUTION code does.";
     qApp->font().setPointSize(textSize);
     strWidth=QFontMetrics(QFont(qApp->font())).width(oss.str().c_str());
-    mRefBoxItems.push_back(fwcDrawText( oss.str(), WINDOW_WIDTH*.75-strWidth/2, -20, GRAY, textSize));
+    mRefBoxItems.push_back(fwcDrawText( oss.str(), WINDOW_WIDTH*.75-strWidth/2, -20, color, textSize));
 
     //Draw reference box on top of everything else
     for ( unsigned int i=0; i < mRefBoxItems.size(); ++i )

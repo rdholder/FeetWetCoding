@@ -5,27 +5,67 @@
 
 void MoveItem1::runExercise()
 {
-    int x(100), count(0);
+    int lightbulbx(0), lightbulby(0), radius(50), linewidth(10), fontsize(15);
+    int circleAx(100), circleAy(200);
+    int circleBx(300), circleBy(200);
+    std::string key;
 
-    fwcDrawCircle(100,200,75,DARKBLUE,10);
-    fwcDrawCircle(300,200,75,DARKBLUE,10);
-    int lightbulb = fwcDrawCircle(x, 200, 65, GREEN, 1, true);
+    lightbulbx = circleAx;  // fwcMoveItem needs to be fixed (it's using it's own
+    lightbulby = circleAy;  // coordinate space instead of drawing area coords
 
-    x=0;    // fwcMoveItem needs to be fixed (it's using it's own
-            // coordinate space instead of drawing area coords
+    seeout << "Hover mouse over the drawing area above and press a or b";
+    seeout << " to move the lightbulb.  Press q to quit.\n\n";
 
-    for(count = 0; count < 20; count++)
+    fwcDrawCircle(circleAx,circleAy,radius,DARKBLUE,linewidth);
+    fwcDrawCircle(circleBx,circleBy,radius,DARKBLUE,linewidth);
+
+    fwcDrawText("A", circleAx, circleAy+(radius/2)+5, BLACK, 25);
+    fwcDrawText("B", circleBx, circleBy+(radius/2)+5, BLACK, 25);
+
+    int lightbulb = fwcDrawCircle(circleAx, circleAy, radius-linewidth, GREEN, 1, true);
+
+    // debugging fwcDrawCircle... apparently the drawcircle tool is
+    // dividing radius by half, so that circles are not being drawn
+    // at their proper radius, but at HALF the radius we are passing!  >:-(
+    // if true then SOMEBODY owes a certain person some pushups!!!  >:-\\\
+
+    seeout << "lightbulb == " << lightbulb << "\n";
+    seeout << "circleAx == " << circleAx << "\n";
+    seeout << "circleAy == " << circleAy << "\n";
+    seeout << "circleBx == " << circleBx << "\n";
+    seeout << "circleBy == " << circleBy << "\n";
+    seeout << "radius == " << radius << "\n";
+    seeout << "circleAy+radius == " << circleAy+radius << "\n";
+
+    // also, WTF is going on with this next line not drawing?!!!
+    fwcDrawLine(circleAx-2, circleAy, circleAx+2, circleAy, BLACK, 1);
+    fwcDrawLine(circleAx-2, circleAy+radius, circleAx+2, circleAy+radius, BLACK, 1);
+    //fwcDrawLine(100, 275, 105, 275, BLACK, 1);
+    fwcDrawCircle(circleAx,circleAy+(radius/2),2,RED,1,true);
+
+
+
+    while ( key != "q" && key != "Q" )
     {
-        if(x==0)
+        key = waitForKeyPress();        // = is pronounced "GETS"
+
+        if ( key == "a" || key == "A" ) // == is pronounced "EQUALS" :-)
         {
-            x = 200;
+            lightbulbx = circleAx;
+            lightbulby = circleAy;
         }
-        else
+        if ( key == "b" || key == "B" )
         {
-            x = 0;
+            lightbulbx = circleBx;
+            lightbulby = circleBy;
         }
 
-        fwcMoveItem(lightbulb, x, 0);
-        msleep(500);
+        fwcMoveItem(lightbulb, lightbulbx, lightbulby);
+
+        seeout << "lightbulb == " << lightbulb << "\n";
+        seeout << "lightbulbx, lightbulby == " << lightbulbx << "," << lightbulby << "\n\n";
     }
+
+    fwcClearItems();
+    fwcDrawText("DONE!", 60, 150, DARKBLUE, 60);
 }

@@ -5,30 +5,39 @@
 
 void ScaleItem1::runExercise()
 {
-    int count1(100), count2(100), leftgrow(1);
-    float scalefactor(1.1);
-    bool c1grow(true), c2grow(false);
+    int lightbulbx(0), lightbulby(0), maxradius(100), linewidth(10), fontsize(15);
+    int circle1x(200), circle1y(200), circle1radius(5);
 
-    int circle1 = fwcDrawCircle(100, 200, 10, DARKBLUE, 1, true);
-    int circle2 = fwcDrawCircle(300, 200, 180, DARKCYAN, 1, true);
+    std::string key;
 
-    for (count1 = 0; count1 < 100; count1++)
+    seeout << "Hover mouse over the drawing area above and press + or -";
+    seeout << " to change the circle size.  Press q to quit.\n";
+
+    int circle1 = fwcDrawCircle(circle1x,circle1y,circle1radius,DARKBLUE,linewidth,true);
+
+    while ( key != "q" && key != "Q" )
     {
-        while( 0 < 180 )
+        key = waitForKeyPress();        // = is pronounced "GETS"
+
+        if ( key == "+" )               // == is pronounced "EQUALS" :-)
         {
-            //scalefactor += 0.1;
-            fwcScaleItem(circle1, scalefactor * leftgrow);
-            fwcScaleItem(circle2, scalefactor);
-            msleep(200);
+
+            if ( circle1radius < maxradius )
+            {
+                fwcScaleItem(circle1, 1.1);
+            }
         }
-        if (leftgrow ==1 )
+
+        if ( key == "-" )
         {
-            leftgrow = -1;
-        }
-        else
-        {
-            leftgrow = 1;
+
+            if ( circle1radius > 5 )
+            {
+                fwcScaleItem(circle1, 0.9);
+            }
         }
     }
 
+    fwcClearItems();
+    fwcDrawText("DONE!", 60, 150, DARKBLUE, 60);
 }
