@@ -49,7 +49,7 @@ void Switch1Soln::runExercise()
 
             if ( random(2) )
             {
-                fwcDrawCircle(x+size/2, y+size/2, size, color, 5, random(2) );
+                fwcDrawCircle(x+size/2, y+size/2, size/2, color, 5, random(2) );
             }
             else
             {

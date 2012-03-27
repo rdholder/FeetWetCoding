@@ -5,7 +5,7 @@
 
 void MoveItem1Soln::runExercise()
 {
-    int lightbulbx(0), lightbulby(0), radius(100), linewidth(10), fontsize(15);
+    int lightbulbx(0), lightbulby(0), radius(50), linewidth(10), fontsize(15);
     int circleEx(100), circleEy(100);
     int circleWx(300), circleWy(100);
     int circleDx(100), circleDy(300);
@@ -25,12 +25,12 @@ void MoveItem1Soln::runExercise()
     fwcDrawCircle(circleDx,circleDy,radius,DARKBLUE,linewidth);
     fwcDrawCircle(circleSx,circleSy,radius,DARKBLUE,linewidth);
 
-    fwcDrawText("Engines", circleEx, circleEy+(radius/2)+5, BLACK, 15);
-    fwcDrawText("Weapons", circleWx, circleWy+(radius/2)+5, BLACK, 15);
-    fwcDrawText("Deflectors", circleDx, circleDy+(radius/2)+5, BLACK, 15);
-    fwcDrawText("Sensors", circleSx, circleSy+(radius/2)+5, BLACK, 15);
+    fwcDrawText("Engines", circleEx, circleEy+(radius)+5, BLACK, 15);
+    fwcDrawText("Weapons", circleWx, circleWy+(radius)+5, BLACK, 15);
+    fwcDrawText("Deflectors", circleDx, circleDy+(radius)+5, BLACK, 15);
+    fwcDrawText("Sensors", circleSx, circleSy+(radius)+5, BLACK, 15);
 
-    int lightbulb = fwcDrawCircle(circleEx, circleEy, radius-linewidth, GREEN, 1, true);
+    int lightbulb = fwcDrawCircle(circleEx, circleEy, radius-linewidth/2, GREEN, 1, true);
 
     while ( key != "q" && key != "Q" )
     {

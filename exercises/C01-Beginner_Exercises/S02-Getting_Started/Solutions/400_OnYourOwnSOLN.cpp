@@ -6,7 +6,7 @@
 void OnYourOwnSoln::runExercise()  // copy the exercise name & paste it into main.cpp
 {
     fwcDrawText("I am learning C++, baby!!! :-D", 10, 10, BLACK, 20);
-    fwcDrawCircle(200, 100, 50, BLUE, 10, true);
+    fwcDrawCircle(200, 100, 25, BLUE, 10, true);
     fwcDrawLine(180, 150, 100, 75, GREEN, 20);
     fwcDrawLine(220, 150, 300, 100, RED, 20);
     fwcDrawRectangle(175, 250, 25, 150, DARKRED, 1, TRUE);

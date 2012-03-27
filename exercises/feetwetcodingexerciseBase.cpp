@@ -391,6 +391,14 @@ void FeetWetCodingExerciseBase::fwcMoveItem(int itemID, int newX, int newY)
     update.x = newX;
     update.y = newY;
 
+    {
+        QMutexLocker globallocker(&globalmutex);
+        if ( mSoln )
+        {
+            update.x += WINDOW_WIDTH/2;
+        }
+    }
+
     mParent->updateRenderItem(update);
 }
 
@@ -494,6 +502,14 @@ void FeetWetCodingExerciseBase::fwcChangeLineEnd(int itemID, int xEnd, int yEnd)
     update.ID = itemID;
     update.xEnd = xEnd;
     update.yEnd = yEnd;
+
+    {
+        QMutexLocker globallocker(&globalmutex);
+        if ( mSoln )
+        {
+            update.xEnd += WINDOW_WIDTH/2;
+        }
+    }
 
     mParent->updateRenderItem(update);
 }

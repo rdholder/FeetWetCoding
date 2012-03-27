@@ -6,9 +6,10 @@
 void ScaleItem1Soln::runExercise()
 {
     int lightbulbx(0), lightbulby(0), maxradius(100), linewidth(10), fontsize(15);
-    int circle1x(100), circle1y(200), circle1radius(5);
-    int circle2x(200), circle2y(200), circle2radius(5);
-    int circle3x(300), circle3y(200), circle3radius(5);
+    int circle1x(100), circle1y(200), circle1radius(3);
+    int circle2x(200), circle2y(200), circle2radius(3);
+    int circle3x(300), circle3y(200), circle3radius(3);
+    double scalefactor1(1.0), scalefactor2(1.0), scalefactor3(1.0), maxscale(10.0);
 
     std::string key;
 
@@ -26,34 +27,46 @@ void ScaleItem1Soln::runExercise()
         if ( key == "+" )               // == is pronounced "EQUALS" :-)
         {
 
-            if ( circle1radius < maxradius )
+            //if ( circle1radius < maxradius )
+            if ( scalefactor1 < maxscale )
             {
                 fwcScaleItem(circle1, 1.05);
+                scalefactor1 *= 1.05;
             }
-            else if ( circle2radius < maxradius )
+            //else if ( circle2radius < maxradius )
+            else if ( scalefactor2 < maxscale )
             {
                 fwcScaleItem(circle2, 1.05);
+                scalefactor2 *= 1.05;
             }
-            else if ( circle3radius < maxradius )
+            //else if ( circle3radius < maxradius )
+            else if ( scalefactor3 < maxscale )
             {
                 fwcScaleItem(circle3, 1.05);
+                scalefactor3 *= 1.05;
             }
         }
 
         if ( key == "-" )               // == is pronounced "EQUALS" :-)
         {
 
-            if ( circle3radius > 5 )
+            //if ( circle3radius > 5 )
+            if ( scalefactor3 > 1.0 )
             {
                 fwcScaleItem(circle3, 0.95);
+                scalefactor3 *= 0.95;
             }
-            else if ( circle2radius > 5 )
+            //else if ( circle2radius > 5 )
+            else if ( scalefactor2 > 1.0 )
             {
                 fwcScaleItem(circle2, 0.95);
+                scalefactor2 *= 0.95;
             }
-            else if ( circle1radius > 5 )
+            //else if ( circle1radius > 5 )
+            else if ( scalefactor1 > 1.0 )
             {
                 fwcScaleItem(circle1, 0.95);
+                scalefactor1 *= 0.95;
             }
         }
     }

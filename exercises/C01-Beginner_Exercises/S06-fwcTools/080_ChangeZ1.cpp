@@ -5,7 +5,7 @@
 
 void ChangeZ1::runExercise()
 {
-    int radius(200), linewidth(10), fontsize(15);
+    int radius(100), linewidth(1), fontsize(15);
     int circle1x(150), circle1y(200), circle1z(2);
     int circle2x(250), circle2y(200), circle2z(1);
 
@@ -17,7 +17,7 @@ void ChangeZ1::runExercise()
     int circle1 = fwcDrawCircle(circle1x,circle1y,radius,DARKBLUE,linewidth,true);
     int circle2 = fwcDrawCircle(circle2x,circle2y,radius,DARKRED,linewidth,true);
 
-    fwcDrawText("1",circle1x-radius,circle1y,BLACK,20);
+    fwcDrawText("1",circle1x-radius-20,circle1y,BLACK,20);
     fwcDrawText("2",circle2x+radius,circle2y,BLACK,20);
 
     while ( key != "q" && key != "Q" )

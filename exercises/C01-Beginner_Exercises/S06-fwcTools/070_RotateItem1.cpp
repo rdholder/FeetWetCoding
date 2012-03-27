@@ -14,7 +14,6 @@ void RotateItem1::runExercise()
 
     while ( true )
     {
-
         if ( turnclockwise )     // == is pronounced "EQUALS" :-)
         {
             shipcompassheading -= degreeturnrate; // THIS SEEMS BACKWARDS.  - SHOULD ROTATE LEFT, CORRECT?
@@ -35,7 +34,7 @@ void RotateItem1::runExercise()
             }
         }
         fwcRotateItem(ship, shipcompassheading);
-        sleep(100);
+        msleep(50);
     }
 
     fwcClearItems();

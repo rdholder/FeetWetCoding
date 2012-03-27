@@ -12,11 +12,11 @@ void ColorViewer::show()
 {
     int x(0);
     int y(0);
-    int r(75);
+    int r(36);
     int fontSize(8);
     int colorIndex(0);
-    double xshift(r/3);
-    double yshiftorig(r/8);
+    double xshift(r/1.5);
+    double yshiftorig(r/4);
     double yshift(yshiftorig);
     size_t position(std::string::npos);
     std::string darkStr = "DARK";
@@ -29,13 +29,27 @@ void ColorViewer::show()
 
     for (int i=0; i < 5; ++i)
     {
-        //Space the circles out a bit
-        y = i*r+r/2 + i*4 + 4;
+        //Move to next location.
+        y = i*2*r;
+
+        // Shift from x,y at center to x,y at top left.
+        y += r;
+
+        //Space circles out by adding a few extra pixels.
+        //(Start at i+1 to apply buffer even when i==0.)
+        y += (i+1)*6;
 
         for (int j=0; j < 5; ++j)
         {
-            //Space the circles out a bit
-            x = j*r+r/2 + j*4 + 4;
+            //Move to next location.
+            x = j*2*r;
+
+            // Shift from x,y at center to x,y at top left.
+            x += r;
+
+            //Space circles out by adding a few extra pixels
+            //(Start at j+1 to apply buffer even when j==0.)
+            x += (j+1)*6;
 
             Color color = (Color)colorIndex;
             colorStrOrig = getNameForColor(color);
@@ -46,21 +60,21 @@ void ColorViewer::show()
             if ( std::string::npos != position  )
             {
                 colorStr.replace(position,darkStr.length(),"DARK\n");
-                yshift = r/3.75;
+                yshift = r/1.75;
             }
 
             position = colorStr.find(ightStr);
             if ( std::string::npos != position  )
             {
                 colorStr.replace(position,ightStr.length(),"IGHT\n");
-                yshift = r/3.75;
+                yshift = r/1.75;
             }
 
             position = colorStr.find(transStr);
             if ( std::string::npos != position  )
             {
                 colorStr.replace(position,transStr.length(),"TRANS\n");
-                yshift = r/3.75;
+                yshift = r/1.75;
             }
 
             fwcDrawCircle(x, y, r, color, 1, true);

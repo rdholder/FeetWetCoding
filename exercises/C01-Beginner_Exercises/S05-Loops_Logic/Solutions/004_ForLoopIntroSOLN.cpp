@@ -11,7 +11,7 @@ void ForLoopIntroSoln::runExercise()
     // we can base our loop on x...
     for ( x = 50; x < 325; x += horizontalstep)
     {
-        fwcDrawCircle(x, y, 10, BLACK, 1, true);
+        fwcDrawCircle(x, y, 5, BLACK, 1, true);
     }
 
     // ...or we can base it on the number of circles we want.
@@ -19,7 +19,7 @@ void ForLoopIntroSoln::runExercise()
     y = 100;
     for ( n = 0; n < 5; n++)
     {
-        fwcDrawCircle(x, y, 10, BLUE, 1, true);
+        fwcDrawCircle(x, y, 5, BLUE, 1, true);
         x += horizontalstep;
     }
 
@@ -28,7 +28,7 @@ void ForLoopIntroSoln::runExercise()
     y = 200;
     for ( n = 0; n < 5; ++n)
     {
-        fwcDrawCircle(x, y, 10, RED, 1, true);
+        fwcDrawCircle(x, y, 5, RED, 1, true);
         x += horizontalstep;
     }
 
@@ -38,7 +38,7 @@ void ForLoopIntroSoln::runExercise()
     {
         for ( col = 0; col < 5; col++ )
         {
-            fwcDrawCircle(x, y, 10, DARKRED, 1, true);
+            fwcDrawCircle(x, y, 5, DARKRED, 1, true);
             x += horizontalstep;
         }
         x = 50;
@@ -51,7 +51,7 @@ void ForLoopIntroSoln::runExercise()
     {
         for ( col = 0; col < 10; col++ )
         {
-            fwcDrawCircle(x, y, 10, DARKCYAN, 1, true);
+            fwcDrawCircle(x, y, 5, DARKCYAN, 1, true);
             x += horizontalstep;
         }
         col = 0;

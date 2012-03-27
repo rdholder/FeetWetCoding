@@ -5,7 +5,7 @@
 
 void MoveItem1::runExercise()
 {
-    int lightbulbx(0), lightbulby(0), radius(50), linewidth(10), fontsize(15);
+    int lightbulbx(0), lightbulby(0), radius(25), linewidth(10), fontsize(15);
     int circleAx(100), circleAy(200);
     int circleBx(300), circleBy(200);
     std::string key;
@@ -19,10 +19,10 @@ void MoveItem1::runExercise()
     fwcDrawCircle(circleAx,circleAy,radius,DARKBLUE,linewidth);
     fwcDrawCircle(circleBx,circleBy,radius,DARKBLUE,linewidth);
 
-    fwcDrawText("A", circleAx, circleAy+(radius/2)+5, BLACK, 25);
-    fwcDrawText("B", circleBx, circleBy+(radius/2)+5, BLACK, 25);
+    fwcDrawText("A", circleAx, circleAy+(radius)+5, BLACK, 25);
+    fwcDrawText("B", circleBx, circleBy+(radius)+5, BLACK, 25);
 
-    int lightbulb = fwcDrawCircle(circleAx, circleAy, radius-linewidth, GREEN, 1, true);
+    int lightbulb = fwcDrawCircle(circleAx, circleAy, radius-linewidth/2, GREEN, 1, true);
 
     // debugging fwcDrawCircle... apparently the drawcircle tool is
     // dividing radius by half, so that circles are not being drawn
@@ -39,10 +39,11 @@ void MoveItem1::runExercise()
 
     // also, WTF is going on with this next line not drawing?!!!
     fwcDrawLine(circleAx-2, circleAy, circleAx+2, circleAy, BLACK, 1);
-    fwcDrawLine(circleAx-2, circleAy+radius, circleAx+2, circleAy+radius, BLACK, 1);
     //fwcDrawLine(100, 275, 105, 275, BLACK, 1);
-    fwcDrawCircle(circleAx,circleAy+(radius/2),2,RED,1,true);
-
+    fwcDrawCircle(circleAx,circleAy+radius,2,RED,1,true);
+    //JCD - Fixed some stuff. Moved this line to after (on top of) red circle
+    //and changed to WHITE so you can see it
+    fwcDrawLine(circleAx-2, circleAy+radius, circleAx+2, circleAy+radius, WHITE, 1);
 
 
     while ( key != "q" && key != "Q" )

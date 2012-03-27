@@ -11,7 +11,7 @@ void WhileLoopIntro::runExercise()
     // we can base our loop on x...
     while ( x < 150 )
     {
-        fwcDrawCircle(x, y, 10, BLACK, 1, true);
+        fwcDrawCircle(x, y, 5, BLACK, 1, true);
         x += horizontalstep;
     }
 
@@ -20,7 +20,7 @@ void WhileLoopIntro::runExercise()
     y = 100;
     while ( n < 5 )
     {
-        fwcDrawCircle(x, y, 10, BLUE, 1, true);
+        fwcDrawCircle(x, y, 5, BLUE, 1, true);
         x += horizontalstep;
         n++;
     }
@@ -33,7 +33,7 @@ void WhileLoopIntro::runExercise()
     y = 150;
     while ( n++ < 5 )
     {
-        fwcDrawCircle(x, y, 10, DARKGREEN, 1, true);
+        fwcDrawCircle(x, y, 5, DARKGREEN, 1, true);
         x += horizontalstep;
     }
     fwcDrawText("...5 circles.", x, y, DARKGREEN, 10);
@@ -44,7 +44,7 @@ void WhileLoopIntro::runExercise()
     y = 200;
     while ( ++n < 5 )
     {
-        fwcDrawCircle(x, y, 10, RED, 1, true);
+        fwcDrawCircle(x, y, 5, RED, 1, true);
         x += horizontalstep;
     }
     fwcDrawText("...NOT 5 circles!", x, y, RED, 10);
@@ -55,7 +55,7 @@ void WhileLoopIntro::runExercise()
     {
         while ( ++col < 5 )
         {
-            fwcDrawCircle(x, y, 10, DARKRED, 1, true);
+            fwcDrawCircle(x, y, 5, DARKRED, 1, true);
             x += horizontalstep;
         }
         col = 0;

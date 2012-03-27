@@ -155,7 +155,9 @@ void ClearScreen()
 
 QGraphicsItem* fwcDrawLineRender( int xStart, int yStart, int xEnd, int yEnd, Color color, int linewidth )
 {
-    QGraphicsLineItem *newLine = new QGraphicsLineItem(xStart, yStart, xEnd, yEnd);
+//    QGraphicsLineItem *newLine = new QGraphicsLineItem(xStart, yStart, xEnd, yEnd);
+    QGraphicsLineItem *newLine = new QGraphicsLineItem(0, 0, xEnd-xStart, yEnd-yStart);
+    newLine->setPos(xStart, yStart);
 
     // Create a line and add it to the scene
     QPen pen;
@@ -169,7 +171,11 @@ QGraphicsItem* fwcDrawLineRender( int xStart, int yStart, int xEnd, int yEnd, Co
 
 QGraphicsItem* fwcDrawCircleRender( int x, int y, int r, Color color, int linewidth, bool solid)
 {
-    QGraphicsEllipseItem *newCircle = new QGraphicsEllipseItem(x-(r/2), y-(r/2), r, r);
+    //Usage: QGraphicsEllipseItem(x, y, width, height). Positions its top left corner at x, y.
+    //Therefore, to make a circle with radius r and position its center at x,y, we need to
+    //shift x,y by -radius and multiply r by 2 before passing them on to the QGraphicsEllipseItem
+    QGraphicsEllipseItem *newCircle = new QGraphicsEllipseItem(0, 0, r*2, r*2);
+    newCircle->setPos(x-r, y-r);
 
     if ( solid )
     {
@@ -192,7 +198,11 @@ QGraphicsItem* fwcDrawCircleRender( int x, int y, int r, Color color, int linewi
 
 QGraphicsItem* fwcDrawCircleRGBRender( int x, int y, int r, int red, int green, int blue, int linewidth, bool solid )
 {
-    QGraphicsEllipseItem *newCircle = new QGraphicsEllipseItem(x-(r/2), y-(r/2), r, r);
+    //Usage: QGraphicsEllipseItem(x, y, width, height). Positions its top left corner at x, y.
+    //Therefore, to make a circle with radius r and position its center at x,y, we need to
+    //shift x,y by -radius and multiply r by 2 before passing them on to the QGraphicsEllipseItem
+    QGraphicsEllipseItem *newCircle = new QGraphicsEllipseItem(0, 0, r*2, r*2);
+    newCircle->setPos(x-r, y-r);
 
     QColor color;
 
@@ -219,7 +229,9 @@ QGraphicsItem* fwcDrawCircleRGBRender( int x, int y, int r, int red, int green, 
 
 QGraphicsItem* fwcDrawEllipseRender( int x, int y, int w, int h, Color color, int linewidth, bool solid )
 {
-    QGraphicsEllipseItem *newCircle = new QGraphicsEllipseItem(x-(w/2), y-(h/2), w, h);
+    //Shift position so that origin goes from top left corner to center of ellipse
+    QGraphicsEllipseItem *newCircle = new QGraphicsEllipseItem(0, 0, w, h);
+    newCircle->setPos(x-(w/2), y-(h/2));
 
     if ( solid )
     {
@@ -242,7 +254,8 @@ QGraphicsItem* fwcDrawEllipseRender( int x, int y, int w, int h, Color color, in
 
 QGraphicsItem* fwcDrawRectangleRender( int x, int y, int w, int h, Color color, int linewidth, bool solid )
 {
-    QGraphicsRectItem *newRect = new QGraphicsRectItem(x, y, w, h);
+    QGraphicsRectItem *newRect = new QGraphicsRectItem(0, 0, w, h);
+    newRect->setPos(x, y);
 
     if ( solid )
     {
@@ -266,7 +279,7 @@ QGraphicsItem* fwcDrawTextRender( std::string text, int x, int y,  Color color, 
 {
     QGraphicsTextItem *newText = new QGraphicsTextItem(text.c_str());
 
-    // Create a line and add it to the scene
+    // Configure the text and add it to the scene
     QFont font(qApp->font());
     font.setPointSize(size);
     newText->setFont(font);
@@ -284,7 +297,7 @@ QGraphicsItem* fwcDrawIntRender( int number, int x, int y, Color color, int font
 
     QGraphicsTextItem *newText = new QGraphicsTextItem(str);
 
-    // Create a line and add it to the scene
+    // Configure the text and add it to the scene
     QFont font(qApp->font());
     font.setPointSize(fontSize);
     newText->setFont(font);
@@ -302,7 +315,7 @@ QGraphicsItem* fwcDrawFloatRender( float number, int x, int y, Color color, int 
 
     QGraphicsTextItem *newText = new QGraphicsTextItem(str);
 
-    // Create a line and add it to the scene
+    // Configure the text and add it to the scene
     QFont font(qApp->font());
     font.setPointSize(fontSize);
     newText->setFont(font);

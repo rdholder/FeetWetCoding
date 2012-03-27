@@ -34,7 +34,7 @@ void Switch1::runExercise()
 
             if ( random(2) )
             {
-                fwcDrawCircle(x, y, size, color, 5 );
+                fwcDrawCircle(x, y, size/2, color, 5 );
             }
             else
             {

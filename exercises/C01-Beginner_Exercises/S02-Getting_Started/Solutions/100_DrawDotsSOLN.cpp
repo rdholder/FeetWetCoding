@@ -16,6 +16,6 @@ void DrawDotsSoln::runExercise()
 
     fwcDrawRectangle(100, 200, 1, 1, RED, 1);
     fwcDrawLine(200, 200, 200, 201, GREEN, 1);
-    fwcDrawCircle(300, 200, 1, BLUE, 1);
+    fwcDrawCircle(300, 200, 1, BLUE, 1, true);
 
 }

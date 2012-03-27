@@ -17,6 +17,6 @@ void DrawDots::runExercise()
 
     fwcDrawRectangle(150, 250, 1, 1, RED, 1);
     fwcDrawLine(200, 100, 200, 101, GREEN, 1);
-    fwcDrawCircle(250, 250, 1, BLUE, 1);
+    fwcDrawCircle(250, 250, 1, BLUE, 1, true);
 
 }

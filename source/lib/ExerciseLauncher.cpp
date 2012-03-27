@@ -4,6 +4,8 @@
 #include <QTime>
 #include <QTransform>
 #include <utility>
+#include <float.h>
+#include <math.h>
 
 std::deque< std::pair< SeeOut::RequestType, QString > > SeeOut::exerciseOutMsgQueue;
 std::deque< std::pair< SeeOut::RequestType, QString > > SeeOut::solnOutMsgQueue;
@@ -332,11 +334,12 @@ void ExerciseLauncher::handleRenderUpdates()
 
     FeetWetCodingExerciseBase::RenderItemUpdate update;
     QGraphicsItem *item(NULL);
-    QGraphicsTextItem *textItem(NULL);
     QGraphicsLineItem *lineItem(NULL);
-    QGraphicsEllipseItem  *circleItem(NULL);
-    QAbstractGraphicsShapeItem *shapeItem(NULL);
+    QGraphicsEllipseItem  *ellipseItem(NULL);
     QGraphicsRectItem *rectItem(NULL);
+    QGraphicsTextItem *textItem(NULL);
+    QGraphicsPixmapItem *pixmapItem(NULL);
+    QAbstractGraphicsShapeItem *shapeItem(NULL);
     QFont font(qApp->font());
     QPen pen;
     QBrush brush(Qt::SolidPattern);
@@ -376,6 +379,14 @@ void ExerciseLauncher::handleRenderUpdates()
 
         case FeetWetCodingExerciseBase::MOVE:
             item->setPos(update.x, update.y);
+
+            //If it's an ellipse, then shift origin from top left to center
+            ellipseItem = dynamic_cast<QGraphicsEllipseItem *>(item);
+            if ( ellipseItem )
+            {
+                ellipseItem->moveBy(-ellipseItem->rect().width()/2, -ellipseItem->rect().height()/2);
+            }
+
             break;
 
         case FeetWetCodingExerciseBase::SHIFT:
@@ -399,7 +410,20 @@ void ExerciseLauncher::handleRenderUpdates()
             break;
 
         case FeetWetCodingExerciseBase::SCALE:
-            item->setScale(update.scalefactor);
+            transform = QTransform();
+
+            centerX = item->boundingRect().center().x();
+            centerY = item->boundingRect().center().y();
+            transform.translate( centerX , centerY );
+            item->setTransform( transform );
+
+            item->setScale(item->scale() * update.scalefactor);
+
+            centerX = item->boundingRect().center().x()*item->scale();
+            centerY = item->boundingRect().center().y()*item->scale();
+            transform.translate( -centerX , -centerY );
+            item->setTransform( transform );
+
             break;
 
         case FeetWetCodingExerciseBase::ROTATE:
@@ -433,11 +457,21 @@ void ExerciseLauncher::handleRenderUpdates()
             break;
 
         case FeetWetCodingExerciseBase::CHANGE_RADIUS:
-            circleItem = dynamic_cast<QGraphicsEllipseItem *>(item);
-            if ( circleItem )
+            //It's only a circle if it's a QGraphicsEllipseItem
+            //AND it's width and height are identical. Since they're floats
+            //we can't just compare directly... need to compare absolute value
+            //of their difference against FLT_EPSILON (a tiny value that's essentially
+            //zero for most purposes.)
+            ellipseItem = dynamic_cast<QGraphicsEllipseItem *>(item);
+            if ( ellipseItem &&
+                 fabs(ellipseItem->rect().width() - ellipseItem->rect().height()) < FLT_EPSILON)
             {
-                circleItem->setRect(circleItem->x(), circleItem->y(),
-                                    update.radius, update.radius);
+                //ellipseItem->setRect(-update.radius, -update.radius, update.radius*2, update.radius*2);
+                //Get current center location so we can recenter circle after setting radius
+                centerX=ellipseItem->pos().x()+ellipseItem->rect().width()/2;
+                centerY=ellipseItem->pos().y()+ellipseItem->rect().height()/2;
+                ellipseItem->setRect(0, 0, update.radius*2, update.radius*2);
+                ellipseItem->setPos(centerX-update.radius, centerY-update.radius);
             }
             break;
 
