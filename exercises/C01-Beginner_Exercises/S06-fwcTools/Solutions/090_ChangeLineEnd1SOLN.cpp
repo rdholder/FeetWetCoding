@@ -5,5 +5,35 @@
 
 void ChangeLineEnd1Soln::runExercise()
 {
-    fwcDrawText("Exercise Under\nConstruction", 50, 100, BLUE, 24);
+
+    int x(0), y(0), step(10);
+
+    fwcDrawRectangle(0,0,400,400,BLACK,1,true);
+
+    int line = fwcDrawLine(200,200,0,0,GREEN,1);
+
+    while(true)
+    {
+        for(x=0; x < 400; ++x)
+        {
+            fwcChangeLineEnd(line, x, y);
+            msleep(50);
+            seeout << x << " ";
+        }
+        for(y=0; y < 400; ++y)
+        {
+            fwcChangeLineEnd(line, x, y);
+            msleep(50);
+        }
+        for(x=400; x > 0; --x)
+        {
+            fwcChangeLineEnd(line, x, y);
+            msleep(50);
+        }
+        for(y=400; y > 0; --y)
+        {
+            fwcChangeLineEnd(line, x, y);
+            msleep(50);
+        }
+    }
 }

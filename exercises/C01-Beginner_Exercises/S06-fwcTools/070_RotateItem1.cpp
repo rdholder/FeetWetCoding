@@ -5,35 +5,23 @@
 
 void RotateItem1::runExercise()
 {
-    int shipx(200), shipy(200), shipcompassheading(0), degreeturnrate(10);
+    int shipx(200), shipy(200), shipangle(0), degreeturnrate(10);
     bool turnclockwise(true);
-
     std::string key;
+
+    seeout.setColor(DARKGREEN);
+    seeout.setFontSize(12);
+    seeout << "shipangle:\n";
+    seeout.setColor(BLACK);
+    seeout.setFontSize(10);
 
     int ship = fwcDrawImage("spaceship50x59.jpg", shipx, shipy);
 
     while ( true )
     {
-        if ( turnclockwise )     // == is pronounced "EQUALS" :-)
-        {
-            shipcompassheading -= degreeturnrate; // THIS SEEMS BACKWARDS.  - SHOULD ROTATE LEFT, CORRECT?
-            if ( shipcompassheading < 0 )
-            {
-                shipcompassheading = 355;
-                turnclockwise = true;
-            }
-        }
-
-        if ( !turnclockwise )
-        {
-            shipcompassheading += degreeturnrate;
-            if ( shipcompassheading > 355 )
-            {
-                shipcompassheading = 0;
-                turnclockwise = false;
-            }
-        }
-        fwcRotateItem(ship, shipcompassheading);
+        seeout << shipangle << "  ";
+        shipangle += degreeturnrate;
+        fwcRotateItem(ship, shipangle);
         msleep(50);
     }
 

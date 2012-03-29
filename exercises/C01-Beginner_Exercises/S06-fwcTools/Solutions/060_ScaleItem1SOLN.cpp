@@ -5,11 +5,11 @@
 
 void ScaleItem1Soln::runExercise()
 {
-    int lightbulbx(0), lightbulby(0), maxradius(100), linewidth(10), fontsize(15);
+    int lightbulbx(0), lightbulby(0), maxradius(50), linewidth(10), fontsize(15);
     int circle1x(100), circle1y(200), circle1radius(3);
     int circle2x(200), circle2y(200), circle2radius(3);
     int circle3x(300), circle3y(200), circle3radius(3);
-    double scalefactor1(1.0), scalefactor2(1.0), scalefactor3(1.0), maxscale(10.0);
+    double scalefactor1(1.0), scalefactor2(1.0), scalefactor3(1.0), maxscale(5.0);
 
     std::string key;
 
@@ -30,8 +30,8 @@ void ScaleItem1Soln::runExercise()
             //if ( circle1radius < maxradius )
             if ( scalefactor1 < maxscale )
             {
-                fwcScaleItem(circle1, 1.05);
-                scalefactor1 *= 1.05;
+                fwcScaleItem(circle1, 1.1);
+                scalefactor1 *= 1.1;
             }
             //else if ( circle2radius < maxradius )
             else if ( scalefactor2 < maxscale )

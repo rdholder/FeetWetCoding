@@ -5,6 +5,20 @@
 
 using std::string;
 
+void writeFalse()
+{
+//    seeout.setColor(DARKRED);
+//    seeout << "FALSE: ";
+//    seeout.setColor(BLACK);
+}
+
+void writeTrue()
+{
+//    seeout.setColor(DARKGREEN);
+//    seeout << "TRUE: ";
+//    seeout.setColor(BLACK);
+}
+
 void IfThen3::runExercise()
 {
     int x = 10, y = 20, z = 10;  // = is pronounced GETS, == is pronounced EQUALS
@@ -25,12 +39,12 @@ void IfThen3::runExercise()
     seeout << "Try to understand in every case below why each is true or false.\n\n";
 
     // basic comparison logic
-    if ( x == y ) seeout << "TRUE: ";
-    else seeout << "FALSE: ";
+    if ( x == y ) writeTrue();
+    else writeFalse();
     seeout << "Conditional 1: " << x << " == " << y << "\n";
 
-    if ( x == z ) seeout << "TRUE: ";
-    else seeout << "FALSE: ";
+    if ( x == z ) writeTrue();
+    else writeFalse();
     seeout << "Conditional 2: " << x << " == " << z << "\n";
 
     if ( x != y ) seeout << "TRUE: ";

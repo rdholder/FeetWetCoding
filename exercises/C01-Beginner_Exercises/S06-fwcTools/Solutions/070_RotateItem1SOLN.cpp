@@ -5,13 +5,19 @@
 
 void RotateItem1Soln::runExercise()
 {
-    int shipx(200), shipy(200), shipcompassheading(0), degreeturnrate(10);
-
+    int shipx(200), shipy(200), shipangle(0), degreeturnrate(10);
     std::string key;
 
     seeout << "Hover mouse over the drawing area above and press a or d";
     seeout << " to rotate the ship.  Press q to quit.\n\n";
-    seeout << "Hm, why isn't the ship centered on 200,200?...\n";
+    seeout.setColor(DARKRED);
+    seeout << "Notice that in the solution, shipangle does not go outside";
+    seeout << " the range 0..360.\n\n";
+    seeout.setFontSize(12);
+    seeout.setColor(DARKGREEN);
+    seeout << "shipangle:\n";
+    seeout.setColor(BLACK);
+    seeout.setFontSize(10);
 
     int ship = fwcDrawImage("spaceship50x59.jpg", shipx, shipy);
 
@@ -21,22 +27,23 @@ void RotateItem1Soln::runExercise()
 
         if ( key == "a" || key == "A" )     // == is pronounced "EQUALS" :-)
         {
-            shipcompassheading -= degreeturnrate; // THIS SEEMS BACKWARDS.  - SHOULD ROTATE LEFT, CORRECT?
-            if ( shipcompassheading < 0 )
+            shipangle -= degreeturnrate; // THIS SEEMS BACKWARDS.  - SHOULD ROTATE LEFT, CORRECT?
+            if ( shipangle < 0 )
             {
-                shipcompassheading = 355;
+                shipangle = 350;
             }
         }
 
         if ( key == "d" || key == "D" )
         {
-            shipcompassheading += degreeturnrate;
-            if ( shipcompassheading > 355 )
+            shipangle += degreeturnrate;
+            if ( shipangle > 359 )
             {
-                shipcompassheading = 0;
+                shipangle = 0;
             }
         }
-        fwcRotateItem(ship, shipcompassheading);
+        fwcRotateItem(ship, shipangle);
+        seeout << shipangle << "  ";
     }
 
     fwcClearItems();
