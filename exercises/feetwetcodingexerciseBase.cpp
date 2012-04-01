@@ -16,7 +16,7 @@ FeetWetCodingExerciseBase::FeetWetCodingExerciseBase(QObject *parent)
     ,mSolutionPtr(NULL)
 {
 #ifdef DEBUG
-    qDebug() << "FeetWetCodingExerciseBase::FeetWetCodingExerciseBase() - (GUI) ThreadID: " << qApp->thread()->currentThread();
+    qDebug() << "DEBUG: FeetWetCodingExerciseBase::FeetWetCodingExerciseBase() - (GUI) ThreadID: " << qApp->thread()->currentThread();
 #endif
 
     mParent = dynamic_cast<ExerciseLauncher *>(parent);
@@ -29,7 +29,7 @@ FeetWetCodingExerciseBase::~FeetWetCodingExerciseBase()
 void FeetWetCodingExerciseBase::run()
 {
 #ifdef DEBUG
-    qDebug() << "FeetWetCodingExerciseBase::run() - (Exercise/Soln) ThreadID: " << qApp->thread()->currentThread();
+    qDebug() << "DEBUG: FeetWetCodingExerciseBase::run() - (Exercise/Soln) ThreadID: " << qApp->thread()->currentThread();
 #endif
 
     int ctime = QTime::currentTime().msec();
@@ -94,7 +94,7 @@ std::string FeetWetCodingExerciseBase::getKeyboardString()
             {
 #ifdef DEBUG
 
-                qDebug() << "keyEvent is NOT EMPTY - APPENDING " << keystr << " to string " << fullstring;
+                qDebug() << "DEBUG: keyEvent is NOT EMPTY - APPENDING " << keystr << " to string " << fullstring;
 #endif
                 fullstring.append(keystr);
             }
@@ -361,7 +361,7 @@ int FeetWetCodingExerciseBase::SendRenderRequest( RenderItem item )
 {
     if ( !mParent )
     {
-        qDebug() << "FeetWetCodingExerciseBase::sendRenderRequest() mParent is NULL!";
+        qDebug() << "ERROR: FeetWetCodingExerciseBase::sendRenderRequest() mParent is NULL!";
         return -1;
     }
 
@@ -381,7 +381,7 @@ void FeetWetCodingExerciseBase::fwcMoveItem(int itemID, int newX, int newY)
 {
     if ( !mParent )
     {
-        qDebug() << "FeetWetCodingExerciseBase::fwcMoveItem() mParent is NULL!";
+        qDebug() << "ERROR: FeetWetCodingExerciseBase::fwcMoveItem() mParent is NULL!";
         return;
     }
 
@@ -406,7 +406,7 @@ void FeetWetCodingExerciseBase::fwcShiftItem(int itemID, int xShift, int yShift)
 {
     if ( !mParent )
     {
-        qDebug() << "FeetWetCodingExerciseBase::fwcShiftItem() mParent is NULL!";
+        qDebug() << "ERROR: FeetWetCodingExerciseBase::fwcShiftItem() mParent is NULL!";
         return;
     }
 
@@ -423,7 +423,7 @@ void FeetWetCodingExerciseBase::fwcEraseItem(int itemID)
 {
     if ( !mParent )
     {
-        qDebug() << "FeetWetCodingExerciseBase::fwcEraseItem() mParent is NULL!";
+        qDebug() << "ERROR: FeetWetCodingExerciseBase::fwcEraseItem() mParent is NULL!";
         return;
     }
 
@@ -445,7 +445,7 @@ void FeetWetCodingExerciseBase::fwcChangeZ(int itemID, int z)
 {
     if ( !mParent )
     {
-        qDebug() << "FeetWetCodingExerciseBase::fwcChangeZ() mParent is NULL!";
+        qDebug() << "ERROR: FeetWetCodingExerciseBase::fwcChangeZ() mParent is NULL!";
         return;
     }
 
@@ -461,7 +461,7 @@ void FeetWetCodingExerciseBase::fwcScaleItem(int itemID, float scalefactor)
 {
     if ( !mParent )
     {
-        qDebug() << "FeetWetCodingExerciseBase::Scale() mParent is NULL!";
+        qDebug() << "ERROR: FeetWetCodingExerciseBase::Scale() mParent is NULL!";
         return;
     }
 
@@ -477,7 +477,7 @@ void FeetWetCodingExerciseBase::fwcRotateItem(int itemID, float angledegrees)
 {
     if ( !mParent )
     {
-        qDebug() << "FeetWetCodingExerciseBase::Rotate() mParent is NULL!";
+        qDebug() << "ERROR: FeetWetCodingExerciseBase::Rotate() mParent is NULL!";
         return;
     }
 
@@ -493,7 +493,7 @@ void FeetWetCodingExerciseBase::fwcChangeLineEnd(int itemID, int xEnd, int yEnd)
 {
     if ( !mParent )
     {
-        qDebug() << "FeetWetCodingExerciseBase::fwcChangeLineEnd() mParent is NULL!";
+        qDebug() << "ERROR: FeetWetCodingExerciseBase::fwcChangeLineEnd() mParent is NULL!";
         return;
     }
 
@@ -518,7 +518,7 @@ void FeetWetCodingExerciseBase::fwcChangeWidthAndHeight(int itemID, int w, int h
 {
     if ( !mParent )
     {
-        qDebug() << "FeetWetCodingExerciseBase::fwcChangeWidthAndHeight() mParent is NULL!";
+        qDebug() << "ERROR: FeetWetCodingExerciseBase::fwcChangeWidthAndHeight() mParent is NULL!";
         return;
     }
 
@@ -535,7 +535,7 @@ void FeetWetCodingExerciseBase::fwcChangeRadius(int itemID, int radius)
 {
     if ( !mParent )
     {
-        qDebug() << "FeetWetCodingExerciseBase::fwcChangeRadius() mParent is NULL!";
+        qDebug() << "ERROR: FeetWetCodingExerciseBase::fwcChangeRadius() mParent is NULL!";
         return;
     }
 
@@ -551,7 +551,7 @@ void FeetWetCodingExerciseBase::fwcChangeColor(int itemID, Color color, bool sol
 {
     if ( !mParent )
     {
-        qDebug() << "FeetWetCodingExerciseBase::fwcChangeColor() mParent is NULL!";
+        qDebug() << "ERROR: FeetWetCodingExerciseBase::fwcChangeColor() mParent is NULL!";
         return;
     }
 
@@ -568,7 +568,7 @@ void FeetWetCodingExerciseBase::fwcChangeLineWidth(int itemID, int width)
 {
     if ( !mParent )
     {
-        qDebug() << "FeetWetCodingExerciseBase::fwcChangeLineWidth() mParent is NULL!";
+        qDebug() << "ERROR: FeetWetCodingExerciseBase::fwcChangeLineWidth() mParent is NULL!";
         return;
     }
 
@@ -584,7 +584,7 @@ void FeetWetCodingExerciseBase::fwcChangeFontSize(int itemID, int size)
 {
     if ( !mParent )
     {
-        qDebug() << "FeetWetCodingExerciseBase::fwcChangeFontSize() mParent is NULL!";
+        qDebug() << "ERROR: FeetWetCodingExerciseBase::fwcChangeFontSize() mParent is NULL!";
         return;
     }
 
@@ -601,7 +601,7 @@ void FeetWetCodingExerciseBase::fwcChangeText(int itemID, std::string text)
 {
     if ( !mParent )
     {
-        qDebug() << "FeetWetCodingExerciseBase::fwcChangeText() mParent is NULL!";
+        qDebug() << "ERROR: FeetWetCodingExerciseBase::fwcChangeText() mParent is NULL!";
         return;
     }
 
@@ -617,7 +617,7 @@ void FeetWetCodingExerciseBase::fwcChangeInt(int itemID, int intval)
 {
     if ( !mParent )
     {
-        qDebug() << "FeetWetCodingExerciseBase::fwcChangeInt() mParent is NULL!";
+        qDebug() << "ERROR: FeetWetCodingExerciseBase::fwcChangeInt() mParent is NULL!";
         return;
     }
 
@@ -633,7 +633,7 @@ void FeetWetCodingExerciseBase::fwcChangeFloat(int itemID, int floatval)
 {
     if ( !mParent )
     {
-        qDebug() << "FeetWetCodingExerciseBase::fwcChangeFloat() mParent is NULL!";
+        qDebug() << "ERROR: FeetWetCodingExerciseBase::fwcChangeFloat() mParent is NULL!";
         return;
     }
 

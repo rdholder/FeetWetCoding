@@ -42,17 +42,19 @@ ExerciseLauncher::~ExerciseLauncher()
     stopCurrentExercise();
 }
 
-//IMPORTANT!!! Calling code retains ownership of the mSelectedExercise
-//pointer. ExerciseLauncher should not delete this passed in pointer!
+//IMPORTANT!!! Calling code retains ownership of the FeetWetCodingExercise
+//pointer passed in here. ExerciseLauncher should not delete this pointer!
+//The pointer is assigned to mThread, so don't delete mThread.
 void ExerciseLauncher::launchExercise( FeetWetCodingExercise *exercise )
 {
     if ( NULL == exercise )
     {
-        qDebug() << "ExerciseLauncher::launchExercise() - exercise is NULL!";
+        qDebug() << "ERROR: ExerciseLauncher::launchExercise() - exercise is NULL!";
+        return;
     }
 
 #ifdef DEBUG
-    qDebug() << "ExerciseLauncher::launchExercise() - assigning exercise to mThread...";
+    qDebug() << "DEBUG: ExerciseLauncher::launchExercise() - assigning exercise to mThread...";
 #endif
     mThread = exercise;
 
@@ -63,7 +65,7 @@ void ExerciseLauncher::launchExercise( FeetWetCodingExercise *exercise )
     }
     else
     {
-        qDebug() << "ExerciseLauncher::launchExercise() - mThread is NULL after assgnmt!";
+        qDebug() << "ERROR: ExerciseLauncher::launchExercise() - mThread is NULL after assgnmt!";
     }
 }
 
@@ -77,8 +79,8 @@ void ExerciseLauncher::stopCurrentExercise()
     if( mThread->isRunning() )
     {
 #ifdef DEBUG
-        qDebug() << "ExerciseLauncher::stopCurrentExercise() - mThread is not NULL and still running";
-        qDebug() << "ExerciseLauncher() - call mThread->terminate(); mThread->wait()";
+        qDebug() << "DEBUG: ExerciseLauncher::stopCurrentExercise() - mThread is not NULL and still running";
+        qDebug() << "DEBUG: ExerciseLauncher() - call mThread->terminate(); mThread->wait()";
 #endif
         mThread->terminate();
         mThread->wait();
@@ -86,7 +88,7 @@ void ExerciseLauncher::stopCurrentExercise()
     else
     {
 #ifdef DEBUG
-        qDebug() << "ExerciseLauncher::stopCurrentExercise() - mThread is not NULL but no longer running";
+        qDebug() << "DEBUG: ExerciseLauncher::stopCurrentExercise() - mThread is not NULL but no longer running";
 #endif
     }
 
@@ -747,7 +749,7 @@ void ExerciseLauncher::update()
     if ( buffersAreEmpty() && mThread->isFinished() && mThread->solutionIsFinished() )
     {
 #ifdef DEBUG
-        qDebug() << "Thread is done and buffers are empty so stopping timer - &&&&&&&&&&&&&&&&&&&";
+        qDebug() << "DEBUG: Thread is done and buffers are empty so stopping timer - &&&&&&&&&&&&&&&&&&&";
 #endif
         mTimer->stop();
 

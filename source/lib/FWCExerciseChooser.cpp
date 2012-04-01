@@ -461,14 +461,14 @@ void FWCExerciseChooser::selectSection( const QString & selection )
 void FWCExerciseChooser::selectExercise( const QString & selection )
 {
 #ifdef DEBUG
-    qDebug() << "FWCExerciseChooser::selectExercise(" << selection << ")";
+    qDebug() << "INFO: FWCExerciseChooser::selectExercise(" << selection << ")";
 #endif
     if ( mExerciseMap.find(mCurrentChapter) == mExerciseMap.end() ||
          mExerciseMap[mCurrentChapter].find(mCurrentSection) ==
          mExerciseMap[mCurrentChapter].end() ||
          mExerciseMap[mCurrentChapter][mCurrentSection].empty() )
     {
-        qDebug() << "FAILED TO FIND CURRENT SECTION!";
+        qDebug() << "ERROR: FWCExerciseChooser::selectExercise("<<selection<<") - Failed to find current section.";
         return;
     }
 
@@ -477,7 +477,7 @@ void FWCExerciseChooser::selectExercise( const QString & selection )
     if ( selection.isEmpty() )
     {
 #ifdef DEBUG
-        qDebug() << "Empty selection, so selecting first exercise in current section";
+        qDebug() << "INFO: Empty selection, so selecting first exercise in current section";
 #endif
         selectedExercise = mExerciseMap[mCurrentChapter][mCurrentSection].at(0);
         mExerciseChooser->setCurrentIndex(0);
@@ -499,7 +499,7 @@ void FWCExerciseChooser::selectExercise( const QString & selection )
     // Did we find it?
     if ( selectedExercise.isEmpty() )
     {
-        qDebug() << "FAILED TO FIND SELECTED EXERCISE!";
+        qDebug() << "ERROR: FWCExerciseChooser::selectExercise("<<selection<<") - Failed to find selected exercise.";
         return; // nope, so don't do anything
     }
 
@@ -508,7 +508,7 @@ void FWCExerciseChooser::selectExercise( const QString & selection )
     mCurrentExercise = selectedExercise;
 
 #ifdef DEBUG
-    qDebug() << "CALL runCurrentExercise() with mCurrentExercise==" << selectedExercise;
+    qDebug() << "INFO: CALL runCurrentExercise() with mCurrentExercise==" << selectedExercise;
 #endif
     runCurrentExercise();
 }
@@ -516,7 +516,7 @@ void FWCExerciseChooser::selectExercise( const QString & selection )
 void FWCExerciseChooser::chapterSelected( const QString & selection )
 {
 #ifdef DEBUG
-    qDebug() << "chapterSelected(): " << selection << "\n";
+    qDebug() << "INFO: chapterSelected(): " << selection << "\n";
 #endif
     selectChapter(selection);
 }
@@ -524,7 +524,7 @@ void FWCExerciseChooser::chapterSelected( const QString & selection )
 void FWCExerciseChooser::sectionSelected( const QString & selection )
 {
 #ifdef DEBUG
-    qDebug() << "sectionSelected(): " << selection << "\n";
+    qDebug() << "INFO: sectionSelected(): " << selection << "\n";
 #endif
     selectSection(selection);
 }
@@ -532,7 +532,7 @@ void FWCExerciseChooser::sectionSelected( const QString & selection )
 void FWCExerciseChooser::exerciseSelected( const QString & selection )
 {
 #ifdef DEBUG
-    qDebug() << "exerciseSelected(): " << selection << "\n";
+    qDebug() << "INFO: exerciseSelected(): " << selection << "\n";
 #endif
     selectExercise(selection);
 }
@@ -551,12 +551,6 @@ void FWCExerciseChooser::stopExercise()
         delete mSelectedExercise;
         mSelectedExercise = NULL;
     }
-    else
-    {
-#ifdef DEBUG
-        qDebug() << "mSelectedExercise is NULL here: " << __LINE__;
-#endif
-    }
 }
 
 void FWCExerciseChooser::runExercise( const QString & exerciseName )
@@ -569,7 +563,7 @@ void FWCExerciseChooser::runExercise( const QString & exerciseName )
 
     if ( NULL == mSelectedExercise )
     {
-        qDebug() << "mSelectedExercise IS NULL!";
+        qDebug() << "ERROR: FWCExerciseChooser::runExercise("<<exerciseName<<") - Failed to find exercise from name.";
         return;
     }
 
@@ -584,10 +578,6 @@ void FWCExerciseChooser::runExercise( const QString & exerciseName )
 
 void FWCExerciseChooser::runCurrentExercise()
 {
-#ifdef DEBUG
-    qDebug() << "\n\n\n*****************************************************";
-    qDebug() << "START NEXT SELECTION - ENTER FWCExerciseChooser::runCurrentExercise()";
-#endif
     runExercise( mCurrentExercise );
 }
 
@@ -601,10 +591,7 @@ void FWCExerciseChooser::saveCurrentExercise()
 
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
     {
-#ifdef DEBUG
-        qDebug() << "Failed to open file \"lastexercise.txt\" for writing."
-                 << " Cannot save current exercise.\n";
-#endif
+        qDebug() << "WARNING: Unable to write to file \"lastexercise.txt\". Cannot save which exercise was viewed last.\n";
         return;
     }
 
@@ -621,8 +608,9 @@ void FWCExerciseChooser::loadPreviousExercise()
     QFile file("lastexercise.txt");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
     {
-        qDebug() << "Failed to open file \"lastexercise.txt\" for reading."
-                 << " Cannot load previous exercise.\n";
+#ifdef DEBUG
+        qDebug() << "INFO: File \"lastexercise.txt\" not found - loading default exercise.\n";
+#endif
         return;
     }
 
@@ -684,14 +672,24 @@ bool FWCExerciseChooser::loadPreviousExerciseEnabled()
         // Try the user's config file first.
         return getSettingLoadPreviousExerciseEnabled("config.txt");
     }
-    catch ( bool val ) { qDebug() << "Failed to get prevEx setting from user config.\n"; }
+    catch ( bool val )
+    {
+#ifdef DEBUG
+        qDebug() << "INFO: Unable to get previous exercise from user config. Using default config.\n";
+#endif
+    }
 
     try
     {
         // Try the default config file.
         return getSettingLoadPreviousExerciseEnabled(getDefaultConfigFilePath());
     }
-    catch ( bool val ) { qDebug() << "Failed to get prevEx setting from default config.\n"; }
+    catch ( bool val )
+    {
+#ifdef DEBUG
+        qDebug() << "INFO: Unable to get previous exercise setting from default config. Use default exercise.\n";
+#endif
+    }
 
     return false;
 }

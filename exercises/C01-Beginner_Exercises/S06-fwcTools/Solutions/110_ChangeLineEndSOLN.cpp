@@ -13,34 +13,30 @@
 void ChangeLineEndSoln::runExercise()
 {
 
-    int x(0), y(0), step(10);
+    int x(0), y(0), step(5), sleepTimeInMiliseconds(30);
 
     fwcDrawRectangle(0,0,400,400,BLACK,1,true);
 
     int line = fwcDrawLine(200,200,0,0,GREEN,1);
 
-    while(true)
+    for(x=0; x < 400; x+=step)
     {
-        for(x=0; x < 400; ++x)
-        {
-            fwcChangeLineEnd(line, x, y);
-            msleep(50);
-            seeout << x << " ";
-        }
-        for(y=0; y < 400; ++y)
-        {
-            fwcChangeLineEnd(line, x, y);
-            msleep(50);
-        }
-        for(x=400; x > 0; --x)
-        {
-            fwcChangeLineEnd(line, x, y);
-            msleep(50);
-        }
-        for(y=400; y > 0; --y)
-        {
-            fwcChangeLineEnd(line, x, y);
-            msleep(50);
-        }
+        fwcChangeLineEnd(line, x, y);
+        msleep(sleepTimeInMiliseconds);
+    }
+    for(y=0; y < 400; y+=step)
+    {
+        fwcChangeLineEnd(line, x, y);
+        msleep(sleepTimeInMiliseconds);
+    }
+    for(x=400; x > 0; x-=step)
+    {
+        fwcChangeLineEnd(line, x, y);
+        msleep(sleepTimeInMiliseconds);
+    }
+    for(y=400; y > 0; y-=step)
+    {
+        fwcChangeLineEnd(line, x, y);
+        msleep(sleepTimeInMiliseconds);
     }
 }

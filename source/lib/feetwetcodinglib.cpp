@@ -155,9 +155,7 @@ void ClearScreen()
 
 QGraphicsItem* fwcDrawLineRender( int xStart, int yStart, int xEnd, int yEnd, Color color, int linewidth )
 {
-//    QGraphicsLineItem *newLine = new QGraphicsLineItem(xStart, yStart, xEnd, yEnd);
-    QGraphicsLineItem *newLine = new QGraphicsLineItem(0, 0, xEnd-xStart, yEnd-yStart);
-    newLine->setPos(xStart, yStart);
+    QGraphicsLineItem *newLine = new QGraphicsLineItem(xStart, yStart, xEnd, yEnd);
 
     // Create a line and add it to the scene
     QPen pen;
@@ -341,7 +339,7 @@ QGraphicsItem* fwcDrawImageRender( std::string filename, int x, int y )
     if ( false == pixmap.load(imageFilePath) )
     {
         SeeOut seeout;
-        seeout << "ERROR: Failed to create pixmap from image file " << imageFilePath.toStdString() << "\n";
+        seeout << "ERROR: Unable to create pixmap from image file " << imageFilePath.toStdString() << "\n";
         return NULL;
     }
 
@@ -469,7 +467,7 @@ QString getProjectPath()
     QDir parentDir(QDir::current());
     if ( false == parentDir.cdUp() )
     {
-        qDebug() << "Failed to cd to parent directory!";
+        qDebug() << "WARNING: Unable to cd to parent directory. Project path cannot be determined.";
         return QString();
     }
 

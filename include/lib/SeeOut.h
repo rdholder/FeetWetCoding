@@ -73,15 +73,11 @@ public:
         {
             QMutexLocker globallocker(&globalmutex);
             exerciseOutMsgQueue.push_back(make_pair<RequestType,QString>(MESSAGE, mOss.str().c_str()));
-//            qDebug() << "Added __" << mOss.str().c_str() << "__ to exercise message queue.";
-//            qDebug() << "exerciseOutMsgQueue.size(): " << exerciseOutMsgQueue.size();
         }
         else
         {
             QMutexLocker globallocker(&globalmutex);
             solnOutMsgQueue.push_back(make_pair<RequestType,QString>(MESSAGE, mOss.str().c_str()));
-//            qDebug() << "Added __" << mOss.str().c_str() << "__ to soln message queue.";
-//            qDebug() << "solnOutMsgQueue.size(): " << exerciseOutMsgQueue.size();
         }
 
         return *this;
