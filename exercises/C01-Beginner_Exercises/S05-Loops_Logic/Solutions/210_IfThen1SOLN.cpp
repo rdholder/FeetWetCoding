@@ -3,6 +3,13 @@
 
 #include <exercises/C01_S05.h>
 
+// ==========================================
+// =       THIS IS THE SOLUTION CODE        =
+// =    THIS IS *NOT* THE EXERCISE CODE     =
+// = (If you meant to look at the exercise  =
+// = it's in the directory above this one.) =
+// ==========================================
+
 void IfThen1Soln::runExercise()
 {
     int x=0, y=0;

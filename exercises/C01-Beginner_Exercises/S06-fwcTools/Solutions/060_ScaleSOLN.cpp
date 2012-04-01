@@ -3,6 +3,13 @@
 
 #include <exercises/C01_S06.h>
 
+// ==========================================
+// =       THIS IS THE SOLUTION CODE        =
+// =    THIS IS *NOT* THE EXERCISE CODE     =
+// = (If you meant to look at the exercise  =
+// = it's in the directory above this one.) =
+// ==========================================
+
 void ScaleItem1Soln::runExercise()
 {
     int lightbulbx(0), lightbulby(0), maxradius(50), linewidth(10), fontsize(15);

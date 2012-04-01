@@ -325,41 +325,6 @@ protected:
     }
 };
 
-class ChangeWidthAndHeight1Soln : public FeetWetCodingSolution
-{
-    Q_OBJECT
-public:
-    explicit ChangeWidthAndHeight1Soln(QObject *parent = 0)
-        :FeetWetCodingSolution(parent){}
-
-protected:
-    void runExercise();
-};
-
-class ChangeWidthAndHeight1 : public FeetWetCodingExercise
-{
-    Q_OBJECT
-public:
-    explicit ChangeWidthAndHeight1(QObject *parent = 0)
-        :FeetWetCodingExercise(parent)
-    {
-        //If this exercise has a solution, launch it
-        this->setupSolution(parent);
-    }
-
-protected:
-    void runExercise();
-
-    void setupSolution(QObject *parent=0)
-    {
-        mSolutionPtr = new ChangeWidthAndHeight1Soln(parent);
-        if ( mSolutionPtr )
-        {
-            mSolutionPtr->start();
-        }
-    }
-};
-
 class ChangeRadius1Soln : public FeetWetCodingSolution
 {
     Q_OBJECT

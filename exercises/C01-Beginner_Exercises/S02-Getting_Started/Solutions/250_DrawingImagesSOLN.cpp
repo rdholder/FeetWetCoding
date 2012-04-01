@@ -3,6 +3,13 @@
 
 #include <exercises/C01_S02.h>
 
+// ==========================================
+// =       THIS IS THE SOLUTION CODE        =
+// =    THIS IS *NOT* THE EXERCISE CODE     =
+// = (If you meant to look at the exercise  =
+// = it's in the directory above this one.) =
+// ==========================================
+
 void DrawingImagesSoln::runExercise()
 {
     // USAGE: fwcDrawImage("filename.png", x, y);

@@ -3,9 +3,16 @@
 
 #include <exercises/C01_S05.h>
 
+// ==========================================
+// =       THIS IS THE SOLUTION CODE        =
+// =    THIS IS *NOT* THE EXERCISE CODE     =
+// = (If you meant to look at the exercise  =
+// = it's in the directory above this one.) =
+// ==========================================
+
 void ForLoops1Soln::runExercise()
 {
-    int col = 0, row = 0;                   // = is pronounced GETS, == is pronounced EQUALS
+    int col = 0, row = 0;       // = is pronounced GETS, == is pronounced EQUALS
 
     for ( row = 0; row < 10; row++ )
     {

@@ -134,7 +134,6 @@ FWCExerciseChooser::getExerciseFromName( const QString & name )
     if( "RotateItem1" == name ){ return new RotateItem1(&mExerciseLauncher); }
     if( "ChangeZ1" == name ){ return new ChangeZ1(&mExerciseLauncher); }
     if( "ChangeLineEnd1" == name ){ return new ChangeLineEnd1(&mExerciseLauncher); }
-    if( "ChangeWidthAndHeight1" == name ){ return new ChangeWidthAndHeight1(&mExerciseLauncher); }
     if( "ChangeRadius1" == name ){ return new ChangeRadius1(&mExerciseLauncher); }
     if( "ChangeColor1" == name ){ return new ChangeColor1(&mExerciseLauncher); }
     if( "ChangeLineWidth1" == name ){ return new ChangeLineWidth1(&mExerciseLauncher); }
@@ -272,18 +271,18 @@ void FWCExerciseChooser::createExercisesMap()
     exercises.push_back( "MoveItem1" );
     exercises.push_back( "ScaleItem1" );
     exercises.push_back( "RotateItem1" );
+    exercises.push_back( "EraseItem1" );
+    exercises.push_back( "ClearItems1" );
     exercises.push_back( "ChangeZ1" );
     exercises.push_back( "ChangeLineEnd1" );
-    exercises.push_back( "ChangeWidthAndHeight1" );
+    exercises.push_back( "ChangeLineWidth1" );
     exercises.push_back( "ChangeRadius1" );
     exercises.push_back( "ChangeColor1" );
-    exercises.push_back( "ChangeLineWidth1" );
     exercises.push_back( "ChangeFontSize1" );
     exercises.push_back( "ChangeText1" );
     exercises.push_back( "ChangeInt1" );
     exercises.push_back( "ChangeFloat1" );
-    exercises.push_back( "EraseItem1" );
-    exercises.push_back( "ClearItems1" );
+
     sections["S06-fwcTools"] = exercises;
 
     //S07-Storing_Data

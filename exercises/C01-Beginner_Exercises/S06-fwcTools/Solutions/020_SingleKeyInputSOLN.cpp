@@ -4,6 +4,13 @@
 #include <exercises/C01_S06.h>
 #include <math.h>
 
+// ==========================================
+// =       THIS IS THE SOLUTION CODE        =
+// =    THIS IS *NOT* THE EXERCISE CODE     =
+// = (If you meant to look at the exercise  =
+// = it's in the directory above this one.) =
+// ==========================================
+
 void SingleKeyInput1Soln::runExercise()
 {
     int x = 10, y = 20;

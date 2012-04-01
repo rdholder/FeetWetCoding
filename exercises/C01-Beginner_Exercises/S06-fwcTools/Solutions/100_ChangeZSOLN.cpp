@@ -3,6 +3,13 @@
 
 #include <exercises/C01_S06.h>
 
+// ==========================================
+// =       THIS IS THE SOLUTION CODE        =
+// =    THIS IS *NOT* THE EXERCISE CODE     =
+// = (If you meant to look at the exercise  =
+// = it's in the directory above this one.) =
+// ==========================================
+
 void ChangeZ1Soln::runExercise()
 {
     int radius(100), linewidth(1), fontsize(15);

@@ -1,7 +1,7 @@
 // copyright (c) 2011 Robert Holder, Janice Dugger.
 // See README.html included in this distribution.
 
-#include <exercises/C01_S05.h>
+#include <exercises/C01_S06.h>
 
 // ==========================================
 // =       THIS IS THE SOLUTION CODE        =
@@ -10,22 +10,7 @@
 // = it's in the directory above this one.) =
 // ==========================================
 
-void WhileLoop2Soln::runExercise()
+void ChangeText1Soln::runExercise()
 {
-    int y=0;
-    int verticalstep=10;
-
-    while ( y < 400 )
-    {
-        y += verticalstep;
-        fwcDrawLine(0, 200, 200, y, BLUE, 1);
-    }
-
-    y=0;
-
-    while ( y < 400 )
-    {
-        y += verticalstep;
-        fwcDrawLine(400, 200, 200, y, RED, 1);
-    }
+    fwcDrawText("Exercise Under\nConstruction", 50, 100, BLUE, 24);
 }

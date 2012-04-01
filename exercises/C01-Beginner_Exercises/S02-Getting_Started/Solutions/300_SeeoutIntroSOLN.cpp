@@ -3,6 +3,13 @@
 
 #include <exercises/C01_S02.h>
 
+// ==========================================
+// =       THIS IS THE SOLUTION CODE        =
+// =    THIS IS *NOT* THE EXERCISE CODE     =
+// = (If you meant to look at the exercise  =
+// = it's in the directory above this one.) =
+// ==========================================
+
 void seeoutIntroSoln::runExercise()  // copy the exercise name & paste it into main.cpp
 {
     fwcDrawText("Make the seeout output", 30, 80, BLUE, 20);

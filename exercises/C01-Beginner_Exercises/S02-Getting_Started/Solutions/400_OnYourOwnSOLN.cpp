@@ -3,6 +3,13 @@
 
 #include <exercises/C01_S02.h>
 
+// ==========================================
+// =       THIS IS THE SOLUTION CODE        =
+// =    THIS IS *NOT* THE EXERCISE CODE     =
+// = (If you meant to look at the exercise  =
+// = it's in the directory above this one.) =
+// ==========================================
+
 void OnYourOwnSoln::runExercise()  // copy the exercise name & paste it into main.cpp
 {
     fwcDrawText("I am learning C++, baby!!! :-D", 10, 10, BLACK, 20);

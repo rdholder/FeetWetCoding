@@ -4,6 +4,13 @@
 #include <exercises/C01_S04.h>
 #include <math.h>
 
+// ==========================================
+// =       THIS IS THE SOLUTION CODE        =
+// =    THIS IS *NOT* THE EXERCISE CODE     =
+// = (If you meant to look at the exercise  =
+// = it's in the directory above this one.) =
+// ==========================================
+
 void DistanceEquationSoln::runExercise()     // copy the exercise name & paste it into main.cpp
 {
     int x1 = random(200), y1 = random(400), x2 = random(300)+100, y2 = random(400);

@@ -4,6 +4,13 @@
 #include <exercises/C01_S05.h>
 #include <math.h>
 
+// ==========================================
+// =       THIS IS THE SOLUTION CODE        =
+// =    THIS IS *NOT* THE EXERCISE CODE     =
+// = (If you meant to look at the exercise  =
+// = it's in the directory above this one.) =
+// ==========================================
+
 void OYO_Primes2Soln::runExercise()
 {
     int n = 2, c = 2, x = 0, y = 0;
