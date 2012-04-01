@@ -3,7 +3,7 @@
 
 #include <exercises/C01_S06.h>
 
-void ChangeColor1::runExercise()
+void ChangeColor::runExercise()
 {
     int lightbarsupto(0), count(0);
     int barwidth(70), barheight(20), linewidth(1);

@@ -3,7 +3,7 @@
 
 #include <exercises/C01_S06.h>
 
-void ChangeText1::runExercise()
+void ChangeText::runExercise()
 {
     fwcDrawText("Exercise Under\nConstruction", 50, 100, BLUE, 24);
 }

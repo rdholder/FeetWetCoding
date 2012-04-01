@@ -3,7 +3,7 @@
 
 #include <exercises/C01_S06.h>
 
-void EraseItem1::runExercise()
+void Erase::runExercise()
 {
     int circle = fwcDrawCircle(200,300,50,DARKBLUE,1,true);
     sleep(1);

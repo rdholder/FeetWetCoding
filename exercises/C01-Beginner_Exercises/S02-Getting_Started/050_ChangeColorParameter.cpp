@@ -3,7 +3,7 @@
 
 #include <exercises/C01_S02.h>
 
-void ChangeColor::runExercise()
+void ChangeColorParameter::runExercise()
 {
 //    Available colors:
 //    BLACK

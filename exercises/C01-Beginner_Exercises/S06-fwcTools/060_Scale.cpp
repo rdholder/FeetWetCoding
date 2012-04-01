@@ -3,7 +3,7 @@
 
 #include <exercises/C01_S06.h>
 
-void ScaleItem1::runExercise()
+void Scale::runExercise()
 {
     int lightbulbx(0), lightbulby(0), maxradius(100), linewidth(10), fontsize(15);
     int circle1x(200), circle1y(200), circle1radius(3);

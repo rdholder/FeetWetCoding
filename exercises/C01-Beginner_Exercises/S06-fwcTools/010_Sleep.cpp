@@ -3,7 +3,7 @@
 
 #include <exercises/C01_S06.h>
 
-void Sleep1::runExercise()
+void Sleep::runExercise()
 {
     int x=50, y=50;
     int horizontalstep=50, verticalstep=50;

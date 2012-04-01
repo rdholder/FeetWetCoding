@@ -11,7 +11,7 @@
 // = it's in the directory above this one.) =
 // ==========================================
 
-void SingleKeyInput1Soln::runExercise()
+void SingleKeyInputSoln::runExercise()
 {
     int x = 10, y = 20;
     int fontSize = 60;

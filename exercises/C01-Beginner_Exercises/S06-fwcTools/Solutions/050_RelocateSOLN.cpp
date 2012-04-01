@@ -10,7 +10,7 @@
 // = it's in the directory above this one.) =
 // ==========================================
 
-void MoveItem1Soln::runExercise()
+void RelocateSoln::runExercise()
 {
     int lightbulbx(0), lightbulby(0), radius(50), linewidth(10), fontsize(15);
     int circleEx(100), circleEy(100);

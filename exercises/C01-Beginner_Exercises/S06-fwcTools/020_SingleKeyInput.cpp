@@ -12,7 +12,7 @@
 // variable here, so that you can use this capability in the coming
 // exercises.
 
-void SingleKeyInput1::runExercise()
+void SingleKeyInput::runExercise()
 {
     int x = 100, y = 0;
     int fontSize = 200;

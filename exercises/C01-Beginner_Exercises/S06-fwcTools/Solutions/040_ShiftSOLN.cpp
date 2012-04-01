@@ -10,7 +10,7 @@
 // = it's in the directory above this one.) =
 // ==========================================
 
-void ShiftItem1Soln::runExercise()
+void ShiftSoln::runExercise()
 {
     int x(20), y(380);
     int dx(2);

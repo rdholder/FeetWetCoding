@@ -11,7 +11,7 @@
 // = it's in the directory above this one.) =
 // ==========================================
 
-void StringInput1Soln::runExercise()
+void StringInputSoln::runExercise()
 {
     int x;
     int fontSize = 15;

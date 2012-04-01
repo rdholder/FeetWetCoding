@@ -3,7 +3,7 @@
 
 #include <exercises/C01_S06.h>
 
-void MoveItem1::runExercise()
+void Relocate::runExercise()
 {
     int lightbulbx(0), lightbulby(0), radius(25), linewidth(10), fontsize(15);
     int circleAx(100), circleAy(200);

@@ -10,7 +10,7 @@
 // = it's in the directory above this one.) =
 // ==========================================
 
-void ChangeFloat1Soln::runExercise()
+void ChangeFloatSoln::runExercise()
 {
     fwcDrawText("Exercise Under\nConstruction", 50, 100, BLUE, 24);
 }

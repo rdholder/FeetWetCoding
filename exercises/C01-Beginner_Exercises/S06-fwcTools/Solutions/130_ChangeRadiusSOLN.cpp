@@ -10,7 +10,7 @@
 // = it's in the directory above this one.) =
 // ==========================================
 
-void ChangeRadius1Soln::runExercise()
+void ChangeRadiusSoln::runExercise()
 {
     int minradius(5), maxradius(190), step(5), linewidth(10), fontsize(15);
     int circle1x(200), circle1y(200), circle1radius(minradius);

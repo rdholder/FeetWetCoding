@@ -10,9 +10,9 @@
 // = it's in the directory above this one.) =
 // ==========================================
 
-void ChangeColorSoln::runExercise()
+void ChangeXYParametersSoln::runExercise()
 {
     // USAGE: fwcDrawText("Text.", x, y, color, fontsize);
 
-    fwcDrawText("color is RED", 50, 150, RED, 15);
+    fwcDrawText("99,101", 99, 101, BLUE, 15);
 }

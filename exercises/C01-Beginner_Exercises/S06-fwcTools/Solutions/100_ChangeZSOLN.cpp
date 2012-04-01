@@ -10,7 +10,7 @@
 // = it's in the directory above this one.) =
 // ==========================================
 
-void ChangeZ1Soln::runExercise()
+void ChangeZSoln::runExercise()
 {
     int radius(100), linewidth(1), fontsize(15);
     int circle1x(150), circle1y(150), circle1z(4);

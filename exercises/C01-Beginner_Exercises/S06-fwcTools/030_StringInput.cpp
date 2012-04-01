@@ -4,7 +4,7 @@
 #include <exercises/C01_S06.h>
 #include <math.h>
 
-void StringInput1::runExercise()
+void StringInput::runExercise()
 {
     int x = 10, y = 20, count;
     int fontSize = 20;

@@ -10,7 +10,7 @@
 // = it's in the directory above this one.) =
 // ==========================================
 
-void RotateItem1Soln::runExercise()
+void RotateSoln::runExercise()
 {
     int shipx(200), shipy(200), shipangle(0), degreeturnrate(10);
     std::string key;

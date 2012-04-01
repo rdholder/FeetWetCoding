@@ -59,12 +59,12 @@ FWCExerciseChooser::getExerciseFromName( const QString & name )
 
     //Section 2 - Getting_Started
     if( "Welcome" == name ){ return new Welcome(&mExerciseLauncher); }
-    if( "ChangeText" == name ){ return new ChangeText(&mExerciseLauncher); }
-    if( "ChangeX" == name ){ return new ChangeX(&mExerciseLauncher); }
-    if( "ChangeY" == name ){ return new ChangeY(&mExerciseLauncher); }
-    if( "ChangeXY" == name ){ return new ChangeXY(&mExerciseLauncher); }
-    if( "ChangeColor" == name ){ return new ChangeColor(&mExerciseLauncher); }
-    if( "ChangeFontSize" == name ){ return new ChangeFontSize(&mExerciseLauncher); }
+    if( "ChangeTextParameter" == name ){ return new ChangeTextParameter(&mExerciseLauncher); }
+    if( "ChangeXParameter" == name ){ return new ChangeXParameter(&mExerciseLauncher); }
+    if( "ChangeYParameter" == name ){ return new ChangeYParameter(&mExerciseLauncher); }
+    if( "ChangeXYParameters" == name ){ return new ChangeXYParameters(&mExerciseLauncher); }
+    if( "ChangeColorParameter" == name ){ return new ChangeColorParameter(&mExerciseLauncher); }
+    if( "ChangeFontSizeParameter" == name ){ return new ChangeFontSizeParameter(&mExerciseLauncher); }
     if( "DrawLines" == name ){ return new DrawLines(&mExerciseLauncher); }
     if( "DrawCircles" == name ){ return new DrawCircles(&mExerciseLauncher); }
     if( "DrawRectangles" == name ){ return new DrawRectangles(&mExerciseLauncher); }
@@ -125,24 +125,24 @@ FWCExerciseChooser::getExerciseFromName( const QString & name )
     if( "OYO5" == name ){ return new C01S05_OYO5(&mExerciseLauncher); }
 
     //Section 6 - fwcTools
-    if( "Sleep1" == name ){ return new Sleep1(&mExerciseLauncher); }
-    if( "SingleKeyInput1" == name ){ return new SingleKeyInput1(&mExerciseLauncher); }
-    if( "StringInput1" == name ){ return new StringInput1(&mExerciseLauncher); }
-    if( "ShiftItem1" == name ){ return new ShiftItem1(&mExerciseLauncher); }
-    if( "MoveItem1" == name ){ return new MoveItem1(&mExerciseLauncher); }
-    if( "ScaleItem1" == name ){ return new ScaleItem1(&mExerciseLauncher); }
-    if( "RotateItem1" == name ){ return new RotateItem1(&mExerciseLauncher); }
-    if( "ChangeZ1" == name ){ return new ChangeZ1(&mExerciseLauncher); }
-    if( "ChangeLineEnd1" == name ){ return new ChangeLineEnd1(&mExerciseLauncher); }
-    if( "ChangeRadius1" == name ){ return new ChangeRadius1(&mExerciseLauncher); }
-    if( "ChangeColor1" == name ){ return new ChangeColor1(&mExerciseLauncher); }
-    if( "ChangeLineWidth1" == name ){ return new ChangeLineWidth1(&mExerciseLauncher); }
-    if( "ChangeFontSize1" == name ){ return new ChangeFontSize1(&mExerciseLauncher); }
-    if( "ChangeText1" == name ){ return new ChangeText1(&mExerciseLauncher); }
-    if( "ChangeInt1" == name ){ return new ChangeInt1(&mExerciseLauncher); }
-    if( "ChangeFloat1" == name ){ return new ChangeFloat1(&mExerciseLauncher); }
-    if( "EraseItem1" == name ){ return new EraseItem1(&mExerciseLauncher); }
-    if( "ClearItems1" == name ){ return new ClearItems1(&mExerciseLauncher); }
+    if( "Sleep" == name ){ return new Sleep(&mExerciseLauncher); }
+    if( "SingleKeyInput" == name ){ return new SingleKeyInput(&mExerciseLauncher); }
+    if( "StringInput" == name ){ return new StringInput(&mExerciseLauncher); }
+    if( "Shift" == name ){ return new Shift(&mExerciseLauncher); }
+    if( "Relocate" == name ){ return new Relocate(&mExerciseLauncher); }
+    if( "Scale" == name ){ return new Scale(&mExerciseLauncher); }
+    if( "Rotate" == name ){ return new Rotate(&mExerciseLauncher); }
+    if( "ChangeZ" == name ){ return new ChangeZ(&mExerciseLauncher); }
+    if( "ChangeLineEnd" == name ){ return new ChangeLineEnd(&mExerciseLauncher); }
+    if( "ChangeRadius" == name ){ return new ChangeRadius(&mExerciseLauncher); }
+    if( "ChangeColor" == name ){ return new ChangeColor(&mExerciseLauncher); }
+    if( "ChangeLineWidth" == name ){ return new ChangeLineWidth(&mExerciseLauncher); }
+    if( "ChangeFontSize" == name ){ return new ChangeFontSize(&mExerciseLauncher); }
+    if( "ChangeText" == name ){ return new ChangeText(&mExerciseLauncher); }
+    if( "ChangeInt" == name ){ return new ChangeInt(&mExerciseLauncher); }
+    if( "ChangeFloat" == name ){ return new ChangeFloat(&mExerciseLauncher); }
+    if( "Erase" == name ){ return new Erase(&mExerciseLauncher); }
+    if( "Clear" == name ){ return new Clear(&mExerciseLauncher); }
 
     //Section 7 - Storing_Data
     if( "Arrays1" == name ){ return new Arrays1(&mExerciseLauncher); }
@@ -190,12 +190,12 @@ void FWCExerciseChooser::createExercisesMap()
     //S02-Getting_Started
     exercises.clear();
     exercises.push_back( "Welcome" );
-    exercises.push_back( "ChangeText" );
-    exercises.push_back( "ChangeX" );
-    exercises.push_back( "ChangeY" );
-    exercises.push_back( "ChangeXY" );
-    exercises.push_back( "ChangeColor" );
-    exercises.push_back( "ChangeFontSize" );
+    exercises.push_back( "ChangeTextParameter" );
+    exercises.push_back( "ChangeXParameter" );
+    exercises.push_back( "ChangeYParameter" );
+    exercises.push_back( "ChangeXYParameters" );
+    exercises.push_back( "ChangeColorParameter" );
+    exercises.push_back( "ChangeFontSizeParameter" );
     exercises.push_back( "DrawLines" );
     exercises.push_back( "DrawCircles" );
     exercises.push_back( "DrawRectangles" );
@@ -264,24 +264,24 @@ void FWCExerciseChooser::createExercisesMap()
 
     //S06-fwcTools
     exercises.clear();
-    exercises.push_back( "Sleep1" );
-    exercises.push_back( "SingleKeyInput1" );
-    exercises.push_back( "StringInput1" );
-    exercises.push_back( "ShiftItem1" );
-    exercises.push_back( "MoveItem1" );
-    exercises.push_back( "ScaleItem1" );
-    exercises.push_back( "RotateItem1" );
-    exercises.push_back( "EraseItem1" );
-    exercises.push_back( "ClearItems1" );
-    exercises.push_back( "ChangeZ1" );
-    exercises.push_back( "ChangeLineEnd1" );
-    exercises.push_back( "ChangeLineWidth1" );
-    exercises.push_back( "ChangeRadius1" );
-    exercises.push_back( "ChangeColor1" );
-    exercises.push_back( "ChangeFontSize1" );
-    exercises.push_back( "ChangeText1" );
-    exercises.push_back( "ChangeInt1" );
-    exercises.push_back( "ChangeFloat1" );
+    exercises.push_back( "Sleep" );
+    exercises.push_back( "SingleKeyInput" );
+    exercises.push_back( "StringInput" );
+    exercises.push_back( "Shift" );
+    exercises.push_back( "Relocate" );
+    exercises.push_back( "Scale" );
+    exercises.push_back( "Rotate" );
+    exercises.push_back( "Erase" );
+    exercises.push_back( "Clear" );
+    exercises.push_back( "ChangeZ" );
+    exercises.push_back( "ChangeLineEnd" );
+    exercises.push_back( "ChangeLineWidth" );
+    exercises.push_back( "ChangeRadius" );
+    exercises.push_back( "ChangeColor" );
+    exercises.push_back( "ChangeFontSize" );
+    exercises.push_back( "ChangeText" );
+    exercises.push_back( "ChangeInt" );
+    exercises.push_back( "ChangeFloat" );
 
     sections["S06-fwcTools"] = exercises;
 

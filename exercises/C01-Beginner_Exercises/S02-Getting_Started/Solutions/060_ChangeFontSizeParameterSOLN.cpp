@@ -10,9 +10,9 @@
 // = it's in the directory above this one.) =
 // ==========================================
 
-void ChangeXSoln::runExercise()
+void ChangeFontSizeParameterSoln::runExercise()
 {
     // USAGE: fwcDrawText("Text.", x, y, color, fontsize);
 
-    fwcDrawText("change x", 300, 150, BLUE, 15);
+    fwcDrawText("...to fontsize 30.", 50, 150, BLUE, 30);
 }

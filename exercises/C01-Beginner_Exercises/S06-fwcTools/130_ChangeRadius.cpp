@@ -3,7 +3,7 @@
 
 #include <exercises/C01_S06.h>
 
-void ChangeRadius1::runExercise()
+void ChangeRadius::runExercise()
 {
     int minradius(5), maxradius(50), step(5), linewidth(10), fontsize(15);
     int circle1x(100), circle1y(200), circle1radius(minradius);

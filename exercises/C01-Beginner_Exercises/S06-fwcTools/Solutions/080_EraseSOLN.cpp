@@ -10,7 +10,7 @@
 // = it's in the directory above this one.) =
 // ==========================================
 
-void EraseItem1Soln::runExercise()
+void EraseSoln::runExercise()
 {
     int radius(50), linewidth(1), fontsize(15), circlecount(4);
     int circle1x(150), circle1y(150), circle1z(4);

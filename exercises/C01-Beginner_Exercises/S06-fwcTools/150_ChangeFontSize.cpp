@@ -3,7 +3,7 @@
 
 #include <exercises/C01_S06.h>
 
-void ChangeFontSize1::runExercise()
+void ChangeFontSize::runExercise()
 {
     fwcDrawText("Exercise Under\nConstruction", 50, 100, BLUE, 24);
 }

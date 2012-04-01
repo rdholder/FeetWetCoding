@@ -3,7 +3,7 @@
 
 #include <exercises/C01_S06.h>
 
-void ShiftItem1::runExercise()
+void Shift::runExercise()
 {
     int x(20), y(200);
     int dx(2);

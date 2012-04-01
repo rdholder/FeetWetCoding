@@ -3,7 +3,7 @@
 
 #include <exercises/C01_S06.h>
 
-void ChangeZ1::runExercise()
+void ChangeZ::runExercise()
 {
     int radius(100), linewidth(1), fontsize(15);
     int circle1x(150), circle1y(200), circle1z(2);

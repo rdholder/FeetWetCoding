@@ -3,8 +3,8 @@
 
 #include <exercises/C01_S02.h>
 
-void ChangeXY::runExercise()
+void ChangeYParameter::runExercise()
 {
     // USAGE: fwcDrawText("Text.", x, y, color, fontsize);
-    fwcDrawText("250,300", 250, 300, BLUE, 15);
+    fwcDrawText("change y", 40, 50, BLUE, 15);
 }

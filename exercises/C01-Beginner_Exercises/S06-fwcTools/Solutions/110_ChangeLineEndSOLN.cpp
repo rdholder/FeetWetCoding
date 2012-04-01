@@ -10,7 +10,7 @@
 // = it's in the directory above this one.) =
 // ==========================================
 
-void ChangeLineEnd1Soln::runExercise()
+void ChangeLineEndSoln::runExercise()
 {
 
     int x(0), y(0), step(10);

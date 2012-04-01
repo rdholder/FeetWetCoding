@@ -10,7 +10,7 @@
 // = it's in the directory above this one.) =
 // ==========================================
 
-void ScaleItem1Soln::runExercise()
+void ScaleSoln::runExercise()
 {
     int lightbulbx(0), lightbulby(0), maxradius(50), linewidth(10), fontsize(15);
     int circle1x(100), circle1y(200), circle1radius(3);

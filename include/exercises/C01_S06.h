@@ -6,22 +6,22 @@
 
 #include <exercises/FeetWetCodingExerciseBase.h>
 
-class Sleep1Soln : public FeetWetCodingSolution
+class SleepSoln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
-    explicit Sleep1Soln(QObject *parent = 0)
+    explicit SleepSoln(QObject *parent = 0)
         :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
 };
 
-class Sleep1 : public FeetWetCodingExercise
+class Sleep : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit Sleep1(QObject *parent = 0)
+    explicit Sleep(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
         //Exercises can use parent's seeout config
@@ -35,7 +35,7 @@ protected:
 
     void setupSolution(QObject *parent=0)
     {
-        mSolutionPtr = new Sleep1Soln(parent);
+        mSolutionPtr = new SleepSoln(parent);
         if ( mSolutionPtr )
         {
             mSolutionPtr->start();
@@ -43,22 +43,22 @@ protected:
     }
 };
 
-class SingleKeyInput1Soln : public FeetWetCodingSolution
+class SingleKeyInputSoln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
-    explicit SingleKeyInput1Soln(QObject *parent = 0)
+    explicit SingleKeyInputSoln(QObject *parent = 0)
         :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
 };
 
-class SingleKeyInput1 : public FeetWetCodingExercise
+class SingleKeyInput : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit SingleKeyInput1(QObject *parent = 0)
+    explicit SingleKeyInput(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
         //Exercises can use parent's seeout config
@@ -72,7 +72,7 @@ protected:
 
     void setupSolution(QObject *parent=0)
     {
-        mSolutionPtr = new SingleKeyInput1Soln(parent);
+        mSolutionPtr = new SingleKeyInputSoln(parent);
         if ( mSolutionPtr )
         {
             mSolutionPtr->start();
@@ -80,22 +80,22 @@ protected:
     }
 };
 
-class StringInput1Soln : public FeetWetCodingSolution
+class StringInputSoln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
-    explicit StringInput1Soln(QObject *parent = 0)
+    explicit StringInputSoln(QObject *parent = 0)
         :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
 };
 
-class StringInput1 : public FeetWetCodingExercise
+class StringInput : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit StringInput1(QObject *parent = 0)
+    explicit StringInput(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
         //If this exercise has a solution, launch it
@@ -107,7 +107,7 @@ protected:
 
     void setupSolution(QObject *parent=0)
     {
-        mSolutionPtr = new StringInput1Soln(parent);
+        mSolutionPtr = new StringInputSoln(parent);
         if ( mSolutionPtr )
         {
             mSolutionPtr->start();
@@ -115,22 +115,22 @@ protected:
     }
 };
 
-class ShiftItem1Soln : public FeetWetCodingSolution
+class ShiftSoln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
-    explicit ShiftItem1Soln(QObject *parent = 0)
+    explicit ShiftSoln(QObject *parent = 0)
         :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
 };
 
-class ShiftItem1 : public FeetWetCodingExercise
+class Shift : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit ShiftItem1(QObject *parent = 0)
+    explicit Shift(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
         //If this exercise has a solution, launch it
@@ -142,7 +142,7 @@ protected:
 
     void setupSolution(QObject *parent=0)
     {
-        mSolutionPtr = new ShiftItem1Soln(parent);
+        mSolutionPtr = new ShiftSoln(parent);
         if ( mSolutionPtr )
         {
             mSolutionPtr->start();
@@ -150,22 +150,22 @@ protected:
     }
 };
 
-class MoveItem1Soln : public FeetWetCodingSolution
+class RelocateSoln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
-    explicit MoveItem1Soln(QObject *parent = 0)
+    explicit RelocateSoln(QObject *parent = 0)
         :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
 };
 
-class MoveItem1 : public FeetWetCodingExercise
+class Relocate : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit MoveItem1(QObject *parent = 0)
+    explicit Relocate(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
         //If this exercise has a solution, launch it
@@ -177,7 +177,7 @@ protected:
 
     void setupSolution(QObject *parent=0)
     {
-        mSolutionPtr = new MoveItem1Soln(parent);
+        mSolutionPtr = new RelocateSoln(parent);
         if ( mSolutionPtr )
         {
             mSolutionPtr->start();
@@ -185,22 +185,22 @@ protected:
     }
 };
 
-class ScaleItem1Soln : public FeetWetCodingSolution
+class ScaleSoln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
-    explicit ScaleItem1Soln(QObject *parent = 0)
+    explicit ScaleSoln(QObject *parent = 0)
         :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
 };
 
-class ScaleItem1 : public FeetWetCodingExercise
+class Scale : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit ScaleItem1(QObject *parent = 0)
+    explicit Scale(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
         //If this exercise has a solution, launch it
@@ -212,7 +212,7 @@ protected:
 
     void setupSolution(QObject *parent=0)
     {
-        mSolutionPtr = new ScaleItem1Soln(parent);
+        mSolutionPtr = new ScaleSoln(parent);
         if ( mSolutionPtr )
         {
             mSolutionPtr->start();
@@ -220,22 +220,22 @@ protected:
     }
 };
 
-class RotateItem1Soln : public FeetWetCodingSolution
+class RotateSoln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
-    explicit RotateItem1Soln(QObject *parent = 0)
+    explicit RotateSoln(QObject *parent = 0)
         :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
 };
 
-class RotateItem1 : public FeetWetCodingExercise
+class Rotate : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit RotateItem1(QObject *parent = 0)
+    explicit Rotate(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
         //If this exercise has a solution, launch it
@@ -247,7 +247,7 @@ protected:
 
     void setupSolution(QObject *parent=0)
     {
-        mSolutionPtr = new RotateItem1Soln(parent);
+        mSolutionPtr = new RotateSoln(parent);
         if ( mSolutionPtr )
         {
             mSolutionPtr->start();
@@ -255,22 +255,22 @@ protected:
     }
 };
 
-class ChangeZ1Soln : public FeetWetCodingSolution
+class ChangeZSoln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
-    explicit ChangeZ1Soln(QObject *parent = 0)
+    explicit ChangeZSoln(QObject *parent = 0)
         :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
 };
 
-class ChangeZ1 : public FeetWetCodingExercise
+class ChangeZ : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit ChangeZ1(QObject *parent = 0)
+    explicit ChangeZ(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
         //If this exercise has a solution, launch it
@@ -282,7 +282,7 @@ protected:
 
     void setupSolution(QObject *parent=0)
     {
-        mSolutionPtr = new ChangeZ1Soln(parent);
+        mSolutionPtr = new ChangeZSoln(parent);
         if ( mSolutionPtr )
         {
             mSolutionPtr->start();
@@ -290,22 +290,22 @@ protected:
     }
 };
 
-class ChangeLineEnd1Soln : public FeetWetCodingSolution
+class ChangeLineEndSoln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
-    explicit ChangeLineEnd1Soln(QObject *parent = 0)
+    explicit ChangeLineEndSoln(QObject *parent = 0)
         :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
 };
 
-class ChangeLineEnd1 : public FeetWetCodingExercise
+class ChangeLineEnd : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit ChangeLineEnd1(QObject *parent = 0)
+    explicit ChangeLineEnd(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
         //If this exercise has a solution, launch it
@@ -317,7 +317,7 @@ protected:
 
     void setupSolution(QObject *parent=0)
     {
-        mSolutionPtr = new ChangeLineEnd1Soln(parent);
+        mSolutionPtr = new ChangeLineEndSoln(parent);
         if ( mSolutionPtr )
         {
             mSolutionPtr->start();
@@ -325,22 +325,22 @@ protected:
     }
 };
 
-class ChangeRadius1Soln : public FeetWetCodingSolution
+class ChangeRadiusSoln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
-    explicit ChangeRadius1Soln(QObject *parent = 0)
+    explicit ChangeRadiusSoln(QObject *parent = 0)
         :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
 };
 
-class ChangeRadius1 : public FeetWetCodingExercise
+class ChangeRadius : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit ChangeRadius1(QObject *parent = 0)
+    explicit ChangeRadius(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
         //If this exercise has a solution, launch it
@@ -352,7 +352,7 @@ protected:
 
     void setupSolution(QObject *parent=0)
     {
-        mSolutionPtr = new ChangeRadius1Soln(parent);
+        mSolutionPtr = new ChangeRadiusSoln(parent);
         if ( mSolutionPtr )
         {
             mSolutionPtr->start();
@@ -360,22 +360,22 @@ protected:
     }
 };
 
-class ChangeColor1Soln : public FeetWetCodingSolution
+class ChangeColorSoln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
-    explicit ChangeColor1Soln(QObject *parent = 0)
+    explicit ChangeColorSoln(QObject *parent = 0)
         :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
 };
 
-class ChangeColor1 : public FeetWetCodingExercise
+class ChangeColor : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit ChangeColor1(QObject *parent = 0)
+    explicit ChangeColor(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
         //If this exercise has a solution, launch it
@@ -387,7 +387,7 @@ protected:
 
     void setupSolution(QObject *parent=0)
     {
-        mSolutionPtr = new ChangeColor1Soln(parent);
+        mSolutionPtr = new ChangeColorSoln(parent);
         if ( mSolutionPtr )
         {
             mSolutionPtr->start();
@@ -395,22 +395,22 @@ protected:
     }
 };
 
-class ChangeLineWidth1Soln : public FeetWetCodingSolution
+class ChangeLineWidthSoln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
-    explicit ChangeLineWidth1Soln(QObject *parent = 0)
+    explicit ChangeLineWidthSoln(QObject *parent = 0)
         :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
 };
 
-class ChangeLineWidth1 : public FeetWetCodingExercise
+class ChangeLineWidth : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit ChangeLineWidth1(QObject *parent = 0)
+    explicit ChangeLineWidth(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
         //If this exercise has a solution, launch it
@@ -422,7 +422,7 @@ protected:
 
     void setupSolution(QObject *parent=0)
     {
-        mSolutionPtr = new ChangeLineWidth1Soln(parent);
+        mSolutionPtr = new ChangeLineWidthSoln(parent);
         if ( mSolutionPtr )
         {
             mSolutionPtr->start();
@@ -430,22 +430,22 @@ protected:
     }
 };
 
-class ChangeFontSize1Soln : public FeetWetCodingSolution
+class ChangeFontSizeSoln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
-    explicit ChangeFontSize1Soln(QObject *parent = 0)
+    explicit ChangeFontSizeSoln(QObject *parent = 0)
         :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
 };
 
-class ChangeFontSize1 : public FeetWetCodingExercise
+class ChangeFontSize : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit ChangeFontSize1(QObject *parent = 0)
+    explicit ChangeFontSize(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
         //If this exercise has a solution, launch it
@@ -457,7 +457,7 @@ protected:
 
     void setupSolution(QObject *parent=0)
     {
-        mSolutionPtr = new ChangeFontSize1Soln(parent);
+        mSolutionPtr = new ChangeFontSizeSoln(parent);
         if ( mSolutionPtr )
         {
             mSolutionPtr->start();
@@ -465,22 +465,22 @@ protected:
     }
 };
 
-class ChangeText1Soln : public FeetWetCodingSolution
+class ChangeTextSoln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
-    explicit ChangeText1Soln(QObject *parent = 0)
+    explicit ChangeTextSoln(QObject *parent = 0)
         :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
 };
 
-class ChangeText1 : public FeetWetCodingExercise
+class ChangeText : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit ChangeText1(QObject *parent = 0)
+    explicit ChangeText(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
         //If this exercise has a solution, launch it
@@ -492,7 +492,7 @@ protected:
 
     void setupSolution(QObject *parent=0)
     {
-        mSolutionPtr = new ChangeText1Soln(parent);
+        mSolutionPtr = new ChangeTextSoln(parent);
         if ( mSolutionPtr )
         {
             mSolutionPtr->start();
@@ -500,22 +500,22 @@ protected:
     }
 };
 
-class ChangeInt1Soln : public FeetWetCodingSolution
+class ChangeIntSoln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
-    explicit ChangeInt1Soln(QObject *parent = 0)
+    explicit ChangeIntSoln(QObject *parent = 0)
         :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
 };
 
-class ChangeInt1 : public FeetWetCodingExercise
+class ChangeInt : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit ChangeInt1(QObject *parent = 0)
+    explicit ChangeInt(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
         //If this exercise has a solution, launch it
@@ -527,7 +527,7 @@ protected:
 
     void setupSolution(QObject *parent=0)
     {
-        mSolutionPtr = new ChangeInt1Soln(parent);
+        mSolutionPtr = new ChangeIntSoln(parent);
         if ( mSolutionPtr )
         {
             mSolutionPtr->start();
@@ -535,22 +535,22 @@ protected:
     }
 };
 
-class ChangeFloat1Soln : public FeetWetCodingSolution
+class ChangeFloatSoln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
-    explicit ChangeFloat1Soln(QObject *parent = 0)
+    explicit ChangeFloatSoln(QObject *parent = 0)
         :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
 };
 
-class ChangeFloat1 : public FeetWetCodingExercise
+class ChangeFloat : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit ChangeFloat1(QObject *parent = 0)
+    explicit ChangeFloat(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
         //If this exercise has a solution, launch it
@@ -562,7 +562,7 @@ protected:
 
     void setupSolution(QObject *parent=0)
     {
-        mSolutionPtr = new ChangeFloat1Soln(parent);
+        mSolutionPtr = new ChangeFloatSoln(parent);
         if ( mSolutionPtr )
         {
             mSolutionPtr->start();
@@ -570,22 +570,22 @@ protected:
     }
 };
 
-class EraseItem1Soln : public FeetWetCodingSolution
+class EraseSoln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
-    explicit EraseItem1Soln(QObject *parent = 0)
+    explicit EraseSoln(QObject *parent = 0)
         :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
 };
 
-class EraseItem1 : public FeetWetCodingExercise
+class Erase : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit EraseItem1(QObject *parent = 0)
+    explicit Erase(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
         //If this exercise has a solution, launch it
@@ -597,7 +597,7 @@ protected:
 
     void setupSolution(QObject *parent=0)
     {
-        mSolutionPtr = new EraseItem1Soln(parent);
+        mSolutionPtr = new EraseSoln(parent);
         if ( mSolutionPtr )
         {
             mSolutionPtr->start();
@@ -605,22 +605,22 @@ protected:
     }
 };
 
-class ClearItems1Soln : public FeetWetCodingSolution
+class ClearSoln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
-    explicit ClearItems1Soln(QObject *parent = 0)
+    explicit ClearSoln(QObject *parent = 0)
         :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
 };
 
-class ClearItems1 : public FeetWetCodingExercise
+class Clear : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit ClearItems1(QObject *parent = 0)
+    explicit Clear(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
         //If this exercise has a solution, launch it
@@ -632,7 +632,7 @@ protected:
 
     void setupSolution(QObject *parent=0)
     {
-        mSolutionPtr = new ClearItems1Soln(parent);
+        mSolutionPtr = new ClearSoln(parent);
         if ( mSolutionPtr )
         {
             mSolutionPtr->start();

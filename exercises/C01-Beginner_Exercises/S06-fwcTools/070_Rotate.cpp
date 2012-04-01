@@ -3,7 +3,7 @@
 
 #include <exercises/C01_S06.h>
 
-void RotateItem1::runExercise()
+void Rotate::runExercise()
 {
     int shipx(200), shipy(200), shipangle(0), degreeturnrate(10);
     bool turnclockwise(true);

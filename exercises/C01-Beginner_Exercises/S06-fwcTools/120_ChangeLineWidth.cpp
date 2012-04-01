@@ -3,7 +3,7 @@
 
 #include <exercises/C01_S06.h>
 
-void ChangeLineWidth1::runExercise()
+void ChangeLineWidth::runExercise()
 {
     int x(100), y(200), count(0), laserwidth(1);
     int line = fwcDrawLine(x, y, x+200, y, RED, laserwidth);

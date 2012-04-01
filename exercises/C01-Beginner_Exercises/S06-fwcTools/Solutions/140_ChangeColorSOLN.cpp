@@ -10,7 +10,7 @@
 // = it's in the directory above this one.) =
 // ==========================================
 
-void ChangeColor1Soln::runExercise()
+void ChangeColorSoln::runExercise()
 {
     int lightbarsupto(0), count(0);
     int barwidth(70), barheight(20), linewidth(1);

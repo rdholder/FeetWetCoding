@@ -10,7 +10,7 @@
 // = it's in the directory above this one.) =
 // ==========================================
 
-void Sleep1Soln::runExercise()
+void SleepSoln::runExercise()
 {
     int x, y;
     int horizontalstep=50, verticalstep=50;
