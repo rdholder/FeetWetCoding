@@ -18,14 +18,14 @@ void WhileLoop3Soln::runExercise()
     while ( x < 400 )
     {
         x += horizontalstep;
-        fwcDrawLine(200, 200, x, 400, BLUE, 1);
-        fwcDrawLine(200, 200, x, 0, RED, 1);
+        fwcLine(200, 200, x, 400, BLUE, 1);
+        fwcLine(200, 200, x, 0, RED, 1);
     }
 
     while ( y < 400 )
     {
         y += verticalstep;
-        fwcDrawLine(200, 200, 400, y, GREEN, 1);
-        fwcDrawLine(200, 200, 0, y, YELLOW, 1);
+        fwcLine(200, 200, 400, y, GREEN, 1);
+        fwcLine(200, 200, 0, y, YELLOW, 1);
     }
 }

@@ -5,7 +5,7 @@
 
 void Erase::runExercise()
 {
-    int circle = fwcDrawCircle(200,300,50,DARKBLUE,1,true);
+    int circle = fwcCircle(200,300,50,DARKBLUE,1,true);
     sleep(1);
     fwcShiftItem(circle,0,-100);
     sleep(1);

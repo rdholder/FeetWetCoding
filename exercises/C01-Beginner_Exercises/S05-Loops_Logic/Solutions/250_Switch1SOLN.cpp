@@ -17,7 +17,7 @@ void Switch1Soln::runExercise()
     bool iscircle = true;
     Color color = BLUE;
 
-    //fwcDrawRectangle(0, 0, 400, 400, BLACK, 1, true);
+    //fwcRectangle(0, 0, 400, 400, BLACK, 1, true);
 
     for ( x = 0; x < 400; x += horizontalstep )
     {
@@ -56,11 +56,11 @@ void Switch1Soln::runExercise()
 
             if ( random(2) )
             {
-                fwcDrawCircle(x+size/2, y+size/2, size/2, color, 5, random(2) );
+                fwcCircle(x+size/2, y+size/2, size/2, color, 5, random(2) );
             }
             else
             {
-                fwcDrawRectangle(x, y, size, size, color, 5, random(2));
+                fwcRectangle(x, y, size, size, color, 5, random(2));
             }
         }
     }

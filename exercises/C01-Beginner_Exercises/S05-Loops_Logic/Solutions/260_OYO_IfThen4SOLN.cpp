@@ -22,7 +22,7 @@ void IfThen4Soln::runExercise()
         for (x = 0; x < 400; x += horizontalstep )
         {
             boxsize = 200 - ((100-x/15) + (100-y/15));
-            fwcDrawRectangle(x, y, boxsize, boxsize, color, 1, true);
+            fwcRectangle(x, y, boxsize, boxsize, color, 1, true);
         }
     }
 }

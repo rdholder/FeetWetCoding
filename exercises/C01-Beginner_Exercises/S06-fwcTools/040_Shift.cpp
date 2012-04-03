@@ -5,11 +5,9 @@
 
 void Shift::runExercise()
 {
-    int x(20), y(200);
-    int dx(2);
-    int dy(0);
-    int circle = fwcDrawCircle(x,y,10,DARKRED,1, true);
-    int velocity = fwcDrawInt(dy, x+20, y-12, DARKBLUE);
+    int x(20), y(200), dx(2), dy(0);
+    int circle = fwcCircle(x,y,10,DARKRED,1, true);
+    int velocity = fwcInt(dy, x+20, y-12, DARKBLUE);
 
     while (x < 380)
     {

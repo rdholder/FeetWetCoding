@@ -12,7 +12,7 @@
 
 void ChangeTextParameterSoln::runExercise()
 {
-    // USAGE: fwcDrawText("Text.", x, y, color, fontsize);
+    // USAGE: fwcText("Text.", x, y, color, fontsize);
 
-    fwcDrawText("...your name! :-)", 100, 150, BLUE, 15);
+    fwcText("...your name! :-)", 100, 150, BLUE, 15);
 }

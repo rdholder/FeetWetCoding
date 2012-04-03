@@ -11,7 +11,7 @@ void WhileLoopIntro::runExercise()
     // we can base our loop on x...
     while ( x < 150 )
     {
-        fwcDrawCircle(x, y, 5, BLACK, 1, true);
+        fwcCircle(x, y, 5, BLACK, 1, true);
         x += horizontalstep;
     }
 
@@ -20,11 +20,11 @@ void WhileLoopIntro::runExercise()
     y = 100;
     while ( n < 5 )
     {
-        fwcDrawCircle(x, y, 5, BLUE, 1, true);
+        fwcCircle(x, y, 5, BLUE, 1, true);
         x += horizontalstep;
         n++;
     }
-    fwcDrawText("...5 circles.", x, y, BLUE, 10);
+    fwcText("...5 circles.", x, y, BLUE, 10);
 
     // Notice that postincrement in the conditional behaves the
     // same as incrementing within the loop...
@@ -33,10 +33,10 @@ void WhileLoopIntro::runExercise()
     y = 150;
     while ( n++ < 5 )
     {
-        fwcDrawCircle(x, y, 5, DARKGREEN, 1, true);
+        fwcCircle(x, y, 5, DARKGREEN, 1, true);
         x += horizontalstep;
     }
-    fwcDrawText("...5 circles.", x, y, DARKGREEN, 10);
+    fwcText("...5 circles.", x, y, DARKGREEN, 10);
 
     // ...but preincrementing does not!
     n = 0;
@@ -44,10 +44,10 @@ void WhileLoopIntro::runExercise()
     y = 200;
     while ( ++n < 5 )
     {
-        fwcDrawCircle(x, y, 5, RED, 1, true);
+        fwcCircle(x, y, 5, RED, 1, true);
         x += horizontalstep;
     }
-    fwcDrawText("...NOT 5 circles!", x, y, RED, 10);
+    fwcText("...NOT 5 circles!", x, y, RED, 10);
 
     x = 50;
     y = 250;
@@ -55,12 +55,12 @@ void WhileLoopIntro::runExercise()
     {
         while ( ++col < 5 )
         {
-            fwcDrawCircle(x, y, 5, DARKRED, 1, true);
+            fwcCircle(x, y, 5, DARKRED, 1, true);
             x += horizontalstep;
         }
         col = 0;
         x = 50;
         y += verticalstep;
     }
-    fwcDrawText("...NOT 5x5!", x, y, DARKRED, 10);
+    fwcText("...NOT 5x5!", x, y, DARKRED, 10);
 }

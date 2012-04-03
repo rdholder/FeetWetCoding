@@ -5,10 +5,10 @@
 
 void FontProportions::runExercise()
 {
-    fwcDrawInt( 1, 100, 100, BLUE, 8);
-    fwcDrawInt( 2, 300, 100, BLUE, 12);
-    fwcDrawInt( 3, 100, 300, BLUE, 15);
-    fwcDrawInt( 4, 300, 300, BLUE, 20);
+    fwcInt( 1, 100, 100, BLUE, 8);
+    fwcInt( 2, 300, 100, BLUE, 12);
+    fwcInt( 3, 100, 300, BLUE, 15);
+    fwcInt( 4, 300, 300, BLUE, 20);
 }
 
 

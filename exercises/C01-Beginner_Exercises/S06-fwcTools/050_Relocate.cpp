@@ -16,15 +16,15 @@ void Relocate::runExercise()
     seeout << "Hover mouse over the drawing area above and press a or b";
     seeout << " to move the lightbulb.  Press q to quit.\n\n";
 
-    fwcDrawCircle(circleAx,circleAy,radius,DARKBLUE,linewidth);
-    fwcDrawCircle(circleBx,circleBy,radius,DARKBLUE,linewidth);
+    fwcCircle(circleAx,circleAy,radius,DARKBLUE,linewidth);
+    fwcCircle(circleBx,circleBy,radius,DARKBLUE,linewidth);
 
-    fwcDrawText("A", circleAx, circleAy+(radius)+5, BLACK, 25);
-    fwcDrawText("B", circleBx, circleBy+(radius)+5, BLACK, 25);
+    fwcText("A", circleAx, circleAy+(radius)+5, BLACK, 25);
+    fwcText("B", circleBx, circleBy+(radius)+5, BLACK, 25);
 
-    int lightbulb = fwcDrawCircle(circleAx, circleAy, radius-linewidth/2, GREEN, 1, true);
+    int lightbulb = fwcCircle(circleAx, circleAy, radius-linewidth/2, GREEN, 1, true);
 
-    // debugging fwcDrawCircle... apparently the drawcircle tool is
+    // debugging fwcCircle... apparently the drawcircle tool is
     // dividing radius by half, so that circles are not being drawn
     // at their proper radius, but at HALF the radius we are passing!  >:-(
     // if true then SOMEBODY owes a certain person some pushups!!!  >:-\\\
@@ -38,12 +38,12 @@ void Relocate::runExercise()
     seeout << "circleAy+radius == " << circleAy+radius << "\n";
 
     // also, WTF is going on with this next line not drawing?!!!
-    fwcDrawLine(circleAx-2, circleAy, circleAx+2, circleAy, BLACK, 1);
-    //fwcDrawLine(100, 275, 105, 275, BLACK, 1);
-    fwcDrawCircle(circleAx,circleAy+radius,2,RED,1,true);
+    fwcLine(circleAx-2, circleAy, circleAx+2, circleAy, BLACK, 1);
+    //fwcLine(100, 275, 105, 275, BLACK, 1);
+    fwcCircle(circleAx,circleAy+radius,2,RED,1,true);
     //JCD - Fixed some stuff. Moved this line to after (on top of) red circle
     //and changed to WHITE so you can see it
-    fwcDrawLine(circleAx-2, circleAy+radius, circleAx+2, circleAy+radius, WHITE, 1);
+    fwcLine(circleAx-2, circleAy+radius, circleAx+2, circleAy+radius, WHITE, 1);
 
 
     while ( key != "q" && key != "Q" )
@@ -68,5 +68,5 @@ void Relocate::runExercise()
     }
 
     fwcClearItems();
-    fwcDrawText("DONE!", 60, 150, DARKBLUE, 60);
+    fwcText("DONE!", 60, 150, DARKBLUE, 60);
 }

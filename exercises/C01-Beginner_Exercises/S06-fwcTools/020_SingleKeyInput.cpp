@@ -31,8 +31,8 @@ void SingleKeyInput::runExercise()
     {
         key = waitForKeyPress();
         fwcClearItems();
-        fwcDrawText(key, x, y, color, fontSize);
+        fwcText(key, x, y, color, fontSize);
     }
     fwcClearItems();
-    fwcDrawText("DONE!", 60, 150, color, 60);
+    fwcText("DONE!", 60, 150, color, 60);
 }

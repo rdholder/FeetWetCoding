@@ -17,8 +17,8 @@ void randomAndrandomRange::runExercise()     // copy the exercise name & paste i
 
     int a = 0, b = 0;
 
-    fwcDrawText("Reference Exercise:", 50, 150, BLUE, 20);
-    fwcDrawText("no solution needed.", 50, 180, BLUE, 20);
+    fwcText("Reference Exercise:", 50, 150, BLUE, 20);
+    fwcText("no solution needed.", 50, 180, BLUE, 20);
 
     seeout << "You can run this program several times to see that the numbers change";
     seeout << " by clicking the \"Re-start Exercise\" button.\n\n";

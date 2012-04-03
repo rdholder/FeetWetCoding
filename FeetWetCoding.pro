@@ -151,7 +151,6 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S06-fwcTools/160_ChangeText.cpp \
     exercises/C01-Beginner_Exercises/S06-fwcTools/170_ChangeInt.cpp \
     exercises/C01-Beginner_Exercises/S06-fwcTools/180_ChangeFloat.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/005_Clear.cpp \
     exercises/C01-Beginner_Exercises/S06-fwcTools/040_Shift.cpp \
     exercises/C01-Beginner_Exercises/S06-fwcTools/060_Scale.cpp \
     exercises/C01-Beginner_Exercises/S06-fwcTools/070_Rotate.cpp \
@@ -169,7 +168,6 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/040_ChangeXYParametersSOLN.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/050_ChangeColorParameterSOLN.cpp \
     exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/060_ChangeFontSizeParameterSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/Solutions/005_ClearSOLN.cpp \
     exercises/C01-Beginner_Exercises/S06-fwcTools/Solutions/010_SleepSOLN.cpp \
     exercises/C01-Beginner_Exercises/S06-fwcTools/Solutions/040_ShiftSOLN.cpp \
     exercises/C01-Beginner_Exercises/S06-fwcTools/Solutions/050_RelocateSOLN.cpp \
@@ -178,7 +176,9 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S06-fwcTools/Solutions/080_EraseSOLN.cpp \
     exercises/C01-Beginner_Exercises/S06-fwcTools/Solutions/100_ChangeZSOLN.cpp \
     exercises/C01-Beginner_Exercises/S06-fwcTools/Solutions/110_ChangeLineEndSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/Solutions/120_ChangeLineWidthSOLN.cpp
+    exercises/C01-Beginner_Exercises/S06-fwcTools/Solutions/120_ChangeLineWidthSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools/Solutions/090_ClearSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools/090_Clear.cpp
 
 
 HEADERS += \

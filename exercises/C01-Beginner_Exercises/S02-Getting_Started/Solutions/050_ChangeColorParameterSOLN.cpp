@@ -12,7 +12,7 @@
 
 void ChangeColorParameterSoln::runExercise()
 {
-    // USAGE: fwcDrawText("Text.", x, y, color, fontsize);
+    // USAGE: fwcText("Text.", x, y, color, fontsize);
 
-    fwcDrawText("color is RED", 50, 150, RED, 15);
+    fwcText("color is RED", 50, 150, RED, 15);
 }

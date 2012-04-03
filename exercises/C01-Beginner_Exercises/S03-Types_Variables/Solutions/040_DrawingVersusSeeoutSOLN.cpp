@@ -18,15 +18,15 @@ void DrawingVersusSeeoutSoln::runExercise()
     int b = 200;
 
     // make the left graphics area look like the right one and you will see what I mean.  :-)
-    fwcDrawText("It's more work to draw variables graphically...", 30, 50, BLUE, 12);
-    fwcDrawText("x ==", 30, 100, BLUE, 20);
-    fwcDrawInt(x, 100, 100, BLUE, 20);
-    fwcDrawText("y ==", 200, 100, BLUE, 20);
-    fwcDrawInt(y, 300, 100, BLUE, 20);
-    fwcDrawText("a ==", 30, 300, BLUE, 20);
-    fwcDrawInt(a, 100, 300, BLUE, 20);
-    fwcDrawText("b ==", 200, 300, BLUE, 20);
-    fwcDrawInt(b, 300, 300, BLUE, 20);
+    fwcText("It's more work to draw variables graphically...", 30, 50, BLUE, 12);
+    fwcText("x ==", 30, 100, BLUE, 20);
+    fwcInt(x, 100, 100, BLUE, 20);
+    fwcText("y ==", 200, 100, BLUE, 20);
+    fwcInt(y, 300, 100, BLUE, 20);
+    fwcText("a ==", 30, 300, BLUE, 20);
+    fwcInt(a, 100, 300, BLUE, 20);
+    fwcText("b ==", 200, 300, BLUE, 20);
+    fwcInt(b, 300, 300, BLUE, 20);
 
     seeout << "...than it is to show them with seeout!\n";
     seeout << "x == " << x  << "  y == " << y << "\n";

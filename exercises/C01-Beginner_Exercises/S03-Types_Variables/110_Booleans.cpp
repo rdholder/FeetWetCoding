@@ -8,8 +8,8 @@ void Booleans::runExercise()     // copy the exercise name & paste it into main.
     // see Chapter 01, Section 05, 300_IfThen1.cpp for how to use booleans.  Here is
     // how to declare and assign values to them:
 
-    fwcDrawText("Reference Exercise:", 50, 150, BLUE, 20);
-    fwcDrawText("no solution needed.", 50, 180, BLUE, 20);
+    fwcText("Reference Exercise:", 50, 150, BLUE, 20);
+    fwcText("no solution needed.", 50, 180, BLUE, 20);
 
     bool somevar = true;
 

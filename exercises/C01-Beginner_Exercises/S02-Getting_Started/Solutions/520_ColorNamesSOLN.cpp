@@ -12,7 +12,7 @@
 
 void ColorNamesSoln::runExercise()
 {
-    fwcDrawText("Reference Exercise:", 50, 150, BLUE, 20);
-    fwcDrawText("no solution needed.", 50, 180, BLUE, 20);
+    fwcText("Reference Exercise:", 50, 150, BLUE, 20);
+    fwcText("no solution needed.", 50, 180, BLUE, 20);
 }
 

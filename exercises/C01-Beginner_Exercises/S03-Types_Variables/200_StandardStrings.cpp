@@ -13,7 +13,7 @@ void StandardStrings::runExercise()
     string fordsays = "Don't Panic!";
     string swap = "sometext";
 
-    fwcDrawText("seeout output below:", 50, 170, BLUE, 20);
+    fwcText("seeout output below:", 50, 170, BLUE, 20);
 
     seeout << "towel contains: " << towel << "\n";
     seeout << "fordsays contains: " << fordsays << "\n";

@@ -11,8 +11,8 @@ void StringInput::runExercise()
     std::string name, greeting;
     Color color = DARKBLUE;
 
-    int text1 = fwcDrawText("Mouseover this window, then", 30, 100, color);
-    int text2 = fwcDrawText("type your name and hit ENTER:", 30, 130, color);
+    int text1 = fwcText("Mouseover this window, then", 30, 100, color);
+    int text2 = fwcText("type your name and hit ENTER:", 30, 130, color);
     name = getKeyboardString();
 
     //Clear the old text...
@@ -29,7 +29,7 @@ void StringInput::runExercise()
 
         x = random(400-greeting.size()*fontSize);
         y = random(400-fontSize*2);
-        fwcDrawText(greeting, x, y, color, fontSize);
+        fwcText(greeting, x, y, color, fontSize);
         msleep(100);
     }
 }

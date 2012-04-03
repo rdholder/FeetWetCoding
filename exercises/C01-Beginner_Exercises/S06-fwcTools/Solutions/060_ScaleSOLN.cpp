@@ -23,9 +23,9 @@ void ScaleSoln::runExercise()
     seeout << "Hover mouse over the drawing area above and press + or -";
     seeout << " to change the circle sizes.  Press q to quit.\n";
 
-    int circle1 = fwcDrawCircle(circle1x,circle1y,circle1radius,DARKBLUE,linewidth,true);
-    int circle2 = fwcDrawCircle(circle2x,circle2y,circle2radius,DARKBLUE,linewidth,true);
-    int circle3 = fwcDrawCircle(circle3x,circle3y,circle3radius,DARKBLUE,linewidth,true);
+    int circle1 = fwcCircle(circle1x,circle1y,circle1radius,DARKBLUE,linewidth,true);
+    int circle2 = fwcCircle(circle2x,circle2y,circle2radius,DARKBLUE,linewidth,true);
+    int circle3 = fwcCircle(circle3x,circle3y,circle3radius,DARKBLUE,linewidth,true);
 
     while ( key != "q" && key != "Q" )
     {
@@ -79,5 +79,5 @@ void ScaleSoln::runExercise()
     }
 
     fwcClearItems();
-    fwcDrawText("DONE!", 60, 150, DARKBLUE, 60);
+    fwcText("DONE!", 60, 150, DARKBLUE, 60);
 }

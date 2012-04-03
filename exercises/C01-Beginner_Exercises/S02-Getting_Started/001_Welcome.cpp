@@ -7,6 +7,6 @@
 
 void Welcome::runExercise()
 {
-    // USAGE: fwcDrawText("Text.", x, y, color, fontsize);
-    fwcDrawText("Welcome to FeetWetCoding!", 20, 150, BLUE, 20);
+    // USAGE: fwcText("Text.", x, y, color, fontsize);
+    fwcText("Welcome to FeetWetCoding!", 20, 150, BLUE, 20);
 }

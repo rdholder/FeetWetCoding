@@ -15,7 +15,7 @@ void Rotate::runExercise()
     seeout.setColor(BLACK);
     seeout.setFontSize(10);
 
-    int ship = fwcDrawImage("spaceship50x59.jpg", shipx, shipy);
+    int ship = fwcImage("spaceship50x59.jpg", shipx, shipy);
 
     while ( true )
     {
@@ -26,5 +26,5 @@ void Rotate::runExercise()
     }
 
     fwcClearItems();
-    fwcDrawText("DONE!", 60, 150, DARKBLUE, 60);
+    fwcText("DONE!", 60, 150, DARKBLUE, 60);
 }

@@ -7,9 +7,9 @@ void DrawCircles::runExercise()
 {
     // Things drawn later get drawn on top of things drawn earlier!
 
-    // USAGE: fwcDrawCircle(x, y, radius, color, linewidth, solid);
+    // USAGE: fwcCircle(x, y, radius, color, linewidth, solid);
     // (solid is an optional parameter, you can use it or leave it out.)
-    fwcDrawCircle(200, 300, 40, BLUE, 1);
-    fwcDrawCircle(200, 100, 50, BLACK, 1, true);
-    fwcDrawCircle(200, 200, 100, RED, 10);
+    fwcCircle(200, 300, 40, BLUE, 1);
+    fwcCircle(200, 100, 50, BLACK, 1, true);
+    fwcCircle(200, 200, 100, RED, 10);
 }

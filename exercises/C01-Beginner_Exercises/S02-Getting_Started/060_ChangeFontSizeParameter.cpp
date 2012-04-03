@@ -5,6 +5,6 @@
 
 void ChangeFontSizeParameter::runExercise()
 {
-    // USAGE: fwcDrawText("Text.", x, y, color, fontsize);
-    fwcDrawText("Change fontsize 10...", 50, 150, BLUE, 10);
+    // USAGE: fwcText("Text.", x, y, color, fontsize);
+    fwcText("Change fontsize 10...", 50, 150, BLUE, 10);
 }

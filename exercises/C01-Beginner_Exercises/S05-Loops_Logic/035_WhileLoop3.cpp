@@ -11,14 +11,14 @@ void WhileLoop3::runExercise()
     while ( x < 400 )
     {
         x += horizontalstep;
-        fwcDrawLine(200, 0, x, 400, BLUE, 1);
-        fwcDrawLine(200, 400, x, 0, RED, 1);
+        fwcLine(200, 0, x, 400, BLUE, 1);
+        fwcLine(200, 400, x, 0, RED, 1);
     }
 
     while ( y < 400 )
     {
         y += verticalstep;
-        fwcDrawLine(0, 200, 400, y, GREEN, 1);
-        fwcDrawLine(400, 200, 0, y, YELLOW, 1);
+        fwcLine(0, 200, 400, y, GREEN, 1);
+        fwcLine(400, 200, 0, y, YELLOW, 1);
     }
 }

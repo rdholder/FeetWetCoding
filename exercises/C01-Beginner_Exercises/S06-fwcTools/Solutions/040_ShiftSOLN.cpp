@@ -15,8 +15,8 @@ void ShiftSoln::runExercise()
     int x(20), y(380);
     int dx(2);
     double dy(-9), rateofchange(0.1);
-    int circle = fwcDrawCircle(x,y,10,DARKRED,1, true);
-    int velocity = fwcDrawInt(dy, x+20, y-12, DARKBLUE);
+    int circle = fwcCircle(x,y,10,DARKRED,1, true);
+    int velocity = fwcInt(dy, x+20, y-12, DARKBLUE);
 
     while (x < 380)
     {

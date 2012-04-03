@@ -19,7 +19,7 @@ void WhileLoop5Soln::runExercise()
     {
         while ( y < 280 )
         {
-            fwcDrawRectangle(x, y, 25, 25, DARKBLUE, 1, true);
+            fwcRectangle(x, y, 25, 25, DARKBLUE, 1, true);
             y += verticalstep;
         }
         y=100;

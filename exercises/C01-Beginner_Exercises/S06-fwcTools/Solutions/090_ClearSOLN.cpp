@@ -2,7 +2,6 @@
 // See README.html included in this distribution.
 
 #include <exercises/C01_S06.h>
-#include <math.h>
 
 // ==========================================
 // =       THIS IS THE SOLUTION CODE        =
@@ -11,35 +10,28 @@
 // = it's in the directory above this one.) =
 // ==========================================
 
-void SingleKeyInputSoln::runExercise()
+void ClearSoln::runExercise()
 {
-    int x = 10, y = 20;
-    int fontSize = 60;
+    int x(100), y(0), count(0), numberofcircles(50), objectsize(20);
+    int fontSize(200);
     std::string key;
-    Color color = DARKBLUE;
+    Color color = DARKGREEN;
 
     seeout.setColor(DARKRED);
     seeout.setFontSize(15);
-    seeout << "Hover mouse over the solution drawing area and press keys, or q to quit.\n";
+    seeout << "Hover mouse over the exercise drawing area and press keys, or q to quit.\n";
 
     while ( key != "q" && key != "Q" )
     {
-        key = waitForKeyPress();
-
-        fwcText(key, x, y, color, fontSize);
-
-        x += fontSize;
-        if (x > 400-trunc(fontSize*1.5))
+        fwcClearItems();
+        for(count=0; count<numberofcircles; ++count)
         {
-            x = 10;
-            y += fontSize * 2;
-            if (y > 400-(fontSize * 2))
-            {
-                x = 10;
-                y = 20;
-                fwcClearItems();
-            }
+            x=random(400-(objectsize*2))+objectsize;
+            y=random(400-(objectsize*2))+objectsize;
+            fwcCircle(x,y,objectsize,DARKRED,1,true);
         }
+
+        key = waitForKeyPress();
     }
     fwcClearItems();
     fwcText("DONE!", 60, 150, color, 60);

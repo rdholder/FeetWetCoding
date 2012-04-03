@@ -153,7 +153,7 @@ void ClearScreen()
     }
 }
 
-QGraphicsItem* fwcDrawLineRender( int xStart, int yStart, int xEnd, int yEnd, Color color, int linewidth )
+QGraphicsItem* fwcLineRender( int xStart, int yStart, int xEnd, int yEnd, Color color, int linewidth )
 {
     QGraphicsLineItem *newLine = new QGraphicsLineItem(xStart, yStart, xEnd, yEnd);
 
@@ -167,7 +167,7 @@ QGraphicsItem* fwcDrawLineRender( int xStart, int yStart, int xEnd, int yEnd, Co
     return newLine;
 }
 
-QGraphicsItem* fwcDrawCircleRender( int x, int y, int r, Color color, int linewidth, bool solid)
+QGraphicsItem* fwcCircleRender( int x, int y, int r, Color color, int linewidth, bool solid)
 {
     //Usage: QGraphicsEllipseItem(x, y, width, height). Positions its top left corner at x, y.
     //Therefore, to make a circle with radius r and position its center at x,y, we need to
@@ -194,7 +194,7 @@ QGraphicsItem* fwcDrawCircleRender( int x, int y, int r, Color color, int linewi
     return newCircle;
 }
 
-QGraphicsItem* fwcDrawCircleRGBRender( int x, int y, int r, int red, int green, int blue, int linewidth, bool solid )
+QGraphicsItem* fwcCircleRGBRender( int x, int y, int r, int red, int green, int blue, int linewidth, bool solid )
 {
     //Usage: QGraphicsEllipseItem(x, y, width, height). Positions its top left corner at x, y.
     //Therefore, to make a circle with radius r and position its center at x,y, we need to
@@ -225,7 +225,7 @@ QGraphicsItem* fwcDrawCircleRGBRender( int x, int y, int r, int red, int green, 
     return newCircle;
 }
 
-QGraphicsItem* fwcDrawEllipseRender( int x, int y, int w, int h, Color color, int linewidth, bool solid )
+QGraphicsItem* fwcEllipseRender( int x, int y, int w, int h, Color color, int linewidth, bool solid )
 {
     //Shift position so that origin goes from top left corner to center of ellipse
     QGraphicsEllipseItem *newCircle = new QGraphicsEllipseItem(0, 0, w, h);
@@ -250,7 +250,7 @@ QGraphicsItem* fwcDrawEllipseRender( int x, int y, int w, int h, Color color, in
     return newCircle;
 }
 
-QGraphicsItem* fwcDrawRectangleRender( int x, int y, int w, int h, Color color, int linewidth, bool solid )
+QGraphicsItem* fwcRectangleRender( int x, int y, int w, int h, Color color, int linewidth, bool solid )
 {
     QGraphicsRectItem *newRect = new QGraphicsRectItem(0, 0, w, h);
     newRect->setPos(x, y);
@@ -273,7 +273,7 @@ QGraphicsItem* fwcDrawRectangleRender( int x, int y, int w, int h, Color color, 
 }
 
 
-QGraphicsItem* fwcDrawTextRender( std::string text, int x, int y,  Color color, int size )
+QGraphicsItem* fwcTextRender( std::string text, int x, int y,  Color color, int size )
 {
     QGraphicsTextItem *newText = new QGraphicsTextItem(text.c_str());
 
@@ -288,7 +288,7 @@ QGraphicsItem* fwcDrawTextRender( std::string text, int x, int y,  Color color, 
     return newText;
 }
 
-QGraphicsItem* fwcDrawIntRender( int number, int x, int y, Color color, int fontSize )
+QGraphicsItem* fwcIntRender( int number, int x, int y, Color color, int fontSize )
 {
     QString str;
     str.setNum(number);
@@ -306,7 +306,7 @@ QGraphicsItem* fwcDrawIntRender( int number, int x, int y, Color color, int font
     return newText;
 }
 
-QGraphicsItem* fwcDrawFloatRender( float number, int x, int y, Color color, int fontSize, int decimalPlaces )
+QGraphicsItem* fwcFloatRender( float number, int x, int y, Color color, int fontSize, int decimalPlaces )
 {
     QString str;
     str.setNum(number, 'f', decimalPlaces);
@@ -324,7 +324,7 @@ QGraphicsItem* fwcDrawFloatRender( float number, int x, int y, Color color, int 
     return newText;
 }
 
-QGraphicsItem* fwcDrawImageRender( std::string filename, int x, int y )
+QGraphicsItem* fwcImageRender( std::string filename, int x, int y )
 {
     QString imageFilePath(getProjectPath() + "/images/" + QString(filename.c_str()));
 

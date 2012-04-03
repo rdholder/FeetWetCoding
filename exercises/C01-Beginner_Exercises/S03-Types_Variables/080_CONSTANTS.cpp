@@ -14,8 +14,8 @@ void CONSTANTS::runExercise()     // copy the exercise name & paste it into main
 
     int chessboardx = 0;
 
-    fwcDrawText("Reference Exercise:", 50, 150, BLUE, 20);
-    fwcDrawText("no solution needed.", 50, 180, BLUE, 20);
+    fwcText("Reference Exercise:", 50, 150, BLUE, 20);
+    fwcText("no solution needed.", 50, 180, BLUE, 20);
 
     seeout << "The speed of light is " << LIGHTSPEEDMPS << " miles per second.\n";
     seeout << "A pint is " << POUNDSPERPINT << " pound, the world around.\n";

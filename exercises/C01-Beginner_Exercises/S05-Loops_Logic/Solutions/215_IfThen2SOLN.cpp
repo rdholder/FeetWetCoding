@@ -22,7 +22,7 @@ void IfThen2Soln::runExercise()
         {
             if ( color == DARKBLUE ) color = DARKCYAN;   // = is pronounced GETS, == is pronounced EQUALS  :-)
             else color = DARKBLUE;
-            fwcDrawRectangle(x, y, 48, 48, color, 1, true);
+            fwcRectangle(x, y, 48, 48, color, 1, true);
         }
     }
 }

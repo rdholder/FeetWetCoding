@@ -16,7 +16,7 @@ void Sleep::runExercise()
     {
         for ( x = 0; x < 400; x += horizontalstep )
         {
-            fwcDrawCircle(x, y, 20, color, 1, true);
+            fwcCircle(x, y, 20, color, 1, true);
             msleep(delayInMilliseconds);
         }
         delayInMilliseconds /= 2;

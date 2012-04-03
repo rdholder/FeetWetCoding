@@ -13,8 +13,8 @@ void Chars::runExercise()
     char lettera = 'A';     // individual letters get ' quotes, not " quotes
     char letterb = 'B';     // because " denotes a string.  Don't worry, we'll get to it.  :-)
 
-    fwcDrawText("Reference Exercise:", 50, 150, BLUE, 20);
-    fwcDrawText("no solution needed.", 50, 180, BLUE, 20);
+    fwcText("Reference Exercise:", 50, 150, BLUE, 20);
+    fwcText("no solution needed.", 50, 180, BLUE, 20);
 
     seeout << "Grades for Mr. Picklefeather's English Class:\n";
     seeout << "Jane: " << lettera << "\n";

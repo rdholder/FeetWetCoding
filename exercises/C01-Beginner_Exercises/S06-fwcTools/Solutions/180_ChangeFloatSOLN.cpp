@@ -12,5 +12,5 @@
 
 void ChangeFloatSoln::runExercise()
 {
-    fwcDrawText("Exercise Under\nConstruction", 50, 100, BLUE, 24);
+    fwcText("Exercise Under\nConstruction", 50, 100, BLUE, 24);
 }

@@ -31,19 +31,19 @@ void ChangeColorSoln::runExercise()
     seeout.setColor(BLACK);
     seeout.setFontSize(10);
 
-    fwcDrawRectangle(0,0,400,400,BLACK,1,true);
-    fwcDrawText("Adjust Awesomeness Level", 35, 130, WHITE, 20);
+    fwcRectangle(0,0,400,400,BLACK,1,true);
+    fwcText("Adjust Awesomeness Level", 35, 130, WHITE, 20);
 
     for(count=0; count<12; count++)
     {
-        fwcDrawInt(count,count*(350/11)+20,220,WHITE,8);
+        fwcInt(count,count*(350/11)+20,220,WHITE,8);
     }
 
-    int bar1 = fwcDrawRectangle(bar1x,bar1y,barwidth,barheight,WHITE,linewidth,true);
-    int bar2 = fwcDrawRectangle(bar2x,bar2y,barwidth,barheight,WHITE,linewidth,true);
-    int bar3 = fwcDrawRectangle(bar3x,bar3y,barwidth,barheight,WHITE,linewidth,true);
-    int bar4 = fwcDrawRectangle(bar4x,bar4y,barwidth,barheight,WHITE,linewidth,true);
-    int bar5 = fwcDrawRectangle(bar5x,bar5y,barwidth,barheight,WHITE,linewidth,true);
+    int bar1 = fwcRectangle(bar1x,bar1y,barwidth,barheight,WHITE,linewidth,true);
+    int bar2 = fwcRectangle(bar2x,bar2y,barwidth,barheight,WHITE,linewidth,true);
+    int bar3 = fwcRectangle(bar3x,bar3y,barwidth,barheight,WHITE,linewidth,true);
+    int bar4 = fwcRectangle(bar4x,bar4y,barwidth,barheight,WHITE,linewidth,true);
+    int bar5 = fwcRectangle(bar5x,bar5y,barwidth,barheight,WHITE,linewidth,true);
 
     while (key != "q" && key != "Q")
     {
@@ -95,5 +95,5 @@ void ChangeColorSoln::runExercise()
         }
     }
     fwcClearItems();
-    fwcDrawText("DONE!", 60, 150, DARKBLUE, 60);
+    fwcText("DONE!", 60, 150, DARKBLUE, 60);
 }

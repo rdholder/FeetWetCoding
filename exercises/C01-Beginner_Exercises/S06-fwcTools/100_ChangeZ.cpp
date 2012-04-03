@@ -14,11 +14,11 @@ void ChangeZ::runExercise()
     seeout << "Hover mouse over the drawing area above and press 1 or 2";
     seeout << " to increase that circle's Z.  Press q to quit.\n";
 
-    int circle1 = fwcDrawCircle(circle1x,circle1y,radius,DARKBLUE,linewidth,true);
-    int circle2 = fwcDrawCircle(circle2x,circle2y,radius,DARKRED,linewidth,true);
+    int circle1 = fwcCircle(circle1x,circle1y,radius,DARKBLUE,linewidth,true);
+    int circle2 = fwcCircle(circle2x,circle2y,radius,DARKRED,linewidth,true);
 
-    fwcDrawText("1",circle1x-radius-20,circle1y,BLACK,20);
-    fwcDrawText("2",circle2x+radius,circle2y,BLACK,20);
+    fwcText("1",circle1x-radius-20,circle1y,BLACK,20);
+    fwcText("2",circle2x+radius,circle2y,BLACK,20);
 
     while ( key != "q" && key != "Q" )
     {
@@ -37,5 +37,5 @@ void ChangeZ::runExercise()
     }
 
     fwcClearItems();
-    fwcDrawText("DONE!", 60, 150, DARKBLUE, 60);
+    fwcText("DONE!", 60, 150, DARKBLUE, 60);
 }

@@ -14,15 +14,15 @@ void DrawDotsSoln::runExercise()
 {
     // Things drawn later get drawn on top of things drawn earlier!
 
-    // USAGE: fwcDrawLine(xStart, yStart, xEnd, yEnd, color, linewidth);
-    // USAGE: fwcDrawCircle(x, y, radius, color, linewidth, solid);
-    // USAGE: fwcDrawRectangle(x, y, width, height, color, linewidth);
+    // USAGE: fwcLine(xStart, yStart, xEnd, yEnd, color, linewidth);
+    // USAGE: fwcCircle(x, y, radius, color, linewidth, solid);
+    // USAGE: fwcRectangle(x, y, width, height, color, linewidth);
     // (solid is an optional parameter: you can use it or leave it out.)
 
-    fwcDrawRectangle(0, 0, 400, 400, BLACK, 1, true);
+    fwcRectangle(0, 0, 400, 400, BLACK, 1, true);
 
-    fwcDrawRectangle(100, 200, 1, 1, RED, 1);
-    fwcDrawLine(200, 200, 200, 201, GREEN, 1);
-    fwcDrawCircle(300, 200, 1, BLUE, 1, true);
+    fwcRectangle(100, 200, 1, 1, RED, 1);
+    fwcLine(200, 200, 200, 201, GREEN, 1);
+    fwcCircle(300, 200, 1, BLUE, 1, true);
 
 }

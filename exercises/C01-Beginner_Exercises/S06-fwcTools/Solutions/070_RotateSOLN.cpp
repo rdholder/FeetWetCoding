@@ -26,7 +26,7 @@ void RotateSoln::runExercise()
     seeout.setColor(BLACK);
     seeout.setFontSize(10);
 
-    int ship = fwcDrawImage("spaceship50x59.jpg", shipx, shipy);
+    int ship = fwcImage("spaceship50x59.jpg", shipx, shipy);
 
     while ( key != "q" && key != "Q" )
     {
@@ -34,9 +34,9 @@ void RotateSoln::runExercise()
 
         if ( key == "a" || key == "A" )     // == is pronounced "EQUALS" :-)
         {
-            shipangle -= degreeturnrate; // THIS SEEMS BACKWARDS.  - SHOULD ROTATE LEFT, CORRECT?
-            if ( shipangle < 0 )
-            {
+            shipangle -= degreeturnrate;    // on a compass, angles get greater clockwise, however
+            if ( shipangle < 0 )            // in math, angles get greater COUNTER-clockwise
+            {                               // Qt does angles the "math" way, so we do too.
                 shipangle = 350;
             }
         }
@@ -54,5 +54,5 @@ void RotateSoln::runExercise()
     }
 
     fwcClearItems();
-    fwcDrawText("DONE!", 60, 150, DARKBLUE, 60);
+    fwcText("DONE!", 60, 150, DARKBLUE, 60);
 }

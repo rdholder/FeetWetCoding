@@ -5,6 +5,6 @@
 
 void ChangeXParameter::runExercise()
 {
-    // USAGE: fwcDrawText("Text.", x, y, color, fontsize);
-    fwcDrawText("change x", 10, 150, BLUE, 15);
+    // USAGE: fwcText("Text.", x, y, color, fontsize);
+    fwcText("change x", 10, 150, BLUE, 15);
 }

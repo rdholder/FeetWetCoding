@@ -12,12 +12,11 @@
 
 void ChangeLineEndSoln::runExercise()
 {
-
     int x(0), y(0), step(5), sleepTimeInMiliseconds(30);
 
-    fwcDrawRectangle(0,0,400,400,BLACK,1,true);
+    fwcRectangle(0,0,400,400,BLACK,1,true);
 
-    int line = fwcDrawLine(200,200,0,0,GREEN,1);
+    int line = fwcLine(200,200,0,0,GREEN,1);
 
     for(x=0; x < 400; x+=step)
     {

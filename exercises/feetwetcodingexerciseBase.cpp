@@ -101,7 +101,7 @@ std::string FeetWetCodingExerciseBase::getKeyboardString()
 
             if ( id < 0 )
             {
-                id = fwcDrawText("Input: " + fullstring.toStdString(), 10, 380, GRAY, 12);
+                id = fwcText("Input: " + fullstring.toStdString(), 10, 380, GRAY, 12);
             }
             else
             {
@@ -121,7 +121,7 @@ std::string FeetWetCodingExerciseBase::getKeyboardString()
     return fullstring.toStdString();
 }
 
-int FeetWetCodingExerciseBase::fwcDrawLine( int xStart, int yStart, int xEnd, int yEnd, Color color, int linewidth )
+int FeetWetCodingExerciseBase::fwcLine( int xStart, int yStart, int xEnd, int yEnd, Color color, int linewidth )
 {
     RenderItem item;
     item.type = LINE;
@@ -142,7 +142,7 @@ int FeetWetCodingExerciseBase::fwcDrawLine( int xStart, int yStart, int xEnd, in
     return id;
 }
 
-int FeetWetCodingExerciseBase::fwcDrawCircle( int x, int y, int r, Color color, int linewidth, bool solid )
+int FeetWetCodingExerciseBase::fwcCircle( int x, int y, int r, Color color, int linewidth, bool solid )
 {
     RenderItem item;
     item.type = CIRCLE;
@@ -163,7 +163,7 @@ int FeetWetCodingExerciseBase::fwcDrawCircle( int x, int y, int r, Color color, 
     return id;
 }
 
-int FeetWetCodingExerciseBase::fwcDrawCircleRGB( int x, int y, int r, int linewidth, int red, int green, int blue, bool solid )
+int FeetWetCodingExerciseBase::fwcCircleRGB( int x, int y, int r, int linewidth, int red, int green, int blue, bool solid )
 {
     RenderItem item;
     item.type = CIRCLERGB;
@@ -186,7 +186,7 @@ int FeetWetCodingExerciseBase::fwcDrawCircleRGB( int x, int y, int r, int linewi
     return id;
 }
 
-int FeetWetCodingExerciseBase::fwcDrawEllipse( int x, int y, int w, int h, Color color, int linewidth, bool solid )
+int FeetWetCodingExerciseBase::fwcEllipse( int x, int y, int w, int h, Color color, int linewidth, bool solid )
 {
     RenderItem item;
     item.type = ELLIPSE;
@@ -208,7 +208,7 @@ int FeetWetCodingExerciseBase::fwcDrawEllipse( int x, int y, int w, int h, Color
     return id;
 }
 
-int FeetWetCodingExerciseBase::fwcDrawRectangle( int x, int y, int w, int h, Color color, int linewidth, bool solid )
+int FeetWetCodingExerciseBase::fwcRectangle( int x, int y, int w, int h, Color color, int linewidth, bool solid )
 {
     RenderItem item;
     item.type = RECTANGLE;
@@ -230,7 +230,7 @@ int FeetWetCodingExerciseBase::fwcDrawRectangle( int x, int y, int w, int h, Col
     return id;
 }
 
-int FeetWetCodingExerciseBase::fwcDrawText( std::string text, int x, int y, Color color, int size )
+int FeetWetCodingExerciseBase::fwcText( std::string text, int x, int y, Color color, int size )
 {
     RenderItem item;
     item.type = TEXT;
@@ -250,7 +250,7 @@ int FeetWetCodingExerciseBase::fwcDrawText( std::string text, int x, int y, Colo
     return id;
 }
 
-int FeetWetCodingExerciseBase::fwcDrawInt( int number, int x, int y, Color color, int size )
+int FeetWetCodingExerciseBase::fwcInt( int number, int x, int y, Color color, int size )
 {
     RenderItem item;
     item.type = INT;
@@ -270,7 +270,7 @@ int FeetWetCodingExerciseBase::fwcDrawInt( int number, int x, int y, Color color
     return id;
 }
 
-int FeetWetCodingExerciseBase::fwcDrawFloat( float number, int x, int y, Color color, int size, int decimalPlaces )
+int FeetWetCodingExerciseBase::fwcFloat( float number, int x, int y, Color color, int size, int decimalPlaces )
 {
     RenderItem item;
     item.type = FLOAT;
@@ -291,7 +291,7 @@ int FeetWetCodingExerciseBase::fwcDrawFloat( float number, int x, int y, Color c
     return id;
 }
 
-int FeetWetCodingExerciseBase::fwcDrawImage( std::string filename, int x, int y )
+int FeetWetCodingExerciseBase::fwcImage( std::string filename, int x, int y )
 {
     RenderItem item;
     item.type = IMAGE;
@@ -319,36 +319,36 @@ void FeetWetCodingExerciseBase::DrawReferenceBox(Color color)
     //Save the ref box drawn items so that we can preserve them
     //when all the other drawn items get cleared.
     mRefBoxItems.clear();
-    mRefBoxItems.push_back(fwcDrawRectangle( 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, color, 1));
+    mRefBoxItems.push_back(fwcRectangle( 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, color, 1));
 
     oss << 0 << "," << 0;
-    mRefBoxItems.push_back(fwcDrawText(oss.str(), -10, -20, color, dimsSize));
+    mRefBoxItems.push_back(fwcText(oss.str(), -10, -20, color, dimsSize));
 
     oss.str("");
     oss << 0 << "," << WINDOW_HEIGHT;
-    mRefBoxItems.push_back(fwcDrawText(oss.str(), -10, WINDOW_HEIGHT, color, dimsSize));
+    mRefBoxItems.push_back(fwcText(oss.str(), -10, WINDOW_HEIGHT, color, dimsSize));
 
-    mRefBoxItems.push_back(fwcDrawLine( WINDOW_WIDTH/2, 0, WINDOW_WIDTH/2, WINDOW_HEIGHT, color, 1));
+    mRefBoxItems.push_back(fwcLine( WINDOW_WIDTH/2, 0, WINDOW_WIDTH/2, WINDOW_HEIGHT, color, 1));
 
     oss.str("");
     oss << WINDOW_WIDTH/2 << "," << 0;
-    mRefBoxItems.push_back(fwcDrawText(oss.str(), (WINDOW_WIDTH/2-BORDER/2), -20, color, dimsSize));
+    mRefBoxItems.push_back(fwcText(oss.str(), (WINDOW_WIDTH/2-BORDER/2), -20, color, dimsSize));
 
     oss.str("");
     oss << WINDOW_WIDTH/2 << "," << WINDOW_HEIGHT;
-    mRefBoxItems.push_back(fwcDrawText(oss.str(), WINDOW_WIDTH/2-BORDER/2, WINDOW_HEIGHT, color, dimsSize));
+    mRefBoxItems.push_back(fwcText(oss.str(), WINDOW_WIDTH/2-BORDER/2, WINDOW_HEIGHT, color, dimsSize));
 
     oss.str("");
     oss << "Make YOUR Code...";
     qApp->font().setPointSize(textSize);
     strWidth=QFontMetrics(QFont(qApp->font())).width(oss.str().c_str());
-    mRefBoxItems.push_back(fwcDrawText( oss.str(), WINDOW_WIDTH*.25-strWidth/2, -20, color, 10));
+    mRefBoxItems.push_back(fwcText( oss.str(), WINDOW_WIDTH*.25-strWidth/2, -20, color, 10));
 
     oss.str("");
     oss << "...do what the SOLUTION code does.";
     qApp->font().setPointSize(textSize);
     strWidth=QFontMetrics(QFont(qApp->font())).width(oss.str().c_str());
-    mRefBoxItems.push_back(fwcDrawText( oss.str(), WINDOW_WIDTH*.75-strWidth/2, -20, color, textSize));
+    mRefBoxItems.push_back(fwcText( oss.str(), WINDOW_WIDTH*.75-strWidth/2, -20, color, textSize));
 
     //Draw reference box on top of everything else
     for ( unsigned int i=0; i < mRefBoxItems.size(); ++i )

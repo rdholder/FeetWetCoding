@@ -24,10 +24,10 @@ void ChangeColor::runExercise()
     seeout.setColor(BLACK);
     seeout.setFontSize(10);
 
-    fwcDrawRectangle(0,0,400,400,BLACK,1,true);
+    fwcRectangle(0,0,400,400,BLACK,1,true);
 
-    int bar1 = fwcDrawRectangle(bar1x,bar1y,barwidth,barheight,WHITE,linewidth,true);
-    int bar2 = fwcDrawRectangle(bar2x,bar2y,barwidth,barheight,WHITE,linewidth,true);
+    int bar1 = fwcRectangle(bar1x,bar1y,barwidth,barheight,WHITE,linewidth,true);
+    int bar2 = fwcRectangle(bar2x,bar2y,barwidth,barheight,WHITE,linewidth,true);
 
     while (key != "q" && key != "Q")
     {
@@ -66,5 +66,5 @@ void ChangeColor::runExercise()
         }
     }
     fwcClearItems();
-    fwcDrawText("DONE!", 60, 150, DARKBLUE, 60);
+    fwcText("DONE!", 60, 150, DARKBLUE, 60);
 }

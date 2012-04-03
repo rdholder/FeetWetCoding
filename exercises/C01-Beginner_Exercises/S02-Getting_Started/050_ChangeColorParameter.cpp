@@ -26,6 +26,6 @@ void ChangeColorParameter::runExercise()
 //    PINK
 //    LAVENDER
 
-    // USAGE: fwcDrawText("Text.", x, y, color, fontsize);
-    fwcDrawText("color is BLUE", 50, 150, BLUE, 15);
+    // USAGE: fwcText("Text.", x, y, color, fontsize);
+    fwcText("color is BLUE", 50, 150, BLUE, 15);
 }

@@ -5,9 +5,9 @@
 
 void DrawRectangles::runExercise()
 {
-    // USAGE: fwcDrawRectangle(x, y, width, height, color, linewidth, solid);
+    // USAGE: fwcRectangle(x, y, width, height, color, linewidth, solid);
     // (solid is an optional parameter, you can use it or leave it out.)
-    fwcDrawRectangle(50, 50, 300, 300, BLACK, 1);
-    fwcDrawRectangle(150, 150, 100, 100, RED, 5);
-    fwcDrawRectangle(175, 175, 50, 50, BLUE, 10, true);
+    fwcRectangle(50, 50, 300, 300, BLACK, 1);
+    fwcRectangle(150, 150, 100, 100, RED, 5);
+    fwcRectangle(175, 175, 50, 50, BLUE, 10, true);
 }

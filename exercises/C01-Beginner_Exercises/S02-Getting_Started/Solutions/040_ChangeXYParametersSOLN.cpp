@@ -12,7 +12,7 @@
 
 void ChangeXYParametersSoln::runExercise()
 {
-    // USAGE: fwcDrawText("Text.", x, y, color, fontsize);
+    // USAGE: fwcText("Text.", x, y, color, fontsize);
 
-    fwcDrawText("99,101", 99, 101, BLUE, 15);
+    fwcText("99,101", 99, 101, BLUE, 15);
 }

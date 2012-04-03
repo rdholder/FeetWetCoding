@@ -23,15 +23,15 @@ void EraseSoln::runExercise()
     seeout << "Hover mouse over the drawing area above and press 1, 2, 3, or 4";
     seeout << " to delete that circle object.\n";
 
-    int circle1 = fwcDrawCircle(circle1x,circle1y,radius,DARKBLUE,linewidth,true);
-    int circle2 = fwcDrawCircle(circle2x,circle2y,radius,DARKRED,linewidth,true);
-    int circle3 = fwcDrawCircle(circle3x,circle3y,radius,DARKGREEN,linewidth,true);
-    int circle4 = fwcDrawCircle(circle4x,circle4y,radius,YELLOW,linewidth,true);
+    int circle1 = fwcCircle(circle1x,circle1y,radius,DARKBLUE,linewidth,true);
+    int circle2 = fwcCircle(circle2x,circle2y,radius,DARKRED,linewidth,true);
+    int circle3 = fwcCircle(circle3x,circle3y,radius,DARKGREEN,linewidth,true);
+    int circle4 = fwcCircle(circle4x,circle4y,radius,YELLOW,linewidth,true);
 
-    fwcDrawText("1",circle1x-radius-20,circle1y,BLUE,20);
-    fwcDrawText("2",circle2x+radius,circle2y,BLUE,20);
-    fwcDrawText("3",circle3x-radius-20,circle3y,BLUE,20);
-    fwcDrawText("4",circle4x+radius,circle4y,BLUE,20);
+    fwcText("1",circle1x-radius-20,circle1y,BLUE,20);
+    fwcText("2",circle2x+radius,circle2y,BLUE,20);
+    fwcText("3",circle3x-radius-20,circle3y,BLUE,20);
+    fwcText("4",circle4x+radius,circle4y,BLUE,20);
 
     while ( circlecount > 0 )
     {
@@ -60,5 +60,5 @@ void EraseSoln::runExercise()
     }
 
     fwcClearItems();
-    fwcDrawText("DONE!", 60, 150, DARKBLUE, 60);
+    fwcText("DONE!", 60, 150, DARKBLUE, 60);
 }

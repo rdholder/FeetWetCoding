@@ -8,8 +8,8 @@ void ModulusOperator::runExercise()     // copy the exercise name & paste it int
     // the % modulus operator gives you the remainder (if any) if you divide the number
     // to the left of the % by the number to the right of it.
 
-    fwcDrawText("Reference Exercise:", 50, 150, BLUE, 20);
-    fwcDrawText("no solution needed.", 50, 180, BLUE, 20);
+    fwcText("Reference Exercise:", 50, 150, BLUE, 20);
+    fwcText("no solution needed.", 50, 180, BLUE, 20);
 
     seeout << "4%5 == " <<   4%5 << "\n";
     seeout << "5%5 == " <<   5%5 << "\n";

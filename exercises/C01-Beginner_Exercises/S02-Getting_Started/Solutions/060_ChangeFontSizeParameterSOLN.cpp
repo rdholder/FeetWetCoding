@@ -12,7 +12,7 @@
 
 void ChangeFontSizeParameterSoln::runExercise()
 {
-    // USAGE: fwcDrawText("Text.", x, y, color, fontsize);
+    // USAGE: fwcText("Text.", x, y, color, fontsize);
 
-    fwcDrawText("...to fontsize 30.", 50, 150, BLUE, 30);
+    fwcText("...to fontsize 30.", 50, 150, BLUE, 30);
 }
