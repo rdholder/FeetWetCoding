@@ -57,7 +57,7 @@ FWCExerciseChooser::getExerciseFromName( const QString & name )
 {
     //Chapter 1
 
-    //Section 2 - Getting_Started
+    //Section 1 - fwcTools1
     if( "Welcome" == name ){ return new Welcome(&mExerciseLauncher); }
     if( "ChangeTextParameter" == name ){ return new ChangeTextParameter(&mExerciseLauncher); }
     if( "ChangeXParameter" == name ){ return new ChangeXParameter(&mExerciseLauncher); }
@@ -78,14 +78,13 @@ FWCExerciseChooser::getExerciseFromName( const QString & name )
     if( "ColorNames" == name ){ return new ColorNames(&mExerciseLauncher); }
     if( "FontProportions" == name ){ return new FontProportions(&mExerciseLauncher); }
 
-    //Section 3 - Types_Variables
+    //Section 2 - Types_Variables
     if( "NumericTypes" == name ){ return new NumericTypes(&mExerciseLauncher); }
     if( "DrawingVersusSeeout" == name ){ return new DrawingVersusSeeout(&mExerciseLauncher); }
     if( "CONSTANTS" == name ){ return new CONSTANTS(&mExerciseLauncher); }
     if( "Chars" == name ){ return new Chars(&mExerciseLauncher); }
     if( "Booleans" == name ){ return new Booleans(&mExerciseLauncher); }
     if( "StandardStrings" == name ){ return new StandardStrings(&mExerciseLauncher); }
-//    if( "Arrays" == name ){ return new Arrays(&mExerciseLauncher); }
 
     //Section 4 - Expessions_Syntax
     if( "AssignmentArithmetic" == name ){ return new AssignmentArithmetic(&mExerciseLauncher); }
@@ -124,7 +123,7 @@ FWCExerciseChooser::getExerciseFromName( const QString & name )
     if( "OYO_Primes2" == name ){ return new OYO_Primes2(&mExerciseLauncher); }
     if( "OYO5" == name ){ return new C01S05_OYO5(&mExerciseLauncher); }
 
-    //Section 6 - fwcTools
+    //Section 6 - fwcTools2
     if( "Sleep" == name ){ return new Sleep(&mExerciseLauncher); }
     if( "SingleKeyInput" == name ){ return new SingleKeyInput(&mExerciseLauncher); }
     if( "StringInput" == name ){ return new StringInput(&mExerciseLauncher); }
@@ -187,7 +186,7 @@ void FWCExerciseChooser::createExercisesMap()
     //C01-Beginner_Exercises
     sections.clear();
 
-    //S02-Getting_Started
+    //S01-fwcTools1
     exercises.clear();
     exercises.push_back( "Welcome" );
     exercises.push_back( "ChangeTextParameter" );
@@ -208,9 +207,9 @@ void FWCExerciseChooser::createExercisesMap()
     exercises.push_back( "OnYourOwn" );
     exercises.push_back( "ColorNames" );
     exercises.push_back( "FontProportions" );
-    sections["S02-Getting_Started"] = exercises;
+    sections["S01-fwcTools1"] = exercises;
 
-    //S03-Types_Variables
+    //S02-Types_Variables
     exercises.clear();
     exercises.push_back( "NumericTypes" );
     exercises.push_back( "DrawingVersusSeeout" );
@@ -218,8 +217,7 @@ void FWCExerciseChooser::createExercisesMap()
     exercises.push_back( "Chars" );
     exercises.push_back( "Booleans" );
     exercises.push_back( "StandardStrings" );
-//    exercises.push_back( "Arrays" );
-    sections["S03-Types_Variables"] = exercises;
+    sections["S02-Types_Variables"] = exercises;
 
     //S04-Expressions_Syntax
     exercises.clear();
@@ -262,7 +260,7 @@ void FWCExerciseChooser::createExercisesMap()
     exercises.push_back( "OYO5" );
     sections["S05-Loops_Logic"] = exercises;
 
-    //S06-fwcTools
+    //S06-fwcTools2
     exercises.clear();
     exercises.push_back( "Sleep" );
     exercises.push_back( "SingleKeyInput" );
@@ -283,7 +281,7 @@ void FWCExerciseChooser::createExercisesMap()
     exercises.push_back( "ChangeInt" );
     exercises.push_back( "ChangeFloat" );
 
-    sections["S06-fwcTools"] = exercises;
+    sections["S06-fwcTools2"] = exercises;
 
     //S07-Storing_Data
     exercises.clear();
