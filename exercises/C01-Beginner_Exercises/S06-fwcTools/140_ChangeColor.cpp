@@ -5,7 +5,7 @@
 
 void ChangeColor::runExercise()
 {
-    int lightbarsupto(0), count(0);
+    int light_bars_up_to(0), count(0);
     int barwidth(70), barheight(20), linewidth(1);
     int bar1x(25), bar1y(200);
     int bar2x(bar1x+barwidth), bar2y(200);
@@ -20,7 +20,7 @@ void ChangeColor::runExercise()
     seeout << " (What happens when you press other keys?)\n\n";
     seeout.setFontSize(12);
     seeout.setColor(DARKGREEN);
-    seeout << "lightbarsupto:\n";
+    seeout << "light_bars_up_to:\n";
     seeout.setColor(BLACK);
     seeout.setFontSize(10);
 
@@ -35,31 +35,31 @@ void ChangeColor::runExercise()
 
         if (key == "+")                 // == is pronounced "EQUALS" :-)
         {
-            lightbarsupto++;
-            if (lightbarsupto > 2)
+            light_bars_up_to++;
+            if (light_bars_up_to > 2)
             {
-                lightbarsupto = 2;
+                light_bars_up_to = 2;
             }
         }
 
         if ( key == "-" )
         {
-            lightbarsupto--;
-            if (lightbarsupto < 0)
+            light_bars_up_to--;
+            if (light_bars_up_to < 0)
             {
-                lightbarsupto = 0;
+                light_bars_up_to = 0;
             }
         }
 
-        seeout << lightbarsupto << " ";
+        seeout << light_bars_up_to << " ";
 
-        fwcChangeColor(bar1, WHITE, true);
-        fwcChangeColor(bar2, WHITE, true);
+        fwcChangeColor(bar1, WHITE, true);  // reset all the bars to white
+        fwcChangeColor(bar2, WHITE, true);  // every keystroke loop...
 
-        if (lightbarsupto > 0)
+        if (light_bars_up_to > 0)
         {
-            fwcChangeColor(bar1, DARKRED, true);
-            if (lightbarsupto > 1)
+            fwcChangeColor(bar1, DARKRED, true);    // ...then color them DARKRED up to
+            if (light_bars_up_to > 1)                  // light_bars_up_to number of bars
             {
                 fwcChangeColor(bar2, DARKRED, true);
             }
