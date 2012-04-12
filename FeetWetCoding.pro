@@ -178,7 +178,9 @@ SOURCES += \
     mycode/src/MyCode9.cpp \
     exercises/feetwetcodingexerciseBase.cpp \
     exercises/C01-Beginner_Exercises/S07-Storing_Data/015_FillAnArray.cpp \
-    exercises/C01-Beginner_Exercises/S07-Storing_Data/Solutions/015_FillAnArraySOLN.cpp
+    exercises/C01-Beginner_Exercises/S07-Storing_Data/Solutions/015_FillAnArraySOLN.cpp \
+    exercises/C01-Beginner_Exercises/S07-Storing_Data/Solutions/020_BubbleSort1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S07-Storing_Data/020_BubbleSort1.cpp
 
 HEADERS += \
     include/lib/setup.h \
