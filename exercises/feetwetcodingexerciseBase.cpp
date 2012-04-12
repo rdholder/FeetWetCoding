@@ -9,11 +9,15 @@ using namespace std;
 
 extern QMutex globalmutex;
 
+//static variable definition
+unsigned int FeetWetCodingExerciseBase::mInstanceCount(0);
+
 FeetWetCodingExerciseBase::FeetWetCodingExerciseBase(QObject *parent)
     :QThread(parent)
     ,mSoln(false)
     ,mPane(0)
     ,mSolutionPtr(NULL)
+    ,mInstanceID(mInstanceCount++)
 {
 #ifdef DEBUG
     qDebug() << "DEBUG: FeetWetCodingExerciseBase::FeetWetCodingExerciseBase() - (GUI) ThreadID: " << qApp->thread()->currentThread();
@@ -32,8 +36,11 @@ void FeetWetCodingExerciseBase::run()
     qDebug() << "DEBUG: FeetWetCodingExerciseBase::run() - (Exercise/Soln) ThreadID: " << qApp->thread()->currentThread();
 #endif
 
+
+    // Seed the random number generator using the
+    // current time and this object's instance id
     int ctime = QTime::currentTime().msec();
-    qsrand(ctime);
+    qsrand((ctime*mInstanceID)%1000);
 
     runExercise();
 }
