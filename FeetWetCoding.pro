@@ -178,7 +178,9 @@ SOURCES += \
     mycode/src/MyCode7.cpp \
     mycode/src/MyCode8.cpp \
     mycode/src/MyCode9.cpp \
-    exercises/feetwetcodingexerciseBase.cpp
+    exercises/feetwetcodingexerciseBase.cpp \
+    exercises/C01-Beginner_Exercises/S07-Storing_Data/015_FillAnArray.cpp \
+    exercises/C01-Beginner_Exercises/S07-Storing_Data/Solutions/015_FillAnArraySOLN.cpp
 
 HEADERS += \
     include/lib/setup.h \

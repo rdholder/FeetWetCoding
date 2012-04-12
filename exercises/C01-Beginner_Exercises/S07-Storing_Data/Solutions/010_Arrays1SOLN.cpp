@@ -16,17 +16,9 @@ void Arrays1Soln::runExercise()
 
     int x, y, person(0), key_as_int(-1), week(1);
     int lottery_amount(0);
-    int bank_account_person1(0);
-    int bank_account_person2(0);
-    int bank_account_person3(0);
-    int bank_account_person4(0);
-    int bank_account_person5(0);
-    int bank_account_person6(0);
-    int bank_account_person7(0);
-
 
     Color color = DARKBLUE;
-    int number_of_people(7);
+    int number_of_people(6);
     int array_of_bank_accounts[number_of_people];
 
     std::string key;
@@ -36,70 +28,32 @@ void Arrays1Soln::runExercise()
         array_of_bank_accounts[person] = 0;
     }
 
+    seeout << "Bank Balances for Person:\n";
+    seeout << "1\t2\t3\t4\t5\t6\n";
+
     while ( key != "q" && key != "Q" )
     {
-        lottery_amount = random(100);
+        lottery_amount = random(1000);
         fwcClearItems();
-        fwcText("Week #",50,50,color);
-        fwcInt(week++,300,50,color);
-        fwcText("The winning lottery ticket pays $", 50, 100, color);
-        fwcInt(lottery_amount,300,100,color);
-        fwcText("Press key 1-7 to choose who gets the money!", 50,200,color);
+        fwcText("Week #",20,300,color);
+        fwcInt(week++,300,300,color);
+        fwcText("The winning lottery ticket pays $", 20, 330, color);
+        fwcInt(lottery_amount,300,330,color);
+        fwcText("Press key 1-7 to choose who gets the money!", 20,350,color);
 
         key = waitForKeyPress();
         key_as_int = atoi(key.c_str());
 
         //seeout << "You pressed: " << key << " " << key_as_int << "\n";
 
-        if ( key_as_int == 1 )
+        if ( key_as_int > 0 && key_as_int <= number_of_people )  // always check that your index is sane!
         {
-            bank_account_person1 += lottery_amount;
+            array_of_bank_accounts[key_as_int-1] += lottery_amount;
         }
-        if ( key_as_int == 2 )
-        {
-            bank_account_person2 += lottery_amount;
-        }
-        if ( key_as_int == 3 )
-        {
-            bank_account_person3 += lottery_amount;
-        }
-        if ( key_as_int == 4 )
-        {
-            bank_account_person4 += lottery_amount;
-        }
-        if ( key_as_int == 5 )
-        {
-            bank_account_person5 += lottery_amount;
-        }
-        if ( key_as_int == 6 )
-        {
-            bank_account_person6 += lottery_amount;
-        }
-        if ( key_as_int == 7 )
-        {
-            bank_account_person7 += lottery_amount;
-        }
-
-        seeout << "OLD  WAY: Person(Balance):";
-        seeout << " 1(" << bank_account_person1 << ")";
-        seeout << " 2(" << bank_account_person2 << ")";
-        seeout << " 3(" << bank_account_person3 << ")";
-        seeout << " 4(" << bank_account_person4 << ")";
-        seeout << " 5(" << bank_account_person5 << ")";
-        seeout << " 6(" << bank_account_person6 << ")";
-        seeout << " 7(" << bank_account_person7 << ")";
-        seeout << "\n";
-
-        if ( key_as_int >=0 && key_as_int < number_of_people )  // always check that your index is sane!
-        {
-            array_of_bank_accounts[key_as_int] += lottery_amount;
-        }
-
-        seeout << "NEW WAY: Person(Balance):";
 
         for (person = 0; person < number_of_people; person++ )
         {
-            seeout << " " << person+1 << "(" << array_of_bank_accounts[person] << ")";
+            seeout << "$" << array_of_bank_accounts[person] << "\t";
         }
         seeout << "\n";
 

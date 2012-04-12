@@ -26,7 +26,7 @@ void randomAndrandomRange::runExercise()     // copy the exercise name & paste i
     a = random(100);
     b = random(100);
     seeout << "Two random numbers:  a == " << a << ", b == " << b << "\n";
-    seeout << "They retain their values until you call random again:\n";
+    seeout << "They retain their values until you call random again: ";
     seeout << "a == " << a << ", b == " << b << "\n\n";
 
     a = random(100);
