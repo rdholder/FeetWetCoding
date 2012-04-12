@@ -340,7 +340,7 @@ void ExerciseLauncher::handleRenderUpdates()
     QGraphicsEllipseItem  *ellipseItem(NULL);
     QGraphicsRectItem *rectItem(NULL);
     QGraphicsTextItem *textItem(NULL);
-    QGraphicsPixmapItem *pixmapItem(NULL);
+    //QGraphicsPixmapItem *pixmapItem(NULL);
     QAbstractGraphicsShapeItem *shapeItem(NULL);
     QFont font(qApp->font());
     QPen pen;

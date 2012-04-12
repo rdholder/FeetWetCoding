@@ -24,11 +24,6 @@ void Relocate::runExercise()
 
     int lightbulb = fwcCircle(circleAx, circleAy, radius-linewidth/2, GREEN, 1, true);
 
-    // debugging fwcCircle... apparently the drawcircle tool is
-    // dividing radius by half, so that circles are not being drawn
-    // at their proper radius, but at HALF the radius we are passing!  >:-(
-    // if true then SOMEBODY owes a certain person some pushups!!!  >:-\\\
-
     seeout << "lightbulb == " << lightbulb << "\n";
     seeout << "circleAx == " << circleAx << "\n";
     seeout << "circleAy == " << circleAy << "\n";
@@ -37,12 +32,8 @@ void Relocate::runExercise()
     seeout << "radius == " << radius << "\n";
     seeout << "circleAy+radius == " << circleAy+radius << "\n";
 
-    // also, WTF is going on with this next line not drawing?!!!
     fwcLine(circleAx-2, circleAy, circleAx+2, circleAy, BLACK, 1);
-    //fwcLine(100, 275, 105, 275, BLACK, 1);
     fwcCircle(circleAx,circleAy+radius,2,RED,1,true);
-    //JCD - Fixed some stuff. Moved this line to after (on top of) red circle
-    //and changed to WHITE so you can see it
     fwcLine(circleAx-2, circleAy+radius, circleAx+2, circleAy+radius, WHITE, 1);
 
 
