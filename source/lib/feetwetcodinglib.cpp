@@ -458,37 +458,57 @@ std::string getNameForColor( Color color )
 
 QString getProjectPath()
 {
-    //Project path will contain the project file
-    QString projectFile("FeetWetCoding.pro");
+    QString projectFilename("FeetWetCoding.pro");
+    QString projectPath;
 
-    //Assuming we're running from the default
-    //build directory, which lives in the same
-    //parent directory as the project directory
-    QDir parentDir(QDir::current());
-    if ( false == parentDir.cdUp() )
+    //Project path is specified in the makefile
+    QFile makefile("./Makefile");
+    if (!makefile.open(QIODevice::ReadOnly | QIODevice::Text))
     {
-        qDebug() << "WARNING: Unable to cd to parent directory. Project path cannot be determined.";
-        return QString();
+        qDebug() << "ERROR: In getProjectPath(), unable to open file \"./Makefile\" for reading";
+        return projectPath;
     }
 
-    QStringList filters;
-    filters << "FeetWetCoding*";
-    parentDir.setNameFilters(filters);
-    parentDir.setFilter(QDir::Dirs);
-    QString path(parentDir.path());
+    QTextStream in(&makefile);
+    QString line;
+    QStringList parsedLine;
+    bool stop(false);
 
-    QStringList dirnames(parentDir.entryList());
-    QDir sourcedir;
-
-    for ( int i=0; i < dirnames.length(); ++i )
+    while (!in.atEnd())
     {
-        if ( QFile::exists( path + "/" + dirnames.at(i) + "/" + projectFile ) )
-        {
-            sourcedir.setPath(path + "/" + dirnames.at(i));
-        }
+       line = in.readLine(); //read one line at a time
+       parsedLine = line.split(" ", QString::SkipEmptyParts, Qt::CaseSensitive);
+
+       for( unsigned int i=0; i < parsedLine.length(); i++)
+       {
+           if ( "Project:" == parsedLine.at(i) )
+           {
+               if ( parsedLine.length() > i+1 )
+               {
+                   projectPath = parsedLine.at(i+1);
+
+                   //Remove the project file from the end of the project path
+                   if ( -1 != projectPath.lastIndexOf(projectFilename) )
+                   {
+                       projectPath.chop(projectPath.lastIndexOf(projectFilename));
+                   }
+               }
+
+               //break out of both loops even if not found.
+               //this was our only shot
+               stop = true;
+               break;
+           }
+       }
+       if ( stop )
+       {
+           qDebug() << "projectPath: " << projectPath;
+           break;
+       }
     }
 
-    return ( sourcedir.path() );
+    makefile.close();
+    return projectPath;
 }
 
 QString getDefaultConfigFilePath()

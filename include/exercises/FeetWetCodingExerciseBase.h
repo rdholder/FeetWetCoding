@@ -167,6 +167,8 @@ protected:
 
 private:
     void run();
+    unsigned int mInstanceID;
+    static unsigned int mInstanceCount;
 };
 
 class FeetWetCodingExercise : public FeetWetCodingExerciseBase
