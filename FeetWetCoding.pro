@@ -114,10 +114,6 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S07-Storing_Data/050_Arrays1.cpp \
     exercises/C01-Beginner_Exercises/S09-Classes_Intro/Solutions/010_Classes1SOLN.cpp \
     exercises/C01-Beginner_Exercises/S09-Classes_Intro/010_Classes1.cpp \
-    exercises/C08-Game_Programming/S03-TopDown2D/TopDown2D.cpp \
-    exercises/C08-Game_Programming/S03-TopDown2D/TopDown2DWidget.cpp \
-    exercises/C08-Game_Programming/S03-TopDown2D/TopDown2DSOLN.cpp \
-    exercises/C08-Game_Programming/GameWidget.cpp \
     mycode/lib/MyLib.cpp \
     mycode/src/MyCode0.cpp \
     mycode/src/MyCode1.cpp \
@@ -178,7 +174,9 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S06-fwcTools/Solutions/080_EraseSOLN.cpp \
     exercises/C01-Beginner_Exercises/S06-fwcTools/Solutions/100_ChangeZSOLN.cpp \
     exercises/C01-Beginner_Exercises/S06-fwcTools/Solutions/110_ChangeLineEndSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/Solutions/120_ChangeLineWidthSOLN.cpp
+    exercises/C01-Beginner_Exercises/S06-fwcTools/Solutions/120_ChangeLineWidthSOLN.cpp \
+    exercises/C08-Game_Programming/S03-Top_Down_2D/Solutions/SpaceshipFlyerSOLN.cpp \
+    exercises/C08-Game_Programming/S03-Top_Down_2D/SpaceshipFlyer.cpp
 
 
 HEADERS += \
@@ -190,9 +188,6 @@ HEADERS += \
     include/exercises/C01_S03.h \
     include/exercises/C01_S05.h \
     include/exercises/C01_S04.h \
-    include/exercises/C08-Game_Programming/S03-TopDown2D/TopDown2DWidget.h \
-    include/exercises/C08-Game_Programming/S03-TopDown2D/TopDown2D.h \
-    include/exercises/C08-Game_Programming/GameWidget.h \
     include/lib/FWCExerciseChooser.h \
     include/lib/colors.h \
     include/lib/ColorViewer.h \
@@ -202,7 +197,9 @@ HEADERS += \
     include/exercises/C01_S09.h \
     include/exercises/C01_S07.h \
     include/exercises/C01_S06.h \
-    include/exercises/FeetWetCodingExerciseBase.h
+    include/exercises/FeetWetCodingExerciseBase.h \
+    include/exercises/C08-Game_Programming/S03-TopDown2D/C08_S03.h \
+    include/exercises/C08_S03.h
 
 FORMS +=
 

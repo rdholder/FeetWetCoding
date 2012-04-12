@@ -55,7 +55,7 @@ FWCExerciseChooser::~FWCExerciseChooser()
 FeetWetCodingExercise *
 FWCExerciseChooser::getExerciseFromName( const QString & name )
 {
-    //Chapter 1
+    //Chapter 1 - Beginner_Exercises
 
     //Section 2 - Getting_Started
     if( "Welcome" == name ){ return new Welcome(&mExerciseLauncher); }
@@ -158,8 +158,8 @@ FWCExerciseChooser::getExerciseFromName( const QString & name )
 
     //Chapter 8 - Game_Programming
 
-    //Section 3 - TopDown2D
-    if( "TopDown2D" == name ){ return new TopDown2D(&mExerciseLauncher); }
+    //Section 3 - Top_Down_2D
+    if( "SpaceshipFlyer" == name ){ return new SpaceshipFlyer(&mExerciseLauncher); }
 
     // MyCode "Chapter" (only one section)
 
@@ -297,16 +297,17 @@ void FWCExerciseChooser::createExercisesMap()
 
     mExerciseMap["C01-Beginner_Exercises"] = sections;
 
+    // Chapters 2 thru 7 ...
 
     //C08-Game_Programming
-//    sections.clear();
+    sections.clear();
 
-//    //S03-TopDown2D
-//    exercises.clear();
-//    exercises.push_back( "TopDown2D" );
-//    sections["S03-TopDown2D"] = exercises;
+    //S03-Top_Down_2D
+    exercises.clear();
+    exercises.push_back( "SpaceshipFlyer" );
+    sections["S03-Top_Down_2D"] = exercises;
 
-//    mExerciseMap["C08-Game_Programming"] = sections;
+    mExerciseMap["C08-Game_Programming"] = sections;
 
     //MyCode "Chapter"
     sections.clear();
