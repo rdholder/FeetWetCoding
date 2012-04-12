@@ -23,8 +23,8 @@ void MathFunctions::runExercise()     // copy the exercise name & paste it into 
 
     double result = 0, x = 0, y = 3.49;
 
-    fwcDrawText("Reference Exercise:", 50, 150, BLUE, 20);
-    fwcDrawText("no solution needed.", 50, 180, BLUE, 20);
+    fwcText("Reference Exercise:", 50, 150, BLUE, 20);
+    fwcText("no solution needed.", 50, 180, BLUE, 20);
 
     x = -20;
 //    result = abs(x);

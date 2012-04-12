@@ -33,8 +33,8 @@ void IfThen3::runExercise()
     // Understanding comparison logic is important in order to be able to code and debug.
     // Take a break if your brain gets tired from this stuff! (As mine does! :-)
 
-    fwcDrawText("Reference Exercise:", 50, 150, BLUE, 20);
-    fwcDrawText("no solution needed.", 50, 180, BLUE, 20);
+    fwcText("Reference Exercise:", 50, 150, BLUE, 20);
+    fwcText("no solution needed.", 50, 180, BLUE, 20);
 
     seeout << "Try to understand in every case below why each is true or false.\n\n";
 

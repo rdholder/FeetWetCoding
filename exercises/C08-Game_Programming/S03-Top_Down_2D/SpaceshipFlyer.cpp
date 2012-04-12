@@ -60,7 +60,7 @@ void SpaceshipFlyer::drawPlayer()
         mPlayerY = (WINDOW_HEIGHT-BORDER)/2;
 
         std::string playerImageFilename("spaceship25x30.png");
-        mPlayerIconID = fwcDrawImage(playerImageFilename, mPlayerX, mPlayerY);
+        mPlayerIconID = fwcImage(playerImageFilename, mPlayerX, mPlayerY);
         fwcChangeZ(mPlayerIconID, 1000);
         rotatePlayer(mPlayerAngle);
 
@@ -78,7 +78,7 @@ void SpaceshipFlyer::drawCoins()
         x = random(WINDOW_WIDTH/2-BORDER);
         y = random(WINDOW_HEIGHT-BORDER);
 
-        fwcDrawCircle(x-(radius/2), y-(radius/2), radius, DARKYELLOW, 1, true);
+        fwcCircle(x-(radius/2), y-(radius/2), radius, DARKYELLOW, 1, true);
     }
 }
 

@@ -15,7 +15,7 @@ void IfThen1::runExercise()
         {
             if ( x < y) color = RED;
             if ( x > y) color = BLUE;
-            fwcDrawRectangle(x, y, 40, 40, color, 1, true);
+            fwcRectangle(x, y, 40, 40, color, 1, true);
             y += verticalstep;
         }
         y=0;

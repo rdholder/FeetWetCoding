@@ -16,7 +16,7 @@ SpaceshipFlyerSoln::~SpaceshipFlyerSoln()
 
 void SpaceshipFlyerSoln::runExercise()
 {
-    fwcDrawText("Demo Exercise:", 50, 150, BLUE, 20);
-    fwcDrawText("no solution needed.", 50, 180, BLUE, 20);
+    fwcText("Demo Exercise:", 50, 150, BLUE, 20);
+    fwcText("no solution needed.", 50, 180, BLUE, 20);
 }
 

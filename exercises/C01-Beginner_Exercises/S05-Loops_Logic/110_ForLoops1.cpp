@@ -11,9 +11,9 @@ void ForLoops1::runExercise()
     {
         for ( col = 0; col < 8; col++ )
         {
-            fwcDrawInt( row, col*50, row*50, BLUE, 30);
-            fwcDrawText( ",", col*50+15, row*50, BLUE, 30);
-            fwcDrawInt( col, col*50+20, row*50, BLUE, 30);
+            fwcInt( row, col*50, row*50, BLUE, 30);
+            fwcText( ",", col*50+15, row*50, BLUE, 30);
+            fwcInt( col, col*50+20, row*50, BLUE, 30);
         }
     }
 }

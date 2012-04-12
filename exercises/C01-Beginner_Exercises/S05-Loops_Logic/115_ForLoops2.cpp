@@ -9,7 +9,7 @@ void ForLoops2::runExercise()
 
     for ( y = 0; y < 375; y += 25 )
     {
-        fwcDrawInt( a, x, y, BLUE, 15);
+        fwcInt( a, x, y, BLUE, 15);
         a++;
     }
 }

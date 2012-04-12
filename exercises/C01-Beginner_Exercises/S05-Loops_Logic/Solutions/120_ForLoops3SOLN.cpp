@@ -31,6 +31,6 @@ void ForLoops3Soln::runExercise()
 
         if ( a > 9 && x > 370 ) x -= 10;
         if ( a > 99 && x > 355 ) x -= 10;
-        fwcDrawInt( a, x, y, BLUE, 15);
+        fwcInt( a, x, y, BLUE, 15);
     }
 }

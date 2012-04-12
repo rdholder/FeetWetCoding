@@ -16,7 +16,7 @@ void C01S05_OYO2Soln::runExercise()
 
     while ( n++ < 50 )
     {
-        fwcDrawCircle(random(400), random(400), random(25), BLUE, 1, true);
+        fwcCircle(random(400), random(400), random(25), BLUE, 1, true);
     }
     seeout << "Click the \"Re-start Exercise\" button a few times to get an idea";
     seeout << " of the behavior we are looking for here.\n\n";

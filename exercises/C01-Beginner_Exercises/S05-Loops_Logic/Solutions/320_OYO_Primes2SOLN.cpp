@@ -16,7 +16,7 @@ void OYO_Primes2Soln::runExercise()
     int n = 2, c = 2, x = 0, y = 0;
     bool prime = true;
 
-    fwcDrawRectangle(0, 0, 400, 400, BLACK, 1, true);
+    fwcRectangle(0, 0, 400, 400, BLACK, 1, true);
 
     for ( y = 0; y < 400; y+=2 )
     {
@@ -34,7 +34,7 @@ void OYO_Primes2Soln::runExercise()
 
             if ( prime )
             {
-                fwcDrawRectangle(x, y, 2, 2, GREEN, 1, true);
+                fwcRectangle(x, y, 2, 2, GREEN, 1, true);
             }
             n++;
         }

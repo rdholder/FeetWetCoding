@@ -12,7 +12,7 @@ void WhileLoop5::runExercise()
     {
         while ( y < 400 )
         {
-            fwcDrawRectangle(x, y, 25, 25, RED, 1, true);
+            fwcRectangle(x, y, 25, 25, RED, 1, true);
             y += verticalstep;
         }
         y=0;

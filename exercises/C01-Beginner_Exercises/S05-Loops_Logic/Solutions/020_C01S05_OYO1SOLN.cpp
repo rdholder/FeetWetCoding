@@ -16,7 +16,7 @@ void C01S05_OYO1Soln::runExercise()
 
     while ( x < 400 )
     {
-        fwcDrawCircle(x, 200, 10, BLUE, 1, true);
+        fwcCircle(x, 200, 10, BLUE, 1, true);
         x += 50;
     }
     seeout << "The first circle is located at 50, 200 with radius 20.\n";

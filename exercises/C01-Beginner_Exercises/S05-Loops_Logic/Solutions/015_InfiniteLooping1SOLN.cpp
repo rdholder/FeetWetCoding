@@ -17,7 +17,7 @@ void InfiniteLooping1Soln::runExercise()
 
     while ( y < 400 )
     {
-        fwcDrawText("y must exceed 400 for this loop to end!", x, y, BLUE, 10);
+        fwcText("y must exceed 400 for this loop to end!", x, y, BLUE, 10);
         y += verticalstep;  // when this line was commented out, y stayed 20 forever!
 
     }

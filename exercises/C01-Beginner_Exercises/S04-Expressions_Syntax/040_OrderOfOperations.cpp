@@ -29,8 +29,8 @@ void OrderOfOperations::runExercise()
 
     double x = 0, a = 4, b = 8, c = 16, d = 2;
 
-    fwcDrawText("Reference Exercise:", 50, 150, BLUE, 20);
-    fwcDrawText("no solution needed.", 50, 180, BLUE, 20);
+    fwcText("Reference Exercise:", 50, 150, BLUE, 20);
+    fwcText("no solution needed.", 50, 180, BLUE, 20);
 
     x = a + b * c / d;
     seeout << "1st x: " << a << " + " << b << " * " << c << " / " << d << " == " << x << "\n";

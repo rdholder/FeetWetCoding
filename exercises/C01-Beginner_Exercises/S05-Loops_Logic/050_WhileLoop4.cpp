@@ -15,7 +15,7 @@ void WhileLoop4::runExercise()
         x += horizontalstep;
         y += velocity;
         velocity += rateofchange;
-        fwcDrawCircle(x, y, 10, RED, 1);
-        fwcDrawInt(velocity, x+10, y, BLUE, 10);
+        fwcCircle(x, y, 10, RED, 1);
+        fwcInt(velocity, x+10, y, BLUE, 10);
     }
 }

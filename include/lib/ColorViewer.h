@@ -14,8 +14,8 @@ public:
 
 private:
 
-    int fwcDrawCircle( int x, int y, int r, Color color, int linewidth, bool solid=false);
-    int fwcDrawText( std::string text, int x, int y, Color color, int size=12);
+    int fwcCircle( int x, int y, int r, Color color, int linewidth, bool solid=false);
+    int fwcText( std::string text, int x, int y, Color color, int size=12);
 
     ExerciseLauncher *mRenderServer;
 };

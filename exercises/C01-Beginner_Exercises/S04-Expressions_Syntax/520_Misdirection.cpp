@@ -10,14 +10,14 @@ void Misdirection::runExercise()
 
     verticalstep=y;
     a=x;
-    fwcDrawText("First sentence.", x, y, BLACK, 15);
+    fwcText("First sentence.", x, y, BLACK, 15);
     y = y + verticalstep;
-    fwcDrawText("Second sentence.", x, y, BLACK, 15);
+    fwcText("Second sentence.", x, y, BLACK, 15);
     y += verticalstep;
-    fwcDrawText("Third sentence.", x, y, BLACK, 15);
+    fwcText("Third sentence.", x, y, BLACK, 15);
     y += verticalstep;
     a += x;
-    fwcDrawText("Fourth sentence.", y, x, RED, 15);
+    fwcText("Fourth sentence.", y, x, RED, 15);
     y += verticalstep;
-    fwcDrawText("Fifth sentence.", x, y, BLACK, 15);
+    fwcText("Fifth sentence.", x, y, BLACK, 15);
 }

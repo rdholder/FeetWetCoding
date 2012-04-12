@@ -55,7 +55,7 @@ void C01S05_OYO5Soln::runExercise()
             //seeout << "********* Direction changed! ***********\n";
         }
 
-        fwcDrawCircle(x, y, 1, RED, 1, true);
+        fwcCircle(x, y, 1, RED, 1, true);
         //seeout << "x,y: " << x << "," << y << " velocity: " << velocity << "\n";
     }
 }

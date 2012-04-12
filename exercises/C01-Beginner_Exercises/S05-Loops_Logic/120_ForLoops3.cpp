@@ -21,6 +21,6 @@ void ForLoops3::runExercise()
     {
         x = random(400);
         y = random(400);
-        fwcDrawInt( a, x, y, RED, 15);
+        fwcInt( a, x, y, RED, 15);
     }
 }

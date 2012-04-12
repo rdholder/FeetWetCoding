@@ -15,43 +15,53 @@ SOURCES += \
     source/lib/ExerciseLauncher.cpp \
     source/lib/ColorViewer.cpp \
     source/lib/FWCExerciseChooser.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/001_Welcome.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/200_DrawingText.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/070_DrawLines.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/080_DrawCircles.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/100_DrawDots.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/090_DrawRectangles.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/110_DrawEllipses.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/250_DrawingImages.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/310_SeeoutFormatting.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/400_OnYourOwn.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/550_FontProportions.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/300_SeeoutIntro.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/520_ColorNames.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/001_WelcomeSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/070_DrawLinesSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/080_DrawCirclesSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/100_DrawDotsSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/090_DrawRectanglesSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/110_DrawEllipsesSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/200_DrawingTextSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/250_DrawingImagesSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/300_SeeoutIntroSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/310_SeeoutFormattingSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/400_OnYourOwnSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/520_ColorNamesSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/550_FontProportionsSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S03-Types_Variables/020_NumericTypes.cpp \
-    exercises/C01-Beginner_Exercises/S03-Types_Variables/040_DrawingVersusSeeout.cpp \
-    exercises/C01-Beginner_Exercises/S03-Types_Variables/080_CONSTANTS.cpp \
-    exercises/C01-Beginner_Exercises/S03-Types_Variables/100_Chars.cpp \
-    exercises/C01-Beginner_Exercises/S03-Types_Variables/110_Booleans.cpp \
-    exercises/C01-Beginner_Exercises/S03-Types_Variables/200_StandardStrings.cpp \
-    exercises/C01-Beginner_Exercises/S03-Types_Variables/300_Arrays.cpp \
-    exercises/C01-Beginner_Exercises/S03-Types_Variables/Solutions/020_NumericTypesSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S03-Types_Variables/Solutions/040_DrawingVersusSeeoutSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S03-Types_Variables/Solutions/200_StandardStringsSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S03-Types_Variables/Solutions/300_ArraysSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/001_Welcome.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/010_ChangeTextParameter.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/020_ChangeXParameter.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/030_ChangeYParameter.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/040_ChangeXYParameters.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/050_ChangeColorParameter.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/060_ChangeFontSizeParameter.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/070_DrawLines.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/080_DrawCircles.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/090_DrawRectangles.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/100_DrawDots.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/110_DrawEllipses.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/200_DrawingText.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/250_DrawingImages.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/300_SeeoutIntro.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/310_SeeoutFormatting.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/400_OnYourOwn.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/520_ColorNames.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/550_FontProportions.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/Solutions/001_WelcomeSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/Solutions/010_ChangeTextParameterSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/Solutions/020_ChangeXParameterSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/Solutions/030_ChangeYParameterSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/Solutions/040_ChangeXYParametersSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/Solutions/050_ChangeColorParameterSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/Solutions/060_ChangeFontSizeParameterSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/Solutions/070_DrawLinesSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/Solutions/080_DrawCirclesSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/Solutions/090_DrawRectanglesSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/Solutions/100_DrawDotsSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/Solutions/110_DrawEllipsesSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/Solutions/200_DrawingTextSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/Solutions/250_DrawingImagesSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/Solutions/300_SeeoutIntroSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/Solutions/310_SeeoutFormattingSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/Solutions/400_OnYourOwnSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/Solutions/520_ColorNamesSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/Solutions/550_FontProportionsSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S02-Types_Variables/020_NumericTypes.cpp \
+    exercises/C01-Beginner_Exercises/S02-Types_Variables/040_DrawingVersusSeeout.cpp \
+    exercises/C01-Beginner_Exercises/S02-Types_Variables/080_CONSTANTS.cpp \
+    exercises/C01-Beginner_Exercises/S02-Types_Variables/100_Chars.cpp \
+    exercises/C01-Beginner_Exercises/S02-Types_Variables/110_Booleans.cpp \
+    exercises/C01-Beginner_Exercises/S02-Types_Variables/200_StandardStrings.cpp \
+    exercises/C01-Beginner_Exercises/S02-Types_Variables/Solutions/020_NumericTypesSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S02-Types_Variables/Solutions/040_DrawingVersusSeeoutSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S02-Types_Variables/Solutions/200_StandardStringsSOLN.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/040_OrderOfOperations.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/520_Misdirection.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/020_AssignmentArithmetic.cpp \
@@ -111,9 +121,50 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/260_OYO_IfThen4SOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/315_Primes1SOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/320_OYO_Primes2SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S07-Storing_Data/050_Arrays1.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/180_ChangeFloat.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/170_ChangeInt.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/160_ChangeText.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/150_ChangeFontSize.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/140_ChangeColor.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/130_ChangeRadius.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/120_ChangeLineWidth.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/110_ChangeLineEnd.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/100_ChangeZ.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/090_Clear.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/080_Erase.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/070_Rotate.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/060_Scale.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/050_Relocate.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/040_Shift.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/030_StringInput.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/020_SingleKeyInput.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/010_Sleep.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/180_ChangeFloatSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/170_ChangeIntSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/160_ChangeTextSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/150_ChangeFontSizeSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/140_ChangeColorSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/130_ChangeRadiusSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/120_ChangeLineWidthSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/110_ChangeLineEndSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/100_ChangeZSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/090_ClearSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/080_EraseSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/070_RotateSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/060_ScaleSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/050_RelocateSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/040_ShiftSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/030_StringInputSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/020_SingleKeyInputSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/010_SleepSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S07-Storing_Data/005_WhyUseArrays.cpp \
+    exercises/C01-Beginner_Exercises/S07-Storing_Data/010_Arrays1.cpp \
+    exercises/C01-Beginner_Exercises/S07-Storing_Data/Solutions/005_WhyUseArraysSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S07-Storing_Data/Solutions/010_Arrays1SOLN.cpp \
     exercises/C01-Beginner_Exercises/S09-Classes_Intro/Solutions/010_Classes1SOLN.cpp \
     exercises/C01-Beginner_Exercises/S09-Classes_Intro/010_Classes1.cpp \
+    exercises/C08-Game_Programming/S03-Top_Down_2D/SpaceshipFlyer.cpp \
+    exercises/C08-Game_Programming/S03-Top_Down_2D/Solutions/SpaceshipFlyerSOLN.cpp \
     mycode/lib/MyLib.cpp \
     mycode/src/MyCode0.cpp \
     mycode/src/MyCode1.cpp \
@@ -125,67 +176,13 @@ SOURCES += \
     mycode/src/MyCode7.cpp \
     mycode/src/MyCode8.cpp \
     mycode/src/MyCode9.cpp \
-    exercises/feetwetcodingexerciseBase.cpp \
-    exercises/C01-Beginner_Exercises/S07-Storing_Data/Solutions/050_Arrays1SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/Solutions/020_SingleKeyInputSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/Solutions/030_StringInputSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/Solutions/130_ChangeRadiusSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/Solutions/140_ChangeColorSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/Solutions/150_ChangeFontSizeSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/Solutions/160_ChangeTextSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/Solutions/170_ChangeIntSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/Solutions/180_ChangeFloatSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/010_Sleep.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/020_SingleKeyInput.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/030_StringInput.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/100_ChangeZ.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/110_ChangeLineEnd.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/120_ChangeLineWidth.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/130_ChangeRadius.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/140_ChangeColor.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/150_ChangeFontSize.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/160_ChangeText.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/170_ChangeInt.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/180_ChangeFloat.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/005_Clear.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/040_Shift.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/060_Scale.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/070_Rotate.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/080_Erase.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/050_Relocate.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/010_ChangeTextParameter.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/020_ChangeXParameter.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/030_ChangeYParameter.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/040_ChangeXYParameters.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/050_ChangeColorParameter.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/060_ChangeFontSizeParameter.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/010_ChangeTextParameterSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/020_ChangeXParameterSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/030_ChangeYParameterSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/040_ChangeXYParametersSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/050_ChangeColorParameterSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S02-Getting_Started/Solutions/060_ChangeFontSizeParameterSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/Solutions/005_ClearSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/Solutions/010_SleepSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/Solutions/040_ShiftSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/Solutions/050_RelocateSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/Solutions/060_ScaleSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/Solutions/070_RotateSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/Solutions/080_EraseSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/Solutions/100_ChangeZSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/Solutions/110_ChangeLineEndSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools/Solutions/120_ChangeLineWidthSOLN.cpp \
-    exercises/C08-Game_Programming/S03-Top_Down_2D/Solutions/SpaceshipFlyerSOLN.cpp \
-    exercises/C08-Game_Programming/S03-Top_Down_2D/SpaceshipFlyer.cpp
-
+    exercises/feetwetcodingexerciseBase.cpp
 
 HEADERS += \
     include/lib/setup.h \
     include/lib/feetwetcodinglib.h \
     include/lib/constants.h \
     include/exercises/exercises.h \
-    include/exercises/C01_S02.h \
-    include/exercises/C01_S03.h \
     include/exercises/C01_S05.h \
     include/exercises/C01_S04.h \
     include/lib/FWCExerciseChooser.h \
@@ -198,8 +195,9 @@ HEADERS += \
     include/exercises/C01_S07.h \
     include/exercises/C01_S06.h \
     include/exercises/FeetWetCodingExerciseBase.h \
-    include/exercises/C08-Game_Programming/S03-TopDown2D/C08_S03.h \
-    include/exercises/C08_S03.h
+    include/exercises/C08_S03.h \
+    include/exercises/C01_S01.h \
+    include/exercises/C01_S02.h
 
 FORMS +=
 

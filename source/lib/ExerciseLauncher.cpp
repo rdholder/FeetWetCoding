@@ -229,7 +229,7 @@ void ExerciseLauncher::setWhichPaneHasFocus( int pane )
 
     if ( NULL == mPaneHighlight )
     {
-        mPaneHighlight = fwcDrawRectangleRender( 0, 0, WINDOW_WIDTH/2, WINDOW_HEIGHT, GREEN, 2);
+        mPaneHighlight = fwcRectangleRender( 0, 0, WINDOW_WIDTH/2, WINDOW_HEIGHT, GREEN, 2);
     }
 
     switch ( mWhichPaneHasFocus )
@@ -292,31 +292,31 @@ void ExerciseLauncher::handleRenderRequests()
         switch (item.type) {
 
         case FeetWetCodingExerciseBase::LINE:
-            gItem = fwcDrawLineRender( item.x, item.y, item.xEnd, item.yEnd, item.color, item.linewidth);
+            gItem = fwcLineRender( item.x, item.y, item.xEnd, item.yEnd, item.color, item.linewidth);
             break;
         case FeetWetCodingExerciseBase::CIRCLE:
-            gItem = fwcDrawCircleRender( item.x, item.y, item.radius, item.color, item.linewidth, item.solid);
+            gItem = fwcCircleRender( item.x, item.y, item.radius, item.color, item.linewidth, item.solid);
             break;
         case FeetWetCodingExerciseBase::CIRCLERGB:
-            gItem = fwcDrawCircleRGBRender( item.x, item.y, item.radius, item.linewidth, item.RGBred, item.RGBgreen, item.RGBblue, item.solid);
+            gItem = fwcCircleRGBRender( item.x, item.y, item.radius, item.linewidth, item.RGBred, item.RGBgreen, item.RGBblue, item.solid);
             break;
         case FeetWetCodingExerciseBase::ELLIPSE:
-            gItem = fwcDrawEllipseRender( item.x, item.y, item.width, item.height, item.color, item.linewidth, item.solid);
+            gItem = fwcEllipseRender( item.x, item.y, item.width, item.height, item.color, item.linewidth, item.solid);
             break;
         case FeetWetCodingExerciseBase::RECTANGLE:
-            gItem = fwcDrawRectangleRender( item.x, item.y, item.width, item.height, item.color, item.linewidth, item.solid);
+            gItem = fwcRectangleRender( item.x, item.y, item.width, item.height, item.color, item.linewidth, item.solid);
             break;
         case FeetWetCodingExerciseBase::TEXT:
-            gItem = fwcDrawTextRender( item.text, item.x, item.y, item.color, item.fontsize);
+            gItem = fwcTextRender( item.text, item.x, item.y, item.color, item.fontsize);
             break;
         case FeetWetCodingExerciseBase::INT:
-            gItem = fwcDrawIntRender( item.intvalue, item.x, item.y, item.color, item.fontsize);
+            gItem = fwcIntRender( item.intvalue, item.x, item.y, item.color, item.fontsize);
             break;
         case FeetWetCodingExerciseBase::FLOAT:
-            gItem = fwcDrawFloatRender( item.floatvalue, item.x, item.y, item.color, item.fontsize, item.decimalplaces );
+            gItem = fwcFloatRender( item.floatvalue, item.x, item.y, item.color, item.fontsize, item.decimalplaces );
             break;
         case FeetWetCodingExerciseBase::IMAGE:
-            gItem = fwcDrawImageRender( item.imagefile, item.x, item.y );
+            gItem = fwcImageRender( item.imagefile, item.x, item.y );
             break;
         }
 
@@ -340,7 +340,7 @@ void ExerciseLauncher::handleRenderUpdates()
     QGraphicsEllipseItem  *ellipseItem(NULL);
     QGraphicsRectItem *rectItem(NULL);
     QGraphicsTextItem *textItem(NULL);
-    QGraphicsPixmapItem *pixmapItem(NULL);
+    //QGraphicsPixmapItem *pixmapItem(NULL);
     QAbstractGraphicsShapeItem *shapeItem(NULL);
     QFont font(qApp->font());
     QPen pen;
