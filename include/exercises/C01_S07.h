@@ -146,4 +146,74 @@ protected:
     }
 };
 
+class MadLibSoln : public FeetWetCodingSolution
+{
+    Q_OBJECT
+public:
+    explicit MadLibSoln(QObject *parent = 0)
+        :FeetWetCodingSolution(parent){}
+
+
+protected:
+    void runExercise();
+};
+
+class MadLib : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit MadLib(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        //If this exercise has a solution, launch it
+        this->setupSolution(parent);
+    }
+
+protected:
+    void runExercise();
+    void setupSolution(QObject *parent=0)
+    {
+        mSolutionPtr = new MadLibSoln(parent);
+        if ( mSolutionPtr )
+        {
+            mSolutionPtr->start();
+        }
+    }
+};
+
+class BubbleSort2Soln : public FeetWetCodingSolution
+{
+    Q_OBJECT
+public:
+    explicit BubbleSort2Soln(QObject *parent = 0)
+        :FeetWetCodingSolution(parent){}
+
+
+protected:
+    void runExercise();
+};
+
+class BubbleSort2 : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit BubbleSort2(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        //If this exercise has a solution, launch it
+        this->setupSolution(parent);
+    }
+
+protected:
+    void runExercise();
+    void setupSolution(QObject *parent=0)
+    {
+        mSolutionPtr = new BubbleSort2Soln(parent);
+        if ( mSolutionPtr )
+        {
+            mSolutionPtr->start();
+        }
+    }
+};
+
 #endif // C01_S07_H

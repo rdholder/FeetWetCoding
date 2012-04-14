@@ -2,7 +2,6 @@
 // See README.html included in this distribution.
 
 #include <exercises/C01_S07.h>
-#include <math.h>
 
 // ==========================================
 // =       THIS IS THE SOLUTION CODE        =
@@ -16,9 +15,9 @@ void BubbleSort1Soln::runExercise()
 
     Color color = DARKBLUE;
     int element(0), swapper(0), count(0);
-    int number_of_elements(6);
+    int number_of_elements(10);
     int array[number_of_elements];
-    int x_origin(50), y_origin(180), x(x_origin), y(y_origin), horizontal_step(50), vertical_step(50);
+    int x_origin(50), y_origin(180), x(x_origin), y(y_origin), horizontal_step(30), vertical_step(50);
     bool we_swapped(false), collision(false);
     int random_candidate(0);
 
@@ -49,7 +48,6 @@ void BubbleSort1Soln::runExercise()
 
         for ( element = 0; element < number_of_elements; element++ )
         {
-            fwcInt(element, x, y, color, 12);
             fwcInt(array[element], x, y+vertical_step, color, 12);
             x += horizontal_step;
         }
@@ -67,7 +65,6 @@ void BubbleSort1Soln::runExercise()
                 seeout.setColor(RED);
                 seeout << array[element-1] << " ";
                 seeout << array[element] << " ";
-                key = waitForKeyPress();
             }
             else
             {
@@ -77,12 +74,12 @@ void BubbleSort1Soln::runExercise()
                     seeout << array[element-1] << " ";
                 }
                 seeout << array[element] << " ";
-                key = waitForKeyPress();
             }
         }
         seeout.setColor(BLACK);
         seeout << "\n";
 
+        key = waitForKeyPress();
 
     }
     fwcClearItems();

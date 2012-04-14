@@ -2,7 +2,6 @@
 // See README.html included in this distribution.
 
 #include <exercises/C01_S07.h>
-#include <math.h>
 
 // ==========================================
 // =       THIS IS THE SOLUTION CODE        =

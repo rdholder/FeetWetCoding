@@ -142,12 +142,15 @@ FWCExerciseChooser::getExerciseFromName( const QString & name )
     if( "ChangeFloat" == name ){ return new ChangeFloat(&mExerciseLauncher); }
     if( "Erase" == name ){ return new Erase(&mExerciseLauncher); }
     if( "Clear" == name ){ return new Clear(&mExerciseLauncher); }
+    if( "CenteredText" == name ){ return new CenteredText(&mExerciseLauncher); }
 
     //Section 7 - Storing_Data
     if( "WhyUseArrays" == name ){ return new WhyUseArrays(&mExerciseLauncher); }
     if( "Arrays1" == name ){ return new Arrays1(&mExerciseLauncher); }
+    if( "MadLib" == name ){ return new MadLib(&mExerciseLauncher); }
     if( "FillAnArray" == name ){ return new FillAnArray(&mExerciseLauncher); }
     if( "BubbleSort1" == name ){ return new BubbleSort1(&mExerciseLauncher); }
+    if( "BubbleSort2" == name ){ return new BubbleSort2(&mExerciseLauncher); }
 
     //Section 7 - ...
 
@@ -283,6 +286,7 @@ void FWCExerciseChooser::createExercisesMap()
     exercises.push_back( "ChangeText" );
     exercises.push_back( "ChangeInt" );
     exercises.push_back( "ChangeFloat" );
+    exercises.push_back( "CenteredText" );
 
     sections["S06-fwcTools2"] = exercises;
 
@@ -290,8 +294,10 @@ void FWCExerciseChooser::createExercisesMap()
     exercises.clear();
     exercises.push_back( "WhyUseArrays" );
     exercises.push_back( "Arrays1" );
+    exercises.push_back( "MadLib" );
     exercises.push_back( "FillAnArray" );
     exercises.push_back( "BubbleSort1" );
+    exercises.push_back( "BubbleSort2" );
     sections["S07-Storing_Data"] = exercises;
 
     //S09-Classes_Intro
