@@ -14,8 +14,16 @@ void BubbleSort2::runExercise()
 
     std::string key;
 
-//    seeout << "We fill the bar_height array with a bunch of random numbers.";
-//    seeout << " Here is what bar_height contains now:\n";
+    seeout << "If your screen flickers during this exercise, that's not a fault of Qt.";
+    seeout << " Rather it is because of how fwc does multi-threading and graphical rendering.";
+    seeout << " Just didn't want you to think Qt can't do graphics smoothly, because it can!";
+    seeout << " While fwc is a convenient and fun environment to learn with, this exercise is";
+    seeout << " actually a pretty good demonstration of why fwc is not really";
+    seeout << " a good platform for developing \"real\" software projects (although it should";
+    seeout << " be fine for small hobbyist projects and small games).\n\n";
+    seeout << "Also, the graph above is a good way to see how random the random number generator";
+    seeout << " is.  The less random the random number generator is, the more the graph";
+    seeout << " deviates from the red line.  Generating truly random numbers is hard!\n\n";
 
     for (bar = 0; bar < number_of_bars; bar++ )  // always initialize your array!
     {
@@ -46,6 +54,7 @@ void BubbleSort2::runExercise()
 
             fwcLine(bar,400,bar,400-bar_height[bar-1],color,1);
         }
+        fwcLine(0,400,400,0,RED,1);
         msleep(30);
     }
 }

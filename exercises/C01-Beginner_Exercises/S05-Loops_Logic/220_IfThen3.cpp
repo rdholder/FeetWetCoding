@@ -16,7 +16,7 @@ void writeFalse()
 void writeTrue()
 {
     SeeOut seeout;
-    seeout.setColor(DARKGREEN);
+    seeout.setColor(BLUE);
     seeout << "TRUE: ";
     seeout.setColor(BLACK);
 }
