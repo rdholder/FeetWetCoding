@@ -1,7 +1,8 @@
 #ifndef SEEOUT_H
 #define SEEOUT_H
 
-#include <feetwetcodinglib.h>
+#include <iostream>
+#include <sstream>
 #include <queue>
 #include <QMutex>
 #include <QDebug>

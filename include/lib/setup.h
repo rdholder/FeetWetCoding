@@ -21,6 +21,9 @@
 
 #include <iostream>
 #include <sstream>
+#include <map>
+#include <vector>
+#include <queue>
 
 #include <lib/colors.h>
 #include <lib/ColorViewer.h>
