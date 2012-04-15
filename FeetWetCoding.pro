@@ -158,9 +158,7 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/020_SingleKeyInputSOLN.cpp \
     exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/010_SleepSOLN.cpp \
     exercises/C01-Beginner_Exercises/S07-Storing_Data/005_WhyUseArrays.cpp \
-    exercises/C01-Beginner_Exercises/S07-Storing_Data/010_Arrays1.cpp \
     exercises/C01-Beginner_Exercises/S07-Storing_Data/Solutions/005_WhyUseArraysSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S07-Storing_Data/Solutions/010_Arrays1SOLN.cpp \
     exercises/C01-Beginner_Exercises/S09-Classes_Intro/Solutions/010_Classes1SOLN.cpp \
     exercises/C01-Beginner_Exercises/S09-Classes_Intro/010_Classes1.cpp \
     exercises/C08-Game_Programming/S03-Top_Down_2D/SpaceshipFlyer.cpp \
@@ -176,7 +174,19 @@ SOURCES += \
     mycode/src/MyCode7.cpp \
     mycode/src/MyCode8.cpp \
     mycode/src/MyCode9.cpp \
-    exercises/feetwetcodingexerciseBase.cpp
+    exercises/feetwetcodingexerciseBase.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/200_CenteredTextSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/200_CenteredText.cpp \
+    exercises/C01-Beginner_Exercises/S07-Storing_Data/Solutions/030_FillAnArraySOLN.cpp \
+    exercises/C01-Beginner_Exercises/S07-Storing_Data/030_FillAnArray.cpp \
+    exercises/C01-Beginner_Exercises/S07-Storing_Data/Solutions/035_BubbleSort1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S07-Storing_Data/035_BubbleSort1.cpp \
+    exercises/C01-Beginner_Exercises/S07-Storing_Data/015_MadLib.cpp \
+    exercises/C01-Beginner_Exercises/S07-Storing_Data/010_Arrays1.cpp \
+    exercises/C01-Beginner_Exercises/S07-Storing_Data/Solutions/015_MadLibSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S07-Storing_Data/Solutions/010_Arrays1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S07-Storing_Data/040_BubbleSort2.cpp \
+    exercises/C01-Beginner_Exercises/S07-Storing_Data/Solutions/040_BubbleSort2SOLN.cpp
 
 HEADERS += \
     include/lib/setup.h \

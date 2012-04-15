@@ -640,4 +640,39 @@ protected:
     }
 };
 
+class CenteredTextSoln : public FeetWetCodingSolution
+{
+    Q_OBJECT
+public:
+    explicit CenteredTextSoln(QObject *parent = 0)
+        :FeetWetCodingSolution(parent){}
+
+
+protected:
+    void runExercise();
+};
+
+class CenteredText : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit CenteredText(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        //If this exercise has a solution, launch it
+        this->setupSolution(parent);
+    }
+
+protected:
+    void runExercise();
+    void setupSolution(QObject *parent=0)
+    {
+        mSolutionPtr = new CenteredTextSoln(parent);
+        if ( mSolutionPtr )
+        {
+            mSolutionPtr->start();
+        }
+    }
+};
+
 #endif // C01_S06_H
