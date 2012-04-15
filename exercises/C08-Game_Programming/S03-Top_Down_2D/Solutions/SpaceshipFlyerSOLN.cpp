@@ -3,8 +3,6 @@
 
 #include <exercises/C08_S03.h>
 
-extern FWCView *view;
-
 SpaceshipFlyerSoln::SpaceshipFlyerSoln(QObject *parent)
     :FeetWetCodingSolution(parent)
 {

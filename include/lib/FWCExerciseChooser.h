@@ -52,8 +52,6 @@ private:
     FeetWetCodingExercise * getExerciseFromName( const QString & name );
     void stopExercise();
     void runExercise( const QString & selection );
-    bool getSettingLoadPreviousExerciseEnabled( const QString & filename );
-    bool loadPreviousExerciseEnabled();
     void loadPreviousExercise();
 
     FeetWetCodingExercise *mSelectedExercise;

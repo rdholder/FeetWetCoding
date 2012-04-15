@@ -3,7 +3,7 @@
 
 #include <exercises/C08_S03.h>
 
-extern FWCView *view;
+//extern FWCView *view;
 
 SpaceshipFlyer::SpaceshipFlyer(QObject *parent)
     :FeetWetCodingExercise(parent)
@@ -14,7 +14,7 @@ SpaceshipFlyer::SpaceshipFlyer(QObject *parent)
     ,mQuit(false)
 {
     this->setupSolution(parent);
-    view->setFocus();
+    //view->setFocus();
 }
 
 SpaceshipFlyer::~SpaceshipFlyer()

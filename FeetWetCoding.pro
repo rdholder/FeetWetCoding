@@ -207,5 +207,4 @@ OUTPUT += Console
 
 OTHER_FILES +=
 
-RESOURCES += \
-    feetwetresources.qrc
+RESOURCES +=

@@ -4,7 +4,8 @@
 #ifndef FEETWETCODINGEXERCISE_H
 #define FEETWETCODINGEXERCISE_H
 
-#include <include/lib/feetwetcodinglib.h>
+#include <lib/feetwetcodinglib.h>
+#include <lib/constants.h>
 #include <SeeOut.h>
 #include <QThread>
 #include <QKeySequence>

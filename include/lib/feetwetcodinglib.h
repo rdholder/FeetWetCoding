@@ -5,41 +5,49 @@
 #ifndef FEETWETCODINGLIB_H
 #define FEETWETCODINGLIB_H
 
-#include <include/lib/constants.h>
 #include <include/lib/colors.h>
 #include <QGraphicsView>
 #include <QKeyEvent>
-#include <QTextEdit>
-#include <QMutex>
-#include <iostream>
-#include <sstream>
-#include <map>
-#include <vector>
-#include <queue>
 
-//Convenience drawable items provided by Qt
-//--------------------------------------------
-//QGraphicsEllipseItem : provides an ellipse item
-//QGraphicsLineItem : provides a line item
-//QGraphicsPathItem : provides an arbitrary path item
-//QGraphicsPixmapItem : provides a pixmap item
-//QGraphicsPolygonItem : provides a polygon item
-//QGraphicsRectItem : provides a rectangular item
-//QGraphicsSimpleTextItem : provides a simple text label item
-//QGraphicsTextItem : provides an advanced text browser item
 
-//Forward class declarations
-class FeetWetCodingExercise;
+//////////////////////////////////////////////
+//  FWC convenience functions for the user
+//////////////////////////////////////////////
 
-//Function declarations
-FeetWetCodingExercise * exerciseFactory( std::string const& name );
+int random(int biggest);
+int randomRange(int smallest, int biggest);
+QColor getQColor( Color color );
+std::string getNameForColor( Color color );
+
+
+
+//////////////////////////////////////////////
+//  FWC Internals
+//////////////////////////////////////////////
+
+//FWC setup and initialization
 void appSetup();
-void initSettingsFile();
 void setupDrawingUtils();
-
-void ClearScreen();
 void initOutputArea();
 
+//FWC file I/O and configuration settings
+
+//The "sandbox" is the safe area for writing files. It's a sub-directory of the main
+//project directory and it's the only place that fwc files can be written to from code.
+QString getProjectSandboxPath();   //Throws std::runtime_error if dir path cannot be determined
+
+QString getProjectDirPath();       //Throws std::runtime_error if dir path cannot be determined
+QString getBuildDirPath();         //Throws std::runtime_error if dir path cannot be determined
+QString getDefaultConfigDirPath(); //Throws std::runtime_error if dir path cannot be determined
+QString getUserConfigDirPath();    //Throws std::runtime_error if dir path cannot be determined
+QString getDefaultConfigFilePath();
+QString saveCurrentConfigFilePath();
+void initSettingsFile();
+void getSetting( const QString & settingKey, QString & settingVal );
+void getPreviousExerciseFromFile( QString pathToFile, QString & chapter, QString & section, QString & exercise );
+void saveCurrentExerciseToFile( QString pathToFile, QString chapter, QString section, QString exercise );
+
+//FWC drawing utils
 QGraphicsItem* fwcLineRender( int xStart, int yStart, int xEnd, int yEnd, Color color, int linewidth );
 QGraphicsItem* fwcCircleRender( int x, int y, int r, Color color, int linewidth, bool solid=false);
 QGraphicsItem* fwcCircleRGBRender( int x, int y, int r, int linewidth, int red, int green, int blue, bool solid=false );
@@ -49,15 +57,9 @@ QGraphicsItem* fwcTextRender( std::string text, int x, int y, Color color, int s
 QGraphicsItem* fwcIntRender( int number, int x, int y, Color color, int size=12 );
 QGraphicsItem* fwcFloatRender( float number, int x, int y, Color color, int size=12, int decimalPlaces=3 );
 QGraphicsItem* fwcImageRender( std::string filename, int x, int y );
+void ClearScreen();
 
-int random(int biggest);
-int randomRange(int smallest, int biggest);
-
-QColor getQColor( Color color );
-std::string getNameForColor( Color color );
-QString getProjectPath();
-QString getDefaultConfigFilePath();
-
+//FWCView class provides access to the scene and handles keyboard and mouse events
 class FWCView : public QGraphicsView
 {
     Q_OBJECT
@@ -79,26 +81,6 @@ protected:
 
 
 private:
-
-};
-
-class solutionOrientation
-{
-public:
-
-    typedef enum {
-        BLANK,
-        LEFTRIGHT,
-        TOPBOTTOM
-    } RefBoxLayout;
-
-    solutionOrientation(RefBoxLayout initialOrientation);
-    ~solutionOrientation();
-    RefBoxLayout getOrientation();
-    void setOrientation(RefBoxLayout);
-
-private:
-    RefBoxLayout itsOrientation;
 
 };
 

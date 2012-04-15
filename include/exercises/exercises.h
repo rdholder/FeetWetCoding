@@ -13,6 +13,5 @@
 #include <exercises/C01_S07.h>
 #include <exercises/C01_S09.h>
 #include <exercises/C08_S03.h>
-#include <lib/feetwetcodinglib.h>
 
 #endif // exercises_H

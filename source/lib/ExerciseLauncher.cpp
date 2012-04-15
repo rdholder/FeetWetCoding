@@ -1,6 +1,7 @@
 #include <ExerciseLauncher.h>
 #include <SeeOut.h>
 #include <QDialog>
+#include <QTextEdit>
 #include <QTime>
 #include <QTransform>
 #include <utility>

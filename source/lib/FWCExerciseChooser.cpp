@@ -32,8 +32,11 @@ FWCExerciseChooser::FWCExerciseChooser(QObject *parent)
     QObject::connect(&mExerciseLauncher, SIGNAL(currentExerciseFinished()),
                      this, SLOT(currentExerciseFinished()));
 
-    //Try the defaultconfig if config isn't found
-    if ( loadPreviousExerciseEnabled() )
+    // If config setting reload_prev_exercise is true, load
+    // the previous exercise stored in the user's config file
+    QString settingVal;
+    getSetting("reload_prev_exercise", settingVal);
+    if ( 0 == settingVal.compare("true", Qt::CaseInsensitive) ) //0 means they're equal
     {
         loadPreviousExercise();
     }
@@ -582,115 +585,14 @@ void FWCExerciseChooser::runCurrentExercise()
 
 void FWCExerciseChooser::saveCurrentExercise()
 {
-    QFile file("lastexercise.txt");
-    if ( file.exists() )
-    {
-        file.remove();
-    }
-
-    if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
-    {
-        qDebug() << "WARNING: Unable to write to file \"lastexercise.txt\". Cannot save which exercise was viewed last.\n";
-        return;
-    }
-
-    QTextStream out(&file);
-    out << "chapter:" << mCurrentChapter << "\n";
-    out << "section:" << mCurrentSection << "\n";
-    out << "exercise:" << mCurrentExercise << "\n";
-
-    file.close();
+    QString file(getUserConfigDirPath() + "/lastexercise.txt");
+    saveCurrentExerciseToFile( file, mCurrentChapter, mCurrentSection, mCurrentExercise );
 }
 
 void FWCExerciseChooser::loadPreviousExercise()
 {
-    QFile file("lastexercise.txt");
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-    {
-#ifdef DEBUG
-        qDebug() << "INFO: File \"lastexercise.txt\" not found - loading default exercise.\n";
-#endif
-        return;
-    }
-
-    QTextStream in(&file);
-    while (!in.atEnd())
-    {
-        QString line = in.readLine();
-        QStringList list = line.split(":", QString::SkipEmptyParts);
-        if ( 2 != list.count() )
-            continue;
-
-        if ( list.at(0).contains("chapter", Qt::CaseInsensitive) )
-        {
-            mCurrentChapter = ( list.at(1) );
-        }
-        else if ( list.at(0).contains("section", Qt::CaseInsensitive) )
-        {
-            mCurrentSection = ( list.at(1) );
-        }
-        else if ( list.at(0).contains("exercise", Qt::CaseInsensitive) )
-        {
-            mCurrentExercise = ( list.at(1) );
-        }
-    }
-
-    file.close();
-}
-
-bool FWCExerciseChooser::getSettingLoadPreviousExerciseEnabled( const QString & filename )
-{
-    QFile file(filename);
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-    {
-        throw false;
-    }
-
-    QTextStream in(&file);
-    while (!in.atEnd())
-    {
-        QString line = in.readLine();
-        QStringList list = line.split(":", QString::SkipEmptyParts);
-        if ( 2 != list.count() )
-            continue;
-
-        if ( list.at(0).contains("reload_prev_exercise", Qt::CaseInsensitive) )
-        {
-            return ( list.at(1).contains("true", Qt::CaseInsensitive) );
-        }
-    }
-
-    //Didn't find the setting
-    throw false;
-}
-
-bool FWCExerciseChooser::loadPreviousExerciseEnabled()
-{
-    try
-    {
-        // Try the user's config file first.
-        return getSettingLoadPreviousExerciseEnabled("config.txt");
-    }
-    catch ( bool val )
-    {
-#ifdef DEBUG
-        qDebug() << "INFO: Unable to get previous exercise from user config. Using default config.\n";
-#endif
-    }
-
-    try
-    {
-        // Try the default config file.
-        return getSettingLoadPreviousExerciseEnabled(getDefaultConfigFilePath());
-    }
-    catch ( bool val )
-    {
-#ifdef DEBUG
-        qDebug() << "INFO: Unable to get previous exercise setting from default config. Use default exercise.\n";
-#endif
-    }
-
-    return false;
+    QString file(getUserConfigDirPath() + "/lastexercise.txt");
+    getPreviousExerciseFromFile( file, mCurrentChapter, mCurrentSection, mCurrentExercise );
 }
 
 void FWCExerciseChooser::handleKeyEvent(QKeyEvent *event)
