@@ -366,55 +366,76 @@ QString getProjectDirPath()
                 continue;
             }
 
-            //Found the section of this line that contains the filename. We know that
-            //in the Makefile there's at least one instance of the project file path
-            //that exists with no preceding or trailing characters. See if this instance
-            //qualifies.
-            if ( QFile(parsedLine.at(i)).exists() )
+            //Found the section of this line that contains the filename. We know
+            //in the Makefile there are instances of the project file path that
+            //have no preceding or trailing characters and this might be one of those.
+            //We'll check to see if the directory specified in this string exists. But
+            //before we can do that we need to make sure we're dealing with an absolute
+            //path and not a relative one. Relative paths won't always work since the
+            //program doesn't necessarily run from same directory where Makefile is
+            //located. If it's a relative path we'll need to convert it to absolute.
+
+            //By default, the project path is in the same parent directory as the main
+            //build path, where the Makefile lives. Therefore, in this Makefile, a relative
+            //path to the project file will have "../" at the beginning. See if that string
+            //is there and, if so, replace it with the parent directory's absolute path.
+            //Since we already know the main build directory path, which has the same parent
+            //as the project, we can get our parent dir from that.
+
+            //Remove the project filename and its preceding "/"
+            tempProjectPath = parsedLine.at(i);
+            if ( -1 != tempProjectPath.indexOf(projectFilename) )
             {
-                //This string contains the path to the file, but we need to remove the
-                //project filename and the "/" that immediately precedes it to get
-                //just the directory that contains the file. This is the project path.
-                tempProjectPath = parsedLine.at(i);
-                if ( -1 != tempProjectPath.indexOf(projectFilename) )
-                {
-                    // +1 for the "/"
-                    tempProjectPath.chop(tempProjectPath.length()-tempProjectPath.indexOf(projectFilename)+1);
-                }
-
-#ifdef DEBUG
-                qDebug() << "Initial projectPath: " << tempProjectPath;
-#endif
-                //If project path is a relative path in the same parent directory as current working
-                //(this is the default) then replace the leading "../" with the parent directory to
-                //get the absolute path.
-                QString projectParentDir(tempProjectPath);
-                QString buildParentDir(buildDirPath);
-                int index(projectParentDir.lastIndexOf("/"));
-                projectParentDir.chop(projectParentDir.length() - index);
-                if ( ".." == projectParentDir )
-                {
-#ifdef DEBUG
-                    qDebug() << "Replacing relative path with absolute path...";
-#endif
-
-                    buildParentDir.chop(buildParentDir.length()-buildParentDir.lastIndexOf("/"));
-                    tempProjectPath.replace(0, 2, buildParentDir);
-                }
-
-                //Assign what we came up with to our projectPath, print out
-                //some debugging info, then break out of the for loop.
-                projectPath = tempProjectPath;
-
-#ifdef DEBUG
-                qDebug() << "-------------------------------------";
-                qDebug() << "projectParentDir:     " << projectParentDir;
-                qDebug() << "buildParentDir:       " << buildParentDir;
-                qDebug() << "Absolute projectPath: " << projectPath;
-                qDebug() << "-------------------------------------";
-#endif
-                break;
+                // +1 for the "/"
+                tempProjectPath.chop(tempProjectPath.length()-tempProjectPath.indexOf(projectFilename)+1);
             }
+
+#ifdef DEBUG
+            qDebug() << "Initial projectPath: " << tempProjectPath;
+#endif
+            //If project path is a relative path in the same parent directory as current working
+            //(this is the default) then replace the leading "../" with the parent directory to
+            //get the absolute path.
+            QString projectParentDir(tempProjectPath);
+            QString buildParentDir(buildDirPath);
+            int index(projectParentDir.lastIndexOf("/"));
+            projectParentDir.chop(projectParentDir.length() - index);
+            if ( ".." == projectParentDir )
+            {
+#ifdef DEBUG
+                qDebug() << "Replacing relative path with absolute path...";
+#endif
+
+                buildParentDir.chop(buildParentDir.length()-buildParentDir.lastIndexOf("/"));
+                tempProjectPath.replace(0, 2, buildParentDir);
+            }
+
+            //Check to see if the path we came up with exists and, as
+            //an extra check, make sure it contains the project file.
+            if ( !QFile(tempProjectPath + "/" + projectFilename).exists() )
+            {
+                //We didn't get it this time. Keep going.
+#ifdef DEBUG
+                qDebug() << "Our guess at project path didn't pan out this time. Keep going...";
+                qDebug() << "Our guess was: " << tempProjectPath;
+#endif
+                continue;
+            }
+
+            //Looks like we go tit. Assign what we came up with to our projectPath,
+            //print out some debugging info, then break out of the for loop.
+            projectPath = tempProjectPath;
+
+#ifdef DEBUG
+            qDebug() << "-------------------------------------";
+            qDebug() << "projectParentDir:     " << projectParentDir;
+            qDebug() << "buildParentDir:       " << buildParentDir;
+            qDebug() << "Absolute projectPath: " << projectPath;
+            qDebug() << "-------------------------------------";
+#endif
+
+            //We should be done
+            break;
         }
 
         //Break out of the while loop if we found the path
@@ -569,12 +590,12 @@ QString getDefaultConfigDirPath()
     return ( configDir );
 }
 
-QString getUserConfigFilePath()
+QString getDefaultConfigFilePath()
 {
     QString configFilePath;
     try
     {
-        configFilePath = getUserConfigDirPath() + "/userconfig.txt";
+        configFilePath = getDefaultConfigDirPath() + "/defaultconfig.txt";
     }
     catch ( std::runtime_error ex )
     {
@@ -584,12 +605,12 @@ QString getUserConfigFilePath()
     return ( configFilePath );
 }
 
-QString getDefaultConfigFilePath()
+QString getUserConfigFilePath()
 {
     QString configFilePath;
     try
     {
-        configFilePath = getDefaultConfigDirPath() + "/defaultconfig.txt";
+        configFilePath = getUserConfigDirPath() + "/userconfig.txt";
     }
     catch ( std::runtime_error ex )
     {
@@ -614,6 +635,21 @@ QString getCurrentConfigFilePath()
     }
 
     return configFilePath;
+}
+
+QString getLastExerciseFilePath()
+{
+    QString configFilePath;
+    try
+    {
+        configFilePath = getUserConfigDirPath() + "/lastexercise.txt";
+    }
+    catch ( std::runtime_error ex )
+    {
+        qDebug() << ex.what();
+    }
+
+    return ( configFilePath );
 }
 
 void initSettingsFile()
@@ -642,10 +678,8 @@ void initSettingsFile()
         }
 
         QFile srcFile(getDefaultConfigFilePath());
-        qDebug() << "getDefaultConfigFilePath: " << getDefaultConfigFilePath();
         if ( srcFile.exists() )
         {
-            qDebug() << "Copying default config file to user config file...";
             srcFile.copy(getUserConfigFilePath());
         }
     }

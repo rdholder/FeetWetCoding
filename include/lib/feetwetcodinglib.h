@@ -41,7 +41,9 @@ QString getBuildDirPath();         //Throws std::runtime_error if dir path canno
 QString getDefaultConfigDirPath(); //Throws std::runtime_error if dir path cannot be determined
 QString getUserConfigDirPath();    //Throws std::runtime_error if dir path cannot be determined
 QString getDefaultConfigFilePath();
-QString saveCurrentConfigFilePath();
+QString getUserConfigFilePath();
+QString getCurrentConfigFilePath();
+QString getLastExerciseFilePath();
 void initSettingsFile();
 void getSetting( const QString & settingKey, QString & settingVal );
 void getPreviousExerciseFromFile( QString pathToFile, QString & chapter, QString & section, QString & exercise );

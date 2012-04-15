@@ -597,14 +597,12 @@ void FWCExerciseChooser::runCurrentExercise()
 
 void FWCExerciseChooser::saveCurrentExercise()
 {
-    QString file(getUserConfigDirPath() + "/lastexercise.txt");
-    saveCurrentExerciseToFile( file, mCurrentChapter, mCurrentSection, mCurrentExercise );
+    saveCurrentExerciseToFile( getLastExerciseFilePath(), mCurrentChapter, mCurrentSection, mCurrentExercise );
 }
 
 void FWCExerciseChooser::loadPreviousExercise()
 {
-    QString file(getUserConfigDirPath() + "/lastexercise.txt");
-    getPreviousExerciseFromFile( file, mCurrentChapter, mCurrentSection, mCurrentExercise );
+    getPreviousExerciseFromFile( getLastExerciseFilePath(), mCurrentChapter, mCurrentSection, mCurrentExercise );
 }
 
 void FWCExerciseChooser::handleKeyEvent(QKeyEvent *event)
