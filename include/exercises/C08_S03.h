@@ -1,5 +1,5 @@
 // copyright (c) 2011 Robert Holder, Janice Dugger.
-// See README.html included in this distribution.
+// See HELP.html included in this distribution.
 
 #ifndef C08_S03_H
 #define C08_S03_H

@@ -1,5 +1,5 @@
 // copyright (c) 2011 Robert Holder, Janice Dugger.
-// See README.html included in this distribution.
+// See HELP.html included in this distribution.
 
 // FeetWetCoding: a framework that tries to make learning C++ a little more fun! :-)
 

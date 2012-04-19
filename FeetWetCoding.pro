@@ -31,6 +31,7 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S01-fwcTools1/250_DrawingImages.cpp \
     exercises/C01-Beginner_Exercises/S01-fwcTools1/300_SeeoutIntro.cpp \
     exercises/C01-Beginner_Exercises/S01-fwcTools1/310_SeeoutFormatting.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/400_OnYourOwn_OYO.cpp \
     exercises/C01-Beginner_Exercises/S01-fwcTools1/520_ColorNames.cpp \
     exercises/C01-Beginner_Exercises/S01-fwcTools1/550_FontProportions.cpp \
     exercises/C01-Beginner_Exercises/S01-fwcTools1/Solutions/001_WelcomeSOLN.cpp \
@@ -49,6 +50,7 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S01-fwcTools1/Solutions/250_DrawingImagesSOLN.cpp \
     exercises/C01-Beginner_Exercises/S01-fwcTools1/Solutions/300_SeeoutIntroSOLN.cpp \
     exercises/C01-Beginner_Exercises/S01-fwcTools1/Solutions/310_SeeoutFormattingSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S01-fwcTools1/Solutions/400_OnYourOwn_OYOSOLN.cpp \
     exercises/C01-Beginner_Exercises/S01-fwcTools1/Solutions/520_ColorNamesSOLN.cpp \
     exercises/C01-Beginner_Exercises/S01-fwcTools1/Solutions/550_FontProportionsSOLN.cpp \
     exercises/C01-Beginner_Exercises/S02-Types_Variables/020_NumericTypes.cpp \
@@ -61,7 +63,6 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S02-Types_Variables/Solutions/040_DrawingVersusSeeoutSOLN.cpp \
     exercises/C01-Beginner_Exercises/S02-Types_Variables/Solutions/200_StandardStringsSOLN.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/040_OrderOfOperations.cpp \
-    exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/520_Misdirection.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/020_AssignmentArithmetic.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/060_PreAndPostIncAndDec.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/100_ModulusOperator.cpp \
@@ -69,6 +70,7 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/140_MathFunctions.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/200_randomAndrandomRange.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/210_DistanceEquation.cpp \
+    exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/520_Misdirection.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/Solutions/060_PreAndPostIncAndDecSOLN.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/Solutions/210_DistanceEquationSOLN.cpp \
     exercises/C01-Beginner_Exercises/S04-Expressions_Syntax/Solutions/520_MisdirectionSOLN.cpp \
@@ -84,13 +86,20 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/045_C01S05_OYO4.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/050_WhileLoop4.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/055_WhileLoop5.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/110_IfThen1.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/120_IfThen2.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/130_IfThen3.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/210_ForLoop2.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/215_ForLoop3.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/220_ForLoop4.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/250_Switch1.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/260_IfThen4_OYO.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/310_DivideByZero.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/320_Primes2_OYO.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/315_Primes1.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/480_C01S05_OYO5.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/002_WhileLoopIntroSOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/004_ForLoopIntroSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/480_C01S05_OYO5SOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/010_WhileLoop1SOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/015_InfiniteLooping1SOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/020_C01S05_OYO1SOLN.cpp \
@@ -101,46 +110,69 @@ SOURCES += \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/045_C01S05_OYO4SOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/050_WhileLoop4SOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/055_WhileLoop5SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/110_IfThen1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/120_IfThen2SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/130_IfThen3SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/210_ForLoop2SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/215_ForLoop3SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/220_ForLoop4SOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/250_Switch1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/260_IfThen4_OYOSOLN.cpp \
     exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/315_Primes1SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools2/180_ChangeFloat.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools2/170_ChangeInt.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools2/160_ChangeText.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools2/150_ChangeFontSize.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools2/140_ChangeColor.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools2/130_ChangeRadius.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools2/120_ChangeLineWidth.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools2/110_ChangeLineEnd.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools2/100_ChangeZ.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools2/090_Clear.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools2/080_Erase.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools2/070_Rotate.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools2/060_Scale.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools2/050_Relocate.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools2/040_Shift.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools2/030_StringInput.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools2/020_SingleKeyInput.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/320_Primes2_OYOSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/480_C01S05_OYO5SOLN.cpp \
     exercises/C01-Beginner_Exercises/S06-fwcTools2/010_Sleep.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/180_ChangeFloatSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/170_ChangeIntSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/160_ChangeTextSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/150_ChangeFontSizeSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/140_ChangeColorSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/130_ChangeRadiusSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/120_ChangeLineWidthSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/110_ChangeLineEndSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/100_ChangeZSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/090_ClearSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/080_EraseSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/070_RotateSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/060_ScaleSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/050_RelocateSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/040_ShiftSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/030_StringInputSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/020_SingleKeyInputSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/020_SingleKeyInput.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/030_StringInput.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/040_Shift.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/050_Relocate.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/060_Scale.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/070_Rotate.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/080_Erase.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/090_Clear.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/100_ChangeZ.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/110_ChangeLineEnd.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/120_ChangeLineWidth.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/130_ChangeRadius.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/140_ChangeColor.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/150_ChangeFontSize.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/160_ChangeText.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/170_ChangeInt.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/180_ChangeFloat.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/200_CenteredText.cpp \
     exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/010_SleepSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/020_SingleKeyInputSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/030_StringInputSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/040_ShiftSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/050_RelocateSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/060_ScaleSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/070_RotateSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/080_EraseSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/090_ClearSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/100_ChangeZSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/110_ChangeLineEndSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/120_ChangeLineWidthSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/130_ChangeRadiusSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/140_ChangeColorSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/150_ChangeFontSizeSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/160_ChangeTextSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/170_ChangeIntSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/180_ChangeFloatSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/200_CenteredTextSOLN.cpp \
     exercises/C01-Beginner_Exercises/S07-Storing_Data/005_WhyUseArrays.cpp \
+    exercises/C01-Beginner_Exercises/S07-Storing_Data/010_Arrays1.cpp \
+    exercises/C01-Beginner_Exercises/S07-Storing_Data/015_MadLib.cpp \
+    exercises/C01-Beginner_Exercises/S07-Storing_Data/030_FillAnArray.cpp \
+    exercises/C01-Beginner_Exercises/S07-Storing_Data/035_BubbleSort1.cpp \
+    exercises/C01-Beginner_Exercises/S07-Storing_Data/040_BubbleSort2.cpp \
     exercises/C01-Beginner_Exercises/S07-Storing_Data/Solutions/005_WhyUseArraysSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S07-Storing_Data/Solutions/010_Arrays1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S07-Storing_Data/Solutions/015_MadLibSOLN.cpp \
+    exercises/C01-Beginner_Exercises/S07-Storing_Data/Solutions/030_FillAnArraySOLN.cpp \
+    exercises/C01-Beginner_Exercises/S07-Storing_Data/Solutions/035_BubbleSort1SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S07-Storing_Data/Solutions/040_BubbleSort2SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S09-Classes/010_Classes1.cpp \
+    exercises/C01-Beginner_Exercises/S09-Classes/Solutions/010_Classes1SOLN.cpp \
     exercises/C08-Game_Programming/S03-Top_Down_2D/SpaceshipFlyer.cpp \
     exercises/C08-Game_Programming/S03-Top_Down_2D/Solutions/SpaceshipFlyerSOLN.cpp \
     mycode/lib/MyLib.cpp \
@@ -154,39 +186,7 @@ SOURCES += \
     mycode/src/MyCode7.cpp \
     mycode/src/MyCode8.cpp \
     mycode/src/MyCode9.cpp \
-    exercises/feetwetcodingexerciseBase.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools2/Solutions/200_CenteredTextSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S06-fwcTools2/200_CenteredText.cpp \
-    exercises/C01-Beginner_Exercises/S07-Storing_Data/Solutions/030_FillAnArraySOLN.cpp \
-    exercises/C01-Beginner_Exercises/S07-Storing_Data/030_FillAnArray.cpp \
-    exercises/C01-Beginner_Exercises/S07-Storing_Data/Solutions/035_BubbleSort1SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S07-Storing_Data/035_BubbleSort1.cpp \
-    exercises/C01-Beginner_Exercises/S07-Storing_Data/015_MadLib.cpp \
-    exercises/C01-Beginner_Exercises/S07-Storing_Data/010_Arrays1.cpp \
-    exercises/C01-Beginner_Exercises/S07-Storing_Data/Solutions/015_MadLibSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S07-Storing_Data/Solutions/010_Arrays1SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S07-Storing_Data/040_BubbleSort2.cpp \
-    exercises/C01-Beginner_Exercises/S07-Storing_Data/Solutions/040_BubbleSort2SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S09-Classes/010_Classes1.cpp \
-    exercises/C01-Beginner_Exercises/S09-Classes/Solutions/010_Classes1SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/110_IfThen1.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/120_IfThen2.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/130_IfThen3.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/210_ForLoop2.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/215_ForLoop3.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/220_ForLoop4.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/210_ForLoop2SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/215_ForLoop3SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/220_ForLoop4SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/110_IfThen1SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/120_IfThen2SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/130_IfThen3SOLN.cpp \
-    exercises/C01-Beginner_Exercises/S01-fwcTools1/400_OnYourOwn_OYO.cpp \
-    exercises/C01-Beginner_Exercises/S01-fwcTools1/Solutions/400_OnYourOwn_OYOSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/260_IfThen4_OYO.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/320_Primes2_OYO.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/260_IfThen4_OYOSOLN.cpp \
-    exercises/C01-Beginner_Exercises/S05-Loops_Logic/Solutions/320_Primes2_OYOSOLN.cpp
+    exercises/feetwetcodingexerciseBase.cpp
 
 HEADERS += \
     include/lib/setup.h \
