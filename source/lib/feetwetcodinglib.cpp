@@ -387,7 +387,7 @@ QString getProjectDirPath()
             if ( -1 != tempProjectPath.indexOf(projectFilename) )
             {
                 // +1 for the "/"
-                tempProjectPath.chop(tempProjectPath.length()-tempProjectPath.indexOf(projectFilename)+1);
+                tempProjectPath.chop(tempProjectPath.length()-projectFilename.length()+1);
             }
 
 #ifdef DEBUG

@@ -434,41 +434,6 @@ protected:
     }
 };
 
-class ForLoops1Soln : public FeetWetCodingSolution
-{
-    Q_OBJECT
-public:
-    explicit ForLoops1Soln(QObject *parent = 0)
-        :FeetWetCodingSolution(parent){}
-
-protected:
-    void runExercise();
-};
-
-class ForLoops1 : public FeetWetCodingExercise
-{
-    Q_OBJECT
-public:
-    explicit ForLoops1(QObject *parent = 0)
-        :FeetWetCodingExercise(parent)
-    {
-        //If this exercise has a solution, launch it
-        this->setupSolution(parent);
-    }
-
-protected:
-    void runExercise();
-
-    void setupSolution(QObject *parent=0)
-    {
-        mSolutionPtr = new ForLoops1Soln(parent);
-        if ( mSolutionPtr )
-        {
-            mSolutionPtr->start();
-        }
-    }
-};
-
 class ForLoops2Soln : public FeetWetCodingSolution
 {
     Q_OBJECT
@@ -532,6 +497,41 @@ protected:
     void setupSolution(QObject *parent=0)
     {
         mSolutionPtr = new ForLoops3Soln(parent);
+        if ( mSolutionPtr )
+        {
+            mSolutionPtr->start();
+        }
+    }
+};
+
+class ForLoops4Soln : public FeetWetCodingSolution
+{
+    Q_OBJECT
+public:
+    explicit ForLoops4Soln(QObject *parent = 0)
+        :FeetWetCodingSolution(parent){}
+
+protected:
+    void runExercise();
+};
+
+class ForLoops4 : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit ForLoops4(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        //If this exercise has a solution, launch it
+        this->setupSolution(parent);
+    }
+
+protected:
+    void runExercise();
+
+    void setupSolution(QObject *parent=0)
+    {
+        mSolutionPtr = new ForLoops4Soln(parent);
         if ( mSolutionPtr )
         {
             mSolutionPtr->start();
@@ -660,22 +660,22 @@ protected:
     }
 };
 
-class IfThen4Soln : public FeetWetCodingSolution
+class IfThen4_OYOSoln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
-    explicit IfThen4Soln(QObject *parent = 0)
+    explicit IfThen4_OYOSoln(QObject *parent = 0)
         :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
 };
 
-class IfThen4 : public FeetWetCodingExercise
+class IfThen4_OYO : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit IfThen4(QObject *parent = 0)
+    explicit IfThen4_OYO(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
         //If this exercise has a solution, launch it
@@ -687,7 +687,7 @@ protected:
 
     void setupSolution(QObject *parent=0)
     {
-        mSolutionPtr = new IfThen4Soln(parent);
+        mSolutionPtr = new IfThen4_OYOSoln(parent);
         if ( mSolutionPtr )
         {
             mSolutionPtr->start();
@@ -765,22 +765,22 @@ protected:
     }
 };
 
-class OYO_Primes2Soln : public FeetWetCodingSolution
+class Primes2_OYOSoln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
-    explicit OYO_Primes2Soln(QObject *parent = 0)
+    explicit Primes2_OYOSoln(QObject *parent = 0)
         :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
 };
 
-class OYO_Primes2 : public FeetWetCodingExercise
+class Primes2_OYO : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit OYO_Primes2(QObject *parent = 0)
+    explicit Primes2_OYO(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
         //If this exercise has a solution, launch it
@@ -792,7 +792,7 @@ protected:
 
     void setupSolution(QObject *parent=0)
     {
-        mSolutionPtr = new OYO_Primes2Soln(parent);
+        mSolutionPtr = new Primes2_OYOSoln(parent);
         if ( mSolutionPtr )
         {
             mSolutionPtr->start();

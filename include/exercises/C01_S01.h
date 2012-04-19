@@ -603,22 +603,22 @@ protected:
     }
 };
 
-class OnYourOwnSoln : public FeetWetCodingSolution
+class OnYourOwn_OYOSoln : public FeetWetCodingSolution
 {
     Q_OBJECT
 public:
-    explicit OnYourOwnSoln(QObject *parent = 0)
+    explicit OnYourOwn_OYOSoln(QObject *parent = 0)
         :FeetWetCodingSolution(parent){}
 
 protected:
     void runExercise();
 };
 
-class OnYourOwn : public FeetWetCodingExercise
+class OnYourOwn_OYO : public FeetWetCodingExercise
 {
     Q_OBJECT
 public:
-    explicit OnYourOwn(QObject *parent = 0)
+    explicit OnYourOwn_OYO(QObject *parent = 0)
         :FeetWetCodingExercise(parent)
     {
         //If this exercise has a solution, launch it
@@ -630,7 +630,7 @@ protected:
 
     void setupSolution(QObject *parent=0)
     {
-        mSolutionPtr = new OnYourOwnSoln(parent);
+        mSolutionPtr = new OnYourOwn_OYOSoln(parent);
         if ( mSolutionPtr )
         {
             mSolutionPtr->start();

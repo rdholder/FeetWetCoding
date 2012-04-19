@@ -77,7 +77,7 @@ FWCExerciseChooser::getExerciseFromName( const QString & name )
     if( "DrawingImages" == name ){ return new DrawingImages(&mExerciseLauncher); }
     if( "seeoutIntro" == name ){ return new seeoutIntro(&mExerciseLauncher); }
     if( "seeoutFormatting" == name ){ return new seeoutFormatting(&mExerciseLauncher); }
-    if( "OnYourOwn" == name ){ return new OnYourOwn(&mExerciseLauncher); }
+    if( "OnYourOwn_OYO" == name ){ return new OnYourOwn_OYO(&mExerciseLauncher); }
     if( "ColorNames" == name ){ return new ColorNames(&mExerciseLauncher); }
     if( "FontProportions" == name ){ return new FontProportions(&mExerciseLauncher); }
 
@@ -113,17 +113,17 @@ FWCExerciseChooser::getExerciseFromName( const QString & name )
     if( "OYO4" == name ){ return new C01S05_OYO4(&mExerciseLauncher); }
     if( "WhileLoop4" == name ){ return new WhileLoop4(&mExerciseLauncher); }
     if( "WhileLoop5" == name ){ return new WhileLoop5(&mExerciseLauncher); }
-    if( "ForLoops1" == name ){ return new ForLoops1(&mExerciseLauncher); }
     if( "ForLoops2" == name ){ return new ForLoops2(&mExerciseLauncher); }
     if( "ForLoops3" == name ){ return new ForLoops3(&mExerciseLauncher); }
+    if( "ForLoops4" == name ){ return new ForLoops4(&mExerciseLauncher); }
     if( "IfThen1" == name ){ return new IfThen1(&mExerciseLauncher); }
     if( "IfThen2" == name ){ return new IfThen2(&mExerciseLauncher); }
     if( "IfThen3" == name ){ return new IfThen3(&mExerciseLauncher); }
-    if( "IfThen4" == name ){ return new IfThen4(&mExerciseLauncher); }
+    if( "IfThen4_OYO" == name ){ return new IfThen4_OYO(&mExerciseLauncher); }
     if( "Switch1" == name ){ return new Switch1(&mExerciseLauncher); }
     if( "DivideByZero" == name ){ return new DivideByZero(&mExerciseLauncher); }
     if( "Primes1" == name ){ return new Primes1(&mExerciseLauncher); }
-    if( "OYO_Primes2" == name ){ return new OYO_Primes2(&mExerciseLauncher); }
+    if( "Primes2_OYO" == name ){ return new Primes2_OYO(&mExerciseLauncher); }
     if( "OYO5" == name ){ return new C01S05_OYO5(&mExerciseLauncher); }
 
     //Section 6 - fwcTools2
@@ -213,7 +213,7 @@ void FWCExerciseChooser::createExercisesMap()
     exercises.push_back( "DrawingImages" );
     exercises.push_back( "seeoutIntro" );
     exercises.push_back( "seeoutFormatting" );
-    exercises.push_back( "OnYourOwn" );
+    exercises.push_back( "OnYourOwn_OYO" );
     exercises.push_back( "ColorNames" );
     exercises.push_back( "FontProportions" );
     sections["S01-fwcTools1"] = exercises;
@@ -255,17 +255,17 @@ void FWCExerciseChooser::createExercisesMap()
     exercises.push_back( "OYO4" );
     exercises.push_back( "WhileLoop4" );
     exercises.push_back( "WhileLoop5" );
-    exercises.push_back( "ForLoops1" );
     exercises.push_back( "ForLoops2" );
     exercises.push_back( "ForLoops3" );
+    exercises.push_back( "ForLoops4" );
     exercises.push_back( "IfThen1" );
     exercises.push_back( "IfThen2" );
     exercises.push_back( "IfThen3" );
-    exercises.push_back( "IfThen4" );
+    exercises.push_back( "IfThen4_OYO" );
     exercises.push_back( "Switch1" );
     exercises.push_back( "DivideByZero" );
     exercises.push_back( "Primes1" );
-    exercises.push_back( "OYO_Primes2" );
+    exercises.push_back( "Primes2_OYO" );
     exercises.push_back( "OYO5" );
     sections["S05-Loops_Logic"] = exercises;
 

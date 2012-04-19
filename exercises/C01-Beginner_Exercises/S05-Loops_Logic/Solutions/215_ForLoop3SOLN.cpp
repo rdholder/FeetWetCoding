@@ -1,7 +1,7 @@
 // copyright (c) 2011 Robert Holder, Janice Dugger.
 // See README.html included in this distribution.
 
-#include <exercises/C01_S01.h>
+#include <exercises/C01_S05.h>
 
 // ==========================================
 // =       THIS IS THE SOLUTION CODE        =
@@ -10,8 +10,15 @@
 // = it's in the directory above this one.) =
 // ==========================================
 
-void WelcomeSoln::runExercise()
+void ForLoops3Soln::runExercise()
 {
-    fwcText("Welcome to FeetWetCoding!", 20, 150, RED, 20);
-    fwcText("This is the solution area.", 90, 210, RED);
+    int a = 1, x = 385, y = 0;  // = is pronounced GETS, == is pronounced EQUALS
+
+    for ( y = 0; y < 375; y += 25 )
+    {
+        if ( a > 9 ) x -= 10;
+        fwcInt( a, x, y, BLUE, 15);
+        a++;
+        x = 385;
+    }
 }
