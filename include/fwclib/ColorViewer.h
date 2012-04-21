@@ -4,7 +4,7 @@
 #ifndef COLORVIEWER_H
 #define COLORVIEWER_H
 
-#include <ExerciseLauncher.h>
+#include <fwclib/ExerciseLauncher.h>
 
 class ColorViewer
 {

@@ -1,9 +1,9 @@
 // copyright (c) 2011 Robert Holder, Janice Dugger.
 // See HELP.html included in this distribution.
 
-#include <include/lib/FWCExerciseChooser.h>
+#include <include/fwclib/FWCExerciseChooser.h>
 #include <include/exercises/exercises.h>
-#include <MyCode.h>
+#include <fwclib/MyCode.h>
 #include <iostream>
 #include <QFile>
 #include <QDir>

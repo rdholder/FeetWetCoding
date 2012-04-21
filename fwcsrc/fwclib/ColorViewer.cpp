@@ -1,11 +1,11 @@
 // copyright (c) 2011 Robert Holder, Janice Dugger.
 // See HELP.html included in this distribution.
 
-#include <lib/feetwetcodinglib.h>
 #include <exercises/FeetWetCodingExerciseBase.h>
-#include <lib/ColorViewer.h>
-#include <lib/colors.h>
-#include <SeeOut.h>
+#include <fwclib/feetwetcodinglib.h>
+#include <fwclib/ColorViewer.h>
+#include <fwclib/colors.h>
+#include <fwclib/SeeOut.h>
 #include <string>
 
 void ColorViewer::show()

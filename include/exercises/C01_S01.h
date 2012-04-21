@@ -5,7 +5,7 @@
 #define C01_S01_H
 
 #include <exercises/FeetWetCodingExerciseBase.h>
-#include <setup.h>
+#include <fwclib/setup.h>
 
 
 class WelcomeSoln : public FeetWetCodingSolution

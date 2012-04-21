@@ -5,7 +5,7 @@
 #ifndef FEETWETCODINGLIB_H
 #define FEETWETCODINGLIB_H
 
-#include <include/lib/colors.h>
+#include <include/fwclib/colors.h>
 #include <QGraphicsView>
 #include <QKeyEvent>
 

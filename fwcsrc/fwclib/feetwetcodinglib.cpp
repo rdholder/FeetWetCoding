@@ -1,7 +1,7 @@
 // copyright (c) 2011 Robert Holder, Janice Dugger.
 // See HELP.html included in this distribution.
 
-#include <setup.h>
+#include <fwclib/setup.h>
 #include <QHBoxLayout>
 #include <QPushButton>
 #include <QTextEdit>
@@ -10,8 +10,8 @@
 #include <QFile>
 #include <QDir>
 #include <stdexcept>
-#include <feetwetcodinglib.h>
-#include <include/lib/FWCExerciseChooser.h>
+#include <fwclib/feetwetcodinglib.h>
+#include <fwclib/FWCExerciseChooser.h>
 
 using namespace std;
 

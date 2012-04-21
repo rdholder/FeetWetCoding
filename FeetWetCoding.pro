@@ -10,11 +10,12 @@ TARGET = FeetWetCoding
 TEMPLATE = app
 
 SOURCES += \
-    source/main.cpp \
-    source/lib/feetwetcodinglib.cpp \
-    source/lib/ExerciseLauncher.cpp \
-    source/lib/ColorViewer.cpp \
-    source/lib/FWCExerciseChooser.cpp \
+    fwcsrc/main.cpp \
+    fwcsrc/fwclib/FWCExerciseChooser.cpp \
+    fwcsrc/fwclib/feetwetcodinglib.cpp \
+    fwcsrc/fwclib/feetwetcodingexerciseBase.cpp \
+    fwcsrc/fwclib/ExerciseLauncher.cpp \
+    fwcsrc/fwclib/ColorViewer.cpp \
     exercises/C01-Beginner_Exercises/S01-fwcTools1/001_Welcome.cpp \
     exercises/C01-Beginner_Exercises/S01-fwcTools1/010_ChangeTextParameter.cpp \
     exercises/C01-Beginner_Exercises/S01-fwcTools1/020_ChangeXParameter.cpp \
@@ -185,33 +186,33 @@ SOURCES += \
     mycode/src/MyCode6.cpp \
     mycode/src/MyCode7.cpp \
     mycode/src/MyCode8.cpp \
-    mycode/src/MyCode9.cpp \
-    exercises/feetwetcodingexerciseBase.cpp
+    mycode/src/MyCode9.cpp
+
 
 HEADERS += \
-    include/lib/setup.h \
-    include/lib/feetwetcodinglib.h \
-    include/lib/constants.h \
+    include/fwclib/setup.h \
+    include/fwclib/SeeOut.h \
+    include/fwclib/MyCode.h \
+    include/fwclib/FWCExerciseChooser.h \
+    include/fwclib/feetwetcodinglib.h \
+    include/fwclib/ExerciseLauncher.h \
+    include/fwclib/constants.h \
+    include/fwclib/ColorViewer.h \
+    include/fwclib/colors.h \
     include/exercises/exercises.h \
-    include/exercises/C01_S05.h \
-    include/exercises/C01_S04.h \
-    include/lib/FWCExerciseChooser.h \
-    include/lib/colors.h \
-    include/lib/ColorViewer.h \
-    include/lib/ExerciseLauncher.h \
-    include/lib/SeeOut.h \
-    include/lib/MyCode.h \
-    include/exercises/C01_S09.h \
-    include/exercises/C01_S07.h \
-    include/exercises/C01_S06.h \
     include/exercises/FeetWetCodingExerciseBase.h \
-    include/exercises/C08_S03.h \
     include/exercises/C01_S01.h \
-    include/exercises/C01_S02.h
+    include/exercises/C01_S02.h \
+    include/exercises/C01_S04.h \
+    include/exercises/C01_S05.h \
+    include/exercises/C01_S06.h \
+    include/exercises/C01_S07.h \
+    include/exercises/C01_S09.h \
+    include/exercises/C08_S03.h
 
 FORMS +=
 
-INCLUDEPATH += include include/lib
+INCLUDEPATH += include
 DEPENDPATH += . src include
 OUTPUT += Console
 

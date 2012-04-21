@@ -1,9 +1,9 @@
 // copyright (c) 2011 Robert Holder, Janice Dugger.
 // See HELP.html included in this distribution.
 
-#include <setup.h>
 #include <exercises/FeetWetCodingExerciseBase.h>
-#include <ExerciseLauncher.h>
+#include <fwclib/setup.h>
+#include <fwclib/ExerciseLauncher.h>
 
 using namespace std;
 
