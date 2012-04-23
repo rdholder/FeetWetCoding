@@ -27,5 +27,6 @@ void ChangeColorParameter::runExercise()
 //    LAVENDER
 
     // USAGE: fwcText("Text.", x, y, color, fontsize);
+    // the fontsize parameter is optional.
     fwcText("color is BLUE", 50, 150, BLUE, 15);
 }

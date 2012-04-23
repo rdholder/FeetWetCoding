@@ -6,8 +6,9 @@
 void DrawingImages::runExercise()
 {
     // USAGE: fwcImage("filename.png", x, y);
-    //        filename.png must be an image file in your FeetWetCoding
-    //        project folder's "img" sub-directory.
+    // filename must be an image file in your FeetWetCoding project folder's
+    // "img" sub-directory.  It can be a .png .jpg or .gif file.  .png is used
+    // here just to remind you to include the file-type dot extension.
 
     fwcImage("ken-thompson-l-and-dennis-ritchie-r100x65.png", 10, 10);
     fwcImage("BrianKernighan50x58.png", 130, 10);

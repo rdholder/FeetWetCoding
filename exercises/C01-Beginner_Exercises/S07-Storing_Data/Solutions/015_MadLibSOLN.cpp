@@ -28,6 +28,8 @@ void MadLibSoln::runExercise()
 
     fwcText("MadLib! :-)",150,150,DARKRED,20);
     fwcText("Press any key for a new sentence or q to quit",50,200,DARKBLUE);
+    seeout << "The sentence format is:\n";
+    seeout << "The noun[] verb[] the adjective[] noun[].\n\n";
 
     while ( key != "q" && key != "Q" )
     {
