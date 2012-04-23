@@ -22,7 +22,7 @@ void MadLib::runExercise()
 
     while ( key != "q" && key != "Q" )
     {
-        seeout << "The " << noun[random(number_of_nouns)];
+        seeout << "The " << noun[random(number_of_nouns)] << " ";
 
         key = waitForKeyPress();
     }

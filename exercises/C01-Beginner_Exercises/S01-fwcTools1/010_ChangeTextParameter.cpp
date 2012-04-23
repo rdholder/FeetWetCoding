@@ -6,5 +6,6 @@
 void ChangeTextParameter::runExercise()
 {
     // USAGE: fwcText("Text.", x, y, color, fontsize);
+    // the fontsize parameter is optional.
     fwcText("Change this text to...", 50, 150, BLUE, 15);
 }
