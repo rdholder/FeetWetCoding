@@ -1,4 +1,4 @@
-#include <setup.h>
+#include <fwclib/setup.h>
 
 using namespace std;
 

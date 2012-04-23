@@ -25,11 +25,11 @@
 #include <vector>
 #include <queue>
 
-#include <lib/colors.h>
-#include <lib/ColorViewer.h>
-#include <lib/feetwetcodinglib.h>
+#include <fwclib/colors.h>
+#include <fwclib/ColorViewer.h>
+#include <fwclib/feetwetcodinglib.h>
 
-#include <lib/constants.h>      // FeetWetCoding constants: things we use in many exercises
+#include <fwclib/constants.h>      // FeetWetCoding constants: things we use in many exercises
 
 #endif // SETUP_H
 

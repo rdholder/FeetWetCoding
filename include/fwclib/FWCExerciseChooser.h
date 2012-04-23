@@ -4,7 +4,7 @@
 #ifndef FWCEXERCISECHOOSER_H
 #define FWCEXERCISECHOOSER_H
 
-#include <ExerciseLauncher.h>
+#include <fwclib/ExerciseLauncher.h>
 #include <QObject>
 #include <QString>
 #include <QComboBox>

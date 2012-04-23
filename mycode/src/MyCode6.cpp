@@ -1,4 +1,4 @@
-#include <lib/MyCode.h>
+#include <fwclib/MyCode.h>
 
 void MyCode6::runExercise()
 {

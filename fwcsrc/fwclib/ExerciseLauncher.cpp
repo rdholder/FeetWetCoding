@@ -1,5 +1,5 @@
-#include <ExerciseLauncher.h>
-#include <SeeOut.h>
+#include <fwclib/ExerciseLauncher.h>
+#include <fwclib/SeeOut.h>
 #include <QDialog>
 #include <QTextEdit>
 #include <QTime>

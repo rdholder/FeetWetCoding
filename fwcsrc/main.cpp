@@ -9,7 +9,7 @@
 // (from "ELIZA Crossing the Ice"):
 // "There are things wrong wi' some o' the tools and 'tis my task to put them right."
 
-#include <lib/setup.h>
+#include <fwclib/setup.h>
 
 FeetWetCodingExercise *exercise(NULL);
 
