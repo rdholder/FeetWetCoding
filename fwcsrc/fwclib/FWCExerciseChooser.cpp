@@ -2,6 +2,7 @@
 // See HELP.html included in this distribution.
 
 #include <include/fwclib/FWCExerciseChooser.h>
+#include <include/fwclib/FWCSettings.h>
 #include <include/exercises/exercises.h>
 #include <fwclib/MyCode.h>
 #include <iostream>
@@ -9,6 +10,7 @@
 #include <QDir>
 #include <QDialog>
 
+//Global variables we need
 extern QDialog *theWindow;
 
 FWCExerciseChooser::FWCExerciseChooser(QObject *parent)
@@ -35,7 +37,8 @@ FWCExerciseChooser::FWCExerciseChooser(QObject *parent)
     // If config setting reload_prev_exercise is true, load
     // the previous exercise stored in the user's config file
     QString settingVal;
-    getSetting("reload_prev_exercise", settingVal);
+    FWCSettings settings;
+    settings.getSetting("reload_prev_exercise", settingVal);
     if ( 0 == settingVal.compare("true", Qt::CaseInsensitive) ) //0 means they're equal
     {
         loadPreviousExercise();
@@ -558,7 +561,7 @@ void FWCExerciseChooser::stopExercise()
     mExerciseLauncher.stopCurrentExercise();
 
     ClearScreen();
-    initOutputArea();
+    ClearOutputArea();
 
     if ( mSelectedExercise )
     {
@@ -597,12 +600,16 @@ void FWCExerciseChooser::runCurrentExercise()
 
 void FWCExerciseChooser::saveCurrentExercise()
 {
-    saveCurrentExerciseToFile( getLastExerciseFilePath(), mCurrentChapter, mCurrentSection, mCurrentExercise );
+    FWCSettings settings;
+    settings.saveCurrentExerciseToFile( settings.getLastExerciseFilePath(),
+                                        mCurrentChapter, mCurrentSection, mCurrentExercise );
 }
 
 void FWCExerciseChooser::loadPreviousExercise()
 {
-    getPreviousExerciseFromFile( getLastExerciseFilePath(), mCurrentChapter, mCurrentSection, mCurrentExercise );
+    FWCSettings settings;
+    settings.getPreviousExerciseFromFile( settings.getLastExerciseFilePath(),
+                                          mCurrentChapter, mCurrentSection, mCurrentExercise );
 }
 
 void FWCExerciseChooser::handleKeyEvent(QKeyEvent *event)

@@ -11,6 +11,9 @@ TEMPLATE = app
 
 SOURCES += \
     fwcsrc/main.cpp \
+    fwcsrc/fwclib/FWCMainWindow.cpp \
+    fwcsrc/fwclib/FWCView.cpp \
+    fwcsrc/fwclib/FWCSettings.cpp \
     fwcsrc/fwclib/FWCExerciseChooser.cpp \
     fwcsrc/fwclib/feetwetcodinglib.cpp \
     fwcsrc/fwclib/feetwetcodingexerciseBase.cpp \
@@ -193,6 +196,9 @@ HEADERS += \
     include/fwclib/setup.h \
     include/fwclib/SeeOut.h \
     include/fwclib/MyCode.h \
+    include/fwclib/FWCMainWindow.h \
+    include/fwclib/FWCView.h \
+    include/fwclib/FWCSettings.h \
     include/fwclib/FWCExerciseChooser.h \
     include/fwclib/feetwetcodinglib.h \
     include/fwclib/ExerciseLauncher.h \
@@ -209,6 +215,7 @@ HEADERS += \
     include/exercises/C01_S07.h \
     include/exercises/C01_S09.h \
     include/exercises/C08_S03.h
+
 
 FORMS +=
 

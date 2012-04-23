@@ -7,6 +7,7 @@
 
 using namespace std;
 
+//Global variables we need
 extern QMutex globalmutex;
 
 //static variable definition
@@ -326,36 +327,36 @@ void FeetWetCodingExerciseBase::DrawReferenceBox(Color color)
     //Save the ref box drawn items so that we can preserve them
     //when all the other drawn items get cleared.
     mRefBoxItems.clear();
-    mRefBoxItems.push_back(fwcRectangle( 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, color, 1));
+    mRefBoxItems.push_back(fwcRectangle( 0, 0, DRAW_AREA_W, DRAW_AREA_H, color, 1));
 
     oss << 0 << "," << 0;
     mRefBoxItems.push_back(fwcText(oss.str(), -10, -20, color, dimsSize));
 
     oss.str("");
-    oss << 0 << "," << WINDOW_HEIGHT;
-    mRefBoxItems.push_back(fwcText(oss.str(), -10, WINDOW_HEIGHT, color, dimsSize));
+    oss << 0 << "," << DRAW_AREA_H;
+    mRefBoxItems.push_back(fwcText(oss.str(), -10, DRAW_AREA_H, color, dimsSize));
 
-    mRefBoxItems.push_back(fwcLine( WINDOW_WIDTH/2, 0, WINDOW_WIDTH/2, WINDOW_HEIGHT, color, 1));
-
-    oss.str("");
-    oss << WINDOW_WIDTH/2 << "," << 0;
-    mRefBoxItems.push_back(fwcText(oss.str(), (WINDOW_WIDTH/2-BORDER/2), -20, color, dimsSize));
+    mRefBoxItems.push_back(fwcLine( DRAW_AREA_W/2, 0, DRAW_AREA_W/2, DRAW_AREA_H, color, 1));
 
     oss.str("");
-    oss << WINDOW_WIDTH/2 << "," << WINDOW_HEIGHT;
-    mRefBoxItems.push_back(fwcText(oss.str(), WINDOW_WIDTH/2-BORDER/2, WINDOW_HEIGHT, color, dimsSize));
+    oss << DRAW_AREA_W/2 << "," << 0;
+    mRefBoxItems.push_back(fwcText(oss.str(), (DRAW_AREA_W/2-BORDER/2), -20, color, dimsSize));
+
+    oss.str("");
+    oss << DRAW_AREA_W/2 << "," << DRAW_AREA_H;
+    mRefBoxItems.push_back(fwcText(oss.str(), DRAW_AREA_W/2-BORDER/2, DRAW_AREA_H, color, dimsSize));
 
     oss.str("");
     oss << "Make YOUR Code...";
     qApp->font().setPointSize(textSize);
     strWidth=QFontMetrics(QFont(qApp->font())).width(oss.str().c_str());
-    mRefBoxItems.push_back(fwcText( oss.str(), WINDOW_WIDTH*.25-strWidth/2, -20, color, 10));
+    mRefBoxItems.push_back(fwcText( oss.str(), DRAW_AREA_W*.25-strWidth/2, -20, color, 10));
 
     oss.str("");
     oss << "...do what the SOLUTION code does.";
     qApp->font().setPointSize(textSize);
     strWidth=QFontMetrics(QFont(qApp->font())).width(oss.str().c_str());
-    mRefBoxItems.push_back(fwcText( oss.str(), WINDOW_WIDTH*.75-strWidth/2, -20, color, textSize));
+    mRefBoxItems.push_back(fwcText( oss.str(), DRAW_AREA_W*.75-strWidth/2, -20, color, textSize));
 
     //Draw reference box on top of everything else
     for ( unsigned int i=0; i < mRefBoxItems.size(); ++i )
@@ -376,8 +377,8 @@ int FeetWetCodingExerciseBase::SendRenderRequest( RenderItem item )
         QMutexLocker globallocker(&globalmutex);
         if ( mSoln )
         {
-            item.x += WINDOW_WIDTH/2;
-            item.xEnd += WINDOW_WIDTH/2;
+            item.x += DRAW_AREA_W/2;
+            item.xEnd += DRAW_AREA_W/2;
         }
     }
 
@@ -402,7 +403,7 @@ void FeetWetCodingExerciseBase::fwcMoveItem(int itemID, int newX, int newY)
         QMutexLocker globallocker(&globalmutex);
         if ( mSoln )
         {
-            update.x += WINDOW_WIDTH/2;
+            update.x += DRAW_AREA_W/2;
         }
     }
 
@@ -514,7 +515,7 @@ void FeetWetCodingExerciseBase::fwcChangeLineEnd(int itemID, int xEnd, int yEnd)
         QMutexLocker globallocker(&globalmutex);
         if ( mSoln )
         {
-            update.xEnd += WINDOW_WIDTH/2;
+            update.xEnd += DRAW_AREA_W/2;
         }
     }
 

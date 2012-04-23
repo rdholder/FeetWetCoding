@@ -9,16 +9,14 @@
 // (from "ELIZA Crossing the Ice"):
 // "There are things wrong wi' some o' the tools and 'tis my task to put them right."
 
-#include <fwclib/setup.h>
-
-FeetWetCodingExercise *exercise(NULL);
+#include <fwclib/FWCMainWindow.h>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    //Setup the exercises
-    appSetup();
+    FWCMainWindow mainWindow;
+    mainWindow.show();
 
     //Start the application loop
     return a.exec();

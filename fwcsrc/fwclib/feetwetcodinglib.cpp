@@ -2,25 +2,21 @@
 // See HELP.html included in this distribution.
 
 #include <fwclib/setup.h>
-#include <QHBoxLayout>
-#include <QPushButton>
+#include <fwclib/feetwetcodinglib.h>
+#include <fwclib/FWCView.h>
+#include <fwclib/FWCSettings.h>
+#include <fwclib/FWCExerciseChooser.h>
 #include <QTextEdit>
-#include <QDialog>
-#include <QFontMetrics>
-#include <QFile>
 #include <QDir>
 #include <stdexcept>
-#include <fwclib/feetwetcodinglib.h>
-#include <fwclib/FWCExerciseChooser.h>
 
 using namespace std;
 
-//Global variables needed in other files
-FWCView *view(NULL);
-QDialog *theWindow(NULL);
-FWCExerciseChooser *exerciseChooser(NULL);
-QTextEdit *exerciseOut(NULL);
-QTextEdit *solnOut(NULL);
+//Global variables we need
+extern FWCView *view;
+extern FWCExerciseChooser *exerciseChooser;
+extern QTextEdit *exerciseOut;
+extern QTextEdit *solnOut;
 
 
 ////////////////////////////////////////////
@@ -135,17 +131,8 @@ std::string getNameForColor( Color color )
 // for example random(100) returns an int between 0 and 100
 int random(int biggest)
 {
-//    SeeOut seeout;
-//    seeout << "rnd-ThreadID: " << qApp->thread()->currentThread() << "\n";
-
-//    int ctime = QTime::currentTime().msec();
-//    qsrand(ctime);
-
     if (biggest > 0)
     {
-        //Seed the random number generator
-        //qsrand(QTime::currentTime().msec());
-
         //Calculate a random number within the specified range
         return (qrand() % biggest + 1) -1;
     }
@@ -173,83 +160,24 @@ int randomRange(int smallest, int biggest)
     }
 }
 
-////////////////////////////////////////////
-// FWC setup and initialization
-////////////////////////////////////////////
 
-void appSetup()
+/////////////////////////////////
+//FWC drawing utils
+/////////////////////////////////
+
+void ClearScreen()
 {
-    initSettingsFile();
-    setupDrawingUtils();
+    if ( view && view->scene() )
+    {
+        view->scene()->clear();
+    }
+    if ( exerciseChooser )
+    {
+        exerciseChooser->sceneCleared();
+    }
 }
 
-void setupDrawingUtils()
-{
-    //Seed the random number generator
-    QTime time = QTime::currentTime();
-    qsrand(time.msec()/4); // rdh5mar2012: why is this 4?  I forget, need to check
-
-    // Setup the drawing area stuff
-    QGraphicsScene *scene = new QGraphicsScene(-BORDER, -BORDER/2,
-                                               WINDOW_WIDTH+BORDER*2,
-                                               WINDOW_HEIGHT+BORDER);
-    view = new FWCView(scene);
-    view->setRenderHint(QPainter::TextAntialiasing);
-
-    exerciseOut = new QTextEdit();
-    exerciseOut->ensureCursorVisible();
-    exerciseOut->setReadOnly(true);
-    exerciseOut->setFocusPolicy(Qt::NoFocus);
-
-    solnOut = new QTextEdit();
-    solnOut->ensureCursorVisible();
-    solnOut->setReadOnly(true);
-    solnOut->setFocusPolicy(Qt::NoFocus);
-
-    exerciseChooser = new FWCExerciseChooser();
-
-    QHBoxLayout *hlayout1 = new QHBoxLayout();
-    QPushButton *restartExercise = new QPushButton( QObject::tr( "Re-start Exercise") );
-    restartExercise->setFocusPolicy(Qt::NoFocus);
-    QObject::connect(restartExercise, SIGNAL(clicked()),
-                     exerciseChooser, SLOT(runCurrentExercise()));
-    QObject::connect(view, SIGNAL(keyPressSignal(QKeyEvent*)),
-                     exerciseChooser, SLOT(handleKeyEvent(QKeyEvent*)));
-    view->setMouseTracking(true);
-    QObject::connect(view, SIGNAL(newMousePos(QPoint)),
-                     exerciseChooser, SLOT(handleNewMousePosEvent(QPoint)));
-
-    hlayout1->addStretch();
-    hlayout1->addLayout(exerciseChooser->getChooserLayout());
-    QFrame *f = new QFrame();
-    f->setFrameStyle( QFrame::VLine | QFrame::Sunken );
-    hlayout1->addWidget( f, 0 );
-    hlayout1->addWidget(restartExercise);
-
-    QHBoxLayout *hlayout2 = new QHBoxLayout();
-    hlayout2->addWidget(exerciseOut);
-    hlayout2->addWidget(solnOut);
-
-    QVBoxLayout *vlayout = new QVBoxLayout();
-    vlayout->addLayout(hlayout1);
-    vlayout->addWidget(view);
-    vlayout->addLayout(hlayout2);
-
-    // Create the run-time window
-    theWindow = new QDialog();
-    theWindow->setLayout(vlayout);
-    theWindow->setGeometry(WINDOW_X, WINDOW_Y,
-                           WINDOW_WIDTH+2.5*BORDER,
-                           WINDOW_HEIGHT+2.5*BORDER+OUTTEXT_HEIGHT);
-    theWindow->show();
-
-    // Done creating drawing area, so ok to run.
-    // Choose the first Exercise in the list
-    exerciseChooser->setOkToRun(true);
-    exerciseChooser->runCurrentExercise();
-}
-
-void initOutputArea()
+void ClearOutputArea()
 {
     if ( NULL == exerciseOut || NULL == solnOut )
         return;
@@ -267,530 +195,6 @@ void initOutputArea()
     outboxes.setColor(BLUE);
     outboxes.setFontSize(8);
     outboxes << "Solution output\n\n";
-}
-
-////////////////////////////////////////////
-// FWC file I/O and configuration settings
-////////////////////////////////////////////
-
-QString getProjectSandboxPath()
-{
-    QString sandboxDir;
-    try
-    {
-        sandboxDir = getProjectDirPath() + "/sandbox";
-    }
-    catch ( std::runtime_error ex )
-    {
-        qDebug() << ex.what();
-    }
-
-    //See if we have something to return. If not, throw.
-    if ( sandboxDir.isEmpty() )
-    {
-        std::string errorMsg("ERROR: In getProjectSandboxPath(), unable to find sandbox path");
-        throw std::runtime_error(errorMsg);
-    }
-
-    return ( sandboxDir );
-}
-
-QString getProjectDirPath()
-{
-    //Only figure this out once per run
-    static QString projectPath;
-
-    if ( false == projectPath.isEmpty() )
-    {
-        return projectPath;
-    }
-
-    //The name of the project directory (where the source code lives)
-    //can be found in the "Makefile", which is in the main build directory,
-    //so we need to get that directory first.
-    QString buildDirPath;
-    try
-    {
-        buildDirPath = getBuildDirPath();
-    }
-    catch ( std::runtime_error ex )
-    {
-        qDebug() << ex.what();
-        std::string errorMsg("ERROR: In getProjectDirPath(), unable to determine build directory path");
-        throw std::runtime_error(errorMsg);
-    }
-
-    //Find the Makefile in the build directory
-    const QString makefilename(buildDirPath + "/Makefile");
-    QFile makefile(makefilename);
-    if ( false == makefile.exists() )
-    {
-        std::string errorMsg("ERROR: In getProjectDirPath(), unable to find file " + makefilename.toStdString());
-        throw std::runtime_error(errorMsg);
-    }
-    if ( false == makefile.open(QIODevice::ReadOnly | QIODevice::Text))
-    {
-        std::string errorMsg("ERROR: In getProjectDirPath(), unable to open file " + makefilename.toStdString() + " for reading");
-        throw std::runtime_error(errorMsg);
-    }
-
-    //The main project directory contains the FeetWetCoding project file "FeetWetCoding.pro"
-    //The Makefile contains the path to this file, so we need to parse the Makefile to get
-    //that path.
-    QString projectFilename("FeetWetCoding.pro");
-    QString tempProjectPath;
-    QTextStream in(&makefile);
-    QString line;
-    int index(0);
-    QStringList parsedLine;
-
-    //Read line by line until we reach the end of the file
-    while (!in.atEnd())
-    {
-        line = in.readLine();
-        index = line.indexOf(projectFilename);
-        if ( -1 == index)
-        {
-            continue;
-        }
-
-        //Found a line with the filename in it. Split the line up
-        //into space-delimited sections and find the section that
-        //contains the filename
-        parsedLine = line.split(" ", QString::SkipEmptyParts, Qt::CaseSensitive);
-
-        for( int i=0; i < parsedLine.length(); i++)
-        {
-            if ( -1 == parsedLine.at(i).indexOf(projectFilename) )
-            {
-                continue;
-            }
-
-            //Found the section of this line that contains the filename. We know
-            //in the Makefile there are instances of the project file path that
-            //have no preceding or trailing characters and this might be one of those.
-            //We'll check to see if the directory specified in this string exists. But
-            //before we can do that we need to make sure we're dealing with an absolute
-            //path and not a relative one. Relative paths won't always work since the
-            //program doesn't necessarily run from same directory where Makefile is
-            //located. If it's a relative path we'll need to convert it to absolute.
-
-            //By default, the project path is in the same parent directory as the main
-            //build path, where the Makefile lives. Therefore, in this Makefile, a relative
-            //path to the project file will have "../" at the beginning. See if that string
-            //is there and, if so, replace it with the parent directory's absolute path.
-            //Since we already know the main build directory path, which has the same parent
-            //as the project, we can get our parent dir from that.
-
-            //Remove the project filename and its preceding "/"
-            tempProjectPath = parsedLine.at(i);
-            if ( -1 != tempProjectPath.indexOf(projectFilename) )
-            {
-                // +1 for the "/"
-                tempProjectPath.chop(tempProjectPath.length()-projectFilename.length()+1);
-            }
-
-#ifdef DEBUG
-            qDebug() << "Initial projectPath: " << tempProjectPath;
-#endif
-            //If project path is a relative path in the same parent directory as current working
-            //(this is the default) then replace the leading "../" with the parent directory to
-            //get the absolute path.
-            QString projectParentDir(tempProjectPath);
-            QString buildParentDir(buildDirPath);
-            int index(projectParentDir.lastIndexOf("/"));
-            projectParentDir.chop(projectParentDir.length() - index);
-            if ( ".." == projectParentDir )
-            {
-#ifdef DEBUG
-                qDebug() << "Replacing relative path with absolute path...";
-#endif
-
-                buildParentDir.chop(buildParentDir.length()-buildParentDir.lastIndexOf("/"));
-                tempProjectPath.replace(0, 2, buildParentDir);
-            }
-
-            //Check to see if the path we came up with exists and, as
-            //an extra check, make sure it contains the project file.
-            if ( !QFile(tempProjectPath + "/" + projectFilename).exists() )
-            {
-                //We didn't get it this time. Keep going.
-#ifdef DEBUG
-                qDebug() << "Our guess at project path didn't pan out this time. Keep going...";
-                qDebug() << "Our guess was: " << tempProjectPath;
-#endif
-                continue;
-            }
-
-            //Looks like we go tit. Assign what we came up with to our projectPath,
-            //print out some debugging info, then break out of the for loop.
-            projectPath = tempProjectPath;
-
-#ifdef DEBUG
-            qDebug() << "-------------------------------------";
-            qDebug() << "projectParentDir:     " << projectParentDir;
-            qDebug() << "buildParentDir:       " << buildParentDir;
-            qDebug() << "Absolute projectPath: " << projectPath;
-            qDebug() << "-------------------------------------";
-#endif
-
-            //We should be done
-            break;
-        }
-
-        //Break out of the while loop if we found the path
-        if ( false == projectPath.isEmpty() )
-        {
-            break;
-        }
-    }
-
-    makefile.close();
-
-    //See if we have something to return. If not, throw.
-    if ( projectPath.isEmpty() )
-    {
-        std::string errorMsg("ERROR: In getProjectDirPath(), unable to find project path");
-        throw std::runtime_error(errorMsg);
-    }
-
-    return projectPath;
-}
-
-QString getBuildDirPath()
-{
-    //Only figure this out once per run
-    static QString buildDirPath;
-
-    if ( false == buildDirPath.isEmpty() )
-    {
-        return buildDirPath;
-    }
-
-    //The main build directory's name starts with "FeetWetCoding-build" but
-    //the rest of the name varies depending on the build configuration, plus,
-    //we don't know where in the system it is. Fortunately, the running program's
-    //current working directory, which we can query for, is somewhere in that
-    //main build directory, either at its top level or in some sub-directory.
-    //We just need to find where the string "FeetWetCoding-build" occurs in
-    //the current working directory string and then find the next "/" that
-    //occurs after that. This will mark the end of the main build directory
-    //path, and if anything else follows that "/" then it's sub-directories
-    //that we can discard from the string.
-
-    //Get the current working directory and check that it's valid.
-    const QString cwd = QDir::currentPath();
-    if ( false == QDir(cwd).isReadable() )
-    {
-        std::string errorMsg("ERROR: In getBuildDirPath(), QDir::currentPath() invalid");
-        throw std::runtime_error(errorMsg);
-    }
-
-    //Assume main build dir is the same until we learn otherwise.
-    buildDirPath = cwd;
-
-    //To find the first "/" after the start of the build directory name, first
-    //find the location of the partial main build directory name.
-    const QString buildDirPartialName("FeetWetCoding-build");
-    const int buildDirStartIndex(cwd.indexOf(buildDirPartialName));
-
-    //Next, starting from that index, find the next "/" character in the path.
-    const int buildDirEndIndex(cwd.indexOf("/", buildDirStartIndex));
-
-    //If we didn't find a "/" following the build dir name then that
-    //means our current working directory *is* the main build dir and
-    //we're done looking for the main build dir. Else if we did find
-    //it that means the current working directory is a subdirectory of
-    //the main build directory. We only want the main build directory,
-    //so remove the any build dir subdirectories from the path.
-    if ( -1 != buildDirEndIndex )
-    {
-        //If index is valid (i.e. not -1), then we found sub-dirs
-        //and need to remove them
-        buildDirPath.chop(buildDirPath.length()-buildDirEndIndex);
-    }
-
-    //Print out some debugging and we're done
-#ifdef DEBUG
-    qDebug() << "-------------------------------------";
-    qDebug() << "cwd:                        " << cwd;
-    qDebug() << "buildDirPartialName:        " << buildDirPartialName;
-    qDebug() << "Idx of buildDirPartialName: " << buildDirStartIndex;
-    qDebug() << "Idx of following / :        " << buildDirEndIndex;
-    qDebug() << "buildDirPath:               " << buildDirPath;
-    qDebug() << "-------------------------------------";
-#endif
-
-    return buildDirPath;
-}
-
-QString getImgDirPath()
-{
-    QString imgDir;
-    try
-    {
-        imgDir = getProjectSandboxPath() + "/img";
-    }
-    catch ( std::runtime_error ex )
-    {
-        qDebug() << ex.what();
-    }
-
-    //See if we have something to return. If not, throw.
-    if ( imgDir.isEmpty() )
-    {
-        std::string errorMsg("ERROR: In getImgDirPath(), unable to find img path");
-        throw std::runtime_error(errorMsg);
-    }
-
-    return ( imgDir );
-}
-
-QString getUserConfigDirPath()
-{
-    QString configDir;
-    try
-    {
-        configDir = getProjectSandboxPath() + "/config_user";
-    }
-    catch ( std::runtime_error ex )
-    {
-        qDebug() << ex.what();
-    }
-
-    //See if we have something to return. If not, throw.
-    if ( configDir.isEmpty() )
-    {
-        std::string errorMsg("ERROR: In getUserConfigDirPath(), unable to find user config path");
-        throw std::runtime_error(errorMsg);
-    }
-
-    return ( configDir );
-}
-
-QString getDefaultConfigDirPath()
-{
-    QString configDir;
-    try
-    {
-        configDir = getProjectSandboxPath() + "/config_default";
-    }
-    catch ( std::runtime_error ex )
-    {
-        qDebug() << ex.what();
-    }
-
-    //See if we have something to return. If not, throw.
-    if ( configDir.isEmpty() )
-    {
-        std::string errorMsg("ERROR: In getDefaultConfigDirPath(), unable to find default config path");
-        throw std::runtime_error(errorMsg);
-    }
-
-    return ( configDir );
-}
-
-QString getDefaultConfigFilePath()
-{
-    QString configFilePath;
-    try
-    {
-        configFilePath = getDefaultConfigDirPath() + "/defaultconfig.txt";
-    }
-    catch ( std::runtime_error ex )
-    {
-        qDebug() << ex.what();
-    }
-
-    return ( configFilePath );
-}
-
-QString getUserConfigFilePath()
-{
-    QString configFilePath;
-    try
-    {
-        configFilePath = getUserConfigDirPath() + "/userconfig.txt";
-    }
-    catch ( std::runtime_error ex )
-    {
-        qDebug() << ex.what();
-    }
-
-    return ( configFilePath );
-}
-
-QString getCurrentConfigFilePath()
-{
-    //Try user config first
-    QString configFilePath;
-
-    if (QFile(getUserConfigFilePath()).exists())
-    {
-        configFilePath = getUserConfigFilePath();
-    }
-    else if (QFile(getDefaultConfigFilePath()).exists())
-    {
-        configFilePath = getDefaultConfigFilePath();
-    }
-
-    return configFilePath;
-}
-
-QString getLastExerciseFilePath()
-{
-    QString configFilePath;
-    try
-    {
-        configFilePath = getUserConfigDirPath() + "/lastexercise.txt";
-    }
-    catch ( std::runtime_error ex )
-    {
-        qDebug() << ex.what();
-    }
-
-    return ( configFilePath );
-}
-
-void initSettingsFile()
-{
-    //If there's already a user config file then we're done.
-    QString userConfigFile(getUserConfigFilePath());
-
-    if ( QFile(userConfigFile).exists() )
-    {
-        return;
-    }
-
-    try
-    {
-        //Copy the default config file to the user config dir.
-        //If the user config directory doesn't exist create it.
-        //It lives in the project's build directory (see getUserConfigDirPath())
-        //so it's ok for us to write there. getUserConfigDirPath() throws if dir
-        //can't be found
-        QDir dir(getUserConfigDirPath());
-        if ( !dir.exists() && !dir.mkdir(getUserConfigDirPath()) )
-        {
-             //program can still proceed, so no need to throw
-             //but can't continue to init, so return
-             return;
-        }
-
-        QFile srcFile(getDefaultConfigFilePath());
-        if ( srcFile.exists() )
-        {
-            srcFile.copy(getUserConfigFilePath());
-        }
-    }
-    catch ( std::runtime_error ex )
-    {
-        qDebug() << ex.what();
-
-        //program can still proceed, so no need to throw
-    }
-}
-
-void getSetting( const QString & settingKey, QString & settingVal )
-{
-    QString configFilePath(getCurrentConfigFilePath());
-
-    QFile configFile(configFilePath);
-    if (!configFile.open(QIODevice::ReadOnly | QIODevice::Text))
-    {
-        qDebug() << "WARNING: In getSetting(), unable to open file " << configFilePath << " for reading";
-        return;
-    }
-
-    QTextStream in(&configFile);
-    while (!in.atEnd())
-    {
-        QString line = in.readLine();
-        QStringList list = line.split(":", QString::SkipEmptyParts);
-        if ( 2 != list.count() )
-            continue;
-
-        if ( list.at(0).contains(settingKey, Qt::CaseInsensitive) )
-        {
-            settingVal = list.at(1);
-        }
-    }
-
-    configFile.close();
-}
-
-void getPreviousExerciseFromFile( QString pathToFile, QString & chapter, QString & section, QString & exercise )
-{
-    QFile file(pathToFile);
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-    {
-#ifdef DEBUG
-        qDebug() << "INFO: File \"" << pathToFile << "\" not found.\n";
-#endif
-        return;
-    }
-
-    QTextStream in(&file);
-    while (!in.atEnd())
-    {
-        QString line = in.readLine();
-        QStringList list = line.split(":", QString::SkipEmptyParts);
-        if ( 2 != list.count() )
-            continue;
-
-        if ( list.at(0).contains("chapter", Qt::CaseInsensitive) )
-        {
-            chapter = ( list.at(1) );
-        }
-        else if ( list.at(0).contains("section", Qt::CaseInsensitive) )
-        {
-            section = ( list.at(1) );
-        }
-        else if ( list.at(0).contains("exercise", Qt::CaseInsensitive) )
-        {
-            exercise = ( list.at(1) );
-        }
-    }
-
-    file.close();
-}
-
-void saveCurrentExerciseToFile( QString pathToFile, QString chapter, QString section, QString exercise )
-{
-    QFile file(pathToFile);
-    if ( file.exists() )
-    {
-        file.remove();
-    }
-
-    if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
-    {
-        qDebug() << "WARNING: Unable to write to file \"" << pathToFile << "\". Cannot save which exercise was viewed last.\n";
-        return;
-    }
-
-    QTextStream out(&file);
-    out << "chapter:" << chapter << "\n";
-    out << "section:" << section << "\n";
-    out << "exercise:" << exercise << "\n";
-
-    file.close();
-}
-
-/////////////////////////////////
-//FWC drawing utils
-/////////////////////////////////
-
-void ClearScreen()
-{
-    if ( view && view->scene() )
-    {
-        view->scene()->clear();
-    }
-    if ( exerciseChooser )
-    {
-        exerciseChooser->sceneCleared();
-    }
 }
 
 QGraphicsItem* fwcLineRender( int xStart, int yStart, int xEnd, int yEnd, Color color, int linewidth )
@@ -969,7 +373,8 @@ QGraphicsItem* fwcImageRender( std::string filename, int x, int y )
     QString imageFilePath;
     try
     {
-        imageFilePath = getImgDirPath() + "/" + QString(filename.c_str());
+        FWCSettings settings;
+        imageFilePath = settings.getImgDirPath() + QDir::separator() + QString(filename.c_str());
     }
     catch ( std::runtime_error ex )
     {
@@ -999,28 +404,4 @@ QGraphicsItem* fwcImageRender( std::string filename, int x, int y )
     view->scene()->addItem(newPixmap);
 
     return newPixmap;
-}
-
-////////////////////////////////////////////
-//FWCView class
-////////////////////////////////////////////
-
-void FWCView::keyPressEvent( QKeyEvent *k )
-{
-    //Send signal to QObjects who wouldn't otherwise get it,
-    //for example the exercise chooser, which will pass it into
-    //the current exercise thread.
-    emit keyPressSignal(k);
-}
-
-void FWCView::mouseMoveEvent(QMouseEvent *event)
-{
-    if ( !event )
-        return;
-
-    //Send signal to QObjects who wouldn't otherwise get it,
-    //for example the exercise chooser, which will use the
-    //mouse's current position to determine which exercise
-    //pane should receive keyboard input.
-    emit newMousePos(event->pos());
 }

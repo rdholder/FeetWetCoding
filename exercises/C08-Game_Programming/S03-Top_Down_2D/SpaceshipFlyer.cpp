@@ -3,8 +3,6 @@
 
 #include <exercises/C08_S03.h>
 
-//extern FWCView *view;
-
 SpaceshipFlyer::SpaceshipFlyer(QObject *parent)
     :FeetWetCodingExercise(parent)
     ,mPlayerIconID(-1)
@@ -56,8 +54,8 @@ void SpaceshipFlyer::drawPlayer()
     if ( mPlayerIconID < 0 )
     {
         //Center our player to start
-        mPlayerX = (WINDOW_WIDTH/2-BORDER)/2;
-        mPlayerY = (WINDOW_HEIGHT-BORDER)/2;
+        mPlayerX = (DRAW_AREA_W/2-BORDER)/2;
+        mPlayerY = (DRAW_AREA_H-BORDER)/2;
 
         std::string playerImageFilename("spaceship25x30.png");
         mPlayerIconID = fwcImage(playerImageFilename, mPlayerX, mPlayerY);
@@ -75,8 +73,8 @@ void SpaceshipFlyer::drawCoins()
 
     for ( int i=0; i < NUM_COINS; ++i )
     {
-        x = random(WINDOW_WIDTH/2-BORDER);
-        y = random(WINDOW_HEIGHT-BORDER);
+        x = random(DRAW_AREA_W/2-BORDER);
+        y = random(DRAW_AREA_H-BORDER);
 
         fwcCircle(x-(radius/2), y-(radius/2), radius, DARKYELLOW, 1, true);
     }
@@ -88,15 +86,15 @@ void SpaceshipFlyer::movePlayer( int x, int y )
     mPlayerY = y;
 
     if ( mPlayerX < 0 )
-        mPlayerX = WINDOW_WIDTH/2;
+        mPlayerX = DRAW_AREA_W/2;
 
-    if ( mPlayerX > WINDOW_WIDTH/2 )
+    if ( mPlayerX > DRAW_AREA_W/2 )
         mPlayerX = 0;
 
     if ( mPlayerY < 0 )
-        mPlayerY = WINDOW_HEIGHT;
+        mPlayerY = DRAW_AREA_H;
 
-    if ( mPlayerY > WINDOW_HEIGHT )
+    if ( mPlayerY > DRAW_AREA_H )
         mPlayerY = 0;
 
     fwcMoveItem(mPlayerIconID, mPlayerX, mPlayerY);

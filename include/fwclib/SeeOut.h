@@ -9,6 +9,7 @@
 
 using namespace std;
 
+//Global variables we need
 extern QMutex globalmutex;
 
 //SeeOut is a simulated "cout" that prints to a

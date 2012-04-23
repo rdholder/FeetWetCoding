@@ -1,5 +1,6 @@
 #include <fwclib/ExerciseLauncher.h>
 #include <fwclib/SeeOut.h>
+#include <fwclib/FWCView.h>
 #include <QDialog>
 #include <QTextEdit>
 #include <QTime>
@@ -12,6 +13,7 @@ std::deque< std::pair< SeeOut::RequestType, QString > > SeeOut::exerciseOutMsgQu
 std::deque< std::pair< SeeOut::RequestType, QString > > SeeOut::solnOutMsgQueue;
 QMutex globalmutex;
 
+//Global variables we need
 extern QTextEdit *exerciseOut;
 extern QTextEdit *solnOut;
 extern FWCView *view;
@@ -230,7 +232,7 @@ void ExerciseLauncher::setWhichPaneHasFocus( int pane )
 
     if ( NULL == mPaneHighlight )
     {
-        mPaneHighlight = fwcRectangleRender( 0, 0, WINDOW_WIDTH/2, WINDOW_HEIGHT, GREEN, 2);
+        mPaneHighlight = fwcRectangleRender( 0, 0, DRAW_AREA_W/2, DRAW_AREA_H, GREEN, 2);
     }
 
     switch ( mWhichPaneHasFocus )
@@ -240,7 +242,7 @@ void ExerciseLauncher::setWhichPaneHasFocus( int pane )
         break;
 
     case 1:
-            mPaneHighlight->setPos(WINDOW_WIDTH/2, 0);
+            mPaneHighlight->setPos(DRAW_AREA_W/2, 0);
         break;
 
     default:
