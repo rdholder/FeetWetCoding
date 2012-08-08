@@ -189,7 +189,9 @@ SOURCES += \
     mycode/src/MyCode6.cpp \
     mycode/src/MyCode7.cpp \
     mycode/src/MyCode8.cpp \
-    mycode/src/MyCode9.cpp
+    mycode/src/MyCode9.cpp \
+    exercises/C01-Beginner_Exercises/S07-Storing_Data/Solutions/045_Arrays2SOLN.cpp \
+    exercises/C01-Beginner_Exercises/S07-Storing_Data/045_Arrays2.cpp
 
 
 HEADERS += \

@@ -157,6 +157,7 @@ FWCExerciseChooser::getExerciseFromName( const QString & name )
     if( "FillAnArray" == name ){ return new FillAnArray(&mExerciseLauncher); }
     if( "BubbleSort1" == name ){ return new BubbleSort1(&mExerciseLauncher); }
     if( "BubbleSort2" == name ){ return new BubbleSort2(&mExerciseLauncher); }
+    if( "Arrays2" == name ){ return new Arrays2(&mExerciseLauncher); }
 
     //Section 7 - ...
 
@@ -304,6 +305,7 @@ void FWCExerciseChooser::createExercisesMap()
     exercises.push_back( "FillAnArray" );
     exercises.push_back( "BubbleSort1" );
     exercises.push_back( "BubbleSort2" );
+    exercises.push_back( "Arrays2" );
     sections["S07-Storing_Data"] = exercises;
 
     //S09-Classes_Intro

@@ -216,4 +216,39 @@ protected:
     }
 };
 
+class Arrays2Soln : public FeetWetCodingSolution
+{
+    Q_OBJECT
+public:
+    explicit Arrays2Soln(QObject *parent = 0)
+        :FeetWetCodingSolution(parent){}
+
+
+protected:
+    void runExercise();
+};
+
+class Arrays2 : public FeetWetCodingExercise
+{
+    Q_OBJECT
+public:
+    explicit Arrays2(QObject *parent = 0)
+        :FeetWetCodingExercise(parent)
+    {
+        //If this exercise has a solution, launch it
+        this->setupSolution(parent);
+    }
+
+protected:
+    void runExercise();
+    void setupSolution(QObject *parent=0)
+    {
+        mSolutionPtr = new Arrays2Soln(parent);
+        if ( mSolutionPtr )
+        {
+            mSolutionPtr->start();
+        }
+    }
+};
+
 #endif // C01_S07_H
